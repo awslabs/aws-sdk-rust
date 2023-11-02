@@ -72,7 +72,7 @@ version = "0.2.9"
 version = "1.5.5"
 
 [dependencies.ring]
-version = "0.16.0"
+version = "0.17.5"
 
 [dependencies.tracing]
 version = "0.1"

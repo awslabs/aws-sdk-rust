@@ -79,7 +79,7 @@ version = "2.1"
 optional = true
 
 [dependencies.ring]
-version = "0.16"
+version = "0.17.5"
 optional = true
 
 [dependencies.zeroize]
@@ -112,4 +112,4 @@ version = "0.56.1"
 version = "0.3.5"
 features = ["parsing"]
 [target."cfg(not(any(target_arch = \"powerpc\", target_arch = \"powerpc64\")))".dev-dependencies]
-ring = "0.16"
+ring = "0.17.5"

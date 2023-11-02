@@ -96,7 +96,7 @@ optional = true
 version = "0.35.0"
 
 [dependencies.ring]
-version = "0.16"
+version = "0.17.5"
 optional = true
 
 [dependencies.hex]
