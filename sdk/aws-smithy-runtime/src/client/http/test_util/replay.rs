@@ -63,9 +63,9 @@ impl ValidateRequest {
     fn assert_matches(&self, index: usize, ignore_headers: &[&str]) {
         let (actual, expected) = (&self.actual, &self.expected);
         assert_eq!(
-            actual.uri(),
             expected.uri(),
-            "Request #{index} - URI doesn't match expected value"
+            actual.uri(),
+            "request[{index}] - URI doesn't match expected value"
         );
         for (name, value) in expected.headers() {
             if !ignore_headers.contains(&name) {
@@ -74,8 +74,8 @@ impl ValidateRequest {
                     .get(name)
                     .unwrap_or_else(|| panic!("Request #{index} - Header {name:?} is missing"));
                 assert_eq!(
-                    actual_header, value,
-                    "Request #{index} - Header {name:?} doesn't match expected value",
+                    value, actual_header,
+                    "request[{index}] - Header {name:?} doesn't match expected value",
                 );
             }
         }
@@ -94,9 +94,9 @@ impl ValidateRequest {
         match (actual_str, expected_str) {
             (Ok(actual), Ok(expected)) => assert_ok(validate_body(actual, expected, media_type)),
             _ => assert_eq!(
-                actual.body().bytes(),
                 expected.body().bytes(),
-                "Request #{index} - Body contents didn't match expected value"
+                actual.body().bytes(),
+                "request[{index}] - Body contents didn't match expected value"
             ),
         };
     }

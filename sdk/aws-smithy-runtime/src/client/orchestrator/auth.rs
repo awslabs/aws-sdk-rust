@@ -9,7 +9,7 @@ use aws_smithy_runtime_api::client::auth::{
     AuthScheme, AuthSchemeEndpointConfig, AuthSchemeId, AuthSchemeOptionResolverParams,
     ResolveAuthSchemeOptions,
 };
-use aws_smithy_runtime_api::client::identity::ResolveIdentity;
+use aws_smithy_runtime_api::client::identity::ResolveCachedIdentity;
 use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_types::config_bag::ConfigBag;
@@ -65,20 +65,22 @@ pub(super) async fn orchestrate_auth(
         if let Some(auth_scheme) = runtime_components.auth_scheme(scheme_id) {
             // Use the resolved auth scheme to resolve an identity
             if let Some(identity_resolver) = auth_scheme.identity_resolver(runtime_components) {
+                let identity_cache = runtime_components.identity_cache();
                 let signer = auth_scheme.signer();
                 trace!(
                     auth_scheme = ?auth_scheme,
+                    identity_cache = ?identity_cache,
                     identity_resolver = ?identity_resolver,
                     signer = ?signer,
-                    "resolved auth scheme, identity resolver, and signing implementation"
+                    "resolved auth scheme, identity cache, identity resolver, and signing implementation"
                 );
 
                 match extract_endpoint_auth_scheme_config(endpoint, scheme_id) {
                     Ok(auth_scheme_endpoint_config) => {
                         trace!(auth_scheme_endpoint_config = ?auth_scheme_endpoint_config, "extracted auth scheme endpoint config");
 
-                        let identity = identity_resolver
-                            .resolve_identity(runtime_components, cfg)
+                        let identity = identity_cache
+                            .resolve_cached_identity(identity_resolver, runtime_components, cfg)
                             .await?;
                         trace!(identity = ?identity, "resolved identity");
 
@@ -410,6 +412,73 @@ mod tests {
                 .expect("magicString is set")
                 .as_string()
                 .expect("gimme the string, dammit!")
+        );
+    }
+
+    #[cfg(feature = "http-auth")]
+    #[tokio::test]
+    async fn use_identity_cache() {
+        use crate::client::auth::http::{ApiKeyAuthScheme, ApiKeyLocation};
+        use aws_smithy_runtime_api::client::auth::http::HTTP_API_KEY_AUTH_SCHEME_ID;
+        use aws_smithy_runtime_api::client::identity::http::Token;
+        use aws_smithy_types::body::SdkBody;
+
+        let mut ctx = InterceptorContext::new(Input::doesnt_matter());
+        ctx.enter_serialization_phase();
+        ctx.set_request(
+            http::Request::builder()
+                .body(SdkBody::empty())
+                .unwrap()
+                .try_into()
+                .unwrap(),
+        );
+        let _ = ctx.take_input();
+        ctx.enter_before_transmit_phase();
+
+        #[derive(Debug)]
+        struct Cache;
+        impl ResolveCachedIdentity for Cache {
+            fn resolve_cached_identity<'a>(
+                &'a self,
+                _resolver: SharedIdentityResolver,
+                _: &'a RuntimeComponents,
+                _config_bag: &'a ConfigBag,
+            ) -> IdentityFuture<'a> {
+                IdentityFuture::ready(Ok(Identity::new(Token::new("cached (pass)", None), None)))
+            }
+        }
+
+        let runtime_components = RuntimeComponentsBuilder::for_tests()
+            .with_auth_scheme(SharedAuthScheme::new(ApiKeyAuthScheme::new(
+                "result:",
+                ApiKeyLocation::Header,
+                "Authorization",
+            )))
+            .with_auth_scheme_option_resolver(Some(SharedAuthSchemeOptionResolver::new(
+                StaticAuthSchemeOptionResolver::new(vec![HTTP_API_KEY_AUTH_SCHEME_ID]),
+            )))
+            .with_identity_cache(Some(Cache))
+            .with_identity_resolver(
+                HTTP_API_KEY_AUTH_SCHEME_ID,
+                SharedIdentityResolver::new(Token::new("uncached (fail)", None)),
+            )
+            .build()
+            .unwrap();
+        let mut layer = Layer::new("test");
+        layer.store_put(Endpoint::builder().url("dontcare").build());
+        layer.store_put(AuthSchemeOptionResolverParams::new("doesntmatter"));
+        let config_bag = ConfigBag::of_layers(vec![layer]);
+
+        orchestrate_auth(&mut ctx, &runtime_components, &config_bag)
+            .await
+            .expect("success");
+        assert_eq!(
+            "result: cached (pass)",
+            ctx.request()
+                .expect("request is set")
+                .headers()
+                .get("Authorization")
+                .unwrap()
         );
     }
 }

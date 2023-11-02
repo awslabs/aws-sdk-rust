@@ -11,9 +11,9 @@
 //! This provider is included automatically when profiles are loaded.
 
 use super::cache::load_cached_token;
+use crate::identity::IdentityCache;
 use crate::provider_config::ProviderConfig;
 use crate::sso::SsoTokenProvider;
-use aws_credential_types::cache::CredentialsCache;
 use aws_credential_types::provider::{self, error::CredentialsError, future, ProvideCredentials};
 use aws_credential_types::Credentials;
 use aws_sdk_sso::types::RoleCredentials;
@@ -253,7 +253,7 @@ async fn load_sso_credentials(
     let config = sdk_config
         .to_builder()
         .region(sso_provider_config.region.clone())
-        .credentials_cache(CredentialsCache::no_caching())
+        .identity_cache(IdentityCache::no_cache())
         .build();
     // TODO(enableNewSmithyRuntimeCleanup): Use `customize().config_override()` to set the region instead of creating a new client once middleware is removed
     let client = SsoClient::new(&config);

@@ -10,14 +10,15 @@
 //!
 //! This provider is included automatically when profiles are loaded.
 
+use crate::identity::IdentityCache;
 use crate::sso::cache::{
     load_cached_token, save_cached_token, CachedSsoToken, CachedSsoTokenError,
 };
-use aws_credential_types::cache::{CredentialsCache, ExpiringCache};
 use aws_sdk_ssooidc::error::DisplayErrorContext;
 use aws_sdk_ssooidc::operation::create_token::CreateTokenOutput;
 use aws_sdk_ssooidc::Client as SsoOidcClient;
 use aws_smithy_async::time::SharedTimeSource;
+use aws_smithy_runtime::expiring_cache::ExpiringCache;
 use aws_smithy_runtime_api::client::identity::http::Token;
 use aws_smithy_runtime_api::client::identity::{Identity, IdentityFuture, ResolveIdentity};
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
@@ -74,7 +75,7 @@ impl SsoTokenProvider {
             .sdk_config
             .to_builder()
             .region(Some(inner.region.clone()))
-            .credentials_cache(CredentialsCache::no_caching())
+            .identity_cache(IdentityCache::no_cache())
             .build();
         let client = SsoOidcClient::new(&config);
         let resp = client

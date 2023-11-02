@@ -3,9 +3,15 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_sdk_s3::config::{Config, Credentials, SharedAsyncSleep, Sleep};
+use aws_sdk_s3::config::IdentityCache;
+use aws_sdk_s3::config::{
+    retry::RetryConfig, timeout::TimeoutConfig, Config, Credentials, Region, SharedAsyncSleep,
+    Sleep,
+};
 use aws_sdk_s3::error::DisplayErrorContext;
 use aws_smithy_async::rt::sleep::AsyncSleep;
+use aws_smithy_runtime::client::http::test_util::capture_request;
+use aws_smithy_runtime::test_util::capture_test_logs::capture_test_logs;
 use std::time::Duration;
 
 // This will fail due to lack of a connector when constructing the SDK Config
@@ -50,4 +56,72 @@ async fn test_clients_from_service_config() {
         msg.contains("No HTTP client was available to send this request. Enable the `rustls` crate feature or configure a HTTP client to fix this."),
         "expected '{msg}' to contain 'No HTTP client was available to send this request. Enable the `rustls` crate feature or set a HTTP client to fix this.'"
     );
+}
+
+#[tokio::test]
+#[should_panic(
+    expected = "Invalid client configuration: An async sleep implementation is required for retry to work."
+)]
+async fn test_missing_async_sleep_time_source_retries() {
+    let _logs = capture_test_logs();
+    let (http_client, _) = capture_request(None);
+
+    // Configure retry and timeouts without providing a sleep impl
+    let config = Config::builder()
+        .http_client(http_client)
+        .region(Region::new("us-east-1"))
+        .credentials_provider(Credentials::for_tests())
+        .retry_config(RetryConfig::standard())
+        .timeout_config(TimeoutConfig::disabled())
+        .build();
+
+    // should panic with a validation error
+    let _client = aws_sdk_s3::Client::from_conf(config);
+}
+
+#[tokio::test]
+#[should_panic(
+    expected = "Invalid client configuration: An async sleep implementation is required for timeouts to work."
+)]
+async fn test_missing_async_sleep_time_source_timeouts() {
+    let _logs = capture_test_logs();
+    let (http_client, _) = capture_request(None);
+
+    // Configure retry and timeouts without providing a sleep impl
+    let config = Config::builder()
+        .http_client(http_client)
+        .region(Region::new("us-east-1"))
+        .credentials_provider(Credentials::for_tests())
+        .retry_config(RetryConfig::disabled())
+        .timeout_config(
+            TimeoutConfig::builder()
+                .operation_timeout(Duration::from_secs(5))
+                .build(),
+        )
+        .build();
+
+    // should panic with a validation error
+    let _client = aws_sdk_s3::Client::from_conf(config);
+}
+
+#[tokio::test]
+#[should_panic(
+    expected = "Invalid client configuration: Lazy identity caching requires an async sleep implementation to be configured."
+)]
+async fn test_time_source_for_identity_cache() {
+    let _logs = capture_test_logs();
+    let (http_client, _) = capture_request(None);
+
+    // Configure an identity cache without providing a sleep impl or time source
+    let config = Config::builder()
+        .http_client(http_client)
+        .region(Region::new("us-east-1"))
+        .identity_cache(IdentityCache::lazy().build())
+        .credentials_provider(Credentials::for_tests())
+        .retry_config(RetryConfig::disabled())
+        .timeout_config(TimeoutConfig::disabled())
+        .build();
+
+    // should panic with a validation error
+    let _client = aws_sdk_s3::Client::from_conf(config);
 }

@@ -76,6 +76,10 @@ impl Config {
     pub fn retry_partition(&self) -> ::std::option::Option<&::aws_smithy_runtime::client::retries::RetryPartition> {
         self.config.load::<::aws_smithy_runtime::client::retries::RetryPartition>()
     }
+    /// Returns the configured identity cache for auth.
+    pub fn identity_cache(&self) -> ::std::option::Option<::aws_smithy_runtime_api::client::identity::SharedIdentityCache> {
+        self.runtime_components.identity_cache()
+    }
     /// Returns interceptors currently registered by the user.
     pub fn interceptors(&self) -> impl Iterator<Item = ::aws_smithy_runtime_api::client::interceptors::SharedInterceptor> + '_ {
         self.runtime_components.interceptors()
@@ -116,9 +120,9 @@ impl Config {
     pub fn region(&self) -> ::std::option::Option<&::aws_types::region::Region> {
         self.config.load::<::aws_types::region::Region>()
     }
-    /// Returns the credentials cache.
-    pub fn credentials_cache(&self) -> ::std::option::Option<::aws_credential_types::cache::SharedCredentialsCache> {
-        self.config.load::<::aws_credential_types::cache::SharedCredentialsCache>().cloned()
+    /// Returns the credentials provider for this service
+    pub fn credentials_provider(&self) -> Option<::aws_credential_types::provider::SharedCredentialsProvider> {
+        self.config.load::<::aws_credential_types::provider::SharedCredentialsProvider>().cloned()
     }
 }
 /// Builder for creating a `Config`.
@@ -431,6 +435,100 @@ impl Builder {
         retry_partition: ::std::option::Option<::aws_smithy_runtime::client::retries::RetryPartition>,
     ) -> &mut Self {
         retry_partition.map(|r| self.config.store_put(r));
+        self
+    }
+    /// Set the identity cache for auth.
+    ///
+    /// The identity cache defaults to a lazy caching implementation that will resolve
+    /// an identity when it is requested, and place it in the cache thereafter. Subsequent
+    /// requests will take the value from the cache while it is still valid. Once it expires,
+    /// the next request will result in refreshing the identity.
+    ///
+    /// This configuration allows you to disable or change the default caching mechanism.
+    /// To use a custom caching mechanism, implement the [`ResolveCachedIdentity`](::aws_smithy_runtime_api::client::identity::ResolveCachedIdentity)
+    /// trait and pass that implementation into this function.
+    ///
+    /// # Examples
+    ///
+    /// Disabling identity caching:
+    /// ```no_run
+    /// use aws_sdk_opensearchserverless::config::IdentityCache;
+    ///
+    /// let config = aws_sdk_opensearchserverless::Config::builder()
+    ///     .identity_cache(IdentityCache::no_cache())
+    ///     // ...
+    ///     .build();
+    /// let client = aws_sdk_opensearchserverless::Client::from_conf(config);
+    /// ```
+    ///
+    /// Customizing lazy caching:
+    /// ```no_run
+    /// use aws_sdk_opensearchserverless::config::IdentityCache;
+    /// use std::time::Duration;
+    ///
+    /// let config = aws_sdk_opensearchserverless::Config::builder()
+    ///     .identity_cache(
+    ///         IdentityCache::lazy()
+    ///             // change the load timeout to 10 seconds
+    ///             .load_timeout(Duration::from_secs(10))
+    ///             .build()
+    ///     )
+    ///     // ...
+    ///     .build();
+    /// let client = aws_sdk_opensearchserverless::Client::from_conf(config);
+    /// ```
+
+    pub fn identity_cache(mut self, identity_cache: impl ::aws_smithy_runtime_api::client::identity::ResolveCachedIdentity + 'static) -> Self {
+        self.set_identity_cache(identity_cache);
+        self
+    }
+
+    /// Set the identity cache for auth.
+    ///
+    /// The identity cache defaults to a lazy caching implementation that will resolve
+    /// an identity when it is requested, and place it in the cache thereafter. Subsequent
+    /// requests will take the value from the cache while it is still valid. Once it expires,
+    /// the next request will result in refreshing the identity.
+    ///
+    /// This configuration allows you to disable or change the default caching mechanism.
+    /// To use a custom caching mechanism, implement the [`ResolveCachedIdentity`](::aws_smithy_runtime_api::client::identity::ResolveCachedIdentity)
+    /// trait and pass that implementation into this function.
+    ///
+    /// # Examples
+    ///
+    /// Disabling identity caching:
+    /// ```no_run
+    /// use aws_sdk_opensearchserverless::config::IdentityCache;
+    ///
+    /// let config = aws_sdk_opensearchserverless::Config::builder()
+    ///     .identity_cache(IdentityCache::no_cache())
+    ///     // ...
+    ///     .build();
+    /// let client = aws_sdk_opensearchserverless::Client::from_conf(config);
+    /// ```
+    ///
+    /// Customizing lazy caching:
+    /// ```no_run
+    /// use aws_sdk_opensearchserverless::config::IdentityCache;
+    /// use std::time::Duration;
+    ///
+    /// let config = aws_sdk_opensearchserverless::Config::builder()
+    ///     .identity_cache(
+    ///         IdentityCache::lazy()
+    ///             // change the load timeout to 10 seconds
+    ///             .load_timeout(Duration::from_secs(10))
+    ///             .build()
+    ///     )
+    ///     // ...
+    ///     .build();
+    /// let client = aws_sdk_opensearchserverless::Client::from_conf(config);
+    /// ```
+
+    pub fn set_identity_cache(
+        &mut self,
+        identity_cache: impl ::aws_smithy_runtime_api::client::identity::ResolveCachedIdentity + 'static,
+    ) -> &mut Self {
+        self.runtime_components.set_identity_cache(::std::option::Option::Some(identity_cache));
         self
     }
     /// Add an [interceptor](::aws_smithy_runtime_api::client::interceptors::Intercept) that runs at specific stages of the request execution pipeline.
@@ -856,16 +954,6 @@ impl Builder {
         self.config.store_or_unset(credentials_provider);
         self
     }
-    /// Sets the credentials cache for this service
-    pub fn credentials_cache(mut self, credentials_cache: ::aws_credential_types::cache::CredentialsCache) -> Self {
-        self.set_credentials_cache(::std::option::Option::Some(credentials_cache));
-        self
-    }
-    /// Sets the credentials cache for this service
-    pub fn set_credentials_cache(&mut self, credentials_cache: ::std::option::Option<::aws_credential_types::cache::CredentialsCache>) -> &mut Self {
-        self.config.store_or_unset(credentials_cache);
-        self
-    }
     /// Adds a runtime plugin to the config.
     #[allow(unused)]
     pub(crate) fn runtime_plugin(mut self, plugin: impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin + 'static) -> Self {
@@ -913,19 +1001,6 @@ impl Builder {
             .load::<::aws_types::region::Region>()
             .cloned()
             .map(|r| layer.store_put(::aws_types::region::SigningRegion::from(r)));
-        if let Some(credentials_provider) = layer.load::<::aws_credential_types::provider::SharedCredentialsProvider>().cloned() {
-            let cache_config = layer.load::<::aws_credential_types::cache::CredentialsCache>().cloned().unwrap_or_else({
-                let sleep = self.runtime_components.sleep_impl();
-                || match sleep {
-                    Some(sleep) => ::aws_credential_types::cache::CredentialsCache::lazy_builder()
-                        .sleep_impl(sleep)
-                        .into_credentials_cache(),
-                    None => ::aws_credential_types::cache::CredentialsCache::lazy(),
-                }
-            });
-            let shared_credentials_cache = cache_config.create_cache(credentials_provider);
-            layer.store_put(shared_credentials_cache);
-        }
         Config {
             config: ::aws_smithy_types::config_bag::Layer::from(layer.clone())
                 .with_name("aws_sdk_opensearchserverless::config::Config")
@@ -964,11 +1039,8 @@ impl ServiceRuntimePlugin {
         runtime_components.push_auth_scheme(::aws_smithy_runtime_api::client::auth::SharedAuthScheme::new(
             ::aws_runtime::auth::sigv4::SigV4AuthScheme::new(),
         ));
-        if let Some(credentials_cache) = _service_config.credentials_cache() {
-            let shared_identity_resolver = ::aws_smithy_runtime_api::client::identity::SharedIdentityResolver::new(
-                ::aws_runtime::identity::credentials::CredentialsIdentityResolver::new(credentials_cache),
-            );
-            runtime_components.push_identity_resolver(::aws_runtime::auth::sigv4::SCHEME_ID, shared_identity_resolver);
+        if let Some(creds_provider) = _service_config.credentials_provider() {
+            runtime_components.push_identity_resolver(::aws_runtime::auth::sigv4::SCHEME_ID, creds_provider);
         }
         Self { config, runtime_components }
     }
@@ -1021,30 +1093,6 @@ impl ConfigOverrideRuntimePlugin {
             .load::<::aws_types::region::Region>()
             .cloned()
             .map(|r| resolver.config_mut().store_put(::aws_types::region::SigningRegion::from(r)));
-        match (
-            resolver.config_mut().load::<::aws_credential_types::cache::CredentialsCache>().cloned(),
-            resolver
-                .config_mut()
-                .load::<::aws_credential_types::provider::SharedCredentialsProvider>()
-                .cloned(),
-        ) {
-            (::std::option::Option::None, ::std::option::Option::None) => {}
-            (::std::option::Option::None, _) => {
-                panic!("also specify `.credentials_cache` when overriding credentials provider for the operation");
-            }
-            (_, ::std::option::Option::None) => {
-                panic!("also specify `.credentials_provider` when overriding credentials cache for the operation");
-            }
-            (::std::option::Option::Some(credentials_cache), ::std::option::Option::Some(credentials_provider)) => {
-                let credentials_cache = credentials_cache.create_cache(credentials_provider);
-                resolver.runtime_components_mut().push_identity_resolver(
-                    ::aws_runtime::auth::sigv4::SCHEME_ID,
-                    ::aws_smithy_runtime_api::client::identity::SharedIdentityResolver::new(
-                        ::aws_runtime::identity::credentials::CredentialsIdentityResolver::new(credentials_cache),
-                    ),
-                );
-            }
-        }
 
         let _ = resolver;
         Self {
@@ -1069,6 +1117,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ConfigO
     }
 }
 
+pub use ::aws_smithy_runtime::client::identity::IdentityCache;
 pub use ::aws_smithy_runtime_api::client::interceptors::Intercept;
 pub use ::aws_smithy_runtime_api::client::interceptors::SharedInterceptor;
 pub use ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
@@ -1081,7 +1130,6 @@ pub use ::aws_types::region::Region;
 impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
     fn from(input: &::aws_types::sdk_config::SdkConfig) -> Self {
         let mut builder = Builder::default();
-        builder.set_credentials_cache(input.credentials_cache().cloned());
         builder.set_credentials_provider(input.credentials_provider());
         builder = builder.region(input.region().cloned());
         builder.set_use_fips(input.use_fips());
@@ -1094,6 +1142,10 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
 
         builder.set_http_client(input.http_client());
         builder.set_time_source(input.time_source());
+
+        if let Some(cache) = input.identity_cache() {
+            builder.set_identity_cache(cache);
+        }
         builder.set_app_name(input.app_name().cloned());
 
         builder
@@ -1114,19 +1166,11 @@ pub(crate) fn base_client_runtime_plugins(mut config: crate::Config) -> ::aws_sm
     let mut configured_plugins = ::std::vec::Vec::new();
     ::std::mem::swap(&mut config.runtime_plugins, &mut configured_plugins);
 
-    let defaults = [
-        ::aws_smithy_runtime::client::defaults::default_http_client_plugin(),
-        ::aws_smithy_runtime::client::defaults::default_retry_config_plugin("opensearchserverless"),
-        ::aws_smithy_runtime::client::defaults::default_sleep_impl_plugin(),
-        ::aws_smithy_runtime::client::defaults::default_time_source_plugin(),
-        ::aws_smithy_runtime::client::defaults::default_timeout_config_plugin(),
-    ]
-    .into_iter()
-    .flatten();
-
     let mut plugins = ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins::new()
         // defaults
-        .with_client_plugins(defaults)
+        .with_client_plugins(::aws_smithy_runtime::client::defaults::default_plugins(
+            ::aws_smithy_runtime::client::defaults::DefaultPluginParams::new().with_retry_partition_name("opensearchserverless"),
+        ))
         // user config
         .with_client_plugin(
             ::aws_smithy_runtime_api::client::runtime_plugin::StaticRuntimePlugin::new()

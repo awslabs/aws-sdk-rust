@@ -17,8 +17,6 @@ hardcoded-credentials = []
 test-util = []
 
 [dependencies]
-fastrand = "2.0.0"
-tracing = "0.1"
 zeroize = "1"
 
 [dependencies.aws-smithy-async]
@@ -34,19 +32,8 @@ path = "../aws-smithy-runtime-api"
 features = ["client"]
 version = "0.56.1"
 
-[dependencies.tokio]
-version = "1.23.1"
-features = ["sync"]
-
 [dev-dependencies]
 async-trait = "0.1.51"
-env_logger = "0.10.0"
-tracing-test = "0.2.4"
-
-[dev-dependencies.aws-smithy-async]
-path = "../aws-smithy-async"
-features = ["rt-tokio", "test-util"]
-version = "0.56.1"
 
 [dev-dependencies.tokio]
 version = "1.23.1"

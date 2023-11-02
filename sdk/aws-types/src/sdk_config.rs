@@ -13,13 +13,13 @@ use crate::app_name::AppName;
 use crate::docs_for;
 use crate::region::Region;
 
-pub use aws_credential_types::cache::CredentialsCache;
 pub use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_smithy_async::rt::sleep::AsyncSleep;
 pub use aws_smithy_async::rt::sleep::SharedAsyncSleep;
 pub use aws_smithy_async::time::{SharedTimeSource, TimeSource};
 use aws_smithy_runtime_api::client::http::HttpClient;
 pub use aws_smithy_runtime_api::client::http::SharedHttpClient;
+use aws_smithy_runtime_api::client::identity::{ResolveCachedIdentity, SharedIdentityCache};
 use aws_smithy_runtime_api::shared::IntoShared;
 pub use aws_smithy_types::retry::RetryConfig;
 pub use aws_smithy_types::timeout::TimeoutConfig;
@@ -51,7 +51,7 @@ these services, this setting has no effect"
 #[derive(Debug, Clone)]
 pub struct SdkConfig {
     app_name: Option<AppName>,
-    credentials_cache: Option<CredentialsCache>,
+    identity_cache: Option<SharedIdentityCache>,
     credentials_provider: Option<SharedCredentialsProvider>,
     region: Option<Region>,
     endpoint_url: Option<String>,
@@ -72,7 +72,7 @@ pub struct SdkConfig {
 #[derive(Debug, Default)]
 pub struct Builder {
     app_name: Option<AppName>,
-    credentials_cache: Option<CredentialsCache>,
+    identity_cache: Option<SharedIdentityCache>,
     credentials_provider: Option<SharedCredentialsProvider>,
     region: Option<Region>,
     endpoint_url: Option<String>,
@@ -296,40 +296,64 @@ impl Builder {
         self
     }
 
-    /// Set the [`CredentialsCache`] for the builder
+    /// Set the identity cache for caching credentials and SSO tokens.
+    ///
+    /// The default identity cache will wait until the first request that requires authentication
+    /// to load an identity. Once the identity is loaded, it is cached until shortly before it
+    /// expires.
     ///
     /// # Examples
+    /// Disabling identity caching:
     /// ```rust
-    /// use aws_credential_types::cache::CredentialsCache;
-    /// use aws_types::SdkConfig;
+    /// # use aws_types::SdkConfig;
+    /// use aws_smithy_runtime::client::identity::IdentityCache;
     /// let config = SdkConfig::builder()
-    ///     .credentials_cache(CredentialsCache::lazy())
+    ///     .identity_cache(IdentityCache::no_cache())
     ///     .build();
     /// ```
-    pub fn credentials_cache(mut self, cache: CredentialsCache) -> Self {
-        self.set_credentials_cache(Some(cache));
+    /// Changing settings on the default cache implementation:
+    /// ```rust
+    /// # use aws_types::SdkConfig;
+    /// use aws_smithy_runtime::client::identity::IdentityCache;
+    /// use std::time::Duration;
+    ///
+    /// let config = SdkConfig::builder()
+    ///     .identity_cache(
+    ///         IdentityCache::lazy()
+    ///             .load_timeout(Duration::from_secs(10))
+    ///             .build()
+    ///     )
+    ///     .build();
+    /// ```
+    pub fn identity_cache(mut self, cache: impl ResolveCachedIdentity + 'static) -> Self {
+        self.set_identity_cache(Some(cache.into_shared()));
         self
     }
 
-    /// Set the [`CredentialsCache`] for the builder
+    /// Set the identity cache for caching credentials and SSO tokens.
+    ///
+    /// The default identity cache will wait until the first request that requires authentication
+    /// to load an identity. Once the identity is loaded, it is cached until shortly before it
+    /// expires.
     ///
     /// # Examples
     /// ```rust
-    /// use aws_credential_types::cache::CredentialsCache;
-    /// use aws_types::SdkConfig;
-    /// fn override_credentials_cache() -> bool {
+    /// # use aws_types::SdkConfig;
+    /// use aws_smithy_runtime::client::identity::IdentityCache;
+    ///
+    /// fn override_identity_cache() -> bool {
     ///   // ...
     ///   # true
     /// }
     ///
     /// let mut builder = SdkConfig::builder();
-    /// if override_credentials_cache() {
-    ///     builder.set_credentials_cache(Some(CredentialsCache::lazy()));
+    /// if override_identity_cache() {
+    ///     builder.set_identity_cache(Some(IdentityCache::lazy().build()));
     /// }
     /// let config = builder.build();
     /// ```
-    pub fn set_credentials_cache(&mut self, cache: Option<CredentialsCache>) -> &mut Self {
-        self.credentials_cache = cache;
+    pub fn set_identity_cache(&mut self, cache: Option<SharedIdentityCache>) -> &mut Self {
+        self.identity_cache = cache;
         self
     }
 
@@ -516,7 +540,7 @@ impl Builder {
     pub fn build(self) -> SdkConfig {
         SdkConfig {
             app_name: self.app_name,
-            credentials_cache: self.credentials_cache,
+            identity_cache: self.identity_cache,
             credentials_provider: self.credentials_provider,
             region: self.region,
             endpoint_url: self.endpoint_url,
@@ -558,9 +582,9 @@ impl SdkConfig {
         self.sleep_impl.clone()
     }
 
-    /// Configured credentials cache
-    pub fn credentials_cache(&self) -> Option<&CredentialsCache> {
-        self.credentials_cache.as_ref()
+    /// Configured identity cache
+    pub fn identity_cache(&self) -> Option<SharedIdentityCache> {
+        self.identity_cache.clone()
     }
 
     /// Configured credentials provider
@@ -611,7 +635,7 @@ impl SdkConfig {
     pub fn into_builder(self) -> Builder {
         Builder {
             app_name: self.app_name,
-            credentials_cache: self.credentials_cache,
+            identity_cache: self.identity_cache,
             credentials_provider: self.credentials_provider,
             region: self.region,
             endpoint_url: self.endpoint_url,

@@ -14,10 +14,11 @@
 //! - Retry token loading when it fails
 //! - Attach the token to the request in the `x-aws-ec2-metadata-token` header
 
+use crate::identity::IdentityCache;
 use crate::imds::client::error::{ImdsError, TokenError, TokenErrorKind};
-use aws_credential_types::cache::ExpiringCache;
 use aws_smithy_async::time::SharedTimeSource;
 use aws_smithy_runtime::client::orchestrator::operation::Operation;
+use aws_smithy_runtime::expiring_cache::ExpiringCache;
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolver;
 use aws_smithy_runtime_api::client::auth::{
@@ -50,6 +51,12 @@ const X_AWS_EC2_METADATA_TOKEN_TTL_SECONDS: &str = "x-aws-ec2-metadata-token-ttl
 const X_AWS_EC2_METADATA_TOKEN: &str = "x-aws-ec2-metadata-token";
 const IMDS_TOKEN_AUTH_SCHEME: AuthSchemeId = AuthSchemeId::new(X_AWS_EC2_METADATA_TOKEN);
 
+#[derive(Debug)]
+struct TtlToken {
+    value: HeaderValue,
+    ttl: Duration,
+}
+
 /// IMDS Token
 #[derive(Clone)]
 struct Token {
@@ -76,20 +83,18 @@ pub(super) struct TokenRuntimePlugin {
 }
 
 impl TokenRuntimePlugin {
-    pub(super) fn new(
-        common_plugin: SharedRuntimePlugin,
-        time_source: SharedTimeSource,
-        token_ttl: Duration,
-    ) -> Self {
+    pub(super) fn new(common_plugin: SharedRuntimePlugin, token_ttl: Duration) -> Self {
         Self {
             components: RuntimeComponentsBuilder::new("TokenRuntimePlugin")
                 .with_auth_scheme(TokenAuthScheme::new())
                 .with_auth_scheme_option_resolver(Some(StaticAuthSchemeOptionResolver::new(vec![
                     IMDS_TOKEN_AUTH_SCHEME,
                 ])))
+                // The TokenResolver has a cache of its own, so don't use identity caching
+                .with_identity_cache(Some(IdentityCache::no_cache()))
                 .with_identity_resolver(
                     IMDS_TOKEN_AUTH_SCHEME,
-                    TokenResolver::new(common_plugin, time_source, token_ttl),
+                    TokenResolver::new(common_plugin, token_ttl),
                 ),
         }
     }
@@ -107,8 +112,7 @@ impl RuntimePlugin for TokenRuntimePlugin {
 #[derive(Debug)]
 struct TokenResolverInner {
     cache: ExpiringCache<Token, ImdsError>,
-    refresh: Operation<(), Token, TokenError>,
-    time_source: SharedTimeSource,
+    refresh: Operation<(), TtlToken, TokenError>,
 }
 
 #[derive(Clone, Debug)]
@@ -117,11 +121,7 @@ struct TokenResolver {
 }
 
 impl TokenResolver {
-    fn new(
-        common_plugin: SharedRuntimePlugin,
-        time_source: SharedTimeSource,
-        token_ttl: Duration,
-    ) -> Self {
+    fn new(common_plugin: SharedRuntimePlugin, token_ttl: Duration) -> Self {
         Self {
             inner: Arc::new(TokenResolverInner {
                 cache: ExpiringCache::new(TOKEN_REFRESH_BUFFER),
@@ -141,26 +141,26 @@ impl TokenResolver {
                             .try_into()
                             .unwrap())
                     })
-                    .deserializer({
-                        let time_source = time_source.clone();
-                        move |response| {
-                            let now = time_source.now();
-                            parse_token_response(response, now)
-                                .map_err(OrchestratorError::operation)
-                        }
+                    .deserializer(move |response| {
+                        parse_token_response(response).map_err(OrchestratorError::operation)
                     })
                     .build(),
-                time_source,
             }),
         }
     }
 
-    async fn get_token(&self) -> Result<(Token, SystemTime), ImdsError> {
-        self.inner
-            .refresh
-            .invoke(())
-            .await
+    async fn get_token(
+        &self,
+        time_source: SharedTimeSource,
+    ) -> Result<(Token, SystemTime), ImdsError> {
+        let result = self.inner.refresh.invoke(()).await;
+        let now = time_source.now();
+        result
             .map(|token| {
+                let token = Token {
+                    value: token.value,
+                    expiry: now + token.ttl,
+                };
                 let expiry = token.expiry;
                 (token, expiry)
             })
@@ -168,7 +168,7 @@ impl TokenResolver {
     }
 }
 
-fn parse_token_response(response: &HttpResponse, now: SystemTime) -> Result<Token, TokenError> {
+fn parse_token_response(response: &HttpResponse) -> Result<TtlToken, TokenError> {
     match response.status().as_u16() {
         400 => return Err(TokenErrorKind::InvalidParameters.into()),
         403 => return Err(TokenErrorKind::Forbidden.into()),
@@ -187,30 +187,38 @@ fn parse_token_response(response: &HttpResponse, now: SystemTime) -> Result<Toke
         .map_err(|_| TokenErrorKind::InvalidTtl)?
         .parse()
         .map_err(|_parse_error| TokenErrorKind::InvalidTtl)?;
-    Ok(Token {
+    Ok(TtlToken {
         value,
-        expiry: now + Duration::from_secs(ttl),
+        ttl: Duration::from_secs(ttl),
     })
 }
 
 impl ResolveIdentity for TokenResolver {
     fn resolve_identity<'a>(
         &'a self,
-        _components: &'a RuntimeComponents,
+        components: &'a RuntimeComponents,
         _config_bag: &'a ConfigBag,
     ) -> IdentityFuture<'a> {
+        let time_source = components
+            .time_source()
+            .expect("time source required for IMDS token caching");
         IdentityFuture::new(async {
-            let preloaded_token = self
-                .inner
-                .cache
-                .yield_or_clear_if_expired(self.inner.time_source.now())
-                .await;
+            let now = time_source.now();
+            let preloaded_token = self.inner.cache.yield_or_clear_if_expired(now).await;
             let token = match preloaded_token {
-                Some(token) => Ok(token),
+                Some(token) => {
+                    tracing::trace!(
+                        buffer_time=?TOKEN_REFRESH_BUFFER,
+                        expiration=?token.expiry,
+                        now=?now,
+                        "loaded IMDS token from cache");
+                    Ok(token)
+                }
                 None => {
+                    tracing::debug!("IMDS token cache miss");
                     self.inner
                         .cache
-                        .get_or_load(|| async { self.get_token().await })
+                        .get_or_load(|| async { self.get_token(time_source).await })
                         .await
                 }
             }?;

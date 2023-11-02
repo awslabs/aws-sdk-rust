@@ -11,23 +11,18 @@ use aws_smithy_async::rt::sleep::{AsyncSleep, Sleep, TokioSleep};
 use aws_smithy_runtime::client::http::test_util::dvr::{
     NetworkTraffic, RecordingClient, ReplayingClient,
 };
+use aws_smithy_runtime::test_util::capture_test_logs::capture_test_logs;
 use aws_smithy_runtime_api::shared::IntoShared;
 use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_types::os_shim_internal::{Env, Fs};
 use aws_types::sdk_config::SharedHttpClient;
 use serde::Deserialize;
 use std::collections::HashMap;
-use std::env;
 use std::error::Error;
 use std::fmt::Debug;
 use std::future::Future;
-use std::io::Write;
 use std::path::{Path, PathBuf};
-use std::sync::{Arc, Mutex};
 use std::time::{Duration, UNIX_EPOCH};
-use tracing::dispatcher::DefaultGuard;
-use tracing::Level;
-use tracing_subscriber::fmt::TestWriter;
 
 /// Test case credentials
 ///
@@ -135,81 +130,6 @@ pub(crate) struct Metadata {
     result: TestResult,
     docs: String,
     name: String,
-}
-
-// TODO(enableNewSmithyRuntimeCleanup): Replace Tee, capture_test_logs, and Rx with
-// the implementations added to aws_smithy_runtime::test_util::capture_test_logs
-struct Tee<W> {
-    buf: Arc<Mutex<Vec<u8>>>,
-    quiet: bool,
-    inner: W,
-}
-
-/// Capture logs from this test.
-///
-/// The logs will be captured until the `DefaultGuard` is dropped.
-///
-/// *Why use this instead of traced_test?*
-/// This captures _all_ logs, not just logs produced by the current crate.
-fn capture_test_logs() -> (DefaultGuard, Rx) {
-    // it may be helpful to upstream this at some point
-    let (mut writer, rx) = Tee::stdout();
-    if env::var("VERBOSE_TEST_LOGS").is_ok() {
-        writer.loud();
-    } else {
-        eprintln!("To see full logs from this test set VERBOSE_TEST_LOGS=true");
-    }
-    let subscriber = tracing_subscriber::fmt()
-        .with_max_level(Level::TRACE)
-        .with_writer(Mutex::new(writer))
-        .finish();
-    let guard = tracing::subscriber::set_default(subscriber);
-    (guard, rx)
-}
-
-struct Rx(Arc<Mutex<Vec<u8>>>);
-impl Rx {
-    pub(crate) fn contents(&self) -> String {
-        String::from_utf8(self.0.lock().unwrap().clone()).unwrap()
-    }
-}
-
-impl Tee<TestWriter> {
-    fn stdout() -> (Self, Rx) {
-        let buf: Arc<Mutex<Vec<u8>>> = Default::default();
-        (
-            Tee {
-                buf: buf.clone(),
-                quiet: true,
-                inner: TestWriter::new(),
-            },
-            Rx(buf),
-        )
-    }
-}
-
-impl<W> Tee<W> {
-    fn loud(&mut self) {
-        self.quiet = false;
-    }
-}
-
-impl<W> Write for Tee<W>
-where
-    W: Write,
-{
-    fn write(&mut self, buf: &[u8]) -> std::io::Result<usize> {
-        self.buf.lock().unwrap().extend_from_slice(buf);
-        if !self.quiet {
-            self.inner.write(buf)
-        } else {
-            Ok(buf.len())
-        }
-    }
-
-    fn flush(&mut self) -> std::io::Result<()> {
-        self.inner.flush()
-    }
 }
 
 impl TestEnvironment {

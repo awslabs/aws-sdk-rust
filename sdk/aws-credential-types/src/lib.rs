@@ -17,7 +17,6 @@
     unreachable_pub
 )]
 
-pub mod cache;
 pub mod credential_fn;
 mod credentials_impl;
 pub mod provider;

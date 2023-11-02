@@ -26,6 +26,11 @@ version = "0.35.0"
 path = "../../sdk/aws-smithy-async"
 version = "0.56.1"
 
+[dev-dependencies.aws-smithy-runtime]
+path = "../../sdk/aws-smithy-runtime"
+features = ["test-util"]
+version = "0.56.1"
+
 [dev-dependencies.aws-credential-types]
 path = "../../sdk/aws-credential-types"
 features = ["test-util"]

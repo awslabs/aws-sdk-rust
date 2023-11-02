@@ -65,6 +65,11 @@ macro_rules! interceptor_impl_fn {
             runtime_components: &RuntimeComponents,
             cfg: &mut ConfigBag,
         ) -> Result<(), InterceptorError> {
+            tracing::trace!(concat!(
+                "running `",
+                stringify!($interceptor),
+                "` interceptors"
+            ));
             let mut result: Result<(), (&str, BoxError)> = Ok(());
             let ctx = ctx.into();
             for interceptor in self.into_iter() {

@@ -102,6 +102,12 @@ pub use aws_types::{
 /// Load default sources for all configuration with override support
 pub use loader::ConfigLoader;
 
+/// Types for configuring identity caching.
+pub mod identity {
+    pub use aws_smithy_runtime::client::identity::IdentityCache;
+    pub use aws_smithy_runtime::client::identity::LazyCacheBuilder;
+}
+
 #[allow(dead_code)]
 const PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
 
@@ -155,11 +161,11 @@ mod loader {
     use crate::meta::region::ProvideRegion;
     use crate::profile::profile_file::ProfileFiles;
     use crate::provider_config::ProviderConfig;
-    use aws_credential_types::cache::CredentialsCache;
     use aws_credential_types::provider::{ProvideCredentials, SharedCredentialsProvider};
     use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep, SharedAsyncSleep};
     use aws_smithy_async::time::{SharedTimeSource, TimeSource};
     use aws_smithy_runtime_api::client::http::HttpClient;
+    use aws_smithy_runtime_api::client::identity::{ResolveCachedIdentity, SharedIdentityCache};
     use aws_smithy_runtime_api::shared::IntoShared;
     use aws_smithy_types::retry::RetryConfig;
     use aws_smithy_types::timeout::TimeoutConfig;
@@ -189,7 +195,7 @@ mod loader {
     #[derive(Default, Debug)]
     pub struct ConfigLoader {
         app_name: Option<AppName>,
-        credentials_cache: Option<CredentialsCache>,
+        identity_cache: Option<SharedIdentityCache>,
         credentials_provider: CredentialsProviderOption,
         endpoint_url: Option<String>,
         region: Option<Box<dyn ProvideRegion>>,
@@ -333,22 +339,45 @@ mod loader {
             self
         }
 
-        /// Override the credentials cache used to build [`SdkConfig`](aws_types::SdkConfig).
+        /// The credentials cache has been replaced. Use the identity_cache() method instead. See its rustdoc for an example.
+        #[deprecated(
+            note = "The credentials cache has been replaced. Use the identity_cache() method instead for equivalent functionality. See its rustdoc for an example."
+        )]
+        pub fn credentials_cache(self) -> Self {
+            self
+        }
+
+        /// Override the identity cache used to build [`SdkConfig`](aws_types::SdkConfig).
+        ///
+        /// The identity cache caches AWS credentials and SSO tokens. By default, a lazy cache is used
+        /// that will load credentials upon first request, cache them, and then reload them during
+        /// another request when they are close to expiring.
         ///
         /// # Examples
         ///
-        /// Override the credentials cache but load the default value for region:
+        /// Change a setting on the default lazy caching implementation:
         /// ```no_run
-        /// # use aws_credential_types::cache::CredentialsCache;
+        /// use aws_config::identity::IdentityCache;
+        /// use std::time::Duration;
+        ///
         /// # async fn create_config() {
         /// let config = aws_config::from_env()
-        ///     .credentials_cache(CredentialsCache::lazy())
+        ///     .identity_cache(
+        ///         IdentityCache::lazy()
+        ///             // Change the load timeout to 10 seconds.
+        ///             // Note: there are other timeouts that could trigger if the load timeout is too long.
+        ///             .load_timeout(Duration::from_secs(10))
+        ///             .build()
+        ///     )
         ///     .load()
         ///     .await;
         /// # }
         /// ```
-        pub fn credentials_cache(mut self, credentials_cache: CredentialsCache) -> Self {
-            self.credentials_cache = Some(credentials_cache);
+        pub fn identity_cache(
+            mut self,
+            identity_cache: impl ResolveCachedIdentity + 'static,
+        ) -> Self {
+            self.identity_cache = Some(identity_cache.into_shared());
             self
         }
 
@@ -656,17 +685,6 @@ mod loader {
                 CredentialsProviderOption::ExplicitlyUnset => None,
             };
 
-            let credentials_cache = if credentials_provider.is_some() {
-                Some(self.credentials_cache.unwrap_or_else(|| {
-                    let mut builder =
-                        CredentialsCache::lazy_builder().time_source(conf.time_source());
-                    builder.set_sleep_impl(conf.sleep_impl());
-                    builder.into_credentials_cache()
-                }))
-            } else {
-                None
-            };
-
             let mut builder = SdkConfig::builder()
                 .region(region)
                 .retry_config(retry_config)
@@ -675,7 +693,7 @@ mod loader {
 
             builder.set_http_client(self.http_client);
             builder.set_app_name(app_name);
-            builder.set_credentials_cache(credentials_cache);
+            builder.set_identity_cache(self.identity_cache);
             builder.set_credentials_provider(credentials_provider);
             builder.set_sleep_impl(sleep_impl);
             builder.set_endpoint_url(self.endpoint_url);
@@ -705,13 +723,11 @@ mod loader {
         use crate::{from_env, ConfigLoader};
         use aws_credential_types::provider::ProvideCredentials;
         use aws_smithy_async::rt::sleep::TokioSleep;
-        use aws_smithy_async::time::{StaticTimeSource, TimeSource};
         use aws_smithy_runtime::client::http::test_util::{infallible_client_fn, NeverClient};
         use aws_types::app_name::AppName;
         use aws_types::os_shim_internal::{Env, Fs};
         use std::sync::atomic::{AtomicUsize, Ordering};
         use std::sync::Arc;
-        use std::time::{SystemTime, UNIX_EPOCH};
         use tracing_test::traced_test;
 
         #[tokio::test]
@@ -800,7 +816,7 @@ mod loader {
         #[tokio::test]
         async fn disable_default_credentials() {
             let config = from_env().no_credentials().load().await;
-            assert!(config.credentials_cache().is_none());
+            assert!(config.identity_cache().is_none());
             assert!(config.credentials_provider().is_none());
         }
 
@@ -826,36 +842,6 @@ mod loader {
                 .expect_err("did not expect credentials to be loaded—no traffic is allowed");
             let num_requests = num_requests.load(Ordering::Relaxed);
             assert!(num_requests > 0, "{}", num_requests);
-        }
-
-        #[tokio::test]
-        async fn time_source_is_passed() {
-            #[derive(Debug)]
-            struct PanicTs;
-            impl TimeSource for PanicTs {
-                fn now(&self) -> SystemTime {
-                    panic!("timesource-was-used")
-                }
-            }
-            let config = from_env()
-                .sleep_impl(InstantSleep)
-                .time_source(StaticTimeSource::new(UNIX_EPOCH))
-                .http_client(no_traffic_client())
-                .load()
-                .await;
-            // assert that the innards contain the customized fields
-            for inner in ["InstantSleep", "StaticTimeSource"] {
-                assert!(
-                    format!("{:#?}", config.credentials_cache()).contains(inner),
-                    "{:#?}",
-                    config.credentials_cache()
-                );
-                assert!(
-                    format!("{:#?}", config.credentials_provider()).contains(inner),
-                    "{:#?}",
-                    config.credentials_cache()
-                );
-            }
         }
     }
 }

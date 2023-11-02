@@ -5,7 +5,6 @@
 
 //! Assume credentials for a role through the AWS Security Token Service (STS).
 
-use aws_credential_types::cache::CredentialsCache;
 use aws_credential_types::provider::{
     self, error::CredentialsError, future, ProvideCredentials, SharedCredentialsProvider,
 };
@@ -14,6 +13,7 @@ use aws_sdk_sts::operation::assume_role::AssumeRoleError;
 use aws_sdk_sts::types::PolicyDescriptorType;
 use aws_sdk_sts::Client as StsClient;
 use aws_smithy_http::result::SdkError;
+use aws_smithy_runtime::client::identity::IdentityCache;
 use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_types::region::Region;
 use aws_types::SdkConfig;
@@ -100,10 +100,7 @@ pub struct AssumeRoleProviderBuilder {
     session_length: Option<Duration>,
     policy: Option<String>,
     policy_arns: Option<Vec<PolicyDescriptorType>>,
-
     region_override: Option<Region>,
-
-    credentials_cache: Option<CredentialsCache>,
     sdk_config: Option<SdkConfig>,
 }
 
@@ -118,7 +115,6 @@ impl AssumeRoleProviderBuilder {
     pub fn new(role: impl Into<String>) -> Self {
         Self {
             role_arn: role.into(),
-            credentials_cache: None,
             external_id: None,
             session_name: None,
             session_length: None,
@@ -196,18 +192,6 @@ impl AssumeRoleProviderBuilder {
         self
     }
 
-    #[deprecated(
-        note = "This should not be necessary as the default, no caching, is usually what you want."
-    )]
-    /// Set the [`CredentialsCache`] for credentials retrieved from STS.
-    ///
-    /// By default, an [`AssumeRoleProvider`] internally uses `NoCredentialsCache` because the
-    /// provider itself will be wrapped by `LazyCredentialsCache` when a service client is created.
-    pub fn credentials_cache(mut self, cache: CredentialsCache) -> Self {
-        self.credentials_cache = Some(cache);
-        self
-    }
-
     /// Sets the configuration used for this provider
     ///
     /// This enables overriding the connection used to communicate with STS in addition to other internal
@@ -239,13 +223,10 @@ impl AssumeRoleProviderBuilder {
             Some(conf) => conf,
             None => crate::load_from_env().await,
         };
-        // ignore a credentials cache set from SdkConfig
+        // ignore a identity cache set from SdkConfig
         conf = conf
             .into_builder()
-            .credentials_cache(
-                self.credentials_cache
-                    .unwrap_or(CredentialsCache::no_caching()),
-            )
+            .identity_cache(IdentityCache::no_cache())
             .build();
 
         // set a region override if one exists

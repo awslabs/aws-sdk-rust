@@ -95,8 +95,8 @@ impl Sign for ApiKeySigner {
                 request
                     .headers_mut()
                     .try_append(
-                        self.name.clone(),
-                        format!("{} {}", self.scheme, api_key.token(),),
+                        self.name.to_ascii_lowercase(),
+                        format!("{} {}", self.scheme, api_key.token()),
                     )
                     .map_err(|_| {
                         "API key contains characters that can't be included in a HTTP header"

@@ -12,6 +12,7 @@ pub mod classifiers;
 
 use crate::box_error::BoxError;
 use crate::client::interceptors::context::InterceptorContext;
+use crate::client::runtime_components::sealed::ValidateConfig;
 use crate::client::runtime_components::RuntimeComponents;
 use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
 use std::fmt;
@@ -106,6 +107,8 @@ impl RetryStrategy for SharedRetryStrategy {
             .should_attempt_retry(context, runtime_components, cfg)
     }
 }
+
+impl ValidateConfig for SharedRetryStrategy {}
 
 /// A type to track the number of requests sent by the orchestrator for a given operation.
 ///

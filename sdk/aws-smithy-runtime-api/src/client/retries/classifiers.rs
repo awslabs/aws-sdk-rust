@@ -6,6 +6,7 @@
 //! Classifier for determining if a retry is necessary and related code.
 
 use crate::client::interceptors::context::InterceptorContext;
+use crate::client::runtime_components::sealed::ValidateConfig;
 use crate::impl_shared_conversions;
 use aws_smithy_types::retry::ErrorKind;
 use std::fmt;
@@ -236,6 +237,8 @@ impl ClassifyRetry for SharedRetryClassifier {
         self.0.priority()
     }
 }
+
+impl ValidateConfig for SharedRetryClassifier {}
 
 #[cfg(test)]
 mod tests {

@@ -5,7 +5,8 @@
 
 use crate::box_error::BoxError;
 use crate::client::auth::AuthSchemeId;
-use crate::client::runtime_components::RuntimeComponents;
+use crate::client::runtime_components::sealed::ValidateConfig;
+use crate::client::runtime_components::{RuntimeComponents, RuntimeComponentsBuilder};
 use crate::impl_shared_conversions;
 use aws_smithy_types::config_bag::ConfigBag;
 use std::any::Any;
@@ -62,6 +63,37 @@ pub trait ResolveCachedIdentity: fmt::Debug + Send + Sync {
         runtime_components: &'a RuntimeComponents,
         config_bag: &'a ConfigBag,
     ) -> IdentityFuture<'a>;
+
+    /// Validate the base client configuration for this implementation.
+    ///
+    /// This gets called upon client construction. The full config may not be available at
+    /// this time (hence why it has [`RuntimeComponentsBuilder`] as an argument rather
+    /// than [`RuntimeComponents`]). Any error returned here will become a panic
+    /// in the client constructor.
+    fn validate_base_client_config(
+        &self,
+        runtime_components: &RuntimeComponentsBuilder,
+        cfg: &ConfigBag,
+    ) -> Result<(), BoxError> {
+        let _ = (runtime_components, cfg);
+        Ok(())
+    }
+
+    /// Validate the final client configuration for this implementation.
+    ///
+    /// This gets called immediately after the [`Intercept::read_before_execution`] trait hook
+    /// when the final configuration has been resolved. Any error returned here will
+    /// cause the operation to return that error.
+    ///
+    /// [`Intercept::read_before_execution`]: crate::client::interceptors::Intercept::read_before_execution
+    fn validate_final_config(
+        &self,
+        runtime_components: &RuntimeComponents,
+        cfg: &ConfigBag,
+    ) -> Result<(), BoxError> {
+        let _ = (runtime_components, cfg);
+        Ok(())
+    }
 }
 
 /// Shared identity cache.
@@ -84,6 +116,24 @@ impl ResolveCachedIdentity for SharedIdentityCache {
     ) -> IdentityFuture<'a> {
         self.0
             .resolve_cached_identity(resolver, runtime_components, config_bag)
+    }
+}
+
+impl ValidateConfig for SharedIdentityCache {
+    fn validate_base_client_config(
+        &self,
+        runtime_components: &RuntimeComponentsBuilder,
+        cfg: &ConfigBag,
+    ) -> Result<(), BoxError> {
+        self.0.validate_base_client_config(runtime_components, cfg)
+    }
+
+    fn validate_final_config(
+        &self,
+        runtime_components: &RuntimeComponents,
+        cfg: &ConfigBag,
+    ) -> Result<(), BoxError> {
+        self.0.validate_final_config(runtime_components, cfg)
     }
 }
 
@@ -190,6 +240,8 @@ impl ConfiguredIdentityResolver {
         self.identity_resolver.clone()
     }
 }
+
+impl ValidateConfig for ConfiguredIdentityResolver {}
 
 /// An identity that can be used for authentication.
 ///
