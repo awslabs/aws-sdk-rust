@@ -241,63 +241,46 @@ impl Builder {
     }
     /// Sets the endpoint resolver to use when making requests.
     ///
-    /// Note: setting an endpoint resolver will replace any endpoint URL that has been set.
-    ///
 
-    ///
     /// When unset, the client will used a generated endpoint resolver based on the endpoint resolution
     /// rules for `aws_sdk_ssmincidents`.
+
+    ///
+    /// Note: setting an endpoint resolver will replace any endpoint URL that has been set.
+    /// This method accepts an endpoint resolver [specific to this service](crate::config::endpoint::ResolveEndpoint). If you want to
+    /// provide a shared endpoint resolver, use [`Self::set_endpoint_resolver`].
     ///
     /// # Examples
+    /// Create a custom endpoint resolver that resolves a different endpoing per-stage, e.g. staging vs. production.
     /// ```no_run
-    /// use aws_smithy_http::endpoint;
-    /// use aws_sdk_ssmincidents::config::endpoint::{Params as EndpointParams, DefaultResolver};
-    /// /// Endpoint resolver which adds a prefix to the generated endpoint
+    /// use aws_sdk_ssmincidents::config::endpoint::{ResolveEndpoint, EndpointFuture, Params, Endpoint};
     /// #[derive(Debug)]
-    /// struct PrefixResolver {
-    ///     base_resolver: DefaultResolver,
-    ///     prefix: String
+    /// struct StageResolver { stage: String }
+    /// impl ResolveEndpoint for StageResolver {
+    ///     fn resolve_endpoint(&self, params: &Params) -> EndpointFuture<'_> {
+    ///         let stage = &self.stage;
+    ///         EndpointFuture::ready(Ok(Endpoint::builder().url(format!("{stage}.myservice.com")).build()))
+    ///     }
     /// }
-    /// impl endpoint::ResolveEndpoint<EndpointParams> for PrefixResolver {
-    ///   fn resolve_endpoint(&self, params: &EndpointParams) -> endpoint::Result {
-    ///        self.base_resolver
-    ///              .resolve_endpoint(params)
-    ///              .map(|ep|{
-    ///                   let url = ep.url().to_string();
-    ///                   ep.into_builder().url(format!("{}.{}", &self.prefix, url)).build()
-    ///               })
-    ///   }
-    /// }
-    /// let prefix_resolver = PrefixResolver {
-    ///     base_resolver: DefaultResolver::new(),
-    ///     prefix: "subdomain".to_string()
-    /// };
-    /// let config = aws_sdk_ssmincidents::Config::builder().endpoint_resolver(prefix_resolver);
+    /// let resolver = StageResolver { stage: std::env::var("STAGE").unwrap() };
+    /// let config = aws_sdk_ssmincidents::Config::builder().endpoint_resolver(resolver).build();
+    /// let client = aws_sdk_ssmincidents::Client::from_conf(config);
     /// ```
-
-    pub fn endpoint_resolver(
-        mut self,
-        endpoint_resolver: impl ::aws_smithy_http::endpoint::ResolveEndpoint<crate::config::endpoint::Params> + 'static,
-    ) -> Self {
-        self.set_endpoint_resolver(::std::option::Option::Some(::aws_smithy_http::endpoint::SharedEndpointResolver::new(
-            endpoint_resolver,
-        )));
+    pub fn endpoint_resolver(mut self, endpoint_resolver: impl crate::config::endpoint::ResolveEndpoint + 'static) -> Self {
+        self.set_endpoint_resolver(::std::option::Option::Some(endpoint_resolver.into_shared_resolver()));
         self
     }
 
     /// Sets the endpoint resolver to use when making requests.
     ///
+
     /// When unset, the client will used a generated endpoint resolver based on the endpoint resolution
     /// rules for `aws_sdk_ssmincidents`.
     pub fn set_endpoint_resolver(
         &mut self,
-        endpoint_resolver: ::std::option::Option<::aws_smithy_http::endpoint::SharedEndpointResolver<crate::config::endpoint::Params>>,
+        endpoint_resolver: ::std::option::Option<::aws_smithy_runtime_api::client::endpoint::SharedEndpointResolver>,
     ) -> &mut Self {
-        self.runtime_components.set_endpoint_resolver(endpoint_resolver.map(|r| {
-            ::aws_smithy_runtime::client::orchestrator::endpoints::DefaultEndpointResolver::<crate::config::endpoint::Params>::new(
-                ::aws_smithy_http::endpoint::SharedEndpointResolver::new(r),
-            )
-        }));
+        self.runtime_components.set_endpoint_resolver(endpoint_resolver);
         self
     }
     /// Set the retry_config for the builder
@@ -967,11 +950,10 @@ impl ServiceRuntimePlugin {
             ::std::option::Option::Some(cfg.freeze())
         };
         let mut runtime_components = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ServiceRuntimePlugin");
-        runtime_components.set_endpoint_resolver(Some(::aws_smithy_runtime::client::orchestrator::endpoints::DefaultEndpointResolver::<
-            crate::config::endpoint::Params,
-        >::new(::aws_smithy_http::endpoint::SharedEndpointResolver::new(
-            crate::config::endpoint::DefaultResolver::new(),
-        ))));
+        runtime_components.set_endpoint_resolver(Some({
+            use crate::config::endpoint::ResolveEndpoint;
+            crate::config::endpoint::DefaultResolver::new().into_shared_resolver()
+        }));
         runtime_components.push_interceptor(::aws_smithy_runtime::client::http::connection_poisoning::ConnectionPoisoningInterceptor::new());
         runtime_components.push_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::HttpStatusCodeClassifier::default());
         runtime_components.push_interceptor(::aws_runtime::service_clock_skew::ServiceClockSkewInterceptor::new());
@@ -1163,7 +1145,7 @@ pub(crate) fn base_client_runtime_plugins(mut config: crate::Config) -> ::aws_sm
 /// Types needed to configure endpoint resolution.
 pub mod endpoint;
 
-/// Types needed to implement [`Interceptor`](crate::config::Interceptor).
+/// Types needed to implement [`Intercept`](crate::config::Intercept).
 pub mod interceptors;
 
 /// Retry configuration.

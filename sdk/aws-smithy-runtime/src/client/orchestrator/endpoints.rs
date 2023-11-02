@@ -5,7 +5,6 @@
 
 use aws_smithy_http::endpoint::error::ResolveEndpointError;
 use aws_smithy_http::endpoint::EndpointPrefix;
-use aws_smithy_http::endpoint::SharedEndpointResolver;
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::endpoint::{
     EndpointFuture, EndpointResolverParams, ResolveEndpoint,
@@ -13,7 +12,7 @@ use aws_smithy_runtime_api::client::endpoint::{
 use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
 use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
-use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
+use aws_smithy_types::config_bag::ConfigBag;
 use aws_smithy_types::endpoint::Endpoint;
 use http::header::HeaderName;
 use http::uri::PathAndQuery;
@@ -67,50 +66,6 @@ impl StaticUriEndpointResolverParams {
 impl From<StaticUriEndpointResolverParams> for EndpointResolverParams {
     fn from(params: StaticUriEndpointResolverParams) -> Self {
         EndpointResolverParams::new(params)
-    }
-}
-
-/// Default implementation of [`ResolveEndpoint`].
-///
-/// This default endpoint resolver implements the `ResolveEndpoint` trait by
-/// converting the type-erased [`EndpointResolverParams`] into the concrete
-/// endpoint params for the service. It then delegates endpoint resolution
-/// to an underlying resolver that is aware of the concrete type.
-#[derive(Clone, Debug)]
-pub struct DefaultEndpointResolver<Params> {
-    inner: SharedEndpointResolver<Params>,
-}
-
-impl<Params> Storable for DefaultEndpointResolver<Params>
-where
-    Params: Debug + Send + Sync + 'static,
-{
-    type Storer = StoreReplace<Self>;
-}
-
-impl<Params> DefaultEndpointResolver<Params> {
-    /// Creates a new `DefaultEndpointResolver`.
-    pub fn new(resolve_endpoint: SharedEndpointResolver<Params>) -> Self {
-        Self {
-            inner: resolve_endpoint,
-        }
-    }
-}
-
-impl<Params> ResolveEndpoint for DefaultEndpointResolver<Params>
-where
-    Params: Debug + Send + Sync + 'static,
-{
-    fn resolve_endpoint<'a>(&'a self, params: &'a EndpointResolverParams) -> EndpointFuture<'a> {
-        use aws_smithy_http::endpoint::ResolveEndpoint as _;
-        let ep = match params.get::<Params>() {
-            Some(params) => self.inner.resolve_endpoint(params).map_err(Box::new),
-            None => Err(Box::new(ResolveEndpointError::message(
-                "params of expected type was not present",
-            ))),
-        }
-        .map_err(|e| e as _);
-        EndpointFuture::ready(ep)
     }
 }
 
