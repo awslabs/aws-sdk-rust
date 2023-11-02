@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_source_repository_branches::builders::ListSourceRepositoryBranchesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_source_repository_branches::builders::ListSourceRepositoryBranchesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a <code>NextToken</code> element, which you can use to obtain additional results.</p><br>
     /// - On success, responds with [`ListSourceRepositoryBranchesOutput`](crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesOutput::next_token): <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
-    ///   - [`items(Vec<ListSourceRepositoryBranchesItem>)`](crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesOutput::items): <p>Information about the source branches.</p>
+    ///   - [`items(Vec::<ListSourceRepositoryBranchesItem>)`](crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesOutput::items): <p>Information about the source branches.</p>
     /// - On failure, responds with [`SdkError<ListSourceRepositoryBranchesError>`](crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesError)
     pub fn list_source_repository_branches(
         &self,

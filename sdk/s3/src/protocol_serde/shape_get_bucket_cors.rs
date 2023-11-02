@@ -73,7 +73,7 @@ pub fn de_get_bucket_cors(
             s if s.matches("CORSRule") /* CORSRules com.amazonaws.s3.synthetic#GetBucketCorsOutput$CORSRules */ =>  {
                 let var_3 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::CorsRule>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::CorsRule>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_4 = builder.cors_rules.take().unwrap_or_default();
                             list_4.push(
                                 crate::protocol_serde::shape_cors_rule::de_cors_rule(&mut tag)

@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`custom_domain_certificate_arn(impl Into<String>)`](crate::operation::list_custom_domain_associations::builders::ListCustomDomainAssociationsFluentBuilder::custom_domain_certificate_arn) / [`set_custom_domain_certificate_arn(Option<String>)`](crate::operation::list_custom_domain_associations::builders::ListCustomDomainAssociationsFluentBuilder::set_custom_domain_certificate_arn):<br>required: **false**<br><p>The custom domain name’s certificate Amazon resource name (ARN).</p><br>
     /// - On success, responds with [`ListCustomDomainAssociationsOutput`](crate::operation::list_custom_domain_associations::ListCustomDomainAssociationsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_custom_domain_associations::ListCustomDomainAssociationsOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    ///   - [`associations(Option<Vec<Association>>)`](crate::operation::list_custom_domain_associations::ListCustomDomainAssociationsOutput::associations): <p>A list of Association objects.</p>
+    ///   - [`associations(Option<Vec::<Association>>)`](crate::operation::list_custom_domain_associations::ListCustomDomainAssociationsOutput::associations): <p>A list of Association objects.</p>
     /// - On failure, responds with [`SdkError<ListCustomDomainAssociationsError>`](crate::operation::list_custom_domain_associations::ListCustomDomainAssociationsError)
     pub fn list_custom_domain_associations(
         &self,

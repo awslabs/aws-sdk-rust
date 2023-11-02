@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_pull_requests::builders::ListPullRequestsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_pull_requests::builders::ListPullRequestsFluentBuilder::set_next_token):<br>required: **false**<br><p>An enumeration token that, when provided in a request, returns the next batch of the results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_pull_requests::builders::ListPullRequestsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_pull_requests::builders::ListPullRequestsFluentBuilder::set_max_results):<br>required: **false**<br><p>A non-zero, non-negative integer used to limit the number of returned results.</p><br>
     /// - On success, responds with [`ListPullRequestsOutput`](crate::operation::list_pull_requests::ListPullRequestsOutput) with field(s):
-    ///   - [`pull_request_ids(Vec<String>)`](crate::operation::list_pull_requests::ListPullRequestsOutput::pull_request_ids): <p>The system-generated IDs of the pull requests.</p>
+    ///   - [`pull_request_ids(Vec::<String>)`](crate::operation::list_pull_requests::ListPullRequestsOutput::pull_request_ids): <p>The system-generated IDs of the pull requests.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_pull_requests::ListPullRequestsOutput::next_token): <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
     /// - On failure, responds with [`SdkError<ListPullRequestsError>`](crate::operation::list_pull_requests::ListPullRequestsError)
     pub fn list_pull_requests(&self) -> crate::operation::list_pull_requests::builders::ListPullRequestsFluentBuilder {

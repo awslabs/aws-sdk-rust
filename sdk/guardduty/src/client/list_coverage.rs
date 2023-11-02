@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`filter_criteria(CoverageFilterCriteria)`](crate::operation::list_coverage::builders::ListCoverageFluentBuilder::filter_criteria) / [`set_filter_criteria(Option<CoverageFilterCriteria>)`](crate::operation::list_coverage::builders::ListCoverageFluentBuilder::set_filter_criteria):<br>required: **false**<br><p>Represents the criteria used to filter the coverage details.</p><br>
     ///   - [`sort_criteria(CoverageSortCriteria)`](crate::operation::list_coverage::builders::ListCoverageFluentBuilder::sort_criteria) / [`set_sort_criteria(Option<CoverageSortCriteria>)`](crate::operation::list_coverage::builders::ListCoverageFluentBuilder::set_sort_criteria):<br>required: **false**<br><p>Represents the criteria used to sort the coverage details.</p><br>
     /// - On success, responds with [`ListCoverageOutput`](crate::operation::list_coverage::ListCoverageOutput) with field(s):
-    ///   - [`resources(Option<Vec<CoverageResource>>)`](crate::operation::list_coverage::ListCoverageOutput::resources): <p>A list of resources and their attributes providing cluster details.</p>
+    ///   - [`resources(Option<Vec::<CoverageResource>>)`](crate::operation::list_coverage::ListCoverageOutput::resources): <p>A list of resources and their attributes providing cluster details.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_coverage::ListCoverageOutput::next_token): <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     /// - On failure, responds with [`SdkError<ListCoverageError>`](crate::operation::list_coverage::ListCoverageError)
     pub fn list_coverage(&self) -> crate::operation::list_coverage::builders::ListCoverageFluentBuilder {

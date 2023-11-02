@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::query_assistant::builders::QueryAssistantFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::query_assistant::builders::QueryAssistantFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::query_assistant::builders::QueryAssistantFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::query_assistant::builders::QueryAssistantFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page.</p><br>
     /// - On success, responds with [`QueryAssistantOutput`](crate::operation::query_assistant::QueryAssistantOutput) with field(s):
-    ///   - [`results(Vec<ResultData>)`](crate::operation::query_assistant::QueryAssistantOutput::results): <p>The results of the query.</p>
+    ///   - [`results(Vec::<ResultData>)`](crate::operation::query_assistant::QueryAssistantOutput::results): <p>The results of the query.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::query_assistant::QueryAssistantOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<QueryAssistantError>`](crate::operation::query_assistant::QueryAssistantError)
     pub fn query_assistant(&self) -> crate::operation::query_assistant::builders::QueryAssistantFluentBuilder {

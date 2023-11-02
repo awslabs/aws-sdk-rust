@@ -129,7 +129,7 @@ pub fn de_list_objects(
             s if s.matches("CommonPrefixes") /* CommonPrefixes com.amazonaws.s3.synthetic#ListObjectsOutput$CommonPrefixes */ =>  {
                 let var_8 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::CommonPrefix>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::CommonPrefix>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_9 = builder.common_prefixes.take().unwrap_or_default();
                             list_9.push(
                                 crate::protocol_serde::shape_common_prefix::de_common_prefix(&mut tag)
@@ -146,7 +146,7 @@ pub fn de_list_objects(
             s if s.matches("Contents") /* Contents com.amazonaws.s3.synthetic#ListObjectsOutput$Contents */ =>  {
                 let var_10 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::Object>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::Object>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_11 = builder.contents.take().unwrap_or_default();
                             list_11.push(
                                 crate::protocol_serde::shape_object::de_object(&mut tag)

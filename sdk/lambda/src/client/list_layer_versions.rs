@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`compatible_architecture(Architecture)`](crate::operation::list_layer_versions::builders::ListLayerVersionsFluentBuilder::compatible_architecture) / [`set_compatible_architecture(Option<Architecture>)`](crate::operation::list_layer_versions::builders::ListLayerVersionsFluentBuilder::set_compatible_architecture):<br>required: **false**<br><p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p><br>
     /// - On success, responds with [`ListLayerVersionsOutput`](crate::operation::list_layer_versions::ListLayerVersionsOutput) with field(s):
     ///   - [`next_marker(Option<String>)`](crate::operation::list_layer_versions::ListLayerVersionsOutput::next_marker): <p>A pagination token returned when the response doesn't contain all versions.</p>
-    ///   - [`layer_versions(Option<Vec<LayerVersionsListItem>>)`](crate::operation::list_layer_versions::ListLayerVersionsOutput::layer_versions): <p>A list of versions.</p>
+    ///   - [`layer_versions(Option<Vec::<LayerVersionsListItem>>)`](crate::operation::list_layer_versions::ListLayerVersionsOutput::layer_versions): <p>A list of versions.</p>
     /// - On failure, responds with [`SdkError<ListLayerVersionsError>`](crate::operation::list_layer_versions::ListLayerVersionsError)
     pub fn list_layer_versions(&self) -> crate::operation::list_layer_versions::builders::ListLayerVersionsFluentBuilder {
         crate::operation::list_layer_versions::builders::ListLayerVersionsFluentBuilder::new(self.handle.clone())

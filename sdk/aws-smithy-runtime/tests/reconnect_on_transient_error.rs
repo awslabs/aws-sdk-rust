@@ -23,7 +23,7 @@ use aws_smithy_runtime::{ev, match_events};
 use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
 use aws_smithy_runtime_api::client::orchestrator::OrchestratorError;
 use aws_smithy_runtime_api::client::retries::classifiers::{ClassifyRetry, RetryAction};
-use aws_smithy_types::body::{BoxBody, SdkBody};
+use aws_smithy_types::body::SdkBody;
 use aws_smithy_types::retry::{ErrorKind, ProvideErrorKind, ReconnectMode, RetryConfig};
 use aws_smithy_types::timeout::TimeoutConfig;
 use hyper::client::Builder as HyperBuilder;
@@ -150,7 +150,7 @@ async fn wire_level_test(
                 let request = http::Request::builder()
                     .uri(endpoint_url.clone())
                     // Make the body non-replayable since we don't actually want to retry
-                    .body(SdkBody::from_dyn(BoxBody::new(SdkBody::from("body"))))
+                    .body(SdkBody::from_body_0_4(SdkBody::from("body")))
                     .unwrap()
                     .try_into()
                     .unwrap();

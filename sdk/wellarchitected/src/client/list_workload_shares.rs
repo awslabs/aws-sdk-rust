@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`status(ShareStatus)`](crate::operation::list_workload_shares::builders::ListWorkloadSharesFluentBuilder::status) / [`set_status(Option<ShareStatus>)`](crate::operation::list_workload_shares::builders::ListWorkloadSharesFluentBuilder::set_status):<br>required: **false**<br><p>The status of the share request.</p><br>
     /// - On success, responds with [`ListWorkloadSharesOutput`](crate::operation::list_workload_shares::ListWorkloadSharesOutput) with field(s):
     ///   - [`workload_id(Option<String>)`](crate::operation::list_workload_shares::ListWorkloadSharesOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    ///   - [`workload_share_summaries(Option<Vec<WorkloadShareSummary>>)`](crate::operation::list_workload_shares::ListWorkloadSharesOutput::workload_share_summaries): <p>A list of workload share summaries.</p>
+    ///   - [`workload_share_summaries(Option<Vec::<WorkloadShareSummary>>)`](crate::operation::list_workload_shares::ListWorkloadSharesOutput::workload_share_summaries): <p>A list of workload share summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_workload_shares::ListWorkloadSharesOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListWorkloadSharesError>`](crate::operation::list_workload_shares::ListWorkloadSharesError)
     pub fn list_workload_shares(&self) -> crate::operation::list_workload_shares::builders::ListWorkloadSharesFluentBuilder {

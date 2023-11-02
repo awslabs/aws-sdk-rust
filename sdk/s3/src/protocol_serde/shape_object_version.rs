@@ -23,7 +23,7 @@ pub fn de_object_version(
             s if s.matches("ChecksumAlgorithm") /* ChecksumAlgorithm com.amazonaws.s3#ObjectVersion$ChecksumAlgorithm */ =>  {
                 let var_2 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::ChecksumAlgorithm>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::ChecksumAlgorithm>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_3 = builder.checksum_algorithm.take().unwrap_or_default();
                             list_3.push(
                                 Result::<crate::types::ChecksumAlgorithm, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(

@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`name(String)`](crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceOutput::name): The rule groups namespace name.
     ///   - [`arn(String)`](crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceOutput::arn): The Amazon Resource Name (ARN) of this rule groups namespace.
     ///   - [`status(Option<RuleGroupsNamespaceStatus>)`](crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceOutput::status): The status of rule groups namespace.
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceOutput::tags): The tags of this rule groups namespace.
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceOutput::tags): The tags of this rule groups namespace.
     /// - On failure, responds with [`SdkError<PutRuleGroupsNamespaceError>`](crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceError)
     pub fn put_rule_groups_namespace(&self) -> crate::operation::put_rule_groups_namespace::builders::PutRuleGroupsNamespaceFluentBuilder {
         crate::operation::put_rule_groups_namespace::builders::PutRuleGroupsNamespaceFluentBuilder::new(self.handle.clone())

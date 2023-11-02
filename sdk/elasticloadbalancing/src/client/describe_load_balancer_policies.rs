@@ -4,9 +4,9 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`load_balancer_name(impl Into<String>)`](crate::operation::describe_load_balancer_policies::builders::DescribeLoadBalancerPoliciesFluentBuilder::load_balancer_name) / [`set_load_balancer_name(Option<String>)`](crate::operation::describe_load_balancer_policies::builders::DescribeLoadBalancerPoliciesFluentBuilder::set_load_balancer_name):<br>required: **false**<br><p>The name of the load balancer.</p><br>
-    ///   - [`policy_names(impl Into<String>)`](crate::operation::describe_load_balancer_policies::builders::DescribeLoadBalancerPoliciesFluentBuilder::policy_names) / [`set_policy_names(Option<Vec<String>>)`](crate::operation::describe_load_balancer_policies::builders::DescribeLoadBalancerPoliciesFluentBuilder::set_policy_names):<br>required: **false**<br><p>The names of the policies.</p><br>
+    ///   - [`policy_names(impl Into<String>)`](crate::operation::describe_load_balancer_policies::builders::DescribeLoadBalancerPoliciesFluentBuilder::policy_names) / [`set_policy_names(Option<Vec::<String>>)`](crate::operation::describe_load_balancer_policies::builders::DescribeLoadBalancerPoliciesFluentBuilder::set_policy_names):<br>required: **false**<br><p>The names of the policies.</p><br>
     /// - On success, responds with [`DescribeLoadBalancerPoliciesOutput`](crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesOutput) with field(s):
-    ///   - [`policy_descriptions(Option<Vec<PolicyDescription>>)`](crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesOutput::policy_descriptions): <p>Information about the policies.</p>
+    ///   - [`policy_descriptions(Option<Vec::<PolicyDescription>>)`](crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesOutput::policy_descriptions): <p>Information about the policies.</p>
     /// - On failure, responds with [`SdkError<DescribeLoadBalancerPoliciesError>`](crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesError)
     pub fn describe_load_balancer_policies(
         &self,

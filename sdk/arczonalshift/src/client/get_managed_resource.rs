@@ -7,8 +7,8 @@ impl super::Client {
     /// - On success, responds with [`GetManagedResourceOutput`](crate::operation::get_managed_resource::GetManagedResourceOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_managed_resource::GetManagedResourceOutput::arn): <p>The Amazon Resource Name (ARN) for the resource.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_managed_resource::GetManagedResourceOutput::name): <p>The name of the resource.</p>
-    ///   - [`applied_weights(HashMap<String, f32>)`](crate::operation::get_managed_resource::GetManagedResourceOutput::applied_weights): <p>A collection of key-value pairs that indicate whether resources are active in Availability Zones or not. The key name is the Availability Zone where the resource is deployed. The value is 1 or 0.</p>
-    ///   - [`zonal_shifts(Vec<ZonalShiftInResource>)`](crate::operation::get_managed_resource::GetManagedResourceOutput::zonal_shifts): <p>The zonal shifts that are currently active for a resource. </p>
+    ///   - [`applied_weights(HashMap::<String, f32>)`](crate::operation::get_managed_resource::GetManagedResourceOutput::applied_weights): <p>A collection of key-value pairs that indicate whether resources are active in Availability Zones or not. The key name is the Availability Zone where the resource is deployed. The value is 1 or 0.</p>
+    ///   - [`zonal_shifts(Vec::<ZonalShiftInResource>)`](crate::operation::get_managed_resource::GetManagedResourceOutput::zonal_shifts): <p>The zonal shifts that are currently active for a resource. </p>
     /// - On failure, responds with [`SdkError<GetManagedResourceError>`](crate::operation::get_managed_resource::GetManagedResourceError)
     pub fn get_managed_resource(&self) -> crate::operation::get_managed_resource::builders::GetManagedResourceFluentBuilder {
         crate::operation::get_managed_resource::builders::GetManagedResourceFluentBuilder::new(self.handle.clone())

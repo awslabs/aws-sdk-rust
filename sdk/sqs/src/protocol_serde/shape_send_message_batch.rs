@@ -164,7 +164,7 @@ pub fn de_send_message_batch(
             s if s.matches("SendMessageBatchResultEntry") /* Successful com.amazonaws.sqs.synthetic#SendMessageBatchOutput$Successful */ =>  {
                 let var_1 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::SendMessageBatchResultEntry>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::SendMessageBatchResultEntry>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_2 = builder.successful.take().unwrap_or_default();
                             list_2.push(
                                 crate::protocol_serde::shape_send_message_batch_result_entry::de_send_message_batch_result_entry(&mut tag)
@@ -181,7 +181,7 @@ pub fn de_send_message_batch(
             s if s.matches("BatchResultErrorEntry") /* Failed com.amazonaws.sqs.synthetic#SendMessageBatchOutput$Failed */ =>  {
                 let var_3 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::BatchResultErrorEntry>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::BatchResultErrorEntry>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_4 = builder.failed.take().unwrap_or_default();
                             list_4.push(
                                 crate::protocol_serde::shape_batch_result_error_entry::de_batch_result_error_entry(&mut tag)

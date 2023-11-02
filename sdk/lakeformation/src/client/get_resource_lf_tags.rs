@@ -7,9 +7,9 @@ impl super::Client {
     ///   - [`resource(Resource)`](crate::operation::get_resource_lf_tags::builders::GetResourceLFTagsFluentBuilder::resource) / [`set_resource(Option<Resource>)`](crate::operation::get_resource_lf_tags::builders::GetResourceLFTagsFluentBuilder::set_resource):<br>required: **true**<br><p>The database, table, or column resource for which you want to return LF-tags.</p><br>
     ///   - [`show_assigned_lf_tags(bool)`](crate::operation::get_resource_lf_tags::builders::GetResourceLFTagsFluentBuilder::show_assigned_lf_tags) / [`set_show_assigned_lf_tags(Option<bool>)`](crate::operation::get_resource_lf_tags::builders::GetResourceLFTagsFluentBuilder::set_show_assigned_lf_tags):<br>required: **false**<br><p>Indicates whether to show the assigned LF-tags.</p><br>
     /// - On success, responds with [`GetResourceLfTagsOutput`](crate::operation::get_resource_lf_tags::GetResourceLfTagsOutput) with field(s):
-    ///   - [`lf_tag_on_database(Option<Vec<LfTagPair>>)`](crate::operation::get_resource_lf_tags::GetResourceLfTagsOutput::lf_tag_on_database): <p>A list of LF-tags applied to a database resource.</p>
-    ///   - [`lf_tags_on_table(Option<Vec<LfTagPair>>)`](crate::operation::get_resource_lf_tags::GetResourceLfTagsOutput::lf_tags_on_table): <p>A list of LF-tags applied to a table resource.</p>
-    ///   - [`lf_tags_on_columns(Option<Vec<ColumnLfTag>>)`](crate::operation::get_resource_lf_tags::GetResourceLfTagsOutput::lf_tags_on_columns): <p>A list of LF-tags applied to a column resource.</p>
+    ///   - [`lf_tag_on_database(Option<Vec::<LfTagPair>>)`](crate::operation::get_resource_lf_tags::GetResourceLfTagsOutput::lf_tag_on_database): <p>A list of LF-tags applied to a database resource.</p>
+    ///   - [`lf_tags_on_table(Option<Vec::<LfTagPair>>)`](crate::operation::get_resource_lf_tags::GetResourceLfTagsOutput::lf_tags_on_table): <p>A list of LF-tags applied to a table resource.</p>
+    ///   - [`lf_tags_on_columns(Option<Vec::<ColumnLfTag>>)`](crate::operation::get_resource_lf_tags::GetResourceLfTagsOutput::lf_tags_on_columns): <p>A list of LF-tags applied to a column resource.</p>
     /// - On failure, responds with [`SdkError<GetResourceLFTagsError>`](crate::operation::get_resource_lf_tags::GetResourceLFTagsError)
     pub fn get_resource_lf_tags(&self) -> crate::operation::get_resource_lf_tags::builders::GetResourceLFTagsFluentBuilder {
         crate::operation::get_resource_lf_tags::builders::GetResourceLFTagsFluentBuilder::new(self.handle.clone())

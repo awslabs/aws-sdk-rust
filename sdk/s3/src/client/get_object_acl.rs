@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`expected_bucket_owner(impl Into<String>)`](crate::operation::get_object_acl::builders::GetObjectAclFluentBuilder::expected_bucket_owner) / [`set_expected_bucket_owner(Option<String>)`](crate::operation::get_object_acl::builders::GetObjectAclFluentBuilder::set_expected_bucket_owner):<br>required: **false**<br><p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p><br>
     /// - On success, responds with [`GetObjectAclOutput`](crate::operation::get_object_acl::GetObjectAclOutput) with field(s):
     ///   - [`owner(Option<Owner>)`](crate::operation::get_object_acl::GetObjectAclOutput::owner): <p> Container for the bucket owner's display name and ID.</p>
-    ///   - [`grants(Option<Vec<Grant>>)`](crate::operation::get_object_acl::GetObjectAclOutput::grants): <p>A list of grants.</p>
+    ///   - [`grants(Option<Vec::<Grant>>)`](crate::operation::get_object_acl::GetObjectAclOutput::grants): <p>A list of grants.</p>
     ///   - [`request_charged(Option<RequestCharged>)`](crate::operation::get_object_acl::GetObjectAclOutput::request_charged): <p>If present, indicates that the requester was successfully charged for the request.</p>
     /// - On failure, responds with [`SdkError<GetObjectAclError>`](crate::operation::get_object_acl::GetObjectAclError)
     pub fn get_object_acl(&self) -> crate::operation::get_object_acl::builders::GetObjectAclFluentBuilder {

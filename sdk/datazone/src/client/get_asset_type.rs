@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`name(String)`](crate::operation::get_asset_type::GetAssetTypeOutput::name): <p>The name of the asset type.</p>
     ///   - [`revision(String)`](crate::operation::get_asset_type::GetAssetTypeOutput::revision): <p>The revision of the asset type.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_asset_type::GetAssetTypeOutput::description): <p>The description of the asset type.</p>
-    ///   - [`forms_output(HashMap<String, FormEntryOutput>)`](crate::operation::get_asset_type::GetAssetTypeOutput::forms_output): <p>The metadata forms attached to the asset type.</p>
+    ///   - [`forms_output(HashMap::<String, FormEntryOutput>)`](crate::operation::get_asset_type::GetAssetTypeOutput::forms_output): <p>The metadata forms attached to the asset type.</p>
     ///   - [`owning_project_id(String)`](crate::operation::get_asset_type::GetAssetTypeOutput::owning_project_id): <p>The ID of the Amazon DataZone project that owns the asset type.</p>
     ///   - [`origin_domain_id(Option<String>)`](crate::operation::get_asset_type::GetAssetTypeOutput::origin_domain_id): <p>The ID of the Amazon DataZone domain in which the asset type was originally created.</p>
     ///   - [`origin_project_id(Option<String>)`](crate::operation::get_asset_type::GetAssetTypeOutput::origin_project_id): <p>The ID of the Amazon DataZone project in which the asset type was originally created.</p>

@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::get_data_lake_organization_configuration::builders::GetDataLakeOrganizationConfigurationFluentBuilder::send) it.
     /// - On success, responds with [`GetDataLakeOrganizationConfigurationOutput`](crate::operation::get_data_lake_organization_configuration::GetDataLakeOrganizationConfigurationOutput) with field(s):
-    ///   - [`auto_enable_new_account(Option<Vec<DataLakeAutoEnableNewAccountConfiguration>>)`](crate::operation::get_data_lake_organization_configuration::GetDataLakeOrganizationConfigurationOutput::auto_enable_new_account): <p>The configuration for new accounts.</p>
+    ///   - [`auto_enable_new_account(Option<Vec::<DataLakeAutoEnableNewAccountConfiguration>>)`](crate::operation::get_data_lake_organization_configuration::GetDataLakeOrganizationConfigurationOutput::auto_enable_new_account): <p>The configuration for new accounts.</p>
     /// - On failure, responds with [`SdkError<GetDataLakeOrganizationConfigurationError>`](crate::operation::get_data_lake_organization_configuration::GetDataLakeOrganizationConfigurationError)
     pub fn get_data_lake_organization_configuration(
         &self,

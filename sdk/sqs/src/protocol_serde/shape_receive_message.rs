@@ -82,7 +82,7 @@ pub fn de_receive_message(
             s if s.matches("Message") /* Messages com.amazonaws.sqs.synthetic#ReceiveMessageOutput$Messages */ =>  {
                 let var_1 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::Message>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::Message>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_2 = builder.messages.take().unwrap_or_default();
                             list_2.push(
                                 crate::protocol_serde::shape_message::de_message(&mut tag)

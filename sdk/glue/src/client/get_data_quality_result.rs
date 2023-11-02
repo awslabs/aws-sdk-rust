@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`job_name(Option<String>)`](crate::operation::get_data_quality_result::GetDataQualityResultOutput::job_name): <p>The job name associated with the data quality result, if any.</p>
     ///   - [`job_run_id(Option<String>)`](crate::operation::get_data_quality_result::GetDataQualityResultOutput::job_run_id): <p>The job run ID associated with the data quality result, if any.</p>
     ///   - [`ruleset_evaluation_run_id(Option<String>)`](crate::operation::get_data_quality_result::GetDataQualityResultOutput::ruleset_evaluation_run_id): <p>The unique run ID associated with the ruleset evaluation.</p>
-    ///   - [`rule_results(Option<Vec<DataQualityRuleResult>>)`](crate::operation::get_data_quality_result::GetDataQualityResultOutput::rule_results): <p>A list of <code>DataQualityRuleResult</code> objects representing the results for each rule. </p>
+    ///   - [`rule_results(Option<Vec::<DataQualityRuleResult>>)`](crate::operation::get_data_quality_result::GetDataQualityResultOutput::rule_results): <p>A list of <code>DataQualityRuleResult</code> objects representing the results for each rule. </p>
     /// - On failure, responds with [`SdkError<GetDataQualityResultError>`](crate::operation::get_data_quality_result::GetDataQualityResultError)
     pub fn get_data_quality_result(&self) -> crate::operation::get_data_quality_result::builders::GetDataQualityResultFluentBuilder {
         crate::operation::get_data_quality_result::builders::GetDataQualityResultFluentBuilder::new(self.handle.clone())

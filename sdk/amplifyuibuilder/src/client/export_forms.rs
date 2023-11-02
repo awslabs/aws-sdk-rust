@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`environment_name(impl Into<String>)`](crate::operation::export_forms::builders::ExportFormsFluentBuilder::environment_name) / [`set_environment_name(Option<String>)`](crate::operation::export_forms::builders::ExportFormsFluentBuilder::set_environment_name):<br>required: **true**<br><p>The name of the backend environment that is a part of the Amplify app.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::export_forms::builders::ExportFormsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::export_forms::builders::ExportFormsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to request the next page of results.</p><br>
     /// - On success, responds with [`ExportFormsOutput`](crate::operation::export_forms::ExportFormsOutput) with field(s):
-    ///   - [`entities(Vec<Form>)`](crate::operation::export_forms::ExportFormsOutput::entities): <p>Represents the configuration of the exported forms.</p>
+    ///   - [`entities(Vec::<Form>)`](crate::operation::export_forms::ExportFormsOutput::entities): <p>Represents the configuration of the exported forms.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::export_forms::ExportFormsOutput::next_token): <p>The pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<ExportFormsError>`](crate::operation::export_forms::ExportFormsError)
     pub fn export_forms(&self) -> crate::operation::export_forms::builders::ExportFormsFluentBuilder {

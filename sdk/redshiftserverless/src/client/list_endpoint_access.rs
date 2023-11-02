@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`vpc_id(impl Into<String>)`](crate::operation::list_endpoint_access::builders::ListEndpointAccessFluentBuilder::vpc_id) / [`set_vpc_id(Option<String>)`](crate::operation::list_endpoint_access::builders::ListEndpointAccessFluentBuilder::set_vpc_id):<br>required: **false**<br><p>The unique identifier of the virtual private cloud with access to Amazon Redshift Serverless.</p><br>
     /// - On success, responds with [`ListEndpointAccessOutput`](crate::operation::list_endpoint_access::ListEndpointAccessOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_endpoint_access::ListEndpointAccessOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    ///   - [`endpoints(Vec<EndpointAccess>)`](crate::operation::list_endpoint_access::ListEndpointAccessOutput::endpoints): <p>The returned VPC endpoints.</p>
+    ///   - [`endpoints(Vec::<EndpointAccess>)`](crate::operation::list_endpoint_access::ListEndpointAccessOutput::endpoints): <p>The returned VPC endpoints.</p>
     /// - On failure, responds with [`SdkError<ListEndpointAccessError>`](crate::operation::list_endpoint_access::ListEndpointAccessError)
     pub fn list_endpoint_access(&self) -> crate::operation::list_endpoint_access::builders::ListEndpointAccessFluentBuilder {
         crate::operation::list_endpoint_access::builders::ListEndpointAccessFluentBuilder::new(self.handle.clone())

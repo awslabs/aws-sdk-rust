@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_topic_rules::builders::ListTopicRulesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_topic_rules::builders::ListTopicRulesFluentBuilder::set_next_token):<br>required: **false**<br><p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p><br>
     ///   - [`rule_disabled(bool)`](crate::operation::list_topic_rules::builders::ListTopicRulesFluentBuilder::rule_disabled) / [`set_rule_disabled(Option<bool>)`](crate::operation::list_topic_rules::builders::ListTopicRulesFluentBuilder::set_rule_disabled):<br>required: **false**<br><p>Specifies whether the rule is disabled.</p><br>
     /// - On success, responds with [`ListTopicRulesOutput`](crate::operation::list_topic_rules::ListTopicRulesOutput) with field(s):
-    ///   - [`rules(Option<Vec<TopicRuleListItem>>)`](crate::operation::list_topic_rules::ListTopicRulesOutput::rules): <p>The rules.</p>
+    ///   - [`rules(Option<Vec::<TopicRuleListItem>>)`](crate::operation::list_topic_rules::ListTopicRulesOutput::rules): <p>The rules.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_topic_rules::ListTopicRulesOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListTopicRulesError>`](crate::operation::list_topic_rules::ListTopicRulesError)
     pub fn list_topic_rules(&self) -> crate::operation::list_topic_rules::builders::ListTopicRulesFluentBuilder {

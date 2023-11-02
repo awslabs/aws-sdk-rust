@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::list_available_zones::builders::ListAvailableZonesFluentBuilder::send) it.
     /// - On success, responds with [`ListAvailableZonesOutput`](crate::operation::list_available_zones::ListAvailableZonesOutput) with field(s):
-    ///   - [`az_list(Option<Vec<String>>)`](crate::operation::list_available_zones::ListAvailableZonesOutput::az_list): <p>The list of Availability Zones that have available AWS CloudHSM capacity.</p>
+    ///   - [`az_list(Option<Vec::<String>>)`](crate::operation::list_available_zones::ListAvailableZonesOutput::az_list): <p>The list of Availability Zones that have available AWS CloudHSM capacity.</p>
     /// - On failure, responds with [`SdkError<ListAvailableZonesError>`](crate::operation::list_available_zones::ListAvailableZonesError)
     #[deprecated(note = "This API is deprecated.")]
     pub fn list_available_zones(&self) -> crate::operation::list_available_zones::builders::ListAvailableZonesFluentBuilder {

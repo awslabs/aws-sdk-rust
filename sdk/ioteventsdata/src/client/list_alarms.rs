@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_alarms::builders::ListAlarmsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_alarms::builders::ListAlarmsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token that you can use to return the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_alarms::builders::ListAlarmsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_alarms::builders::ListAlarmsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be returned per request.</p><br>
     /// - On success, responds with [`ListAlarmsOutput`](crate::operation::list_alarms::ListAlarmsOutput) with field(s):
-    ///   - [`alarm_summaries(Option<Vec<AlarmSummary>>)`](crate::operation::list_alarms::ListAlarmsOutput::alarm_summaries): <p>A list that summarizes each alarm.</p>
+    ///   - [`alarm_summaries(Option<Vec::<AlarmSummary>>)`](crate::operation::list_alarms::ListAlarmsOutput::alarm_summaries): <p>A list that summarizes each alarm.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_alarms::ListAlarmsOutput::next_token): <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListAlarmsError>`](crate::operation::list_alarms::ListAlarmsError)
     pub fn list_alarms(&self) -> crate::operation::list_alarms::builders::ListAlarmsFluentBuilder {

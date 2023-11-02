@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_plugins::builders::ListPluginsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_plugins::builders::ListPluginsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token.</p><br>
     /// - On success, responds with [`ListPluginsOutput`](crate::operation::list_plugins::ListPluginsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_plugins::ListPluginsOutput::next_token): <p>The pagination token.</p>
-    ///   - [`plugins(Option<Vec<PluginSummary>>)`](crate::operation::list_plugins::ListPluginsOutput::plugins): <p>Migration Hub Orchestrator plugins.</p>
+    ///   - [`plugins(Option<Vec::<PluginSummary>>)`](crate::operation::list_plugins::ListPluginsOutput::plugins): <p>Migration Hub Orchestrator plugins.</p>
     /// - On failure, responds with [`SdkError<ListPluginsError>`](crate::operation::list_plugins::ListPluginsError)
     pub fn list_plugins(&self) -> crate::operation::list_plugins::builders::ListPluginsFluentBuilder {
         crate::operation::list_plugins::builders::ListPluginsFluentBuilder::new(self.handle.clone())

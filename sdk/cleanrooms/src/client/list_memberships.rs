@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`status(MembershipStatus)`](crate::operation::list_memberships::builders::ListMembershipsFluentBuilder::status) / [`set_status(Option<MembershipStatus>)`](crate::operation::list_memberships::builders::ListMembershipsFluentBuilder::set_status):<br>required: **false**<br><p>A filter which will return only memberships in the specified status.</p><br>
     /// - On success, responds with [`ListMembershipsOutput`](crate::operation::list_memberships::ListMembershipsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_memberships::ListMembershipsOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
-    ///   - [`membership_summaries(Vec<MembershipSummary>)`](crate::operation::list_memberships::ListMembershipsOutput::membership_summaries): <p>The list of memberships returned from the ListMemberships operation.</p>
+    ///   - [`membership_summaries(Vec::<MembershipSummary>)`](crate::operation::list_memberships::ListMembershipsOutput::membership_summaries): <p>The list of memberships returned from the ListMemberships operation.</p>
     /// - On failure, responds with [`SdkError<ListMembershipsError>`](crate::operation::list_memberships::ListMembershipsError)
     pub fn list_memberships(&self) -> crate::operation::list_memberships::builders::ListMembershipsFluentBuilder {
         crate::operation::list_memberships::builders::ListMembershipsFluentBuilder::new(self.handle.clone())

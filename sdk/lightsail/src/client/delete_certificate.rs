@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`certificate_name(impl Into<String>)`](crate::operation::delete_certificate::builders::DeleteCertificateFluentBuilder::certificate_name) / [`set_certificate_name(Option<String>)`](crate::operation::delete_certificate::builders::DeleteCertificateFluentBuilder::set_certificate_name):<br>required: **true**<br><p>The name of the certificate to delete.</p>  <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you can specify.</p><br>
     /// - On success, responds with [`DeleteCertificateOutput`](crate::operation::delete_certificate::DeleteCertificateOutput) with field(s):
-    ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::delete_certificate::DeleteCertificateOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    ///   - [`operations(Option<Vec::<Operation>>)`](crate::operation::delete_certificate::DeleteCertificateOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<DeleteCertificateError>`](crate::operation::delete_certificate::DeleteCertificateError)
     pub fn delete_certificate(&self) -> crate::operation::delete_certificate::builders::DeleteCertificateFluentBuilder {
         crate::operation::delete_certificate::builders::DeleteCertificateFluentBuilder::new(self.handle.clone())

@@ -19,10 +19,10 @@ impl super::Client {
     ///   - [`max_job_duration_in_seconds(i64)`](crate::operation::describe_simulation_job::DescribeSimulationJobOutput::max_job_duration_in_seconds): <p>The maximum job duration in seconds. The value must be 8 days (691,200 seconds) or less.</p>
     ///   - [`simulation_time_millis(i64)`](crate::operation::describe_simulation_job::DescribeSimulationJobOutput::simulation_time_millis): <p>The simulation job execution duration in milliseconds.</p>
     ///   - [`iam_role(Option<String>)`](crate::operation::describe_simulation_job::DescribeSimulationJobOutput::iam_role): <p>The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf.</p>
-    ///   - [`robot_applications(Option<Vec<RobotApplicationConfig>>)`](crate::operation::describe_simulation_job::DescribeSimulationJobOutput::robot_applications): <p>A list of robot applications.</p>
-    ///   - [`simulation_applications(Option<Vec<SimulationApplicationConfig>>)`](crate::operation::describe_simulation_job::DescribeSimulationJobOutput::simulation_applications): <p>A list of simulation applications.</p>
-    ///   - [`data_sources(Option<Vec<DataSource>>)`](crate::operation::describe_simulation_job::DescribeSimulationJobOutput::data_sources): <p>The data sources for the simulation job.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_simulation_job::DescribeSimulationJobOutput::tags): <p>The list of all tags added to the specified simulation job.</p>
+    ///   - [`robot_applications(Option<Vec::<RobotApplicationConfig>>)`](crate::operation::describe_simulation_job::DescribeSimulationJobOutput::robot_applications): <p>A list of robot applications.</p>
+    ///   - [`simulation_applications(Option<Vec::<SimulationApplicationConfig>>)`](crate::operation::describe_simulation_job::DescribeSimulationJobOutput::simulation_applications): <p>A list of simulation applications.</p>
+    ///   - [`data_sources(Option<Vec::<DataSource>>)`](crate::operation::describe_simulation_job::DescribeSimulationJobOutput::data_sources): <p>The data sources for the simulation job.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_simulation_job::DescribeSimulationJobOutput::tags): <p>The list of all tags added to the specified simulation job.</p>
     ///   - [`vpc_config(Option<VpcConfigResponse>)`](crate::operation::describe_simulation_job::DescribeSimulationJobOutput::vpc_config): <p>The VPC configuration.</p>
     ///   - [`network_interface(Option<NetworkInterface>)`](crate::operation::describe_simulation_job::DescribeSimulationJobOutput::network_interface): <p>The network interface information for the simulation job.</p>
     ///   - [`compute(Option<ComputeResponse>)`](crate::operation::describe_simulation_job::DescribeSimulationJobOutput::compute): <p>Compute information for the simulation job.</p>

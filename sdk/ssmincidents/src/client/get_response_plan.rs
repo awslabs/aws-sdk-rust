@@ -10,9 +10,9 @@ impl super::Client {
     ///   - [`display_name(Option<String>)`](crate::operation::get_response_plan::GetResponsePlanOutput::display_name): <p>The long format name of the response plan. Can contain spaces.</p>
     ///   - [`incident_template(Option<IncidentTemplate>)`](crate::operation::get_response_plan::GetResponsePlanOutput::incident_template): <p>Details used to create the incident when using this response plan.</p>
     ///   - [`chat_channel(Option<ChatChannel>)`](crate::operation::get_response_plan::GetResponsePlanOutput::chat_channel): <p>The Chatbot chat channel used for collaboration during an incident.</p>
-    ///   - [`engagements(Option<Vec<String>>)`](crate::operation::get_response_plan::GetResponsePlanOutput::engagements): <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
-    ///   - [`actions(Option<Vec<Action>>)`](crate::operation::get_response_plan::GetResponsePlanOutput::actions): <p>The actions that this response plan takes at the beginning of the incident.</p>
-    ///   - [`integrations(Option<Vec<Integration>>)`](crate::operation::get_response_plan::GetResponsePlanOutput::integrations): <p>Information about third-party services integrated into the Incident Manager response plan.</p>
+    ///   - [`engagements(Option<Vec::<String>>)`](crate::operation::get_response_plan::GetResponsePlanOutput::engagements): <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
+    ///   - [`actions(Option<Vec::<Action>>)`](crate::operation::get_response_plan::GetResponsePlanOutput::actions): <p>The actions that this response plan takes at the beginning of the incident.</p>
+    ///   - [`integrations(Option<Vec::<Integration>>)`](crate::operation::get_response_plan::GetResponsePlanOutput::integrations): <p>Information about third-party services integrated into the Incident Manager response plan.</p>
     /// - On failure, responds with [`SdkError<GetResponsePlanError>`](crate::operation::get_response_plan::GetResponsePlanError)
     pub fn get_response_plan(&self) -> crate::operation::get_response_plan::builders::GetResponsePlanFluentBuilder {
         crate::operation::get_response_plan::builders::GetResponsePlanFluentBuilder::new(self.handle.clone())

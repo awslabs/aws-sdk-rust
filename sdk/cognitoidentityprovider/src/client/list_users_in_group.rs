@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`limit(i32)`](crate::operation::list_users_in_group::builders::ListUsersInGroupFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::list_users_in_group::builders::ListUsersInGroupFluentBuilder::set_limit):<br>required: **false**<br><p>The limit of the request to list users.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_users_in_group::builders::ListUsersInGroupFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_users_in_group::builders::ListUsersInGroupFluentBuilder::set_next_token):<br>required: **false**<br><p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p><br>
     /// - On success, responds with [`ListUsersInGroupOutput`](crate::operation::list_users_in_group::ListUsersInGroupOutput) with field(s):
-    ///   - [`users(Option<Vec<UserType>>)`](crate::operation::list_users_in_group::ListUsersInGroupOutput::users): <p>The users returned in the request to list users.</p>
+    ///   - [`users(Option<Vec::<UserType>>)`](crate::operation::list_users_in_group::ListUsersInGroupOutput::users): <p>The users returned in the request to list users.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_users_in_group::ListUsersInGroupOutput::next_token): <p>An identifier that you can use in a later request to return the next set of items in the list.</p>
     /// - On failure, responds with [`SdkError<ListUsersInGroupError>`](crate::operation::list_users_in_group::ListUsersInGroupError)
     pub fn list_users_in_group(&self) -> crate::operation::list_users_in_group::builders::ListUsersInGroupFluentBuilder {

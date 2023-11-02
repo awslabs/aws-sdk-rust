@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetHostedZoneOutput`](crate::operation::get_hosted_zone::GetHostedZoneOutput) with field(s):
     ///   - [`hosted_zone(Option<HostedZone>)`](crate::operation::get_hosted_zone::GetHostedZoneOutput::hosted_zone): <p>A complex type that contains general information about the specified hosted zone.</p>
     ///   - [`delegation_set(Option<DelegationSet>)`](crate::operation::get_hosted_zone::GetHostedZoneOutput::delegation_set): <p>A complex type that lists the Amazon Route 53 name servers for the specified hosted zone.</p>
-    ///   - [`vpcs(Option<Vec<Vpc>>)`](crate::operation::get_hosted_zone::GetHostedZoneOutput::vpcs): <p>A complex type that contains information about the VPCs that are associated with the specified hosted zone.</p>
+    ///   - [`vpcs(Option<Vec::<Vpc>>)`](crate::operation::get_hosted_zone::GetHostedZoneOutput::vpcs): <p>A complex type that contains information about the VPCs that are associated with the specified hosted zone.</p>
     /// - On failure, responds with [`SdkError<GetHostedZoneError>`](crate::operation::get_hosted_zone::GetHostedZoneError)
     pub fn get_hosted_zone(&self) -> crate::operation::get_hosted_zone::builders::GetHostedZoneFluentBuilder {
         crate::operation::get_hosted_zone::builders::GetHostedZoneFluentBuilder::new(self.handle.clone())

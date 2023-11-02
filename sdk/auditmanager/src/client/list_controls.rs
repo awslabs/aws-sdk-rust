@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_controls::builders::ListControlsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_controls::builders::ListControlsFluentBuilder::set_next_token):<br>required: **false**<br><p> The pagination token that's used to fetch the next set of results. </p><br>
     ///   - [`max_results(i32)`](crate::operation::list_controls::builders::ListControlsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_controls::builders::ListControlsFluentBuilder::set_max_results):<br>required: **false**<br><p> Represents the maximum number of results on a page or for an API request call. </p><br>
     /// - On success, responds with [`ListControlsOutput`](crate::operation::list_controls::ListControlsOutput) with field(s):
-    ///   - [`control_metadata_list(Option<Vec<ControlMetadata>>)`](crate::operation::list_controls::ListControlsOutput::control_metadata_list): <p> A list of metadata that the <code>ListControls</code> API returns for each control.</p>
+    ///   - [`control_metadata_list(Option<Vec::<ControlMetadata>>)`](crate::operation::list_controls::ListControlsOutput::control_metadata_list): <p> A list of metadata that the <code>ListControls</code> API returns for each control.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_controls::ListControlsOutput::next_token): <p> The pagination token that's used to fetch the next set of results. </p>
     /// - On failure, responds with [`SdkError<ListControlsError>`](crate::operation::list_controls::ListControlsError)
     pub fn list_controls(&self) -> crate::operation::list_controls::builders::ListControlsFluentBuilder {

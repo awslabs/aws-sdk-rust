@@ -7,13 +7,13 @@ impl super::Client {
     /// - On success, responds with [`DescribeTaskOutput`](crate::operation::describe_task::DescribeTaskOutput) with field(s):
     ///   - [`task_id(Option<String>)`](crate::operation::describe_task::DescribeTaskOutput::task_id): <p>The ID of the task.</p>
     ///   - [`task_arn(Option<String>)`](crate::operation::describe_task::DescribeTaskOutput::task_arn): <p>The Amazon Resource Name (ARN) of the task.</p>
-    ///   - [`targets(Option<Vec<String>>)`](crate::operation::describe_task::DescribeTaskOutput::targets): <p>The managed devices that the task was sent to.</p>
+    ///   - [`targets(Option<Vec::<String>>)`](crate::operation::describe_task::DescribeTaskOutput::targets): <p>The managed devices that the task was sent to.</p>
     ///   - [`state(Option<TaskState>)`](crate::operation::describe_task::DescribeTaskOutput::state): <p>The current state of the task.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::describe_task::DescribeTaskOutput::created_at): <p>When the <code>CreateTask</code> operation was called.</p>
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::describe_task::DescribeTaskOutput::last_updated_at): <p>When the state of the task was last updated.</p>
     ///   - [`completed_at(Option<DateTime>)`](crate::operation::describe_task::DescribeTaskOutput::completed_at): <p>When the task was completed.</p>
     ///   - [`description(Option<String>)`](crate::operation::describe_task::DescribeTaskOutput::description): <p>The description provided of the task and managed devices.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_task::DescribeTaskOutput::tags): <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_task::DescribeTaskOutput::tags): <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
     /// - On failure, responds with [`SdkError<DescribeTaskError>`](crate::operation::describe_task::DescribeTaskError)
     pub fn describe_task(&self) -> crate::operation::describe_task::builders::DescribeTaskFluentBuilder {
         crate::operation::describe_task::builders::DescribeTaskFluentBuilder::new(self.handle.clone())

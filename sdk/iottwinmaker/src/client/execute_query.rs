@@ -9,8 +9,8 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::execute_query::builders::ExecuteQueryFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::execute_query::builders::ExecuteQueryFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return at one time. The default is 25.</p>  <p>Valid Range: Minimum value of 1. Maximum value of 250.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::execute_query::builders::ExecuteQueryFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::execute_query::builders::ExecuteQueryFluentBuilder::set_next_token):<br>required: **false**<br><p>The string that specifies the next page of results.</p><br>
     /// - On success, responds with [`ExecuteQueryOutput`](crate::operation::execute_query::ExecuteQueryOutput) with field(s):
-    ///   - [`column_descriptions(Option<Vec<ColumnDescription>>)`](crate::operation::execute_query::ExecuteQueryOutput::column_descriptions): <p>A list of ColumnDescription objects.</p>
-    ///   - [`rows(Option<Vec<Row>>)`](crate::operation::execute_query::ExecuteQueryOutput::rows): <p>Represents a single row in the query results.</p>
+    ///   - [`column_descriptions(Option<Vec::<ColumnDescription>>)`](crate::operation::execute_query::ExecuteQueryOutput::column_descriptions): <p>A list of ColumnDescription objects.</p>
+    ///   - [`rows(Option<Vec::<Row>>)`](crate::operation::execute_query::ExecuteQueryOutput::rows): <p>Represents a single row in the query results.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::execute_query::ExecuteQueryOutput::next_token): <p>The string that specifies the next page of results.</p>
     /// - On failure, responds with [`SdkError<ExecuteQueryError>`](crate::operation::execute_query::ExecuteQueryError)
     pub fn execute_query(&self) -> crate::operation::execute_query::builders::ExecuteQueryFluentBuilder {

@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_id(impl Into<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::set_resource_id):<br>required: **true**<br><p>Specifies the EFS resource that you want to remove tags from.</p><br>
-    ///   - [`tag_keys(impl Into<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::set_tag_keys):<br>required: **true**<br><p>The keys of the key-value tag pairs that you want to remove from the specified EFS resource.</p><br>
+    ///   - [`tag_keys(impl Into<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec::<String>>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::set_tag_keys):<br>required: **true**<br><p>The keys of the key-value tag pairs that you want to remove from the specified EFS resource.</p><br>
     /// - On success, responds with [`UntagResourceOutput`](crate::operation::untag_resource::UntagResourceOutput)
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::operation::untag_resource::UntagResourceError)
     pub fn untag_resource(&self) -> crate::operation::untag_resource::builders::UntagResourceFluentBuilder {

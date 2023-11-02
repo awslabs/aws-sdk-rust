@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_arn(impl Into<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::set_resource_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the resource that you want to untag.</p><br>
-    ///   - [`tag_keys(impl Into<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::set_tag_keys):<br>required: **true**<br><p>The keys of the key-value pairs for the resource tag or tags assigned to the resource.</p><br>
+    ///   - [`tag_keys(impl Into<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec::<String>>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::set_tag_keys):<br>required: **true**<br><p>The keys of the key-value pairs for the resource tag or tags assigned to the resource.</p><br>
     /// - On success, responds with [`UntagResourceOutput`](crate::operation::untag_resource::UntagResourceOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::operation::untag_resource::UntagResourceOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::untag_resource::UntagResourceOutput::status): <p>The HTTP status of the request.</p>

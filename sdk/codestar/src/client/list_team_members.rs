@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_team_members::builders::ListTeamMembersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_team_members::builders::ListTeamMembersFluentBuilder::set_next_token):<br>required: **false**<br><p>The continuation token for the next set of results, if the results cannot be returned in one response.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_team_members::builders::ListTeamMembersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_team_members::builders::ListTeamMembersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of team members you want returned in a response.</p><br>
     /// - On success, responds with [`ListTeamMembersOutput`](crate::operation::list_team_members::ListTeamMembersOutput) with field(s):
-    ///   - [`team_members(Vec<TeamMember>)`](crate::operation::list_team_members::ListTeamMembersOutput::team_members): <p>A list of team member objects for the project.</p>
+    ///   - [`team_members(Vec::<TeamMember>)`](crate::operation::list_team_members::ListTeamMembersOutput::team_members): <p>A list of team member objects for the project.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_team_members::ListTeamMembersOutput::next_token): <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
     /// - On failure, responds with [`SdkError<ListTeamMembersError>`](crate::operation::list_team_members::ListTeamMembersError)
     pub fn list_team_members(&self) -> crate::operation::list_team_members::builders::ListTeamMembersFluentBuilder {

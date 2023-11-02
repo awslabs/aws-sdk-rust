@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`apps_list(AppsListData)`](crate::operation::put_apps_list::builders::PutAppsListFluentBuilder::apps_list) / [`set_apps_list(Option<AppsListData>)`](crate::operation::put_apps_list::builders::PutAppsListFluentBuilder::set_apps_list):<br>required: **true**<br><p>The details of the Firewall Manager applications list to be created.</p><br>
-    ///   - [`tag_list(Tag)`](crate::operation::put_apps_list::builders::PutAppsListFluentBuilder::tag_list) / [`set_tag_list(Option<Vec<Tag>>)`](crate::operation::put_apps_list::builders::PutAppsListFluentBuilder::set_tag_list):<br>required: **false**<br><p>The tags associated with the resource.</p><br>
+    ///   - [`tag_list(Tag)`](crate::operation::put_apps_list::builders::PutAppsListFluentBuilder::tag_list) / [`set_tag_list(Option<Vec::<Tag>>)`](crate::operation::put_apps_list::builders::PutAppsListFluentBuilder::set_tag_list):<br>required: **false**<br><p>The tags associated with the resource.</p><br>
     /// - On success, responds with [`PutAppsListOutput`](crate::operation::put_apps_list::PutAppsListOutput) with field(s):
     ///   - [`apps_list(Option<AppsListData>)`](crate::operation::put_apps_list::PutAppsListOutput::apps_list): <p>The details of the Firewall Manager applications list.</p>
     ///   - [`apps_list_arn(Option<String>)`](crate::operation::put_apps_list::PutAppsListOutput::apps_list_arn): <p>The Amazon Resource Name (ARN) of the applications list.</p>

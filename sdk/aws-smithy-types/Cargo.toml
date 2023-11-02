@@ -11,6 +11,9 @@ license = "Apache-2.0"
 repository = "https://github.com/awslabs/smithy-rs"
 
 [features]
+byte-stream-poll-next = []
+http-body-0-4-x = ["dep:http-body-0-4"]
+hyper-0-14-x = ["dep:hyper-0-14"]
 rt-tokio = ["dep:tokio-util", "dep:tokio", "tokio?/rt", "tokio?/fs", "tokio?/io-util", "tokio-util?/io"]
 test-util = []
 serde-serialize = []
@@ -21,8 +24,8 @@ base64-simd = "0.8"
 bytes = "1"
 bytes-utils = "0.1"
 http = "0.2.3"
-http-body = "0.4.4"
-hyper = "0.14.26"
+http-body-0-4 = { package = "http-body", version = "0.4.4", optional = true }
+hyper-0-14 = { package = "hyper", version = "0.14.26", optional = true }
 itoa = "1.0.0"
 num-integer = "0.1.44"
 pin-project-lite = "0.2.9"

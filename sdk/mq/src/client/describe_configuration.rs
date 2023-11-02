@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::describe_configuration::DescribeConfigurationOutput::id): <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
     ///   - [`latest_revision(Option<ConfigurationRevision>)`](crate::operation::describe_configuration::DescribeConfigurationOutput::latest_revision): <p>Required. The latest revision of the configuration.</p>
     ///   - [`name(Option<String>)`](crate::operation::describe_configuration::DescribeConfigurationOutput::name): <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_configuration::DescribeConfigurationOutput::tags): <p>The list of all tags associated with this configuration.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_configuration::DescribeConfigurationOutput::tags): <p>The list of all tags associated with this configuration.</p>
     /// - On failure, responds with [`SdkError<DescribeConfigurationError>`](crate::operation::describe_configuration::DescribeConfigurationError)
     pub fn describe_configuration(&self) -> crate::operation::describe_configuration::builders::DescribeConfigurationFluentBuilder {
         crate::operation::describe_configuration::builders::DescribeConfigurationFluentBuilder::new(self.handle.clone())

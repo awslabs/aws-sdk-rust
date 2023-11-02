@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`schema_arn(Option<String>)`](crate::operation::update_schema::UpdateSchemaOutput::schema_arn): <p>The ARN of the schema.</p>
     ///   - [`schema_name(Option<String>)`](crate::operation::update_schema::UpdateSchemaOutput::schema_name): <p>The name of the schema.</p>
     ///   - [`schema_version(Option<String>)`](crate::operation::update_schema::UpdateSchemaOutput::schema_version): <p>The version number of the schema</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::update_schema::UpdateSchemaOutput::tags): <p>Key-value pairs associated with a resource.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::update_schema::UpdateSchemaOutput::tags): <p>Key-value pairs associated with a resource.</p>
     ///   - [`r#type(Option<String>)`](crate::operation::update_schema::UpdateSchemaOutput::type): <p>The type of the schema.</p>
     ///   - [`version_created_date(Option<DateTime>)`](crate::operation::update_schema::UpdateSchemaOutput::version_created_date): <p>The date the schema version was created.</p>
     /// - On failure, responds with [`SdkError<UpdateSchemaError>`](crate::operation::update_schema::UpdateSchemaError)

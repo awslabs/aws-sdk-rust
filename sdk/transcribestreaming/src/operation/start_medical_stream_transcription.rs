@@ -218,8 +218,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StartMedical
             _cfg.interceptor_state().store_put(signer_sender);
             let adapter: ::aws_smithy_http::event_stream::MessageStreamAdapter<_, _> =
                 input.audio_stream.into_body_stream(marshaller, error_marshaller, signer);
-            let body: ::aws_smithy_types::body::SdkBody = ::hyper::Body::wrap_stream(adapter).into();
-            body
+            ::aws_smithy_types::body::SdkBody::from_body_0_4(::hyper::Body::wrap_stream(adapter))
         });
         if let Some(content_length) = body.content_length() {
             let content_length = content_length.to_string();

@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`sort_by(ImageSortBy)`](crate::operation::list_images::builders::ListImagesFluentBuilder::sort_by) / [`set_sort_by(Option<ImageSortBy>)`](crate::operation::list_images::builders::ListImagesFluentBuilder::set_sort_by):<br>required: **false**<br><p>The property used to sort results. The default value is <code>CREATION_TIME</code>.</p><br>
     ///   - [`sort_order(ImageSortOrder)`](crate::operation::list_images::builders::ListImagesFluentBuilder::sort_order) / [`set_sort_order(Option<ImageSortOrder>)`](crate::operation::list_images::builders::ListImagesFluentBuilder::set_sort_order):<br>required: **false**<br><p>The sort order. The default value is <code>DESCENDING</code>.</p><br>
     /// - On success, responds with [`ListImagesOutput`](crate::operation::list_images::ListImagesOutput) with field(s):
-    ///   - [`images(Option<Vec<Image>>)`](crate::operation::list_images::ListImagesOutput::images): <p>A list of images and their properties.</p>
+    ///   - [`images(Option<Vec::<Image>>)`](crate::operation::list_images::ListImagesOutput::images): <p>A list of images and their properties.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_images::ListImagesOutput::next_token): <p>A token for getting the next set of images, if there are any.</p>
     /// - On failure, responds with [`SdkError<ListImagesError>`](crate::operation::list_images::ListImagesError)
     pub fn list_images(&self) -> crate::operation::list_images::builders::ListImagesFluentBuilder {

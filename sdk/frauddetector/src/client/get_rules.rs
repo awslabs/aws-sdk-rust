@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_rules::builders::GetRulesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_rules::builders::GetRulesFluentBuilder::set_next_token):<br>required: **false**<br><p>The next page token.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_rules::builders::GetRulesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_rules::builders::GetRulesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of rules to return for the request.</p><br>
     /// - On success, responds with [`GetRulesOutput`](crate::operation::get_rules::GetRulesOutput) with field(s):
-    ///   - [`rule_details(Option<Vec<RuleDetail>>)`](crate::operation::get_rules::GetRulesOutput::rule_details): <p>The details of the requested rule.</p>
+    ///   - [`rule_details(Option<Vec::<RuleDetail>>)`](crate::operation::get_rules::GetRulesOutput::rule_details): <p>The details of the requested rule.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_rules::GetRulesOutput::next_token): <p>The next page token to be used in subsequent requests.</p>
     /// - On failure, responds with [`SdkError<GetRulesError>`](crate::operation::get_rules::GetRulesError)
     pub fn get_rules(&self) -> crate::operation::get_rules::builders::GetRulesFluentBuilder {

@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_ephemeris::DescribeEphemerisOutput::creation_time): <p>The time the ephemeris was uploaded in UTC.</p>
     ///   - [`enabled(Option<bool>)`](crate::operation::describe_ephemeris::DescribeEphemerisOutput::enabled): <p>Whether or not the ephemeris is enabled.</p>
     ///   - [`name(Option<String>)`](crate::operation::describe_ephemeris::DescribeEphemerisOutput::name): <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_ephemeris::DescribeEphemerisOutput::tags): <p>Tags assigned to an ephemeris.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_ephemeris::DescribeEphemerisOutput::tags): <p>Tags assigned to an ephemeris.</p>
     ///   - [`supplied_data(Option<EphemerisTypeDescription>)`](crate::operation::describe_ephemeris::DescribeEphemerisOutput::supplied_data): <p>Supplied ephemeris data.</p>
     ///   - [`invalid_reason(Option<EphemerisInvalidReason>)`](crate::operation::describe_ephemeris::DescribeEphemerisOutput::invalid_reason): <p>Reason that an ephemeris failed validation. Only provided for ephemerides with <code>INVALID</code> status.</p>
     /// - On failure, responds with [`SdkError<DescribeEphemerisError>`](crate::operation::describe_ephemeris::DescribeEphemerisError)

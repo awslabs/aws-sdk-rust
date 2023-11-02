@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`next_page_token(impl Into<String>)`](crate::operation::get_anomalies::builders::GetAnomaliesFluentBuilder::next_page_token) / [`set_next_page_token(Option<String>)`](crate::operation::get_anomalies::builders::GetAnomaliesFluentBuilder::set_next_page_token):<br>required: **false**<br><p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p><br>
     ///   - [`max_results(i32)`](crate::operation::get_anomalies::builders::GetAnomaliesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_anomalies::builders::GetAnomaliesFluentBuilder::set_max_results):<br>required: **false**<br><p>The number of entries a paginated response contains. </p><br>
     /// - On success, responds with [`GetAnomaliesOutput`](crate::operation::get_anomalies::GetAnomaliesOutput) with field(s):
-    ///   - [`anomalies(Vec<Anomaly>)`](crate::operation::get_anomalies::GetAnomaliesOutput::anomalies): <p>A list of cost anomalies. </p>
+    ///   - [`anomalies(Vec::<Anomaly>)`](crate::operation::get_anomalies::GetAnomaliesOutput::anomalies): <p>A list of cost anomalies. </p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::get_anomalies::GetAnomaliesOutput::next_page_token): <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     /// - On failure, responds with [`SdkError<GetAnomaliesError>`](crate::operation::get_anomalies::GetAnomaliesError)
     pub fn get_anomalies(&self) -> crate::operation::get_anomalies::builders::GetAnomaliesFluentBuilder {

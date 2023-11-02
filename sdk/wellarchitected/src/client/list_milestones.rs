@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_milestones::builders::ListMilestonesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_milestones::builders::ListMilestonesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return for this request.</p><br>
     /// - On success, responds with [`ListMilestonesOutput`](crate::operation::list_milestones::ListMilestonesOutput) with field(s):
     ///   - [`workload_id(Option<String>)`](crate::operation::list_milestones::ListMilestonesOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    ///   - [`milestone_summaries(Option<Vec<MilestoneSummary>>)`](crate::operation::list_milestones::ListMilestonesOutput::milestone_summaries): <p>A list of milestone summaries.</p>
+    ///   - [`milestone_summaries(Option<Vec::<MilestoneSummary>>)`](crate::operation::list_milestones::ListMilestonesOutput::milestone_summaries): <p>A list of milestone summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_milestones::ListMilestonesOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListMilestonesError>`](crate::operation::list_milestones::ListMilestonesError)
     pub fn list_milestones(&self) -> crate::operation::list_milestones::builders::ListMilestonesFluentBuilder {

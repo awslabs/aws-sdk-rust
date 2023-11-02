@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token returned from the previous call to <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListCampaigns.html">ListCampaigns</a> for getting the next set of campaigns (if they exist).</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of campaigns to return.</p><br>
     /// - On success, responds with [`ListCampaignsOutput`](crate::operation::list_campaigns::ListCampaignsOutput) with field(s):
-    ///   - [`campaigns(Option<Vec<CampaignSummary>>)`](crate::operation::list_campaigns::ListCampaignsOutput::campaigns): <p>A list of the campaigns.</p>
+    ///   - [`campaigns(Option<Vec::<CampaignSummary>>)`](crate::operation::list_campaigns::ListCampaignsOutput::campaigns): <p>A list of the campaigns.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_campaigns::ListCampaignsOutput::next_token): <p>A token for getting the next set of campaigns (if they exist).</p>
     /// - On failure, responds with [`SdkError<ListCampaignsError>`](crate::operation::list_campaigns::ListCampaignsError)
     pub fn list_campaigns(&self) -> crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder {

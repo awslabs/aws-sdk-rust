@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`dataset_name_begins_with(impl Into<String>)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::dataset_name_begins_with) / [`set_dataset_name_begins_with(Option<String>)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::set_dataset_name_begins_with):<br>required: **false**<br><p>The beginning of the name of the datasets to be listed. </p><br>
     /// - On success, responds with [`ListDatasetsOutput`](crate::operation::list_datasets::ListDatasetsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_datasets::ListDatasetsOutput::next_token): <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
-    ///   - [`dataset_summaries(Option<Vec<DatasetSummary>>)`](crate::operation::list_datasets::ListDatasetsOutput::dataset_summaries): <p>Provides information about the specified dataset, including creation time, dataset ARN, and status. </p>
+    ///   - [`dataset_summaries(Option<Vec::<DatasetSummary>>)`](crate::operation::list_datasets::ListDatasetsOutput::dataset_summaries): <p>Provides information about the specified dataset, including creation time, dataset ARN, and status. </p>
     /// - On failure, responds with [`SdkError<ListDatasetsError>`](crate::operation::list_datasets::ListDatasetsError)
     pub fn list_datasets(&self) -> crate::operation::list_datasets::builders::ListDatasetsFluentBuilder {
         crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::new(self.handle.clone())

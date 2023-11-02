@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`app_registry_arn(impl Into<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::app_registry_arn) / [`set_app_registry_arn(Option<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::set_app_registry_arn):<br>required: **false**<br><p>The Amazon Resource Name (ARN) of the application registry.</p><br>
     /// - On success, responds with [`GetApplicationOutput`](crate::operation::get_application::GetApplicationOutput) with field(s):
     ///   - [`application(Option<Application>)`](crate::operation::get_application::GetApplicationOutput::application): <p>Returns all of the metadata of an application registered with AWS Systems Manager for SAP.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_application::GetApplicationOutput::tags): <p>The tags of a registered application.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_application::GetApplicationOutput::tags): <p>The tags of a registered application.</p>
     /// - On failure, responds with [`SdkError<GetApplicationError>`](crate::operation::get_application::GetApplicationError)
     pub fn get_application(&self) -> crate::operation::get_application::builders::GetApplicationFluentBuilder {
         crate::operation::get_application::builders::GetApplicationFluentBuilder::new(self.handle.clone())

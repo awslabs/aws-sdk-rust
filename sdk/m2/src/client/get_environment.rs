@@ -14,11 +14,11 @@ impl super::Client {
     ///   - [`engine_type(EngineType)`](crate::operation::get_environment::GetEnvironmentOutput::engine_type): <p>The target platform for the runtime environment.</p>
     ///   - [`engine_version(String)`](crate::operation::get_environment::GetEnvironmentOutput::engine_version): <p>The version of the runtime engine.</p>
     ///   - [`vpc_id(String)`](crate::operation::get_environment::GetEnvironmentOutput::vpc_id): <p>The unique identifier for the VPC used with this runtime environment.</p>
-    ///   - [`subnet_ids(Vec<String>)`](crate::operation::get_environment::GetEnvironmentOutput::subnet_ids): <p>The unique identifiers of the subnets assigned to this runtime environment.</p>
-    ///   - [`security_group_ids(Vec<String>)`](crate::operation::get_environment::GetEnvironmentOutput::security_group_ids): <p>The unique identifiers of the security groups assigned to this runtime environment.</p>
+    ///   - [`subnet_ids(Vec::<String>)`](crate::operation::get_environment::GetEnvironmentOutput::subnet_ids): <p>The unique identifiers of the subnets assigned to this runtime environment.</p>
+    ///   - [`security_group_ids(Vec::<String>)`](crate::operation::get_environment::GetEnvironmentOutput::security_group_ids): <p>The unique identifiers of the security groups assigned to this runtime environment.</p>
     ///   - [`creation_time(DateTime)`](crate::operation::get_environment::GetEnvironmentOutput::creation_time): <p>The timestamp when the runtime environment was created.</p>
-    ///   - [`storage_configurations(Option<Vec<StorageConfiguration>>)`](crate::operation::get_environment::GetEnvironmentOutput::storage_configurations): <p>The storage configurations defined for the runtime environment.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_environment::GetEnvironmentOutput::tags): <p>The tags defined for this runtime environment.</p>
+    ///   - [`storage_configurations(Option<Vec::<StorageConfiguration>>)`](crate::operation::get_environment::GetEnvironmentOutput::storage_configurations): <p>The storage configurations defined for the runtime environment.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_environment::GetEnvironmentOutput::tags): <p>The tags defined for this runtime environment.</p>
     ///   - [`high_availability_config(Option<HighAvailabilityConfig>)`](crate::operation::get_environment::GetEnvironmentOutput::high_availability_config): <p>The desired capacity of the high availability configuration for the runtime environment.</p>
     ///   - [`publicly_accessible(bool)`](crate::operation::get_environment::GetEnvironmentOutput::publicly_accessible): <p>Whether applications running in this runtime environment are publicly accessible. </p>
     ///   - [`actual_capacity(Option<i32>)`](crate::operation::get_environment::GetEnvironmentOutput::actual_capacity): <p>The number of instances included in the runtime environment. A standalone runtime environment has a maxiumum of one instance. Currently, a high availability runtime environment has a maximum of two instances. </p>

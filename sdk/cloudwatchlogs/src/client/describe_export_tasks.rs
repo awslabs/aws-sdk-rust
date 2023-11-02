@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_export_tasks::builders::DescribeExportTasksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_export_tasks::builders::DescribeExportTasksFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of items to return. (You received this token from a previous call.)</p><br>
     ///   - [`limit(i32)`](crate::operation::describe_export_tasks::builders::DescribeExportTasksFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::describe_export_tasks::builders::DescribeExportTasksFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p><br>
     /// - On success, responds with [`DescribeExportTasksOutput`](crate::operation::describe_export_tasks::DescribeExportTasksOutput) with field(s):
-    ///   - [`export_tasks(Option<Vec<ExportTask>>)`](crate::operation::describe_export_tasks::DescribeExportTasksOutput::export_tasks): <p>The export tasks.</p>
+    ///   - [`export_tasks(Option<Vec::<ExportTask>>)`](crate::operation::describe_export_tasks::DescribeExportTasksOutput::export_tasks): <p>The export tasks.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_export_tasks::DescribeExportTasksOutput::next_token): <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     /// - On failure, responds with [`SdkError<DescribeExportTasksError>`](crate::operation::describe_export_tasks::DescribeExportTasksError)
     pub fn describe_export_tasks(&self) -> crate::operation::describe_export_tasks::builders::DescribeExportTasksFluentBuilder {

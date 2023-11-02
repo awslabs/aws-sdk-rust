@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_event_streams::builders::ListEventStreamsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_event_streams::builders::ListEventStreamsFluentBuilder::set_next_token):<br>required: **false**<br><p>Identifies the next page of results to return.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_event_streams::builders::ListEventStreamsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_event_streams::builders::ListEventStreamsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of objects returned per page.</p><br>
     /// - On success, responds with [`ListEventStreamsOutput`](crate::operation::list_event_streams::ListEventStreamsOutput) with field(s):
-    ///   - [`items(Option<Vec<EventStreamSummary>>)`](crate::operation::list_event_streams::ListEventStreamsOutput::items): <p>Contains summary information about an EventStream.</p>
+    ///   - [`items(Option<Vec::<EventStreamSummary>>)`](crate::operation::list_event_streams::ListEventStreamsOutput::items): <p>Contains summary information about an EventStream.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_event_streams::ListEventStreamsOutput::next_token): <p>Identifies the next page of results to return.</p>
     /// - On failure, responds with [`SdkError<ListEventStreamsError>`](crate::operation::list_event_streams::ListEventStreamsError)
     pub fn list_event_streams(&self) -> crate::operation::list_event_streams::builders::ListEventStreamsFluentBuilder {

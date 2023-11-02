@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_analysis_templates::builders::ListAnalysisTemplatesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_analysis_templates::builders::ListAnalysisTemplatesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum size of the results that is returned per call.</p><br>
     /// - On success, responds with [`ListAnalysisTemplatesOutput`](crate::operation::list_analysis_templates::ListAnalysisTemplatesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_analysis_templates::ListAnalysisTemplatesOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
-    ///   - [`analysis_template_summaries(Vec<AnalysisTemplateSummary>)`](crate::operation::list_analysis_templates::ListAnalysisTemplatesOutput::analysis_template_summaries): <p>Lists analysis template metadata.</p>
+    ///   - [`analysis_template_summaries(Vec::<AnalysisTemplateSummary>)`](crate::operation::list_analysis_templates::ListAnalysisTemplatesOutput::analysis_template_summaries): <p>Lists analysis template metadata.</p>
     /// - On failure, responds with [`SdkError<ListAnalysisTemplatesError>`](crate::operation::list_analysis_templates::ListAnalysisTemplatesError)
     pub fn list_analysis_templates(&self) -> crate::operation::list_analysis_templates::builders::ListAnalysisTemplatesFluentBuilder {
         crate::operation::list_analysis_templates::builders::ListAnalysisTemplatesFluentBuilder::new(self.handle.clone())

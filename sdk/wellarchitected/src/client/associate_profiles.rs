@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`workload_id(impl Into<String>)`](crate::operation::associate_profiles::builders::AssociateProfilesFluentBuilder::workload_id) / [`set_workload_id(Option<String>)`](crate::operation::associate_profiles::builders::AssociateProfilesFluentBuilder::set_workload_id):<br>required: **true**<br><p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p><br>
-    ///   - [`profile_arns(impl Into<String>)`](crate::operation::associate_profiles::builders::AssociateProfilesFluentBuilder::profile_arns) / [`set_profile_arns(Option<Vec<String>>)`](crate::operation::associate_profiles::builders::AssociateProfilesFluentBuilder::set_profile_arns):<br>required: **true**<br><p>The list of profile ARNs to associate with the workload.</p><br>
+    ///   - [`profile_arns(impl Into<String>)`](crate::operation::associate_profiles::builders::AssociateProfilesFluentBuilder::profile_arns) / [`set_profile_arns(Option<Vec::<String>>)`](crate::operation::associate_profiles::builders::AssociateProfilesFluentBuilder::set_profile_arns):<br>required: **true**<br><p>The list of profile ARNs to associate with the workload.</p><br>
     /// - On success, responds with [`AssociateProfilesOutput`](crate::operation::associate_profiles::AssociateProfilesOutput)
     /// - On failure, responds with [`SdkError<AssociateProfilesError>`](crate::operation::associate_profiles::AssociateProfilesError)
     pub fn associate_profiles(&self) -> crate::operation::associate_profiles::builders::AssociateProfilesFluentBuilder {

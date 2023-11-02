@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_created_artifacts::builders::ListCreatedArtifactsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_created_artifacts::builders::ListCreatedArtifactsFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results to be returned per page.</p><br>
     /// - On success, responds with [`ListCreatedArtifactsOutput`](crate::operation::list_created_artifacts::ListCreatedArtifactsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_created_artifacts::ListCreatedArtifactsOutput::next_token): <p>If there are more created artifacts than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
-    ///   - [`created_artifact_list(Option<Vec<CreatedArtifact>>)`](crate::operation::list_created_artifacts::ListCreatedArtifactsOutput::created_artifact_list): <p>List of created artifacts up to the maximum number of results specified in the request.</p>
+    ///   - [`created_artifact_list(Option<Vec::<CreatedArtifact>>)`](crate::operation::list_created_artifacts::ListCreatedArtifactsOutput::created_artifact_list): <p>List of created artifacts up to the maximum number of results specified in the request.</p>
     /// - On failure, responds with [`SdkError<ListCreatedArtifactsError>`](crate::operation::list_created_artifacts::ListCreatedArtifactsError)
     pub fn list_created_artifacts(&self) -> crate::operation::list_created_artifacts::builders::ListCreatedArtifactsFluentBuilder {
         crate::operation::list_created_artifacts::builders::ListCreatedArtifactsFluentBuilder::new(self.handle.clone())

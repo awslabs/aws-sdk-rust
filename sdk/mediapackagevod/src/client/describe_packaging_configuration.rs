@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::describe_packaging_configuration::DescribePackagingConfigurationOutput::id): The ID of the PackagingConfiguration.
     ///   - [`mss_package(Option<MssPackage>)`](crate::operation::describe_packaging_configuration::DescribePackagingConfigurationOutput::mss_package): A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
     ///   - [`packaging_group_id(Option<String>)`](crate::operation::describe_packaging_configuration::DescribePackagingConfigurationOutput::packaging_group_id): The ID of a PackagingGroup.
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_packaging_configuration::DescribePackagingConfigurationOutput::tags): A collection of tags associated with a resource
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_packaging_configuration::DescribePackagingConfigurationOutput::tags): A collection of tags associated with a resource
     /// - On failure, responds with [`SdkError<DescribePackagingConfigurationError>`](crate::operation::describe_packaging_configuration::DescribePackagingConfigurationError)
     pub fn describe_packaging_configuration(
         &self,

@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`status_message(Option<String>)`](crate::operation::get_read_set_activation_job::GetReadSetActivationJobOutput::status_message): <p>The job's status message.</p>
     ///   - [`creation_time(DateTime)`](crate::operation::get_read_set_activation_job::GetReadSetActivationJobOutput::creation_time): <p>When the job was created.</p>
     ///   - [`completion_time(Option<DateTime>)`](crate::operation::get_read_set_activation_job::GetReadSetActivationJobOutput::completion_time): <p>When the job completed.</p>
-    ///   - [`sources(Option<Vec<ActivateReadSetSourceItem>>)`](crate::operation::get_read_set_activation_job::GetReadSetActivationJobOutput::sources): <p>The job's source files.</p>
+    ///   - [`sources(Option<Vec::<ActivateReadSetSourceItem>>)`](crate::operation::get_read_set_activation_job::GetReadSetActivationJobOutput::sources): <p>The job's source files.</p>
     /// - On failure, responds with [`SdkError<GetReadSetActivationJobError>`](crate::operation::get_read_set_activation_job::GetReadSetActivationJobError)
     pub fn get_read_set_activation_job(&self) -> crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobFluentBuilder {
         crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobFluentBuilder::new(self.handle.clone())

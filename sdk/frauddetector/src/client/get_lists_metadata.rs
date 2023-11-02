@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_lists_metadata::builders::GetListsMetadataFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_lists_metadata::builders::GetListsMetadataFluentBuilder::set_next_token):<br>required: **false**<br><p> The next token for the subsequent request. </p><br>
     ///   - [`max_results(i32)`](crate::operation::get_lists_metadata::builders::GetListsMetadataFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_lists_metadata::builders::GetListsMetadataFluentBuilder::set_max_results):<br>required: **false**<br><p> The maximum number of objects to return for the request. </p><br>
     /// - On success, responds with [`GetListsMetadataOutput`](crate::operation::get_lists_metadata::GetListsMetadataOutput) with field(s):
-    ///   - [`lists(Option<Vec<AllowDenyList>>)`](crate::operation::get_lists_metadata::GetListsMetadataOutput::lists): <p> The metadata of the specified list or all lists under the account. </p>
+    ///   - [`lists(Option<Vec::<AllowDenyList>>)`](crate::operation::get_lists_metadata::GetListsMetadataOutput::lists): <p> The metadata of the specified list or all lists under the account. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_lists_metadata::GetListsMetadataOutput::next_token): <p> The next page token. </p>
     /// - On failure, responds with [`SdkError<GetListsMetadataError>`](crate::operation::get_lists_metadata::GetListsMetadataError)
     pub fn get_lists_metadata(&self) -> crate::operation::get_lists_metadata::builders::GetListsMetadataFluentBuilder {

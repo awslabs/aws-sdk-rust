@@ -8,10 +8,10 @@ impl super::Client {
     ///   - [`exclusive_start_stream_name(impl Into<String>)`](crate::operation::list_streams::builders::ListStreamsFluentBuilder::exclusive_start_stream_name) / [`set_exclusive_start_stream_name(Option<String>)`](crate::operation::list_streams::builders::ListStreamsFluentBuilder::set_exclusive_start_stream_name):<br>required: **false**<br><p>The name of the stream to start the list with.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_streams::builders::ListStreamsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_streams::builders::ListStreamsFluentBuilder::set_next_token):<br>required: **false**<br><p></p><br>
     /// - On success, responds with [`ListStreamsOutput`](crate::operation::list_streams::ListStreamsOutput) with field(s):
-    ///   - [`stream_names(Vec<String>)`](crate::operation::list_streams::ListStreamsOutput::stream_names): <p>The names of the streams that are associated with the Amazon Web Services account making the <code>ListStreams</code> request.</p>
+    ///   - [`stream_names(Vec::<String>)`](crate::operation::list_streams::ListStreamsOutput::stream_names): <p>The names of the streams that are associated with the Amazon Web Services account making the <code>ListStreams</code> request.</p>
     ///   - [`has_more_streams(bool)`](crate::operation::list_streams::ListStreamsOutput::has_more_streams): <p>If set to <code>true</code>, there are more streams available to list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_streams::ListStreamsOutput::next_token): <p></p>
-    ///   - [`stream_summaries(Option<Vec<StreamSummary>>)`](crate::operation::list_streams::ListStreamsOutput::stream_summaries): <p></p>
+    ///   - [`stream_summaries(Option<Vec::<StreamSummary>>)`](crate::operation::list_streams::ListStreamsOutput::stream_summaries): <p></p>
     /// - On failure, responds with [`SdkError<ListStreamsError>`](crate::operation::list_streams::ListStreamsError)
     pub fn list_streams(&self) -> crate::operation::list_streams::builders::ListStreamsFluentBuilder {
         crate::operation::list_streams::builders::ListStreamsFluentBuilder::new(self.handle.clone())

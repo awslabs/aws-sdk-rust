@@ -4,6 +4,7 @@
  */
 
 use super::repr::{self, BaseProvider};
+#[cfg(feature = "credentials-process")]
 use crate::credential_process::CredentialProcessProvider;
 use crate::profile::credentials::ProfileFileError;
 use crate::provider_config::ProviderConfig;
@@ -85,9 +86,22 @@ impl ProviderChain {
                     })?
             }
             BaseProvider::AccessKey(key) => Arc::new(key.clone()),
-            BaseProvider::CredentialProcess(credential_process) => Arc::new(
-                CredentialProcessProvider::new(credential_process.unredacted().into()),
-            ),
+            BaseProvider::CredentialProcess(_credential_process) => {
+                #[cfg(feature = "credentials-process")]
+                {
+                    Arc::new(CredentialProcessProvider::from_command(_credential_process))
+                }
+                #[cfg(not(feature = "credentials-process"))]
+                {
+                    Err(ProfileFileError::FeatureNotEnabled {
+                        feature: "credentials-process".into(),
+                        message: Some(
+                            "In order to spawn a subprocess, the `credentials-process` feature must be enabled."
+                                .into(),
+                        ),
+                    })?
+                }
+            }
             BaseProvider::WebIdentityTokenRole {
                 role_arn,
                 web_identity_token_file,
@@ -136,6 +150,7 @@ impl ProviderChain {
                 {
                     Err(ProfileFileError::FeatureNotEnabled {
                         feature: "sso".into(),
+                        message: None,
                     })?
                 }
             }

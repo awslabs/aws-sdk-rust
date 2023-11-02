@@ -18,8 +18,8 @@ impl super::Client {
     ///   - [`last_updated_time(Option<DateTime>)`](crate::operation::describe_application_instance::DescribeApplicationInstanceOutput::last_updated_time): <p>The application instance was updated.</p>
     ///   - [`application_instance_id(Option<String>)`](crate::operation::describe_application_instance::DescribeApplicationInstanceOutput::application_instance_id): <p>The application instance's ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::describe_application_instance::DescribeApplicationInstanceOutput::arn): <p>The application instance's ARN.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_application_instance::DescribeApplicationInstanceOutput::tags): <p>The application instance's tags.</p>
-    ///   - [`runtime_context_states(Option<Vec<ReportedRuntimeContextState>>)`](crate::operation::describe_application_instance::DescribeApplicationInstanceOutput::runtime_context_states): <p>The application instance's state.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_application_instance::DescribeApplicationInstanceOutput::tags): <p>The application instance's tags.</p>
+    ///   - [`runtime_context_states(Option<Vec::<ReportedRuntimeContextState>>)`](crate::operation::describe_application_instance::DescribeApplicationInstanceOutput::runtime_context_states): <p>The application instance's state.</p>
     /// - On failure, responds with [`SdkError<DescribeApplicationInstanceError>`](crate::operation::describe_application_instance::DescribeApplicationInstanceError)
     pub fn describe_application_instance(
         &self,

@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`log_group_name(impl Into<String>)`](crate::operation::list_tags_log_group::builders::ListTagsLogGroupFluentBuilder::log_group_name) / [`set_log_group_name(Option<String>)`](crate::operation::list_tags_log_group::builders::ListTagsLogGroupFluentBuilder::set_log_group_name):<br>required: **true**<br><p>The name of the log group.</p><br>
     /// - On success, responds with [`ListTagsLogGroupOutput`](crate::operation::list_tags_log_group::ListTagsLogGroupOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::list_tags_log_group::ListTagsLogGroupOutput::tags): <p>The tags for the log group.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::list_tags_log_group::ListTagsLogGroupOutput::tags): <p>The tags for the log group.</p>
     /// - On failure, responds with [`SdkError<ListTagsLogGroupError>`](crate::operation::list_tags_log_group::ListTagsLogGroupError)
     #[deprecated(note = "Please use the generic tagging API ListTagsForResource")]
     pub fn list_tags_log_group(&self) -> crate::operation::list_tags_log_group::builders::ListTagsLogGroupFluentBuilder {

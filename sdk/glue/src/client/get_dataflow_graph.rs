@@ -5,8 +5,8 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`python_script(impl Into<String>)`](crate::operation::get_dataflow_graph::builders::GetDataflowGraphFluentBuilder::python_script) / [`set_python_script(Option<String>)`](crate::operation::get_dataflow_graph::builders::GetDataflowGraphFluentBuilder::set_python_script):<br>required: **false**<br><p>The Python script to transform.</p><br>
     /// - On success, responds with [`GetDataflowGraphOutput`](crate::operation::get_dataflow_graph::GetDataflowGraphOutput) with field(s):
-    ///   - [`dag_nodes(Option<Vec<CodeGenNode>>)`](crate::operation::get_dataflow_graph::GetDataflowGraphOutput::dag_nodes): <p>A list of the nodes in the resulting DAG.</p>
-    ///   - [`dag_edges(Option<Vec<CodeGenEdge>>)`](crate::operation::get_dataflow_graph::GetDataflowGraphOutput::dag_edges): <p>A list of the edges in the resulting DAG.</p>
+    ///   - [`dag_nodes(Option<Vec::<CodeGenNode>>)`](crate::operation::get_dataflow_graph::GetDataflowGraphOutput::dag_nodes): <p>A list of the nodes in the resulting DAG.</p>
+    ///   - [`dag_edges(Option<Vec::<CodeGenEdge>>)`](crate::operation::get_dataflow_graph::GetDataflowGraphOutput::dag_edges): <p>A list of the edges in the resulting DAG.</p>
     /// - On failure, responds with [`SdkError<GetDataflowGraphError>`](crate::operation::get_dataflow_graph::GetDataflowGraphError)
     pub fn get_dataflow_graph(&self) -> crate::operation::get_dataflow_graph::builders::GetDataflowGraphFluentBuilder {
         crate::operation::get_dataflow_graph::builders::GetDataflowGraphFluentBuilder::new(self.handle.clone())

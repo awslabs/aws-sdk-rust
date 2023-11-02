@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`global_table_name(impl Into<String>)`](crate::operation::create_global_table::builders::CreateGlobalTableFluentBuilder::global_table_name) / [`set_global_table_name(Option<String>)`](crate::operation::create_global_table::builders::CreateGlobalTableFluentBuilder::set_global_table_name):<br>required: **true**<br><p>The global table name.</p><br>
-    ///   - [`replication_group(Replica)`](crate::operation::create_global_table::builders::CreateGlobalTableFluentBuilder::replication_group) / [`set_replication_group(Option<Vec<Replica>>)`](crate::operation::create_global_table::builders::CreateGlobalTableFluentBuilder::set_replication_group):<br>required: **true**<br><p>The Regions where the global table needs to be created.</p><br>
+    ///   - [`replication_group(Replica)`](crate::operation::create_global_table::builders::CreateGlobalTableFluentBuilder::replication_group) / [`set_replication_group(Option<Vec::<Replica>>)`](crate::operation::create_global_table::builders::CreateGlobalTableFluentBuilder::set_replication_group):<br>required: **true**<br><p>The Regions where the global table needs to be created.</p><br>
     /// - On success, responds with [`CreateGlobalTableOutput`](crate::operation::create_global_table::CreateGlobalTableOutput) with field(s):
     ///   - [`global_table_description(Option<GlobalTableDescription>)`](crate::operation::create_global_table::CreateGlobalTableOutput::global_table_description): <p>Contains the details of the global table.</p>
     /// - On failure, responds with [`SdkError<CreateGlobalTableError>`](crate::operation::create_global_table::CreateGlobalTableError)

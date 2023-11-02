@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_wireless_gateways::builders::ListWirelessGatewaysFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_wireless_gateways::builders::ListWirelessGatewaysFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in this operation.</p><br>
     /// - On success, responds with [`ListWirelessGatewaysOutput`](crate::operation::list_wireless_gateways::ListWirelessGatewaysOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_wireless_gateways::ListWirelessGatewaysOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    ///   - [`wireless_gateway_list(Option<Vec<WirelessGatewayStatistics>>)`](crate::operation::list_wireless_gateways::ListWirelessGatewaysOutput::wireless_gateway_list): <p>The ID of the wireless gateway.</p>
+    ///   - [`wireless_gateway_list(Option<Vec::<WirelessGatewayStatistics>>)`](crate::operation::list_wireless_gateways::ListWirelessGatewaysOutput::wireless_gateway_list): <p>The ID of the wireless gateway.</p>
     /// - On failure, responds with [`SdkError<ListWirelessGatewaysError>`](crate::operation::list_wireless_gateways::ListWirelessGatewaysError)
     pub fn list_wireless_gateways(&self) -> crate::operation::list_wireless_gateways::builders::ListWirelessGatewaysFluentBuilder {
         crate::operation::list_wireless_gateways::builders::ListWirelessGatewaysFluentBuilder::new(self.handle.clone())

@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_components::builders::ListComponentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_components::builders::ListComponentsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to request the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_components::builders::ListComponentsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_components::builders::ListComponentsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of components to retrieve.</p><br>
     /// - On success, responds with [`ListComponentsOutput`](crate::operation::list_components::ListComponentsOutput) with field(s):
-    ///   - [`entities(Vec<ComponentSummary>)`](crate::operation::list_components::ListComponentsOutput::entities): <p>The list of components for the Amplify app.</p>
+    ///   - [`entities(Vec::<ComponentSummary>)`](crate::operation::list_components::ListComponentsOutput::entities): <p>The list of components for the Amplify app.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_components::ListComponentsOutput::next_token): <p>The pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListComponentsError>`](crate::operation::list_components::ListComponentsError)
     pub fn list_components(&self) -> crate::operation::list_components::builders::ListComponentsFluentBuilder {

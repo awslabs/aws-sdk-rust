@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`directory_id(impl Into<String>)`](crate::operation::disassociate_ip_groups::builders::DisassociateIpGroupsFluentBuilder::directory_id) / [`set_directory_id(Option<String>)`](crate::operation::disassociate_ip_groups::builders::DisassociateIpGroupsFluentBuilder::set_directory_id):<br>required: **true**<br><p>The identifier of the directory.</p><br>
-    ///   - [`group_ids(impl Into<String>)`](crate::operation::disassociate_ip_groups::builders::DisassociateIpGroupsFluentBuilder::group_ids) / [`set_group_ids(Option<Vec<String>>)`](crate::operation::disassociate_ip_groups::builders::DisassociateIpGroupsFluentBuilder::set_group_ids):<br>required: **true**<br><p>The identifiers of one or more IP access control groups.</p><br>
+    ///   - [`group_ids(impl Into<String>)`](crate::operation::disassociate_ip_groups::builders::DisassociateIpGroupsFluentBuilder::group_ids) / [`set_group_ids(Option<Vec::<String>>)`](crate::operation::disassociate_ip_groups::builders::DisassociateIpGroupsFluentBuilder::set_group_ids):<br>required: **true**<br><p>The identifiers of one or more IP access control groups.</p><br>
     /// - On success, responds with [`DisassociateIpGroupsOutput`](crate::operation::disassociate_ip_groups::DisassociateIpGroupsOutput)
     /// - On failure, responds with [`SdkError<DisassociateIpGroupsError>`](crate::operation::disassociate_ip_groups::DisassociateIpGroupsError)
     pub fn disassociate_ip_groups(&self) -> crate::operation::disassociate_ip_groups::builders::DisassociateIpGroupsFluentBuilder {

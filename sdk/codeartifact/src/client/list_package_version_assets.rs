@@ -20,7 +20,7 @@ impl super::Client {
     ///   - [`version(Option<String>)`](crate::operation::list_package_version_assets::ListPackageVersionAssetsOutput::version): <p> The version of the package associated with the requested assets. </p>
     ///   - [`version_revision(Option<String>)`](crate::operation::list_package_version_assets::ListPackageVersionAssetsOutput::version_revision): <p> The current revision associated with the package version. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_package_version_assets::ListPackageVersionAssetsOutput::next_token): <p> If there are additional results, this is the token for the next set of results. </p>
-    ///   - [`assets(Option<Vec<AssetSummary>>)`](crate::operation::list_package_version_assets::ListPackageVersionAssetsOutput::assets): <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> objects. </p>
+    ///   - [`assets(Option<Vec::<AssetSummary>>)`](crate::operation::list_package_version_assets::ListPackageVersionAssetsOutput::assets): <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> objects. </p>
     /// - On failure, responds with [`SdkError<ListPackageVersionAssetsError>`](crate::operation::list_package_version_assets::ListPackageVersionAssetsError)
     pub fn list_package_version_assets(&self) -> crate::operation::list_package_version_assets::builders::ListPackageVersionAssetsFluentBuilder {
         crate::operation::list_package_version_assets::builders::ListPackageVersionAssetsFluentBuilder::new(self.handle.clone())

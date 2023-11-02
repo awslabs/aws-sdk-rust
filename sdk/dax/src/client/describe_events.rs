@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::set_next_token):<br>required: **false**<br><p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p><br>
     /// - On success, responds with [`DescribeEventsOutput`](crate::operation::describe_events::DescribeEventsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::describe_events::DescribeEventsOutput::next_token): <p>Provides an identifier to allow retrieval of paginated results.</p>
-    ///   - [`events(Option<Vec<Event>>)`](crate::operation::describe_events::DescribeEventsOutput::events): <p>An array of events. Each element in the array represents one event.</p>
+    ///   - [`events(Option<Vec::<Event>>)`](crate::operation::describe_events::DescribeEventsOutput::events): <p>An array of events. Each element in the array represents one event.</p>
     /// - On failure, responds with [`SdkError<DescribeEventsError>`](crate::operation::describe_events::DescribeEventsError)
     pub fn describe_events(&self) -> crate::operation::describe_events::builders::DescribeEventsFluentBuilder {
         crate::operation::describe_events::builders::DescribeEventsFluentBuilder::new(self.handle.clone())

@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`workload_arn(impl Into<String>)`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::workload_arn) / [`set_workload_arn(Option<String>)`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::set_workload_arn):<br>required: **true**<br><p>The ARN for the workload.</p><br>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput::tags): <p>The tags for the resource.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput::tags): <p>The tags for the resource.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::operation::list_tags_for_resource::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder {
         crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::new(self.handle.clone())

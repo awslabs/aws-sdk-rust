@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`group_id(impl Into<String>)`](crate::operation::list_group_certificate_authorities::builders::ListGroupCertificateAuthoritiesFluentBuilder::group_id) / [`set_group_id(Option<String>)`](crate::operation::list_group_certificate_authorities::builders::ListGroupCertificateAuthoritiesFluentBuilder::set_group_id):<br>required: **true**<br>The ID of the Greengrass group.<br>
     /// - On success, responds with [`ListGroupCertificateAuthoritiesOutput`](crate::operation::list_group_certificate_authorities::ListGroupCertificateAuthoritiesOutput) with field(s):
-    ///   - [`group_certificate_authorities(Option<Vec<GroupCertificateAuthorityProperties>>)`](crate::operation::list_group_certificate_authorities::ListGroupCertificateAuthoritiesOutput::group_certificate_authorities): A list of certificate authorities associated with the group.
+    ///   - [`group_certificate_authorities(Option<Vec::<GroupCertificateAuthorityProperties>>)`](crate::operation::list_group_certificate_authorities::ListGroupCertificateAuthoritiesOutput::group_certificate_authorities): A list of certificate authorities associated with the group.
     /// - On failure, responds with [`SdkError<ListGroupCertificateAuthoritiesError>`](crate::operation::list_group_certificate_authorities::ListGroupCertificateAuthoritiesError)
     pub fn list_group_certificate_authorities(
         &self,

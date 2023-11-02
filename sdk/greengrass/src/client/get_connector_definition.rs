@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`latest_version(Option<String>)`](crate::operation::get_connector_definition::GetConnectorDefinitionOutput::latest_version): The ID of the latest version associated with the definition.
     ///   - [`latest_version_arn(Option<String>)`](crate::operation::get_connector_definition::GetConnectorDefinitionOutput::latest_version_arn): The ARN of the latest version associated with the definition.
     ///   - [`name(Option<String>)`](crate::operation::get_connector_definition::GetConnectorDefinitionOutput::name): The name of the definition.
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_connector_definition::GetConnectorDefinitionOutput::tags): Tag(s) attached to the resource arn.
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_connector_definition::GetConnectorDefinitionOutput::tags): Tag(s) attached to the resource arn.
     /// - On failure, responds with [`SdkError<GetConnectorDefinitionError>`](crate::operation::get_connector_definition::GetConnectorDefinitionError)
     pub fn get_connector_definition(&self) -> crate::operation::get_connector_definition::builders::GetConnectorDefinitionFluentBuilder {
         crate::operation::get_connector_definition::builders::GetConnectorDefinitionFluentBuilder::new(self.handle.clone())

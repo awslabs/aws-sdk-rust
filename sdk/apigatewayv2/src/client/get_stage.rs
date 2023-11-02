@@ -16,10 +16,10 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::get_stage::GetStageOutput::description): <p>The description of the stage.</p>
     ///   - [`last_deployment_status_message(Option<String>)`](crate::operation::get_stage::GetStageOutput::last_deployment_status_message): <p>Describes the status of the last deployment of a stage. Supported only for stages with autoDeploy enabled.</p>
     ///   - [`last_updated_date(Option<DateTime>)`](crate::operation::get_stage::GetStageOutput::last_updated_date): <p>The timestamp when the stage was last updated.</p>
-    ///   - [`route_settings(Option<HashMap<String, RouteSettings>>)`](crate::operation::get_stage::GetStageOutput::route_settings): <p>Route settings for the stage, by routeKey.</p>
+    ///   - [`route_settings(Option<HashMap::<String, RouteSettings>>)`](crate::operation::get_stage::GetStageOutput::route_settings): <p>Route settings for the stage, by routeKey.</p>
     ///   - [`stage_name(Option<String>)`](crate::operation::get_stage::GetStageOutput::stage_name): <p>The name of the stage.</p>
-    ///   - [`stage_variables(Option<HashMap<String, String>>)`](crate::operation::get_stage::GetStageOutput::stage_variables): <p>A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_stage::GetStageOutput::tags): <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    ///   - [`stage_variables(Option<HashMap::<String, String>>)`](crate::operation::get_stage::GetStageOutput::stage_variables): <p>A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_stage::GetStageOutput::tags): <p>The collection of tags. Each tag element is associated with a given resource.</p>
     /// - On failure, responds with [`SdkError<GetStageError>`](crate::operation::get_stage::GetStageError)
     pub fn get_stage(&self) -> crate::operation::get_stage::builders::GetStageFluentBuilder {
         crate::operation::get_stage::builders::GetStageFluentBuilder::new(self.handle.clone())

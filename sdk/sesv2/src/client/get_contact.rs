@@ -8,8 +8,8 @@ impl super::Client {
     /// - On success, responds with [`GetContactOutput`](crate::operation::get_contact::GetContactOutput) with field(s):
     ///   - [`contact_list_name(Option<String>)`](crate::operation::get_contact::GetContactOutput::contact_list_name): <p>The name of the contact list to which the contact belongs.</p>
     ///   - [`email_address(Option<String>)`](crate::operation::get_contact::GetContactOutput::email_address): <p>The contact's email address.</p>
-    ///   - [`topic_preferences(Option<Vec<TopicPreference>>)`](crate::operation::get_contact::GetContactOutput::topic_preferences): <p>The contact's preference for being opted-in to or opted-out of a topic.&gt;</p>
-    ///   - [`topic_default_preferences(Option<Vec<TopicPreference>>)`](crate::operation::get_contact::GetContactOutput::topic_default_preferences): <p>The default topic preferences applied to the contact.</p>
+    ///   - [`topic_preferences(Option<Vec::<TopicPreference>>)`](crate::operation::get_contact::GetContactOutput::topic_preferences): <p>The contact's preference for being opted-in to or opted-out of a topic.&gt;</p>
+    ///   - [`topic_default_preferences(Option<Vec::<TopicPreference>>)`](crate::operation::get_contact::GetContactOutput::topic_default_preferences): <p>The default topic preferences applied to the contact.</p>
     ///   - [`unsubscribe_all(bool)`](crate::operation::get_contact::GetContactOutput::unsubscribe_all): <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
     ///   - [`attributes_data(Option<String>)`](crate::operation::get_contact::GetContactOutput::attributes_data): <p>The attribute data attached to a contact.</p>
     ///   - [`created_timestamp(Option<DateTime>)`](crate::operation::get_contact::GetContactOutput::created_timestamp): <p>A timestamp noting when the contact was created.</p>

@@ -50,6 +50,7 @@ version = "0.56.1"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
+features = ["http-body-0-4-x"]
 version = "0.56.1"
 
 [dependencies.hyper]

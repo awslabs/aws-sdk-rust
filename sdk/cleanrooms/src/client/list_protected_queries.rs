@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_protected_queries::builders::ListProtectedQueriesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_protected_queries::builders::ListProtectedQueriesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum size of the results that is returned per call. Service chooses a default if it has not been set. Service can return a nextToken even if the maximum results has not been met. </p><br>
     /// - On success, responds with [`ListProtectedQueriesOutput`](crate::operation::list_protected_queries::ListProtectedQueriesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_protected_queries::ListProtectedQueriesOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
-    ///   - [`protected_queries(Vec<ProtectedQuerySummary>)`](crate::operation::list_protected_queries::ListProtectedQueriesOutput::protected_queries): <p>A list of protected queries.</p>
+    ///   - [`protected_queries(Vec::<ProtectedQuerySummary>)`](crate::operation::list_protected_queries::ListProtectedQueriesOutput::protected_queries): <p>A list of protected queries.</p>
     /// - On failure, responds with [`SdkError<ListProtectedQueriesError>`](crate::operation::list_protected_queries::ListProtectedQueriesError)
     pub fn list_protected_queries(&self) -> crate::operation::list_protected_queries::builders::ListProtectedQueriesFluentBuilder {
         crate::operation::list_protected_queries::builders::ListProtectedQueriesFluentBuilder::new(self.handle.clone())

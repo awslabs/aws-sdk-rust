@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_app_instance_users::builders::ListAppInstanceUsersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_app_instance_users::builders::ListAppInstanceUsersFluentBuilder::set_next_token):<br>required: **false**<br><p>The token passed by previous API calls until all requested users are returned.</p><br>
     /// - On success, responds with [`ListAppInstanceUsersOutput`](crate::operation::list_app_instance_users::ListAppInstanceUsersOutput) with field(s):
     ///   - [`app_instance_arn(Option<String>)`](crate::operation::list_app_instance_users::ListAppInstanceUsersOutput::app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
-    ///   - [`app_instance_users(Option<Vec<AppInstanceUserSummary>>)`](crate::operation::list_app_instance_users::ListAppInstanceUsersOutput::app_instance_users): <p>The information for each requested <code>AppInstanceUser</code>.</p>
+    ///   - [`app_instance_users(Option<Vec::<AppInstanceUserSummary>>)`](crate::operation::list_app_instance_users::ListAppInstanceUsersOutput::app_instance_users): <p>The information for each requested <code>AppInstanceUser</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_app_instance_users::ListAppInstanceUsersOutput::next_token): <p>The token passed by previous API calls until all requested users are returned.</p>
     /// - On failure, responds with [`SdkError<ListAppInstanceUsersError>`](crate::operation::list_app_instance_users::ListAppInstanceUsersError)
     pub fn list_app_instance_users(&self) -> crate::operation::list_app_instance_users::builders::ListAppInstanceUsersFluentBuilder {

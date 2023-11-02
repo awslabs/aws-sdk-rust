@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_safety_rules::builders::ListSafetyRulesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_safety_rules::builders::ListSafetyRulesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token that identifies which batch of results you want to see.</p><br>
     /// - On success, responds with [`ListSafetyRulesOutput`](crate::operation::list_safety_rules::ListSafetyRulesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_safety_rules::ListSafetyRulesOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
-    ///   - [`safety_rules(Option<Vec<Rule>>)`](crate::operation::list_safety_rules::ListSafetyRulesOutput::safety_rules): <p>The list of safety rules in a control panel.</p>
+    ///   - [`safety_rules(Option<Vec::<Rule>>)`](crate::operation::list_safety_rules::ListSafetyRulesOutput::safety_rules): <p>The list of safety rules in a control panel.</p>
     /// - On failure, responds with [`SdkError<ListSafetyRulesError>`](crate::operation::list_safety_rules::ListSafetyRulesError)
     pub fn list_safety_rules(&self) -> crate::operation::list_safety_rules::builders::ListSafetyRulesFluentBuilder {
         crate::operation::list_safety_rules::builders::ListSafetyRulesFluentBuilder::new(self.handle.clone())

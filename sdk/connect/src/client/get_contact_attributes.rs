@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`instance_id(impl Into<String>)`](crate::operation::get_contact_attributes::builders::GetContactAttributesFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::get_contact_attributes::builders::GetContactAttributesFluentBuilder::set_instance_id):<br>required: **true**<br><p>The identifier of the Amazon Connect instance.</p><br>
     ///   - [`initial_contact_id(impl Into<String>)`](crate::operation::get_contact_attributes::builders::GetContactAttributesFluentBuilder::initial_contact_id) / [`set_initial_contact_id(Option<String>)`](crate::operation::get_contact_attributes::builders::GetContactAttributesFluentBuilder::set_initial_contact_id):<br>required: **true**<br><p>The identifier of the initial contact.</p><br>
     /// - On success, responds with [`GetContactAttributesOutput`](crate::operation::get_contact_attributes::GetContactAttributesOutput) with field(s):
-    ///   - [`attributes(Option<HashMap<String, String>>)`](crate::operation::get_contact_attributes::GetContactAttributesOutput::attributes): <p>Information about the attributes.</p>
+    ///   - [`attributes(Option<HashMap::<String, String>>)`](crate::operation::get_contact_attributes::GetContactAttributesOutput::attributes): <p>Information about the attributes.</p>
     /// - On failure, responds with [`SdkError<GetContactAttributesError>`](crate::operation::get_contact_attributes::GetContactAttributesError)
     pub fn get_contact_attributes(&self) -> crate::operation::get_contact_attributes::builders::GetContactAttributesFluentBuilder {
         crate::operation::get_contact_attributes::builders::GetContactAttributesFluentBuilder::new(self.handle.clone())

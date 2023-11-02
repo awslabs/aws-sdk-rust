@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_user_settings::builders::ListUserSettingsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_user_settings::builders::ListUserSettingsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token used to retrieve the next page of results for this operation. </p><br>
     ///   - [`max_results(i32)`](crate::operation::list_user_settings::builders::ListUserSettingsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_user_settings::builders::ListUserSettingsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be included in the next page.</p><br>
     /// - On success, responds with [`ListUserSettingsOutput`](crate::operation::list_user_settings::ListUserSettingsOutput) with field(s):
-    ///   - [`user_settings(Option<Vec<UserSettingsSummary>>)`](crate::operation::list_user_settings::ListUserSettingsOutput::user_settings): <p>The user settings.</p>
+    ///   - [`user_settings(Option<Vec::<UserSettingsSummary>>)`](crate::operation::list_user_settings::ListUserSettingsOutput::user_settings): <p>The user settings.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_user_settings::ListUserSettingsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation. </p>
     /// - On failure, responds with [`SdkError<ListUserSettingsError>`](crate::operation::list_user_settings::ListUserSettingsError)
     pub fn list_user_settings(&self) -> crate::operation::list_user_settings::builders::ListUserSettingsFluentBuilder {

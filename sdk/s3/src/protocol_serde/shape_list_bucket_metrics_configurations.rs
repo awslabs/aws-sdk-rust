@@ -108,7 +108,7 @@ pub fn de_list_bucket_metrics_configurations(
             s if s.matches("MetricsConfiguration") /* MetricsConfigurationList com.amazonaws.s3.synthetic#ListBucketMetricsConfigurationsOutput$MetricsConfigurationList */ =>  {
                 let var_5 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::MetricsConfiguration>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::MetricsConfiguration>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_6 = builder.metrics_configuration_list.take().unwrap_or_default();
                             list_6.push(
                                 crate::protocol_serde::shape_metrics_configuration::de_metrics_configuration(&mut tag)

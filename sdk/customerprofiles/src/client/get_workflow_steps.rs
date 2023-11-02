@@ -10,7 +10,7 @@ impl super::Client {
     /// - On success, responds with [`GetWorkflowStepsOutput`](crate::operation::get_workflow_steps::GetWorkflowStepsOutput) with field(s):
     ///   - [`workflow_id(Option<String>)`](crate::operation::get_workflow_steps::GetWorkflowStepsOutput::workflow_id): <p>Unique identifier for the workflow.</p>
     ///   - [`workflow_type(Option<WorkflowType>)`](crate::operation::get_workflow_steps::GetWorkflowStepsOutput::workflow_type): <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
-    ///   - [`items(Option<Vec<WorkflowStepItem>>)`](crate::operation::get_workflow_steps::GetWorkflowStepsOutput::items): <p>List containing workflow step details.</p>
+    ///   - [`items(Option<Vec::<WorkflowStepItem>>)`](crate::operation::get_workflow_steps::GetWorkflowStepsOutput::items): <p>List containing workflow step details.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_workflow_steps::GetWorkflowStepsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<GetWorkflowStepsError>`](crate::operation::get_workflow_steps::GetWorkflowStepsError)
     pub fn get_workflow_steps(&self) -> crate::operation::get_workflow_steps::builders::GetWorkflowStepsFluentBuilder {

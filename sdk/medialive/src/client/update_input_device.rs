@@ -21,9 +21,9 @@ impl super::Client {
     ///   - [`serial_number(Option<String>)`](crate::operation::update_input_device::UpdateInputDeviceOutput::serial_number): The unique serial number of the input device.
     ///   - [`r#type(Option<InputDeviceType>)`](crate::operation::update_input_device::UpdateInputDeviceOutput::type): The type of the input device.
     ///   - [`uhd_device_settings(Option<InputDeviceUhdSettings>)`](crate::operation::update_input_device::UpdateInputDeviceOutput::uhd_device_settings): Settings that describe an input device that is type UHD.
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::update_input_device::UpdateInputDeviceOutput::tags): A collection of key-value pairs.
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::update_input_device::UpdateInputDeviceOutput::tags): A collection of key-value pairs.
     ///   - [`availability_zone(Option<String>)`](crate::operation::update_input_device::UpdateInputDeviceOutput::availability_zone): The Availability Zone associated with this input device.
-    ///   - [`medialive_input_arns(Option<Vec<String>>)`](crate::operation::update_input_device::UpdateInputDeviceOutput::medialive_input_arns): An array of the ARNs for the MediaLive inputs attached to the device. Returned only if the outputType is MEDIALIVE_INPUT.
+    ///   - [`medialive_input_arns(Option<Vec::<String>>)`](crate::operation::update_input_device::UpdateInputDeviceOutput::medialive_input_arns): An array of the ARNs for the MediaLive inputs attached to the device. Returned only if the outputType is MEDIALIVE_INPUT.
     ///   - [`output_type(Option<InputDeviceOutputType>)`](crate::operation::update_input_device::UpdateInputDeviceOutput::output_type): The output attachment type of the input device. Specifies MEDIACONNECT_FLOW if this device is the source for a MediaConnect flow. Specifies MEDIALIVE_INPUT if this device is the source for a MediaLive input.
     /// - On failure, responds with [`SdkError<UpdateInputDeviceError>`](crate::operation::update_input_device::UpdateInputDeviceError)
     pub fn update_input_device(&self) -> crate::operation::update_input_device::builders::UpdateInputDeviceFluentBuilder {

@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_workforces::builders::ListWorkforcesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_workforces::builders::ListWorkforcesFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to resume pagination.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_workforces::builders::ListWorkforcesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_workforces::builders::ListWorkforcesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of workforces returned in the response.</p><br>
     /// - On success, responds with [`ListWorkforcesOutput`](crate::operation::list_workforces::ListWorkforcesOutput) with field(s):
-    ///   - [`workforces(Option<Vec<Workforce>>)`](crate::operation::list_workforces::ListWorkforcesOutput::workforces): <p>A list containing information about your workforce.</p>
+    ///   - [`workforces(Option<Vec::<Workforce>>)`](crate::operation::list_workforces::ListWorkforcesOutput::workforces): <p>A list containing information about your workforce.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_workforces::ListWorkforcesOutput::next_token): <p>A token to resume pagination.</p>
     /// - On failure, responds with [`SdkError<ListWorkforcesError>`](crate::operation::list_workforces::ListWorkforcesError)
     pub fn list_workforces(&self) -> crate::operation::list_workforces::builders::ListWorkforcesFluentBuilder {

@@ -10,8 +10,8 @@ impl super::Client {
     ///   - [`customer_id(impl Into<String>)`](crate::operation::get_api_keys::builders::GetApiKeysFluentBuilder::customer_id) / [`set_customer_id(Option<String>)`](crate::operation::get_api_keys::builders::GetApiKeysFluentBuilder::set_customer_id):<br>required: **false**<br><p>The identifier of a customer in Amazon Web Services Marketplace or an external system, such as a developer portal.</p><br>
     ///   - [`include_values(bool)`](crate::operation::get_api_keys::builders::GetApiKeysFluentBuilder::include_values) / [`set_include_values(Option<bool>)`](crate::operation::get_api_keys::builders::GetApiKeysFluentBuilder::set_include_values):<br>required: **false**<br><p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains key values.</p><br>
     /// - On success, responds with [`GetApiKeysOutput`](crate::operation::get_api_keys::GetApiKeysOutput) with field(s):
-    ///   - [`warnings(Option<Vec<String>>)`](crate::operation::get_api_keys::GetApiKeysOutput::warnings): <p>A list of warning messages logged during the import of API keys when the <code>failOnWarnings</code> option is set to true.</p>
-    ///   - [`items(Option<Vec<ApiKey>>)`](crate::operation::get_api_keys::GetApiKeysOutput::items): <p>The current page of elements from this collection.</p>
+    ///   - [`warnings(Option<Vec::<String>>)`](crate::operation::get_api_keys::GetApiKeysOutput::warnings): <p>A list of warning messages logged during the import of API keys when the <code>failOnWarnings</code> option is set to true.</p>
+    ///   - [`items(Option<Vec::<ApiKey>>)`](crate::operation::get_api_keys::GetApiKeysOutput::items): <p>The current page of elements from this collection.</p>
     ///   - [`position(Option<String>)`](crate::operation::get_api_keys::GetApiKeysOutput::position): <p>The current pagination position in the paged result set.</p>
     /// - On failure, responds with [`SdkError<GetApiKeysError>`](crate::operation::get_api_keys::GetApiKeysError)
     pub fn get_api_keys(&self) -> crate::operation::get_api_keys::builders::GetApiKeysFluentBuilder {

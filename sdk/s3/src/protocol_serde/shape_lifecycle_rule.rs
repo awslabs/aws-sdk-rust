@@ -70,7 +70,7 @@ pub fn de_lifecycle_rule(
             s if s.matches("Transition") /* Transitions com.amazonaws.s3#LifecycleRule$Transitions */ =>  {
                 let var_6 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::Transition>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::Transition>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_7 = builder.transitions.take().unwrap_or_default();
                             list_7.push(
                                 crate::protocol_serde::shape_transition::de_transition(&mut tag)
@@ -87,7 +87,7 @@ pub fn de_lifecycle_rule(
             s if s.matches("NoncurrentVersionTransition") /* NoncurrentVersionTransitions com.amazonaws.s3#LifecycleRule$NoncurrentVersionTransitions */ =>  {
                 let var_8 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::NoncurrentVersionTransition>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::NoncurrentVersionTransition>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_9 = builder.noncurrent_version_transitions.take().unwrap_or_default();
                             list_9.push(
                                 crate::protocol_serde::shape_noncurrent_version_transition::de_noncurrent_version_transition(&mut tag)

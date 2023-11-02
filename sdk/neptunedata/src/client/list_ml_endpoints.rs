@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`max_items(i32)`](crate::operation::list_ml_endpoints::builders::ListMLEndpointsFluentBuilder::max_items) / [`set_max_items(Option<i32>)`](crate::operation::list_ml_endpoints::builders::ListMLEndpointsFluentBuilder::set_max_items):<br>required: **false**<br><p>The maximum number of items to return (from 1 to 1024; the default is 10.</p><br>
     ///   - [`neptune_iam_role_arn(impl Into<String>)`](crate::operation::list_ml_endpoints::builders::ListMLEndpointsFluentBuilder::neptune_iam_role_arn) / [`set_neptune_iam_role_arn(Option<String>)`](crate::operation::list_ml_endpoints::builders::ListMLEndpointsFluentBuilder::set_neptune_iam_role_arn):<br>required: **false**<br><p>The ARN of an IAM role that provides Neptune access to SageMaker and Amazon S3 resources. This must be listed in your DB cluster parameter group or an error will occur.</p><br>
     /// - On success, responds with [`ListMlEndpointsOutput`](crate::operation::list_ml_endpoints::ListMlEndpointsOutput) with field(s):
-    ///   - [`ids(Option<Vec<String>>)`](crate::operation::list_ml_endpoints::ListMlEndpointsOutput::ids): <p>A page from the list of inference endpoint IDs.</p>
+    ///   - [`ids(Option<Vec::<String>>)`](crate::operation::list_ml_endpoints::ListMlEndpointsOutput::ids): <p>A page from the list of inference endpoint IDs.</p>
     /// - On failure, responds with [`SdkError<ListMLEndpointsError>`](crate::operation::list_ml_endpoints::ListMLEndpointsError)
     pub fn list_ml_endpoints(&self) -> crate::operation::list_ml_endpoints::builders::ListMLEndpointsFluentBuilder {
         crate::operation::list_ml_endpoints::builders::ListMLEndpointsFluentBuilder::new(self.handle.clone())

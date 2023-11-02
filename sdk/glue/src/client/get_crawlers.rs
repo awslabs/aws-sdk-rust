@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::get_crawlers::builders::GetCrawlersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_crawlers::builders::GetCrawlersFluentBuilder::set_max_results):<br>required: **false**<br><p>The number of crawlers to return on each call.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_crawlers::builders::GetCrawlersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_crawlers::builders::GetCrawlersFluentBuilder::set_next_token):<br>required: **false**<br><p>A continuation token, if this is a continuation request.</p><br>
     /// - On success, responds with [`GetCrawlersOutput`](crate::operation::get_crawlers::GetCrawlersOutput) with field(s):
-    ///   - [`crawlers(Option<Vec<Crawler>>)`](crate::operation::get_crawlers::GetCrawlersOutput::crawlers): <p>A list of crawler metadata.</p>
+    ///   - [`crawlers(Option<Vec::<Crawler>>)`](crate::operation::get_crawlers::GetCrawlersOutput::crawlers): <p>A list of crawler metadata.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_crawlers::GetCrawlersOutput::next_token): <p>A continuation token, if the returned list has not reached the end of those defined in this customer account.</p>
     /// - On failure, responds with [`SdkError<GetCrawlersError>`](crate::operation::get_crawlers::GetCrawlersError)
     pub fn get_crawlers(&self) -> crate::operation::get_crawlers::builders::GetCrawlersFluentBuilder {

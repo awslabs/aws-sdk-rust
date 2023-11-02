@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`identity_pool_id(Option<String>)`](crate::operation::get_principal_tag_attribute_map::GetPrincipalTagAttributeMapOutput::identity_pool_id): <p>You can use this operation to get the ID of the Identity Pool you setup attribute mappings for.</p>
     ///   - [`identity_provider_name(Option<String>)`](crate::operation::get_principal_tag_attribute_map::GetPrincipalTagAttributeMapOutput::identity_provider_name): <p>You can use this operation to get the provider name.</p>
     ///   - [`use_defaults(Option<bool>)`](crate::operation::get_principal_tag_attribute_map::GetPrincipalTagAttributeMapOutput::use_defaults): <p>You can use this operation to list </p>
-    ///   - [`principal_tags(Option<HashMap<String, String>>)`](crate::operation::get_principal_tag_attribute_map::GetPrincipalTagAttributeMapOutput::principal_tags): <p>You can use this operation to add principal tags. The <code>PrincipalTags</code>operation enables you to reference user attributes in your IAM permissions policy.</p>
+    ///   - [`principal_tags(Option<HashMap::<String, String>>)`](crate::operation::get_principal_tag_attribute_map::GetPrincipalTagAttributeMapOutput::principal_tags): <p>You can use this operation to add principal tags. The <code>PrincipalTags</code>operation enables you to reference user attributes in your IAM permissions policy.</p>
     /// - On failure, responds with [`SdkError<GetPrincipalTagAttributeMapError>`](crate::operation::get_principal_tag_attribute_map::GetPrincipalTagAttributeMapError)
     pub fn get_principal_tag_attribute_map(
         &self,

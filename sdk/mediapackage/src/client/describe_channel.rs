@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`hls_ingest(Option<HlsIngest>)`](crate::operation::describe_channel::DescribeChannelOutput::hls_ingest): An HTTP Live Streaming (HLS) ingest resource configuration.
     ///   - [`id(Option<String>)`](crate::operation::describe_channel::DescribeChannelOutput::id): The ID of the Channel.
     ///   - [`ingress_access_logs(Option<IngressAccessLogs>)`](crate::operation::describe_channel::DescribeChannelOutput::ingress_access_logs): Configure ingress access logging.
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_channel::DescribeChannelOutput::tags): A collection of tags associated with a resource
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_channel::DescribeChannelOutput::tags): A collection of tags associated with a resource
     /// - On failure, responds with [`SdkError<DescribeChannelError>`](crate::operation::describe_channel::DescribeChannelError)
     pub fn describe_channel(&self) -> crate::operation::describe_channel::builders::DescribeChannelFluentBuilder {
         crate::operation::describe_channel::builders::DescribeChannelFluentBuilder::new(self.handle.clone())

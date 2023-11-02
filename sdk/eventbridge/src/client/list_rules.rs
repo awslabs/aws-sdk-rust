@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token returned by a previous call to retrieve the next set of results.</p><br>
     ///   - [`limit(i32)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     /// - On success, responds with [`ListRulesOutput`](crate::operation::list_rules::ListRulesOutput) with field(s):
-    ///   - [`rules(Option<Vec<Rule>>)`](crate::operation::list_rules::ListRulesOutput::rules): <p>The rules that match the specified criteria.</p>
+    ///   - [`rules(Option<Vec::<Rule>>)`](crate::operation::list_rules::ListRulesOutput::rules): <p>The rules that match the specified criteria.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_rules::ListRulesOutput::next_token): <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
     /// - On failure, responds with [`SdkError<ListRulesError>`](crate::operation::list_rules::ListRulesError)
     pub fn list_rules(&self) -> crate::operation::list_rules::builders::ListRulesFluentBuilder {

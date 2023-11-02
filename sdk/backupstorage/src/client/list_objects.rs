@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`created_before(DateTime)`](crate::operation::list_objects::builders::ListObjectsFluentBuilder::created_before) / [`set_created_before(Option<DateTime>)`](crate::operation::list_objects::builders::ListObjectsFluentBuilder::set_created_before):<br>required: **false**<br>(Optional) Created before filter<br>
     ///   - [`created_after(DateTime)`](crate::operation::list_objects::builders::ListObjectsFluentBuilder::created_after) / [`set_created_after(Option<DateTime>)`](crate::operation::list_objects::builders::ListObjectsFluentBuilder::set_created_after):<br>required: **false**<br>(Optional) Created after filter<br>
     /// - On success, responds with [`ListObjectsOutput`](crate::operation::list_objects::ListObjectsOutput) with field(s):
-    ///   - [`object_list(Vec<BackupObject>)`](crate::operation::list_objects::ListObjectsOutput::object_list): Object list
+    ///   - [`object_list(Vec::<BackupObject>)`](crate::operation::list_objects::ListObjectsOutput::object_list): Object list
     ///   - [`next_token(Option<String>)`](crate::operation::list_objects::ListObjectsOutput::next_token): Pagination token
     /// - On failure, responds with [`SdkError<ListObjectsError>`](crate::operation::list_objects::ListObjectsError)
     pub fn list_objects(&self) -> crate::operation::list_objects::builders::ListObjectsFluentBuilder {

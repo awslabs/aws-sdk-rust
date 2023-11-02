@@ -4,10 +4,10 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`flow_arn(impl Into<String>)`](crate::operation::add_flow_outputs::builders::AddFlowOutputsFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::add_flow_outputs::builders::AddFlowOutputsFluentBuilder::set_flow_arn):<br>required: **true**<br>The flow that you want to add outputs to.<br>
-    ///   - [`outputs(AddOutputRequest)`](crate::operation::add_flow_outputs::builders::AddFlowOutputsFluentBuilder::outputs) / [`set_outputs(Option<Vec<AddOutputRequest>>)`](crate::operation::add_flow_outputs::builders::AddFlowOutputsFluentBuilder::set_outputs):<br>required: **true**<br>A list of outputs that you want to add.<br>
+    ///   - [`outputs(AddOutputRequest)`](crate::operation::add_flow_outputs::builders::AddFlowOutputsFluentBuilder::outputs) / [`set_outputs(Option<Vec::<AddOutputRequest>>)`](crate::operation::add_flow_outputs::builders::AddFlowOutputsFluentBuilder::set_outputs):<br>required: **true**<br>A list of outputs that you want to add.<br>
     /// - On success, responds with [`AddFlowOutputsOutput`](crate::operation::add_flow_outputs::AddFlowOutputsOutput) with field(s):
     ///   - [`flow_arn(Option<String>)`](crate::operation::add_flow_outputs::AddFlowOutputsOutput::flow_arn): The ARN of the flow that these outputs were added to.
-    ///   - [`outputs(Option<Vec<Output>>)`](crate::operation::add_flow_outputs::AddFlowOutputsOutput::outputs): The details of the newly added outputs.
+    ///   - [`outputs(Option<Vec::<Output>>)`](crate::operation::add_flow_outputs::AddFlowOutputsOutput::outputs): The details of the newly added outputs.
     /// - On failure, responds with [`SdkError<AddFlowOutputsError>`](crate::operation::add_flow_outputs::AddFlowOutputsError)
     pub fn add_flow_outputs(&self) -> crate::operation::add_flow_outputs::builders::AddFlowOutputsFluentBuilder {
         crate::operation::add_flow_outputs::builders::AddFlowOutputsFluentBuilder::new(self.handle.clone())

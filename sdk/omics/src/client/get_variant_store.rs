@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`sse_config(Option<SseConfig>)`](crate::operation::get_variant_store::GetVariantStoreOutput::sse_config): <p>The store's server-side encryption (SSE) settings.</p>
     ///   - [`creation_time(DateTime)`](crate::operation::get_variant_store::GetVariantStoreOutput::creation_time): <p>When the store was created.</p>
     ///   - [`update_time(DateTime)`](crate::operation::get_variant_store::GetVariantStoreOutput::update_time): <p>When the store was updated.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::operation::get_variant_store::GetVariantStoreOutput::tags): <p>The store's tags.</p>
+    ///   - [`tags(HashMap::<String, String>)`](crate::operation::get_variant_store::GetVariantStoreOutput::tags): <p>The store's tags.</p>
     ///   - [`status_message(String)`](crate::operation::get_variant_store::GetVariantStoreOutput::status_message): <p>The store's status message.</p>
     ///   - [`store_size_bytes(i64)`](crate::operation::get_variant_store::GetVariantStoreOutput::store_size_bytes): <p>The store's size in bytes.</p>
     /// - On failure, responds with [`SdkError<GetVariantStoreError>`](crate::operation::get_variant_store::GetVariantStoreError)

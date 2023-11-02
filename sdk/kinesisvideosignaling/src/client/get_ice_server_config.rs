@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`service(Service)`](crate::operation::get_ice_server_config::builders::GetIceServerConfigFluentBuilder::service) / [`set_service(Option<Service>)`](crate::operation::get_ice_server_config::builders::GetIceServerConfigFluentBuilder::set_service):<br>required: **false**<br><p>Specifies the desired service. Currently, <code>TURN</code> is the only valid value.</p><br>
     ///   - [`username(impl Into<String>)`](crate::operation::get_ice_server_config::builders::GetIceServerConfigFluentBuilder::username) / [`set_username(Option<String>)`](crate::operation::get_ice_server_config::builders::GetIceServerConfigFluentBuilder::set_username):<br>required: **false**<br><p>An optional user ID to be associated with the credentials.</p><br>
     /// - On success, responds with [`GetIceServerConfigOutput`](crate::operation::get_ice_server_config::GetIceServerConfigOutput) with field(s):
-    ///   - [`ice_server_list(Option<Vec<IceServer>>)`](crate::operation::get_ice_server_config::GetIceServerConfigOutput::ice_server_list): <p>The list of ICE server information objects.</p>
+    ///   - [`ice_server_list(Option<Vec::<IceServer>>)`](crate::operation::get_ice_server_config::GetIceServerConfigOutput::ice_server_list): <p>The list of ICE server information objects.</p>
     /// - On failure, responds with [`SdkError<GetIceServerConfigError>`](crate::operation::get_ice_server_config::GetIceServerConfigError)
     pub fn get_ice_server_config(&self) -> crate::operation::get_ice_server_config::builders::GetIceServerConfigFluentBuilder {
         crate::operation::get_ice_server_config::builders::GetIceServerConfigFluentBuilder::new(self.handle.clone())

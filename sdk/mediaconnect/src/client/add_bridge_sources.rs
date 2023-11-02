@@ -4,10 +4,10 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`bridge_arn(impl Into<String>)`](crate::operation::add_bridge_sources::builders::AddBridgeSourcesFluentBuilder::bridge_arn) / [`set_bridge_arn(Option<String>)`](crate::operation::add_bridge_sources::builders::AddBridgeSourcesFluentBuilder::set_bridge_arn):<br>required: **true**<br>The ARN of the bridge that you want to update.<br>
-    ///   - [`sources(AddBridgeSourceRequest)`](crate::operation::add_bridge_sources::builders::AddBridgeSourcesFluentBuilder::sources) / [`set_sources(Option<Vec<AddBridgeSourceRequest>>)`](crate::operation::add_bridge_sources::builders::AddBridgeSourcesFluentBuilder::set_sources):<br>required: **true**<br>The sources that you want to add to this bridge.<br>
+    ///   - [`sources(AddBridgeSourceRequest)`](crate::operation::add_bridge_sources::builders::AddBridgeSourcesFluentBuilder::sources) / [`set_sources(Option<Vec::<AddBridgeSourceRequest>>)`](crate::operation::add_bridge_sources::builders::AddBridgeSourcesFluentBuilder::set_sources):<br>required: **true**<br>The sources that you want to add to this bridge.<br>
     /// - On success, responds with [`AddBridgeSourcesOutput`](crate::operation::add_bridge_sources::AddBridgeSourcesOutput) with field(s):
     ///   - [`bridge_arn(Option<String>)`](crate::operation::add_bridge_sources::AddBridgeSourcesOutput::bridge_arn): The Amazon Resource Number (ARN) of the bridge.
-    ///   - [`sources(Option<Vec<BridgeSource>>)`](crate::operation::add_bridge_sources::AddBridgeSourcesOutput::sources): The sources that you added to this bridge.
+    ///   - [`sources(Option<Vec::<BridgeSource>>)`](crate::operation::add_bridge_sources::AddBridgeSourcesOutput::sources): The sources that you added to this bridge.
     /// - On failure, responds with [`SdkError<AddBridgeSourcesError>`](crate::operation::add_bridge_sources::AddBridgeSourcesError)
     pub fn add_bridge_sources(&self) -> crate::operation::add_bridge_sources::builders::AddBridgeSourcesFluentBuilder {
         crate::operation::add_bridge_sources::builders::AddBridgeSourcesFluentBuilder::new(self.handle.clone())

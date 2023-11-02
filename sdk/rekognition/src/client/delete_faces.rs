@@ -4,10 +4,10 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`collection_id(impl Into<String>)`](crate::operation::delete_faces::builders::DeleteFacesFluentBuilder::collection_id) / [`set_collection_id(Option<String>)`](crate::operation::delete_faces::builders::DeleteFacesFluentBuilder::set_collection_id):<br>required: **true**<br><p>Collection from which to remove the specific faces.</p><br>
-    ///   - [`face_ids(impl Into<String>)`](crate::operation::delete_faces::builders::DeleteFacesFluentBuilder::face_ids) / [`set_face_ids(Option<Vec<String>>)`](crate::operation::delete_faces::builders::DeleteFacesFluentBuilder::set_face_ids):<br>required: **true**<br><p>An array of face IDs to delete.</p><br>
+    ///   - [`face_ids(impl Into<String>)`](crate::operation::delete_faces::builders::DeleteFacesFluentBuilder::face_ids) / [`set_face_ids(Option<Vec::<String>>)`](crate::operation::delete_faces::builders::DeleteFacesFluentBuilder::set_face_ids):<br>required: **true**<br><p>An array of face IDs to delete.</p><br>
     /// - On success, responds with [`DeleteFacesOutput`](crate::operation::delete_faces::DeleteFacesOutput) with field(s):
-    ///   - [`deleted_faces(Option<Vec<String>>)`](crate::operation::delete_faces::DeleteFacesOutput::deleted_faces): <p>An array of strings (face IDs) of the faces that were deleted.</p>
-    ///   - [`unsuccessful_face_deletions(Option<Vec<UnsuccessfulFaceDeletion>>)`](crate::operation::delete_faces::DeleteFacesOutput::unsuccessful_face_deletions): <p>An array of any faces that weren't deleted.</p>
+    ///   - [`deleted_faces(Option<Vec::<String>>)`](crate::operation::delete_faces::DeleteFacesOutput::deleted_faces): <p>An array of strings (face IDs) of the faces that were deleted.</p>
+    ///   - [`unsuccessful_face_deletions(Option<Vec::<UnsuccessfulFaceDeletion>>)`](crate::operation::delete_faces::DeleteFacesOutput::unsuccessful_face_deletions): <p>An array of any faces that weren't deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteFacesError>`](crate::operation::delete_faces::DeleteFacesError)
     pub fn delete_faces(&self) -> crate::operation::delete_faces::builders::DeleteFacesFluentBuilder {
         crate::operation::delete_faces::builders::DeleteFacesFluentBuilder::new(self.handle.clone())

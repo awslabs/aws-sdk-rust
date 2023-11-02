@@ -10,8 +10,8 @@ impl super::Client {
     ///   - [`query_version(impl Into<String>)`](crate::operation::search_index::builders::SearchIndexFluentBuilder::query_version) / [`set_query_version(Option<String>)`](crate::operation::search_index::builders::SearchIndexFluentBuilder::set_query_version):<br>required: **false**<br><p>The query version.</p><br>
     /// - On success, responds with [`SearchIndexOutput`](crate::operation::search_index::SearchIndexOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::search_index::SearchIndexOutput::next_token): <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
-    ///   - [`things(Option<Vec<ThingDocument>>)`](crate::operation::search_index::SearchIndexOutput::things): <p>The things that match the search query.</p>
-    ///   - [`thing_groups(Option<Vec<ThingGroupDocument>>)`](crate::operation::search_index::SearchIndexOutput::thing_groups): <p>The thing groups that match the search query.</p>
+    ///   - [`things(Option<Vec::<ThingDocument>>)`](crate::operation::search_index::SearchIndexOutput::things): <p>The things that match the search query.</p>
+    ///   - [`thing_groups(Option<Vec::<ThingGroupDocument>>)`](crate::operation::search_index::SearchIndexOutput::thing_groups): <p>The thing groups that match the search query.</p>
     /// - On failure, responds with [`SdkError<SearchIndexError>`](crate::operation::search_index::SearchIndexError)
     pub fn search_index(&self) -> crate::operation::search_index::builders::SearchIndexFluentBuilder {
         crate::operation::search_index::builders::SearchIndexFluentBuilder::new(self.handle.clone())

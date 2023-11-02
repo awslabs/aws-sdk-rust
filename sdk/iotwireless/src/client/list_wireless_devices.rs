@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`multicast_group_id(impl Into<String>)`](crate::operation::list_wireless_devices::builders::ListWirelessDevicesFluentBuilder::multicast_group_id) / [`set_multicast_group_id(Option<String>)`](crate::operation::list_wireless_devices::builders::ListWirelessDevicesFluentBuilder::set_multicast_group_id):<br>required: **false**<br><p>The ID of the multicast group.</p><br>
     /// - On success, responds with [`ListWirelessDevicesOutput`](crate::operation::list_wireless_devices::ListWirelessDevicesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_wireless_devices::ListWirelessDevicesOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    ///   - [`wireless_device_list(Option<Vec<WirelessDeviceStatistics>>)`](crate::operation::list_wireless_devices::ListWirelessDevicesOutput::wireless_device_list): <p>The ID of the wireless device.</p>
+    ///   - [`wireless_device_list(Option<Vec::<WirelessDeviceStatistics>>)`](crate::operation::list_wireless_devices::ListWirelessDevicesOutput::wireless_device_list): <p>The ID of the wireless device.</p>
     /// - On failure, responds with [`SdkError<ListWirelessDevicesError>`](crate::operation::list_wireless_devices::ListWirelessDevicesError)
     pub fn list_wireless_devices(&self) -> crate::operation::list_wireless_devices::builders::ListWirelessDevicesFluentBuilder {
         crate::operation::list_wireless_devices::builders::ListWirelessDevicesFluentBuilder::new(self.handle.clone())

@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`configuration_set_name(impl Into<String>)`](crate::operation::get_configuration_set_event_destinations::builders::GetConfigurationSetEventDestinationsFluentBuilder::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::operation::get_configuration_set_event_destinations::builders::GetConfigurationSetEventDestinationsFluentBuilder::set_configuration_set_name):<br>required: **true**<br>ConfigurationSetName<br>
     /// - On success, responds with [`GetConfigurationSetEventDestinationsOutput`](crate::operation::get_configuration_set_event_destinations::GetConfigurationSetEventDestinationsOutput) with field(s):
-    ///   - [`event_destinations(Option<Vec<EventDestination>>)`](crate::operation::get_configuration_set_event_destinations::GetConfigurationSetEventDestinationsOutput::event_destinations): An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
+    ///   - [`event_destinations(Option<Vec::<EventDestination>>)`](crate::operation::get_configuration_set_event_destinations::GetConfigurationSetEventDestinationsOutput::event_destinations): An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
     /// - On failure, responds with [`SdkError<GetConfigurationSetEventDestinationsError>`](crate::operation::get_configuration_set_event_destinations::GetConfigurationSetEventDestinationsError)
     pub fn get_configuration_set_event_destinations(
         &self,

@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`deployment_id(impl Into<String>)`](crate::operation::list_component_outputs::builders::ListComponentOutputsFluentBuilder::deployment_id) / [`set_deployment_id(Option<String>)`](crate::operation::list_component_outputs::builders::ListComponentOutputsFluentBuilder::set_deployment_id):<br>required: **false**<br><p>The ID of the deployment whose outputs you want.</p><br>
     /// - On success, responds with [`ListComponentOutputsOutput`](crate::operation::list_component_outputs::ListComponentOutputsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_component_outputs::ListComponentOutputsOutput::next_token): <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
-    ///   - [`outputs(Vec<Output>)`](crate::operation::list_component_outputs::ListComponentOutputsOutput::outputs): <p>An array of component Infrastructure as Code (IaC) outputs.</p>
+    ///   - [`outputs(Vec::<Output>)`](crate::operation::list_component_outputs::ListComponentOutputsOutput::outputs): <p>An array of component Infrastructure as Code (IaC) outputs.</p>
     /// - On failure, responds with [`SdkError<ListComponentOutputsError>`](crate::operation::list_component_outputs::ListComponentOutputsError)
     pub fn list_component_outputs(&self) -> crate::operation::list_component_outputs::builders::ListComponentOutputsFluentBuilder {
         crate::operation::list_component_outputs::builders::ListComponentOutputsFluentBuilder::new(self.handle.clone())

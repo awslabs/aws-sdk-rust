@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_views::builders::ListViewsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_views::builders::ListViewsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_views::builders::ListViewsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_views::builders::ListViewsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page. The default MaxResult size is 100.</p><br>
     /// - On success, responds with [`ListViewsOutput`](crate::operation::list_views::ListViewsOutput) with field(s):
-    ///   - [`views_summary_list(Option<Vec<ViewSummary>>)`](crate::operation::list_views::ListViewsOutput::views_summary_list): <p>A list of view summaries.</p>
+    ///   - [`views_summary_list(Option<Vec::<ViewSummary>>)`](crate::operation::list_views::ListViewsOutput::views_summary_list): <p>A list of view summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_views::ListViewsOutput::next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListViewsError>`](crate::operation::list_views::ListViewsError)
     pub fn list_views(&self) -> crate::operation::list_views::builders::ListViewsFluentBuilder {

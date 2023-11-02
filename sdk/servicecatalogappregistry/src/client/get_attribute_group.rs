@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`attributes(Option<String>)`](crate::operation::get_attribute_group::GetAttributeGroupOutput::attributes): <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_attribute_group::GetAttributeGroupOutput::creation_time): <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
     ///   - [`last_update_time(Option<DateTime>)`](crate::operation::get_attribute_group::GetAttributeGroupOutput::last_update_time): <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_attribute_group::GetAttributeGroupOutput::tags): <p>Key-value pairs associated with the attribute group.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_attribute_group::GetAttributeGroupOutput::tags): <p>Key-value pairs associated with the attribute group.</p>
     ///   - [`created_by(Option<String>)`](crate::operation::get_attribute_group::GetAttributeGroupOutput::created_by): <p>The service principal that created the attribute group.</p>
     /// - On failure, responds with [`SdkError<GetAttributeGroupError>`](crate::operation::get_attribute_group::GetAttributeGroupError)
     pub fn get_attribute_group(&self) -> crate::operation::get_attribute_group::builders::GetAttributeGroupFluentBuilder {

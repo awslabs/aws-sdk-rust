@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::set_next_token):<br>required: **false**<br><p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. </p><br>
     ///   - [`max_results(i32)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p><br>
     /// - On success, responds with [`ListTagsOutput`](crate::operation::list_tags::ListTagsOutput) with field(s):
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::list_tags::ListTagsOutput::tags): <p>The tags requested for the specified resource.</p>
+    ///   - [`tags(Option<Vec::<Tag>>)`](crate::operation::list_tags::ListTagsOutput::tags): <p>The tags requested for the specified resource.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_tags::ListTagsOutput::next_token): <p>The token returned to indicate that there is more data available.</p>
     /// - On failure, responds with [`SdkError<ListTagsError>`](crate::operation::list_tags::ListTagsError)
     #[deprecated(note = "Alexa For Business is no longer supported")]

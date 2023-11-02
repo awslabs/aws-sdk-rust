@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_published_schema_arns::builders::ListPublishedSchemaArnsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_published_schema_arns::builders::ListPublishedSchemaArnsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_published_schema_arns::builders::ListPublishedSchemaArnsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_published_schema_arns::builders::ListPublishedSchemaArnsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to retrieve.</p><br>
     /// - On success, responds with [`ListPublishedSchemaArnsOutput`](crate::operation::list_published_schema_arns::ListPublishedSchemaArnsOutput) with field(s):
-    ///   - [`schema_arns(Option<Vec<String>>)`](crate::operation::list_published_schema_arns::ListPublishedSchemaArnsOutput::schema_arns): <p>The ARNs of published schemas.</p>
+    ///   - [`schema_arns(Option<Vec::<String>>)`](crate::operation::list_published_schema_arns::ListPublishedSchemaArnsOutput::schema_arns): <p>The ARNs of published schemas.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_published_schema_arns::ListPublishedSchemaArnsOutput::next_token): <p>The pagination token.</p>
     /// - On failure, responds with [`SdkError<ListPublishedSchemaArnsError>`](crate::operation::list_published_schema_arns::ListPublishedSchemaArnsError)
     pub fn list_published_schema_arns(&self) -> crate::operation::list_published_schema_arns::builders::ListPublishedSchemaArnsFluentBuilder {

@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_detectors::builders::GetDetectorsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_detectors::builders::GetDetectorsFluentBuilder::set_next_token):<br>required: **false**<br><p>The next token for the subsequent request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_detectors::builders::GetDetectorsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_detectors::builders::GetDetectorsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of objects to return for the request.</p><br>
     /// - On success, responds with [`GetDetectorsOutput`](crate::operation::get_detectors::GetDetectorsOutput) with field(s):
-    ///   - [`detectors(Option<Vec<Detector>>)`](crate::operation::get_detectors::GetDetectorsOutput::detectors): <p>The detectors.</p>
+    ///   - [`detectors(Option<Vec::<Detector>>)`](crate::operation::get_detectors::GetDetectorsOutput::detectors): <p>The detectors.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_detectors::GetDetectorsOutput::next_token): <p>The next page token.</p>
     /// - On failure, responds with [`SdkError<GetDetectorsError>`](crate::operation::get_detectors::GetDetectorsError)
     pub fn get_detectors(&self) -> crate::operation::get_detectors::builders::GetDetectorsFluentBuilder {

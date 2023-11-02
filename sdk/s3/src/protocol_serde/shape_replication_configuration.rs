@@ -45,7 +45,7 @@ pub fn de_replication_configuration(
             s if s.matches("Rule") /* Rules com.amazonaws.s3#ReplicationConfiguration$Rules */ =>  {
                 let var_3 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::ReplicationRule>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::ReplicationRule>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_4 = builder.rules.take().unwrap_or_default();
                             list_4.push(
                                 crate::protocol_serde::shape_replication_rule::de_replication_rule(&mut tag)

@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_smart_home_appliances::builders::ListSmartHomeAppliancesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_smart_home_appliances::builders::ListSmartHomeAppliancesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of appliances to be returned, per paginated calls.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_smart_home_appliances::builders::ListSmartHomeAppliancesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_smart_home_appliances::builders::ListSmartHomeAppliancesFluentBuilder::set_next_token):<br>required: **false**<br><p>The tokens used for pagination.</p><br>
     /// - On success, responds with [`ListSmartHomeAppliancesOutput`](crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesOutput) with field(s):
-    ///   - [`smart_home_appliances(Option<Vec<SmartHomeAppliance>>)`](crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesOutput::smart_home_appliances): <p>The smart home appliances.</p>
+    ///   - [`smart_home_appliances(Option<Vec::<SmartHomeAppliance>>)`](crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesOutput::smart_home_appliances): <p>The smart home appliances.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesOutput::next_token): <p>The tokens used for pagination.</p>
     /// - On failure, responds with [`SdkError<ListSmartHomeAppliancesError>`](crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesError)
     #[deprecated(note = "Alexa For Business is no longer supported")]

@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_facet_attributes::builders::ListFacetAttributesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_facet_attributes::builders::ListFacetAttributesFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_facet_attributes::builders::ListFacetAttributesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_facet_attributes::builders::ListFacetAttributesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to retrieve.</p><br>
     /// - On success, responds with [`ListFacetAttributesOutput`](crate::operation::list_facet_attributes::ListFacetAttributesOutput) with field(s):
-    ///   - [`attributes(Option<Vec<FacetAttribute>>)`](crate::operation::list_facet_attributes::ListFacetAttributesOutput::attributes): <p>The attributes attached to the facet.</p>
+    ///   - [`attributes(Option<Vec::<FacetAttribute>>)`](crate::operation::list_facet_attributes::ListFacetAttributesOutput::attributes): <p>The attributes attached to the facet.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_facet_attributes::ListFacetAttributesOutput::next_token): <p>The pagination token.</p>
     /// - On failure, responds with [`SdkError<ListFacetAttributesError>`](crate::operation::list_facet_attributes::ListFacetAttributesError)
     pub fn list_facet_attributes(&self) -> crate::operation::list_facet_attributes::builders::ListFacetAttributesFluentBuilder {

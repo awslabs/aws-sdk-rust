@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_facet_names::builders::ListFacetNamesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_facet_names::builders::ListFacetNamesFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_facet_names::builders::ListFacetNamesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_facet_names::builders::ListFacetNamesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to retrieve.</p><br>
     /// - On success, responds with [`ListFacetNamesOutput`](crate::operation::list_facet_names::ListFacetNamesOutput) with field(s):
-    ///   - [`facet_names(Option<Vec<String>>)`](crate::operation::list_facet_names::ListFacetNamesOutput::facet_names): <p>The names of facets that exist within the schema.</p>
+    ///   - [`facet_names(Option<Vec::<String>>)`](crate::operation::list_facet_names::ListFacetNamesOutput::facet_names): <p>The names of facets that exist within the schema.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_facet_names::ListFacetNamesOutput::next_token): <p>The pagination token.</p>
     /// - On failure, responds with [`SdkError<ListFacetNamesError>`](crate::operation::list_facet_names::ListFacetNamesError)
     pub fn list_facet_names(&self) -> crate::operation::list_facet_names::builders::ListFacetNamesFluentBuilder {

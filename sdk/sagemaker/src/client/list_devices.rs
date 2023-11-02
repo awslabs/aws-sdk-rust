@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`model_name(impl Into<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::model_name) / [`set_model_name(Option<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::set_model_name):<br>required: **false**<br><p>A filter that searches devices that contains this name in any of their models.</p><br>
     ///   - [`device_fleet_name(impl Into<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::set_device_fleet_name):<br>required: **false**<br><p>Filter for fleets containing this name in their device fleet name.</p><br>
     /// - On success, responds with [`ListDevicesOutput`](crate::operation::list_devices::ListDevicesOutput) with field(s):
-    ///   - [`device_summaries(Option<Vec<DeviceSummary>>)`](crate::operation::list_devices::ListDevicesOutput::device_summaries): <p>Summary of devices.</p>
+    ///   - [`device_summaries(Option<Vec::<DeviceSummary>>)`](crate::operation::list_devices::ListDevicesOutput::device_summaries): <p>Summary of devices.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_devices::ListDevicesOutput::next_token): <p>The response from the last list when returning a list large enough to need tokening.</p>
     /// - On failure, responds with [`SdkError<ListDevicesError>`](crate::operation::list_devices::ListDevicesError)
     pub fn list_devices(&self) -> crate::operation::list_devices::builders::ListDevicesFluentBuilder {

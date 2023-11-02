@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`domain_name(Option<String>)`](crate::operation::describe_packaging_group::DescribePackagingGroupOutput::domain_name): The fully qualified domain name for Assets in the PackagingGroup.
     ///   - [`egress_access_logs(Option<EgressAccessLogs>)`](crate::operation::describe_packaging_group::DescribePackagingGroupOutput::egress_access_logs): Configure egress access logging.
     ///   - [`id(Option<String>)`](crate::operation::describe_packaging_group::DescribePackagingGroupOutput::id): The ID of the PackagingGroup.
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_packaging_group::DescribePackagingGroupOutput::tags): A collection of tags associated with a resource
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_packaging_group::DescribePackagingGroupOutput::tags): A collection of tags associated with a resource
     /// - On failure, responds with [`SdkError<DescribePackagingGroupError>`](crate::operation::describe_packaging_group::DescribePackagingGroupError)
     pub fn describe_packaging_group(&self) -> crate::operation::describe_packaging_group::builders::DescribePackagingGroupFluentBuilder {
         crate::operation::describe_packaging_group::builders::DescribePackagingGroupFluentBuilder::new(self.handle.clone())

@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`name(String)`](crate::operation::get_config::GetConfigOutput::name): <p>Name of a <code>Config</code>.</p>
     ///   - [`config_type(Option<ConfigCapabilityType>)`](crate::operation::get_config::GetConfigOutput::config_type): <p>Type of a <code>Config</code>.</p>
     ///   - [`config_data(Option<ConfigTypeData>)`](crate::operation::get_config::GetConfigOutput::config_data): <p>Data elements in a <code>Config</code>.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_config::GetConfigOutput::tags): <p>Tags assigned to a <code>Config</code>.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_config::GetConfigOutput::tags): <p>Tags assigned to a <code>Config</code>.</p>
     /// - On failure, responds with [`SdkError<GetConfigError>`](crate::operation::get_config::GetConfigError)
     pub fn get_config(&self) -> crate::operation::get_config::builders::GetConfigFluentBuilder {
         crate::operation::get_config::builders::GetConfigFluentBuilder::new(self.handle.clone())

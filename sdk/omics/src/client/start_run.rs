@@ -14,14 +14,14 @@ impl super::Client {
     ///   - [`storage_capacity(i32)`](crate::operation::start_run::builders::StartRunFluentBuilder::storage_capacity) / [`set_storage_capacity(Option<i32>)`](crate::operation::start_run::builders::StartRunFluentBuilder::set_storage_capacity):<br>required: **false**<br><p>A storage capacity for the run in gigabytes.</p><br>
     ///   - [`output_uri(impl Into<String>)`](crate::operation::start_run::builders::StartRunFluentBuilder::output_uri) / [`set_output_uri(Option<String>)`](crate::operation::start_run::builders::StartRunFluentBuilder::set_output_uri):<br>required: **false**<br><p>An output URI for the run.</p><br>
     ///   - [`log_level(RunLogLevel)`](crate::operation::start_run::builders::StartRunFluentBuilder::log_level) / [`set_log_level(Option<RunLogLevel>)`](crate::operation::start_run::builders::StartRunFluentBuilder::set_log_level):<br>required: **false**<br><p>A log level for the run.</p><br>
-    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::start_run::builders::StartRunFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::start_run::builders::StartRunFluentBuilder::set_tags):<br>required: **false**<br><p>Tags for the run.</p><br>
+    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::start_run::builders::StartRunFluentBuilder::tags) / [`set_tags(Option<HashMap::<String, String>>)`](crate::operation::start_run::builders::StartRunFluentBuilder::set_tags):<br>required: **false**<br><p>Tags for the run.</p><br>
     ///   - [`request_id(impl Into<String>)`](crate::operation::start_run::builders::StartRunFluentBuilder::request_id) / [`set_request_id(Option<String>)`](crate::operation::start_run::builders::StartRunFluentBuilder::set_request_id):<br>required: **true**<br><p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p><br>
     ///   - [`retention_mode(RunRetentionMode)`](crate::operation::start_run::builders::StartRunFluentBuilder::retention_mode) / [`set_retention_mode(Option<RunRetentionMode>)`](crate::operation::start_run::builders::StartRunFluentBuilder::set_retention_mode):<br>required: **false**<br><p>The retention mode for the run.</p><br>
     /// - On success, responds with [`StartRunOutput`](crate::operation::start_run::StartRunOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::start_run::StartRunOutput::arn): <p>The run's ARN.</p>
     ///   - [`id(Option<String>)`](crate::operation::start_run::StartRunOutput::id): <p>The run's ID.</p>
     ///   - [`status(Option<RunStatus>)`](crate::operation::start_run::StartRunOutput::status): <p>The run's status.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::start_run::StartRunOutput::tags): <p>The run's tags.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::start_run::StartRunOutput::tags): <p>The run's tags.</p>
     /// - On failure, responds with [`SdkError<StartRunError>`](crate::operation::start_run::StartRunError)
     pub fn start_run(&self) -> crate::operation::start_run::builders::StartRunFluentBuilder {
         crate::operation::start_run::builders::StartRunFluentBuilder::new(self.handle.clone())

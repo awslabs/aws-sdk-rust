@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DisconnectSourceServerOutput`](crate::operation::disconnect_source_server::DisconnectSourceServerOutput) with field(s):
     ///   - [`source_server_id(Option<String>)`](crate::operation::disconnect_source_server::DisconnectSourceServerOutput::source_server_id): <p>The ID of the Source Server.</p>
     ///   - [`arn(Option<String>)`](crate::operation::disconnect_source_server::DisconnectSourceServerOutput::arn): <p>The ARN of the Source Server.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::disconnect_source_server::DisconnectSourceServerOutput::tags): <p>The tags associated with the Source Server.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::disconnect_source_server::DisconnectSourceServerOutput::tags): <p>The tags associated with the Source Server.</p>
     ///   - [`recovery_instance_id(Option<String>)`](crate::operation::disconnect_source_server::DisconnectSourceServerOutput::recovery_instance_id): <p>The ID of the Recovery Instance associated with this Source Server.</p>
     ///   - [`last_launch_result(Option<LastLaunchResult>)`](crate::operation::disconnect_source_server::DisconnectSourceServerOutput::last_launch_result): <p>The status of the last recovery launch of this Source Server.</p>
     ///   - [`data_replication_info(Option<DataReplicationInfo>)`](crate::operation::disconnect_source_server::DisconnectSourceServerOutput::data_replication_info): <p>The Data Replication Info of the Source Server.</p>

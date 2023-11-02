@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::get_table_objects::builders::GetTableObjectsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_table_objects::builders::GetTableObjectsFluentBuilder::set_max_results):<br>required: **false**<br><p>Specifies how many values to return in a page.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_table_objects::builders::GetTableObjectsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_table_objects::builders::GetTableObjectsFluentBuilder::set_next_token):<br>required: **false**<br><p>A continuation token if this is not the first call to retrieve these objects.</p><br>
     /// - On success, responds with [`GetTableObjectsOutput`](crate::operation::get_table_objects::GetTableObjectsOutput) with field(s):
-    ///   - [`objects(Option<Vec<PartitionObjects>>)`](crate::operation::get_table_objects::GetTableObjectsOutput::objects): <p>A list of objects organized by partition keys.</p>
+    ///   - [`objects(Option<Vec::<PartitionObjects>>)`](crate::operation::get_table_objects::GetTableObjectsOutput::objects): <p>A list of objects organized by partition keys.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_table_objects::GetTableObjectsOutput::next_token): <p>A continuation token indicating whether additional data is available.</p>
     /// - On failure, responds with [`SdkError<GetTableObjectsError>`](crate::operation::get_table_objects::GetTableObjectsError)
     pub fn get_table_objects(&self) -> crate::operation::get_table_objects::builders::GetTableObjectsFluentBuilder {

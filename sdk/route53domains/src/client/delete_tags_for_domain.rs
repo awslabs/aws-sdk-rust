@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain_name(impl Into<String>)`](crate::operation::delete_tags_for_domain::builders::DeleteTagsForDomainFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::delete_tags_for_domain::builders::DeleteTagsForDomainFluentBuilder::set_domain_name):<br>required: **true**<br><p>The domain for which you want to delete one or more tags.</p><br>
-    ///   - [`tags_to_delete(impl Into<String>)`](crate::operation::delete_tags_for_domain::builders::DeleteTagsForDomainFluentBuilder::tags_to_delete) / [`set_tags_to_delete(Option<Vec<String>>)`](crate::operation::delete_tags_for_domain::builders::DeleteTagsForDomainFluentBuilder::set_tags_to_delete):<br>required: **true**<br><p>A list of tag keys to delete.</p><br>
+    ///   - [`tags_to_delete(impl Into<String>)`](crate::operation::delete_tags_for_domain::builders::DeleteTagsForDomainFluentBuilder::tags_to_delete) / [`set_tags_to_delete(Option<Vec::<String>>)`](crate::operation::delete_tags_for_domain::builders::DeleteTagsForDomainFluentBuilder::set_tags_to_delete):<br>required: **true**<br><p>A list of tag keys to delete.</p><br>
     /// - On success, responds with [`DeleteTagsForDomainOutput`](crate::operation::delete_tags_for_domain::DeleteTagsForDomainOutput)
     /// - On failure, responds with [`SdkError<DeleteTagsForDomainError>`](crate::operation::delete_tags_for_domain::DeleteTagsForDomainError)
     pub fn delete_tags_for_domain(&self) -> crate::operation::delete_tags_for_domain::builders::DeleteTagsForDomainFluentBuilder {

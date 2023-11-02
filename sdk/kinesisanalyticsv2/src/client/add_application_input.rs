@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`AddApplicationInputOutput`](crate::operation::add_application_input::AddApplicationInputOutput) with field(s):
     ///   - [`application_arn(Option<String>)`](crate::operation::add_application_input::AddApplicationInputOutput::application_arn): <p>The Amazon Resource Name (ARN) of the application.</p>
     ///   - [`application_version_id(Option<i64>)`](crate::operation::add_application_input::AddApplicationInputOutput::application_version_id): <p>Provides the current application version.</p>
-    ///   - [`input_descriptions(Option<Vec<InputDescription>>)`](crate::operation::add_application_input::AddApplicationInputOutput::input_descriptions): <p>Describes the application input configuration. </p>
+    ///   - [`input_descriptions(Option<Vec::<InputDescription>>)`](crate::operation::add_application_input::AddApplicationInputOutput::input_descriptions): <p>Describes the application input configuration. </p>
     /// - On failure, responds with [`SdkError<AddApplicationInputError>`](crate::operation::add_application_input::AddApplicationInputError)
     pub fn add_application_input(&self) -> crate::operation::add_application_input::builders::AddApplicationInputFluentBuilder {
         crate::operation::add_application_input::builders::AddApplicationInputFluentBuilder::new(self.handle.clone())

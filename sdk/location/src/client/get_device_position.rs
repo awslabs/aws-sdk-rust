@@ -9,9 +9,9 @@ impl super::Client {
     ///   - [`device_id(Option<String>)`](crate::operation::get_device_position::GetDevicePositionOutput::device_id): <p>The device whose position you retrieved.</p>
     ///   - [`sample_time(DateTime)`](crate::operation::get_device_position::GetDevicePositionOutput::sample_time): <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     ///   - [`received_time(DateTime)`](crate::operation::get_device_position::GetDevicePositionOutput::received_time): <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    ///   - [`position(Vec<f64>)`](crate::operation::get_device_position::GetDevicePositionOutput::position): <p>The last known device position.</p>
+    ///   - [`position(Vec::<f64>)`](crate::operation::get_device_position::GetDevicePositionOutput::position): <p>The last known device position.</p>
     ///   - [`accuracy(Option<PositionalAccuracy>)`](crate::operation::get_device_position::GetDevicePositionOutput::accuracy): <p>The accuracy of the device position.</p>
-    ///   - [`position_properties(Option<HashMap<String, String>>)`](crate::operation::get_device_position::GetDevicePositionOutput::position_properties): <p>The properties associated with the position.</p>
+    ///   - [`position_properties(Option<HashMap::<String, String>>)`](crate::operation::get_device_position::GetDevicePositionOutput::position_properties): <p>The properties associated with the position.</p>
     /// - On failure, responds with [`SdkError<GetDevicePositionError>`](crate::operation::get_device_position::GetDevicePositionError)
     pub fn get_device_position(&self) -> crate::operation::get_device_position::builders::GetDevicePositionFluentBuilder {
         crate::operation::get_device_position::builders::GetDevicePositionFluentBuilder::new(self.handle.clone())

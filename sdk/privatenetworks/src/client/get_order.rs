@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`order_arn(impl Into<String>)`](crate::operation::get_order::builders::GetOrderFluentBuilder::order_arn) / [`set_order_arn(Option<String>)`](crate::operation::get_order::builders::GetOrderFluentBuilder::set_order_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the order.</p><br>
     /// - On success, responds with [`GetOrderOutput`](crate::operation::get_order::GetOrderOutput) with field(s):
     ///   - [`order(Option<Order>)`](crate::operation::get_order::GetOrderOutput::order): <p>Information about the order.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_order::GetOrderOutput::tags): <p> The order tags. </p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_order::GetOrderOutput::tags): <p> The order tags. </p>
     /// - On failure, responds with [`SdkError<GetOrderError>`](crate::operation::get_order::GetOrderError)
     pub fn get_order(&self) -> crate::operation::get_order::builders::GetOrderFluentBuilder {
         crate::operation::get_order::builders::GetOrderFluentBuilder::new(self.handle.clone())

@@ -8,8 +8,8 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::get_template::GetTemplateOutput::id): <p>The ID of the template.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_template::GetTemplateOutput::name): <p>The name of the template.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_template::GetTemplateOutput::description): <p>The time at which the template was last created.</p>
-    ///   - [`inputs(Option<Vec<TemplateInput>>)`](crate::operation::get_template::GetTemplateOutput::inputs): <p>The inputs provided for the creation of the migration workflow.</p>
-    ///   - [`tools(Option<Vec<Tool>>)`](crate::operation::get_template::GetTemplateOutput::tools): <p>List of AWS services utilized in a migration workflow.</p>
+    ///   - [`inputs(Option<Vec::<TemplateInput>>)`](crate::operation::get_template::GetTemplateOutput::inputs): <p>The inputs provided for the creation of the migration workflow.</p>
+    ///   - [`tools(Option<Vec::<Tool>>)`](crate::operation::get_template::GetTemplateOutput::tools): <p>List of AWS services utilized in a migration workflow.</p>
     ///   - [`status(Option<TemplateStatus>)`](crate::operation::get_template::GetTemplateOutput::status): <p>The status of the template.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_template::GetTemplateOutput::creation_time): <p>The time at which the template was last created.</p>
     /// - On failure, responds with [`SdkError<GetTemplateError>`](crate::operation::get_template::GetTemplateError)

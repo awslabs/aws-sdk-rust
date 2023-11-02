@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to request the next page of results.</p><br>
     ///   - [`account_id(impl Into<String>)`](crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::set_account_id):<br>required: **false**<br><p>The AWS account ID of the owner of the workload.</p><br>
     /// - On success, responds with [`ListWorkloadsOutput`](crate::operation::list_workloads::ListWorkloadsOutput) with field(s):
-    ///   - [`workload_list(Option<Vec<Workload>>)`](crate::operation::list_workloads::ListWorkloadsOutput::workload_list): <p>The list of workloads.</p>
+    ///   - [`workload_list(Option<Vec::<Workload>>)`](crate::operation::list_workloads::ListWorkloadsOutput::workload_list): <p>The list of workloads.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_workloads::ListWorkloadsOutput::next_token): <p>The token to request the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListWorkloadsError>`](crate::operation::list_workloads::ListWorkloadsError)
     pub fn list_workloads(&self) -> crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder {

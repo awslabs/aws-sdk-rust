@@ -10,7 +10,7 @@ impl super::Client {
     /// - On success, responds with [`SearchRasterDataCollectionOutput`](crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput) with field(s):
     ///   - [`approximate_result_count(i32)`](crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput::approximate_result_count): <p>Approximate number of results in the response.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput::next_token): <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
-    ///   - [`items(Option<Vec<ItemSource>>)`](crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput::items): <p>List of items matching the Raster DataCollectionQuery.</p>
+    ///   - [`items(Option<Vec::<ItemSource>>)`](crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput::items): <p>List of items matching the Raster DataCollectionQuery.</p>
     /// - On failure, responds with [`SdkError<SearchRasterDataCollectionError>`](crate::operation::search_raster_data_collection::SearchRasterDataCollectionError)
     pub fn search_raster_data_collection(
         &self,

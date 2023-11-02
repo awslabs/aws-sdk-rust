@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`last_modified_time_after(DateTime)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::last_modified_time_after) / [`set_last_modified_time_after(Option<DateTime>)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::set_last_modified_time_after):<br>required: **false**<br><p> A filter that returns only endpoints that were modified after the specified timestamp. </p><br>
     ///   - [`status_equals(EndpointStatus)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::status_equals) / [`set_status_equals(Option<EndpointStatus>)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::set_status_equals):<br>required: **false**<br><p> A filter that returns only endpoints with the specified status.</p><br>
     /// - On success, responds with [`ListEndpointsOutput`](crate::operation::list_endpoints::ListEndpointsOutput) with field(s):
-    ///   - [`endpoints(Option<Vec<EndpointSummary>>)`](crate::operation::list_endpoints::ListEndpointsOutput::endpoints): <p> An array or endpoint objects. </p>
+    ///   - [`endpoints(Option<Vec::<EndpointSummary>>)`](crate::operation::list_endpoints::ListEndpointsOutput::endpoints): <p> An array or endpoint objects. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_endpoints::ListEndpointsOutput::next_token): <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request. </p>
     /// - On failure, responds with [`SdkError<ListEndpointsError>`](crate::operation::list_endpoints::ListEndpointsError)
     pub fn list_endpoints(&self) -> crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder {

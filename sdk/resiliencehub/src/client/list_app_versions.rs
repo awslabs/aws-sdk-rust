@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`start_time(DateTime)`](crate::operation::list_app_versions::builders::ListAppVersionsFluentBuilder::start_time) / [`set_start_time(Option<DateTime>)`](crate::operation::list_app_versions::builders::ListAppVersionsFluentBuilder::set_start_time):<br>required: **false**<br><p>Lower limit of the time range to filter the application versions.</p><br>
     ///   - [`end_time(DateTime)`](crate::operation::list_app_versions::builders::ListAppVersionsFluentBuilder::end_time) / [`set_end_time(Option<DateTime>)`](crate::operation::list_app_versions::builders::ListAppVersionsFluentBuilder::set_end_time):<br>required: **false**<br><p>Upper limit of the time range to filter the application versions.</p><br>
     /// - On success, responds with [`ListAppVersionsOutput`](crate::operation::list_app_versions::ListAppVersionsOutput) with field(s):
-    ///   - [`app_versions(Vec<AppVersionSummary>)`](crate::operation::list_app_versions::ListAppVersionsOutput::app_versions): <p>The version of the application.</p>
+    ///   - [`app_versions(Vec::<AppVersionSummary>)`](crate::operation::list_app_versions::ListAppVersionsOutput::app_versions): <p>The version of the application.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_app_versions::ListAppVersionsOutput::next_token): <p>Token for the next set of results, or null if there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListAppVersionsError>`](crate::operation::list_app_versions::ListAppVersionsError)
     pub fn list_app_versions(&self) -> crate::operation::list_app_versions::builders::ListAppVersionsFluentBuilder {

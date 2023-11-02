@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_imports::builders::ListImportsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_imports::builders::ListImportsFluentBuilder::set_max_results):<br>required: **false**<br><p>List imports request max results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_imports::builders::ListImportsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_imports::builders::ListImportsFluentBuilder::set_next_token):<br>required: **false**<br><p>List imports request next token.</p><br>
     /// - On success, responds with [`ListImportsOutput`](crate::operation::list_imports::ListImportsOutput) with field(s):
-    ///   - [`items(Option<Vec<ImportTask>>)`](crate::operation::list_imports::ListImportsOutput::items): <p>List import response items.</p>
+    ///   - [`items(Option<Vec::<ImportTask>>)`](crate::operation::list_imports::ListImportsOutput::items): <p>List import response items.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_imports::ListImportsOutput::next_token): <p>List import response next token.</p>
     /// - On failure, responds with [`SdkError<ListImportsError>`](crate::operation::list_imports::ListImportsError)
     pub fn list_imports(&self) -> crate::operation::list_imports::builders::ListImportsFluentBuilder {

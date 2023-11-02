@@ -15,8 +15,8 @@ impl super::Client {
     ///   - [`node_name(String)`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput::node_name): <p>The node's name.</p>
     ///   - [`node_description(Option<String>)`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput::node_description): <p>The node's description.</p>
     ///   - [`template_type(TemplateType)`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput::template_type): <p>The job's template type.</p>
-    ///   - [`template_parameters(HashMap<String, String>)`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput::template_parameters): <p>The job's template parameters.</p>
-    ///   - [`job_tags(Option<Vec<JobResourceTags>>)`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput::job_tags): <p>The job's tags.</p>
+    ///   - [`template_parameters(HashMap::<String, String>)`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput::template_parameters): <p>The job's template parameters.</p>
+    ///   - [`job_tags(Option<Vec::<JobResourceTags>>)`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput::job_tags): <p>The job's tags.</p>
     /// - On failure, responds with [`SdkError<DescribeNodeFromTemplateJobError>`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError)
     pub fn describe_node_from_template_job(
         &self,

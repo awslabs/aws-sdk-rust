@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_legal_holds::builders::ListLegalHoldsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_legal_holds::builders::ListLegalHoldsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of resource list items to be returned.</p><br>
     /// - On success, responds with [`ListLegalHoldsOutput`](crate::operation::list_legal_holds::ListLegalHoldsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_legal_holds::ListLegalHoldsOutput::next_token): <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    ///   - [`legal_holds(Option<Vec<LegalHold>>)`](crate::operation::list_legal_holds::ListLegalHoldsOutput::legal_holds): <p>This is an array of returned legal holds, both active and previous.</p>
+    ///   - [`legal_holds(Option<Vec::<LegalHold>>)`](crate::operation::list_legal_holds::ListLegalHoldsOutput::legal_holds): <p>This is an array of returned legal holds, both active and previous.</p>
     /// - On failure, responds with [`SdkError<ListLegalHoldsError>`](crate::operation::list_legal_holds::ListLegalHoldsError)
     pub fn list_legal_holds(&self) -> crate::operation::list_legal_holds::builders::ListLegalHoldsFluentBuilder {
         crate::operation::list_legal_holds::builders::ListLegalHoldsFluentBuilder::new(self.handle.clone())

@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_sub_channels::builders::ListSubChannelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_sub_channels::builders::ListSubChannelsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token passed by previous API calls until all requested sub-channels are returned.</p><br>
     /// - On success, responds with [`ListSubChannelsOutput`](crate::operation::list_sub_channels::ListSubChannelsOutput) with field(s):
     ///   - [`channel_arn(Option<String>)`](crate::operation::list_sub_channels::ListSubChannelsOutput::channel_arn): <p>The ARN of elastic channel.</p>
-    ///   - [`sub_channels(Option<Vec<SubChannelSummary>>)`](crate::operation::list_sub_channels::ListSubChannelsOutput::sub_channels): <p>The information about each sub-channel.</p>
+    ///   - [`sub_channels(Option<Vec::<SubChannelSummary>>)`](crate::operation::list_sub_channels::ListSubChannelsOutput::sub_channels): <p>The information about each sub-channel.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_sub_channels::ListSubChannelsOutput::next_token): <p>The token passed by previous API calls until all requested sub-channels are returned.</p>
     /// - On failure, responds with [`SdkError<ListSubChannelsError>`](crate::operation::list_sub_channels::ListSubChannelsError)
     pub fn list_sub_channels(&self) -> crate::operation::list_sub_channels::builders::ListSubChannelsFluentBuilder {

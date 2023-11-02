@@ -10,7 +10,7 @@ pub fn de_s3_key_filter(
             s if s.matches("FilterRule") /* FilterRules com.amazonaws.s3#S3KeyFilter$FilterRules */ =>  {
                 let var_1 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::FilterRule>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::FilterRule>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_2 = builder.filter_rules.take().unwrap_or_default();
                             list_2.push(
                                 crate::protocol_serde::shape_filter_rule::de_filter_rule(&mut tag)

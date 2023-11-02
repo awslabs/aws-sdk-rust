@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchGetVpcEndpoint`](crate::operation::batch_get_vpc_endpoint::builders::BatchGetVpcEndpointFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`ids(impl Into<String>)`](crate::operation::batch_get_vpc_endpoint::builders::BatchGetVpcEndpointFluentBuilder::ids) / [`set_ids(Option<Vec<String>>)`](crate::operation::batch_get_vpc_endpoint::builders::BatchGetVpcEndpointFluentBuilder::set_ids):<br>required: **true**<br><p>A list of VPC endpoint identifiers.</p><br>
+    ///   - [`ids(impl Into<String>)`](crate::operation::batch_get_vpc_endpoint::builders::BatchGetVpcEndpointFluentBuilder::ids) / [`set_ids(Option<Vec::<String>>)`](crate::operation::batch_get_vpc_endpoint::builders::BatchGetVpcEndpointFluentBuilder::set_ids):<br>required: **true**<br><p>A list of VPC endpoint identifiers.</p><br>
     /// - On success, responds with [`BatchGetVpcEndpointOutput`](crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointOutput) with field(s):
-    ///   - [`vpc_endpoint_details(Option<Vec<VpcEndpointDetail>>)`](crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointOutput::vpc_endpoint_details): <p>Details about the specified VPC endpoint.</p>
-    ///   - [`vpc_endpoint_error_details(Option<Vec<VpcEndpointErrorDetail>>)`](crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointOutput::vpc_endpoint_error_details): <p>Error information for a failed request.</p>
+    ///   - [`vpc_endpoint_details(Option<Vec::<VpcEndpointDetail>>)`](crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointOutput::vpc_endpoint_details): <p>Details about the specified VPC endpoint.</p>
+    ///   - [`vpc_endpoint_error_details(Option<Vec::<VpcEndpointErrorDetail>>)`](crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointOutput::vpc_endpoint_error_details): <p>Error information for a failed request.</p>
     /// - On failure, responds with [`SdkError<BatchGetVpcEndpointError>`](crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointError)
     pub fn batch_get_vpc_endpoint(&self) -> crate::operation::batch_get_vpc_endpoint::builders::BatchGetVpcEndpointFluentBuilder {
         crate::operation::batch_get_vpc_endpoint::builders::BatchGetVpcEndpointFluentBuilder::new(self.handle.clone())

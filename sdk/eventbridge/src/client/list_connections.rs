@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_connections::builders::ListConnectionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_connections::builders::ListConnectionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token returned by a previous call to retrieve the next set of results.</p><br>
     ///   - [`limit(i32)`](crate::operation::list_connections::builders::ListConnectionsFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::list_connections::builders::ListConnectionsFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of connections to return.</p><br>
     /// - On success, responds with [`ListConnectionsOutput`](crate::operation::list_connections::ListConnectionsOutput) with field(s):
-    ///   - [`connections(Option<Vec<Connection>>)`](crate::operation::list_connections::ListConnectionsOutput::connections): <p>An array of connections objects that include details about the connections.</p>
+    ///   - [`connections(Option<Vec::<Connection>>)`](crate::operation::list_connections::ListConnectionsOutput::connections): <p>An array of connections objects that include details about the connections.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_connections::ListConnectionsOutput::next_token): <p>A token you can use in a subsequent request to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListConnectionsError>`](crate::operation::list_connections::ListConnectionsError)
     pub fn list_connections(&self) -> crate::operation::list_connections::builders::ListConnectionsFluentBuilder {

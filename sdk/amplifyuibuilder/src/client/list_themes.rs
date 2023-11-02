@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_themes::builders::ListThemesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_themes::builders::ListThemesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to request the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_themes::builders::ListThemesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_themes::builders::ListThemesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of theme results to return in the response.</p><br>
     /// - On success, responds with [`ListThemesOutput`](crate::operation::list_themes::ListThemesOutput) with field(s):
-    ///   - [`entities(Vec<ThemeSummary>)`](crate::operation::list_themes::ListThemesOutput::entities): <p>The list of themes for the Amplify app.</p>
+    ///   - [`entities(Vec::<ThemeSummary>)`](crate::operation::list_themes::ListThemesOutput::entities): <p>The list of themes for the Amplify app.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_themes::ListThemesOutput::next_token): <p>The pagination token that's returned if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListThemesError>`](crate::operation::list_themes::ListThemesError)
     pub fn list_themes(&self) -> crate::operation::list_themes::builders::ListThemesFluentBuilder {

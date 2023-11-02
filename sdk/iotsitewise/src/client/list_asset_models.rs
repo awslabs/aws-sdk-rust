@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_asset_models::builders::ListAssetModelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_asset_models::builders::ListAssetModelsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to be used for the next set of paginated results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_asset_models::builders::ListAssetModelsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_asset_models::builders::ListAssetModelsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return for each paginated request.</p>  <p>Default: 50</p><br>
     /// - On success, responds with [`ListAssetModelsOutput`](crate::operation::list_asset_models::ListAssetModelsOutput) with field(s):
-    ///   - [`asset_model_summaries(Vec<AssetModelSummary>)`](crate::operation::list_asset_models::ListAssetModelsOutput::asset_model_summaries): <p>A list that summarizes each asset model.</p>
+    ///   - [`asset_model_summaries(Vec::<AssetModelSummary>)`](crate::operation::list_asset_models::ListAssetModelsOutput::asset_model_summaries): <p>A list that summarizes each asset model.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_asset_models::ListAssetModelsOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListAssetModelsError>`](crate::operation::list_asset_models::ListAssetModelsError)
     pub fn list_asset_models(&self) -> crate::operation::list_asset_models::builders::ListAssetModelsFluentBuilder {

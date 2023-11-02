@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeImageReplicationStatusOutput`](crate::operation::describe_image_replication_status::DescribeImageReplicationStatusOutput) with field(s):
     ///   - [`repository_name(Option<String>)`](crate::operation::describe_image_replication_status::DescribeImageReplicationStatusOutput::repository_name): <p>The repository name associated with the request.</p>
     ///   - [`image_id(Option<ImageIdentifier>)`](crate::operation::describe_image_replication_status::DescribeImageReplicationStatusOutput::image_id): <p>An object with identifying information for an image in an Amazon ECR repository.</p>
-    ///   - [`replication_statuses(Option<Vec<ImageReplicationStatus>>)`](crate::operation::describe_image_replication_status::DescribeImageReplicationStatusOutput::replication_statuses): <p>The replication status details for the images in the specified repository.</p>
+    ///   - [`replication_statuses(Option<Vec::<ImageReplicationStatus>>)`](crate::operation::describe_image_replication_status::DescribeImageReplicationStatusOutput::replication_statuses): <p>The replication status details for the images in the specified repository.</p>
     /// - On failure, responds with [`SdkError<DescribeImageReplicationStatusError>`](crate::operation::describe_image_replication_status::DescribeImageReplicationStatusError)
     pub fn describe_image_replication_status(
         &self,

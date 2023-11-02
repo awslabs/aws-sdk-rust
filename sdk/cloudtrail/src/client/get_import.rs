@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`import_id(impl Into<String>)`](crate::operation::get_import::builders::GetImportFluentBuilder::import_id) / [`set_import_id(Option<String>)`](crate::operation::get_import::builders::GetImportFluentBuilder::set_import_id):<br>required: **true**<br><p> The ID for the import. </p><br>
     /// - On success, responds with [`GetImportOutput`](crate::operation::get_import::GetImportOutput) with field(s):
     ///   - [`import_id(Option<String>)`](crate::operation::get_import::GetImportOutput::import_id): <p> The ID of the import. </p>
-    ///   - [`destinations(Option<Vec<String>>)`](crate::operation::get_import::GetImportOutput::destinations): <p> The ARN of the destination event data store. </p>
+    ///   - [`destinations(Option<Vec::<String>>)`](crate::operation::get_import::GetImportOutput::destinations): <p> The ARN of the destination event data store. </p>
     ///   - [`import_source(Option<ImportSource>)`](crate::operation::get_import::GetImportOutput::import_source): <p> The source S3 bucket. </p>
     ///   - [`start_event_time(Option<DateTime>)`](crate::operation::get_import::GetImportOutput::start_event_time): <p> Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
     ///   - [`end_event_time(Option<DateTime>)`](crate::operation::get_import::GetImportOutput::end_event_time): <p> Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>

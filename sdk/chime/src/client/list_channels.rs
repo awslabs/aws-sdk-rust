@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token passed by previous API calls until all requested channels are returned.</p><br>
     ///   - [`chime_bearer(impl Into<String>)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::set_chime_bearer):<br>required: **false**<br><p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p><br>
     /// - On success, responds with [`ListChannelsOutput`](crate::operation::list_channels::ListChannelsOutput) with field(s):
-    ///   - [`channels(Option<Vec<ChannelSummary>>)`](crate::operation::list_channels::ListChannelsOutput::channels): <p>The information about each channel.</p>
+    ///   - [`channels(Option<Vec::<ChannelSummary>>)`](crate::operation::list_channels::ListChannelsOutput::channels): <p>The information about each channel.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_channels::ListChannelsOutput::next_token): <p>The token returned from previous API requests until the number of channels is reached.</p>
     /// - On failure, responds with [`SdkError<ListChannelsError>`](crate::operation::list_channels::ListChannelsError)
     #[deprecated(note = "Replaced by ListChannels in the Amazon Chime SDK Messaging Namespace")]

@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_flywheels::builders::ListFlywheelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_flywheels::builders::ListFlywheelsFluentBuilder::set_next_token):<br>required: **false**<br><p>Identifies the next page of results to return.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_flywheels::builders::ListFlywheelsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_flywheels::builders::ListFlywheelsFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results to return in a response. The default is 100.</p><br>
     /// - On success, responds with [`ListFlywheelsOutput`](crate::operation::list_flywheels::ListFlywheelsOutput) with field(s):
-    ///   - [`flywheel_summary_list(Option<Vec<FlywheelSummary>>)`](crate::operation::list_flywheels::ListFlywheelsOutput::flywheel_summary_list): <p>A list of flywheel properties retrieved by the service in response to the request. </p>
+    ///   - [`flywheel_summary_list(Option<Vec::<FlywheelSummary>>)`](crate::operation::list_flywheels::ListFlywheelsOutput::flywheel_summary_list): <p>A list of flywheel properties retrieved by the service in response to the request. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_flywheels::ListFlywheelsOutput::next_token): <p>Identifies the next page of results to return.</p>
     /// - On failure, responds with [`SdkError<ListFlywheelsError>`](crate::operation::list_flywheels::ListFlywheelsError)
     pub fn list_flywheels(&self) -> crate::operation::list_flywheels::builders::ListFlywheelsFluentBuilder {

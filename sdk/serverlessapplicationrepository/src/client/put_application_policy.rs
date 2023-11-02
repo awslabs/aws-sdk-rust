@@ -4,9 +4,9 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`application_id(impl Into<String>)`](crate::operation::put_application_policy::builders::PutApplicationPolicyFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::put_application_policy::builders::PutApplicationPolicyFluentBuilder::set_application_id):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the application.</p><br>
-    ///   - [`statements(ApplicationPolicyStatement)`](crate::operation::put_application_policy::builders::PutApplicationPolicyFluentBuilder::statements) / [`set_statements(Option<Vec<ApplicationPolicyStatement>>)`](crate::operation::put_application_policy::builders::PutApplicationPolicyFluentBuilder::set_statements):<br>required: **true**<br><p>An array of policy statements applied to the application.</p><br>
+    ///   - [`statements(ApplicationPolicyStatement)`](crate::operation::put_application_policy::builders::PutApplicationPolicyFluentBuilder::statements) / [`set_statements(Option<Vec::<ApplicationPolicyStatement>>)`](crate::operation::put_application_policy::builders::PutApplicationPolicyFluentBuilder::set_statements):<br>required: **true**<br><p>An array of policy statements applied to the application.</p><br>
     /// - On success, responds with [`PutApplicationPolicyOutput`](crate::operation::put_application_policy::PutApplicationPolicyOutput) with field(s):
-    ///   - [`statements(Option<Vec<ApplicationPolicyStatement>>)`](crate::operation::put_application_policy::PutApplicationPolicyOutput::statements): <p>An array of policy statements applied to the application.</p>
+    ///   - [`statements(Option<Vec::<ApplicationPolicyStatement>>)`](crate::operation::put_application_policy::PutApplicationPolicyOutput::statements): <p>An array of policy statements applied to the application.</p>
     /// - On failure, responds with [`SdkError<PutApplicationPolicyError>`](crate::operation::put_application_policy::PutApplicationPolicyError)
     pub fn put_application_policy(&self) -> crate::operation::put_application_policy::builders::PutApplicationPolicyFluentBuilder {
         crate::operation::put_application_policy::builders::PutApplicationPolicyFluentBuilder::new(self.handle.clone())

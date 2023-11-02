@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`event_data_store_arn(Option<String>)`](crate::operation::restore_event_data_store::RestoreEventDataStoreOutput::event_data_store_arn): <p>The event data store ARN.</p>
     ///   - [`name(Option<String>)`](crate::operation::restore_event_data_store::RestoreEventDataStoreOutput::name): <p>The name of the event data store.</p>
     ///   - [`status(Option<EventDataStoreStatus>)`](crate::operation::restore_event_data_store::RestoreEventDataStoreOutput::status): <p>The status of the event data store.</p>
-    ///   - [`advanced_event_selectors(Option<Vec<AdvancedEventSelector>>)`](crate::operation::restore_event_data_store::RestoreEventDataStoreOutput::advanced_event_selectors): <p>The advanced event selectors that were used to select events.</p>
+    ///   - [`advanced_event_selectors(Option<Vec::<AdvancedEventSelector>>)`](crate::operation::restore_event_data_store::RestoreEventDataStoreOutput::advanced_event_selectors): <p>The advanced event selectors that were used to select events.</p>
     ///   - [`multi_region_enabled(Option<bool>)`](crate::operation::restore_event_data_store::RestoreEventDataStoreOutput::multi_region_enabled): <p>Indicates whether the event data store is collecting events from all Regions, or only from the Region in which the event data store was created.</p>
     ///   - [`organization_enabled(Option<bool>)`](crate::operation::restore_event_data_store::RestoreEventDataStoreOutput::organization_enabled): <p>Indicates whether an event data store is collecting logged events for an organization in Organizations.</p>
     ///   - [`retention_period(Option<i32>)`](crate::operation::restore_event_data_store::RestoreEventDataStoreOutput::retention_period): <p>The retention period, in days.</p>

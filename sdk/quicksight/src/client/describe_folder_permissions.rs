@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`status(i32)`](crate::operation::describe_folder_permissions::DescribeFolderPermissionsOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`folder_id(Option<String>)`](crate::operation::describe_folder_permissions::DescribeFolderPermissionsOutput::folder_id): <p>The ID of the folder.</p>
     ///   - [`arn(Option<String>)`](crate::operation::describe_folder_permissions::DescribeFolderPermissionsOutput::arn): <p>The Amazon Resource Name (ARN) for the folder.</p>
-    ///   - [`permissions(Option<Vec<ResourcePermission>>)`](crate::operation::describe_folder_permissions::DescribeFolderPermissionsOutput::permissions): <p>Information about the permissions on the folder.</p>
+    ///   - [`permissions(Option<Vec::<ResourcePermission>>)`](crate::operation::describe_folder_permissions::DescribeFolderPermissionsOutput::permissions): <p>Information about the permissions on the folder.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::describe_folder_permissions::DescribeFolderPermissionsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_folder_permissions::DescribeFolderPermissionsOutput::next_token): <p>The pagination token for the next set of results, or null if there are no more results.</p>
     /// - On failure, responds with [`SdkError<DescribeFolderPermissionsError>`](crate::operation::describe_folder_permissions::DescribeFolderPermissionsError)

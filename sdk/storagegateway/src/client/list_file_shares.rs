@@ -10,7 +10,7 @@ impl super::Client {
     /// - On success, responds with [`ListFileSharesOutput`](crate::operation::list_file_shares::ListFileSharesOutput) with field(s):
     ///   - [`marker(Option<String>)`](crate::operation::list_file_shares::ListFileSharesOutput::marker): <p>If the request includes <code>Marker</code>, the response returns that value in this field.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::list_file_shares::ListFileSharesOutput::next_marker): <p>If a value is present, there are more file shares to return. In a subsequent request, use <code>NextMarker</code> as the value for <code>Marker</code> to retrieve the next set of file shares.</p>
-    ///   - [`file_share_info_list(Option<Vec<FileShareInfo>>)`](crate::operation::list_file_shares::ListFileSharesOutput::file_share_info_list): <p>An array of information about the S3 File Gateway's file shares.</p>
+    ///   - [`file_share_info_list(Option<Vec::<FileShareInfo>>)`](crate::operation::list_file_shares::ListFileSharesOutput::file_share_info_list): <p>An array of information about the S3 File Gateway's file shares.</p>
     /// - On failure, responds with [`SdkError<ListFileSharesError>`](crate::operation::list_file_shares::ListFileSharesError)
     pub fn list_file_shares(&self) -> crate::operation::list_file_shares::builders::ListFileSharesFluentBuilder {
         crate::operation::list_file_shares::builders::ListFileSharesFluentBuilder::new(self.handle.clone())

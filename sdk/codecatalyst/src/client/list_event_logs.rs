@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_event_logs::builders::ListEventLogsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_event_logs::builders::ListEventLogsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a <code>NextToken</code> element, which you can use to obtain additional results.</p><br>
     /// - On success, responds with [`ListEventLogsOutput`](crate::operation::list_event_logs::ListEventLogsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_event_logs::ListEventLogsOutput::next_token): <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
-    ///   - [`items(Vec<EventLogEntry>)`](crate::operation::list_event_logs::ListEventLogsOutput::items): <p>Information about each event retrieved in the list.</p>
+    ///   - [`items(Vec::<EventLogEntry>)`](crate::operation::list_event_logs::ListEventLogsOutput::items): <p>Information about each event retrieved in the list.</p>
     /// - On failure, responds with [`SdkError<ListEventLogsError>`](crate::operation::list_event_logs::ListEventLogsError)
     pub fn list_event_logs(&self) -> crate::operation::list_event_logs::builders::ListEventLogsFluentBuilder {
         crate::operation::list_event_logs::builders::ListEventLogsFluentBuilder::new(self.handle.clone())

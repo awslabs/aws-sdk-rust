@@ -9,11 +9,11 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::describe_robot_application::DescribeRobotApplicationOutput::arn): <p>The Amazon Resource Name (ARN) of the robot application.</p>
     ///   - [`name(Option<String>)`](crate::operation::describe_robot_application::DescribeRobotApplicationOutput::name): <p>The name of the robot application.</p>
     ///   - [`version(Option<String>)`](crate::operation::describe_robot_application::DescribeRobotApplicationOutput::version): <p>The version of the robot application.</p>
-    ///   - [`sources(Option<Vec<Source>>)`](crate::operation::describe_robot_application::DescribeRobotApplicationOutput::sources): <p>The sources of the robot application.</p>
+    ///   - [`sources(Option<Vec::<Source>>)`](crate::operation::describe_robot_application::DescribeRobotApplicationOutput::sources): <p>The sources of the robot application.</p>
     ///   - [`robot_software_suite(Option<RobotSoftwareSuite>)`](crate::operation::describe_robot_application::DescribeRobotApplicationOutput::robot_software_suite): <p>The robot software suite (ROS distribution) used by the robot application.</p>
     ///   - [`revision_id(Option<String>)`](crate::operation::describe_robot_application::DescribeRobotApplicationOutput::revision_id): <p>The revision id of the robot application.</p>
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::describe_robot_application::DescribeRobotApplicationOutput::last_updated_at): <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_robot_application::DescribeRobotApplicationOutput::tags): <p>The list of all tags added to the specified robot application.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_robot_application::DescribeRobotApplicationOutput::tags): <p>The list of all tags added to the specified robot application.</p>
     ///   - [`environment(Option<Environment>)`](crate::operation::describe_robot_application::DescribeRobotApplicationOutput::environment): <p>The object that contains the Docker image URI used to create the robot application.</p>
     ///   - [`image_digest(Option<String>)`](crate::operation::describe_robot_application::DescribeRobotApplicationOutput::image_digest): <p>A SHA256 identifier for the Docker image that you use for your robot application.</p>
     /// - On failure, responds with [`SdkError<DescribeRobotApplicationError>`](crate::operation::describe_robot_application::DescribeRobotApplicationError)

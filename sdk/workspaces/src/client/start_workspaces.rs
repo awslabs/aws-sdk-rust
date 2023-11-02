@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartWorkspaces`](crate::operation::start_workspaces::builders::StartWorkspacesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`start_workspace_requests(StartRequest)`](crate::operation::start_workspaces::builders::StartWorkspacesFluentBuilder::start_workspace_requests) / [`set_start_workspace_requests(Option<Vec<StartRequest>>)`](crate::operation::start_workspaces::builders::StartWorkspacesFluentBuilder::set_start_workspace_requests):<br>required: **true**<br><p>The WorkSpaces to start. You can specify up to 25 WorkSpaces.</p><br>
+    ///   - [`start_workspace_requests(StartRequest)`](crate::operation::start_workspaces::builders::StartWorkspacesFluentBuilder::start_workspace_requests) / [`set_start_workspace_requests(Option<Vec::<StartRequest>>)`](crate::operation::start_workspaces::builders::StartWorkspacesFluentBuilder::set_start_workspace_requests):<br>required: **true**<br><p>The WorkSpaces to start. You can specify up to 25 WorkSpaces.</p><br>
     /// - On success, responds with [`StartWorkspacesOutput`](crate::operation::start_workspaces::StartWorkspacesOutput) with field(s):
-    ///   - [`failed_requests(Option<Vec<FailedWorkspaceChangeRequest>>)`](crate::operation::start_workspaces::StartWorkspacesOutput::failed_requests): <p>Information about the WorkSpaces that could not be started.</p>
+    ///   - [`failed_requests(Option<Vec::<FailedWorkspaceChangeRequest>>)`](crate::operation::start_workspaces::StartWorkspacesOutput::failed_requests): <p>Information about the WorkSpaces that could not be started.</p>
     /// - On failure, responds with [`SdkError<StartWorkspacesError>`](crate::operation::start_workspaces::StartWorkspacesError)
     pub fn start_workspaces(&self) -> crate::operation::start_workspaces::builders::StartWorkspacesFluentBuilder {
         crate::operation::start_workspaces::builders::StartWorkspacesFluentBuilder::new(self.handle.clone())

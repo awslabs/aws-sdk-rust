@@ -7,12 +7,12 @@ impl super::Client {
     /// - On success, responds with [`DescribeScheduleOutput`](crate::operation::describe_schedule::DescribeScheduleOutput) with field(s):
     ///   - [`create_date(Option<DateTime>)`](crate::operation::describe_schedule::DescribeScheduleOutput::create_date): <p>The date and time that the schedule was created.</p>
     ///   - [`created_by(Option<String>)`](crate::operation::describe_schedule::DescribeScheduleOutput::created_by): <p>The identifier (user name) of the user who created the schedule. </p>
-    ///   - [`job_names(Option<Vec<String>>)`](crate::operation::describe_schedule::DescribeScheduleOutput::job_names): <p>The name or names of one or more jobs to be run by using the schedule.</p>
+    ///   - [`job_names(Option<Vec::<String>>)`](crate::operation::describe_schedule::DescribeScheduleOutput::job_names): <p>The name or names of one or more jobs to be run by using the schedule.</p>
     ///   - [`last_modified_by(Option<String>)`](crate::operation::describe_schedule::DescribeScheduleOutput::last_modified_by): <p>The identifier (user name) of the user who last modified the schedule.</p>
     ///   - [`last_modified_date(Option<DateTime>)`](crate::operation::describe_schedule::DescribeScheduleOutput::last_modified_date): <p>The date and time that the schedule was last modified.</p>
     ///   - [`resource_arn(Option<String>)`](crate::operation::describe_schedule::DescribeScheduleOutput::resource_arn): <p>The Amazon Resource Name (ARN) of the schedule.</p>
     ///   - [`cron_expression(Option<String>)`](crate::operation::describe_schedule::DescribeScheduleOutput::cron_expression): <p>The date or dates and time or times when the jobs are to be run for the schedule. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_schedule::DescribeScheduleOutput::tags): <p>Metadata tags associated with this schedule.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_schedule::DescribeScheduleOutput::tags): <p>Metadata tags associated with this schedule.</p>
     ///   - [`name(String)`](crate::operation::describe_schedule::DescribeScheduleOutput::name): <p>The name of the schedule.</p>
     /// - On failure, responds with [`SdkError<DescribeScheduleError>`](crate::operation::describe_schedule::DescribeScheduleError)
     pub fn describe_schedule(&self) -> crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder {

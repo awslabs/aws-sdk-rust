@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_communications::builders::DescribeCommunicationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_communications::builders::DescribeCommunicationsFluentBuilder::set_next_token):<br>required: **false**<br><p>A resumption point for pagination.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_communications::builders::DescribeCommunicationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_communications::builders::DescribeCommunicationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return before paginating.</p><br>
     /// - On success, responds with [`DescribeCommunicationsOutput`](crate::operation::describe_communications::DescribeCommunicationsOutput) with field(s):
-    ///   - [`communications(Option<Vec<Communication>>)`](crate::operation::describe_communications::DescribeCommunicationsOutput::communications): <p>The communications for the case.</p>
+    ///   - [`communications(Option<Vec::<Communication>>)`](crate::operation::describe_communications::DescribeCommunicationsOutput::communications): <p>The communications for the case.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_communications::DescribeCommunicationsOutput::next_token): <p>A resumption point for pagination.</p>
     /// - On failure, responds with [`SdkError<DescribeCommunicationsError>`](crate::operation::describe_communications::DescribeCommunicationsError)
     pub fn describe_communications(&self) -> crate::operation::describe_communications::builders::DescribeCommunicationsFluentBuilder {

@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`limit(i32)`](crate::operation::get_usage_plan_keys::builders::GetUsagePlanKeysFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::get_usage_plan_keys::builders::GetUsagePlanKeysFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p><br>
     ///   - [`name_query(impl Into<String>)`](crate::operation::get_usage_plan_keys::builders::GetUsagePlanKeysFluentBuilder::name_query) / [`set_name_query(Option<String>)`](crate::operation::get_usage_plan_keys::builders::GetUsagePlanKeysFluentBuilder::set_name_query):<br>required: **false**<br><p>A query parameter specifying the name of the to-be-returned usage plan keys.</p><br>
     /// - On success, responds with [`GetUsagePlanKeysOutput`](crate::operation::get_usage_plan_keys::GetUsagePlanKeysOutput) with field(s):
-    ///   - [`items(Option<Vec<UsagePlanKey>>)`](crate::operation::get_usage_plan_keys::GetUsagePlanKeysOutput::items): <p>The current page of elements from this collection.</p>
+    ///   - [`items(Option<Vec::<UsagePlanKey>>)`](crate::operation::get_usage_plan_keys::GetUsagePlanKeysOutput::items): <p>The current page of elements from this collection.</p>
     ///   - [`position(Option<String>)`](crate::operation::get_usage_plan_keys::GetUsagePlanKeysOutput::position): <p>The current pagination position in the paged result set.</p>
     /// - On failure, responds with [`SdkError<GetUsagePlanKeysError>`](crate::operation::get_usage_plan_keys::GetUsagePlanKeysError)
     pub fn get_usage_plan_keys(&self) -> crate::operation::get_usage_plan_keys::builders::GetUsagePlanKeysFluentBuilder {

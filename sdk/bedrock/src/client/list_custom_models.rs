@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`sort_order(SortOrder)`](crate::operation::list_custom_models::builders::ListCustomModelsFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_custom_models::builders::ListCustomModelsFluentBuilder::set_sort_order):<br>required: **false**<br><p>The sort order of the results.</p><br>
     /// - On success, responds with [`ListCustomModelsOutput`](crate::operation::list_custom_models::ListCustomModelsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_custom_models::ListCustomModelsOutput::next_token): <p>Continuation token for the next request to list the next set of results.</p>
-    ///   - [`model_summaries(Option<Vec<CustomModelSummary>>)`](crate::operation::list_custom_models::ListCustomModelsOutput::model_summaries): <p>Model summaries.</p>
+    ///   - [`model_summaries(Option<Vec::<CustomModelSummary>>)`](crate::operation::list_custom_models::ListCustomModelsOutput::model_summaries): <p>Model summaries.</p>
     /// - On failure, responds with [`SdkError<ListCustomModelsError>`](crate::operation::list_custom_models::ListCustomModelsError)
     pub fn list_custom_models(&self) -> crate::operation::list_custom_models::builders::ListCustomModelsFluentBuilder {
         crate::operation::list_custom_models::builders::ListCustomModelsFluentBuilder::new(self.handle.clone())

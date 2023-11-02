@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`namespace(impl Into<String>)`](crate::operation::put_metric_data::builders::PutMetricDataFluentBuilder::namespace) / [`set_namespace(Option<String>)`](crate::operation::put_metric_data::builders::PutMetricDataFluentBuilder::set_namespace):<br>required: **true**<br><p>The namespace for the metric data. You can use ASCII characters for the namespace, except for control characters which are not supported.</p>  <p>To avoid conflicts with Amazon Web Services service namespaces, you should not specify a namespace that begins with <code>AWS/</code> </p><br>
-    ///   - [`metric_data(MetricDatum)`](crate::operation::put_metric_data::builders::PutMetricDataFluentBuilder::metric_data) / [`set_metric_data(Option<Vec<MetricDatum>>)`](crate::operation::put_metric_data::builders::PutMetricDataFluentBuilder::set_metric_data):<br>required: **true**<br><p>The data for the metric. The array can include no more than 1000 metrics per call.</p><br>
+    ///   - [`metric_data(MetricDatum)`](crate::operation::put_metric_data::builders::PutMetricDataFluentBuilder::metric_data) / [`set_metric_data(Option<Vec::<MetricDatum>>)`](crate::operation::put_metric_data::builders::PutMetricDataFluentBuilder::set_metric_data):<br>required: **true**<br><p>The data for the metric. The array can include no more than 1000 metrics per call.</p><br>
     /// - On success, responds with [`PutMetricDataOutput`](crate::operation::put_metric_data::PutMetricDataOutput)
     /// - On failure, responds with [`SdkError<PutMetricDataError>`](crate::operation::put_metric_data::PutMetricDataError)
     pub fn put_metric_data(&self) -> crate::operation::put_metric_data::builders::PutMetricDataFluentBuilder {

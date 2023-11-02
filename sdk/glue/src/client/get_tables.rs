@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`transaction_id(impl Into<String>)`](crate::operation::get_tables::builders::GetTablesFluentBuilder::transaction_id) / [`set_transaction_id(Option<String>)`](crate::operation::get_tables::builders::GetTablesFluentBuilder::set_transaction_id):<br>required: **false**<br><p>The transaction ID at which to read the table contents.</p><br>
     ///   - [`query_as_of_time(DateTime)`](crate::operation::get_tables::builders::GetTablesFluentBuilder::query_as_of_time) / [`set_query_as_of_time(Option<DateTime>)`](crate::operation::get_tables::builders::GetTablesFluentBuilder::set_query_as_of_time):<br>required: **false**<br><p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p><br>
     /// - On success, responds with [`GetTablesOutput`](crate::operation::get_tables::GetTablesOutput) with field(s):
-    ///   - [`table_list(Option<Vec<Table>>)`](crate::operation::get_tables::GetTablesOutput::table_list): <p>A list of the requested <code>Table</code> objects.</p>
+    ///   - [`table_list(Option<Vec::<Table>>)`](crate::operation::get_tables::GetTablesOutput::table_list): <p>A list of the requested <code>Table</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_tables::GetTablesOutput::next_token): <p>A continuation token, present if the current list segment is not the last.</p>
     /// - On failure, responds with [`SdkError<GetTablesError>`](crate::operation::get_tables::GetTablesError)
     pub fn get_tables(&self) -> crate::operation::get_tables::builders::GetTablesFluentBuilder {

@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`lens_status(LensStatusType)`](crate::operation::list_lenses::builders::ListLensesFluentBuilder::lens_status) / [`set_lens_status(Option<LensStatusType>)`](crate::operation::list_lenses::builders::ListLensesFluentBuilder::set_lens_status):<br>required: **false**<br><p>The status of lenses to be returned.</p><br>
     ///   - [`lens_name(impl Into<String>)`](crate::operation::list_lenses::builders::ListLensesFluentBuilder::lens_name) / [`set_lens_name(Option<String>)`](crate::operation::list_lenses::builders::ListLensesFluentBuilder::set_lens_name):<br>required: **false**<br><p>The full name of the lens.</p><br>
     /// - On success, responds with [`ListLensesOutput`](crate::operation::list_lenses::ListLensesOutput) with field(s):
-    ///   - [`lens_summaries(Option<Vec<LensSummary>>)`](crate::operation::list_lenses::ListLensesOutput::lens_summaries): <p>List of lens summaries of available lenses.</p>
+    ///   - [`lens_summaries(Option<Vec::<LensSummary>>)`](crate::operation::list_lenses::ListLensesOutput::lens_summaries): <p>List of lens summaries of available lenses.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_lenses::ListLensesOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListLensesError>`](crate::operation::list_lenses::ListLensesError)
     pub fn list_lenses(&self) -> crate::operation::list_lenses::builders::ListLensesFluentBuilder {

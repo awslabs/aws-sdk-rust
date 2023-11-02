@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_listeners::builders::ListListenersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_listeners::builders::ListListenersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_listeners::builders::ListListenersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_listeners::builders::ListListenersFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token for the next page of results.</p><br>
     /// - On success, responds with [`ListListenersOutput`](crate::operation::list_listeners::ListListenersOutput) with field(s):
-    ///   - [`items(Vec<ListenerSummary>)`](crate::operation::list_listeners::ListListenersOutput::items): <p>Information about the listeners.</p>
+    ///   - [`items(Vec::<ListenerSummary>)`](crate::operation::list_listeners::ListListenersOutput::items): <p>Information about the listeners.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_listeners::ListListenersOutput::next_token): <p>If there are additional results, a pagination token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListListenersError>`](crate::operation::list_listeners::ListListenersError)
     pub fn list_listeners(&self) -> crate::operation::list_listeners::builders::ListListenersFluentBuilder {

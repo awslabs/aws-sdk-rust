@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of devices to list per page.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token to continue to the next page of results.</p><br>
     /// - On success, responds with [`ListDevicesOutput`](crate::operation::list_devices::ListDevicesOutput) with field(s):
-    ///   - [`devices(Option<Vec<DeviceSummary>>)`](crate::operation::list_devices::ListDevicesOutput::devices): <p>A list of device structures that contain information about the device.</p>
+    ///   - [`devices(Option<Vec::<DeviceSummary>>)`](crate::operation::list_devices::ListDevicesOutput::devices): <p>A list of device structures that contain information about the device.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_devices::ListDevicesOutput::next_token): <p>A pagination token to continue to the next page of devices.</p>
     /// - On failure, responds with [`SdkError<ListDevicesError>`](crate::operation::list_devices::ListDevicesError)
     pub fn list_devices(&self) -> crate::operation::list_devices::builders::ListDevicesFluentBuilder {

@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`resource_definition_id(impl Into<String>)`](crate::operation::list_resource_definition_versions::builders::ListResourceDefinitionVersionsFluentBuilder::resource_definition_id) / [`set_resource_definition_id(Option<String>)`](crate::operation::list_resource_definition_versions::builders::ListResourceDefinitionVersionsFluentBuilder::set_resource_definition_id):<br>required: **true**<br>The ID of the resource definition.<br>
     /// - On success, responds with [`ListResourceDefinitionVersionsOutput`](crate::operation::list_resource_definition_versions::ListResourceDefinitionVersionsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_resource_definition_versions::ListResourceDefinitionVersionsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
-    ///   - [`versions(Option<Vec<VersionInformation>>)`](crate::operation::list_resource_definition_versions::ListResourceDefinitionVersionsOutput::versions): Information about a version.
+    ///   - [`versions(Option<Vec::<VersionInformation>>)`](crate::operation::list_resource_definition_versions::ListResourceDefinitionVersionsOutput::versions): Information about a version.
     /// - On failure, responds with [`SdkError<ListResourceDefinitionVersionsError>`](crate::operation::list_resource_definition_versions::ListResourceDefinitionVersionsError)
     pub fn list_resource_definition_versions(
         &self,

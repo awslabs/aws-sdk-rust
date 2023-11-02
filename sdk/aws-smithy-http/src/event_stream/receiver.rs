@@ -342,7 +342,7 @@ mod tests {
         let chunks: Vec<Result<_, IOError>> =
             vec![Ok(encode_message("one")), Ok(encode_message("two"))];
         let chunk_stream = futures_util::stream::iter(chunks);
-        let body = SdkBody::from(Body::wrap_stream(chunk_stream));
+        let body = SdkBody::from_body_0_4(Body::wrap_stream(chunk_stream));
         let mut receiver = Receiver::<TestMessage, EventStreamError>::new(Unmarshaller, body);
         assert_eq!(
             TestMessage("one".into()),
@@ -363,7 +363,7 @@ mod tests {
             Ok(Bytes::from_static(&[])),
         ];
         let chunk_stream = futures_util::stream::iter(chunks);
-        let body = SdkBody::from(Body::wrap_stream(chunk_stream));
+        let body = SdkBody::from_body_0_4(Body::wrap_stream(chunk_stream));
         let mut receiver = Receiver::<TestMessage, EventStreamError>::new(Unmarshaller, body);
         assert_eq!(
             TestMessage("one".into()),
@@ -384,7 +384,7 @@ mod tests {
             Ok(encode_message("three").split_to(10)),
         ];
         let chunk_stream = futures_util::stream::iter(chunks);
-        let body = SdkBody::from(Body::wrap_stream(chunk_stream));
+        let body = SdkBody::from_body_0_4(Body::wrap_stream(chunk_stream));
         let mut receiver = Receiver::<TestMessage, EventStreamError>::new(Unmarshaller, body);
         assert_eq!(
             TestMessage("one".into()),
@@ -410,7 +410,7 @@ mod tests {
             )),
         ];
         let chunk_stream = futures_util::stream::iter(chunks);
-        let body = SdkBody::from(Body::wrap_stream(chunk_stream));
+        let body = SdkBody::from_body_0_4(Body::wrap_stream(chunk_stream));
         let mut receiver = Receiver::<TestMessage, EventStreamError>::new(Unmarshaller, body);
         assert_eq!(
             TestMessage("one".into()),
@@ -463,7 +463,7 @@ mod tests {
                 ];
 
                 let chunk_stream = futures_util::stream::iter(chunks);
-                let body = SdkBody::from(Body::wrap_stream(chunk_stream));
+                let body = SdkBody::from_body_0_4(Body::wrap_stream(chunk_stream));
                 let mut receiver = Receiver::<TestMessage, EventStreamError>::new(Unmarshaller, body);
                 for payload in &["one", "two", "three", "four", "five", "six", "seven", "eight"] {
                     assert_eq!(
@@ -483,7 +483,7 @@ mod tests {
             Err(IOError::new(ErrorKind::ConnectionReset, FakeError)),
         ];
         let chunk_stream = futures_util::stream::iter(chunks);
-        let body = SdkBody::from(Body::wrap_stream(chunk_stream));
+        let body = SdkBody::from_body_0_4(Body::wrap_stream(chunk_stream));
         let mut receiver = Receiver::<TestMessage, EventStreamError>::new(Unmarshaller, body);
         assert_eq!(
             TestMessage("one".into()),
@@ -504,7 +504,7 @@ mod tests {
             Ok(Bytes::from_static(&[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])),
         ];
         let chunk_stream = futures_util::stream::iter(chunks);
-        let body = SdkBody::from(Body::wrap_stream(chunk_stream));
+        let body = SdkBody::from_body_0_4(Body::wrap_stream(chunk_stream));
         let mut receiver = Receiver::<TestMessage, EventStreamError>::new(Unmarshaller, body);
         assert_eq!(
             TestMessage("one".into()),
@@ -521,7 +521,7 @@ mod tests {
         let chunks: Vec<Result<_, IOError>> =
             vec![Ok(encode_initial_response()), Ok(encode_message("one"))];
         let chunk_stream = futures_util::stream::iter(chunks);
-        let body = SdkBody::from(Body::wrap_stream(chunk_stream));
+        let body = SdkBody::from_body_0_4(Body::wrap_stream(chunk_stream));
         let mut receiver = Receiver::<TestMessage, EventStreamError>::new(Unmarshaller, body);
         assert!(receiver.try_recv_initial().await.unwrap().is_some());
         assert_eq!(
@@ -535,7 +535,7 @@ mod tests {
         let chunks: Vec<Result<_, IOError>> =
             vec![Ok(encode_message("one")), Ok(encode_message("two"))];
         let chunk_stream = futures_util::stream::iter(chunks);
-        let body = SdkBody::from(Body::wrap_stream(chunk_stream));
+        let body = SdkBody::from_body_0_4(Body::wrap_stream(chunk_stream));
         let mut receiver = Receiver::<TestMessage, EventStreamError>::new(Unmarshaller, body);
         assert!(receiver.try_recv_initial().await.unwrap().is_none());
         assert_eq!(

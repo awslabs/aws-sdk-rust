@@ -18,7 +18,7 @@ use aws_smithy_runtime_api::client::interceptors::context::{BeforeSerializationI
 use aws_smithy_runtime_api::client::interceptors::Intercept;
 use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
-use aws_smithy_types::body::{BoxBody, SdkBody};
+use aws_smithy_types::body::SdkBody;
 use aws_smithy_types::config_bag::{ConfigBag, Layer, Storable, StoreReplace};
 use aws_smithy_types::error::operation::BuildError;
 use http::HeaderValue;
@@ -159,7 +159,7 @@ fn wrap_streaming_request_body_in_checksum_calculating_body(
 
             let body = AwsChunkedBody::new(body, aws_chunked_body_options);
 
-            SdkBody::from_dyn(BoxBody::new(body))
+            SdkBody::from_body_0_4(body)
         })
     };
 
@@ -245,7 +245,15 @@ mod tests {
         }
         let crc32c_checksum = crc32c_checksum.finalize();
 
-        let mut request = HttpRequest::new(ByteStream::read_from().path(&file).buffer_size(1024).build().await.unwrap().into_inner());
+        let mut request = HttpRequest::new(
+            ByteStream::read_with_body_0_4_from()
+                .path(&file)
+                .buffer_size(1024)
+                .build()
+                .await
+                .unwrap()
+                .into_inner(),
+        );
 
         // ensure original SdkBody is retryable
         assert!(request.body().try_clone().is_some());

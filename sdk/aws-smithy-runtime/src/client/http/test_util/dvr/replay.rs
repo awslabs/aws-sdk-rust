@@ -294,7 +294,7 @@ impl HttpConnector for ReplayingClient {
 
         let _initial_request = events.pop_front().unwrap();
         let (sender, response_body) = hyper::Body::channel();
-        let body = SdkBody::from(response_body);
+        let body = SdkBody::from_body_0_4(response_body);
         let recording = self.recorded_requests.clone();
         let recorded_request = tokio::spawn(async move {
             let mut data_read = vec![];

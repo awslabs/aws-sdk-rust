@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`resource_arn(impl Into<String>)`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::set_resource_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the resource whose tags are to be returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::set_next_token):<br>required: **false**<br><p>The token that specifies the next page of results to return.</p><br>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput::tags): <p>List of tags returned by the <code>ListTagsForResource</code> operation.</p>
+    ///   - [`tags(Option<Vec::<Tag>>)`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput::tags): <p>List of tags returned by the <code>ListTagsForResource</code> operation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput::next_token): <p>The token that specifies the next page of results to return.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::operation::list_tags_for_resource::ListTagsForResourceError)
     #[deprecated(note = "since: 2022-08-30")]

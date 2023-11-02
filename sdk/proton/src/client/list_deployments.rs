@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of deployments to list.</p><br>
     /// - On success, responds with [`ListDeploymentsOutput`](crate::operation::list_deployments::ListDeploymentsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_deployments::ListDeploymentsOutput::next_token): <p>A token that indicates the location of the next deployment in the array of deployment, after the current requested list of deployment.</p>
-    ///   - [`deployments(Vec<DeploymentSummary>)`](crate::operation::list_deployments::ListDeploymentsOutput::deployments): <p>An array of deployment with summary data.</p>
+    ///   - [`deployments(Vec::<DeploymentSummary>)`](crate::operation::list_deployments::ListDeploymentsOutput::deployments): <p>An array of deployment with summary data.</p>
     /// - On failure, responds with [`SdkError<ListDeploymentsError>`](crate::operation::list_deployments::ListDeploymentsError)
     pub fn list_deployments(&self) -> crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder {
         crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::new(self.handle.clone())

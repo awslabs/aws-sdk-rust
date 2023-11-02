@@ -15,9 +15,9 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_workflow_step_group::GetWorkflowStepGroupOutput::creation_time): <p>The time at which the step group was created.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::get_workflow_step_group::GetWorkflowStepGroupOutput::last_modified_time): <p>The time at which the step group was last modified.</p>
     ///   - [`end_time(Option<DateTime>)`](crate::operation::get_workflow_step_group::GetWorkflowStepGroupOutput::end_time): <p>The time at which the step group ended.</p>
-    ///   - [`tools(Option<Vec<Tool>>)`](crate::operation::get_workflow_step_group::GetWorkflowStepGroupOutput::tools): <p>List of AWS services utilized in a migration workflow.</p>
-    ///   - [`previous(Option<Vec<String>>)`](crate::operation::get_workflow_step_group::GetWorkflowStepGroupOutput::previous): <p>The previous step group.</p>
-    ///   - [`next(Option<Vec<String>>)`](crate::operation::get_workflow_step_group::GetWorkflowStepGroupOutput::next): <p>The next step group.</p>
+    ///   - [`tools(Option<Vec::<Tool>>)`](crate::operation::get_workflow_step_group::GetWorkflowStepGroupOutput::tools): <p>List of AWS services utilized in a migration workflow.</p>
+    ///   - [`previous(Option<Vec::<String>>)`](crate::operation::get_workflow_step_group::GetWorkflowStepGroupOutput::previous): <p>The previous step group.</p>
+    ///   - [`next(Option<Vec::<String>>)`](crate::operation::get_workflow_step_group::GetWorkflowStepGroupOutput::next): <p>The next step group.</p>
     /// - On failure, responds with [`SdkError<GetWorkflowStepGroupError>`](crate::operation::get_workflow_step_group::GetWorkflowStepGroupError)
     pub fn get_workflow_step_group(&self) -> crate::operation::get_workflow_step_group::builders::GetWorkflowStepGroupFluentBuilder {
         crate::operation::get_workflow_step_group::builders::GetWorkflowStepGroupFluentBuilder::new(self.handle.clone())

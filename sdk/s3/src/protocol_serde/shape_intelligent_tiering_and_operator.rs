@@ -23,7 +23,7 @@ pub fn de_intelligent_tiering_and_operator(
             s if s.matches("Tag") /* Tags com.amazonaws.s3#IntelligentTieringAndOperator$Tags */ =>  {
                 let var_2 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::Tag>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::Tag>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_3 = builder.tags.take().unwrap_or_default();
                             list_3.push(
                                 crate::protocol_serde::shape_tag::de_tag(&mut tag)

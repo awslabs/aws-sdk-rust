@@ -4,9 +4,9 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_arn(impl Into<String>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::set_resource_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the resource that you want to tag.</p><br>
-    ///   - [`tags(Tag)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::set_tags):<br>required: **true**<br><p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p><br>
+    ///   - [`tags(Tag)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::tags) / [`set_tags(Option<Vec::<Tag>>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::set_tags):<br>required: **true**<br><p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p><br>
     /// - On success, responds with [`AddTagsOutput`](crate::operation::add_tags::AddTagsOutput) with field(s):
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::add_tags::AddTagsOutput::tags): <p>A list of tags associated with the SageMaker resource.</p>
+    ///   - [`tags(Option<Vec::<Tag>>)`](crate::operation::add_tags::AddTagsOutput::tags): <p>A list of tags associated with the SageMaker resource.</p>
     /// - On failure, responds with [`SdkError<AddTagsError>`](crate::operation::add_tags::AddTagsError)
     pub fn add_tags(&self) -> crate::operation::add_tags::builders::AddTagsFluentBuilder {
         crate::operation::add_tags::builders::AddTagsFluentBuilder::new(self.handle.clone())

@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token for the next page of results.</p><br>
     /// - On success, responds with [`ListRulesOutput`](crate::operation::list_rules::ListRulesOutput) with field(s):
-    ///   - [`items(Vec<RuleSummary>)`](crate::operation::list_rules::ListRulesOutput::items): <p>Information about the rules.</p>
+    ///   - [`items(Vec::<RuleSummary>)`](crate::operation::list_rules::ListRulesOutput::items): <p>Information about the rules.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_rules::ListRulesOutput::next_token): <p>If there are additional results, a pagination token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListRulesError>`](crate::operation::list_rules::ListRulesError)
     pub fn list_rules(&self) -> crate::operation::list_rules::builders::ListRulesFluentBuilder {

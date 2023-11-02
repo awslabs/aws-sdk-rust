@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateOrUpdateTags`](crate::operation::create_or_update_tags::builders::CreateOrUpdateTagsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`tags(Tag)`](crate::operation::create_or_update_tags::builders::CreateOrUpdateTagsFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::create_or_update_tags::builders::CreateOrUpdateTagsFluentBuilder::set_tags):<br>required: **true**<br><p>One or more tags.</p><br>
+    ///   - [`tags(Tag)`](crate::operation::create_or_update_tags::builders::CreateOrUpdateTagsFluentBuilder::tags) / [`set_tags(Option<Vec::<Tag>>)`](crate::operation::create_or_update_tags::builders::CreateOrUpdateTagsFluentBuilder::set_tags):<br>required: **true**<br><p>One or more tags.</p><br>
     /// - On success, responds with [`CreateOrUpdateTagsOutput`](crate::operation::create_or_update_tags::CreateOrUpdateTagsOutput)
     /// - On failure, responds with [`SdkError<CreateOrUpdateTagsError>`](crate::operation::create_or_update_tags::CreateOrUpdateTagsError)
     pub fn create_or_update_tags(&self) -> crate::operation::create_or_update_tags::builders::CreateOrUpdateTagsFluentBuilder {

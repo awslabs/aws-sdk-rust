@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`package_name(impl Into<String>)`](crate::operation::create_package::builders::CreatePackageFluentBuilder::package_name) / [`set_package_name(Option<String>)`](crate::operation::create_package::builders::CreatePackageFluentBuilder::set_package_name):<br>required: **true**<br><p>A name for the package.</p><br>
-    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::create_package::builders::CreatePackageFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::create_package::builders::CreatePackageFluentBuilder::set_tags):<br>required: **false**<br><p>Tags for the package.</p><br>
+    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::create_package::builders::CreatePackageFluentBuilder::tags) / [`set_tags(Option<HashMap::<String, String>>)`](crate::operation::create_package::builders::CreatePackageFluentBuilder::set_tags):<br>required: **false**<br><p>Tags for the package.</p><br>
     /// - On success, responds with [`CreatePackageOutput`](crate::operation::create_package::CreatePackageOutput) with field(s):
     ///   - [`package_id(Option<String>)`](crate::operation::create_package::CreatePackageOutput::package_id): <p>The package's ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::create_package::CreatePackageOutput::arn): <p>The package's ARN.</p>

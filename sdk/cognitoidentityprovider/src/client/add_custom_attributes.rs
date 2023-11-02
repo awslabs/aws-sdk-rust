@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`user_pool_id(impl Into<String>)`](crate::operation::add_custom_attributes::builders::AddCustomAttributesFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::add_custom_attributes::builders::AddCustomAttributesFluentBuilder::set_user_pool_id):<br>required: **true**<br><p>The user pool ID for the user pool where you want to add custom attributes.</p><br>
-    ///   - [`custom_attributes(SchemaAttributeType)`](crate::operation::add_custom_attributes::builders::AddCustomAttributesFluentBuilder::custom_attributes) / [`set_custom_attributes(Option<Vec<SchemaAttributeType>>)`](crate::operation::add_custom_attributes::builders::AddCustomAttributesFluentBuilder::set_custom_attributes):<br>required: **true**<br><p>An array of custom attributes, such as Mutable and Name.</p><br>
+    ///   - [`custom_attributes(SchemaAttributeType)`](crate::operation::add_custom_attributes::builders::AddCustomAttributesFluentBuilder::custom_attributes) / [`set_custom_attributes(Option<Vec::<SchemaAttributeType>>)`](crate::operation::add_custom_attributes::builders::AddCustomAttributesFluentBuilder::set_custom_attributes):<br>required: **true**<br><p>An array of custom attributes, such as Mutable and Name.</p><br>
     /// - On success, responds with [`AddCustomAttributesOutput`](crate::operation::add_custom_attributes::AddCustomAttributesOutput)
     /// - On failure, responds with [`SdkError<AddCustomAttributesError>`](crate::operation::add_custom_attributes::AddCustomAttributesError)
     pub fn add_custom_attributes(&self) -> crate::operation::add_custom_attributes::builders::AddCustomAttributesFluentBuilder {

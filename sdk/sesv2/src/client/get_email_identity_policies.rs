@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`email_identity(impl Into<String>)`](crate::operation::get_email_identity_policies::builders::GetEmailIdentityPoliciesFluentBuilder::email_identity) / [`set_email_identity(Option<String>)`](crate::operation::get_email_identity_policies::builders::GetEmailIdentityPoliciesFluentBuilder::set_email_identity):<br>required: **true**<br><p>The email identity.</p><br>
     /// - On success, responds with [`GetEmailIdentityPoliciesOutput`](crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesOutput) with field(s):
-    ///   - [`policies(Option<HashMap<String, String>>)`](crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesOutput::policies): <p>A map of policy names to policies.</p>
+    ///   - [`policies(Option<HashMap::<String, String>>)`](crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesOutput::policies): <p>A map of policy names to policies.</p>
     /// - On failure, responds with [`SdkError<GetEmailIdentityPoliciesError>`](crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesError)
     pub fn get_email_identity_policies(&self) -> crate::operation::get_email_identity_policies::builders::GetEmailIdentityPoliciesFluentBuilder {
         crate::operation::get_email_identity_policies::builders::GetEmailIdentityPoliciesFluentBuilder::new(self.handle.clone())

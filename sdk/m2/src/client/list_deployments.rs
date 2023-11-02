@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of objects to return.</p><br>
     ///   - [`application_id(impl Into<String>)`](crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::set_application_id):<br>required: **true**<br><p>The application identifier.</p><br>
     /// - On success, responds with [`ListDeploymentsOutput`](crate::operation::list_deployments::ListDeploymentsOutput) with field(s):
-    ///   - [`deployments(Vec<DeploymentSummary>)`](crate::operation::list_deployments::ListDeploymentsOutput::deployments): <p>The list of deployments that is returned.</p>
+    ///   - [`deployments(Vec::<DeploymentSummary>)`](crate::operation::list_deployments::ListDeploymentsOutput::deployments): <p>The list of deployments that is returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_deployments::ListDeploymentsOutput::next_token): <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
     /// - On failure, responds with [`SdkError<ListDeploymentsError>`](crate::operation::list_deployments::ListDeploymentsError)
     pub fn list_deployments(&self) -> crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder {

@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateJobForDevices`](crate::operation::create_job_for_devices::builders::CreateJobForDevicesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`device_ids(impl Into<String>)`](crate::operation::create_job_for_devices::builders::CreateJobForDevicesFluentBuilder::device_ids) / [`set_device_ids(Option<Vec<String>>)`](crate::operation::create_job_for_devices::builders::CreateJobForDevicesFluentBuilder::set_device_ids):<br>required: **true**<br><p>ID of target device.</p><br>
+    ///   - [`device_ids(impl Into<String>)`](crate::operation::create_job_for_devices::builders::CreateJobForDevicesFluentBuilder::device_ids) / [`set_device_ids(Option<Vec::<String>>)`](crate::operation::create_job_for_devices::builders::CreateJobForDevicesFluentBuilder::set_device_ids):<br>required: **true**<br><p>ID of target device.</p><br>
     ///   - [`device_job_config(DeviceJobConfig)`](crate::operation::create_job_for_devices::builders::CreateJobForDevicesFluentBuilder::device_job_config) / [`set_device_job_config(Option<DeviceJobConfig>)`](crate::operation::create_job_for_devices::builders::CreateJobForDevicesFluentBuilder::set_device_job_config):<br>required: **false**<br><p>Configuration settings for a software update job.</p><br>
     ///   - [`job_type(JobType)`](crate::operation::create_job_for_devices::builders::CreateJobForDevicesFluentBuilder::job_type) / [`set_job_type(Option<JobType>)`](crate::operation::create_job_for_devices::builders::CreateJobForDevicesFluentBuilder::set_job_type):<br>required: **true**<br><p>The type of job to run.</p><br>
     /// - On success, responds with [`CreateJobForDevicesOutput`](crate::operation::create_job_for_devices::CreateJobForDevicesOutput) with field(s):
-    ///   - [`jobs(Vec<Job>)`](crate::operation::create_job_for_devices::CreateJobForDevicesOutput::jobs): <p>A list of jobs.</p>
+    ///   - [`jobs(Vec::<Job>)`](crate::operation::create_job_for_devices::CreateJobForDevicesOutput::jobs): <p>A list of jobs.</p>
     /// - On failure, responds with [`SdkError<CreateJobForDevicesError>`](crate::operation::create_job_for_devices::CreateJobForDevicesError)
     pub fn create_job_for_devices(&self) -> crate::operation::create_job_for_devices::builders::CreateJobForDevicesFluentBuilder {
         crate::operation::create_job_for_devices::builders::CreateJobForDevicesFluentBuilder::new(self.handle.clone())

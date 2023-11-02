@@ -10,8 +10,8 @@ impl super::Client {
     ///   - [`document_metadata(Option<DocumentMetadata>)`](crate::operation::get_document_analysis::GetDocumentAnalysisOutput::document_metadata): <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract video operation.</p>
     ///   - [`job_status(Option<JobStatus>)`](crate::operation::get_document_analysis::GetDocumentAnalysisOutput::job_status): <p>The current status of the text detection job.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_document_analysis::GetDocumentAnalysisOutput::next_token): <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of text detection results.</p>
-    ///   - [`blocks(Option<Vec<Block>>)`](crate::operation::get_document_analysis::GetDocumentAnalysisOutput::blocks): <p>The results of the text-analysis operation.</p>
-    ///   - [`warnings(Option<Vec<Warning>>)`](crate::operation::get_document_analysis::GetDocumentAnalysisOutput::warnings): <p>A list of warnings that occurred during the document-analysis operation.</p>
+    ///   - [`blocks(Option<Vec::<Block>>)`](crate::operation::get_document_analysis::GetDocumentAnalysisOutput::blocks): <p>The results of the text-analysis operation.</p>
+    ///   - [`warnings(Option<Vec::<Warning>>)`](crate::operation::get_document_analysis::GetDocumentAnalysisOutput::warnings): <p>A list of warnings that occurred during the document-analysis operation.</p>
     ///   - [`status_message(Option<String>)`](crate::operation::get_document_analysis::GetDocumentAnalysisOutput::status_message): <p>Returns if the detection job could not be completed. Contains explanation for what error occured.</p>
     ///   - [`analyze_document_model_version(Option<String>)`](crate::operation::get_document_analysis::GetDocumentAnalysisOutput::analyze_document_model_version): <p></p>
     /// - On failure, responds with [`SdkError<GetDocumentAnalysisError>`](crate::operation::get_document_analysis::GetDocumentAnalysisError)

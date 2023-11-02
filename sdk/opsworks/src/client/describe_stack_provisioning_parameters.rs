@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`stack_id(impl Into<String>)`](crate::operation::describe_stack_provisioning_parameters::builders::DescribeStackProvisioningParametersFluentBuilder::stack_id) / [`set_stack_id(Option<String>)`](crate::operation::describe_stack_provisioning_parameters::builders::DescribeStackProvisioningParametersFluentBuilder::set_stack_id):<br>required: **true**<br><p>The stack ID.</p><br>
     /// - On success, responds with [`DescribeStackProvisioningParametersOutput`](crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParametersOutput) with field(s):
     ///   - [`agent_installer_url(Option<String>)`](crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParametersOutput::agent_installer_url): <p>The AWS OpsWorks Stacks agent installer's URL.</p>
-    ///   - [`parameters(Option<HashMap<String, String>>)`](crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParametersOutput::parameters): <p>An embedded object that contains the provisioning parameters.</p>
+    ///   - [`parameters(Option<HashMap::<String, String>>)`](crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParametersOutput::parameters): <p>An embedded object that contains the provisioning parameters.</p>
     /// - On failure, responds with [`SdkError<DescribeStackProvisioningParametersError>`](crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParametersError)
     pub fn describe_stack_provisioning_parameters(
         &self,

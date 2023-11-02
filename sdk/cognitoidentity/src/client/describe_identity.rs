@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`identity_id(impl Into<String>)`](crate::operation::describe_identity::builders::DescribeIdentityFluentBuilder::identity_id) / [`set_identity_id(Option<String>)`](crate::operation::describe_identity::builders::DescribeIdentityFluentBuilder::set_identity_id):<br>required: **true**<br><p>A unique identifier in the format REGION:GUID.</p><br>
     /// - On success, responds with [`DescribeIdentityOutput`](crate::operation::describe_identity::DescribeIdentityOutput) with field(s):
     ///   - [`identity_id(Option<String>)`](crate::operation::describe_identity::DescribeIdentityOutput::identity_id): <p>A unique identifier in the format REGION:GUID.</p>
-    ///   - [`logins(Option<Vec<String>>)`](crate::operation::describe_identity::DescribeIdentityOutput::logins): <p>The provider names.</p>
+    ///   - [`logins(Option<Vec::<String>>)`](crate::operation::describe_identity::DescribeIdentityOutput::logins): <p>The provider names.</p>
     ///   - [`creation_date(Option<DateTime>)`](crate::operation::describe_identity::DescribeIdentityOutput::creation_date): <p>Date on which the identity was created.</p>
     ///   - [`last_modified_date(Option<DateTime>)`](crate::operation::describe_identity::DescribeIdentityOutput::last_modified_date): <p>Date on which the identity was last modified.</p>
     /// - On failure, responds with [`SdkError<DescribeIdentityError>`](crate::operation::describe_identity::DescribeIdentityError)

@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_contact_channels::builders::ListContactChannelsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_contact_channels::builders::ListContactChannelsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of contact channels per page.</p><br>
     /// - On success, responds with [`ListContactChannelsOutput`](crate::operation::list_contact_channels::ListContactChannelsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_contact_channels::ListContactChannelsOutput::next_token): <p>The pagination token to continue to the next page of results.</p>
-    ///   - [`contact_channels(Vec<ContactChannel>)`](crate::operation::list_contact_channels::ListContactChannelsOutput::contact_channels): <p>A list of contact channels related to the specified contact.</p>
+    ///   - [`contact_channels(Vec::<ContactChannel>)`](crate::operation::list_contact_channels::ListContactChannelsOutput::contact_channels): <p>A list of contact channels related to the specified contact.</p>
     /// - On failure, responds with [`SdkError<ListContactChannelsError>`](crate::operation::list_contact_channels::ListContactChannelsError)
     pub fn list_contact_channels(&self) -> crate::operation::list_contact_channels::builders::ListContactChannelsFluentBuilder {
         crate::operation::list_contact_channels::builders::ListContactChannelsFluentBuilder::new(self.handle.clone())

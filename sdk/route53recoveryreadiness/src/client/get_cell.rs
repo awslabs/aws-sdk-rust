@@ -7,9 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetCellOutput`](crate::operation::get_cell::GetCellOutput) with field(s):
     ///   - [`cell_arn(Option<String>)`](crate::operation::get_cell::GetCellOutput::cell_arn): <p>The Amazon Resource Name (ARN) for the cell.</p>
     ///   - [`cell_name(Option<String>)`](crate::operation::get_cell::GetCellOutput::cell_name): <p>The name of the cell.</p>
-    ///   - [`cells(Option<Vec<String>>)`](crate::operation::get_cell::GetCellOutput::cells): <p>A list of cell ARNs.</p>
-    ///   - [`parent_readiness_scopes(Option<Vec<String>>)`](crate::operation::get_cell::GetCellOutput::parent_readiness_scopes): <p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_cell::GetCellOutput::tags): <p>Tags on the resources.</p>
+    ///   - [`cells(Option<Vec::<String>>)`](crate::operation::get_cell::GetCellOutput::cells): <p>A list of cell ARNs.</p>
+    ///   - [`parent_readiness_scopes(Option<Vec::<String>>)`](crate::operation::get_cell::GetCellOutput::parent_readiness_scopes): <p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_cell::GetCellOutput::tags): <p>Tags on the resources.</p>
     /// - On failure, responds with [`SdkError<GetCellError>`](crate::operation::get_cell::GetCellError)
     pub fn get_cell(&self) -> crate::operation::get_cell::builders::GetCellFluentBuilder {
         crate::operation::get_cell::builders::GetCellFluentBuilder::new(self.handle.clone())

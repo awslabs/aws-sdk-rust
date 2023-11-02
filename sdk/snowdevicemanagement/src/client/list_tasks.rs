@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_tasks::builders::ListTasksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_tasks::builders::ListTasksFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of tasks per page.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_tasks::builders::ListTasksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_tasks::builders::ListTasksFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token to continue to the next page of tasks.</p><br>
     /// - On success, responds with [`ListTasksOutput`](crate::operation::list_tasks::ListTasksOutput) with field(s):
-    ///   - [`tasks(Option<Vec<TaskSummary>>)`](crate::operation::list_tasks::ListTasksOutput::tasks): <p>A list of task structures containing details about each task.</p>
+    ///   - [`tasks(Option<Vec::<TaskSummary>>)`](crate::operation::list_tasks::ListTasksOutput::tasks): <p>A list of task structures containing details about each task.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_tasks::ListTasksOutput::next_token): <p>A pagination token to continue to the next page of tasks.</p>
     /// - On failure, responds with [`SdkError<ListTasksError>`](crate::operation::list_tasks::ListTasksError)
     pub fn list_tasks(&self) -> crate::operation::list_tasks::builders::ListTasksFluentBuilder {

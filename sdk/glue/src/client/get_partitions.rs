@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`transaction_id(impl Into<String>)`](crate::operation::get_partitions::builders::GetPartitionsFluentBuilder::transaction_id) / [`set_transaction_id(Option<String>)`](crate::operation::get_partitions::builders::GetPartitionsFluentBuilder::set_transaction_id):<br>required: **false**<br><p>The transaction ID at which to read the partition contents.</p><br>
     ///   - [`query_as_of_time(DateTime)`](crate::operation::get_partitions::builders::GetPartitionsFluentBuilder::query_as_of_time) / [`set_query_as_of_time(Option<DateTime>)`](crate::operation::get_partitions::builders::GetPartitionsFluentBuilder::set_query_as_of_time):<br>required: **false**<br><p>The time as of when to read the partition contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p><br>
     /// - On success, responds with [`GetPartitionsOutput`](crate::operation::get_partitions::GetPartitionsOutput) with field(s):
-    ///   - [`partitions(Option<Vec<Partition>>)`](crate::operation::get_partitions::GetPartitionsOutput::partitions): <p>A list of requested partitions.</p>
+    ///   - [`partitions(Option<Vec::<Partition>>)`](crate::operation::get_partitions::GetPartitionsOutput::partitions): <p>A list of requested partitions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_partitions::GetPartitionsOutput::next_token): <p>A continuation token, if the returned list of partitions does not include the last one.</p>
     /// - On failure, responds with [`SdkError<GetPartitionsError>`](crate::operation::get_partitions::GetPartitionsError)
     pub fn get_partitions(&self) -> crate::operation::get_partitions::builders::GetPartitionsFluentBuilder {

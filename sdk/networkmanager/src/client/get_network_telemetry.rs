@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::get_network_telemetry::builders::GetNetworkTelemetryFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_network_telemetry::builders::GetNetworkTelemetryFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_network_telemetry::builders::GetNetworkTelemetryFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_network_telemetry::builders::GetNetworkTelemetryFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
     /// - On success, responds with [`GetNetworkTelemetryOutput`](crate::operation::get_network_telemetry::GetNetworkTelemetryOutput) with field(s):
-    ///   - [`network_telemetry(Option<Vec<NetworkTelemetry>>)`](crate::operation::get_network_telemetry::GetNetworkTelemetryOutput::network_telemetry): <p>The network telemetry.</p>
+    ///   - [`network_telemetry(Option<Vec::<NetworkTelemetry>>)`](crate::operation::get_network_telemetry::GetNetworkTelemetryOutput::network_telemetry): <p>The network telemetry.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_network_telemetry::GetNetworkTelemetryOutput::next_token): <p>The token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<GetNetworkTelemetryError>`](crate::operation::get_network_telemetry::GetNetworkTelemetryError)
     pub fn get_network_telemetry(&self) -> crate::operation::get_network_telemetry::builders::GetNetworkTelemetryFluentBuilder {

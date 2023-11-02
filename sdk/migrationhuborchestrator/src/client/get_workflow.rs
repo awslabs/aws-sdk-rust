@@ -19,11 +19,11 @@ impl super::Client {
     ///   - [`last_stop_time(Option<DateTime>)`](crate::operation::get_workflow::GetWorkflowOutput::last_stop_time): <p>The time at which the migration workflow was last stopped.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::get_workflow::GetWorkflowOutput::last_modified_time): <p>The time at which the migration workflow was last modified.</p>
     ///   - [`end_time(Option<DateTime>)`](crate::operation::get_workflow::GetWorkflowOutput::end_time): <p>The time at which the migration workflow ended.</p>
-    ///   - [`tools(Option<Vec<Tool>>)`](crate::operation::get_workflow::GetWorkflowOutput::tools): <p>List of AWS services utilized in a migration workflow.</p>
+    ///   - [`tools(Option<Vec::<Tool>>)`](crate::operation::get_workflow::GetWorkflowOutput::tools): <p>List of AWS services utilized in a migration workflow.</p>
     ///   - [`total_steps(Option<i32>)`](crate::operation::get_workflow::GetWorkflowOutput::total_steps): <p>The total number of steps in the migration workflow.</p>
     ///   - [`completed_steps(Option<i32>)`](crate::operation::get_workflow::GetWorkflowOutput::completed_steps): <p>Get a list of completed steps in the migration workflow.</p>
-    ///   - [`workflow_inputs(Option<HashMap<String, StepInput>>)`](crate::operation::get_workflow::GetWorkflowOutput::workflow_inputs): <p>The inputs required for creating the migration workflow.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_workflow::GetWorkflowOutput::tags): <p>The tags added to the migration workflow.</p>
+    ///   - [`workflow_inputs(Option<HashMap::<String, StepInput>>)`](crate::operation::get_workflow::GetWorkflowOutput::workflow_inputs): <p>The inputs required for creating the migration workflow.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_workflow::GetWorkflowOutput::tags): <p>The tags added to the migration workflow.</p>
     ///   - [`workflow_bucket(Option<String>)`](crate::operation::get_workflow::GetWorkflowOutput::workflow_bucket): <p>The Amazon S3 bucket where the migration logs are stored.</p>
     /// - On failure, responds with [`SdkError<GetWorkflowError>`](crate::operation::get_workflow::GetWorkflowError)
     pub fn get_workflow(&self) -> crate::operation::get_workflow::builders::GetWorkflowFluentBuilder {

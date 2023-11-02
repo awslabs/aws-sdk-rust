@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_changesets::builders::ListChangesetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_changesets::builders::ListChangesetsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results per page.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_changesets::builders::ListChangesetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_changesets::builders::ListChangesetsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates where a results page should begin.</p><br>
     /// - On success, responds with [`ListChangesetsOutput`](crate::operation::list_changesets::ListChangesetsOutput) with field(s):
-    ///   - [`changesets(Option<Vec<ChangesetSummary>>)`](crate::operation::list_changesets::ListChangesetsOutput::changesets): <p>List of Changesets found.</p>
+    ///   - [`changesets(Option<Vec::<ChangesetSummary>>)`](crate::operation::list_changesets::ListChangesetsOutput::changesets): <p>List of Changesets found.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_changesets::ListChangesetsOutput::next_token): <p>A token that indicates where a results page should begin.</p>
     /// - On failure, responds with [`SdkError<ListChangesetsError>`](crate::operation::list_changesets::ListChangesetsError)
     pub fn list_changesets(&self) -> crate::operation::list_changesets::builders::ListChangesetsFluentBuilder {

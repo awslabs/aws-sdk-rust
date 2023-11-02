@@ -4,10 +4,10 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`rule_arn(impl Into<String>)`](crate::operation::modify_rule::builders::ModifyRuleFluentBuilder::rule_arn) / [`set_rule_arn(Option<String>)`](crate::operation::modify_rule::builders::ModifyRuleFluentBuilder::set_rule_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the rule.</p><br>
-    ///   - [`conditions(RuleCondition)`](crate::operation::modify_rule::builders::ModifyRuleFluentBuilder::conditions) / [`set_conditions(Option<Vec<RuleCondition>>)`](crate::operation::modify_rule::builders::ModifyRuleFluentBuilder::set_conditions):<br>required: **false**<br><p>The conditions.</p><br>
-    ///   - [`actions(Action)`](crate::operation::modify_rule::builders::ModifyRuleFluentBuilder::actions) / [`set_actions(Option<Vec<Action>>)`](crate::operation::modify_rule::builders::ModifyRuleFluentBuilder::set_actions):<br>required: **false**<br><p>The actions.</p><br>
+    ///   - [`conditions(RuleCondition)`](crate::operation::modify_rule::builders::ModifyRuleFluentBuilder::conditions) / [`set_conditions(Option<Vec::<RuleCondition>>)`](crate::operation::modify_rule::builders::ModifyRuleFluentBuilder::set_conditions):<br>required: **false**<br><p>The conditions.</p><br>
+    ///   - [`actions(Action)`](crate::operation::modify_rule::builders::ModifyRuleFluentBuilder::actions) / [`set_actions(Option<Vec::<Action>>)`](crate::operation::modify_rule::builders::ModifyRuleFluentBuilder::set_actions):<br>required: **false**<br><p>The actions.</p><br>
     /// - On success, responds with [`ModifyRuleOutput`](crate::operation::modify_rule::ModifyRuleOutput) with field(s):
-    ///   - [`rules(Option<Vec<Rule>>)`](crate::operation::modify_rule::ModifyRuleOutput::rules): <p>Information about the modified rule.</p>
+    ///   - [`rules(Option<Vec::<Rule>>)`](crate::operation::modify_rule::ModifyRuleOutput::rules): <p>Information about the modified rule.</p>
     /// - On failure, responds with [`SdkError<ModifyRuleError>`](crate::operation::modify_rule::ModifyRuleError)
     pub fn modify_rule(&self) -> crate::operation::modify_rule::builders::ModifyRuleFluentBuilder {
         crate::operation::modify_rule::builders::ModifyRuleFluentBuilder::new(self.handle.clone())

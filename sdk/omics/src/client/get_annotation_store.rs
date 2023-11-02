@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`sse_config(Option<SseConfig>)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::sse_config): <p>The store's server-side encryption (SSE) settings.</p>
     ///   - [`creation_time(DateTime)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::creation_time): <p>When the store was created.</p>
     ///   - [`update_time(DateTime)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::update_time): <p>When the store was updated.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::tags): <p>The store's tags.</p>
+    ///   - [`tags(HashMap::<String, String>)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::tags): <p>The store's tags.</p>
     ///   - [`store_options(Option<StoreOptions>)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::store_options): <p>The store's parsing options.</p>
     ///   - [`store_format(Option<StoreFormat>)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::store_format): <p>The store's annotation file format.</p>
     ///   - [`status_message(String)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::status_message): <p>A status message.</p>

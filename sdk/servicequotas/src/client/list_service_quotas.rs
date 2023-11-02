@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`quota_applied_at_level(AppliedLevelEnum)`](crate::operation::list_service_quotas::builders::ListServiceQuotasFluentBuilder::quota_applied_at_level) / [`set_quota_applied_at_level(Option<AppliedLevelEnum>)`](crate::operation::list_service_quotas::builders::ListServiceQuotasFluentBuilder::set_quota_applied_at_level):<br>required: **false**<br><p>Specifies at which level of granularity that the quota value is applied.</p><br>
     /// - On success, responds with [`ListServiceQuotasOutput`](crate::operation::list_service_quotas::ListServiceQuotasOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_service_quotas::ListServiceQuotasOutput::next_token): <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
-    ///   - [`quotas(Option<Vec<ServiceQuota>>)`](crate::operation::list_service_quotas::ListServiceQuotasOutput::quotas): <p>Information about the quotas.</p>
+    ///   - [`quotas(Option<Vec::<ServiceQuota>>)`](crate::operation::list_service_quotas::ListServiceQuotasOutput::quotas): <p>Information about the quotas.</p>
     /// - On failure, responds with [`SdkError<ListServiceQuotasError>`](crate::operation::list_service_quotas::ListServiceQuotasError)
     pub fn list_service_quotas(&self) -> crate::operation::list_service_quotas::builders::ListServiceQuotasFluentBuilder {
         crate::operation::list_service_quotas::builders::ListServiceQuotasFluentBuilder::new(self.handle.clone())

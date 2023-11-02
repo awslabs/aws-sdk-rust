@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::set_next_token):<br>required: **false**<br><p> A pagination token. Set to null to start listing artifacts from start. If a non-null pagination token is returned in a result, pass its value in here to list more artifacts. </p><br>
     ///   - [`max_results(i32)`](crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::set_max_results):<br>required: **false**<br><p> The maximum number of records to list in a single response. </p><br>
     /// - On success, responds with [`ListArtifactsOutput`](crate::operation::list_artifacts::ListArtifactsOutput) with field(s):
-    ///   - [`artifacts(Vec<Artifact>)`](crate::operation::list_artifacts::ListArtifactsOutput::artifacts): <p> A list of artifacts. </p>
+    ///   - [`artifacts(Vec::<Artifact>)`](crate::operation::list_artifacts::ListArtifactsOutput::artifacts): <p> A list of artifacts. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_artifacts::ListArtifactsOutput::next_token): <p> A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries. </p>
     /// - On failure, responds with [`SdkError<ListArtifactsError>`](crate::operation::list_artifacts::ListArtifactsError)
     pub fn list_artifacts(&self) -> crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder {

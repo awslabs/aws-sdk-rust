@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`target_group_arn(impl Into<String>)`](crate::operation::register_targets::builders::RegisterTargetsFluentBuilder::target_group_arn) / [`set_target_group_arn(Option<String>)`](crate::operation::register_targets::builders::RegisterTargetsFluentBuilder::set_target_group_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the target group.</p><br>
-    ///   - [`targets(TargetDescription)`](crate::operation::register_targets::builders::RegisterTargetsFluentBuilder::targets) / [`set_targets(Option<Vec<TargetDescription>>)`](crate::operation::register_targets::builders::RegisterTargetsFluentBuilder::set_targets):<br>required: **true**<br><p>The targets.</p><br>
+    ///   - [`targets(TargetDescription)`](crate::operation::register_targets::builders::RegisterTargetsFluentBuilder::targets) / [`set_targets(Option<Vec::<TargetDescription>>)`](crate::operation::register_targets::builders::RegisterTargetsFluentBuilder::set_targets):<br>required: **true**<br><p>The targets.</p><br>
     /// - On success, responds with [`RegisterTargetsOutput`](crate::operation::register_targets::RegisterTargetsOutput)
     /// - On failure, responds with [`SdkError<RegisterTargetsError>`](crate::operation::register_targets::RegisterTargetsError)
     pub fn register_targets(&self) -> crate::operation::register_targets::builders::RegisterTargetsFluentBuilder {

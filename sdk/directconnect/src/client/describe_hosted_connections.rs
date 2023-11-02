@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`connection_id(impl Into<String>)`](crate::operation::describe_hosted_connections::builders::DescribeHostedConnectionsFluentBuilder::connection_id) / [`set_connection_id(Option<String>)`](crate::operation::describe_hosted_connections::builders::DescribeHostedConnectionsFluentBuilder::set_connection_id):<br>required: **true**<br><p>The ID of the interconnect or LAG.</p><br>
     /// - On success, responds with [`DescribeHostedConnectionsOutput`](crate::operation::describe_hosted_connections::DescribeHostedConnectionsOutput) with field(s):
-    ///   - [`connections(Option<Vec<Connection>>)`](crate::operation::describe_hosted_connections::DescribeHostedConnectionsOutput::connections): <p>The connections.</p>
+    ///   - [`connections(Option<Vec::<Connection>>)`](crate::operation::describe_hosted_connections::DescribeHostedConnectionsOutput::connections): <p>The connections.</p>
     /// - On failure, responds with [`SdkError<DescribeHostedConnectionsError>`](crate::operation::describe_hosted_connections::DescribeHostedConnectionsError)
     pub fn describe_hosted_connections(&self) -> crate::operation::describe_hosted_connections::builders::DescribeHostedConnectionsFluentBuilder {
         crate::operation::describe_hosted_connections::builders::DescribeHostedConnectionsFluentBuilder::new(self.handle.clone())

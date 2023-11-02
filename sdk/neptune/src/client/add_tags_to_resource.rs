@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_name(impl Into<String>)`](crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder::resource_name) / [`set_resource_name(Option<String>)`](crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder::set_resource_name):<br>required: **true**<br><p>The Amazon Neptune resource that the tags are added to. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing"> Constructing an Amazon Resource Name (ARN)</a>.</p><br>
-    ///   - [`tags(Tag)`](crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder::set_tags):<br>required: **true**<br><p>The tags to be assigned to the Amazon Neptune resource.</p><br>
+    ///   - [`tags(Tag)`](crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder::tags) / [`set_tags(Option<Vec::<Tag>>)`](crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder::set_tags):<br>required: **true**<br><p>The tags to be assigned to the Amazon Neptune resource.</p><br>
     /// - On success, responds with [`AddTagsToResourceOutput`](crate::operation::add_tags_to_resource::AddTagsToResourceOutput)
     /// - On failure, responds with [`SdkError<AddTagsToResourceError>`](crate::operation::add_tags_to_resource::AddTagsToResourceError)
     pub fn add_tags_to_resource(&self) -> crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder {

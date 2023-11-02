@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::get_ml_model_transform_job::GetMlModelTransformJobOutput::id): <p>The unique identifier of the model-transform job to be retrieved.</p>
     ///   - [`base_processing_job(Option<MlResourceDefinition>)`](crate::operation::get_ml_model_transform_job::GetMlModelTransformJobOutput::base_processing_job): <p>The base data processing job.</p>
     ///   - [`remote_model_transform_job(Option<MlResourceDefinition>)`](crate::operation::get_ml_model_transform_job::GetMlModelTransformJobOutput::remote_model_transform_job): <p>The remote model transform job.</p>
-    ///   - [`models(Option<Vec<MlConfigDefinition>>)`](crate::operation::get_ml_model_transform_job::GetMlModelTransformJobOutput::models): <p>A list of the configuration information for the models being used.</p>
+    ///   - [`models(Option<Vec::<MlConfigDefinition>>)`](crate::operation::get_ml_model_transform_job::GetMlModelTransformJobOutput::models): <p>A list of the configuration information for the models being used.</p>
     /// - On failure, responds with [`SdkError<GetMLModelTransformJobError>`](crate::operation::get_ml_model_transform_job::GetMLModelTransformJobError)
     pub fn get_ml_model_transform_job(&self) -> crate::operation::get_ml_model_transform_job::builders::GetMLModelTransformJobFluentBuilder {
         crate::operation::get_ml_model_transform_job::builders::GetMLModelTransformJobFluentBuilder::new(self.handle.clone())

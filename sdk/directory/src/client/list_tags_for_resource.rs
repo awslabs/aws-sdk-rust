@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::set_next_token):<br>required: **false**<br><p>Reserved for future use.</p><br>
     ///   - [`limit(i32)`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::set_limit):<br>required: **false**<br><p>Reserved for future use.</p><br>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput::tags): <p>List of tags returned by the ListTagsForResource operation.</p>
+    ///   - [`tags(Option<Vec::<Tag>>)`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput::tags): <p>List of tags returned by the ListTagsForResource operation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput::next_token): <p>Reserved for future use.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::operation::list_tags_for_resource::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder {

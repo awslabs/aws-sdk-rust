@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::get_replication_runs::builders::GetReplicationRunsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_replication_runs::builders::GetReplicationRunsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p><br>
     /// - On success, responds with [`GetReplicationRunsOutput`](crate::operation::get_replication_runs::GetReplicationRunsOutput) with field(s):
     ///   - [`replication_job(Option<ReplicationJob>)`](crate::operation::get_replication_runs::GetReplicationRunsOutput::replication_job): <p>Information about the replication job.</p>
-    ///   - [`replication_run_list(Option<Vec<ReplicationRun>>)`](crate::operation::get_replication_runs::GetReplicationRunsOutput::replication_run_list): <p>Information about the replication runs.</p>
+    ///   - [`replication_run_list(Option<Vec::<ReplicationRun>>)`](crate::operation::get_replication_runs::GetReplicationRunsOutput::replication_run_list): <p>Information about the replication runs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_replication_runs::GetReplicationRunsOutput::next_token): <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<GetReplicationRunsError>`](crate::operation::get_replication_runs::GetReplicationRunsError)
     pub fn get_replication_runs(&self) -> crate::operation::get_replication_runs::builders::GetReplicationRunsFluentBuilder {

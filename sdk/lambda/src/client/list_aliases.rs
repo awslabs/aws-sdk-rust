@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`max_items(i32)`](crate::operation::list_aliases::builders::ListAliasesFluentBuilder::max_items) / [`set_max_items(Option<i32>)`](crate::operation::list_aliases::builders::ListAliasesFluentBuilder::set_max_items):<br>required: **false**<br><p>Limit the number of aliases returned.</p><br>
     /// - On success, responds with [`ListAliasesOutput`](crate::operation::list_aliases::ListAliasesOutput) with field(s):
     ///   - [`next_marker(Option<String>)`](crate::operation::list_aliases::ListAliasesOutput::next_marker): <p>The pagination token that's included if more results are available.</p>
-    ///   - [`aliases(Option<Vec<AliasConfiguration>>)`](crate::operation::list_aliases::ListAliasesOutput::aliases): <p>A list of aliases.</p>
+    ///   - [`aliases(Option<Vec::<AliasConfiguration>>)`](crate::operation::list_aliases::ListAliasesOutput::aliases): <p>A list of aliases.</p>
     /// - On failure, responds with [`SdkError<ListAliasesError>`](crate::operation::list_aliases::ListAliasesError)
     pub fn list_aliases(&self) -> crate::operation::list_aliases::builders::ListAliasesFluentBuilder {
         crate::operation::list_aliases::builders::ListAliasesFluentBuilder::new(self.handle.clone())

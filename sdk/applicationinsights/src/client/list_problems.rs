@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`component_name(impl Into<String>)`](crate::operation::list_problems::builders::ListProblemsFluentBuilder::component_name) / [`set_component_name(Option<String>)`](crate::operation::list_problems::builders::ListProblemsFluentBuilder::set_component_name):<br>required: **false**<br><p> The name of the component. </p><br>
     ///   - [`visibility(Visibility)`](crate::operation::list_problems::builders::ListProblemsFluentBuilder::visibility) / [`set_visibility(Option<Visibility>)`](crate::operation::list_problems::builders::ListProblemsFluentBuilder::set_visibility):<br>required: **false**<br><p>Specifies whether or not you can view the problem. If not specified, visible and ignored problems are returned.</p><br>
     /// - On success, responds with [`ListProblemsOutput`](crate::operation::list_problems::ListProblemsOutput) with field(s):
-    ///   - [`problem_list(Option<Vec<Problem>>)`](crate::operation::list_problems::ListProblemsOutput::problem_list): <p>The list of problems. </p>
+    ///   - [`problem_list(Option<Vec::<Problem>>)`](crate::operation::list_problems::ListProblemsOutput::problem_list): <p>The list of problems. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_problems::ListProblemsOutput::next_token): <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     ///   - [`resource_group_name(Option<String>)`](crate::operation::list_problems::ListProblemsOutput::resource_group_name): <p> The name of the resource group. </p>
     ///   - [`account_id(Option<String>)`](crate::operation::list_problems::ListProblemsOutput::account_id): <p>The AWS account ID for the resource group owner.</p>

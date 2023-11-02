@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_thesauri::builders::ListThesauriFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_thesauri::builders::ListThesauriFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of thesauri to return.</p><br>
     /// - On success, responds with [`ListThesauriOutput`](crate::operation::list_thesauri::ListThesauriOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_thesauri::ListThesauriOutput::next_token): <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of thesauri. </p>
-    ///   - [`thesaurus_summary_items(Option<Vec<ThesaurusSummary>>)`](crate::operation::list_thesauri::ListThesauriOutput::thesaurus_summary_items): <p>An array of summary information for a thesaurus or multiple thesauri.</p>
+    ///   - [`thesaurus_summary_items(Option<Vec::<ThesaurusSummary>>)`](crate::operation::list_thesauri::ListThesauriOutput::thesaurus_summary_items): <p>An array of summary information for a thesaurus or multiple thesauri.</p>
     /// - On failure, responds with [`SdkError<ListThesauriError>`](crate::operation::list_thesauri::ListThesauriError)
     pub fn list_thesauri(&self) -> crate::operation::list_thesauri::builders::ListThesauriFluentBuilder {
         crate::operation::list_thesauri::builders::ListThesauriFluentBuilder::new(self.handle.clone())

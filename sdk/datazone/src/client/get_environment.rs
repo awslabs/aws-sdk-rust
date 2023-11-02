@@ -18,11 +18,11 @@ impl super::Client {
     ///   - [`aws_account_id(Option<String>)`](crate::operation::get_environment::GetEnvironmentOutput::aws_account_id): <p>The ID of the Amazon Web Services account where the environment exists.</p>
     ///   - [`aws_account_region(Option<String>)`](crate::operation::get_environment::GetEnvironmentOutput::aws_account_region): <p>The Amazon Web Services region where the environment exists.</p>
     ///   - [`provider(String)`](crate::operation::get_environment::GetEnvironmentOutput::provider): <p>The provider of this Amazon DataZone environment.</p>
-    ///   - [`provisioned_resources(Option<Vec<Resource>>)`](crate::operation::get_environment::GetEnvironmentOutput::provisioned_resources): <p>The provisioned resources of this Amazon DataZone environment.</p>
+    ///   - [`provisioned_resources(Option<Vec::<Resource>>)`](crate::operation::get_environment::GetEnvironmentOutput::provisioned_resources): <p>The provisioned resources of this Amazon DataZone environment.</p>
     ///   - [`status(Option<EnvironmentStatus>)`](crate::operation::get_environment::GetEnvironmentOutput::status): <p>The status of this Amazon DataZone environment.</p>
-    ///   - [`environment_actions(Option<Vec<ConfigurableEnvironmentAction>>)`](crate::operation::get_environment::GetEnvironmentOutput::environment_actions): <p>The actions of the environment.</p>
-    ///   - [`glossary_terms(Option<Vec<String>>)`](crate::operation::get_environment::GetEnvironmentOutput::glossary_terms): <p>The business glossary terms that can be used in this environment.</p>
-    ///   - [`user_parameters(Option<Vec<CustomParameter>>)`](crate::operation::get_environment::GetEnvironmentOutput::user_parameters): <p>The user parameters of this Amazon DataZone environment.</p>
+    ///   - [`environment_actions(Option<Vec::<ConfigurableEnvironmentAction>>)`](crate::operation::get_environment::GetEnvironmentOutput::environment_actions): <p>The actions of the environment.</p>
+    ///   - [`glossary_terms(Option<Vec::<String>>)`](crate::operation::get_environment::GetEnvironmentOutput::glossary_terms): <p>The business glossary terms that can be used in this environment.</p>
+    ///   - [`user_parameters(Option<Vec::<CustomParameter>>)`](crate::operation::get_environment::GetEnvironmentOutput::user_parameters): <p>The user parameters of this Amazon DataZone environment.</p>
     ///   - [`last_deployment(Option<Deployment>)`](crate::operation::get_environment::GetEnvironmentOutput::last_deployment): <p>The details of the last deployment of the environment.</p>
     ///   - [`provisioning_properties(Option<ProvisioningProperties>)`](crate::operation::get_environment::GetEnvironmentOutput::provisioning_properties): <p>The provisioning properties of this Amazon DataZone environment.</p>
     ///   - [`deployment_properties(Option<DeploymentProperties>)`](crate::operation::get_environment::GetEnvironmentOutput::deployment_properties): <p>The deployment properties of the environment.</p>

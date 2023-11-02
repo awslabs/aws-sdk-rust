@@ -28,7 +28,7 @@ pub fn de_server_side_encryption_configuration(
             s if s.matches("Rule") /* Rules com.amazonaws.s3#ServerSideEncryptionConfiguration$Rules */ =>  {
                 let var_2 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::ServerSideEncryptionRule>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::ServerSideEncryptionRule>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_3 = builder.rules.take().unwrap_or_default();
                             list_3.push(
                                 crate::protocol_serde::shape_server_side_encryption_rule::de_server_side_encryption_rule(&mut tag)

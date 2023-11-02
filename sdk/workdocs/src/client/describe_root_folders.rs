@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`limit(i32)`](crate::operation::describe_root_folders::builders::DescribeRootFoldersFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::describe_root_folders::builders::DescribeRootFoldersFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of items to return.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::describe_root_folders::builders::DescribeRootFoldersFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_root_folders::builders::DescribeRootFoldersFluentBuilder::set_marker):<br>required: **false**<br><p>The marker for the next set of results. (You received this marker from a previous call.)</p><br>
     /// - On success, responds with [`DescribeRootFoldersOutput`](crate::operation::describe_root_folders::DescribeRootFoldersOutput) with field(s):
-    ///   - [`folders(Option<Vec<FolderMetadata>>)`](crate::operation::describe_root_folders::DescribeRootFoldersOutput::folders): <p>The user's special folders.</p>
+    ///   - [`folders(Option<Vec::<FolderMetadata>>)`](crate::operation::describe_root_folders::DescribeRootFoldersOutput::folders): <p>The user's special folders.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_root_folders::DescribeRootFoldersOutput::marker): <p>The marker for the next set of results.</p>
     /// - On failure, responds with [`SdkError<DescribeRootFoldersError>`](crate::operation::describe_root_folders::DescribeRootFoldersError)
     pub fn describe_root_folders(&self) -> crate::operation::describe_root_folders::builders::DescribeRootFoldersFluentBuilder {

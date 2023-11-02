@@ -7,8 +7,8 @@ impl super::Client {
     ///   - [`studio_id(impl Into<String>)`](crate::operation::get_launch_profile_details::builders::GetLaunchProfileDetailsFluentBuilder::studio_id) / [`set_studio_id(Option<String>)`](crate::operation::get_launch_profile_details::builders::GetLaunchProfileDetailsFluentBuilder::set_studio_id):<br>required: **true**<br><p>The studio ID. </p><br>
     /// - On success, responds with [`GetLaunchProfileDetailsOutput`](crate::operation::get_launch_profile_details::GetLaunchProfileDetailsOutput) with field(s):
     ///   - [`launch_profile(Option<LaunchProfile>)`](crate::operation::get_launch_profile_details::GetLaunchProfileDetailsOutput::launch_profile): <p>The launch profile.</p>
-    ///   - [`streaming_images(Option<Vec<StreamingImage>>)`](crate::operation::get_launch_profile_details::GetLaunchProfileDetailsOutput::streaming_images): <p>A collection of streaming images.</p>
-    ///   - [`studio_component_summaries(Option<Vec<StudioComponentSummary>>)`](crate::operation::get_launch_profile_details::GetLaunchProfileDetailsOutput::studio_component_summaries): <p>A collection of studio component summaries.</p>
+    ///   - [`streaming_images(Option<Vec::<StreamingImage>>)`](crate::operation::get_launch_profile_details::GetLaunchProfileDetailsOutput::streaming_images): <p>A collection of streaming images.</p>
+    ///   - [`studio_component_summaries(Option<Vec::<StudioComponentSummary>>)`](crate::operation::get_launch_profile_details::GetLaunchProfileDetailsOutput::studio_component_summaries): <p>A collection of studio component summaries.</p>
     /// - On failure, responds with [`SdkError<GetLaunchProfileDetailsError>`](crate::operation::get_launch_profile_details::GetLaunchProfileDetailsError)
     pub fn get_launch_profile_details(&self) -> crate::operation::get_launch_profile_details::builders::GetLaunchProfileDetailsFluentBuilder {
         crate::operation::get_launch_profile_details::builders::GetLaunchProfileDetailsFluentBuilder::new(self.handle.clone())

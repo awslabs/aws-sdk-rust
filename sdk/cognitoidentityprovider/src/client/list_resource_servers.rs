@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_resource_servers::builders::ListResourceServersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_resource_servers::builders::ListResourceServersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of resource servers to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_resource_servers::builders::ListResourceServersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_resource_servers::builders::ListResourceServersFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token.</p><br>
     /// - On success, responds with [`ListResourceServersOutput`](crate::operation::list_resource_servers::ListResourceServersOutput) with field(s):
-    ///   - [`resource_servers(Vec<ResourceServerType>)`](crate::operation::list_resource_servers::ListResourceServersOutput::resource_servers): <p>The resource servers.</p>
+    ///   - [`resource_servers(Vec::<ResourceServerType>)`](crate::operation::list_resource_servers::ListResourceServersOutput::resource_servers): <p>The resource servers.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_resource_servers::ListResourceServersOutput::next_token): <p>A pagination token.</p>
     /// - On failure, responds with [`SdkError<ListResourceServersError>`](crate::operation::list_resource_servers::ListResourceServersError)
     pub fn list_resource_servers(&self) -> crate::operation::list_resource_servers::builders::ListResourceServersFluentBuilder {

@@ -4,11 +4,11 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_eula_acceptances::builders::ListEulaAcceptancesFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`eula_ids(impl Into<String>)`](crate::operation::list_eula_acceptances::builders::ListEulaAcceptancesFluentBuilder::eula_ids) / [`set_eula_ids(Option<Vec<String>>)`](crate::operation::list_eula_acceptances::builders::ListEulaAcceptancesFluentBuilder::set_eula_ids):<br>required: **false**<br><p>The list of EULA IDs that have been previously accepted.</p><br>
+    ///   - [`eula_ids(impl Into<String>)`](crate::operation::list_eula_acceptances::builders::ListEulaAcceptancesFluentBuilder::eula_ids) / [`set_eula_ids(Option<Vec::<String>>)`](crate::operation::list_eula_acceptances::builders::ListEulaAcceptancesFluentBuilder::set_eula_ids):<br>required: **false**<br><p>The list of EULA IDs that have been previously accepted.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_eula_acceptances::builders::ListEulaAcceptancesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_eula_acceptances::builders::ListEulaAcceptancesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results, or null if there are no more results.</p><br>
     ///   - [`studio_id(impl Into<String>)`](crate::operation::list_eula_acceptances::builders::ListEulaAcceptancesFluentBuilder::studio_id) / [`set_studio_id(Option<String>)`](crate::operation::list_eula_acceptances::builders::ListEulaAcceptancesFluentBuilder::set_studio_id):<br>required: **true**<br><p>The studio ID. </p><br>
     /// - On success, responds with [`ListEulaAcceptancesOutput`](crate::operation::list_eula_acceptances::ListEulaAcceptancesOutput) with field(s):
-    ///   - [`eula_acceptances(Option<Vec<EulaAcceptance>>)`](crate::operation::list_eula_acceptances::ListEulaAcceptancesOutput::eula_acceptances): <p>A collection of EULA acceptances.</p>
+    ///   - [`eula_acceptances(Option<Vec::<EulaAcceptance>>)`](crate::operation::list_eula_acceptances::ListEulaAcceptancesOutput::eula_acceptances): <p>A collection of EULA acceptances.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_eula_acceptances::ListEulaAcceptancesOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListEulaAcceptancesError>`](crate::operation::list_eula_acceptances::ListEulaAcceptancesError)
     pub fn list_eula_acceptances(&self) -> crate::operation::list_eula_acceptances::builders::ListEulaAcceptancesFluentBuilder {

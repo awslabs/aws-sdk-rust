@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`dataset_arn(impl Into<String>)`](crate::operation::put_users::builders::PutUsersFluentBuilder::dataset_arn) / [`set_dataset_arn(Option<String>)`](crate::operation::put_users::builders::PutUsersFluentBuilder::set_dataset_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the Users dataset you are adding the user or users to.</p><br>
-    ///   - [`users(User)`](crate::operation::put_users::builders::PutUsersFluentBuilder::users) / [`set_users(Option<Vec<User>>)`](crate::operation::put_users::builders::PutUsersFluentBuilder::set_users):<br>required: **true**<br><p>A list of user data.</p><br>
+    ///   - [`users(User)`](crate::operation::put_users::builders::PutUsersFluentBuilder::users) / [`set_users(Option<Vec::<User>>)`](crate::operation::put_users::builders::PutUsersFluentBuilder::set_users):<br>required: **true**<br><p>A list of user data.</p><br>
     /// - On success, responds with [`PutUsersOutput`](crate::operation::put_users::PutUsersOutput)
     /// - On failure, responds with [`SdkError<PutUsersError>`](crate::operation::put_users::PutUsersError)
     pub fn put_users(&self) -> crate::operation::put_users::builders::PutUsersFluentBuilder {

@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`readiness_check_arn(Option<String>)`](crate::operation::get_readiness_check::GetReadinessCheckOutput::readiness_check_arn): <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
     ///   - [`readiness_check_name(Option<String>)`](crate::operation::get_readiness_check::GetReadinessCheckOutput::readiness_check_name): <p>Name of a readiness check.</p>
     ///   - [`resource_set(Option<String>)`](crate::operation::get_readiness_check::GetReadinessCheckOutput::resource_set): <p>Name of the resource set to be checked.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_readiness_check::GetReadinessCheckOutput::tags): <p>A collection of tags associated with a resource.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_readiness_check::GetReadinessCheckOutput::tags): <p>A collection of tags associated with a resource.</p>
     /// - On failure, responds with [`SdkError<GetReadinessCheckError>`](crate::operation::get_readiness_check::GetReadinessCheckError)
     pub fn get_readiness_check(&self) -> crate::operation::get_readiness_check::builders::GetReadinessCheckFluentBuilder {
         crate::operation::get_readiness_check::builders::GetReadinessCheckFluentBuilder::new(self.handle.clone())

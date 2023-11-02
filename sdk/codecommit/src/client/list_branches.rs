@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`repository_name(impl Into<String>)`](crate::operation::list_branches::builders::ListBranchesFluentBuilder::repository_name) / [`set_repository_name(Option<String>)`](crate::operation::list_branches::builders::ListBranchesFluentBuilder::set_repository_name):<br>required: **true**<br><p>The name of the repository that contains the branches.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_branches::builders::ListBranchesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_branches::builders::ListBranchesFluentBuilder::set_next_token):<br>required: **false**<br><p>An enumeration token that allows the operation to batch the results.</p><br>
     /// - On success, responds with [`ListBranchesOutput`](crate::operation::list_branches::ListBranchesOutput) with field(s):
-    ///   - [`branches(Option<Vec<String>>)`](crate::operation::list_branches::ListBranchesOutput::branches): <p>The list of branch names.</p>
+    ///   - [`branches(Option<Vec::<String>>)`](crate::operation::list_branches::ListBranchesOutput::branches): <p>The list of branch names.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_branches::ListBranchesOutput::next_token): <p>An enumeration token that returns the batch of the results.</p>
     /// - On failure, responds with [`SdkError<ListBranchesError>`](crate::operation::list_branches::ListBranchesError)
     pub fn list_branches(&self) -> crate::operation::list_branches::builders::ListBranchesFluentBuilder {

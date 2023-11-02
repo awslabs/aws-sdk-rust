@@ -10,7 +10,7 @@ impl super::Client {
     /// - On success, responds with [`GetCellReadinessSummaryOutput`](crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
     ///   - [`readiness(Option<Readiness>)`](crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryOutput::readiness): <p>The readiness at a cell level.</p>
-    ///   - [`readiness_checks(Option<Vec<ReadinessCheckSummary>>)`](crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryOutput::readiness_checks): <p>Summaries for the readiness checks that make up the cell.</p>
+    ///   - [`readiness_checks(Option<Vec::<ReadinessCheckSummary>>)`](crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryOutput::readiness_checks): <p>Summaries for the readiness checks that make up the cell.</p>
     /// - On failure, responds with [`SdkError<GetCellReadinessSummaryError>`](crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryError)
     pub fn get_cell_readiness_summary(&self) -> crate::operation::get_cell_readiness_summary::builders::GetCellReadinessSummaryFluentBuilder {
         crate::operation::get_cell_readiness_summary::builders::GetCellReadinessSummaryFluentBuilder::new(self.handle.clone())

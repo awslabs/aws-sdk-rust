@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`directory_id(impl Into<String>)`](crate::operation::update_settings::builders::UpdateSettingsFluentBuilder::directory_id) / [`set_directory_id(Option<String>)`](crate::operation::update_settings::builders::UpdateSettingsFluentBuilder::set_directory_id):<br>required: **true**<br><p>The identifier of the directory for which to update settings.</p><br>
-    ///   - [`settings(Setting)`](crate::operation::update_settings::builders::UpdateSettingsFluentBuilder::settings) / [`set_settings(Option<Vec<Setting>>)`](crate::operation::update_settings::builders::UpdateSettingsFluentBuilder::set_settings):<br>required: **true**<br><p>The list of <code>Setting</code> objects.</p><br>
+    ///   - [`settings(Setting)`](crate::operation::update_settings::builders::UpdateSettingsFluentBuilder::settings) / [`set_settings(Option<Vec::<Setting>>)`](crate::operation::update_settings::builders::UpdateSettingsFluentBuilder::set_settings):<br>required: **true**<br><p>The list of <code>Setting</code> objects.</p><br>
     /// - On success, responds with [`UpdateSettingsOutput`](crate::operation::update_settings::UpdateSettingsOutput) with field(s):
     ///   - [`directory_id(Option<String>)`](crate::operation::update_settings::UpdateSettingsOutput::directory_id): <p>The identifier of the directory.</p>
     /// - On failure, responds with [`SdkError<UpdateSettingsError>`](crate::operation::update_settings::UpdateSettingsError)

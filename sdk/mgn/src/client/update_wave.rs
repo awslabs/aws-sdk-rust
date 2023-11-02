@@ -16,7 +16,7 @@ impl super::Client {
     ///   - [`wave_aggregated_status(Option<WaveAggregatedStatus>)`](crate::operation::update_wave::UpdateWaveOutput::wave_aggregated_status): <p>Wave aggregated status.</p>
     ///   - [`creation_date_time(Option<String>)`](crate::operation::update_wave::UpdateWaveOutput::creation_date_time): <p>Wave creation dateTime.</p>
     ///   - [`last_modified_date_time(Option<String>)`](crate::operation::update_wave::UpdateWaveOutput::last_modified_date_time): <p>Wave last modified dateTime.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::update_wave::UpdateWaveOutput::tags): <p>Wave tags.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::update_wave::UpdateWaveOutput::tags): <p>Wave tags.</p>
     /// - On failure, responds with [`SdkError<UpdateWaveError>`](crate::operation::update_wave::UpdateWaveError)
     pub fn update_wave(&self) -> crate::operation::update_wave::builders::UpdateWaveFluentBuilder {
         crate::operation::update_wave::builders::UpdateWaveFluentBuilder::new(self.handle.clone())

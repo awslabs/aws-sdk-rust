@@ -9,12 +9,12 @@ impl super::Client {
     ///   - [`fleet(Option<String>)`](crate::operation::describe_deployment_job::DescribeDeploymentJobOutput::fleet): <p>The Amazon Resource Name (ARN) of the fleet.</p>
     ///   - [`status(Option<DeploymentStatus>)`](crate::operation::describe_deployment_job::DescribeDeploymentJobOutput::status): <p>The status of the deployment job.</p>
     ///   - [`deployment_config(Option<DeploymentConfig>)`](crate::operation::describe_deployment_job::DescribeDeploymentJobOutput::deployment_config): <p>The deployment configuration.</p>
-    ///   - [`deployment_application_configs(Option<Vec<DeploymentApplicationConfig>>)`](crate::operation::describe_deployment_job::DescribeDeploymentJobOutput::deployment_application_configs): <p>The deployment application configuration.</p>
+    ///   - [`deployment_application_configs(Option<Vec::<DeploymentApplicationConfig>>)`](crate::operation::describe_deployment_job::DescribeDeploymentJobOutput::deployment_application_configs): <p>The deployment application configuration.</p>
     ///   - [`failure_reason(Option<String>)`](crate::operation::describe_deployment_job::DescribeDeploymentJobOutput::failure_reason): <p>A short description of the reason why the deployment job failed.</p>
     ///   - [`failure_code(Option<DeploymentJobErrorCode>)`](crate::operation::describe_deployment_job::DescribeDeploymentJobOutput::failure_code): <p>The deployment job failure code.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::describe_deployment_job::DescribeDeploymentJobOutput::created_at): <p>The time, in milliseconds since the epoch, when the deployment job was created.</p>
-    ///   - [`robot_deployment_summary(Option<Vec<RobotDeployment>>)`](crate::operation::describe_deployment_job::DescribeDeploymentJobOutput::robot_deployment_summary): <p>A list of robot deployment summaries.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_deployment_job::DescribeDeploymentJobOutput::tags): <p>The list of all tags added to the specified deployment job.</p>
+    ///   - [`robot_deployment_summary(Option<Vec::<RobotDeployment>>)`](crate::operation::describe_deployment_job::DescribeDeploymentJobOutput::robot_deployment_summary): <p>A list of robot deployment summaries.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_deployment_job::DescribeDeploymentJobOutput::tags): <p>The list of all tags added to the specified deployment job.</p>
     /// - On failure, responds with [`SdkError<DescribeDeploymentJobError>`](crate::operation::describe_deployment_job::DescribeDeploymentJobError)
     #[deprecated(
         note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."

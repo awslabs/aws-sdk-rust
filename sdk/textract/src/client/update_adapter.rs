@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`adapter_name(Option<String>)`](crate::operation::update_adapter::UpdateAdapterOutput::adapter_name): <p>A string containing the name of the adapter that has been updated.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::update_adapter::UpdateAdapterOutput::creation_time): <p>An object specifying the creation time of the the adapter that has been updated.</p>
     ///   - [`description(Option<String>)`](crate::operation::update_adapter::UpdateAdapterOutput::description): <p>A string containing the description of the adapter that has been updated.</p>
-    ///   - [`feature_types(Option<Vec<FeatureType>>)`](crate::operation::update_adapter::UpdateAdapterOutput::feature_types): <p>List of the targeted feature types for the updated adapter.</p>
+    ///   - [`feature_types(Option<Vec::<FeatureType>>)`](crate::operation::update_adapter::UpdateAdapterOutput::feature_types): <p>List of the targeted feature types for the updated adapter.</p>
     ///   - [`auto_update(Option<AutoUpdate>)`](crate::operation::update_adapter::UpdateAdapterOutput::auto_update): <p>The auto-update status of the adapter that has been updated.</p>
     /// - On failure, responds with [`SdkError<UpdateAdapterError>`](crate::operation::update_adapter::UpdateAdapterError)
     pub fn update_adapter(&self) -> crate::operation::update_adapter::builders::UpdateAdapterFluentBuilder {

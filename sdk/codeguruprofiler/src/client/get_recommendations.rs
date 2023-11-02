@@ -11,8 +11,8 @@ impl super::Client {
     ///   - [`profiling_group_name(String)`](crate::operation::get_recommendations::GetRecommendationsOutput::profiling_group_name): <p>The name of the profiling group the analysis data is about.</p>
     ///   - [`profile_start_time(DateTime)`](crate::operation::get_recommendations::GetRecommendationsOutput::profile_start_time): <p> The start time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     ///   - [`profile_end_time(DateTime)`](crate::operation::get_recommendations::GetRecommendationsOutput::profile_end_time): <p> The end time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    ///   - [`recommendations(Vec<Recommendation>)`](crate::operation::get_recommendations::GetRecommendationsOutput::recommendations): <p>The list of recommendations that the analysis found for this profile.</p>
-    ///   - [`anomalies(Vec<Anomaly>)`](crate::operation::get_recommendations::GetRecommendationsOutput::anomalies): <p> The list of anomalies that the analysis has found for this profile. </p>
+    ///   - [`recommendations(Vec::<Recommendation>)`](crate::operation::get_recommendations::GetRecommendationsOutput::recommendations): <p>The list of recommendations that the analysis found for this profile.</p>
+    ///   - [`anomalies(Vec::<Anomaly>)`](crate::operation::get_recommendations::GetRecommendationsOutput::anomalies): <p> The list of anomalies that the analysis has found for this profile. </p>
     /// - On failure, responds with [`SdkError<GetRecommendationsError>`](crate::operation::get_recommendations::GetRecommendationsError)
     pub fn get_recommendations(&self) -> crate::operation::get_recommendations::builders::GetRecommendationsFluentBuilder {
         crate::operation::get_recommendations::builders::GetRecommendationsFluentBuilder::new(self.handle.clone())

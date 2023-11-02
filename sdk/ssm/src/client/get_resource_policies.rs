@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::get_resource_policies::builders::GetResourcePoliciesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_resource_policies::builders::GetResourcePoliciesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p><br>
     /// - On success, responds with [`GetResourcePoliciesOutput`](crate::operation::get_resource_policies::GetResourcePoliciesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::get_resource_policies::GetResourcePoliciesOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    ///   - [`policies(Option<Vec<GetResourcePoliciesResponseEntry>>)`](crate::operation::get_resource_policies::GetResourcePoliciesOutput::policies): <p>An array of the <code>Policy</code> object.</p>
+    ///   - [`policies(Option<Vec::<GetResourcePoliciesResponseEntry>>)`](crate::operation::get_resource_policies::GetResourcePoliciesOutput::policies): <p>An array of the <code>Policy</code> object.</p>
     /// - On failure, responds with [`SdkError<GetResourcePoliciesError>`](crate::operation::get_resource_policies::GetResourcePoliciesError)
     pub fn get_resource_policies(&self) -> crate::operation::get_resource_policies::builders::GetResourcePoliciesFluentBuilder {
         crate::operation::get_resource_policies::builders::GetResourcePoliciesFluentBuilder::new(self.handle.clone())

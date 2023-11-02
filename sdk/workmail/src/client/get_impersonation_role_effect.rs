@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetImpersonationRoleEffectOutput`](crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectOutput) with field(s):
     ///   - [`r#type(Option<ImpersonationRoleType>)`](crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectOutput::type): <p>The impersonation role type.</p>
     ///   - [`effect(Option<AccessEffect>)`](crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectOutput::effect): <p> <code></code>Effect of the impersonation role on the target user based on its rules. Available effects are <code>ALLOW</code> or <code>DENY</code>.</p>
-    ///   - [`matched_rules(Option<Vec<ImpersonationMatchedRule>>)`](crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectOutput::matched_rules): <p>A list of the rules that match the input and produce the configured effect.</p>
+    ///   - [`matched_rules(Option<Vec::<ImpersonationMatchedRule>>)`](crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectOutput::matched_rules): <p>A list of the rules that match the input and produce the configured effect.</p>
     /// - On failure, responds with [`SdkError<GetImpersonationRoleEffectError>`](crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectError)
     pub fn get_impersonation_role_effect(
         &self,

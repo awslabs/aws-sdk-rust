@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`mount_target_id(impl Into<String>)`](crate::operation::describe_mount_target_security_groups::builders::DescribeMountTargetSecurityGroupsFluentBuilder::mount_target_id) / [`set_mount_target_id(Option<String>)`](crate::operation::describe_mount_target_security_groups::builders::DescribeMountTargetSecurityGroupsFluentBuilder::set_mount_target_id):<br>required: **true**<br><p>The ID of the mount target whose security groups you want to retrieve.</p><br>
     /// - On success, responds with [`DescribeMountTargetSecurityGroupsOutput`](crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsOutput) with field(s):
-    ///   - [`security_groups(Vec<String>)`](crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsOutput::security_groups): <p>An array of security groups.</p>
+    ///   - [`security_groups(Vec::<String>)`](crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsOutput::security_groups): <p>An array of security groups.</p>
     /// - On failure, responds with [`SdkError<DescribeMountTargetSecurityGroupsError>`](crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsError)
     pub fn describe_mount_target_security_groups(
         &self,

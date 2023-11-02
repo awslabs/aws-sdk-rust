@@ -10,7 +10,7 @@ impl super::Client {
     /// - On success, responds with [`GetRecoveryGroupReadinessSummaryOutput`](crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
     ///   - [`readiness(Option<Readiness>)`](crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryOutput::readiness): <p>The readiness status at a recovery group level.</p>
-    ///   - [`readiness_checks(Option<Vec<ReadinessCheckSummary>>)`](crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryOutput::readiness_checks): <p>Summaries of the readiness checks for the recovery group.</p>
+    ///   - [`readiness_checks(Option<Vec::<ReadinessCheckSummary>>)`](crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryOutput::readiness_checks): <p>Summaries of the readiness checks for the recovery group.</p>
     /// - On failure, responds with [`SdkError<GetRecoveryGroupReadinessSummaryError>`](crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryError)
     pub fn get_recovery_group_readiness_summary(
         &self,

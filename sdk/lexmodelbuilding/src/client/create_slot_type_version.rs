@@ -8,14 +8,14 @@ impl super::Client {
     /// - On success, responds with [`CreateSlotTypeVersionOutput`](crate::operation::create_slot_type_version::CreateSlotTypeVersionOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::create_slot_type_version::CreateSlotTypeVersionOutput::name): <p>The name of the slot type.</p>
     ///   - [`description(Option<String>)`](crate::operation::create_slot_type_version::CreateSlotTypeVersionOutput::description): <p>A description of the slot type.</p>
-    ///   - [`enumeration_values(Option<Vec<EnumerationValue>>)`](crate::operation::create_slot_type_version::CreateSlotTypeVersionOutput::enumeration_values): <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take.</p>
+    ///   - [`enumeration_values(Option<Vec::<EnumerationValue>>)`](crate::operation::create_slot_type_version::CreateSlotTypeVersionOutput::enumeration_values): <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take.</p>
     ///   - [`last_updated_date(Option<DateTime>)`](crate::operation::create_slot_type_version::CreateSlotTypeVersionOutput::last_updated_date): <p>The date that the slot type was updated. When you create a resource, the creation date and last update date are the same.</p>
     ///   - [`created_date(Option<DateTime>)`](crate::operation::create_slot_type_version::CreateSlotTypeVersionOutput::created_date): <p>The date that the slot type was created.</p>
     ///   - [`version(Option<String>)`](crate::operation::create_slot_type_version::CreateSlotTypeVersionOutput::version): <p>The version assigned to the new slot type version. </p>
     ///   - [`checksum(Option<String>)`](crate::operation::create_slot_type_version::CreateSlotTypeVersionOutput::checksum): <p>Checksum of the <code>$LATEST</code> version of the slot type.</p>
     ///   - [`value_selection_strategy(Option<SlotValueSelectionStrategy>)`](crate::operation::create_slot_type_version::CreateSlotTypeVersionOutput::value_selection_strategy): <p>The strategy that Amazon Lex uses to determine the value of the slot. For more information, see <code>PutSlotType</code>.</p>
     ///   - [`parent_slot_type_signature(Option<String>)`](crate::operation::create_slot_type_version::CreateSlotTypeVersionOutput::parent_slot_type_signature): <p>The built-in slot type used a the parent of the slot type.</p>
-    ///   - [`slot_type_configurations(Option<Vec<SlotTypeConfiguration>>)`](crate::operation::create_slot_type_version::CreateSlotTypeVersionOutput::slot_type_configurations): <p>Configuration information that extends the parent built-in slot type.</p>
+    ///   - [`slot_type_configurations(Option<Vec::<SlotTypeConfiguration>>)`](crate::operation::create_slot_type_version::CreateSlotTypeVersionOutput::slot_type_configurations): <p>Configuration information that extends the parent built-in slot type.</p>
     /// - On failure, responds with [`SdkError<CreateSlotTypeVersionError>`](crate::operation::create_slot_type_version::CreateSlotTypeVersionError)
     pub fn create_slot_type_version(&self) -> crate::operation::create_slot_type_version::builders::CreateSlotTypeVersionFluentBuilder {
         crate::operation::create_slot_type_version::builders::CreateSlotTypeVersionFluentBuilder::new(self.handle.clone())

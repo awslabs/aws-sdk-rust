@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_notifications::builders::ListNotificationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_notifications::builders::ListNotificationsFluentBuilder::set_next_token):<br>required: **false**<br><p> The pagination token that's used to fetch the next set of results. </p><br>
     ///   - [`max_results(i32)`](crate::operation::list_notifications::builders::ListNotificationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_notifications::builders::ListNotificationsFluentBuilder::set_max_results):<br>required: **false**<br><p> Represents the maximum number of results on a page or for an API request call. </p><br>
     /// - On success, responds with [`ListNotificationsOutput`](crate::operation::list_notifications::ListNotificationsOutput) with field(s):
-    ///   - [`notifications(Option<Vec<Notification>>)`](crate::operation::list_notifications::ListNotificationsOutput::notifications): <p> The returned list of notifications. </p>
+    ///   - [`notifications(Option<Vec::<Notification>>)`](crate::operation::list_notifications::ListNotificationsOutput::notifications): <p> The returned list of notifications. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_notifications::ListNotificationsOutput::next_token): <p> The pagination token that's used to fetch the next set of results. </p>
     /// - On failure, responds with [`SdkError<ListNotificationsError>`](crate::operation::list_notifications::ListNotificationsError)
     pub fn list_notifications(&self) -> crate::operation::list_notifications::builders::ListNotificationsFluentBuilder {

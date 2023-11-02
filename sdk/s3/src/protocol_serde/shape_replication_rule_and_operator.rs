@@ -45,7 +45,7 @@ pub fn de_replication_rule_and_operator(
             s if s.matches("Tag") /* Tags com.amazonaws.s3#ReplicationRuleAndOperator$Tags */ =>  {
                 let var_5 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::Tag>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::Tag>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_6 = builder.tags.take().unwrap_or_default();
                             list_6.push(
                                 crate::protocol_serde::shape_tag::de_tag(&mut tag)

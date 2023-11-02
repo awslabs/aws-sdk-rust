@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`limit(i32)`](crate::operation::describe_comments::builders::DescribeCommentsFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::describe_comments::builders::DescribeCommentsFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of items to return.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::describe_comments::builders::DescribeCommentsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_comments::builders::DescribeCommentsFluentBuilder::set_marker):<br>required: **false**<br><p>The marker for the next set of results. This marker was received from a previous call.</p><br>
     /// - On success, responds with [`DescribeCommentsOutput`](crate::operation::describe_comments::DescribeCommentsOutput) with field(s):
-    ///   - [`comments(Option<Vec<Comment>>)`](crate::operation::describe_comments::DescribeCommentsOutput::comments): <p>The list of comments for the specified document version.</p>
+    ///   - [`comments(Option<Vec::<Comment>>)`](crate::operation::describe_comments::DescribeCommentsOutput::comments): <p>The list of comments for the specified document version.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_comments::DescribeCommentsOutput::marker): <p>The marker for the next set of results. This marker was received from a previous call.</p>
     /// - On failure, responds with [`SdkError<DescribeCommentsError>`](crate::operation::describe_comments::DescribeCommentsError)
     pub fn describe_comments(&self) -> crate::operation::describe_comments::builders::DescribeCommentsFluentBuilder {

@@ -83,7 +83,7 @@ pub fn de_get_bucket_notification_configuration(
             s if s.matches("CloudFunctionConfiguration") /* LambdaFunctionConfigurations com.amazonaws.s3.synthetic#GetBucketNotificationConfigurationOutput$LambdaFunctionConfigurations */ =>  {
                 let var_3 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::LambdaFunctionConfiguration>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::LambdaFunctionConfiguration>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_4 = builder.lambda_function_configurations.take().unwrap_or_default();
                             list_4.push(
                                 crate::protocol_serde::shape_lambda_function_configuration::de_lambda_function_configuration(&mut tag)
@@ -100,7 +100,7 @@ pub fn de_get_bucket_notification_configuration(
             s if s.matches("TopicConfiguration") /* TopicConfigurations com.amazonaws.s3.synthetic#GetBucketNotificationConfigurationOutput$TopicConfigurations */ =>  {
                 let var_5 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::TopicConfiguration>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::TopicConfiguration>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_6 = builder.topic_configurations.take().unwrap_or_default();
                             list_6.push(
                                 crate::protocol_serde::shape_topic_configuration::de_topic_configuration(&mut tag)
@@ -117,7 +117,7 @@ pub fn de_get_bucket_notification_configuration(
             s if s.matches("QueueConfiguration") /* QueueConfigurations com.amazonaws.s3.synthetic#GetBucketNotificationConfigurationOutput$QueueConfigurations */ =>  {
                 let var_7 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::QueueConfiguration>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::QueueConfiguration>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_8 = builder.queue_configurations.take().unwrap_or_default();
                             list_8.push(
                                 crate::protocol_serde::shape_queue_configuration::de_queue_configuration(&mut tag)

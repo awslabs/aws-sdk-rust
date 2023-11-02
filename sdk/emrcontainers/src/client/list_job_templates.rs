@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder::set_max_results):<br>required: **false**<br><p> The maximum number of job templates that can be listed.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder::set_next_token):<br>required: **false**<br><p> The token for the next set of job templates to return.</p><br>
     /// - On success, responds with [`ListJobTemplatesOutput`](crate::operation::list_job_templates::ListJobTemplatesOutput) with field(s):
-    ///   - [`templates(Option<Vec<JobTemplate>>)`](crate::operation::list_job_templates::ListJobTemplatesOutput::templates): <p>This output lists information about the specified job templates.</p>
+    ///   - [`templates(Option<Vec::<JobTemplate>>)`](crate::operation::list_job_templates::ListJobTemplatesOutput::templates): <p>This output lists information about the specified job templates.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_job_templates::ListJobTemplatesOutput::next_token): <p> This output displays the token for the next set of job templates.</p>
     /// - On failure, responds with [`SdkError<ListJobTemplatesError>`](crate::operation::list_job_templates::ListJobTemplatesError)
     pub fn list_job_templates(&self) -> crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder {

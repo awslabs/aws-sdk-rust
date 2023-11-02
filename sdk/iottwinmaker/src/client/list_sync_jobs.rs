@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_sync_jobs::builders::ListSyncJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_sync_jobs::builders::ListSyncJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return at one time. The default is 50.</p>  <p>Valid Range: Minimum value of 0. Maximum value of 200.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_sync_jobs::builders::ListSyncJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_sync_jobs::builders::ListSyncJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>The string that specifies the next page of results.</p><br>
     /// - On success, responds with [`ListSyncJobsOutput`](crate::operation::list_sync_jobs::ListSyncJobsOutput) with field(s):
-    ///   - [`sync_job_summaries(Option<Vec<SyncJobSummary>>)`](crate::operation::list_sync_jobs::ListSyncJobsOutput::sync_job_summaries): <p>The listed SyncJob summaries.</p>
+    ///   - [`sync_job_summaries(Option<Vec::<SyncJobSummary>>)`](crate::operation::list_sync_jobs::ListSyncJobsOutput::sync_job_summaries): <p>The listed SyncJob summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_sync_jobs::ListSyncJobsOutput::next_token): <p>The string that specifies the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListSyncJobsError>`](crate::operation::list_sync_jobs::ListSyncJobsError)
     pub fn list_sync_jobs(&self) -> crate::operation::list_sync_jobs::builders::ListSyncJobsFluentBuilder {

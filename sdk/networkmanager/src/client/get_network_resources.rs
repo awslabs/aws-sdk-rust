@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::get_network_resources::builders::GetNetworkResourcesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_network_resources::builders::GetNetworkResourcesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_network_resources::builders::GetNetworkResourcesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_network_resources::builders::GetNetworkResourcesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
     /// - On success, responds with [`GetNetworkResourcesOutput`](crate::operation::get_network_resources::GetNetworkResourcesOutput) with field(s):
-    ///   - [`network_resources(Option<Vec<NetworkResource>>)`](crate::operation::get_network_resources::GetNetworkResourcesOutput::network_resources): <p>The network resources.</p>
+    ///   - [`network_resources(Option<Vec::<NetworkResource>>)`](crate::operation::get_network_resources::GetNetworkResourcesOutput::network_resources): <p>The network resources.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_network_resources::GetNetworkResourcesOutput::next_token): <p>The token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<GetNetworkResourcesError>`](crate::operation::get_network_resources::GetNetworkResourcesError)
     pub fn get_network_resources(&self) -> crate::operation::get_network_resources::builders::GetNetworkResourcesFluentBuilder {

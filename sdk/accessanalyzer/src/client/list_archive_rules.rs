@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_archive_rules::builders::ListArchiveRulesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_archive_rules::builders::ListArchiveRulesFluentBuilder::set_next_token):<br>required: **false**<br><p>A token used for pagination of results returned.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_archive_rules::builders::ListArchiveRulesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_archive_rules::builders::ListArchiveRulesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the request.</p><br>
     /// - On success, responds with [`ListArchiveRulesOutput`](crate::operation::list_archive_rules::ListArchiveRulesOutput) with field(s):
-    ///   - [`archive_rules(Vec<ArchiveRuleSummary>)`](crate::operation::list_archive_rules::ListArchiveRulesOutput::archive_rules): <p>A list of archive rules created for the specified analyzer.</p>
+    ///   - [`archive_rules(Vec::<ArchiveRuleSummary>)`](crate::operation::list_archive_rules::ListArchiveRulesOutput::archive_rules): <p>A list of archive rules created for the specified analyzer.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_archive_rules::ListArchiveRulesOutput::next_token): <p>A token used for pagination of results returned.</p>
     /// - On failure, responds with [`SdkError<ListArchiveRulesError>`](crate::operation::list_archive_rules::ListArchiveRulesError)
     pub fn list_archive_rules(&self) -> crate::operation::list_archive_rules::builders::ListArchiveRulesFluentBuilder {

@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`global_table_name(impl Into<String>)`](crate::operation::describe_global_table_settings::builders::DescribeGlobalTableSettingsFluentBuilder::global_table_name) / [`set_global_table_name(Option<String>)`](crate::operation::describe_global_table_settings::builders::DescribeGlobalTableSettingsFluentBuilder::set_global_table_name):<br>required: **true**<br><p>The name of the global table to describe.</p><br>
     /// - On success, responds with [`DescribeGlobalTableSettingsOutput`](crate::operation::describe_global_table_settings::DescribeGlobalTableSettingsOutput) with field(s):
     ///   - [`global_table_name(Option<String>)`](crate::operation::describe_global_table_settings::DescribeGlobalTableSettingsOutput::global_table_name): <p>The name of the global table.</p>
-    ///   - [`replica_settings(Option<Vec<ReplicaSettingsDescription>>)`](crate::operation::describe_global_table_settings::DescribeGlobalTableSettingsOutput::replica_settings): <p>The Region-specific settings for the global table.</p>
+    ///   - [`replica_settings(Option<Vec::<ReplicaSettingsDescription>>)`](crate::operation::describe_global_table_settings::DescribeGlobalTableSettingsOutput::replica_settings): <p>The Region-specific settings for the global table.</p>
     /// - On failure, responds with [`SdkError<DescribeGlobalTableSettingsError>`](crate::operation::describe_global_table_settings::DescribeGlobalTableSettingsError)
     pub fn describe_global_table_settings(
         &self,

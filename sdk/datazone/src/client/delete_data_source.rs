@@ -18,7 +18,7 @@ impl super::Client {
     ///   - [`configuration(Option<DataSourceConfigurationOutput>)`](crate::operation::delete_data_source::DeleteDataSourceOutput::configuration): <p>The configuration of the data source that is deleted.</p>
     ///   - [`enable_setting(Option<EnableSetting>)`](crate::operation::delete_data_source::DeleteDataSourceOutput::enable_setting): <p>The enable setting of the data source that specifies whether the data source is enabled or disabled.</p>
     ///   - [`publish_on_import(Option<bool>)`](crate::operation::delete_data_source::DeleteDataSourceOutput::publish_on_import): <p>Specifies whether the assets that this data source creates in the inventory are to be also automatically published to the catalog.</p>
-    ///   - [`asset_forms_output(Option<Vec<FormOutput>>)`](crate::operation::delete_data_source::DeleteDataSourceOutput::asset_forms_output): <p>The asset data forms associated with this data source.</p>
+    ///   - [`asset_forms_output(Option<Vec::<FormOutput>>)`](crate::operation::delete_data_source::DeleteDataSourceOutput::asset_forms_output): <p>The asset data forms associated with this data source.</p>
     ///   - [`schedule(Option<ScheduleConfiguration>)`](crate::operation::delete_data_source::DeleteDataSourceOutput::schedule): <p>The schedule of runs for this data source.</p>
     ///   - [`last_run_status(Option<DataSourceRunStatus>)`](crate::operation::delete_data_source::DeleteDataSourceOutput::last_run_status): <p>The status of the last run of this data source.</p>
     ///   - [`last_run_at(Option<DateTime>)`](crate::operation::delete_data_source::DeleteDataSourceOutput::last_run_at): <p>The timestamp of when the data source was last run.</p>

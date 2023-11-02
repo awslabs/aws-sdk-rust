@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_rotations::builders::ListRotationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_rotations::builders::ListRotationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p><br>
     /// - On success, responds with [`ListRotationsOutput`](crate::operation::list_rotations::ListRotationsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_rotations::ListRotationsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    ///   - [`rotations(Vec<Rotation>)`](crate::operation::list_rotations::ListRotationsOutput::rotations): <p>Information about rotations that meet the filter criteria.</p>
+    ///   - [`rotations(Vec::<Rotation>)`](crate::operation::list_rotations::ListRotationsOutput::rotations): <p>Information about rotations that meet the filter criteria.</p>
     /// - On failure, responds with [`SdkError<ListRotationsError>`](crate::operation::list_rotations::ListRotationsError)
     pub fn list_rotations(&self) -> crate::operation::list_rotations::builders::ListRotationsFluentBuilder {
         crate::operation::list_rotations::builders::ListRotationsFluentBuilder::new(self.handle.clone())

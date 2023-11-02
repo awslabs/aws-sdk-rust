@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_data_views::builders::ListDataViewsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_data_views::builders::ListDataViewsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results per page.</p><br>
     /// - On success, responds with [`ListDataViewsOutput`](crate::operation::list_data_views::ListDataViewsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_views::ListDataViewsOutput::next_token): <p>A token that indicates where a results page should begin.</p>
-    ///   - [`data_views(Option<Vec<DataViewSummary>>)`](crate::operation::list_data_views::ListDataViewsOutput::data_views): <p>A list of Dataviews.</p>
+    ///   - [`data_views(Option<Vec::<DataViewSummary>>)`](crate::operation::list_data_views::ListDataViewsOutput::data_views): <p>A list of Dataviews.</p>
     /// - On failure, responds with [`SdkError<ListDataViewsError>`](crate::operation::list_data_views::ListDataViewsError)
     pub fn list_data_views(&self) -> crate::operation::list_data_views::builders::ListDataViewsFluentBuilder {
         crate::operation::list_data_views::builders::ListDataViewsFluentBuilder::new(self.handle.clone())

@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder::set_next_token):<br>required: **false**<br>Placeholder documentation for __string<br>
     /// - On success, responds with [`DescribeScheduleOutput`](crate::operation::describe_schedule::DescribeScheduleOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::describe_schedule::DescribeScheduleOutput::next_token): The next token; for use in pagination.
-    ///   - [`schedule_actions(Option<Vec<ScheduleAction>>)`](crate::operation::describe_schedule::DescribeScheduleOutput::schedule_actions): The list of actions in the schedule.
+    ///   - [`schedule_actions(Option<Vec::<ScheduleAction>>)`](crate::operation::describe_schedule::DescribeScheduleOutput::schedule_actions): The list of actions in the schedule.
     /// - On failure, responds with [`SdkError<DescribeScheduleError>`](crate::operation::describe_schedule::DescribeScheduleError)
     pub fn describe_schedule(&self) -> crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder {
         crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder::new(self.handle.clone())

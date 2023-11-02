@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`deployment_id(impl Into<String>)`](crate::operation::list_service_instance_outputs::builders::ListServiceInstanceOutputsFluentBuilder::deployment_id) / [`set_deployment_id(Option<String>)`](crate::operation::list_service_instance_outputs::builders::ListServiceInstanceOutputsFluentBuilder::set_deployment_id):<br>required: **false**<br><p>The ID of the deployment whose outputs you want.</p><br>
     /// - On success, responds with [`ListServiceInstanceOutputsOutput`](crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsOutput::next_token): <p>A token that indicates the location of the next output in the array of outputs, after the current requested list of outputs.</p>
-    ///   - [`outputs(Vec<Output>)`](crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsOutput::outputs): <p>An array of service instance Infrastructure as Code (IaC) outputs.</p>
+    ///   - [`outputs(Vec::<Output>)`](crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsOutput::outputs): <p>An array of service instance Infrastructure as Code (IaC) outputs.</p>
     /// - On failure, responds with [`SdkError<ListServiceInstanceOutputsError>`](crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsError)
     pub fn list_service_instance_outputs(
         &self,

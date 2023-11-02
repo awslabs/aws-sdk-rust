@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_group_versions::builders::ListGroupVersionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_group_versions::builders::ListGroupVersionsFluentBuilder::set_next_token):<br>required: **false**<br>The token for the next set of results, or ''null'' if there are no additional results.<br>
     /// - On success, responds with [`ListGroupVersionsOutput`](crate::operation::list_group_versions::ListGroupVersionsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_group_versions::ListGroupVersionsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
-    ///   - [`versions(Option<Vec<VersionInformation>>)`](crate::operation::list_group_versions::ListGroupVersionsOutput::versions): Information about a version.
+    ///   - [`versions(Option<Vec::<VersionInformation>>)`](crate::operation::list_group_versions::ListGroupVersionsOutput::versions): Information about a version.
     /// - On failure, responds with [`SdkError<ListGroupVersionsError>`](crate::operation::list_group_versions::ListGroupVersionsError)
     pub fn list_group_versions(&self) -> crate::operation::list_group_versions::builders::ListGroupVersionsFluentBuilder {
         crate::operation::list_group_versions::builders::ListGroupVersionsFluentBuilder::new(self.handle.clone())

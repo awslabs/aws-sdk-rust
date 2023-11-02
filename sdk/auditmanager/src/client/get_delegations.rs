@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_delegations::builders::GetDelegationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_delegations::builders::GetDelegationsFluentBuilder::set_next_token):<br>required: **false**<br><p> The pagination token that's used to fetch the next set of results. </p><br>
     ///   - [`max_results(i32)`](crate::operation::get_delegations::builders::GetDelegationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_delegations::builders::GetDelegationsFluentBuilder::set_max_results):<br>required: **false**<br><p> Represents the maximum number of results on a page or for an API request call. </p><br>
     /// - On success, responds with [`GetDelegationsOutput`](crate::operation::get_delegations::GetDelegationsOutput) with field(s):
-    ///   - [`delegations(Option<Vec<DelegationMetadata>>)`](crate::operation::get_delegations::GetDelegationsOutput::delegations): <p> The list of delegations that the <code>GetDelegations</code> API returned. </p>
+    ///   - [`delegations(Option<Vec::<DelegationMetadata>>)`](crate::operation::get_delegations::GetDelegationsOutput::delegations): <p> The list of delegations that the <code>GetDelegations</code> API returned. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_delegations::GetDelegationsOutput::next_token): <p> The pagination token that's used to fetch the next set of results. </p>
     /// - On failure, responds with [`SdkError<GetDelegationsError>`](crate::operation::get_delegations::GetDelegationsError)
     pub fn get_delegations(&self) -> crate::operation::get_delegations::builders::GetDelegationsFluentBuilder {

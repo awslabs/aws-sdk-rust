@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_pricing_rules::builders::ListPricingRulesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_pricing_rules::builders::ListPricingRulesFluentBuilder::set_next_token):<br>required: **false**<br><p> The pagination token that's used on subsequent call to get pricing rules. </p><br>
     /// - On success, responds with [`ListPricingRulesOutput`](crate::operation::list_pricing_rules::ListPricingRulesOutput) with field(s):
     ///   - [`billing_period(Option<String>)`](crate::operation::list_pricing_rules::ListPricingRulesOutput::billing_period): <p> The billing period for which the described pricing rules are applicable. </p>
-    ///   - [`pricing_rules(Option<Vec<PricingRuleListElement>>)`](crate::operation::list_pricing_rules::ListPricingRulesOutput::pricing_rules): <p> A list containing the described pricing rules. </p>
+    ///   - [`pricing_rules(Option<Vec::<PricingRuleListElement>>)`](crate::operation::list_pricing_rules::ListPricingRulesOutput::pricing_rules): <p> A list containing the described pricing rules. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_pricing_rules::ListPricingRulesOutput::next_token): <p> The pagination token that's used on subsequent calls to get pricing rules. </p>
     /// - On failure, responds with [`SdkError<ListPricingRulesError>`](crate::operation::list_pricing_rules::ListPricingRulesError)
     pub fn list_pricing_rules(&self) -> crate::operation::list_pricing_rules::builders::ListPricingRulesFluentBuilder {

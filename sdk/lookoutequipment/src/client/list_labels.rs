@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_labels::builders::ListLabelsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_labels::builders::ListLabelsFluentBuilder::set_max_results):<br>required: **false**<br><p> Specifies the maximum number of labels to list. </p><br>
     /// - On success, responds with [`ListLabelsOutput`](crate::operation::list_labels::ListLabelsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_labels::ListLabelsOutput::next_token): <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
-    ///   - [`label_summaries(Option<Vec<LabelSummary>>)`](crate::operation::list_labels::ListLabelsOutput::label_summaries): <p> A summary of the items in the label group. </p>
+    ///   - [`label_summaries(Option<Vec::<LabelSummary>>)`](crate::operation::list_labels::ListLabelsOutput::label_summaries): <p> A summary of the items in the label group. </p>
     /// - On failure, responds with [`SdkError<ListLabelsError>`](crate::operation::list_labels::ListLabelsError)
     pub fn list_labels(&self) -> crate::operation::list_labels::builders::ListLabelsFluentBuilder {
         crate::operation::list_labels::builders::ListLabelsFluentBuilder::new(self.handle.clone())

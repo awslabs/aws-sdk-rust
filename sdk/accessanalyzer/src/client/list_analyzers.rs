@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the response.</p><br>
     ///   - [`r#type(Type)`](crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::type) / [`set_type(Option<Type>)`](crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::set_type):<br>required: **false**<br><p>The type of analyzer.</p><br>
     /// - On success, responds with [`ListAnalyzersOutput`](crate::operation::list_analyzers::ListAnalyzersOutput) with field(s):
-    ///   - [`analyzers(Vec<AnalyzerSummary>)`](crate::operation::list_analyzers::ListAnalyzersOutput::analyzers): <p>The analyzers retrieved.</p>
+    ///   - [`analyzers(Vec::<AnalyzerSummary>)`](crate::operation::list_analyzers::ListAnalyzersOutput::analyzers): <p>The analyzers retrieved.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_analyzers::ListAnalyzersOutput::next_token): <p>A token used for pagination of results returned.</p>
     /// - On failure, responds with [`SdkError<ListAnalyzersError>`](crate::operation::list_analyzers::ListAnalyzersError)
     pub fn list_analyzers(&self) -> crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder {

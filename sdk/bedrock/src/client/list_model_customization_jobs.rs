@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`sort_order(SortOrder)`](crate::operation::list_model_customization_jobs::builders::ListModelCustomizationJobsFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_model_customization_jobs::builders::ListModelCustomizationJobsFluentBuilder::set_sort_order):<br>required: **false**<br><p>The sort order of the results.</p><br>
     /// - On success, responds with [`ListModelCustomizationJobsOutput`](crate::operation::list_model_customization_jobs::ListModelCustomizationJobsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_model_customization_jobs::ListModelCustomizationJobsOutput::next_token): <p>Page continuation token to use in the next request.</p>
-    ///   - [`model_customization_job_summaries(Option<Vec<ModelCustomizationJobSummary>>)`](crate::operation::list_model_customization_jobs::ListModelCustomizationJobsOutput::model_customization_job_summaries): <p>Job summaries.</p>
+    ///   - [`model_customization_job_summaries(Option<Vec::<ModelCustomizationJobSummary>>)`](crate::operation::list_model_customization_jobs::ListModelCustomizationJobsOutput::model_customization_job_summaries): <p>Job summaries.</p>
     /// - On failure, responds with [`SdkError<ListModelCustomizationJobsError>`](crate::operation::list_model_customization_jobs::ListModelCustomizationJobsError)
     pub fn list_model_customization_jobs(
         &self,

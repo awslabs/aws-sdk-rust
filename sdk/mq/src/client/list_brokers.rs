@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_brokers::builders::ListBrokersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_brokers::builders::ListBrokersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_brokers::builders::ListBrokersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_brokers::builders::ListBrokersFluentBuilder::set_next_token):<br>required: **false**<br><p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p><br>
     /// - On success, responds with [`ListBrokersOutput`](crate::operation::list_brokers::ListBrokersOutput) with field(s):
-    ///   - [`broker_summaries(Option<Vec<BrokerSummary>>)`](crate::operation::list_brokers::ListBrokersOutput::broker_summaries): <p>A list of information about all brokers.</p>
+    ///   - [`broker_summaries(Option<Vec::<BrokerSummary>>)`](crate::operation::list_brokers::ListBrokersOutput::broker_summaries): <p>A list of information about all brokers.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_brokers::ListBrokersOutput::next_token): <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     /// - On failure, responds with [`SdkError<ListBrokersError>`](crate::operation::list_brokers::ListBrokersError)
     pub fn list_brokers(&self) -> crate::operation::list_brokers::builders::ListBrokersFluentBuilder {

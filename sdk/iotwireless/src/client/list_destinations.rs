@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_destinations::builders::ListDestinationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_destinations::builders::ListDestinationsFluentBuilder::set_next_token):<br>required: **false**<br><p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p><br>
     /// - On success, responds with [`ListDestinationsOutput`](crate::operation::list_destinations::ListDestinationsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_destinations::ListDestinationsOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    ///   - [`destination_list(Option<Vec<Destinations>>)`](crate::operation::list_destinations::ListDestinationsOutput::destination_list): <p>The list of destinations.</p>
+    ///   - [`destination_list(Option<Vec::<Destinations>>)`](crate::operation::list_destinations::ListDestinationsOutput::destination_list): <p>The list of destinations.</p>
     /// - On failure, responds with [`SdkError<ListDestinationsError>`](crate::operation::list_destinations::ListDestinationsError)
     pub fn list_destinations(&self) -> crate::operation::list_destinations::builders::ListDestinationsFluentBuilder {
         crate::operation::list_destinations::builders::ListDestinationsFluentBuilder::new(self.handle.clone())

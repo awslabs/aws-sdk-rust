@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`resource_id(impl Into<String>)`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::set_resource_id):<br>required: **true**<br><p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p><br>
     /// - On success, responds with [`DescribeTagsOutput`](crate::operation::describe_tags::DescribeTagsOutput) with field(s):
-    ///   - [`tag_list(Option<Vec<Tag>>)`](crate::operation::describe_tags::DescribeTagsOutput::tag_list): <p>The tags.</p>
+    ///   - [`tag_list(Option<Vec::<Tag>>)`](crate::operation::describe_tags::DescribeTagsOutput::tag_list): <p>The tags.</p>
     /// - On failure, responds with [`SdkError<DescribeTagsError>`](crate::operation::describe_tags::DescribeTagsError)
     pub fn describe_tags(&self) -> crate::operation::describe_tags::builders::DescribeTagsFluentBuilder {
         crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::new(self.handle.clone())

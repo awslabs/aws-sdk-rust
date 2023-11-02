@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopWorkspaces`](crate::operation::stop_workspaces::builders::StopWorkspacesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`stop_workspace_requests(StopRequest)`](crate::operation::stop_workspaces::builders::StopWorkspacesFluentBuilder::stop_workspace_requests) / [`set_stop_workspace_requests(Option<Vec<StopRequest>>)`](crate::operation::stop_workspaces::builders::StopWorkspacesFluentBuilder::set_stop_workspace_requests):<br>required: **true**<br><p>The WorkSpaces to stop. You can specify up to 25 WorkSpaces.</p><br>
+    ///   - [`stop_workspace_requests(StopRequest)`](crate::operation::stop_workspaces::builders::StopWorkspacesFluentBuilder::stop_workspace_requests) / [`set_stop_workspace_requests(Option<Vec::<StopRequest>>)`](crate::operation::stop_workspaces::builders::StopWorkspacesFluentBuilder::set_stop_workspace_requests):<br>required: **true**<br><p>The WorkSpaces to stop. You can specify up to 25 WorkSpaces.</p><br>
     /// - On success, responds with [`StopWorkspacesOutput`](crate::operation::stop_workspaces::StopWorkspacesOutput) with field(s):
-    ///   - [`failed_requests(Option<Vec<FailedWorkspaceChangeRequest>>)`](crate::operation::stop_workspaces::StopWorkspacesOutput::failed_requests): <p>Information about the WorkSpaces that could not be stopped.</p>
+    ///   - [`failed_requests(Option<Vec::<FailedWorkspaceChangeRequest>>)`](crate::operation::stop_workspaces::StopWorkspacesOutput::failed_requests): <p>Information about the WorkSpaces that could not be stopped.</p>
     /// - On failure, responds with [`SdkError<StopWorkspacesError>`](crate::operation::stop_workspaces::StopWorkspacesError)
     pub fn stop_workspaces(&self) -> crate::operation::stop_workspaces::builders::StopWorkspacesFluentBuilder {
         crate::operation::stop_workspaces::builders::StopWorkspacesFluentBuilder::new(self.handle.clone())

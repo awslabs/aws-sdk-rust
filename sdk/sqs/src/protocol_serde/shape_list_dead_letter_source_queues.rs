@@ -95,7 +95,7 @@ pub fn de_list_dead_letter_source_queues(
             s if s.matches("QueueUrl") /* queueUrls com.amazonaws.sqs.synthetic#ListDeadLetterSourceQueuesOutput$queueUrls */ =>  {
                 let var_1 =
                     Some(
-                        Result::<::std::vec::Vec<::std::string::String>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<::std::string::String>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_2 = builder.queue_urls.take().unwrap_or_default();
                             list_2.push(
                                 Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(

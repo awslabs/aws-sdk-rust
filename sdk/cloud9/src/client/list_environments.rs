@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of environments to get identifiers for.</p><br>
     /// - On success, responds with [`ListEnvironmentsOutput`](crate::operation::list_environments::ListEnvironmentsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_environments::ListEnvironmentsOutput::next_token): <p>If there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
-    ///   - [`environment_ids(Option<Vec<String>>)`](crate::operation::list_environments::ListEnvironmentsOutput::environment_ids): <p>The list of environment identifiers.</p>
+    ///   - [`environment_ids(Option<Vec::<String>>)`](crate::operation::list_environments::ListEnvironmentsOutput::environment_ids): <p>The list of environment identifiers.</p>
     /// - On failure, responds with [`SdkError<ListEnvironmentsError>`](crate::operation::list_environments::ListEnvironmentsError)
     pub fn list_environments(&self) -> crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder {
         crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::new(self.handle.clone())

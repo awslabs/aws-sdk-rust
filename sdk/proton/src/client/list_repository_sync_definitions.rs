@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates the location of the next repository sync definition in the array of repository sync definitions, after the list of repository sync definitions previously requested.</p><br>
     /// - On success, responds with [`ListRepositorySyncDefinitionsOutput`](crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsOutput::next_token): <p>A token that indicates the location of the next repository sync definition in the array of repository sync definitions, after the current requested list of repository sync definitions.</p>
-    ///   - [`sync_definitions(Vec<RepositorySyncDefinition>)`](crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsOutput::sync_definitions): <p>An array of repository sync definitions.</p>
+    ///   - [`sync_definitions(Vec::<RepositorySyncDefinition>)`](crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsOutput::sync_definitions): <p>An array of repository sync definitions.</p>
     /// - On failure, responds with [`SdkError<ListRepositorySyncDefinitionsError>`](crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsError)
     pub fn list_repository_sync_definitions(
         &self,

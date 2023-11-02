@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`import_status(ImportStatus)`](crate::operation::list_imports::builders::ListImportsFluentBuilder::import_status) / [`set_import_status(Option<ImportStatus>)`](crate::operation::list_imports::builders::ListImportsFluentBuilder::set_import_status):<br>required: **false**<br><p> The status of the import. </p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_imports::builders::ListImportsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_imports::builders::ListImportsFluentBuilder::set_next_token):<br>required: **false**<br><p> A token you can use to get the next page of import results. </p><br>
     /// - On success, responds with [`ListImportsOutput`](crate::operation::list_imports::ListImportsOutput) with field(s):
-    ///   - [`imports(Option<Vec<ImportsListItem>>)`](crate::operation::list_imports::ListImportsOutput::imports): <p> The list of returned imports. </p>
+    ///   - [`imports(Option<Vec::<ImportsListItem>>)`](crate::operation::list_imports::ListImportsOutput::imports): <p> The list of returned imports. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_imports::ListImportsOutput::next_token): <p> A token you can use to get the next page of import results. </p>
     /// - On failure, responds with [`SdkError<ListImportsError>`](crate::operation::list_imports::ListImportsError)
     pub fn list_imports(&self) -> crate::operation::list_imports::builders::ListImportsFluentBuilder {

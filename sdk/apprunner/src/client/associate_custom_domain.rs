@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`dns_target(String)`](crate::operation::associate_custom_domain::AssociateCustomDomainOutput::dns_target): <p>The App Runner subdomain of the App Runner service. The custom domain name is mapped to this target name.</p>
     ///   - [`service_arn(String)`](crate::operation::associate_custom_domain::AssociateCustomDomainOutput::service_arn): <p>The Amazon Resource Name (ARN) of the App Runner service with which a custom domain name is associated.</p>
     ///   - [`custom_domain(Option<CustomDomain>)`](crate::operation::associate_custom_domain::AssociateCustomDomainOutput::custom_domain): <p>A description of the domain name that's being associated.</p>
-    ///   - [`vpc_dns_targets(Vec<VpcDnsTarget>)`](crate::operation::associate_custom_domain::AssociateCustomDomainOutput::vpc_dns_targets): <p>DNS Target records for the custom domains of this Amazon VPC. </p>
+    ///   - [`vpc_dns_targets(Vec::<VpcDnsTarget>)`](crate::operation::associate_custom_domain::AssociateCustomDomainOutput::vpc_dns_targets): <p>DNS Target records for the custom domains of this Amazon VPC. </p>
     /// - On failure, responds with [`SdkError<AssociateCustomDomainError>`](crate::operation::associate_custom_domain::AssociateCustomDomainError)
     pub fn associate_custom_domain(&self) -> crate::operation::associate_custom_domain::builders::AssociateCustomDomainFluentBuilder {
         crate::operation::associate_custom_domain::builders::AssociateCustomDomainFluentBuilder::new(self.handle.clone())

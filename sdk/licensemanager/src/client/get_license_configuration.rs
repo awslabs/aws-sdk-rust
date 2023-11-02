@@ -10,16 +10,16 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::get_license_configuration::GetLicenseConfigurationOutput::name): <p>Name of the license configuration.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_license_configuration::GetLicenseConfigurationOutput::description): <p>Description of the license configuration.</p>
     ///   - [`license_counting_type(Option<LicenseCountingType>)`](crate::operation::get_license_configuration::GetLicenseConfigurationOutput::license_counting_type): <p>Dimension for which the licenses are counted.</p>
-    ///   - [`license_rules(Option<Vec<String>>)`](crate::operation::get_license_configuration::GetLicenseConfigurationOutput::license_rules): <p>License rules.</p>
+    ///   - [`license_rules(Option<Vec::<String>>)`](crate::operation::get_license_configuration::GetLicenseConfigurationOutput::license_rules): <p>License rules.</p>
     ///   - [`license_count(Option<i64>)`](crate::operation::get_license_configuration::GetLicenseConfigurationOutput::license_count): <p>Number of available licenses.</p>
     ///   - [`license_count_hard_limit(Option<bool>)`](crate::operation::get_license_configuration::GetLicenseConfigurationOutput::license_count_hard_limit): <p>Sets the number of available licenses as a hard limit.</p>
     ///   - [`consumed_licenses(Option<i64>)`](crate::operation::get_license_configuration::GetLicenseConfigurationOutput::consumed_licenses): <p>Number of licenses assigned to resources.</p>
     ///   - [`status(Option<String>)`](crate::operation::get_license_configuration::GetLicenseConfigurationOutput::status): <p>License configuration status.</p>
     ///   - [`owner_account_id(Option<String>)`](crate::operation::get_license_configuration::GetLicenseConfigurationOutput::owner_account_id): <p>Account ID of the owner of the license configuration.</p>
-    ///   - [`consumed_license_summary_list(Option<Vec<ConsumedLicenseSummary>>)`](crate::operation::get_license_configuration::GetLicenseConfigurationOutput::consumed_license_summary_list): <p>Summaries of the licenses consumed by resources.</p>
-    ///   - [`managed_resource_summary_list(Option<Vec<ManagedResourceSummary>>)`](crate::operation::get_license_configuration::GetLicenseConfigurationOutput::managed_resource_summary_list): <p>Summaries of the managed resources.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::get_license_configuration::GetLicenseConfigurationOutput::tags): <p>Tags for the license configuration.</p>
-    ///   - [`product_information_list(Option<Vec<ProductInformation>>)`](crate::operation::get_license_configuration::GetLicenseConfigurationOutput::product_information_list): <p>Product information.</p>
+    ///   - [`consumed_license_summary_list(Option<Vec::<ConsumedLicenseSummary>>)`](crate::operation::get_license_configuration::GetLicenseConfigurationOutput::consumed_license_summary_list): <p>Summaries of the licenses consumed by resources.</p>
+    ///   - [`managed_resource_summary_list(Option<Vec::<ManagedResourceSummary>>)`](crate::operation::get_license_configuration::GetLicenseConfigurationOutput::managed_resource_summary_list): <p>Summaries of the managed resources.</p>
+    ///   - [`tags(Option<Vec::<Tag>>)`](crate::operation::get_license_configuration::GetLicenseConfigurationOutput::tags): <p>Tags for the license configuration.</p>
+    ///   - [`product_information_list(Option<Vec::<ProductInformation>>)`](crate::operation::get_license_configuration::GetLicenseConfigurationOutput::product_information_list): <p>Product information.</p>
     ///   - [`automated_discovery_information(Option<AutomatedDiscoveryInformation>)`](crate::operation::get_license_configuration::GetLicenseConfigurationOutput::automated_discovery_information): <p>Automated discovery information.</p>
     ///   - [`disassociate_when_not_found(Option<bool>)`](crate::operation::get_license_configuration::GetLicenseConfigurationOutput::disassociate_when_not_found): <p>When true, disassociates a resource when software is uninstalled.</p>
     /// - On failure, responds with [`SdkError<GetLicenseConfigurationError>`](crate::operation::get_license_configuration::GetLicenseConfigurationError)

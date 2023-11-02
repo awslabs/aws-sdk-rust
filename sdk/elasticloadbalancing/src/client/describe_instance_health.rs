@@ -4,9 +4,9 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`load_balancer_name(impl Into<String>)`](crate::operation::describe_instance_health::builders::DescribeInstanceHealthFluentBuilder::load_balancer_name) / [`set_load_balancer_name(Option<String>)`](crate::operation::describe_instance_health::builders::DescribeInstanceHealthFluentBuilder::set_load_balancer_name):<br>required: **true**<br><p>The name of the load balancer.</p><br>
-    ///   - [`instances(Instance)`](crate::operation::describe_instance_health::builders::DescribeInstanceHealthFluentBuilder::instances) / [`set_instances(Option<Vec<Instance>>)`](crate::operation::describe_instance_health::builders::DescribeInstanceHealthFluentBuilder::set_instances):<br>required: **false**<br><p>The IDs of the instances.</p><br>
+    ///   - [`instances(Instance)`](crate::operation::describe_instance_health::builders::DescribeInstanceHealthFluentBuilder::instances) / [`set_instances(Option<Vec::<Instance>>)`](crate::operation::describe_instance_health::builders::DescribeInstanceHealthFluentBuilder::set_instances):<br>required: **false**<br><p>The IDs of the instances.</p><br>
     /// - On success, responds with [`DescribeInstanceHealthOutput`](crate::operation::describe_instance_health::DescribeInstanceHealthOutput) with field(s):
-    ///   - [`instance_states(Option<Vec<InstanceState>>)`](crate::operation::describe_instance_health::DescribeInstanceHealthOutput::instance_states): <p>Information about the health of the instances.</p>
+    ///   - [`instance_states(Option<Vec::<InstanceState>>)`](crate::operation::describe_instance_health::DescribeInstanceHealthOutput::instance_states): <p>Information about the health of the instances.</p>
     /// - On failure, responds with [`SdkError<DescribeInstanceHealthError>`](crate::operation::describe_instance_health::DescribeInstanceHealthError)
     pub fn describe_instance_health(&self) -> crate::operation::describe_instance_health::builders::DescribeInstanceHealthFluentBuilder {
         crate::operation::describe_instance_health::builders::DescribeInstanceHealthFluentBuilder::new(self.handle.clone())

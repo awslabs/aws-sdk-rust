@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_sol_network_instances::builders::ListSolNetworkInstancesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_sol_network_instances::builders::ListSolNetworkInstancesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
     /// - On success, responds with [`ListSolNetworkInstancesOutput`](crate::operation::list_sol_network_instances::ListSolNetworkInstancesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_sol_network_instances::ListSolNetworkInstancesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    ///   - [`network_instances(Option<Vec<ListSolNetworkInstanceInfo>>)`](crate::operation::list_sol_network_instances::ListSolNetworkInstancesOutput::network_instances): <p>Lists network instances.</p>
+    ///   - [`network_instances(Option<Vec::<ListSolNetworkInstanceInfo>>)`](crate::operation::list_sol_network_instances::ListSolNetworkInstancesOutput::network_instances): <p>Lists network instances.</p>
     /// - On failure, responds with [`SdkError<ListSolNetworkInstancesError>`](crate::operation::list_sol_network_instances::ListSolNetworkInstancesError)
     pub fn list_sol_network_instances(&self) -> crate::operation::list_sol_network_instances::builders::ListSolNetworkInstancesFluentBuilder {
         crate::operation::list_sol_network_instances::builders::ListSolNetworkInstancesFluentBuilder::new(self.handle.clone())

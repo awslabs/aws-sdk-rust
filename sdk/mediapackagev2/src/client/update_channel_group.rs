@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`created_at(DateTime)`](crate::operation::update_channel_group::UpdateChannelGroupOutput::created_at): <p>The date and time the channel group was created.</p>
     ///   - [`modified_at(DateTime)`](crate::operation::update_channel_group::UpdateChannelGroupOutput::modified_at): <p>The date and time the channel group was modified.</p>
     ///   - [`description(Option<String>)`](crate::operation::update_channel_group::UpdateChannelGroupOutput::description): <p>The description for your channel group.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::update_channel_group::UpdateChannelGroupOutput::tags): <p>The comma-separated list of tag key:value pairs assigned to the channel group.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::update_channel_group::UpdateChannelGroupOutput::tags): <p>The comma-separated list of tag key:value pairs assigned to the channel group.</p>
     /// - On failure, responds with [`SdkError<UpdateChannelGroupError>`](crate::operation::update_channel_group::UpdateChannelGroupError)
     pub fn update_channel_group(&self) -> crate::operation::update_channel_group::builders::UpdateChannelGroupFluentBuilder {
         crate::operation::update_channel_group::builders::UpdateChannelGroupFluentBuilder::new(self.handle.clone())

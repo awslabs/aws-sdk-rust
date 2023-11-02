@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_schedule_groups::builders::ListScheduleGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_schedule_groups::builders::ListScheduleGroupsFluentBuilder::set_max_results):<br>required: **false**<br><p>If specified, limits the number of results returned by this operation. The operation also returns a <code>NextToken</code> which you can use in a subsequent operation to retrieve the next set of results.</p><br>
     /// - On success, responds with [`ListScheduleGroupsOutput`](crate::operation::list_schedule_groups::ListScheduleGroupsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_schedule_groups::ListScheduleGroupsOutput::next_token): <p>Indicates whether there are additional results to retrieve. If the value is null, there are no more results.</p>
-    ///   - [`schedule_groups(Vec<ScheduleGroupSummary>)`](crate::operation::list_schedule_groups::ListScheduleGroupsOutput::schedule_groups): <p>The schedule groups that match the specified criteria.</p>
+    ///   - [`schedule_groups(Vec::<ScheduleGroupSummary>)`](crate::operation::list_schedule_groups::ListScheduleGroupsOutput::schedule_groups): <p>The schedule groups that match the specified criteria.</p>
     /// - On failure, responds with [`SdkError<ListScheduleGroupsError>`](crate::operation::list_schedule_groups::ListScheduleGroupsError)
     pub fn list_schedule_groups(&self) -> crate::operation::list_schedule_groups::builders::ListScheduleGroupsFluentBuilder {
         crate::operation::list_schedule_groups::builders::ListScheduleGroupsFluentBuilder::new(self.handle.clone())

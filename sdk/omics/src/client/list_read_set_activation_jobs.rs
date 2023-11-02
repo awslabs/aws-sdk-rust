@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`filter(ActivateReadSetFilter)`](crate::operation::list_read_set_activation_jobs::builders::ListReadSetActivationJobsFluentBuilder::filter) / [`set_filter(Option<ActivateReadSetFilter>)`](crate::operation::list_read_set_activation_jobs::builders::ListReadSetActivationJobsFluentBuilder::set_filter):<br>required: **false**<br><p>A filter to apply to the list.</p><br>
     /// - On success, responds with [`ListReadSetActivationJobsOutput`](crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsOutput::next_token): <p>A pagination token that's included if more results are available.</p>
-    ///   - [`activation_jobs(Option<Vec<ActivateReadSetJobItem>>)`](crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsOutput::activation_jobs): <p>A list of jobs.</p>
+    ///   - [`activation_jobs(Option<Vec::<ActivateReadSetJobItem>>)`](crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsOutput::activation_jobs): <p>A list of jobs.</p>
     /// - On failure, responds with [`SdkError<ListReadSetActivationJobsError>`](crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsError)
     pub fn list_read_set_activation_jobs(&self) -> crate::operation::list_read_set_activation_jobs::builders::ListReadSetActivationJobsFluentBuilder {
         crate::operation::list_read_set_activation_jobs::builders::ListReadSetActivationJobsFluentBuilder::new(self.handle.clone())

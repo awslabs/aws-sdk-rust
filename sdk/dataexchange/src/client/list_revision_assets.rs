@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_revision_assets::builders::ListRevisionAssetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_revision_assets::builders::ListRevisionAssetsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token value retrieved from a previous call to access the next page of results.</p><br>
     ///   - [`revision_id(impl Into<String>)`](crate::operation::list_revision_assets::builders::ListRevisionAssetsFluentBuilder::revision_id) / [`set_revision_id(Option<String>)`](crate::operation::list_revision_assets::builders::ListRevisionAssetsFluentBuilder::set_revision_id):<br>required: **true**<br><p>The unique identifier for a revision.</p><br>
     /// - On success, responds with [`ListRevisionAssetsOutput`](crate::operation::list_revision_assets::ListRevisionAssetsOutput) with field(s):
-    ///   - [`assets(Option<Vec<AssetEntry>>)`](crate::operation::list_revision_assets::ListRevisionAssetsOutput::assets): <p>The asset objects listed by the request.</p>
+    ///   - [`assets(Option<Vec::<AssetEntry>>)`](crate::operation::list_revision_assets::ListRevisionAssetsOutput::assets): <p>The asset objects listed by the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_revision_assets::ListRevisionAssetsOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListRevisionAssetsError>`](crate::operation::list_revision_assets::ListRevisionAssetsError)
     pub fn list_revision_assets(&self) -> crate::operation::list_revision_assets::builders::ListRevisionAssetsFluentBuilder {

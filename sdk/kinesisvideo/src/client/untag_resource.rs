@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_arn(impl Into<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::set_resource_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the signaling channel from which you want to remove tags.</p><br>
-    ///   - [`tag_key_list(impl Into<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::tag_key_list) / [`set_tag_key_list(Option<Vec<String>>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::set_tag_key_list):<br>required: **true**<br><p>A list of the keys of the tags that you want to remove.</p><br>
+    ///   - [`tag_key_list(impl Into<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::tag_key_list) / [`set_tag_key_list(Option<Vec::<String>>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::set_tag_key_list):<br>required: **true**<br><p>A list of the keys of the tags that you want to remove.</p><br>
     /// - On success, responds with [`UntagResourceOutput`](crate::operation::untag_resource::UntagResourceOutput)
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::operation::untag_resource::UntagResourceError)
     pub fn untag_resource(&self) -> crate::operation::untag_resource::builders::UntagResourceFluentBuilder {

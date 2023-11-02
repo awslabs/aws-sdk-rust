@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`hls_ingest(Option<HlsIngest>)`](crate::operation::update_channel::UpdateChannelOutput::hls_ingest): An HTTP Live Streaming (HLS) ingest resource configuration.
     ///   - [`id(Option<String>)`](crate::operation::update_channel::UpdateChannelOutput::id): The ID of the Channel.
     ///   - [`ingress_access_logs(Option<IngressAccessLogs>)`](crate::operation::update_channel::UpdateChannelOutput::ingress_access_logs): Configure ingress access logging.
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::update_channel::UpdateChannelOutput::tags): A collection of tags associated with a resource
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::update_channel::UpdateChannelOutput::tags): A collection of tags associated with a resource
     /// - On failure, responds with [`SdkError<UpdateChannelError>`](crate::operation::update_channel::UpdateChannelError)
     pub fn update_channel(&self) -> crate::operation::update_channel::builders::UpdateChannelFluentBuilder {
         crate::operation::update_channel::builders::UpdateChannelFluentBuilder::new(self.handle.clone())

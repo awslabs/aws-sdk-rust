@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`subscription_definition_id(impl Into<String>)`](crate::operation::list_subscription_definition_versions::builders::ListSubscriptionDefinitionVersionsFluentBuilder::subscription_definition_id) / [`set_subscription_definition_id(Option<String>)`](crate::operation::list_subscription_definition_versions::builders::ListSubscriptionDefinitionVersionsFluentBuilder::set_subscription_definition_id):<br>required: **true**<br>The ID of the subscription definition.<br>
     /// - On success, responds with [`ListSubscriptionDefinitionVersionsOutput`](crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
-    ///   - [`versions(Option<Vec<VersionInformation>>)`](crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsOutput::versions): Information about a version.
+    ///   - [`versions(Option<Vec::<VersionInformation>>)`](crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsOutput::versions): Information about a version.
     /// - On failure, responds with [`SdkError<ListSubscriptionDefinitionVersionsError>`](crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsError)
     pub fn list_subscription_definition_versions(
         &self,

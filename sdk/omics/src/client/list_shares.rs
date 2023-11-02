@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_shares::builders::ListSharesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_shares::builders::ListSharesFluentBuilder::set_next_token):<br>required: **false**<br><p> Next token returned in the response of a previous ListReadSetUploadPartsRequest call. Used to get the next page of results. </p><br>
     ///   - [`max_results(i32)`](crate::operation::list_shares::builders::ListSharesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_shares::builders::ListSharesFluentBuilder::set_max_results):<br>required: **false**<br><p> The maximum number of shares to return in one page of results. </p><br>
     /// - On success, responds with [`ListSharesOutput`](crate::operation::list_shares::ListSharesOutput) with field(s):
-    ///   - [`shares(Vec<ShareDetails>)`](crate::operation::list_shares::ListSharesOutput::shares): <p> The shares available and their meta details. </p>
+    ///   - [`shares(Vec::<ShareDetails>)`](crate::operation::list_shares::ListSharesOutput::shares): <p> The shares available and their meta details. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_shares::ListSharesOutput::next_token): <p> Next token returned in the response of a previous ListSharesResponse call. Used to get the next page of results. </p>
     /// - On failure, responds with [`SdkError<ListSharesError>`](crate::operation::list_shares::ListSharesError)
     pub fn list_shares(&self) -> crate::operation::list_shares::builders::ListSharesFluentBuilder {

@@ -11,12 +11,12 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_records::builders::ListRecordsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_records::builders::ListRecordsFluentBuilder::set_max_results):<br>required: **false**<br>The maximum number of results to be returned.<br>
     ///   - [`sync_session_token(impl Into<String>)`](crate::operation::list_records::builders::ListRecordsFluentBuilder::sync_session_token) / [`set_sync_session_token(Option<String>)`](crate::operation::list_records::builders::ListRecordsFluentBuilder::set_sync_session_token):<br>required: **false**<br>A token containing a session ID, identity ID, and expiration.<br>
     /// - On success, responds with [`ListRecordsOutput`](crate::operation::list_records::ListRecordsOutput) with field(s):
-    ///   - [`records(Option<Vec<Record>>)`](crate::operation::list_records::ListRecordsOutput::records): A list of all records.
+    ///   - [`records(Option<Vec::<Record>>)`](crate::operation::list_records::ListRecordsOutput::records): A list of all records.
     ///   - [`next_token(Option<String>)`](crate::operation::list_records::ListRecordsOutput::next_token): A pagination token for obtaining the next page of results.
     ///   - [`count(i32)`](crate::operation::list_records::ListRecordsOutput::count): Total number of records.
     ///   - [`dataset_sync_count(Option<i64>)`](crate::operation::list_records::ListRecordsOutput::dataset_sync_count): Server sync count for this dataset.
     ///   - [`last_modified_by(Option<String>)`](crate::operation::list_records::ListRecordsOutput::last_modified_by): The user/device that made the last change to this record.
-    ///   - [`merged_dataset_names(Option<Vec<String>>)`](crate::operation::list_records::ListRecordsOutput::merged_dataset_names): Names of merged datasets.
+    ///   - [`merged_dataset_names(Option<Vec::<String>>)`](crate::operation::list_records::ListRecordsOutput::merged_dataset_names): Names of merged datasets.
     ///   - [`dataset_exists(bool)`](crate::operation::list_records::ListRecordsOutput::dataset_exists): Indicates whether the dataset exists.
     ///   - [`dataset_deleted_after_requested_sync_count(bool)`](crate::operation::list_records::ListRecordsOutput::dataset_deleted_after_requested_sync_count): A boolean value specifying whether to delete the dataset locally.
     ///   - [`sync_session_token(Option<String>)`](crate::operation::list_records::ListRecordsOutput::sync_session_token): A token containing a session ID, identity ID, and expiration.

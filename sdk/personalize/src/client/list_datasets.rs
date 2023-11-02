@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of datasets to return.</p><br>
     /// - On success, responds with [`ListDatasetsOutput`](crate::operation::list_datasets::ListDatasetsOutput) with field(s):
-    ///   - [`datasets(Option<Vec<DatasetSummary>>)`](crate::operation::list_datasets::ListDatasetsOutput::datasets): <p>An array of <code>Dataset</code> objects. Each object provides metadata information.</p>
+    ///   - [`datasets(Option<Vec::<DatasetSummary>>)`](crate::operation::list_datasets::ListDatasetsOutput::datasets): <p>An array of <code>Dataset</code> objects. Each object provides metadata information.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_datasets::ListDatasetsOutput::next_token): <p>A token for getting the next set of datasets (if they exist).</p>
     /// - On failure, responds with [`SdkError<ListDatasetsError>`](crate::operation::list_datasets::ListDatasetsError)
     pub fn list_datasets(&self) -> crate::operation::list_datasets::builders::ListDatasetsFluentBuilder {

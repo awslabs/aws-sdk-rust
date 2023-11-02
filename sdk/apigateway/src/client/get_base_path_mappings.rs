@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`position(impl Into<String>)`](crate::operation::get_base_path_mappings::builders::GetBasePathMappingsFluentBuilder::position) / [`set_position(Option<String>)`](crate::operation::get_base_path_mappings::builders::GetBasePathMappingsFluentBuilder::set_position):<br>required: **false**<br><p>The current pagination position in the paged result set.</p><br>
     ///   - [`limit(i32)`](crate::operation::get_base_path_mappings::builders::GetBasePathMappingsFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::get_base_path_mappings::builders::GetBasePathMappingsFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p><br>
     /// - On success, responds with [`GetBasePathMappingsOutput`](crate::operation::get_base_path_mappings::GetBasePathMappingsOutput) with field(s):
-    ///   - [`items(Option<Vec<BasePathMapping>>)`](crate::operation::get_base_path_mappings::GetBasePathMappingsOutput::items): <p>The current page of elements from this collection.</p>
+    ///   - [`items(Option<Vec::<BasePathMapping>>)`](crate::operation::get_base_path_mappings::GetBasePathMappingsOutput::items): <p>The current page of elements from this collection.</p>
     ///   - [`position(Option<String>)`](crate::operation::get_base_path_mappings::GetBasePathMappingsOutput::position): <p>The current pagination position in the paged result set.</p>
     /// - On failure, responds with [`SdkError<GetBasePathMappingsError>`](crate::operation::get_base_path_mappings::GetBasePathMappingsError)
     pub fn get_base_path_mappings(&self) -> crate::operation::get_base_path_mappings::builders::GetBasePathMappingsFluentBuilder {

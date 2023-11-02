@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_billing_groups::builders::ListBillingGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_billing_groups::builders::ListBillingGroupsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per request.</p><br>
     ///   - [`name_prefix_filter(impl Into<String>)`](crate::operation::list_billing_groups::builders::ListBillingGroupsFluentBuilder::name_prefix_filter) / [`set_name_prefix_filter(Option<String>)`](crate::operation::list_billing_groups::builders::ListBillingGroupsFluentBuilder::set_name_prefix_filter):<br>required: **false**<br><p>Limit the results to billing groups whose names have the given prefix.</p><br>
     /// - On success, responds with [`ListBillingGroupsOutput`](crate::operation::list_billing_groups::ListBillingGroupsOutput) with field(s):
-    ///   - [`billing_groups(Option<Vec<GroupNameAndArn>>)`](crate::operation::list_billing_groups::ListBillingGroupsOutput::billing_groups): <p>The list of billing groups.</p>
+    ///   - [`billing_groups(Option<Vec::<GroupNameAndArn>>)`](crate::operation::list_billing_groups::ListBillingGroupsOutput::billing_groups): <p>The list of billing groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_billing_groups::ListBillingGroupsOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListBillingGroupsError>`](crate::operation::list_billing_groups::ListBillingGroupsError)
     pub fn list_billing_groups(&self) -> crate::operation::list_billing_groups::builders::ListBillingGroupsFluentBuilder {

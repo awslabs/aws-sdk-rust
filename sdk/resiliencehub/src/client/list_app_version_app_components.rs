@@ -11,7 +11,7 @@ impl super::Client {
     /// - On success, responds with [`ListAppVersionAppComponentsOutput`](crate::operation::list_app_version_app_components::ListAppVersionAppComponentsOutput) with field(s):
     ///   - [`app_arn(String)`](crate::operation::list_app_version_app_components::ListAppVersionAppComponentsOutput::app_arn): <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     ///   - [`app_version(String)`](crate::operation::list_app_version_app_components::ListAppVersionAppComponentsOutput::app_version): <p>Resilience Hub application version.</p>
-    ///   - [`app_components(Option<Vec<AppComponent>>)`](crate::operation::list_app_version_app_components::ListAppVersionAppComponentsOutput::app_components): <p>Defines an Application Component.</p>
+    ///   - [`app_components(Option<Vec::<AppComponent>>)`](crate::operation::list_app_version_app_components::ListAppVersionAppComponentsOutput::app_components): <p>Defines an Application Component.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_app_version_app_components::ListAppVersionAppComponentsOutput::next_token): <p>Token for the next set of results, or null if there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListAppVersionAppComponentsError>`](crate::operation::list_app_version_app_components::ListAppVersionAppComponentsError)
     pub fn list_app_version_app_components(

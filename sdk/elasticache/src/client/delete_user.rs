@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`engine(Option<String>)`](crate::operation::delete_user::DeleteUserOutput::engine): <p>The current supported value is Redis.</p>
     ///   - [`minimum_engine_version(Option<String>)`](crate::operation::delete_user::DeleteUserOutput::minimum_engine_version): <p>The minimum engine version required, which is Redis 6.0</p>
     ///   - [`access_string(Option<String>)`](crate::operation::delete_user::DeleteUserOutput::access_string): <p>Access permissions string used for this user.</p>
-    ///   - [`user_group_ids(Option<Vec<String>>)`](crate::operation::delete_user::DeleteUserOutput::user_group_ids): <p>Returns a list of the user group IDs the user belongs to.</p>
+    ///   - [`user_group_ids(Option<Vec::<String>>)`](crate::operation::delete_user::DeleteUserOutput::user_group_ids): <p>Returns a list of the user group IDs the user belongs to.</p>
     ///   - [`authentication(Option<Authentication>)`](crate::operation::delete_user::DeleteUserOutput::authentication): <p>Denotes whether the user requires a password to authenticate.</p>
     ///   - [`arn(Option<String>)`](crate::operation::delete_user::DeleteUserOutput::arn): <p>The Amazon Resource Name (ARN) of the user.</p>
     /// - On failure, responds with [`SdkError<DeleteUserError>`](crate::operation::delete_user::DeleteUserError)

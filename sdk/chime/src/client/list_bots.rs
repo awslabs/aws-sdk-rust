@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_bots::builders::ListBotsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_bots::builders::ListBotsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call. The default is 10.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_bots::builders::ListBotsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_bots::builders::ListBotsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use to retrieve the next page of results.</p><br>
     /// - On success, responds with [`ListBotsOutput`](crate::operation::list_bots::ListBotsOutput) with field(s):
-    ///   - [`bots(Option<Vec<Bot>>)`](crate::operation::list_bots::ListBotsOutput::bots): <p>List of bots and bot details.</p>
+    ///   - [`bots(Option<Vec::<Bot>>)`](crate::operation::list_bots::ListBotsOutput::bots): <p>List of bots and bot details.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_bots::ListBotsOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListBotsError>`](crate::operation::list_bots::ListBotsError)
     pub fn list_bots(&self) -> crate::operation::list_bots::builders::ListBotsFluentBuilder {

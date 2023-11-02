@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_routing_controls::builders::ListRoutingControlsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_routing_controls::builders::ListRoutingControlsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token that identifies which batch of results you want to see.</p><br>
     /// - On success, responds with [`ListRoutingControlsOutput`](crate::operation::list_routing_controls::ListRoutingControlsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_routing_controls::ListRoutingControlsOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
-    ///   - [`routing_controls(Option<Vec<RoutingControl>>)`](crate::operation::list_routing_controls::ListRoutingControlsOutput::routing_controls): <p>An array of routing controls.</p>
+    ///   - [`routing_controls(Option<Vec::<RoutingControl>>)`](crate::operation::list_routing_controls::ListRoutingControlsOutput::routing_controls): <p>An array of routing controls.</p>
     /// - On failure, responds with [`SdkError<ListRoutingControlsError>`](crate::operation::list_routing_controls::ListRoutingControlsError)
     pub fn list_routing_controls(&self) -> crate::operation::list_routing_controls::builders::ListRoutingControlsFluentBuilder {
         crate::operation::list_routing_controls::builders::ListRoutingControlsFluentBuilder::new(self.handle.clone())

@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_datastores::builders::ListDatastoresFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_datastores::builders::ListDatastoresFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token used to request the list of data stores on the next page.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_datastores::builders::ListDatastoresFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_datastores::builders::ListDatastoresFluentBuilder::set_max_results):<br>required: **false**<br><p>Valid Range: Minimum value of 1. Maximum value of 50.</p><br>
     /// - On success, responds with [`ListDatastoresOutput`](crate::operation::list_datastores::ListDatastoresOutput) with field(s):
-    ///   - [`datastore_summaries(Option<Vec<DatastoreSummary>>)`](crate::operation::list_datastores::ListDatastoresOutput::datastore_summaries): <p>The list of summaries of data stores.</p>
+    ///   - [`datastore_summaries(Option<Vec::<DatastoreSummary>>)`](crate::operation::list_datastores::ListDatastoresOutput::datastore_summaries): <p>The list of summaries of data stores.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_datastores::ListDatastoresOutput::next_token): <p>The pagination token used to retrieve the list of data stores on the next page.</p>
     /// - On failure, responds with [`SdkError<ListDatastoresError>`](crate::operation::list_datastores::ListDatastoresError)
     pub fn list_datastores(&self) -> crate::operation::list_datastores::builders::ListDatastoresFluentBuilder {

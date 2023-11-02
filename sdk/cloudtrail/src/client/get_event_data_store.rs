@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`event_data_store_arn(Option<String>)`](crate::operation::get_event_data_store::GetEventDataStoreOutput::event_data_store_arn): <p>The event data store Amazon Resource Number (ARN).</p>
     ///   - [`name(Option<String>)`](crate::operation::get_event_data_store::GetEventDataStoreOutput::name): <p>The name of the event data store.</p>
     ///   - [`status(Option<EventDataStoreStatus>)`](crate::operation::get_event_data_store::GetEventDataStoreOutput::status): <p>The status of an event data store.</p>
-    ///   - [`advanced_event_selectors(Option<Vec<AdvancedEventSelector>>)`](crate::operation::get_event_data_store::GetEventDataStoreOutput::advanced_event_selectors): <p>The advanced event selectors used to select events for the data store.</p>
+    ///   - [`advanced_event_selectors(Option<Vec::<AdvancedEventSelector>>)`](crate::operation::get_event_data_store::GetEventDataStoreOutput::advanced_event_selectors): <p>The advanced event selectors used to select events for the data store.</p>
     ///   - [`multi_region_enabled(Option<bool>)`](crate::operation::get_event_data_store::GetEventDataStoreOutput::multi_region_enabled): <p>Indicates whether the event data store includes events from all Regions, or only from the Region in which it was created.</p>
     ///   - [`organization_enabled(Option<bool>)`](crate::operation::get_event_data_store::GetEventDataStoreOutput::organization_enabled): <p>Indicates whether an event data store is collecting logged events for an organization in Organizations.</p>
     ///   - [`retention_period(Option<i32>)`](crate::operation::get_event_data_store::GetEventDataStoreOutput::retention_period): <p>The retention period of the event data store, in days.</p>

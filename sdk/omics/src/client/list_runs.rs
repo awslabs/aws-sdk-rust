@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_runs::builders::ListRunsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_runs::builders::ListRunsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of runs to return in one page of results.</p><br>
     ///   - [`status(RunStatus)`](crate::operation::list_runs::builders::ListRunsFluentBuilder::status) / [`set_status(Option<RunStatus>)`](crate::operation::list_runs::builders::ListRunsFluentBuilder::set_status):<br>required: **false**<br><p> The status of a run. </p><br>
     /// - On success, responds with [`ListRunsOutput`](crate::operation::list_runs::ListRunsOutput) with field(s):
-    ///   - [`items(Option<Vec<RunListItem>>)`](crate::operation::list_runs::ListRunsOutput::items): <p>A list of runs.</p>
+    ///   - [`items(Option<Vec::<RunListItem>>)`](crate::operation::list_runs::ListRunsOutput::items): <p>A list of runs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_runs::ListRunsOutput::next_token): <p>A pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListRunsError>`](crate::operation::list_runs::ListRunsError)
     pub fn list_runs(&self) -> crate::operation::list_runs::builders::ListRunsFluentBuilder {

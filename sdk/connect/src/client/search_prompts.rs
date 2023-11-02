@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`search_filter(PromptSearchFilter)`](crate::operation::search_prompts::builders::SearchPromptsFluentBuilder::search_filter) / [`set_search_filter(Option<PromptSearchFilter>)`](crate::operation::search_prompts::builders::SearchPromptsFluentBuilder::set_search_filter):<br>required: **false**<br><p>Filters to be applied to search results.</p><br>
     ///   - [`search_criteria(PromptSearchCriteria)`](crate::operation::search_prompts::builders::SearchPromptsFluentBuilder::search_criteria) / [`set_search_criteria(Option<PromptSearchCriteria>)`](crate::operation::search_prompts::builders::SearchPromptsFluentBuilder::set_search_criteria):<br>required: **false**<br><p>The search criteria to be used to return prompts.</p><br>
     /// - On success, responds with [`SearchPromptsOutput`](crate::operation::search_prompts::SearchPromptsOutput) with field(s):
-    ///   - [`prompts(Option<Vec<Prompt>>)`](crate::operation::search_prompts::SearchPromptsOutput::prompts): <p>Information about the prompts.</p>
+    ///   - [`prompts(Option<Vec::<Prompt>>)`](crate::operation::search_prompts::SearchPromptsOutput::prompts): <p>Information about the prompts.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_prompts::SearchPromptsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     ///   - [`approximate_total_count(Option<i64>)`](crate::operation::search_prompts::SearchPromptsOutput::approximate_total_count): <p>The total number of quick connects which matched your search query.</p>
     /// - On failure, responds with [`SdkError<SearchPromptsError>`](crate::operation::search_prompts::SearchPromptsError)

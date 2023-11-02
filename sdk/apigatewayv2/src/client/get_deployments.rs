@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`max_results(impl Into<String>)`](crate::operation::get_deployments::builders::GetDeploymentsFluentBuilder::max_results) / [`set_max_results(Option<String>)`](crate::operation::get_deployments::builders::GetDeploymentsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of elements to be returned for this resource.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_deployments::builders::GetDeploymentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_deployments::builders::GetDeploymentsFluentBuilder::set_next_token):<br>required: **false**<br><p>The next page of elements from this collection. Not valid for the last element of the collection.</p><br>
     /// - On success, responds with [`GetDeploymentsOutput`](crate::operation::get_deployments::GetDeploymentsOutput) with field(s):
-    ///   - [`items(Option<Vec<Deployment>>)`](crate::operation::get_deployments::GetDeploymentsOutput::items): <p>The elements from this collection.</p>
+    ///   - [`items(Option<Vec::<Deployment>>)`](crate::operation::get_deployments::GetDeploymentsOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_deployments::GetDeploymentsOutput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     /// - On failure, responds with [`SdkError<GetDeploymentsError>`](crate::operation::get_deployments::GetDeploymentsError)
     pub fn get_deployments(&self) -> crate::operation::get_deployments::builders::GetDeploymentsFluentBuilder {

@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_thing_principals::builders::ListThingPrincipalsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_thing_principals::builders::ListThingPrincipalsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in this operation.</p><br>
     ///   - [`thing_name(impl Into<String>)`](crate::operation::list_thing_principals::builders::ListThingPrincipalsFluentBuilder::thing_name) / [`set_thing_name(Option<String>)`](crate::operation::list_thing_principals::builders::ListThingPrincipalsFluentBuilder::set_thing_name):<br>required: **true**<br><p>The name of the thing.</p><br>
     /// - On success, responds with [`ListThingPrincipalsOutput`](crate::operation::list_thing_principals::ListThingPrincipalsOutput) with field(s):
-    ///   - [`principals(Option<Vec<String>>)`](crate::operation::list_thing_principals::ListThingPrincipalsOutput::principals): <p>The principals associated with the thing.</p>
+    ///   - [`principals(Option<Vec::<String>>)`](crate::operation::list_thing_principals::ListThingPrincipalsOutput::principals): <p>The principals associated with the thing.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_thing_principals::ListThingPrincipalsOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListThingPrincipalsError>`](crate::operation::list_thing_principals::ListThingPrincipalsError)
     pub fn list_thing_principals(&self) -> crate::operation::list_thing_principals::builders::ListThingPrincipalsFluentBuilder {

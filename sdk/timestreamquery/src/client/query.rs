@@ -10,8 +10,8 @@ impl super::Client {
     /// - On success, responds with [`QueryOutput`](crate::operation::query::QueryOutput) with field(s):
     ///   - [`query_id(String)`](crate::operation::query::QueryOutput::query_id): <p> A unique ID for the given query. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::query::QueryOutput::next_token): <p> A pagination token that can be used again on a <code>Query</code> call to get the next set of results. </p>
-    ///   - [`rows(Vec<Row>)`](crate::operation::query::QueryOutput::rows): <p> The result set rows returned by the query. </p>
-    ///   - [`column_info(Vec<ColumnInfo>)`](crate::operation::query::QueryOutput::column_info): <p> The column data types of the returned result set. </p>
+    ///   - [`rows(Vec::<Row>)`](crate::operation::query::QueryOutput::rows): <p> The result set rows returned by the query. </p>
+    ///   - [`column_info(Vec::<ColumnInfo>)`](crate::operation::query::QueryOutput::column_info): <p> The column data types of the returned result set. </p>
     ///   - [`query_status(Option<QueryStatus>)`](crate::operation::query::QueryOutput::query_status): <p>Information about the status of the query, including progress and bytes scanned.</p>
     /// - On failure, responds with [`SdkError<QueryError>`](crate::operation::query::QueryError)
     pub fn query(&self) -> crate::operation::query::builders::QueryFluentBuilder {

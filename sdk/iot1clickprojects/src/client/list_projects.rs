@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p><br>
     /// - On success, responds with [`ListProjectsOutput`](crate::operation::list_projects::ListProjectsOutput) with field(s):
-    ///   - [`projects(Vec<ProjectSummary>)`](crate::operation::list_projects::ListProjectsOutput::projects): <p>An object containing the list of projects.</p>
+    ///   - [`projects(Vec::<ProjectSummary>)`](crate::operation::list_projects::ListProjectsOutput::projects): <p>An object containing the list of projects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_projects::ListProjectsOutput::next_token): <p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>
     /// - On failure, responds with [`SdkError<ListProjectsError>`](crate::operation::list_projects::ListProjectsError)
     pub fn list_projects(&self) -> crate::operation::list_projects::builders::ListProjectsFluentBuilder {

@@ -78,10 +78,10 @@
 //!
 //! ### Create a ByteStream from a file
 //!
-//! _Note: This is only available with `rt-tokio` enabled._
+//! _Note: This is only available with `rt-tokio` and `http-body-0-4-x` enabled._
 //!
 //! ```no_run
-//! # #[cfg(feature = "rt-tokio")]
+//! # #[cfg(all(feature = "rt-tokio", feature = "http-body-0-4-x"))]
 //! # {
 //! use aws_smithy_types::byte_stream::ByteStream;
 //! use std::path::Path;
@@ -90,7 +90,7 @@
 //! }
 //!
 //! async fn bytestream_from_file() -> GetObjectInput {
-//!     let bytestream = ByteStream::from_path("docs/some-large-file.csv")
+//!     let bytestream = ByteStream::from_path_body_0_4("docs/some-large-file.csv")
 //!         .await
 //!         .expect("valid path");
 //!     GetObjectInput { body: bytestream }
@@ -99,10 +99,10 @@
 //! ```
 //!
 //! If you want more control over how the file is read, such as specifying the size of the buffer used to read the file
-//! or the length of the file, use an [`FsBuilder`](crate::byte_stream::FsBuilder).
+//! or the length of the file, use an `FsBuilder`.
 //!
 //! ```no_run
-//! # #[cfg(feature = "rt-tokio")]
+//! # #[cfg(all(feature = "rt-tokio", feature = "http-body-0-4-x"))]
 //! # {
 //! use aws_smithy_types::byte_stream::{ByteStream, Length};
 //! use std::path::Path;
@@ -111,7 +111,7 @@
 //! }
 //!
 //! async fn bytestream_from_file() -> GetObjectInput {
-//!     let bytestream = ByteStream::read_from().path("docs/some-large-file.csv")
+//!     let bytestream = ByteStream::read_with_body_0_4_from().path("docs/some-large-file.csv")
 //!         .buffer_size(32_784)
 //!         .length(Length::Exact(123_456))
 //!         .build()
@@ -127,7 +127,6 @@ use crate::byte_stream::error::Error;
 use bytes::Buf;
 use bytes::Bytes;
 use bytes_utils::SegmentedBuf;
-use http_body::Body;
 use pin_project_lite::pin_project;
 use std::future::poll_fn;
 use std::io::IoSlice;
@@ -143,6 +142,12 @@ pub mod error;
 
 #[cfg(feature = "rt-tokio")]
 pub use self::bytestream_util::FsBuilder;
+
+/// This module is named after the `http-body` version number since we anticipate
+/// needing to provide equivalent functionality for 1.x of that crate in the future.
+/// The name has a suffix `_x` to avoid name collision with a third-party `http-body-0-4`.
+#[cfg(feature = "http-body-0-4-x")]
+pub mod http_body_0_4_x;
 
 pin_project! {
     /// Stream of binary data
@@ -230,33 +235,43 @@ pin_project! {
     ///     ```
     ///
     /// 2. **From a file**: ByteStreams created from a path can be retried. A new file descriptor will be opened if a retry occurs.
+    ///
+    ///     _Note: The `http-body-0-4-x` feature must be active to call `ByteStream::from_body_0_4`._
+    ///
     ///     ```no_run
-    ///     #[cfg(feature = "tokio-rt")]
+    ///     #[cfg(all(feature = "tokio-rt", feature = "http-body-0-4-x"))]
     ///     # {
     ///     use aws_smithy_types::byte_stream::ByteStream;
-    ///     let stream = ByteStream::from_path("big_file.csv");
+    ///     let stream = ByteStream::from_path_body_0_4("big_file.csv");
     ///     # }
     ///     ```
     ///
     /// 3. **From an `SdkBody` directly**: For more advanced / custom use cases, a ByteStream can be created directly
     /// from an SdkBody. **When created from an SdkBody, care must be taken to ensure retriability.** An SdkBody is retryable
     /// when constructed from in-memory data or when using [`SdkBody::retryable`](crate::body::SdkBody::retryable).
+    ///
+    ///     _Note: The `http-body-0-4-x` feature must be active to construct an `SdkBody` with `from_body_0_4`._
+    ///
     ///     ```no_run
+    ///     # #[cfg(feature = "http-body-0-4-x")]
+    ///     # {
+    ///     # use hyper_0_14 as hyper;
     ///     use aws_smithy_types::byte_stream::ByteStream;
     ///     use aws_smithy_types::body::SdkBody;
     ///     use bytes::Bytes;
     ///     let (mut tx, channel_body) = hyper::Body::channel();
     ///     // this will not be retryable because the SDK has no way to replay this stream
-    ///     let stream = ByteStream::new(SdkBody::from(channel_body));
+    ///     let stream = ByteStream::new(SdkBody::from_body_0_4(channel_body));
     ///     tx.send_data(Bytes::from_static(b"hello world!"));
     ///     tx.send_data(Bytes::from_static(b"hello again!"));
     ///     // NOTE! You must ensure that `tx` is dropped to ensure that EOF is sent
+    ///     # }
     ///     ```
     ///
     #[derive(Debug)]
     pub struct ByteStream {
         #[pin]
-        inner: Inner<SdkBody>
+        inner: Inner,
     }
 }
 
@@ -291,8 +306,12 @@ impl ByteStream {
         Some(self.inner.next().await?.map_err(Error::streaming))
     }
 
+    #[cfg(feature = "byte-stream-poll-next")]
     /// Attempt to pull out the next value of this stream, returning `None` if the stream is
     /// exhausted.
+    // This should only be used when one needs to implement a trait method like
+    // `futures_core::stream::Stream::poll_next` on a new-type wrapping a `ByteStream`.
+    // In general, use the `next` method instead.
     pub fn poll_next(
         self: Pin<&mut Self>,
         cx: &mut Context<'_>,
@@ -334,77 +353,6 @@ impl ByteStream {
         self.inner.collect().await.map_err(Error::streaming)
     }
 
-    /// Returns a [`FsBuilder`](crate::byte_stream::FsBuilder), allowing you to build a `ByteStream` with
-    /// full control over how the file is read (eg. specifying the length of the file or the size of the buffer used to read the file).
-    /// ```no_run
-    /// # #[cfg(feature = "rt-tokio")]
-    /// # {
-    /// use aws_smithy_types::byte_stream::{ByteStream, Length};
-    ///
-    /// async fn bytestream_from_file() -> ByteStream {
-    ///     let bytestream = ByteStream::read_from()
-    ///         .path("docs/some-large-file.csv")
-    ///         // Specify the size of the buffer used to read the file (in bytes, default is 4096)
-    ///         .buffer_size(32_784)
-    ///         // Specify the length of the file used (skips an additional call to retrieve the size)
-    ///         .length(Length::Exact(123_456))
-    ///         .build()
-    ///         .await
-    ///         .expect("valid path");
-    ///     bytestream
-    /// }
-    /// # }
-    /// ```
-    #[cfg(feature = "rt-tokio")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "rt-tokio")))]
-    pub fn read_from() -> FsBuilder {
-        FsBuilder::new()
-    }
-
-    /// Create a ByteStream that streams data from the filesystem
-    ///
-    /// This function creates a retryable ByteStream for a given `path`. The returned ByteStream
-    /// will provide a size hint when used as an HTTP body. If the request fails, the read will
-    /// begin again by reloading the file handle.
-    ///
-    /// ## Warning
-    /// The contents of the file MUST not change during retries. The length & checksum of the file
-    /// will be cached. If the contents of the file change, the operation will almost certainly fail.
-    ///
-    /// Furthermore, a partial write MAY seek in the file and resume from the previous location.
-    ///
-    /// Note: If you want more control, such as specifying the size of the buffer used to read the file
-    /// or the length of the file, use a [`FsBuilder`](crate::byte_stream::FsBuilder) as returned
-    /// from `ByteStream::read_from`
-    ///
-    /// # Examples
-    /// ```no_run
-    /// use aws_smithy_types::byte_stream::ByteStream;
-    /// use std::path::Path;
-    ///  async fn make_bytestream() -> ByteStream {
-    ///     ByteStream::from_path("docs/rows.csv").await.expect("file should be readable")
-    /// }
-    /// ```
-    #[cfg(feature = "rt-tokio")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "rt-tokio")))]
-    pub async fn from_path(path: impl AsRef<std::path::Path>) -> Result<Self, Error> {
-        FsBuilder::new().path(path).build().await
-    }
-
-    /// Create a ByteStream from a file
-    ///
-    /// NOTE: This will NOT result in a retryable ByteStream. For a ByteStream that can be retried in the case of
-    /// upstream failures, use [`ByteStream::from_path`](ByteStream::from_path)
-    #[deprecated(
-        since = "0.40.0",
-        note = "Prefer the more extensible ByteStream::read_from() API"
-    )]
-    #[cfg(feature = "rt-tokio")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "rt-tokio")))]
-    pub async fn from_file(file: tokio::fs::File) -> Result<Self, Error> {
-        FsBuilder::new().file(file).build().await
-    }
-
     #[cfg(feature = "rt-tokio")]
     /// Convert this `ByteStream` into a struct that implements [`AsyncRead`](tokio::io::AsyncRead).
     ///
@@ -433,7 +381,9 @@ impl ByteStream {
                 mut self: Pin<&mut Self>,
                 cx: &mut Context<'_>,
             ) -> Poll<Option<Self::Item>> {
-                Pin::new(&mut self.0).poll_next(cx)
+                Pin::new(&mut self.0.inner)
+                    .poll_next(cx)
+                    .map_err(Error::streaming)
             }
         }
         tokio_util::io::StreamReader::new(FuturesStreamCompatByteStream(self))
@@ -476,12 +426,6 @@ impl From<Bytes> for ByteStream {
 impl From<Vec<u8>> for ByteStream {
     fn from(input: Vec<u8>) -> Self {
         Self::from(Bytes::from(input))
-    }
-}
-
-impl From<hyper::Body> for ByteStream {
-    fn from(input: hyper::Body) -> Self {
-        ByteStream::new(SdkBody::from(input))
     }
 }
 
@@ -543,23 +487,19 @@ impl Buf for AggregatedBytes {
 }
 
 pin_project! {
-    #[derive(Debug, Clone, PartialEq, Eq)]
-    struct Inner<B> {
+    #[derive(Debug)]
+    struct Inner {
         #[pin]
-        body: B,
+        body: SdkBody,
     }
 }
 
-impl<B> Inner<B> {
-    fn new(body: B) -> Self {
+impl Inner {
+    fn new(body: SdkBody) -> Self {
         Self { body }
     }
 
-    async fn next(&mut self) -> Option<Result<Bytes, B::Error>>
-    where
-        Self: Unpin,
-        B: http_body::Body<Data = Bytes>,
-    {
+    async fn next(&mut self) -> Option<Result<Bytes, crate::body::Error>> {
         let mut me = Pin::new(self);
         poll_fn(|cx| me.as_mut().poll_next(cx)).await
     }
@@ -567,43 +507,34 @@ impl<B> Inner<B> {
     fn poll_next(
         self: Pin<&mut Self>,
         cx: &mut Context<'_>,
-    ) -> Poll<Option<Result<Bytes, B::Error>>>
-    where
-        B: http_body::Body<Data = Bytes>,
-    {
-        self.project().body.poll_data(cx)
+    ) -> Poll<Option<Result<Bytes, crate::body::Error>>> {
+        self.project().body.poll_next(cx)
     }
 
-    async fn collect(self) -> Result<AggregatedBytes, B::Error>
-    where
-        B: http_body::Body<Data = Bytes>,
-    {
+    async fn collect(self) -> Result<AggregatedBytes, crate::body::Error> {
         let mut output = SegmentedBuf::new();
         let body = self.body;
         pin_utils::pin_mut!(body);
-        while let Some(buf) = body.data().await {
+        while let Some(buf) = body.next().await {
             output.push(buf?);
         }
         Ok(AggregatedBytes(output))
     }
 
-    fn size_hint(&self) -> (u64, Option<u64>)
-    where
-        B: http_body::Body<Data = Bytes>,
-    {
-        let size_hint = http_body::Body::size_hint(&self.body);
-        (size_hint.lower(), size_hint.upper())
+    fn size_hint(&self) -> (u64, Option<u64>) {
+        self.body.bounds_on_remaining_length()
     }
 }
 
 #[cfg(test)]
 mod tests {
+    use crate::body::SdkBody;
     use crate::byte_stream::Inner;
     use bytes::Bytes;
 
     #[tokio::test]
     async fn read_from_string_body() {
-        let body = hyper::Body::from("a simple body");
+        let body = SdkBody::from("a simple body");
         assert_eq!(
             Inner::new(body)
                 .collect()
@@ -612,63 +543,6 @@ mod tests {
                 .into_bytes(),
             Bytes::from("a simple body")
         );
-    }
-
-    #[tokio::test]
-    async fn read_from_channel_body() {
-        let (mut sender, body) = hyper::Body::channel();
-        let byte_stream = Inner::new(body);
-        tokio::spawn(async move {
-            sender.send_data(Bytes::from("data 1")).await.unwrap();
-            sender.send_data(Bytes::from("data 2")).await.unwrap();
-            sender.send_data(Bytes::from("data 3")).await.unwrap();
-        });
-        assert_eq!(
-            byte_stream.collect().await.expect("no errors").into_bytes(),
-            Bytes::from("data 1data 2data 3")
-        );
-    }
-
-    #[cfg(feature = "rt-tokio")]
-    #[tokio::test]
-    async fn path_based_bytestreams() -> Result<(), Box<dyn std::error::Error>> {
-        use super::ByteStream;
-        use bytes::Buf;
-        use http_body::Body;
-        use std::io::Write;
-        use tempfile::NamedTempFile;
-        let mut file = NamedTempFile::new()?;
-
-        for i in 0..10000 {
-            writeln!(file, "Brian was here. Briefly. {}", i)?;
-        }
-        let body = ByteStream::from_path(&file).await?.into_inner();
-        // assert that a valid size hint is immediately ready
-        assert_eq!(body.size_hint().exact(), Some(298890));
-        let mut body1 = body.try_clone().expect("retryable bodies are cloneable");
-        // read a little bit from one of the clones
-        let some_data = body1
-            .data()
-            .await
-            .expect("should have some data")
-            .expect("read should not fail");
-        assert!(!some_data.is_empty());
-        // make some more clones
-        let body2 = body.try_clone().expect("retryable bodies are cloneable");
-        let body3 = body.try_clone().expect("retryable bodies are cloneable");
-        let body2 = ByteStream::new(body2).collect().await?.into_bytes();
-        let body3 = ByteStream::new(body3).collect().await?.into_bytes();
-        assert_eq!(body2, body3);
-        assert!(body2.starts_with(b"Brian was here."));
-        assert!(body2.ends_with(b"9999\n"));
-        assert_eq!(body2.len(), 298890);
-
-        assert_eq!(
-            ByteStream::new(body1).collect().await?.remaining(),
-            298890 - some_data.len()
-        );
-
-        Ok(())
     }
 
     #[cfg(feature = "rt-tokio")]

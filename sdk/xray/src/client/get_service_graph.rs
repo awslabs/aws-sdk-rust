@@ -12,7 +12,7 @@ impl super::Client {
     /// - On success, responds with [`GetServiceGraphOutput`](crate::operation::get_service_graph::GetServiceGraphOutput) with field(s):
     ///   - [`start_time(Option<DateTime>)`](crate::operation::get_service_graph::GetServiceGraphOutput::start_time): <p>The start of the time frame for which the graph was generated.</p>
     ///   - [`end_time(Option<DateTime>)`](crate::operation::get_service_graph::GetServiceGraphOutput::end_time): <p>The end of the time frame for which the graph was generated.</p>
-    ///   - [`services(Option<Vec<Service>>)`](crate::operation::get_service_graph::GetServiceGraphOutput::services): <p>The services that have processed a traced request during the specified time frame.</p>
+    ///   - [`services(Option<Vec::<Service>>)`](crate::operation::get_service_graph::GetServiceGraphOutput::services): <p>The services that have processed a traced request during the specified time frame.</p>
     ///   - [`contains_old_group_versions(bool)`](crate::operation::get_service_graph::GetServiceGraphOutput::contains_old_group_versions): <p>A flag indicating whether the group's filter expression has been consistent, or if the returned service graph may show traces from an older version of the group's filter expression.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_service_graph::GetServiceGraphOutput::next_token): <p>Pagination token.</p>
     /// - On failure, responds with [`SdkError<GetServiceGraphError>`](crate::operation::get_service_graph::GetServiceGraphError)

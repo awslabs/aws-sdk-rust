@@ -11,7 +11,7 @@ impl super::Client {
     /// - On success, responds with [`ListWorkersWithQualificationTypeOutput`](crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeOutput::next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     ///   - [`num_results(Option<i32>)`](crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeOutput::num_results): <p> The number of Qualifications on this page in the filtered results list, equivalent to the number of Qualifications being returned by this call.</p>
-    ///   - [`qualifications(Option<Vec<Qualification>>)`](crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeOutput::qualifications): <p> The list of Qualification elements returned by this call. </p>
+    ///   - [`qualifications(Option<Vec::<Qualification>>)`](crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeOutput::qualifications): <p> The list of Qualification elements returned by this call. </p>
     /// - On failure, responds with [`SdkError<ListWorkersWithQualificationTypeError>`](crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeError)
     pub fn list_workers_with_qualification_type(
         &self,

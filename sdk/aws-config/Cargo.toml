@@ -19,7 +19,8 @@ rustls = ["aws-smithy-runtime/tls-rustls", "client-hyper"]
 allow-compilation = []
 rt-tokio = ["aws-smithy-async/rt-tokio", "aws-smithy-runtime/rt-tokio", "tokio/rt"]
 sso = ["dep:aws-sdk-sso", "dep:aws-sdk-ssooidc", "dep:ring", "dep:hex", "dep:zeroize", "aws-smithy-runtime-api/http-auth"]
-default = ["client-hyper", "rustls", "rt-tokio"]
+credentials-process = ["tokio/process"]
+default = ["client-hyper", "rustls", "rt-tokio", "credentials-process", "sso"]
 
 [dependencies]
 fastrand = "2.0.0"

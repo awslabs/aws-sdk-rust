@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`face_match_threshold(f32)`](crate::operation::search_faces::builders::SearchFacesFluentBuilder::face_match_threshold) / [`set_face_match_threshold(Option<f32>)`](crate::operation::search_faces::builders::SearchFacesFluentBuilder::set_face_match_threshold):<br>required: **false**<br><p>Optional value specifying the minimum confidence in the face match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%. </p><br>
     /// - On success, responds with [`SearchFacesOutput`](crate::operation::search_faces::SearchFacesOutput) with field(s):
     ///   - [`searched_face_id(Option<String>)`](crate::operation::search_faces::SearchFacesOutput::searched_face_id): <p>ID of the face that was searched for matches in a collection.</p>
-    ///   - [`face_matches(Option<Vec<FaceMatch>>)`](crate::operation::search_faces::SearchFacesOutput::face_matches): <p>An array of faces that matched the input face, along with the confidence in the match.</p>
+    ///   - [`face_matches(Option<Vec::<FaceMatch>>)`](crate::operation::search_faces::SearchFacesOutput::face_matches): <p>An array of faces that matched the input face, along with the confidence in the match.</p>
     ///   - [`face_model_version(Option<String>)`](crate::operation::search_faces::SearchFacesOutput::face_model_version): <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
     /// - On failure, responds with [`SdkError<SearchFacesError>`](crate::operation::search_faces::SearchFacesError)
     pub fn search_faces(&self) -> crate::operation::search_faces::builders::SearchFacesFluentBuilder {

@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`upload_id(String)`](crate::operation::start_content_upload::StartContentUploadOutput::upload_id): <p>The identifier of the upload.</p>
     ///   - [`url(String)`](crate::operation::start_content_upload::StartContentUploadOutput::url): <p>The URL of the upload.</p>
     ///   - [`url_expiry(DateTime)`](crate::operation::start_content_upload::StartContentUploadOutput::url_expiry): <p>The expiration time of the URL as an epoch timestamp.</p>
-    ///   - [`headers_to_include(HashMap<String, String>)`](crate::operation::start_content_upload::StartContentUploadOutput::headers_to_include): <p>The headers to include in the upload.</p>
+    ///   - [`headers_to_include(HashMap::<String, String>)`](crate::operation::start_content_upload::StartContentUploadOutput::headers_to_include): <p>The headers to include in the upload.</p>
     /// - On failure, responds with [`SdkError<StartContentUploadError>`](crate::operation::start_content_upload::StartContentUploadError)
     pub fn start_content_upload(&self) -> crate::operation::start_content_upload::builders::StartContentUploadFluentBuilder {
         crate::operation::start_content_upload::builders::StartContentUploadFluentBuilder::new(self.handle.clone())

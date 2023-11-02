@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`chime_bearer(impl Into<String>)`](crate::operation::list_channel_memberships::builders::ListChannelMembershipsFluentBuilder::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::operation::list_channel_memberships::builders::ListChannelMembershipsFluentBuilder::set_chime_bearer):<br>required: **false**<br><p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p><br>
     /// - On success, responds with [`ListChannelMembershipsOutput`](crate::operation::list_channel_memberships::ListChannelMembershipsOutput) with field(s):
     ///   - [`channel_arn(Option<String>)`](crate::operation::list_channel_memberships::ListChannelMembershipsOutput::channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`channel_memberships(Option<Vec<ChannelMembershipSummary>>)`](crate::operation::list_channel_memberships::ListChannelMembershipsOutput::channel_memberships): <p>The information for the requested channel memberships.</p>
+    ///   - [`channel_memberships(Option<Vec::<ChannelMembershipSummary>>)`](crate::operation::list_channel_memberships::ListChannelMembershipsOutput::channel_memberships): <p>The information for the requested channel memberships.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_channel_memberships::ListChannelMembershipsOutput::next_token): <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
     /// - On failure, responds with [`SdkError<ListChannelMembershipsError>`](crate::operation::list_channel_memberships::ListChannelMembershipsError)
     #[deprecated(note = "Replaced by ListChannelMemberships in the Amazon Chime SDK Messaging Namespace")]

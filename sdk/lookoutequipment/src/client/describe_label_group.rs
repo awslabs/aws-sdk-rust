@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeLabelGroupOutput`](crate::operation::describe_label_group::DescribeLabelGroupOutput) with field(s):
     ///   - [`label_group_name(Option<String>)`](crate::operation::describe_label_group::DescribeLabelGroupOutput::label_group_name): <p> The name of the label group. </p>
     ///   - [`label_group_arn(Option<String>)`](crate::operation::describe_label_group::DescribeLabelGroupOutput::label_group_arn): <p> The Amazon Resource Name (ARN) of the label group. </p>
-    ///   - [`fault_codes(Option<Vec<String>>)`](crate::operation::describe_label_group::DescribeLabelGroupOutput::fault_codes): <p> Codes indicating the type of anomaly associated with the labels in the lagbel group. </p>
+    ///   - [`fault_codes(Option<Vec::<String>>)`](crate::operation::describe_label_group::DescribeLabelGroupOutput::fault_codes): <p> Codes indicating the type of anomaly associated with the labels in the lagbel group. </p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::describe_label_group::DescribeLabelGroupOutput::created_at): <p> The time at which the label group was created. </p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::describe_label_group::DescribeLabelGroupOutput::updated_at): <p> The time at which the label group was updated. </p>
     /// - On failure, responds with [`SdkError<DescribeLabelGroupError>`](crate::operation::describe_label_group::DescribeLabelGroupError)

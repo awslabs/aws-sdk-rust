@@ -47,7 +47,7 @@ pub fn de_intelligent_tiering_configuration(
             s if s.matches("Tiering") /* Tierings com.amazonaws.s3#IntelligentTieringConfiguration$Tierings */ =>  {
                 let var_4 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::Tiering>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::Tiering>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_5 = builder.tierings.take().unwrap_or_default();
                             list_5.push(
                                 crate::protocol_serde::shape_tiering::de_tiering(&mut tag)

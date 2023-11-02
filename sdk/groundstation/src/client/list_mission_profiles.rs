@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_mission_profiles::builders::ListMissionProfilesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_mission_profiles::builders::ListMissionProfilesFluentBuilder::set_next_token):<br>required: **false**<br><p>Next token returned in the request of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.</p><br>
     /// - On success, responds with [`ListMissionProfilesOutput`](crate::operation::list_mission_profiles::ListMissionProfilesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_mission_profiles::ListMissionProfilesOutput::next_token): <p>Next token returned in the response of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
-    ///   - [`mission_profile_list(Option<Vec<MissionProfileListItem>>)`](crate::operation::list_mission_profiles::ListMissionProfilesOutput::mission_profile_list): <p>List of mission profiles.</p>
+    ///   - [`mission_profile_list(Option<Vec::<MissionProfileListItem>>)`](crate::operation::list_mission_profiles::ListMissionProfilesOutput::mission_profile_list): <p>List of mission profiles.</p>
     /// - On failure, responds with [`SdkError<ListMissionProfilesError>`](crate::operation::list_mission_profiles::ListMissionProfilesError)
     pub fn list_mission_profiles(&self) -> crate::operation::list_mission_profiles::builders::ListMissionProfilesFluentBuilder {
         crate::operation::list_mission_profiles::builders::ListMissionProfilesFluentBuilder::new(self.handle.clone())

@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_license_versions::builders::ListLicenseVersionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_license_versions::builders::ListLicenseVersionsFluentBuilder::set_next_token):<br>required: **false**<br><p>Token for the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_license_versions::builders::ListLicenseVersionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_license_versions::builders::ListLicenseVersionsFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results to return in a single call.</p><br>
     /// - On success, responds with [`ListLicenseVersionsOutput`](crate::operation::list_license_versions::ListLicenseVersionsOutput) with field(s):
-    ///   - [`licenses(Option<Vec<License>>)`](crate::operation::list_license_versions::ListLicenseVersionsOutput::licenses): <p>License details.</p>
+    ///   - [`licenses(Option<Vec::<License>>)`](crate::operation::list_license_versions::ListLicenseVersionsOutput::licenses): <p>License details.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_license_versions::ListLicenseVersionsOutput::next_token): <p>Token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListLicenseVersionsError>`](crate::operation::list_license_versions::ListLicenseVersionsError)
     pub fn list_license_versions(&self) -> crate::operation::list_license_versions::builders::ListLicenseVersionsFluentBuilder {

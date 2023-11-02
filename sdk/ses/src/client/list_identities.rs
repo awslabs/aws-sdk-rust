@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_identities::builders::ListIdentitiesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_identities::builders::ListIdentitiesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use for pagination.</p><br>
     ///   - [`max_items(i32)`](crate::operation::list_identities::builders::ListIdentitiesFluentBuilder::max_items) / [`set_max_items(Option<i32>)`](crate::operation::list_identities::builders::ListIdentitiesFluentBuilder::set_max_items):<br>required: **false**<br><p>The maximum number of identities per page. Possible values are 1-1000 inclusive.</p><br>
     /// - On success, responds with [`ListIdentitiesOutput`](crate::operation::list_identities::ListIdentitiesOutput) with field(s):
-    ///   - [`identities(Vec<String>)`](crate::operation::list_identities::ListIdentitiesOutput::identities): <p>A list of identities.</p>
+    ///   - [`identities(Vec::<String>)`](crate::operation::list_identities::ListIdentitiesOutput::identities): <p>A list of identities.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_identities::ListIdentitiesOutput::next_token): <p>The token used for pagination.</p>
     /// - On failure, responds with [`SdkError<ListIdentitiesError>`](crate::operation::list_identities::ListIdentitiesError)
     pub fn list_identities(&self) -> crate::operation::list_identities::builders::ListIdentitiesFluentBuilder {

@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_aliases::builders::ListAliasesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_aliases::builders::ListAliasesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_aliases::builders::ListAliasesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_aliases::builders::ListAliasesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call.</p><br>
     /// - On success, responds with [`ListAliasesOutput`](crate::operation::list_aliases::ListAliasesOutput) with field(s):
-    ///   - [`aliases(Option<Vec<String>>)`](crate::operation::list_aliases::ListAliasesOutput::aliases): <p>The entity's paginated aliases.</p>
+    ///   - [`aliases(Option<Vec::<String>>)`](crate::operation::list_aliases::ListAliasesOutput::aliases): <p>The entity's paginated aliases.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_aliases::ListAliasesOutput::next_token): <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListAliasesError>`](crate::operation::list_aliases::ListAliasesError)
     pub fn list_aliases(&self) -> crate::operation::list_aliases::builders::ListAliasesFluentBuilder {

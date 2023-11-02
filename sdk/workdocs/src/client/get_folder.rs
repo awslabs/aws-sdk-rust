@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`include_custom_metadata(bool)`](crate::operation::get_folder::builders::GetFolderFluentBuilder::include_custom_metadata) / [`set_include_custom_metadata(Option<bool>)`](crate::operation::get_folder::builders::GetFolderFluentBuilder::set_include_custom_metadata):<br>required: **false**<br><p>Set to TRUE to include custom metadata in the response.</p><br>
     /// - On success, responds with [`GetFolderOutput`](crate::operation::get_folder::GetFolderOutput) with field(s):
     ///   - [`metadata(Option<FolderMetadata>)`](crate::operation::get_folder::GetFolderOutput::metadata): <p>The metadata of the folder.</p>
-    ///   - [`custom_metadata(Option<HashMap<String, String>>)`](crate::operation::get_folder::GetFolderOutput::custom_metadata): <p>The custom metadata on the folder.</p>
+    ///   - [`custom_metadata(Option<HashMap::<String, String>>)`](crate::operation::get_folder::GetFolderOutput::custom_metadata): <p>The custom metadata on the folder.</p>
     /// - On failure, responds with [`SdkError<GetFolderError>`](crate::operation::get_folder::GetFolderError)
     pub fn get_folder(&self) -> crate::operation::get_folder::builders::GetFolderFluentBuilder {
         crate::operation::get_folder::builders::GetFolderFluentBuilder::new(self.handle.clone())

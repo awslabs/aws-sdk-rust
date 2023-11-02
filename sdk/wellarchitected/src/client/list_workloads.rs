@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return for this request.</p><br>
     /// - On success, responds with [`ListWorkloadsOutput`](crate::operation::list_workloads::ListWorkloadsOutput) with field(s):
-    ///   - [`workload_summaries(Option<Vec<WorkloadSummary>>)`](crate::operation::list_workloads::ListWorkloadsOutput::workload_summaries): <p>A list of workload summaries.</p>
+    ///   - [`workload_summaries(Option<Vec::<WorkloadSummary>>)`](crate::operation::list_workloads::ListWorkloadsOutput::workload_summaries): <p>A list of workload summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_workloads::ListWorkloadsOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListWorkloadsError>`](crate::operation::list_workloads::ListWorkloadsError)
     pub fn list_workloads(&self) -> crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder {

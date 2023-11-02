@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`target_group_arn(impl Into<String>)`](crate::operation::deregister_targets::builders::DeregisterTargetsFluentBuilder::target_group_arn) / [`set_target_group_arn(Option<String>)`](crate::operation::deregister_targets::builders::DeregisterTargetsFluentBuilder::set_target_group_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the target group.</p><br>
-    ///   - [`targets(TargetDescription)`](crate::operation::deregister_targets::builders::DeregisterTargetsFluentBuilder::targets) / [`set_targets(Option<Vec<TargetDescription>>)`](crate::operation::deregister_targets::builders::DeregisterTargetsFluentBuilder::set_targets):<br>required: **true**<br><p>The targets. If you specified a port override when you registered a target, you must specify both the target ID and the port when you deregister it.</p><br>
+    ///   - [`targets(TargetDescription)`](crate::operation::deregister_targets::builders::DeregisterTargetsFluentBuilder::targets) / [`set_targets(Option<Vec::<TargetDescription>>)`](crate::operation::deregister_targets::builders::DeregisterTargetsFluentBuilder::set_targets):<br>required: **true**<br><p>The targets. If you specified a port override when you registered a target, you must specify both the target ID and the port when you deregister it.</p><br>
     /// - On success, responds with [`DeregisterTargetsOutput`](crate::operation::deregister_targets::DeregisterTargetsOutput)
     /// - On failure, responds with [`SdkError<DeregisterTargetsError>`](crate::operation::deregister_targets::DeregisterTargetsError)
     pub fn deregister_targets(&self) -> crate::operation::deregister_targets::builders::DeregisterTargetsFluentBuilder {

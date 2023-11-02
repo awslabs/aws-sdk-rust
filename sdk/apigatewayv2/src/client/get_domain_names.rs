@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`max_results(impl Into<String>)`](crate::operation::get_domain_names::builders::GetDomainNamesFluentBuilder::max_results) / [`set_max_results(Option<String>)`](crate::operation::get_domain_names::builders::GetDomainNamesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of elements to be returned for this resource.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_domain_names::builders::GetDomainNamesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_domain_names::builders::GetDomainNamesFluentBuilder::set_next_token):<br>required: **false**<br><p>The next page of elements from this collection. Not valid for the last element of the collection.</p><br>
     /// - On success, responds with [`GetDomainNamesOutput`](crate::operation::get_domain_names::GetDomainNamesOutput) with field(s):
-    ///   - [`items(Option<Vec<DomainName>>)`](crate::operation::get_domain_names::GetDomainNamesOutput::items): <p>The elements from this collection.</p>
+    ///   - [`items(Option<Vec::<DomainName>>)`](crate::operation::get_domain_names::GetDomainNamesOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_domain_names::GetDomainNamesOutput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     /// - On failure, responds with [`SdkError<GetDomainNamesError>`](crate::operation::get_domain_names::GetDomainNamesError)
     pub fn get_domain_names(&self) -> crate::operation::get_domain_names::builders::GetDomainNamesFluentBuilder {

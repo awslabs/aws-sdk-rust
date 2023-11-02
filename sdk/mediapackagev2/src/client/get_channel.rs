@@ -12,8 +12,8 @@ impl super::Client {
     ///   - [`created_at(DateTime)`](crate::operation::get_channel::GetChannelOutput::created_at): <p>The date and time the channel was created.</p>
     ///   - [`modified_at(DateTime)`](crate::operation::get_channel::GetChannelOutput::modified_at): <p>The date and time the channel was modified.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_channel::GetChannelOutput::description): <p>The description for your channel.</p>
-    ///   - [`ingest_endpoints(Option<Vec<IngestEndpoint>>)`](crate::operation::get_channel::GetChannelOutput::ingest_endpoints): <p>The list of ingest endpoints.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_channel::GetChannelOutput::tags): <p>The comma-separated list of tag key:value pairs assigned to the channel.</p>
+    ///   - [`ingest_endpoints(Option<Vec::<IngestEndpoint>>)`](crate::operation::get_channel::GetChannelOutput::ingest_endpoints): <p>The list of ingest endpoints.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_channel::GetChannelOutput::tags): <p>The comma-separated list of tag key:value pairs assigned to the channel.</p>
     /// - On failure, responds with [`SdkError<GetChannelError>`](crate::operation::get_channel::GetChannelError)
     pub fn get_channel(&self) -> crate::operation::get_channel::builders::GetChannelFluentBuilder {
         crate::operation::get_channel::builders::GetChannelFluentBuilder::new(self.handle.clone())

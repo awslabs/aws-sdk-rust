@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_proposal_votes::builders::ListProposalVotesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_proposal_votes::builders::ListProposalVotesFluentBuilder::set_max_results):<br>required: **false**<br><p> The maximum number of votes to return. </p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_proposal_votes::builders::ListProposalVotesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_proposal_votes::builders::ListProposalVotesFluentBuilder::set_next_token):<br>required: **false**<br><p> The pagination token that indicates the next set of results to retrieve. </p><br>
     /// - On success, responds with [`ListProposalVotesOutput`](crate::operation::list_proposal_votes::ListProposalVotesOutput) with field(s):
-    ///   - [`proposal_votes(Option<Vec<VoteSummary>>)`](crate::operation::list_proposal_votes::ListProposalVotesOutput::proposal_votes): <p> The list of votes. </p>
+    ///   - [`proposal_votes(Option<Vec::<VoteSummary>>)`](crate::operation::list_proposal_votes::ListProposalVotesOutput::proposal_votes): <p> The list of votes. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_proposal_votes::ListProposalVotesOutput::next_token): <p> The pagination token that indicates the next set of results to retrieve. </p>
     /// - On failure, responds with [`SdkError<ListProposalVotesError>`](crate::operation::list_proposal_votes::ListProposalVotesError)
     pub fn list_proposal_votes(&self) -> crate::operation::list_proposal_votes::builders::ListProposalVotesFluentBuilder {

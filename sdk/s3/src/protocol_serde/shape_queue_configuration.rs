@@ -36,7 +36,7 @@ pub fn de_queue_configuration(
             s if s.matches("Event") /* Events com.amazonaws.s3#QueueConfiguration$Events */ =>  {
                 let var_3 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::Event>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::Event>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_4 = builder.events.take().unwrap_or_default();
                             list_4.push(
                                 Result::<crate::types::Event, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(

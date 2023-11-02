@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::describe_products::builders::DescribeProductsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_products::builders::DescribeProductsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`product_arn(impl Into<String>)`](crate::operation::describe_products::builders::DescribeProductsFluentBuilder::product_arn) / [`set_product_arn(Option<String>)`](crate::operation::describe_products::builders::DescribeProductsFluentBuilder::set_product_arn):<br>required: **false**<br><p>The ARN of the integration to return.</p><br>
     /// - On success, responds with [`DescribeProductsOutput`](crate::operation::describe_products::DescribeProductsOutput) with field(s):
-    ///   - [`products(Option<Vec<Product>>)`](crate::operation::describe_products::DescribeProductsOutput::products): <p>A list of products, including details for each product.</p>
+    ///   - [`products(Option<Vec::<Product>>)`](crate::operation::describe_products::DescribeProductsOutput::products): <p>A list of products, including details for each product.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_products::DescribeProductsOutput::next_token): <p>The pagination token to use to request the next page of results.</p>
     /// - On failure, responds with [`SdkError<DescribeProductsError>`](crate::operation::describe_products::DescribeProductsError)
     pub fn describe_products(&self) -> crate::operation::describe_products::builders::DescribeProductsFluentBuilder {

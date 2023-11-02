@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_nodes::builders::ListNodesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_nodes::builders::ListNodesFluentBuilder::set_next_token):<br>required: **false**<br><p>Specify the pagination token from a previous request to retrieve the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_nodes::builders::ListNodesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_nodes::builders::ListNodesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of nodes to return in one page of results.</p><br>
     /// - On success, responds with [`ListNodesOutput`](crate::operation::list_nodes::ListNodesOutput) with field(s):
-    ///   - [`nodes(Option<Vec<Node>>)`](crate::operation::list_nodes::ListNodesOutput::nodes): <p>A list of nodes.</p>
+    ///   - [`nodes(Option<Vec::<Node>>)`](crate::operation::list_nodes::ListNodesOutput::nodes): <p>A list of nodes.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_nodes::ListNodesOutput::next_token): <p>A pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListNodesError>`](crate::operation::list_nodes::ListNodesError)
     pub fn list_nodes(&self) -> crate::operation::list_nodes::builders::ListNodesFluentBuilder {

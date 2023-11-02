@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`dataset_arn(impl Into<String>)`](crate::operation::put_items::builders::PutItemsFluentBuilder::dataset_arn) / [`set_dataset_arn(Option<String>)`](crate::operation::put_items::builders::PutItemsFluentBuilder::set_dataset_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the Items dataset you are adding the item or items to.</p><br>
-    ///   - [`items(Item)`](crate::operation::put_items::builders::PutItemsFluentBuilder::items) / [`set_items(Option<Vec<Item>>)`](crate::operation::put_items::builders::PutItemsFluentBuilder::set_items):<br>required: **true**<br><p>A list of item data.</p><br>
+    ///   - [`items(Item)`](crate::operation::put_items::builders::PutItemsFluentBuilder::items) / [`set_items(Option<Vec::<Item>>)`](crate::operation::put_items::builders::PutItemsFluentBuilder::set_items):<br>required: **true**<br><p>A list of item data.</p><br>
     /// - On success, responds with [`PutItemsOutput`](crate::operation::put_items::PutItemsOutput)
     /// - On failure, responds with [`SdkError<PutItemsError>`](crate::operation::put_items::PutItemsError)
     pub fn put_items(&self) -> crate::operation::put_items::builders::PutItemsFluentBuilder {

@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_forms::builders::ListFormsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_forms::builders::ListFormsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to request the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_forms::builders::ListFormsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_forms::builders::ListFormsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of forms to retrieve.</p><br>
     /// - On success, responds with [`ListFormsOutput`](crate::operation::list_forms::ListFormsOutput) with field(s):
-    ///   - [`entities(Vec<FormSummary>)`](crate::operation::list_forms::ListFormsOutput::entities): <p>The list of forms for the Amplify app.</p>
+    ///   - [`entities(Vec::<FormSummary>)`](crate::operation::list_forms::ListFormsOutput::entities): <p>The list of forms for the Amplify app.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_forms::ListFormsOutput::next_token): <p>The pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListFormsError>`](crate::operation::list_forms::ListFormsError)
     pub fn list_forms(&self) -> crate::operation::list_forms::builders::ListFormsFluentBuilder {

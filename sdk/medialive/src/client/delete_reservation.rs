@@ -22,7 +22,7 @@ impl super::Client {
     ///   - [`resource_specification(Option<ReservationResourceSpecification>)`](crate::operation::delete_reservation::DeleteReservationOutput::resource_specification): Resource configuration details
     ///   - [`start(Option<String>)`](crate::operation::delete_reservation::DeleteReservationOutput::start): Reservation UTC start date and time in ISO-8601 format, e.g. '2018-03-01T00:00:00'
     ///   - [`state(Option<ReservationState>)`](crate::operation::delete_reservation::DeleteReservationOutput::state): Current state of reservation, e.g. 'ACTIVE'
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::delete_reservation::DeleteReservationOutput::tags): A collection of key-value pairs
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::delete_reservation::DeleteReservationOutput::tags): A collection of key-value pairs
     ///   - [`usage_price(Option<f64>)`](crate::operation::delete_reservation::DeleteReservationOutput::usage_price): Recurring usage charge for each reserved resource, e.g. '157.0'
     /// - On failure, responds with [`SdkError<DeleteReservationError>`](crate::operation::delete_reservation::DeleteReservationError)
     pub fn delete_reservation(&self) -> crate::operation::delete_reservation::builders::DeleteReservationFluentBuilder {

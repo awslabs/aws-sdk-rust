@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`sort_order(SortOrder)`](crate::operation::list_app_image_configs::builders::ListAppImageConfigsFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_app_image_configs::builders::ListAppImageConfigsFluentBuilder::set_sort_order):<br>required: **false**<br><p>The sort order. The default value is <code>Descending</code>.</p><br>
     /// - On success, responds with [`ListAppImageConfigsOutput`](crate::operation::list_app_image_configs::ListAppImageConfigsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_app_image_configs::ListAppImageConfigsOutput::next_token): <p>A token for getting the next set of AppImageConfigs, if there are any.</p>
-    ///   - [`app_image_configs(Option<Vec<AppImageConfigDetails>>)`](crate::operation::list_app_image_configs::ListAppImageConfigsOutput::app_image_configs): <p>A list of AppImageConfigs and their properties.</p>
+    ///   - [`app_image_configs(Option<Vec::<AppImageConfigDetails>>)`](crate::operation::list_app_image_configs::ListAppImageConfigsOutput::app_image_configs): <p>A list of AppImageConfigs and their properties.</p>
     /// - On failure, responds with [`SdkError<ListAppImageConfigsError>`](crate::operation::list_app_image_configs::ListAppImageConfigsError)
     pub fn list_app_image_configs(&self) -> crate::operation::list_app_image_configs::builders::ListAppImageConfigsFluentBuilder {
         crate::operation::list_app_image_configs::builders::ListAppImageConfigsFluentBuilder::new(self.handle.clone())

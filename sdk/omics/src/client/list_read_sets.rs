@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`filter(ReadSetFilter)`](crate::operation::list_read_sets::builders::ListReadSetsFluentBuilder::filter) / [`set_filter(Option<ReadSetFilter>)`](crate::operation::list_read_sets::builders::ListReadSetsFluentBuilder::set_filter):<br>required: **false**<br><p>A filter to apply to the list.</p><br>
     /// - On success, responds with [`ListReadSetsOutput`](crate::operation::list_read_sets::ListReadSetsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_read_sets::ListReadSetsOutput::next_token): <p>A pagination token that's included if more results are available.</p>
-    ///   - [`read_sets(Vec<ReadSetListItem>)`](crate::operation::list_read_sets::ListReadSetsOutput::read_sets): <p>A list of read sets.</p>
+    ///   - [`read_sets(Vec::<ReadSetListItem>)`](crate::operation::list_read_sets::ListReadSetsOutput::read_sets): <p>A list of read sets.</p>
     /// - On failure, responds with [`SdkError<ListReadSetsError>`](crate::operation::list_read_sets::ListReadSetsError)
     pub fn list_read_sets(&self) -> crate::operation::list_read_sets::builders::ListReadSetsFluentBuilder {
         crate::operation::list_read_sets::builders::ListReadSetsFluentBuilder::new(self.handle.clone())

@@ -12,8 +12,8 @@ impl super::Client {
     ///   - [`publisher(Option<String>)`](crate::operation::describe_component::DescribeComponentOutput::publisher): <p>The publisher of the component version.</p>
     ///   - [`description(Option<String>)`](crate::operation::describe_component::DescribeComponentOutput::description): <p>The description of the component version.</p>
     ///   - [`status(Option<CloudComponentStatus>)`](crate::operation::describe_component::DescribeComponentOutput::status): <p>The status of the component version in IoT Greengrass V2. This status is different from the status of the component on a core device.</p>
-    ///   - [`platforms(Option<Vec<ComponentPlatform>>)`](crate::operation::describe_component::DescribeComponentOutput::platforms): <p>The platforms that the component version supports.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_component::DescribeComponentOutput::tags): <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    ///   - [`platforms(Option<Vec::<ComponentPlatform>>)`](crate::operation::describe_component::DescribeComponentOutput::platforms): <p>The platforms that the component version supports.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_component::DescribeComponentOutput::tags): <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     /// - On failure, responds with [`SdkError<DescribeComponentError>`](crate::operation::describe_component::DescribeComponentError)
     pub fn describe_component(&self) -> crate::operation::describe_component::builders::DescribeComponentFluentBuilder {
         crate::operation::describe_component::builders::DescribeComponentFluentBuilder::new(self.handle.clone())

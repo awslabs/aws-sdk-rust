@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_waves::builders::ListWavesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_waves::builders::ListWavesFluentBuilder::set_next_token):<br>required: **false**<br><p>Request next token.</p><br>
     ///   - [`account_id(impl Into<String>)`](crate::operation::list_waves::builders::ListWavesFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::list_waves::builders::ListWavesFluentBuilder::set_account_id):<br>required: **false**<br><p>Request account ID.</p><br>
     /// - On success, responds with [`ListWavesOutput`](crate::operation::list_waves::ListWavesOutput) with field(s):
-    ///   - [`items(Option<Vec<Wave>>)`](crate::operation::list_waves::ListWavesOutput::items): <p>Waves list.</p>
+    ///   - [`items(Option<Vec::<Wave>>)`](crate::operation::list_waves::ListWavesOutput::items): <p>Waves list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_waves::ListWavesOutput::next_token): <p>Response next token.</p>
     /// - On failure, responds with [`SdkError<ListWavesError>`](crate::operation::list_waves::ListWavesError)
     pub fn list_waves(&self) -> crate::operation::list_waves::builders::ListWavesFluentBuilder {

@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`signature_algorithm(Option<String>)`](crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityOutput::signature_algorithm): <p> The signature algorithm that's used to code sign the assessment report file. </p>
     ///   - [`signature_date_time(Option<String>)`](crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityOutput::signature_date_time): <p> The date and time signature that specifies when the assessment report was created. </p>
     ///   - [`signature_key_id(Option<String>)`](crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityOutput::signature_key_id): <p> The unique identifier for the validation signature key. </p>
-    ///   - [`validation_errors(Option<Vec<String>>)`](crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityOutput::validation_errors): <p> Represents any errors that occurred when validating the assessment report. </p>
+    ///   - [`validation_errors(Option<Vec::<String>>)`](crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityOutput::validation_errors): <p> Represents any errors that occurred when validating the assessment report. </p>
     /// - On failure, responds with [`SdkError<ValidateAssessmentReportIntegrityError>`](crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityError)
     pub fn validate_assessment_report_integrity(
         &self,

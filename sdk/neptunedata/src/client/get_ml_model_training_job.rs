@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`processing_job(Option<MlResourceDefinition>)`](crate::operation::get_ml_model_training_job::GetMlModelTrainingJobOutput::processing_job): <p>The data processing job.</p>
     ///   - [`hpo_job(Option<MlResourceDefinition>)`](crate::operation::get_ml_model_training_job::GetMlModelTrainingJobOutput::hpo_job): <p>The HPO job.</p>
     ///   - [`model_transform_job(Option<MlResourceDefinition>)`](crate::operation::get_ml_model_training_job::GetMlModelTrainingJobOutput::model_transform_job): <p>The model transform job.</p>
-    ///   - [`ml_models(Option<Vec<MlConfigDefinition>>)`](crate::operation::get_ml_model_training_job::GetMlModelTrainingJobOutput::ml_models): <p>A list of the configurations of the ML models being used.</p>
+    ///   - [`ml_models(Option<Vec::<MlConfigDefinition>>)`](crate::operation::get_ml_model_training_job::GetMlModelTrainingJobOutput::ml_models): <p>A list of the configurations of the ML models being used.</p>
     /// - On failure, responds with [`SdkError<GetMLModelTrainingJobError>`](crate::operation::get_ml_model_training_job::GetMLModelTrainingJobError)
     pub fn get_ml_model_training_job(&self) -> crate::operation::get_ml_model_training_job::builders::GetMLModelTrainingJobFluentBuilder {
         crate::operation::get_ml_model_training_job::builders::GetMLModelTrainingJobFluentBuilder::new(self.handle.clone())

@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_logger_definition_versions::builders::ListLoggerDefinitionVersionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_logger_definition_versions::builders::ListLoggerDefinitionVersionsFluentBuilder::set_next_token):<br>required: **false**<br>The token for the next set of results, or ''null'' if there are no additional results.<br>
     /// - On success, responds with [`ListLoggerDefinitionVersionsOutput`](crate::operation::list_logger_definition_versions::ListLoggerDefinitionVersionsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_logger_definition_versions::ListLoggerDefinitionVersionsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
-    ///   - [`versions(Option<Vec<VersionInformation>>)`](crate::operation::list_logger_definition_versions::ListLoggerDefinitionVersionsOutput::versions): Information about a version.
+    ///   - [`versions(Option<Vec::<VersionInformation>>)`](crate::operation::list_logger_definition_versions::ListLoggerDefinitionVersionsOutput::versions): Information about a version.
     /// - On failure, responds with [`SdkError<ListLoggerDefinitionVersionsError>`](crate::operation::list_logger_definition_versions::ListLoggerDefinitionVersionsError)
     pub fn list_logger_definition_versions(
         &self,

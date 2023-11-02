@@ -8,20 +8,20 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::start_channel::StartChannelOutput::arn): The unique arn of the channel.
     ///   - [`cdi_input_specification(Option<CdiInputSpecification>)`](crate::operation::start_channel::StartChannelOutput::cdi_input_specification): Specification of CDI inputs for this channel
     ///   - [`channel_class(Option<ChannelClass>)`](crate::operation::start_channel::StartChannelOutput::channel_class): The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
-    ///   - [`destinations(Option<Vec<OutputDestination>>)`](crate::operation::start_channel::StartChannelOutput::destinations): A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
-    ///   - [`egress_endpoints(Option<Vec<ChannelEgressEndpoint>>)`](crate::operation::start_channel::StartChannelOutput::egress_endpoints): The endpoints where outgoing connections initiate from
+    ///   - [`destinations(Option<Vec::<OutputDestination>>)`](crate::operation::start_channel::StartChannelOutput::destinations): A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
+    ///   - [`egress_endpoints(Option<Vec::<ChannelEgressEndpoint>>)`](crate::operation::start_channel::StartChannelOutput::egress_endpoints): The endpoints where outgoing connections initiate from
     ///   - [`encoder_settings(Option<EncoderSettings>)`](crate::operation::start_channel::StartChannelOutput::encoder_settings): Encoder Settings
     ///   - [`id(Option<String>)`](crate::operation::start_channel::StartChannelOutput::id): The unique id of the channel.
-    ///   - [`input_attachments(Option<Vec<InputAttachment>>)`](crate::operation::start_channel::StartChannelOutput::input_attachments): List of input attachments for channel.
+    ///   - [`input_attachments(Option<Vec::<InputAttachment>>)`](crate::operation::start_channel::StartChannelOutput::input_attachments): List of input attachments for channel.
     ///   - [`input_specification(Option<InputSpecification>)`](crate::operation::start_channel::StartChannelOutput::input_specification): Specification of network and file inputs for this channel
     ///   - [`log_level(Option<LogLevel>)`](crate::operation::start_channel::StartChannelOutput::log_level): The log level being written to CloudWatch Logs.
     ///   - [`maintenance(Option<MaintenanceStatus>)`](crate::operation::start_channel::StartChannelOutput::maintenance): Maintenance settings for this channel.
     ///   - [`name(Option<String>)`](crate::operation::start_channel::StartChannelOutput::name): The name of the channel. (user-mutable)
-    ///   - [`pipeline_details(Option<Vec<PipelineDetail>>)`](crate::operation::start_channel::StartChannelOutput::pipeline_details): Runtime details for the pipelines of a running channel.
+    ///   - [`pipeline_details(Option<Vec::<PipelineDetail>>)`](crate::operation::start_channel::StartChannelOutput::pipeline_details): Runtime details for the pipelines of a running channel.
     ///   - [`pipelines_running_count(Option<i32>)`](crate::operation::start_channel::StartChannelOutput::pipelines_running_count): The number of currently healthy pipelines.
     ///   - [`role_arn(Option<String>)`](crate::operation::start_channel::StartChannelOutput::role_arn): The Amazon Resource Name (ARN) of the role assumed when running the Channel.
     ///   - [`state(Option<ChannelState>)`](crate::operation::start_channel::StartChannelOutput::state): Placeholder documentation for ChannelState
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::start_channel::StartChannelOutput::tags): A collection of key-value pairs.
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::start_channel::StartChannelOutput::tags): A collection of key-value pairs.
     ///   - [`vpc(Option<VpcOutputSettingsDescription>)`](crate::operation::start_channel::StartChannelOutput::vpc): Settings for VPC output
     /// - On failure, responds with [`SdkError<StartChannelError>`](crate::operation::start_channel::StartChannelError)
     pub fn start_channel(&self) -> crate::operation::start_channel::builders::StartChannelFluentBuilder {

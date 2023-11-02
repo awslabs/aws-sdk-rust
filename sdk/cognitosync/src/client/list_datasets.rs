@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::set_next_token):<br>required: **false**<br>A pagination token for obtaining the next page of results.<br>
     ///   - [`max_results(i32)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::set_max_results):<br>required: **false**<br>The maximum number of results to be returned.<br>
     /// - On success, responds with [`ListDatasetsOutput`](crate::operation::list_datasets::ListDatasetsOutput) with field(s):
-    ///   - [`datasets(Option<Vec<Dataset>>)`](crate::operation::list_datasets::ListDatasetsOutput::datasets): A set of datasets.
+    ///   - [`datasets(Option<Vec::<Dataset>>)`](crate::operation::list_datasets::ListDatasetsOutput::datasets): A set of datasets.
     ///   - [`count(i32)`](crate::operation::list_datasets::ListDatasetsOutput::count): Number of datasets returned.
     ///   - [`next_token(Option<String>)`](crate::operation::list_datasets::ListDatasetsOutput::next_token): A pagination token for obtaining the next page of results.
     /// - On failure, responds with [`SdkError<ListDatasetsError>`](crate::operation::list_datasets::ListDatasetsError)

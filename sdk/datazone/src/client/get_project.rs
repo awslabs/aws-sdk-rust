@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`created_by(String)`](crate::operation::get_project::GetProjectOutput::created_by): <p>The Amazon DataZone user who created the project.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_project::GetProjectOutput::created_at): <p>The timestamp of when the project was created.</p>
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_project::GetProjectOutput::last_updated_at): <p>The timestamp of when the project was last updated.</p>
-    ///   - [`glossary_terms(Option<Vec<String>>)`](crate::operation::get_project::GetProjectOutput::glossary_terms): <p>The business glossary terms that can be used in the project.</p>
+    ///   - [`glossary_terms(Option<Vec::<String>>)`](crate::operation::get_project::GetProjectOutput::glossary_terms): <p>The business glossary terms that can be used in the project.</p>
     /// - On failure, responds with [`SdkError<GetProjectError>`](crate::operation::get_project::GetProjectError)
     pub fn get_project(&self) -> crate::operation::get_project::builders::GetProjectFluentBuilder {
         crate::operation::get_project::builders::GetProjectFluentBuilder::new(self.handle.clone())

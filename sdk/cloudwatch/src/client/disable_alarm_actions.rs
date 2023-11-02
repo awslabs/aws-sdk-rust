@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisableAlarmActions`](crate::operation::disable_alarm_actions::builders::DisableAlarmActionsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`alarm_names(impl Into<String>)`](crate::operation::disable_alarm_actions::builders::DisableAlarmActionsFluentBuilder::alarm_names) / [`set_alarm_names(Option<Vec<String>>)`](crate::operation::disable_alarm_actions::builders::DisableAlarmActionsFluentBuilder::set_alarm_names):<br>required: **true**<br><p>The names of the alarms.</p><br>
+    ///   - [`alarm_names(impl Into<String>)`](crate::operation::disable_alarm_actions::builders::DisableAlarmActionsFluentBuilder::alarm_names) / [`set_alarm_names(Option<Vec::<String>>)`](crate::operation::disable_alarm_actions::builders::DisableAlarmActionsFluentBuilder::set_alarm_names):<br>required: **true**<br><p>The names of the alarms.</p><br>
     /// - On success, responds with [`DisableAlarmActionsOutput`](crate::operation::disable_alarm_actions::DisableAlarmActionsOutput)
     /// - On failure, responds with [`SdkError<DisableAlarmActionsError>`](crate::operation::disable_alarm_actions::DisableAlarmActionsError)
     pub fn disable_alarm_actions(&self) -> crate::operation::disable_alarm_actions::builders::DisableAlarmActionsFluentBuilder {

@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`ListTopicRefreshSchedulesOutput`](crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesOutput) with field(s):
     ///   - [`topic_id(Option<String>)`](crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesOutput::topic_id): <p>The ID for the topic that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     ///   - [`topic_arn(Option<String>)`](crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesOutput::topic_arn): <p>The Amazon Resource Name (ARN) of the topic.</p>
-    ///   - [`refresh_schedules(Option<Vec<TopicRefreshScheduleSummary>>)`](crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesOutput::refresh_schedules): <p>The list of topic refresh schedules.</p>
+    ///   - [`refresh_schedules(Option<Vec::<TopicRefreshScheduleSummary>>)`](crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesOutput::refresh_schedules): <p>The list of topic refresh schedules.</p>
     ///   - [`status(i32)`](crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<ListTopicRefreshSchedulesError>`](crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesError)

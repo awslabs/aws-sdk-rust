@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`marker(impl Into<String>)`](crate::operation::describe_groups::builders::DescribeGroupsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_groups::builders::DescribeGroupsFluentBuilder::set_marker):<br>required: **false**<br><p>The marker for the next set of results. (You received this marker from a previous call.)</p><br>
     ///   - [`limit(i32)`](crate::operation::describe_groups::builders::DescribeGroupsFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::describe_groups::builders::DescribeGroupsFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of items to return with this call.</p><br>
     /// - On success, responds with [`DescribeGroupsOutput`](crate::operation::describe_groups::DescribeGroupsOutput) with field(s):
-    ///   - [`groups(Option<Vec<GroupMetadata>>)`](crate::operation::describe_groups::DescribeGroupsOutput::groups): <p>The list of groups.</p>
+    ///   - [`groups(Option<Vec::<GroupMetadata>>)`](crate::operation::describe_groups::DescribeGroupsOutput::groups): <p>The list of groups.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_groups::DescribeGroupsOutput::marker): <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     /// - On failure, responds with [`SdkError<DescribeGroupsError>`](crate::operation::describe_groups::DescribeGroupsError)
     pub fn describe_groups(&self) -> crate::operation::describe_groups::builders::DescribeGroupsFluentBuilder {

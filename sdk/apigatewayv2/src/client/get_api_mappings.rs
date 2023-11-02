@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`max_results(impl Into<String>)`](crate::operation::get_api_mappings::builders::GetApiMappingsFluentBuilder::max_results) / [`set_max_results(Option<String>)`](crate::operation::get_api_mappings::builders::GetApiMappingsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of elements to be returned for this resource.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_api_mappings::builders::GetApiMappingsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_api_mappings::builders::GetApiMappingsFluentBuilder::set_next_token):<br>required: **false**<br><p>The next page of elements from this collection. Not valid for the last element of the collection.</p><br>
     /// - On success, responds with [`GetApiMappingsOutput`](crate::operation::get_api_mappings::GetApiMappingsOutput) with field(s):
-    ///   - [`items(Option<Vec<ApiMapping>>)`](crate::operation::get_api_mappings::GetApiMappingsOutput::items): <p>The elements from this collection.</p>
+    ///   - [`items(Option<Vec::<ApiMapping>>)`](crate::operation::get_api_mappings::GetApiMappingsOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_api_mappings::GetApiMappingsOutput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     /// - On failure, responds with [`SdkError<GetApiMappingsError>`](crate::operation::get_api_mappings::GetApiMappingsError)
     pub fn get_api_mappings(&self) -> crate::operation::get_api_mappings::builders::GetApiMappingsFluentBuilder {

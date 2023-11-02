@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`cidr(impl Into<String>)`](crate::operation::deprovision_public_ipv4_pool_cidr::builders::DeprovisionPublicIpv4PoolCidrFluentBuilder::cidr) / [`set_cidr(Option<String>)`](crate::operation::deprovision_public_ipv4_pool_cidr::builders::DeprovisionPublicIpv4PoolCidrFluentBuilder::set_cidr):<br>required: **true**<br><p>The CIDR you want to deprovision from the pool. Enter the CIDR you want to deprovision with a netmask of <code>/32</code>. You must rerun this command for each IP address in the CIDR range. If your CIDR is a <code>/24</code>, you will have to run this command to deprovision each of the 256 IP addresses in the <code>/24</code> CIDR.</p><br>
     /// - On success, responds with [`DeprovisionPublicIpv4PoolCidrOutput`](crate::operation::deprovision_public_ipv4_pool_cidr::DeprovisionPublicIpv4PoolCidrOutput) with field(s):
     ///   - [`pool_id(Option<String>)`](crate::operation::deprovision_public_ipv4_pool_cidr::DeprovisionPublicIpv4PoolCidrOutput::pool_id): <p>The ID of the pool that you deprovisioned the CIDR from.</p>
-    ///   - [`deprovisioned_addresses(Option<Vec<String>>)`](crate::operation::deprovision_public_ipv4_pool_cidr::DeprovisionPublicIpv4PoolCidrOutput::deprovisioned_addresses): <p>The deprovisioned CIDRs.</p>
+    ///   - [`deprovisioned_addresses(Option<Vec::<String>>)`](crate::operation::deprovision_public_ipv4_pool_cidr::DeprovisionPublicIpv4PoolCidrOutput::deprovisioned_addresses): <p>The deprovisioned CIDRs.</p>
     /// - On failure, responds with [`SdkError<DeprovisionPublicIpv4PoolCidrError>`](crate::operation::deprovision_public_ipv4_pool_cidr::DeprovisionPublicIpv4PoolCidrError)
     pub fn deprovision_public_ipv4_pool_cidr(
         &self,

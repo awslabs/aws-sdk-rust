@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`name(impl Into<String>)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::set_name):<br>required: **false**<br><p>The name of the migration workflow.</p><br>
     /// - On success, responds with [`ListWorkflowsOutput`](crate::operation::list_workflows::ListWorkflowsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_workflows::ListWorkflowsOutput::next_token): <p>The pagination token.</p>
-    ///   - [`migration_workflow_summary(Vec<MigrationWorkflowSummary>)`](crate::operation::list_workflows::ListWorkflowsOutput::migration_workflow_summary): <p>The summary of the migration workflow.</p>
+    ///   - [`migration_workflow_summary(Vec::<MigrationWorkflowSummary>)`](crate::operation::list_workflows::ListWorkflowsOutput::migration_workflow_summary): <p>The summary of the migration workflow.</p>
     /// - On failure, responds with [`SdkError<ListWorkflowsError>`](crate::operation::list_workflows::ListWorkflowsError)
     pub fn list_workflows(&self) -> crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder {
         crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::new(self.handle.clone())

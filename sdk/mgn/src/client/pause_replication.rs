@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`source_server_id(Option<String>)`](crate::operation::pause_replication::PauseReplicationOutput::source_server_id): <p>Source server ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::pause_replication::PauseReplicationOutput::arn): <p>Source server ARN.</p>
     ///   - [`is_archived(Option<bool>)`](crate::operation::pause_replication::PauseReplicationOutput::is_archived): <p>Source server archived status.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::pause_replication::PauseReplicationOutput::tags): <p>Source server Tags.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::pause_replication::PauseReplicationOutput::tags): <p>Source server Tags.</p>
     ///   - [`launched_instance(Option<LaunchedInstance>)`](crate::operation::pause_replication::PauseReplicationOutput::launched_instance): <p>Source server launched instance.</p>
     ///   - [`data_replication_info(Option<DataReplicationInfo>)`](crate::operation::pause_replication::PauseReplicationOutput::data_replication_info): <p>Source server data replication info.</p>
     ///   - [`life_cycle(Option<LifeCycle>)`](crate::operation::pause_replication::PauseReplicationOutput::life_cycle): <p>Source server lifecycle state.</p>

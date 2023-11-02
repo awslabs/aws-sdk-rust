@@ -15,8 +15,8 @@ impl super::Client {
     ///   - [`created_at(DateTime)`](crate::operation::reject_subscription_request::RejectSubscriptionRequestOutput::created_at): <p>The timestamp of when the subscription request was rejected.</p>
     ///   - [`updated_at(DateTime)`](crate::operation::reject_subscription_request::RejectSubscriptionRequestOutput::updated_at): <p>The timestamp of when the subscription request was updated.</p>
     ///   - [`request_reason(String)`](crate::operation::reject_subscription_request::RejectSubscriptionRequestOutput::request_reason): <p>The reason for the subscription request.</p>
-    ///   - [`subscribed_principals(Vec<SubscribedPrincipal>)`](crate::operation::reject_subscription_request::RejectSubscriptionRequestOutput::subscribed_principals): <p>The subscribed principals of the subscription request.</p>
-    ///   - [`subscribed_listings(Vec<SubscribedListing>)`](crate::operation::reject_subscription_request::RejectSubscriptionRequestOutput::subscribed_listings): <p>The subscribed listings of the subscription request.</p>
+    ///   - [`subscribed_principals(Vec::<SubscribedPrincipal>)`](crate::operation::reject_subscription_request::RejectSubscriptionRequestOutput::subscribed_principals): <p>The subscribed principals of the subscription request.</p>
+    ///   - [`subscribed_listings(Vec::<SubscribedListing>)`](crate::operation::reject_subscription_request::RejectSubscriptionRequestOutput::subscribed_listings): <p>The subscribed listings of the subscription request.</p>
     ///   - [`reviewer_id(Option<String>)`](crate::operation::reject_subscription_request::RejectSubscriptionRequestOutput::reviewer_id): <p>The identifier of the subscription request reviewer.</p>
     ///   - [`decision_comment(Option<String>)`](crate::operation::reject_subscription_request::RejectSubscriptionRequestOutput::decision_comment): <p>The decision comment of the rejected subscription request.</p>
     /// - On failure, responds with [`SdkError<RejectSubscriptionRequestError>`](crate::operation::reject_subscription_request::RejectSubscriptionRequestError)

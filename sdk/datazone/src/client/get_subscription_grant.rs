@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`subscription_target_id(String)`](crate::operation::get_subscription_grant::GetSubscriptionGrantOutput::subscription_target_id): <p>The subscription target ID associated with the subscription grant.</p>
     ///   - [`granted_entity(Option<GrantedEntity>)`](crate::operation::get_subscription_grant::GetSubscriptionGrantOutput::granted_entity): <p>The entity to which the subscription is granted.</p>
     ///   - [`status(SubscriptionGrantOverallStatus)`](crate::operation::get_subscription_grant::GetSubscriptionGrantOutput::status): <p>The status of the subscription grant.</p>
-    ///   - [`assets(Option<Vec<SubscribedAsset>>)`](crate::operation::get_subscription_grant::GetSubscriptionGrantOutput::assets): <p>The assets for which the subscription grant is created.</p>
+    ///   - [`assets(Option<Vec::<SubscribedAsset>>)`](crate::operation::get_subscription_grant::GetSubscriptionGrantOutput::assets): <p>The assets for which the subscription grant is created.</p>
     ///   - [`subscription_id(Option<String>)`](crate::operation::get_subscription_grant::GetSubscriptionGrantOutput::subscription_id): <p>The identifier of the subscription.</p>
     /// - On failure, responds with [`SdkError<GetSubscriptionGrantError>`](crate::operation::get_subscription_grant::GetSubscriptionGrantError)
     pub fn get_subscription_grant(&self) -> crate::operation::get_subscription_grant::builders::GetSubscriptionGrantFluentBuilder {

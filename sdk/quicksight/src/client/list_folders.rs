@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_folders::builders::ListFoldersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_folders::builders::ListFoldersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be returned per request.</p><br>
     /// - On success, responds with [`ListFoldersOutput`](crate::operation::list_folders::ListFoldersOutput) with field(s):
     ///   - [`status(i32)`](crate::operation::list_folders::ListFoldersOutput::status): <p>The HTTP status of the request.</p>
-    ///   - [`folder_summary_list(Option<Vec<FolderSummary>>)`](crate::operation::list_folders::ListFoldersOutput::folder_summary_list): <p>A structure that contains all of the folders in the Amazon Web Services account. This structure provides basic information about the folders.</p>
+    ///   - [`folder_summary_list(Option<Vec::<FolderSummary>>)`](crate::operation::list_folders::ListFoldersOutput::folder_summary_list): <p>A structure that contains all of the folders in the Amazon Web Services account. This structure provides basic information about the folders.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_folders::ListFoldersOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::list_folders::ListFoldersOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<ListFoldersError>`](crate::operation::list_folders::ListFoldersError)

@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_external_models::builders::GetExternalModelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_external_models::builders::GetExternalModelsFluentBuilder::set_next_token):<br>required: **false**<br><p>The next page token for the request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_external_models::builders::GetExternalModelsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_external_models::builders::GetExternalModelsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of objects to return for the request.</p><br>
     /// - On success, responds with [`GetExternalModelsOutput`](crate::operation::get_external_models::GetExternalModelsOutput) with field(s):
-    ///   - [`external_models(Option<Vec<ExternalModel>>)`](crate::operation::get_external_models::GetExternalModelsOutput::external_models): <p>Gets the Amazon SageMaker models.</p>
+    ///   - [`external_models(Option<Vec::<ExternalModel>>)`](crate::operation::get_external_models::GetExternalModelsOutput::external_models): <p>Gets the Amazon SageMaker models.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_external_models::GetExternalModelsOutput::next_token): <p>The next page token to be used in subsequent requests.</p>
     /// - On failure, responds with [`SdkError<GetExternalModelsError>`](crate::operation::get_external_models::GetExternalModelsError)
     pub fn get_external_models(&self) -> crate::operation::get_external_models::builders::GetExternalModelsFluentBuilder {

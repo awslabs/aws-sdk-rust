@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_tags_for_project::builders::ListTagsForProjectFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_tags_for_project::builders::ListTagsForProjectFluentBuilder::set_next_token):<br>required: **false**<br><p>Reserved for future use.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_tags_for_project::builders::ListTagsForProjectFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_tags_for_project::builders::ListTagsForProjectFluentBuilder::set_max_results):<br>required: **false**<br><p>Reserved for future use.</p><br>
     /// - On success, responds with [`ListTagsForProjectOutput`](crate::operation::list_tags_for_project::ListTagsForProjectOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::list_tags_for_project::ListTagsForProjectOutput::tags): <p>The tags for the project.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::list_tags_for_project::ListTagsForProjectOutput::tags): <p>The tags for the project.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_tags_for_project::ListTagsForProjectOutput::next_token): <p>Reserved for future use.</p>
     /// - On failure, responds with [`SdkError<ListTagsForProjectError>`](crate::operation::list_tags_for_project::ListTagsForProjectError)
     pub fn list_tags_for_project(&self) -> crate::operation::list_tags_for_project::builders::ListTagsForProjectFluentBuilder {

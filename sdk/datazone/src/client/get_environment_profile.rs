@@ -17,7 +17,7 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::get_environment_profile::GetEnvironmentProfileOutput::description): <p>The description of the environment profile.</p>
     ///   - [`environment_blueprint_id(String)`](crate::operation::get_environment_profile::GetEnvironmentProfileOutput::environment_blueprint_id): <p>The ID of the blueprint with which this environment profile is created.</p>
     ///   - [`project_id(Option<String>)`](crate::operation::get_environment_profile::GetEnvironmentProfileOutput::project_id): <p>The ID of the Amazon DataZone project in which this environment profile is created.</p>
-    ///   - [`user_parameters(Option<Vec<CustomParameter>>)`](crate::operation::get_environment_profile::GetEnvironmentProfileOutput::user_parameters): <p>The user parameters of the environment profile.</p>
+    ///   - [`user_parameters(Option<Vec::<CustomParameter>>)`](crate::operation::get_environment_profile::GetEnvironmentProfileOutput::user_parameters): <p>The user parameters of the environment profile.</p>
     /// - On failure, responds with [`SdkError<GetEnvironmentProfileError>`](crate::operation::get_environment_profile::GetEnvironmentProfileError)
     pub fn get_environment_profile(&self) -> crate::operation::get_environment_profile::builders::GetEnvironmentProfileFluentBuilder {
         crate::operation::get_environment_profile::builders::GetEnvironmentProfileFluentBuilder::new(self.handle.clone())

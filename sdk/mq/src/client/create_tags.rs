@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_arn(impl Into<String>)`](crate::operation::create_tags::builders::CreateTagsFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::create_tags::builders::CreateTagsFluentBuilder::set_resource_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the resource tag.</p><br>
-    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::create_tags::builders::CreateTagsFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::create_tags::builders::CreateTagsFluentBuilder::set_tags):<br>required: **false**<br><p>The key-value pair for the resource tag.</p><br>
+    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::create_tags::builders::CreateTagsFluentBuilder::tags) / [`set_tags(Option<HashMap::<String, String>>)`](crate::operation::create_tags::builders::CreateTagsFluentBuilder::set_tags):<br>required: **false**<br><p>The key-value pair for the resource tag.</p><br>
     /// - On success, responds with [`CreateTagsOutput`](crate::operation::create_tags::CreateTagsOutput)
     /// - On failure, responds with [`SdkError<CreateTagsError>`](crate::operation::create_tags::CreateTagsError)
     pub fn create_tags(&self) -> crate::operation::create_tags::builders::CreateTagsFluentBuilder {

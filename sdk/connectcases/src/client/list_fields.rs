@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_fields::builders::ListFieldsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_fields::builders::ListFieldsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_fields::builders::ListFieldsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_fields::builders::ListFieldsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
     /// - On success, responds with [`ListFieldsOutput`](crate::operation::list_fields::ListFieldsOutput) with field(s):
-    ///   - [`fields(Vec<FieldSummary>)`](crate::operation::list_fields::ListFieldsOutput::fields): <p>List of detailed field information.</p>
+    ///   - [`fields(Vec::<FieldSummary>)`](crate::operation::list_fields::ListFieldsOutput::fields): <p>List of detailed field information.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_fields::ListFieldsOutput::next_token): <p>The token for the next set of results. This is null if there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListFieldsError>`](crate::operation::list_fields::ListFieldsError)
     pub fn list_fields(&self) -> crate::operation::list_fields::builders::ListFieldsFluentBuilder {

@@ -4,8 +4,8 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::describe_metric_collection_types::builders::DescribeMetricCollectionTypesFluentBuilder::send) it.
     /// - On success, responds with [`DescribeMetricCollectionTypesOutput`](crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesOutput) with field(s):
-    ///   - [`metrics(Option<Vec<MetricCollectionType>>)`](crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesOutput::metrics): <p>The metrics.</p>
-    ///   - [`granularities(Option<Vec<MetricGranularityType>>)`](crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesOutput::granularities): <p>The granularities for the metrics.</p>
+    ///   - [`metrics(Option<Vec::<MetricCollectionType>>)`](crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesOutput::metrics): <p>The metrics.</p>
+    ///   - [`granularities(Option<Vec::<MetricGranularityType>>)`](crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesOutput::granularities): <p>The granularities for the metrics.</p>
     /// - On failure, responds with [`SdkError<DescribeMetricCollectionTypesError>`](crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesError)
     pub fn describe_metric_collection_types(
         &self,

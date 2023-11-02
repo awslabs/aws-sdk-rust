@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::set_max_results):<br>required: **false**<br><p>If specified, limits the number of results returned by this operation. The operation also returns a <code>NextToken</code> which you can use in a subsequent operation to retrieve the next set of results.</p><br>
     /// - On success, responds with [`ListSchedulesOutput`](crate::operation::list_schedules::ListSchedulesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_schedules::ListSchedulesOutput::next_token): <p>Indicates whether there are additional results to retrieve. If the value is null, there are no more results.</p>
-    ///   - [`schedules(Vec<ScheduleSummary>)`](crate::operation::list_schedules::ListSchedulesOutput::schedules): <p>The schedules that match the specified criteria.</p>
+    ///   - [`schedules(Vec::<ScheduleSummary>)`](crate::operation::list_schedules::ListSchedulesOutput::schedules): <p>The schedules that match the specified criteria.</p>
     /// - On failure, responds with [`SdkError<ListSchedulesError>`](crate::operation::list_schedules::ListSchedulesError)
     pub fn list_schedules(&self) -> crate::operation::list_schedules::builders::ListSchedulesFluentBuilder {
         crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::new(self.handle.clone())

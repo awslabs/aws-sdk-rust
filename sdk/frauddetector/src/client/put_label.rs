@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::operation::put_label::builders::PutLabelFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::put_label::builders::PutLabelFluentBuilder::set_name):<br>required: **true**<br><p>The label name.</p><br>
     ///   - [`description(impl Into<String>)`](crate::operation::put_label::builders::PutLabelFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::put_label::builders::PutLabelFluentBuilder::set_description):<br>required: **false**<br><p>The label description.</p><br>
-    ///   - [`tags(Tag)`](crate::operation::put_label::builders::PutLabelFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::put_label::builders::PutLabelFluentBuilder::set_tags):<br>required: **false**<br><p>A collection of key and value pairs.</p><br>
+    ///   - [`tags(Tag)`](crate::operation::put_label::builders::PutLabelFluentBuilder::tags) / [`set_tags(Option<Vec::<Tag>>)`](crate::operation::put_label::builders::PutLabelFluentBuilder::set_tags):<br>required: **false**<br><p>A collection of key and value pairs.</p><br>
     /// - On success, responds with [`PutLabelOutput`](crate::operation::put_label::PutLabelOutput)
     /// - On failure, responds with [`SdkError<PutLabelError>`](crate::operation::put_label::PutLabelError)
     pub fn put_label(&self) -> crate::operation::put_label::builders::PutLabelFluentBuilder {

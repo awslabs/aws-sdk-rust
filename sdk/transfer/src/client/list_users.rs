@@ -10,7 +10,7 @@ impl super::Client {
     /// - On success, responds with [`ListUsersOutput`](crate::operation::list_users::ListUsersOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_users::ListUsersOutput::next_token): <p>When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional users.</p>
     ///   - [`server_id(String)`](crate::operation::list_users::ListUsersOutput::server_id): <p>A system-assigned unique identifier for a server that the users are assigned to.</p>
-    ///   - [`users(Vec<ListedUser>)`](crate::operation::list_users::ListUsersOutput::users): <p>Returns the Transfer Family users and their properties for the <code>ServerId</code> value that you specify.</p>
+    ///   - [`users(Vec::<ListedUser>)`](crate::operation::list_users::ListUsersOutput::users): <p>Returns the Transfer Family users and their properties for the <code>ServerId</code> value that you specify.</p>
     /// - On failure, responds with [`SdkError<ListUsersError>`](crate::operation::list_users::ListUsersError)
     pub fn list_users(&self) -> crate::operation::list_users::builders::ListUsersFluentBuilder {
         crate::operation::list_users::builders::ListUsersFluentBuilder::new(self.handle.clone())

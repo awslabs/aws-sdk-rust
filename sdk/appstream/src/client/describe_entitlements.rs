@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_entitlements::builders::DescribeEntitlementsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_entitlements::builders::DescribeEntitlementsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token used to retrieve the next page of results for this operation.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_entitlements::builders::DescribeEntitlementsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_entitlements::builders::DescribeEntitlementsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum size of each page of results.</p><br>
     /// - On success, responds with [`DescribeEntitlementsOutput`](crate::operation::describe_entitlements::DescribeEntitlementsOutput) with field(s):
-    ///   - [`entitlements(Option<Vec<Entitlement>>)`](crate::operation::describe_entitlements::DescribeEntitlementsOutput::entitlements): <p>The entitlements.</p>
+    ///   - [`entitlements(Option<Vec::<Entitlement>>)`](crate::operation::describe_entitlements::DescribeEntitlementsOutput::entitlements): <p>The entitlements.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_entitlements::DescribeEntitlementsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
     /// - On failure, responds with [`SdkError<DescribeEntitlementsError>`](crate::operation::describe_entitlements::DescribeEntitlementsError)
     pub fn describe_entitlements(&self) -> crate::operation::describe_entitlements::builders::DescribeEntitlementsFluentBuilder {

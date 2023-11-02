@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::get_sink::GetSinkOutput::arn): <p>The ARN of the sink.</p>
     ///   - [`id(Option<String>)`](crate::operation::get_sink::GetSinkOutput::id): <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_sink::GetSinkOutput::name): <p>The name of the sink.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_sink::GetSinkOutput::tags): <p>The tags assigned to the sink.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_sink::GetSinkOutput::tags): <p>The tags assigned to the sink.</p>
     /// - On failure, responds with [`SdkError<GetSinkError>`](crate::operation::get_sink::GetSinkError)
     pub fn get_sink(&self) -> crate::operation::get_sink::builders::GetSinkFluentBuilder {
         crate::operation::get_sink::builders::GetSinkFluentBuilder::new(self.handle.clone())

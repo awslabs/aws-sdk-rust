@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`account_id(impl Into<String>)`](crate::operation::list_account_roles::builders::ListAccountRolesFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::list_account_roles::builders::ListAccountRolesFluentBuilder::set_account_id):<br>required: **true**<br><p>The identifier for the AWS account that is assigned to the user.</p><br>
     /// - On success, responds with [`ListAccountRolesOutput`](crate::operation::list_account_roles::ListAccountRolesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_account_roles::ListAccountRolesOutput::next_token): <p>The page token client that is used to retrieve the list of accounts.</p>
-    ///   - [`role_list(Option<Vec<RoleInfo>>)`](crate::operation::list_account_roles::ListAccountRolesOutput::role_list): <p>A paginated response with the list of roles and the next token if more results are available.</p>
+    ///   - [`role_list(Option<Vec::<RoleInfo>>)`](crate::operation::list_account_roles::ListAccountRolesOutput::role_list): <p>A paginated response with the list of roles and the next token if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListAccountRolesError>`](crate::operation::list_account_roles::ListAccountRolesError)
     pub fn list_account_roles(&self) -> crate::operation::list_account_roles::builders::ListAccountRolesFluentBuilder {
         crate::operation::list_account_roles::builders::ListAccountRolesFluentBuilder::new(self.handle.clone())

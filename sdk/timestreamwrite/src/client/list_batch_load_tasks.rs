@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`task_status(BatchLoadStatus)`](crate::operation::list_batch_load_tasks::builders::ListBatchLoadTasksFluentBuilder::task_status) / [`set_task_status(Option<BatchLoadStatus>)`](crate::operation::list_batch_load_tasks::builders::ListBatchLoadTasksFluentBuilder::set_task_status):<br>required: **false**<br><p>Status of the batch load task.</p><br>
     /// - On success, responds with [`ListBatchLoadTasksOutput`](crate::operation::list_batch_load_tasks::ListBatchLoadTasksOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_batch_load_tasks::ListBatchLoadTasksOutput::next_token): <p>A token to specify where to start paginating. Provide the next ListBatchLoadTasksRequest.</p>
-    ///   - [`batch_load_tasks(Option<Vec<BatchLoadTask>>)`](crate::operation::list_batch_load_tasks::ListBatchLoadTasksOutput::batch_load_tasks): <p>A list of batch load task details.</p>
+    ///   - [`batch_load_tasks(Option<Vec::<BatchLoadTask>>)`](crate::operation::list_batch_load_tasks::ListBatchLoadTasksOutput::batch_load_tasks): <p>A list of batch load task details.</p>
     /// - On failure, responds with [`SdkError<ListBatchLoadTasksError>`](crate::operation::list_batch_load_tasks::ListBatchLoadTasksError)
     pub fn list_batch_load_tasks(&self) -> crate::operation::list_batch_load_tasks::builders::ListBatchLoadTasksFluentBuilder {
         crate::operation::list_batch_load_tasks::builders::ListBatchLoadTasksFluentBuilder::new(self.handle.clone())

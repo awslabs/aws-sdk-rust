@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_health_events::builders::ListHealthEventsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_health_events::builders::ListHealthEventsFluentBuilder::set_max_results):<br>required: **false**<br><p>The number of health event objects that you want to return with this call. </p><br>
     ///   - [`event_status(HealthEventStatus)`](crate::operation::list_health_events::builders::ListHealthEventsFluentBuilder::event_status) / [`set_event_status(Option<HealthEventStatus>)`](crate::operation::list_health_events::builders::ListHealthEventsFluentBuilder::set_event_status):<br>required: **false**<br><p>The status of a health event.</p><br>
     /// - On success, responds with [`ListHealthEventsOutput`](crate::operation::list_health_events::ListHealthEventsOutput) with field(s):
-    ///   - [`health_events(Vec<HealthEvent>)`](crate::operation::list_health_events::ListHealthEventsOutput::health_events): <p>A list of health events.</p>
+    ///   - [`health_events(Vec::<HealthEvent>)`](crate::operation::list_health_events::ListHealthEventsOutput::health_events): <p>A list of health events.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_health_events::ListHealthEventsOutput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
     /// - On failure, responds with [`SdkError<ListHealthEventsError>`](crate::operation::list_health_events::ListHealthEventsError)
     pub fn list_health_events(&self) -> crate::operation::list_health_events::builders::ListHealthEventsFluentBuilder {

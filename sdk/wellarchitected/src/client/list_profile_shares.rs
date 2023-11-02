@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_profile_shares::builders::ListProfileSharesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_profile_shares::builders::ListProfileSharesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return for this request.</p><br>
     ///   - [`status(ShareStatus)`](crate::operation::list_profile_shares::builders::ListProfileSharesFluentBuilder::status) / [`set_status(Option<ShareStatus>)`](crate::operation::list_profile_shares::builders::ListProfileSharesFluentBuilder::set_status):<br>required: **false**<br><p>The status of the share request.</p><br>
     /// - On success, responds with [`ListProfileSharesOutput`](crate::operation::list_profile_shares::ListProfileSharesOutput) with field(s):
-    ///   - [`profile_share_summaries(Option<Vec<ProfileShareSummary>>)`](crate::operation::list_profile_shares::ListProfileSharesOutput::profile_share_summaries): <p>Profile share summaries.</p>
+    ///   - [`profile_share_summaries(Option<Vec::<ProfileShareSummary>>)`](crate::operation::list_profile_shares::ListProfileSharesOutput::profile_share_summaries): <p>Profile share summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_profile_shares::ListProfileSharesOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListProfileSharesError>`](crate::operation::list_profile_shares::ListProfileSharesError)
     pub fn list_profile_shares(&self) -> crate::operation::list_profile_shares::builders::ListProfileSharesFluentBuilder {

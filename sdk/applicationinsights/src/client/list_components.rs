@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_components::builders::ListComponentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_components::builders::ListComponentsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to request the next page of results.</p><br>
     ///   - [`account_id(impl Into<String>)`](crate::operation::list_components::builders::ListComponentsFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::list_components::builders::ListComponentsFluentBuilder::set_account_id):<br>required: **false**<br><p>The AWS account ID for the resource group owner.</p><br>
     /// - On success, responds with [`ListComponentsOutput`](crate::operation::list_components::ListComponentsOutput) with field(s):
-    ///   - [`application_component_list(Option<Vec<ApplicationComponent>>)`](crate::operation::list_components::ListComponentsOutput::application_component_list): <p>The list of application components.</p>
+    ///   - [`application_component_list(Option<Vec::<ApplicationComponent>>)`](crate::operation::list_components::ListComponentsOutput::application_component_list): <p>The list of application components.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_components::ListComponentsOutput::next_token): <p>The token to request the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListComponentsError>`](crate::operation::list_components::ListComponentsError)
     pub fn list_components(&self) -> crate::operation::list_components::builders::ListComponentsFluentBuilder {

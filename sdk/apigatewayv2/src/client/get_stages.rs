@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`max_results(impl Into<String>)`](crate::operation::get_stages::builders::GetStagesFluentBuilder::max_results) / [`set_max_results(Option<String>)`](crate::operation::get_stages::builders::GetStagesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of elements to be returned for this resource.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_stages::builders::GetStagesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_stages::builders::GetStagesFluentBuilder::set_next_token):<br>required: **false**<br><p>The next page of elements from this collection. Not valid for the last element of the collection.</p><br>
     /// - On success, responds with [`GetStagesOutput`](crate::operation::get_stages::GetStagesOutput) with field(s):
-    ///   - [`items(Option<Vec<Stage>>)`](crate::operation::get_stages::GetStagesOutput::items): <p>The elements from this collection.</p>
+    ///   - [`items(Option<Vec::<Stage>>)`](crate::operation::get_stages::GetStagesOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_stages::GetStagesOutput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     /// - On failure, responds with [`SdkError<GetStagesError>`](crate::operation::get_stages::GetStagesError)
     pub fn get_stages(&self) -> crate::operation::get_stages::builders::GetStagesFluentBuilder {

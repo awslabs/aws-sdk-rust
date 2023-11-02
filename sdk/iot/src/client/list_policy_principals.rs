@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`page_size(i32)`](crate::operation::list_policy_principals::builders::ListPolicyPrincipalsFluentBuilder::page_size) / [`set_page_size(Option<i32>)`](crate::operation::list_policy_principals::builders::ListPolicyPrincipalsFluentBuilder::set_page_size):<br>required: **false**<br><p>The result page size.</p><br>
     ///   - [`ascending_order(bool)`](crate::operation::list_policy_principals::builders::ListPolicyPrincipalsFluentBuilder::ascending_order) / [`set_ascending_order(Option<bool>)`](crate::operation::list_policy_principals::builders::ListPolicyPrincipalsFluentBuilder::set_ascending_order):<br>required: **false**<br><p>Specifies the order for results. If true, the results are returned in ascending creation order.</p><br>
     /// - On success, responds with [`ListPolicyPrincipalsOutput`](crate::operation::list_policy_principals::ListPolicyPrincipalsOutput) with field(s):
-    ///   - [`principals(Option<Vec<String>>)`](crate::operation::list_policy_principals::ListPolicyPrincipalsOutput::principals): <p>The descriptions of the principals.</p>
+    ///   - [`principals(Option<Vec::<String>>)`](crate::operation::list_policy_principals::ListPolicyPrincipalsOutput::principals): <p>The descriptions of the principals.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::list_policy_principals::ListPolicyPrincipalsOutput::next_marker): <p>The marker for the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListPolicyPrincipalsError>`](crate::operation::list_policy_principals::ListPolicyPrincipalsError)
     #[deprecated]

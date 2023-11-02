@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`server_id(impl Into<String>)`](crate::operation::list_agreements::builders::ListAgreementsFluentBuilder::server_id) / [`set_server_id(Option<String>)`](crate::operation::list_agreements::builders::ListAgreementsFluentBuilder::set_server_id):<br>required: **true**<br><p>The identifier of the server for which you want a list of agreements.</p><br>
     /// - On success, responds with [`ListAgreementsOutput`](crate::operation::list_agreements::ListAgreementsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_agreements::ListAgreementsOutput::next_token): <p>Returns a token that you can use to call <code>ListAgreements</code> again and receive additional results, if there are any.</p>
-    ///   - [`agreements(Vec<ListedAgreement>)`](crate::operation::list_agreements::ListAgreementsOutput::agreements): <p>Returns an array, where each item contains the details of an agreement.</p>
+    ///   - [`agreements(Vec::<ListedAgreement>)`](crate::operation::list_agreements::ListAgreementsOutput::agreements): <p>Returns an array, where each item contains the details of an agreement.</p>
     /// - On failure, responds with [`SdkError<ListAgreementsError>`](crate::operation::list_agreements::ListAgreementsError)
     pub fn list_agreements(&self) -> crate::operation::list_agreements::builders::ListAgreementsFluentBuilder {
         crate::operation::list_agreements::builders::ListAgreementsFluentBuilder::new(self.handle.clone())

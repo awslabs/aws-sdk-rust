@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`interconnect_id(impl Into<String>)`](crate::operation::describe_interconnects::builders::DescribeInterconnectsFluentBuilder::interconnect_id) / [`set_interconnect_id(Option<String>)`](crate::operation::describe_interconnects::builders::DescribeInterconnectsFluentBuilder::set_interconnect_id):<br>required: **false**<br><p>The ID of the interconnect.</p><br>
     /// - On success, responds with [`DescribeInterconnectsOutput`](crate::operation::describe_interconnects::DescribeInterconnectsOutput) with field(s):
-    ///   - [`interconnects(Option<Vec<Interconnect>>)`](crate::operation::describe_interconnects::DescribeInterconnectsOutput::interconnects): <p>The interconnects.</p>
+    ///   - [`interconnects(Option<Vec::<Interconnect>>)`](crate::operation::describe_interconnects::DescribeInterconnectsOutput::interconnects): <p>The interconnects.</p>
     /// - On failure, responds with [`SdkError<DescribeInterconnectsError>`](crate::operation::describe_interconnects::DescribeInterconnectsError)
     pub fn describe_interconnects(&self) -> crate::operation::describe_interconnects::builders::DescribeInterconnectsFluentBuilder {
         crate::operation::describe_interconnects::builders::DescribeInterconnectsFluentBuilder::new(self.handle.clone())

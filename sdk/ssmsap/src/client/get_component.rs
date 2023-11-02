@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`component_id(impl Into<String>)`](crate::operation::get_component::builders::GetComponentFluentBuilder::component_id) / [`set_component_id(Option<String>)`](crate::operation::get_component::builders::GetComponentFluentBuilder::set_component_id):<br>required: **true**<br><p>The ID of the component.</p><br>
     /// - On success, responds with [`GetComponentOutput`](crate::operation::get_component::GetComponentOutput) with field(s):
     ///   - [`component(Option<Component>)`](crate::operation::get_component::GetComponentOutput::component): <p>The component of an application registered with AWS Systems Manager for SAP.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_component::GetComponentOutput::tags): <p>The tags of a component.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_component::GetComponentOutput::tags): <p>The tags of a component.</p>
     /// - On failure, responds with [`SdkError<GetComponentError>`](crate::operation::get_component::GetComponentError)
     pub fn get_component(&self) -> crate::operation::get_component::builders::GetComponentFluentBuilder {
         crate::operation::get_component::builders::GetComponentFluentBuilder::new(self.handle.clone())

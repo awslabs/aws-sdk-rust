@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::get_bots::builders::GetBotsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_bots::builders::GetBotsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of bots to return in the response that the request will return. The default is 10.</p><br>
     ///   - [`name_contains(impl Into<String>)`](crate::operation::get_bots::builders::GetBotsFluentBuilder::name_contains) / [`set_name_contains(Option<String>)`](crate::operation::get_bots::builders::GetBotsFluentBuilder::set_name_contains):<br>required: **false**<br><p>Substring to match in bot names. A bot will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p><br>
     /// - On success, responds with [`GetBotsOutput`](crate::operation::get_bots::GetBotsOutput) with field(s):
-    ///   - [`bots(Option<Vec<BotMetadata>>)`](crate::operation::get_bots::GetBotsOutput::bots): <p>An array of <code>botMetadata</code> objects, with one entry for each bot. </p>
+    ///   - [`bots(Option<Vec::<BotMetadata>>)`](crate::operation::get_bots::GetBotsOutput::bots): <p>An array of <code>botMetadata</code> objects, with one entry for each bot. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_bots::GetBotsOutput::next_token): <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of bots. </p>
     /// - On failure, responds with [`SdkError<GetBotsError>`](crate::operation::get_bots::GetBotsError)
     pub fn get_bots(&self) -> crate::operation::get_bots::builders::GetBotsFluentBuilder {

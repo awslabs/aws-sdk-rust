@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateConnectivityInfo`](crate::operation::update_connectivity_info::builders::UpdateConnectivityInfoFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`connectivity_info(ConnectivityInfo)`](crate::operation::update_connectivity_info::builders::UpdateConnectivityInfoFluentBuilder::connectivity_info) / [`set_connectivity_info(Option<Vec<ConnectivityInfo>>)`](crate::operation::update_connectivity_info::builders::UpdateConnectivityInfoFluentBuilder::set_connectivity_info):<br>required: **false**<br>A list of connectivity info.<br>
+    ///   - [`connectivity_info(ConnectivityInfo)`](crate::operation::update_connectivity_info::builders::UpdateConnectivityInfoFluentBuilder::connectivity_info) / [`set_connectivity_info(Option<Vec::<ConnectivityInfo>>)`](crate::operation::update_connectivity_info::builders::UpdateConnectivityInfoFluentBuilder::set_connectivity_info):<br>required: **false**<br>A list of connectivity info.<br>
     ///   - [`thing_name(impl Into<String>)`](crate::operation::update_connectivity_info::builders::UpdateConnectivityInfoFluentBuilder::thing_name) / [`set_thing_name(Option<String>)`](crate::operation::update_connectivity_info::builders::UpdateConnectivityInfoFluentBuilder::set_thing_name):<br>required: **true**<br>The thing name.<br>
     /// - On success, responds with [`UpdateConnectivityInfoOutput`](crate::operation::update_connectivity_info::UpdateConnectivityInfoOutput) with field(s):
     ///   - [`message(Option<String>)`](crate::operation::update_connectivity_info::UpdateConnectivityInfoOutput::message): A message about the connectivity info update request.

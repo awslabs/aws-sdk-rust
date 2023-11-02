@@ -16,7 +16,7 @@ impl super::Client {
     ///   - [`video_quality(impl Into<String>)`](crate::operation::list_reservations::builders::ListReservationsFluentBuilder::video_quality) / [`set_video_quality(Option<String>)`](crate::operation::list_reservations::builders::ListReservationsFluentBuilder::set_video_quality):<br>required: **false**<br>Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'<br>
     /// - On success, responds with [`ListReservationsOutput`](crate::operation::list_reservations::ListReservationsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_reservations::ListReservationsOutput::next_token): Token to retrieve the next page of results
-    ///   - [`reservations(Option<Vec<Reservation>>)`](crate::operation::list_reservations::ListReservationsOutput::reservations): List of reservations
+    ///   - [`reservations(Option<Vec::<Reservation>>)`](crate::operation::list_reservations::ListReservationsOutput::reservations): List of reservations
     /// - On failure, responds with [`SdkError<ListReservationsError>`](crate::operation::list_reservations::ListReservationsError)
     pub fn list_reservations(&self) -> crate::operation::list_reservations::builders::ListReservationsFluentBuilder {
         crate::operation::list_reservations::builders::ListReservationsFluentBuilder::new(self.handle.clone())

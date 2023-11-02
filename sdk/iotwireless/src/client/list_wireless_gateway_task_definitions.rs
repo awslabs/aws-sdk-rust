@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`task_definition_type(WirelessGatewayTaskDefinitionType)`](crate::operation::list_wireless_gateway_task_definitions::builders::ListWirelessGatewayTaskDefinitionsFluentBuilder::task_definition_type) / [`set_task_definition_type(Option<WirelessGatewayTaskDefinitionType>)`](crate::operation::list_wireless_gateway_task_definitions::builders::ListWirelessGatewayTaskDefinitionsFluentBuilder::set_task_definition_type):<br>required: **false**<br><p>A filter to list only the wireless gateway task definitions that use this task definition type.</p><br>
     /// - On success, responds with [`ListWirelessGatewayTaskDefinitionsOutput`](crate::operation::list_wireless_gateway_task_definitions::ListWirelessGatewayTaskDefinitionsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_wireless_gateway_task_definitions::ListWirelessGatewayTaskDefinitionsOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    ///   - [`task_definitions(Option<Vec<UpdateWirelessGatewayTaskEntry>>)`](crate::operation::list_wireless_gateway_task_definitions::ListWirelessGatewayTaskDefinitionsOutput::task_definitions): <p>The list of task definitions.</p>
+    ///   - [`task_definitions(Option<Vec::<UpdateWirelessGatewayTaskEntry>>)`](crate::operation::list_wireless_gateway_task_definitions::ListWirelessGatewayTaskDefinitionsOutput::task_definitions): <p>The list of task definitions.</p>
     /// - On failure, responds with [`SdkError<ListWirelessGatewayTaskDefinitionsError>`](crate::operation::list_wireless_gateway_task_definitions::ListWirelessGatewayTaskDefinitionsError)
     pub fn list_wireless_gateway_task_definitions(
         &self,

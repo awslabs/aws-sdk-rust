@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_access_control_configurations::builders::ListAccessControlConfigurationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_access_control_configurations::builders::ListAccessControlConfigurationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of access control configurations to return.</p><br>
     /// - On success, responds with [`ListAccessControlConfigurationsOutput`](crate::operation::list_access_control_configurations::ListAccessControlConfigurationsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_access_control_configurations::ListAccessControlConfigurationsOutput::next_token): <p>If the response is truncated, Amazon Kendra returns this token, which you can use in the subsequent request to retrieve the next set of access control configurations.</p>
-    ///   - [`access_control_configurations(Vec<AccessControlConfigurationSummary>)`](crate::operation::list_access_control_configurations::ListAccessControlConfigurationsOutput::access_control_configurations): <p>The details of your access control configurations.</p>
+    ///   - [`access_control_configurations(Vec::<AccessControlConfigurationSummary>)`](crate::operation::list_access_control_configurations::ListAccessControlConfigurationsOutput::access_control_configurations): <p>The details of your access control configurations.</p>
     /// - On failure, responds with [`SdkError<ListAccessControlConfigurationsError>`](crate::operation::list_access_control_configurations::ListAccessControlConfigurationsError)
     pub fn list_access_control_configurations(
         &self,

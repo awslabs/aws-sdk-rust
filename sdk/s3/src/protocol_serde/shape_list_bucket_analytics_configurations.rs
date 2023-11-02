@@ -123,7 +123,7 @@ pub fn de_list_bucket_analytics_configurations(
             s if s.matches("AnalyticsConfiguration") /* AnalyticsConfigurationList com.amazonaws.s3.synthetic#ListBucketAnalyticsConfigurationsOutput$AnalyticsConfigurationList */ =>  {
                 let var_6 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::AnalyticsConfiguration>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::AnalyticsConfiguration>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_7 = builder.analytics_configuration_list.take().unwrap_or_default();
                             list_7.push(
                                 crate::protocol_serde::shape_analytics_configuration::de_analytics_configuration(&mut tag)

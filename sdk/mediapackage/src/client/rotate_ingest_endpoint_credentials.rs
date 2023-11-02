@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`hls_ingest(Option<HlsIngest>)`](crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsOutput::hls_ingest): An HTTP Live Streaming (HLS) ingest resource configuration.
     ///   - [`id(Option<String>)`](crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsOutput::id): The ID of the Channel.
     ///   - [`ingress_access_logs(Option<IngressAccessLogs>)`](crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsOutput::ingress_access_logs): Configure ingress access logging.
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsOutput::tags): A collection of tags associated with a resource
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsOutput::tags): A collection of tags associated with a resource
     /// - On failure, responds with [`SdkError<RotateIngestEndpointCredentialsError>`](crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsError)
     pub fn rotate_ingest_endpoint_credentials(
         &self,

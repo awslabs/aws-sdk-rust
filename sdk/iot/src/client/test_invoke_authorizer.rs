@@ -12,7 +12,7 @@ impl super::Client {
     /// - On success, responds with [`TestInvokeAuthorizerOutput`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerOutput) with field(s):
     ///   - [`is_authenticated(Option<bool>)`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerOutput::is_authenticated): <p>True if the token is authenticated, otherwise false.</p>
     ///   - [`principal_id(Option<String>)`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerOutput::principal_id): <p>The principal ID.</p>
-    ///   - [`policy_documents(Option<Vec<String>>)`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerOutput::policy_documents): <p>IAM policy documents.</p>
+    ///   - [`policy_documents(Option<Vec::<String>>)`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerOutput::policy_documents): <p>IAM policy documents.</p>
     ///   - [`refresh_after_in_seconds(Option<i32>)`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerOutput::refresh_after_in_seconds): <p>The number of seconds after which the temporary credentials are refreshed.</p>
     ///   - [`disconnect_after_in_seconds(Option<i32>)`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerOutput::disconnect_after_in_seconds): <p>The number of seconds after which the connection is terminated.</p>
     /// - On failure, responds with [`SdkError<TestInvokeAuthorizerError>`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerError)

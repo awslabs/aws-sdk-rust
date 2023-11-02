@@ -11,8 +11,8 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::get_device_fleet_report::GetDeviceFleetReportOutput::description): <p>Description of the fleet.</p>
     ///   - [`report_generated(Option<DateTime>)`](crate::operation::get_device_fleet_report::GetDeviceFleetReportOutput::report_generated): <p>Timestamp of when the report was generated.</p>
     ///   - [`device_stats(Option<DeviceStats>)`](crate::operation::get_device_fleet_report::GetDeviceFleetReportOutput::device_stats): <p>Status of devices.</p>
-    ///   - [`agent_versions(Option<Vec<AgentVersion>>)`](crate::operation::get_device_fleet_report::GetDeviceFleetReportOutput::agent_versions): <p>The versions of Edge Manager agent deployed on the fleet.</p>
-    ///   - [`model_stats(Option<Vec<EdgeModelStat>>)`](crate::operation::get_device_fleet_report::GetDeviceFleetReportOutput::model_stats): <p>Status of model on device.</p>
+    ///   - [`agent_versions(Option<Vec::<AgentVersion>>)`](crate::operation::get_device_fleet_report::GetDeviceFleetReportOutput::agent_versions): <p>The versions of Edge Manager agent deployed on the fleet.</p>
+    ///   - [`model_stats(Option<Vec::<EdgeModelStat>>)`](crate::operation::get_device_fleet_report::GetDeviceFleetReportOutput::model_stats): <p>Status of model on device.</p>
     /// - On failure, responds with [`SdkError<GetDeviceFleetReportError>`](crate::operation::get_device_fleet_report::GetDeviceFleetReportError)
     pub fn get_device_fleet_report(&self) -> crate::operation::get_device_fleet_report::builders::GetDeviceFleetReportFluentBuilder {
         crate::operation::get_device_fleet_report::builders::GetDeviceFleetReportFluentBuilder::new(self.handle.clone())

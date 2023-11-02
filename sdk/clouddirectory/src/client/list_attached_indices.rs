@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_attached_indices::builders::ListAttachedIndicesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_attached_indices::builders::ListAttachedIndicesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to retrieve.</p><br>
     ///   - [`consistency_level(ConsistencyLevel)`](crate::operation::list_attached_indices::builders::ListAttachedIndicesFluentBuilder::consistency_level) / [`set_consistency_level(Option<ConsistencyLevel>)`](crate::operation::list_attached_indices::builders::ListAttachedIndicesFluentBuilder::set_consistency_level):<br>required: **false**<br><p>The consistency level to use for this operation.</p><br>
     /// - On success, responds with [`ListAttachedIndicesOutput`](crate::operation::list_attached_indices::ListAttachedIndicesOutput) with field(s):
-    ///   - [`index_attachments(Option<Vec<IndexAttachment>>)`](crate::operation::list_attached_indices::ListAttachedIndicesOutput::index_attachments): <p>The indices attached to the specified object.</p>
+    ///   - [`index_attachments(Option<Vec::<IndexAttachment>>)`](crate::operation::list_attached_indices::ListAttachedIndicesOutput::index_attachments): <p>The indices attached to the specified object.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_attached_indices::ListAttachedIndicesOutput::next_token): <p>The pagination token.</p>
     /// - On failure, responds with [`SdkError<ListAttachedIndicesError>`](crate::operation::list_attached_indices::ListAttachedIndicesError)
     pub fn list_attached_indices(&self) -> crate::operation::list_attached_indices::builders::ListAttachedIndicesFluentBuilder {

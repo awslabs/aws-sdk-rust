@@ -12,7 +12,7 @@ impl super::Client {
     /// - On success, responds with [`ListLogPatternsOutput`](crate::operation::list_log_patterns::ListLogPatternsOutput) with field(s):
     ///   - [`resource_group_name(Option<String>)`](crate::operation::list_log_patterns::ListLogPatternsOutput::resource_group_name): <p>The name of the resource group.</p>
     ///   - [`account_id(Option<String>)`](crate::operation::list_log_patterns::ListLogPatternsOutput::account_id): <p>The AWS account ID for the resource group owner.</p>
-    ///   - [`log_patterns(Option<Vec<LogPattern>>)`](crate::operation::list_log_patterns::ListLogPatternsOutput::log_patterns): <p>The list of log patterns.</p>
+    ///   - [`log_patterns(Option<Vec::<LogPattern>>)`](crate::operation::list_log_patterns::ListLogPatternsOutput::log_patterns): <p>The list of log patterns.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_log_patterns::ListLogPatternsOutput::next_token): <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     /// - On failure, responds with [`SdkError<ListLogPatternsError>`](crate::operation::list_log_patterns::ListLogPatternsError)
     pub fn list_log_patterns(&self) -> crate::operation::list_log_patterns::builders::ListLogPatternsFluentBuilder {

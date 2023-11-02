@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`ListOpenCypherQueriesOutput`](crate::operation::list_open_cypher_queries::ListOpenCypherQueriesOutput) with field(s):
     ///   - [`accepted_query_count(Option<i32>)`](crate::operation::list_open_cypher_queries::ListOpenCypherQueriesOutput::accepted_query_count): <p>The number of queries that have been accepted but not yet completed, including queries in the queue.</p>
     ///   - [`running_query_count(Option<i32>)`](crate::operation::list_open_cypher_queries::ListOpenCypherQueriesOutput::running_query_count): <p>The number of currently running openCypher queries.</p>
-    ///   - [`queries(Option<Vec<GremlinQueryStatus>>)`](crate::operation::list_open_cypher_queries::ListOpenCypherQueriesOutput::queries): <p>A list of current openCypher queries.</p>
+    ///   - [`queries(Option<Vec::<GremlinQueryStatus>>)`](crate::operation::list_open_cypher_queries::ListOpenCypherQueriesOutput::queries): <p>A list of current openCypher queries.</p>
     /// - On failure, responds with [`SdkError<ListOpenCypherQueriesError>`](crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError)
     pub fn list_open_cypher_queries(&self) -> crate::operation::list_open_cypher_queries::builders::ListOpenCypherQueriesFluentBuilder {
         crate::operation::list_open_cypher_queries::builders::ListOpenCypherQueriesFluentBuilder::new(self.handle.clone())

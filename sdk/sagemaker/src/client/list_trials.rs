@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_trials::builders::ListTrialsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_trials::builders::ListTrialsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of trials to return in the response. The default value is 10.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_trials::builders::ListTrialsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_trials::builders::ListTrialsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous call to <code>ListTrials</code> didn't return the full set of trials, the call returns a token for getting the next set of trials.</p><br>
     /// - On success, responds with [`ListTrialsOutput`](crate::operation::list_trials::ListTrialsOutput) with field(s):
-    ///   - [`trial_summaries(Option<Vec<TrialSummary>>)`](crate::operation::list_trials::ListTrialsOutput::trial_summaries): <p>A list of the summaries of your trials.</p>
+    ///   - [`trial_summaries(Option<Vec::<TrialSummary>>)`](crate::operation::list_trials::ListTrialsOutput::trial_summaries): <p>A list of the summaries of your trials.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_trials::ListTrialsOutput::next_token): <p>A token for getting the next set of trials, if there are any.</p>
     /// - On failure, responds with [`SdkError<ListTrialsError>`](crate::operation::list_trials::ListTrialsError)
     pub fn list_trials(&self) -> crate::operation::list_trials::builders::ListTrialsFluentBuilder {

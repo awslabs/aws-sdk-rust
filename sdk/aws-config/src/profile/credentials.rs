@@ -262,6 +262,8 @@ pub enum ProfileFileError {
     FeatureNotEnabled {
         /// The feature or comma delimited list of features that must be enabled
         feature: Cow<'static, str>,
+        /// Additional information about the missing feature
+        message: Option<Cow<'static, str>>,
     },
 }
 
@@ -315,10 +317,11 @@ impl Display for ProfileFileError {
                 "profile `{}` did not contain credential information",
                 profile
             ),
-            ProfileFileError::FeatureNotEnabled { feature: message } => {
+            ProfileFileError::FeatureNotEnabled { feature, message } => {
+                let message = message.as_deref().unwrap_or_default();
                 write!(
                     f,
-                    "This behavior requires following cargo feature(s) enabled: {message}",
+                    "This behavior requires following cargo feature(s) enabled: {feature}. {message}",
                 )
             }
         }
@@ -488,7 +491,10 @@ mod test {
     make_test!(retry_on_error);
     make_test!(invalid_config);
     make_test!(region_override);
+    #[cfg(feature = "credentials-process")]
     make_test!(credential_process);
+    #[cfg(feature = "credentials-process")]
     make_test!(credential_process_failure);
+    #[cfg(feature = "credentials-process")]
     make_test!(credential_process_invalid);
 }

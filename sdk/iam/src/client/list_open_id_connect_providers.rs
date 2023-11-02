@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::list_open_id_connect_providers::builders::ListOpenIDConnectProvidersFluentBuilder::send) it.
     /// - On success, responds with [`ListOpenIdConnectProvidersOutput`](crate::operation::list_open_id_connect_providers::ListOpenIdConnectProvidersOutput) with field(s):
-    ///   - [`open_id_connect_provider_list(Option<Vec<OpenIdConnectProviderListEntry>>)`](crate::operation::list_open_id_connect_providers::ListOpenIdConnectProvidersOutput::open_id_connect_provider_list): <p>The list of IAM OIDC provider resource objects defined in the Amazon Web Services account.</p>
+    ///   - [`open_id_connect_provider_list(Option<Vec::<OpenIdConnectProviderListEntry>>)`](crate::operation::list_open_id_connect_providers::ListOpenIdConnectProvidersOutput::open_id_connect_provider_list): <p>The list of IAM OIDC provider resource objects defined in the Amazon Web Services account.</p>
     /// - On failure, responds with [`SdkError<ListOpenIDConnectProvidersError>`](crate::operation::list_open_id_connect_providers::ListOpenIDConnectProvidersError)
     pub fn list_open_id_connect_providers(
         &self,

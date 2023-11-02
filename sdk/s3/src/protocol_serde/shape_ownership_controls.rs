@@ -28,7 +28,7 @@ pub fn de_ownership_controls(
             s if s.matches("Rule") /* Rules com.amazonaws.s3#OwnershipControls$Rules */ =>  {
                 let var_2 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::OwnershipControlsRule>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::OwnershipControlsRule>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_3 = builder.rules.take().unwrap_or_default();
                             list_3.push(
                                 crate::protocol_serde::shape_ownership_controls_rule::de_ownership_controls_rule(&mut tag)

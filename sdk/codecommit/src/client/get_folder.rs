@@ -10,10 +10,10 @@ impl super::Client {
     ///   - [`commit_id(String)`](crate::operation::get_folder::GetFolderOutput::commit_id): <p>The full commit ID used as a reference for the returned version of the folder content.</p>
     ///   - [`folder_path(String)`](crate::operation::get_folder::GetFolderOutput::folder_path): <p>The fully qualified path of the folder whose contents are returned.</p>
     ///   - [`tree_id(Option<String>)`](crate::operation::get_folder::GetFolderOutput::tree_id): <p>The full SHA-1 pointer of the tree information for the commit that contains the folder.</p>
-    ///   - [`sub_folders(Option<Vec<Folder>>)`](crate::operation::get_folder::GetFolderOutput::sub_folders): <p>The list of folders that exist under the specified folder, if any.</p>
-    ///   - [`files(Option<Vec<File>>)`](crate::operation::get_folder::GetFolderOutput::files): <p>The list of files in the specified folder, if any.</p>
-    ///   - [`symbolic_links(Option<Vec<SymbolicLink>>)`](crate::operation::get_folder::GetFolderOutput::symbolic_links): <p>The list of symbolic links to other files and folders in the specified folder, if any.</p>
-    ///   - [`sub_modules(Option<Vec<SubModule>>)`](crate::operation::get_folder::GetFolderOutput::sub_modules): <p>The list of submodules in the specified folder, if any.</p>
+    ///   - [`sub_folders(Option<Vec::<Folder>>)`](crate::operation::get_folder::GetFolderOutput::sub_folders): <p>The list of folders that exist under the specified folder, if any.</p>
+    ///   - [`files(Option<Vec::<File>>)`](crate::operation::get_folder::GetFolderOutput::files): <p>The list of files in the specified folder, if any.</p>
+    ///   - [`symbolic_links(Option<Vec::<SymbolicLink>>)`](crate::operation::get_folder::GetFolderOutput::symbolic_links): <p>The list of symbolic links to other files and folders in the specified folder, if any.</p>
+    ///   - [`sub_modules(Option<Vec::<SubModule>>)`](crate::operation::get_folder::GetFolderOutput::sub_modules): <p>The list of submodules in the specified folder, if any.</p>
     /// - On failure, responds with [`SdkError<GetFolderError>`](crate::operation::get_folder::GetFolderError)
     pub fn get_folder(&self) -> crate::operation::get_folder::builders::GetFolderFluentBuilder {
         crate::operation::get_folder::builders::GetFolderFluentBuilder::new(self.handle.clone())

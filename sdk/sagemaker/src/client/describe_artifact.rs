@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`artifact_arn(Option<String>)`](crate::operation::describe_artifact::DescribeArtifactOutput::artifact_arn): <p>The Amazon Resource Name (ARN) of the artifact.</p>
     ///   - [`source(Option<ArtifactSource>)`](crate::operation::describe_artifact::DescribeArtifactOutput::source): <p>The source of the artifact.</p>
     ///   - [`artifact_type(Option<String>)`](crate::operation::describe_artifact::DescribeArtifactOutput::artifact_type): <p>The type of the artifact.</p>
-    ///   - [`properties(Option<HashMap<String, String>>)`](crate::operation::describe_artifact::DescribeArtifactOutput::properties): <p>A list of the artifact's properties.</p>
+    ///   - [`properties(Option<HashMap::<String, String>>)`](crate::operation::describe_artifact::DescribeArtifactOutput::properties): <p>A list of the artifact's properties.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_artifact::DescribeArtifactOutput::creation_time): <p>When the artifact was created.</p>
     ///   - [`created_by(Option<UserContext>)`](crate::operation::describe_artifact::DescribeArtifactOutput::created_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_artifact::DescribeArtifactOutput::last_modified_time): <p>When the artifact was last modified.</p>

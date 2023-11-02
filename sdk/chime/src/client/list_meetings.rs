@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_meetings::builders::ListMeetingsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_meetings::builders::ListMeetingsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use to retrieve the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_meetings::builders::ListMeetingsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_meetings::builders::ListMeetingsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call.</p><br>
     /// - On success, responds with [`ListMeetingsOutput`](crate::operation::list_meetings::ListMeetingsOutput) with field(s):
-    ///   - [`meetings(Option<Vec<Meeting>>)`](crate::operation::list_meetings::ListMeetingsOutput::meetings): <p>The Amazon Chime SDK meeting information.</p>
+    ///   - [`meetings(Option<Vec::<Meeting>>)`](crate::operation::list_meetings::ListMeetingsOutput::meetings): <p>The Amazon Chime SDK meeting information.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_meetings::ListMeetingsOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListMeetingsError>`](crate::operation::list_meetings::ListMeetingsError)
     #[deprecated(

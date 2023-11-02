@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`device_type(DeviceType)`](crate::operation::get_device::GetDeviceOutput::device_type): <p>The type of the device.</p>
     ///   - [`device_status(DeviceStatus)`](crate::operation::get_device::GetDeviceOutput::device_status): <p>The status of the device.</p>
     ///   - [`device_capabilities(String)`](crate::operation::get_device::GetDeviceOutput::device_capabilities): <p>Details about the capabilities of the device.</p>
-    ///   - [`device_queue_info(Option<Vec<DeviceQueueInfo>>)`](crate::operation::get_device::GetDeviceOutput::device_queue_info): <p>List of information about tasks and jobs queued on a device.</p>
+    ///   - [`device_queue_info(Option<Vec::<DeviceQueueInfo>>)`](crate::operation::get_device::GetDeviceOutput::device_queue_info): <p>List of information about tasks and jobs queued on a device.</p>
     /// - On failure, responds with [`SdkError<GetDeviceError>`](crate::operation::get_device::GetDeviceError)
     pub fn get_device(&self) -> crate::operation::get_device::builders::GetDeviceFluentBuilder {
         crate::operation::get_device::builders::GetDeviceFluentBuilder::new(self.handle.clone())

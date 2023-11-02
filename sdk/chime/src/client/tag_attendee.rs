@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`meeting_id(impl Into<String>)`](crate::operation::tag_attendee::builders::TagAttendeeFluentBuilder::meeting_id) / [`set_meeting_id(Option<String>)`](crate::operation::tag_attendee::builders::TagAttendeeFluentBuilder::set_meeting_id):<br>required: **true**<br><p>The Amazon Chime SDK meeting ID.</p><br>
     ///   - [`attendee_id(impl Into<String>)`](crate::operation::tag_attendee::builders::TagAttendeeFluentBuilder::attendee_id) / [`set_attendee_id(Option<String>)`](crate::operation::tag_attendee::builders::TagAttendeeFluentBuilder::set_attendee_id):<br>required: **true**<br><p>The Amazon Chime SDK attendee ID.</p><br>
-    ///   - [`tags(Tag)`](crate::operation::tag_attendee::builders::TagAttendeeFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::tag_attendee::builders::TagAttendeeFluentBuilder::set_tags):<br>required: **true**<br><p>The tag key-value pairs.</p><br>
+    ///   - [`tags(Tag)`](crate::operation::tag_attendee::builders::TagAttendeeFluentBuilder::tags) / [`set_tags(Option<Vec::<Tag>>)`](crate::operation::tag_attendee::builders::TagAttendeeFluentBuilder::set_tags):<br>required: **true**<br><p>The tag key-value pairs.</p><br>
     /// - On success, responds with [`TagAttendeeOutput`](crate::operation::tag_attendee::TagAttendeeOutput)
     /// - On failure, responds with [`SdkError<TagAttendeeError>`](crate::operation::tag_attendee::TagAttendeeError)
     #[deprecated(

@@ -9,8 +9,8 @@ impl super::Client {
     ///   - [`limit(i32)`](crate::operation::get_resources::builders::GetResourcesFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::get_resources::builders::GetResourcesFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of resources to return.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::get_resources::builders::GetResourcesFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::get_resources::builders::GetResourcesFluentBuilder::set_marker):<br>required: **false**<br><p>The marker for the next set of results. This marker was received from a previous call.</p><br>
     /// - On success, responds with [`GetResourcesOutput`](crate::operation::get_resources::GetResourcesOutput) with field(s):
-    ///   - [`folders(Option<Vec<FolderMetadata>>)`](crate::operation::get_resources::GetResourcesOutput::folders): <p>The folders in the specified folder.</p>
-    ///   - [`documents(Option<Vec<DocumentMetadata>>)`](crate::operation::get_resources::GetResourcesOutput::documents): <p>The documents in the specified collection.</p>
+    ///   - [`folders(Option<Vec::<FolderMetadata>>)`](crate::operation::get_resources::GetResourcesOutput::folders): <p>The folders in the specified folder.</p>
+    ///   - [`documents(Option<Vec::<DocumentMetadata>>)`](crate::operation::get_resources::GetResourcesOutput::documents): <p>The documents in the specified collection.</p>
     ///   - [`marker(Option<String>)`](crate::operation::get_resources::GetResourcesOutput::marker): <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     /// - On failure, responds with [`SdkError<GetResourcesError>`](crate::operation::get_resources::GetResourcesError)
     pub fn get_resources(&self) -> crate::operation::get_resources::builders::GetResourcesFluentBuilder {

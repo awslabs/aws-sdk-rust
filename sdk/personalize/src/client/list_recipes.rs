@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_recipes::builders::ListRecipesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_recipes::builders::ListRecipesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of recipes to return.</p><br>
     ///   - [`domain(Domain)`](crate::operation::list_recipes::builders::ListRecipesFluentBuilder::domain) / [`set_domain(Option<Domain>)`](crate::operation::list_recipes::builders::ListRecipesFluentBuilder::set_domain):<br>required: **false**<br><p> Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases) for this domain are included in the response. If you don't specify a domain, all recipes are returned. </p><br>
     /// - On success, responds with [`ListRecipesOutput`](crate::operation::list_recipes::ListRecipesOutput) with field(s):
-    ///   - [`recipes(Option<Vec<RecipeSummary>>)`](crate::operation::list_recipes::ListRecipesOutput::recipes): <p>The list of available recipes.</p>
+    ///   - [`recipes(Option<Vec::<RecipeSummary>>)`](crate::operation::list_recipes::ListRecipesOutput::recipes): <p>The list of available recipes.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_recipes::ListRecipesOutput::next_token): <p>A token for getting the next set of recipes.</p>
     /// - On failure, responds with [`SdkError<ListRecipesError>`](crate::operation::list_recipes::ListRecipesError)
     pub fn list_recipes(&self) -> crate::operation::list_recipes::builders::ListRecipesFluentBuilder {

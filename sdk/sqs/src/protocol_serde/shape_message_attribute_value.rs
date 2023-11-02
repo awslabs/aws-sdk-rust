@@ -81,7 +81,7 @@ pub fn de_message_attribute_value(
             s if s.matches("StringListValue") /* StringListValues com.amazonaws.sqs#MessageAttributeValue$StringListValues */ =>  {
                 let var_18 =
                     Some(
-                        Result::<::std::vec::Vec<::std::string::String>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<::std::string::String>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_19 = builder.string_list_values.take().unwrap_or_default();
                             list_19.push(
                                 Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -101,7 +101,7 @@ pub fn de_message_attribute_value(
             s if s.matches("BinaryListValue") /* BinaryListValues com.amazonaws.sqs#MessageAttributeValue$BinaryListValues */ =>  {
                 let var_20 =
                     Some(
-                        Result::<::std::vec::Vec<::aws_smithy_types::Blob>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<::aws_smithy_types::Blob>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_21 = builder.binary_list_values.take().unwrap_or_default();
                             list_21.push(
                                 ::aws_smithy_types::base64::decode(

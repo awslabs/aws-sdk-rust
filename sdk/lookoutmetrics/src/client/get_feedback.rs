@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::get_feedback::builders::GetFeedbackFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_feedback::builders::GetFeedbackFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_feedback::builders::GetFeedbackFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_feedback::builders::GetFeedbackFluentBuilder::set_next_token):<br>required: **false**<br><p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p><br>
     /// - On success, responds with [`GetFeedbackOutput`](crate::operation::get_feedback::GetFeedbackOutput) with field(s):
-    ///   - [`anomaly_group_time_series_feedback(Option<Vec<TimeSeriesFeedback>>)`](crate::operation::get_feedback::GetFeedbackOutput::anomaly_group_time_series_feedback): <p>Feedback for an anomalous metric.</p>
+    ///   - [`anomaly_group_time_series_feedback(Option<Vec::<TimeSeriesFeedback>>)`](crate::operation::get_feedback::GetFeedbackOutput::anomaly_group_time_series_feedback): <p>Feedback for an anomalous metric.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_feedback::GetFeedbackOutput::next_token): <p>The pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<GetFeedbackError>`](crate::operation::get_feedback::GetFeedbackError)
     pub fn get_feedback(&self) -> crate::operation::get_feedback::builders::GetFeedbackFluentBuilder {

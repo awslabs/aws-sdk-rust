@@ -16,11 +16,11 @@ impl super::Client {
     ///   - [`latest_software(Option<String>)`](crate::operation::describe_device::DescribeDeviceOutput::latest_software): <p>The latest software version available for the device.</p>
     ///   - [`current_software(Option<String>)`](crate::operation::describe_device::DescribeDeviceOutput::current_software): <p>The device's current software version.</p>
     ///   - [`serial_number(Option<String>)`](crate::operation::describe_device::DescribeDeviceOutput::serial_number): <p>The device's serial number.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_device::DescribeDeviceOutput::tags): <p>The device's tags.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_device::DescribeDeviceOutput::tags): <p>The device's tags.</p>
     ///   - [`networking_configuration(Option<NetworkPayload>)`](crate::operation::describe_device::DescribeDeviceOutput::networking_configuration): <p>The device's networking configuration.</p>
     ///   - [`current_networking_status(Option<NetworkStatus>)`](crate::operation::describe_device::DescribeDeviceOutput::current_networking_status): <p>The device's networking status.</p>
     ///   - [`lease_expiration_time(Option<DateTime>)`](crate::operation::describe_device::DescribeDeviceOutput::lease_expiration_time): <p>The device's lease expiration time.</p>
-    ///   - [`alternate_softwares(Option<Vec<AlternateSoftwareMetadata>>)`](crate::operation::describe_device::DescribeDeviceOutput::alternate_softwares): <p>Beta software releases available for the device.</p>
+    ///   - [`alternate_softwares(Option<Vec::<AlternateSoftwareMetadata>>)`](crate::operation::describe_device::DescribeDeviceOutput::alternate_softwares): <p>Beta software releases available for the device.</p>
     ///   - [`latest_alternate_software(Option<String>)`](crate::operation::describe_device::DescribeDeviceOutput::latest_alternate_software): <p>The most recent beta software release.</p>
     ///   - [`brand(Option<DeviceBrand>)`](crate::operation::describe_device::DescribeDeviceOutput::brand): <p>The device's maker.</p>
     ///   - [`latest_device_job(Option<LatestDeviceJob>)`](crate::operation::describe_device::DescribeDeviceOutput::latest_device_job): <p>A device's latest job. Includes the target image version, and the job status.</p>

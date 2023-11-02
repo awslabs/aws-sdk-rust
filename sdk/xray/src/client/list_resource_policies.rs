@@ -6,7 +6,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_resource_policies::builders::ListResourcePoliciesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_resource_policies::builders::ListResourcePoliciesFluentBuilder::set_next_token):<br>required: **false**<br><p>Not currently supported.</p><br>
     /// - On success, responds with [`ListResourcePoliciesOutput`](crate::operation::list_resource_policies::ListResourcePoliciesOutput) with field(s):
-    ///   - [`resource_policies(Option<Vec<ResourcePolicy>>)`](crate::operation::list_resource_policies::ListResourcePoliciesOutput::resource_policies): <p>The list of resource policies in the target Amazon Web Services account.</p>
+    ///   - [`resource_policies(Option<Vec::<ResourcePolicy>>)`](crate::operation::list_resource_policies::ListResourcePoliciesOutput::resource_policies): <p>The list of resource policies in the target Amazon Web Services account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_resource_policies::ListResourcePoliciesOutput::next_token): <p>Pagination token. Not currently supported.</p>
     /// - On failure, responds with [`SdkError<ListResourcePoliciesError>`](crate::operation::list_resource_policies::ListResourcePoliciesError)
     pub fn list_resource_policies(&self) -> crate::operation::list_resource_policies::builders::ListResourcePoliciesFluentBuilder {

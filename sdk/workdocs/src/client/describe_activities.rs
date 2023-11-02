@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`limit(i32)`](crate::operation::describe_activities::builders::DescribeActivitiesFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::describe_activities::builders::DescribeActivitiesFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of items to return.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::describe_activities::builders::DescribeActivitiesFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_activities::builders::DescribeActivitiesFluentBuilder::set_marker):<br>required: **false**<br><p>The marker for the next set of results.</p><br>
     /// - On success, responds with [`DescribeActivitiesOutput`](crate::operation::describe_activities::DescribeActivitiesOutput) with field(s):
-    ///   - [`user_activities(Option<Vec<Activity>>)`](crate::operation::describe_activities::DescribeActivitiesOutput::user_activities): <p>The list of activities for the specified user and time period.</p>
+    ///   - [`user_activities(Option<Vec::<Activity>>)`](crate::operation::describe_activities::DescribeActivitiesOutput::user_activities): <p>The list of activities for the specified user and time period.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_activities::DescribeActivitiesOutput::marker): <p>The marker for the next set of results.</p>
     /// - On failure, responds with [`SdkError<DescribeActivitiesError>`](crate::operation::describe_activities::DescribeActivitiesError)
     pub fn describe_activities(&self) -> crate::operation::describe_activities::builders::DescribeActivitiesFluentBuilder {

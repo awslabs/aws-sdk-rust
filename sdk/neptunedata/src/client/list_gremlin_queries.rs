@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`ListGremlinQueriesOutput`](crate::operation::list_gremlin_queries::ListGremlinQueriesOutput) with field(s):
     ///   - [`accepted_query_count(Option<i32>)`](crate::operation::list_gremlin_queries::ListGremlinQueriesOutput::accepted_query_count): <p>The number of queries that have been accepted but not yet completed, including queries in the queue.</p>
     ///   - [`running_query_count(Option<i32>)`](crate::operation::list_gremlin_queries::ListGremlinQueriesOutput::running_query_count): <p>The number of Gremlin queries currently running.</p>
-    ///   - [`queries(Option<Vec<GremlinQueryStatus>>)`](crate::operation::list_gremlin_queries::ListGremlinQueriesOutput::queries): <p>A list of the current queries.</p>
+    ///   - [`queries(Option<Vec::<GremlinQueryStatus>>)`](crate::operation::list_gremlin_queries::ListGremlinQueriesOutput::queries): <p>A list of the current queries.</p>
     /// - On failure, responds with [`SdkError<ListGremlinQueriesError>`](crate::operation::list_gremlin_queries::ListGremlinQueriesError)
     pub fn list_gremlin_queries(&self) -> crate::operation::list_gremlin_queries::builders::ListGremlinQueriesFluentBuilder {
         crate::operation::list_gremlin_queries::builders::ListGremlinQueriesFluentBuilder::new(self.handle.clone())

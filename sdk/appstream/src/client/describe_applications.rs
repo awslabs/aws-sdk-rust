@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeApplications`](crate::operation::describe_applications::builders::DescribeApplicationsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arns(impl Into<String>)`](crate::operation::describe_applications::builders::DescribeApplicationsFluentBuilder::arns) / [`set_arns(Option<Vec<String>>)`](crate::operation::describe_applications::builders::DescribeApplicationsFluentBuilder::set_arns):<br>required: **false**<br><p>The ARNs for the applications.</p><br>
+    ///   - [`arns(impl Into<String>)`](crate::operation::describe_applications::builders::DescribeApplicationsFluentBuilder::arns) / [`set_arns(Option<Vec::<String>>)`](crate::operation::describe_applications::builders::DescribeApplicationsFluentBuilder::set_arns):<br>required: **false**<br><p>The ARNs for the applications.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_applications::builders::DescribeApplicationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_applications::builders::DescribeApplicationsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token used to retrieve the next page of results for this operation.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_applications::builders::DescribeApplicationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_applications::builders::DescribeApplicationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum size of each page of results.</p><br>
     /// - On success, responds with [`DescribeApplicationsOutput`](crate::operation::describe_applications::DescribeApplicationsOutput) with field(s):
-    ///   - [`applications(Option<Vec<Application>>)`](crate::operation::describe_applications::DescribeApplicationsOutput::applications): <p>The applications in the list.</p>
+    ///   - [`applications(Option<Vec::<Application>>)`](crate::operation::describe_applications::DescribeApplicationsOutput::applications): <p>The applications in the list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_applications::DescribeApplicationsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
     /// - On failure, responds with [`SdkError<DescribeApplicationsError>`](crate::operation::describe_applications::DescribeApplicationsError)
     pub fn describe_applications(&self) -> crate::operation::describe_applications::builders::DescribeApplicationsFluentBuilder {

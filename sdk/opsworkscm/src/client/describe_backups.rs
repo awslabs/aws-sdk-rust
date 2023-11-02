@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_backups::builders::DescribeBackupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_backups::builders::DescribeBackupsFluentBuilder::set_next_token):<br>required: **false**<br><p>This is not currently implemented for <code>DescribeBackups</code> requests.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_backups::builders::DescribeBackupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_backups::builders::DescribeBackupsFluentBuilder::set_max_results):<br>required: **false**<br><p>This is not currently implemented for <code>DescribeBackups</code> requests.</p><br>
     /// - On success, responds with [`DescribeBackupsOutput`](crate::operation::describe_backups::DescribeBackupsOutput) with field(s):
-    ///   - [`backups(Option<Vec<Backup>>)`](crate::operation::describe_backups::DescribeBackupsOutput::backups): <p>Contains the response to a <code>DescribeBackups</code> request. </p>
+    ///   - [`backups(Option<Vec::<Backup>>)`](crate::operation::describe_backups::DescribeBackupsOutput::backups): <p>Contains the response to a <code>DescribeBackups</code> request. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_backups::DescribeBackupsOutput::next_token): <p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>
     /// - On failure, responds with [`SdkError<DescribeBackupsError>`](crate::operation::describe_backups::DescribeBackupsError)
     pub fn describe_backups(&self) -> crate::operation::describe_backups::builders::DescribeBackupsFluentBuilder {

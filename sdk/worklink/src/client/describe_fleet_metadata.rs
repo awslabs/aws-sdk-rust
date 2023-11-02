@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`optimize_for_end_user_location(Option<bool>)`](crate::operation::describe_fleet_metadata::DescribeFleetMetadataOutput::optimize_for_end_user_location): <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
     ///   - [`company_code(Option<String>)`](crate::operation::describe_fleet_metadata::DescribeFleetMetadataOutput::company_code): <p>The identifier used by users to sign in to the Amazon WorkLink app.</p>
     ///   - [`fleet_status(Option<FleetStatus>)`](crate::operation::describe_fleet_metadata::DescribeFleetMetadataOutput::fleet_status): <p>The current state of the fleet.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_fleet_metadata::DescribeFleetMetadataOutput::tags): <p>The tags attached to the resource. A tag is a key-value pair.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_fleet_metadata::DescribeFleetMetadataOutput::tags): <p>The tags attached to the resource. A tag is a key-value pair.</p>
     /// - On failure, responds with [`SdkError<DescribeFleetMetadataError>`](crate::operation::describe_fleet_metadata::DescribeFleetMetadataError)
     #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
     pub fn describe_fleet_metadata(&self) -> crate::operation::describe_fleet_metadata::builders::DescribeFleetMetadataFluentBuilder {

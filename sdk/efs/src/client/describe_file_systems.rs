@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`file_system_id(impl Into<String>)`](crate::operation::describe_file_systems::builders::DescribeFileSystemsFluentBuilder::file_system_id) / [`set_file_system_id(Option<String>)`](crate::operation::describe_file_systems::builders::DescribeFileSystemsFluentBuilder::set_file_system_id):<br>required: **false**<br><p>(Optional) ID of the file system whose description you want to retrieve (String).</p><br>
     /// - On success, responds with [`DescribeFileSystemsOutput`](crate::operation::describe_file_systems::DescribeFileSystemsOutput) with field(s):
     ///   - [`marker(Option<String>)`](crate::operation::describe_file_systems::DescribeFileSystemsOutput::marker): <p>Present if provided by caller in the request (String).</p>
-    ///   - [`file_systems(Option<Vec<FileSystemDescription>>)`](crate::operation::describe_file_systems::DescribeFileSystemsOutput::file_systems): <p>An array of file system descriptions.</p>
+    ///   - [`file_systems(Option<Vec::<FileSystemDescription>>)`](crate::operation::describe_file_systems::DescribeFileSystemsOutput::file_systems): <p>An array of file system descriptions.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::describe_file_systems::DescribeFileSystemsOutput::next_marker): <p>Present if there are more file systems than returned in the response (String). You can use the <code>NextMarker</code> in the subsequent request to fetch the descriptions.</p>
     /// - On failure, responds with [`SdkError<DescribeFileSystemsError>`](crate::operation::describe_file_systems::DescribeFileSystemsError)
     pub fn describe_file_systems(&self) -> crate::operation::describe_file_systems::builders::DescribeFileSystemsFluentBuilder {

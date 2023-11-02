@@ -4,9 +4,9 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_name(impl Into<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::resource_name) / [`set_resource_name(Option<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::set_resource_name):<br>required: **true**<br><p>The name of the DAX resource from which the tags should be removed.</p><br>
-    ///   - [`tag_keys(impl Into<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::set_tag_keys):<br>required: **true**<br><p>A list of tag keys. If the DAX cluster has any tags with these keys, then the tags are removed from the cluster.</p><br>
+    ///   - [`tag_keys(impl Into<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec::<String>>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::set_tag_keys):<br>required: **true**<br><p>A list of tag keys. If the DAX cluster has any tags with these keys, then the tags are removed from the cluster.</p><br>
     /// - On success, responds with [`UntagResourceOutput`](crate::operation::untag_resource::UntagResourceOutput) with field(s):
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::untag_resource::UntagResourceOutput::tags): <p>The tag keys that have been removed from the cluster.</p>
+    ///   - [`tags(Option<Vec::<Tag>>)`](crate::operation::untag_resource::UntagResourceOutput::tags): <p>The tag keys that have been removed from the cluster.</p>
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::operation::untag_resource::UntagResourceError)
     pub fn untag_resource(&self) -> crate::operation::untag_resource::builders::UntagResourceFluentBuilder {
         crate::operation::untag_resource::builders::UntagResourceFluentBuilder::new(self.handle.clone())

@@ -4,9 +4,9 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`load_balancer_name(impl Into<String>)`](crate::operation::deregister_instances_from_load_balancer::builders::DeregisterInstancesFromLoadBalancerFluentBuilder::load_balancer_name) / [`set_load_balancer_name(Option<String>)`](crate::operation::deregister_instances_from_load_balancer::builders::DeregisterInstancesFromLoadBalancerFluentBuilder::set_load_balancer_name):<br>required: **true**<br><p>The name of the load balancer.</p><br>
-    ///   - [`instances(Instance)`](crate::operation::deregister_instances_from_load_balancer::builders::DeregisterInstancesFromLoadBalancerFluentBuilder::instances) / [`set_instances(Option<Vec<Instance>>)`](crate::operation::deregister_instances_from_load_balancer::builders::DeregisterInstancesFromLoadBalancerFluentBuilder::set_instances):<br>required: **true**<br><p>The IDs of the instances.</p><br>
+    ///   - [`instances(Instance)`](crate::operation::deregister_instances_from_load_balancer::builders::DeregisterInstancesFromLoadBalancerFluentBuilder::instances) / [`set_instances(Option<Vec::<Instance>>)`](crate::operation::deregister_instances_from_load_balancer::builders::DeregisterInstancesFromLoadBalancerFluentBuilder::set_instances):<br>required: **true**<br><p>The IDs of the instances.</p><br>
     /// - On success, responds with [`DeregisterInstancesFromLoadBalancerOutput`](crate::operation::deregister_instances_from_load_balancer::DeregisterInstancesFromLoadBalancerOutput) with field(s):
-    ///   - [`instances(Option<Vec<Instance>>)`](crate::operation::deregister_instances_from_load_balancer::DeregisterInstancesFromLoadBalancerOutput::instances): <p>The remaining instances registered with the load balancer.</p>
+    ///   - [`instances(Option<Vec::<Instance>>)`](crate::operation::deregister_instances_from_load_balancer::DeregisterInstancesFromLoadBalancerOutput::instances): <p>The remaining instances registered with the load balancer.</p>
     /// - On failure, responds with [`SdkError<DeregisterInstancesFromLoadBalancerError>`](crate::operation::deregister_instances_from_load_balancer::DeregisterInstancesFromLoadBalancerError)
     pub fn deregister_instances_from_load_balancer(
         &self,

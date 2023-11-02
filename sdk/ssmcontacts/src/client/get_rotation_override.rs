@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetRotationOverrideOutput`](crate::operation::get_rotation_override::GetRotationOverrideOutput) with field(s):
     ///   - [`rotation_override_id(Option<String>)`](crate::operation::get_rotation_override::GetRotationOverrideOutput::rotation_override_id): <p>The Amazon Resource Name (ARN) of the override to an on-call rotation.</p>
     ///   - [`rotation_arn(Option<String>)`](crate::operation::get_rotation_override::GetRotationOverrideOutput::rotation_arn): <p>The Amazon Resource Name (ARN) of the on-call rotation that was overridden.</p>
-    ///   - [`new_contact_ids(Option<Vec<String>>)`](crate::operation::get_rotation_override::GetRotationOverrideOutput::new_contact_ids): <p>The Amazon Resource Names (ARNs) of the contacts assigned to the override of the on-call rotation.</p>
+    ///   - [`new_contact_ids(Option<Vec::<String>>)`](crate::operation::get_rotation_override::GetRotationOverrideOutput::new_contact_ids): <p>The Amazon Resource Names (ARNs) of the contacts assigned to the override of the on-call rotation.</p>
     ///   - [`start_time(Option<DateTime>)`](crate::operation::get_rotation_override::GetRotationOverrideOutput::start_time): <p>The date and time when the override goes into effect.</p>
     ///   - [`end_time(Option<DateTime>)`](crate::operation::get_rotation_override::GetRotationOverrideOutput::end_time): <p>The date and time when the override ends.</p>
     ///   - [`create_time(Option<DateTime>)`](crate::operation::get_rotation_override::GetRotationOverrideOutput::create_time): <p>The date and time when the override was created.</p>

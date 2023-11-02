@@ -25,13 +25,13 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::update_api::UpdateApiOutput::description): <p>The description of the API.</p>
     ///   - [`disable_schema_validation(Option<bool>)`](crate::operation::update_api::UpdateApiOutput::disable_schema_validation): <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
     ///   - [`disable_execute_api_endpoint(Option<bool>)`](crate::operation::update_api::UpdateApiOutput::disable_execute_api_endpoint): <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
-    ///   - [`import_info(Option<Vec<String>>)`](crate::operation::update_api::UpdateApiOutput::import_info): <p>The validation information during API import. This may include particular properties of your OpenAPI definition which are ignored during import. Supported only for HTTP APIs.</p>
+    ///   - [`import_info(Option<Vec::<String>>)`](crate::operation::update_api::UpdateApiOutput::import_info): <p>The validation information during API import. This may include particular properties of your OpenAPI definition which are ignored during import. Supported only for HTTP APIs.</p>
     ///   - [`name(Option<String>)`](crate::operation::update_api::UpdateApiOutput::name): <p>The name of the API.</p>
     ///   - [`protocol_type(Option<ProtocolType>)`](crate::operation::update_api::UpdateApiOutput::protocol_type): <p>The API protocol.</p>
     ///   - [`route_selection_expression(Option<String>)`](crate::operation::update_api::UpdateApiOutput::route_selection_expression): <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::update_api::UpdateApiOutput::tags): <p>A collection of tags associated with the API.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::update_api::UpdateApiOutput::tags): <p>A collection of tags associated with the API.</p>
     ///   - [`version(Option<String>)`](crate::operation::update_api::UpdateApiOutput::version): <p>A version identifier for the API.</p>
-    ///   - [`warnings(Option<Vec<String>>)`](crate::operation::update_api::UpdateApiOutput::warnings): <p>The warning messages reported when failonwarnings is turned on during API import.</p>
+    ///   - [`warnings(Option<Vec::<String>>)`](crate::operation::update_api::UpdateApiOutput::warnings): <p>The warning messages reported when failonwarnings is turned on during API import.</p>
     /// - On failure, responds with [`SdkError<UpdateApiError>`](crate::operation::update_api::UpdateApiError)
     pub fn update_api(&self) -> crate::operation::update_api::builders::UpdateApiFluentBuilder {
         crate::operation::update_api::builders::UpdateApiFluentBuilder::new(self.handle.clone())

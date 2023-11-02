@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeAnalysisPermissionsOutput`](crate::operation::describe_analysis_permissions::DescribeAnalysisPermissionsOutput) with field(s):
     ///   - [`analysis_id(Option<String>)`](crate::operation::describe_analysis_permissions::DescribeAnalysisPermissionsOutput::analysis_id): <p>The ID of the analysis whose permissions you're describing.</p>
     ///   - [`analysis_arn(Option<String>)`](crate::operation::describe_analysis_permissions::DescribeAnalysisPermissionsOutput::analysis_arn): <p>The Amazon Resource Name (ARN) of the analysis whose permissions you're describing.</p>
-    ///   - [`permissions(Option<Vec<ResourcePermission>>)`](crate::operation::describe_analysis_permissions::DescribeAnalysisPermissionsOutput::permissions): <p>A structure that describes the principals and the resource-level permissions on an analysis.</p>
+    ///   - [`permissions(Option<Vec::<ResourcePermission>>)`](crate::operation::describe_analysis_permissions::DescribeAnalysisPermissionsOutput::permissions): <p>A structure that describes the principals and the resource-level permissions on an analysis.</p>
     ///   - [`status(i32)`](crate::operation::describe_analysis_permissions::DescribeAnalysisPermissionsOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::describe_analysis_permissions::DescribeAnalysisPermissionsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<DescribeAnalysisPermissionsError>`](crate::operation::describe_analysis_permissions::DescribeAnalysisPermissionsError)

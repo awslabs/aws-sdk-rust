@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetDeploymentStatusOutput`](crate::operation::get_deployment_status::GetDeploymentStatusOutput) with field(s):
     ///   - [`deployment_status(Option<String>)`](crate::operation::get_deployment_status::GetDeploymentStatusOutput::deployment_status): The status of the deployment: ''InProgress'', ''Building'', ''Success'', or ''Failure''.
     ///   - [`deployment_type(Option<DeploymentType>)`](crate::operation::get_deployment_status::GetDeploymentStatusOutput::deployment_type): The type of the deployment.
-    ///   - [`error_details(Option<Vec<ErrorDetail>>)`](crate::operation::get_deployment_status::GetDeploymentStatusOutput::error_details): Error details
+    ///   - [`error_details(Option<Vec::<ErrorDetail>>)`](crate::operation::get_deployment_status::GetDeploymentStatusOutput::error_details): Error details
     ///   - [`error_message(Option<String>)`](crate::operation::get_deployment_status::GetDeploymentStatusOutput::error_message): Error message
     ///   - [`updated_at(Option<String>)`](crate::operation::get_deployment_status::GetDeploymentStatusOutput::updated_at): The time, in milliseconds since the epoch, when the deployment status was updated.
     /// - On failure, responds with [`SdkError<GetDeploymentStatusError>`](crate::operation::get_deployment_status::GetDeploymentStatusError)

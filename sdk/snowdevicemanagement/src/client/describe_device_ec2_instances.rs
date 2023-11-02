@@ -4,9 +4,9 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`managed_device_id(impl Into<String>)`](crate::operation::describe_device_ec2_instances::builders::DescribeDeviceEc2InstancesFluentBuilder::managed_device_id) / [`set_managed_device_id(Option<String>)`](crate::operation::describe_device_ec2_instances::builders::DescribeDeviceEc2InstancesFluentBuilder::set_managed_device_id):<br>required: **true**<br><p>The ID of the managed device.</p><br>
-    ///   - [`instance_ids(impl Into<String>)`](crate::operation::describe_device_ec2_instances::builders::DescribeDeviceEc2InstancesFluentBuilder::instance_ids) / [`set_instance_ids(Option<Vec<String>>)`](crate::operation::describe_device_ec2_instances::builders::DescribeDeviceEc2InstancesFluentBuilder::set_instance_ids):<br>required: **true**<br><p>A list of instance IDs associated with the managed device.</p><br>
+    ///   - [`instance_ids(impl Into<String>)`](crate::operation::describe_device_ec2_instances::builders::DescribeDeviceEc2InstancesFluentBuilder::instance_ids) / [`set_instance_ids(Option<Vec::<String>>)`](crate::operation::describe_device_ec2_instances::builders::DescribeDeviceEc2InstancesFluentBuilder::set_instance_ids):<br>required: **true**<br><p>A list of instance IDs associated with the managed device.</p><br>
     /// - On success, responds with [`DescribeDeviceEc2InstancesOutput`](crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesOutput) with field(s):
-    ///   - [`instances(Option<Vec<InstanceSummary>>)`](crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesOutput::instances): <p>A list of structures containing information about each instance. </p>
+    ///   - [`instances(Option<Vec::<InstanceSummary>>)`](crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesOutput::instances): <p>A list of structures containing information about each instance. </p>
     /// - On failure, responds with [`SdkError<DescribeDeviceEc2InstancesError>`](crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesError)
     pub fn describe_device_ec2_instances(
         &self,

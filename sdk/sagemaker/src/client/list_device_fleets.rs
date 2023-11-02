@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`sort_by(ListDeviceFleetsSortBy)`](crate::operation::list_device_fleets::builders::ListDeviceFleetsFluentBuilder::sort_by) / [`set_sort_by(Option<ListDeviceFleetsSortBy>)`](crate::operation::list_device_fleets::builders::ListDeviceFleetsFluentBuilder::set_sort_by):<br>required: **false**<br><p>The column to sort by.</p><br>
     ///   - [`sort_order(SortOrder)`](crate::operation::list_device_fleets::builders::ListDeviceFleetsFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_device_fleets::builders::ListDeviceFleetsFluentBuilder::set_sort_order):<br>required: **false**<br><p>What direction to sort in.</p><br>
     /// - On success, responds with [`ListDeviceFleetsOutput`](crate::operation::list_device_fleets::ListDeviceFleetsOutput) with field(s):
-    ///   - [`device_fleet_summaries(Option<Vec<DeviceFleetSummary>>)`](crate::operation::list_device_fleets::ListDeviceFleetsOutput::device_fleet_summaries): <p>Summary of the device fleet.</p>
+    ///   - [`device_fleet_summaries(Option<Vec::<DeviceFleetSummary>>)`](crate::operation::list_device_fleets::ListDeviceFleetsOutput::device_fleet_summaries): <p>Summary of the device fleet.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_device_fleets::ListDeviceFleetsOutput::next_token): <p>The response from the last list when returning a list large enough to need tokening.</p>
     /// - On failure, responds with [`SdkError<ListDeviceFleetsError>`](crate::operation::list_device_fleets::ListDeviceFleetsError)
     pub fn list_device_fleets(&self) -> crate::operation::list_device_fleets::builders::ListDeviceFleetsFluentBuilder {

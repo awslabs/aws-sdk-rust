@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`studio_id(impl Into<String>)`](crate::operation::list_streaming_images::builders::ListStreamingImagesFluentBuilder::studio_id) / [`set_studio_id(Option<String>)`](crate::operation::list_streaming_images::builders::ListStreamingImagesFluentBuilder::set_studio_id):<br>required: **true**<br><p>The studio ID. </p><br>
     /// - On success, responds with [`ListStreamingImagesOutput`](crate::operation::list_streaming_images::ListStreamingImagesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_streaming_images::ListStreamingImagesOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    ///   - [`streaming_images(Option<Vec<StreamingImage>>)`](crate::operation::list_streaming_images::ListStreamingImagesOutput::streaming_images): <p>A collection of streaming images.</p>
+    ///   - [`streaming_images(Option<Vec::<StreamingImage>>)`](crate::operation::list_streaming_images::ListStreamingImagesOutput::streaming_images): <p>A collection of streaming images.</p>
     /// - On failure, responds with [`SdkError<ListStreamingImagesError>`](crate::operation::list_streaming_images::ListStreamingImagesError)
     pub fn list_streaming_images(&self) -> crate::operation::list_streaming_images::builders::ListStreamingImagesFluentBuilder {
         crate::operation::list_streaming_images::builders::ListStreamingImagesFluentBuilder::new(self.handle.clone())

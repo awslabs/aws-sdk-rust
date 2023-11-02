@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::set_next_token):<br>required: **false**<br><p>The token used to paginate though multiple pages of gateway summaries.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of gateway summaries to return. The default is 50.</p><br>
     /// - On success, responds with [`ListGatewaysOutput`](crate::operation::list_gateways::ListGatewaysOutput) with field(s):
-    ///   - [`gateways(Option<Vec<GatewaySummary>>)`](crate::operation::list_gateways::ListGatewaysOutput::gateways): <p>The gateways in the list.</p>
+    ///   - [`gateways(Option<Vec::<GatewaySummary>>)`](crate::operation::list_gateways::ListGatewaysOutput::gateways): <p>The gateways in the list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_gateways::ListGatewaysOutput::next_token): <p>The token used to paginate though multiple pages of gateway summaries.</p>
     /// - On failure, responds with [`SdkError<ListGatewaysError>`](crate::operation::list_gateways::ListGatewaysError)
     #[deprecated(note = "Alexa For Business is no longer supported")]

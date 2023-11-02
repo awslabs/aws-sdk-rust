@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`filter(TransformFilterCriteria)`](crate::operation::get_ml_transforms::builders::GetMLTransformsFluentBuilder::filter) / [`set_filter(Option<TransformFilterCriteria>)`](crate::operation::get_ml_transforms::builders::GetMLTransformsFluentBuilder::set_filter):<br>required: **false**<br><p>The filter transformation criteria.</p><br>
     ///   - [`sort(TransformSortCriteria)`](crate::operation::get_ml_transforms::builders::GetMLTransformsFluentBuilder::sort) / [`set_sort(Option<TransformSortCriteria>)`](crate::operation::get_ml_transforms::builders::GetMLTransformsFluentBuilder::set_sort):<br>required: **false**<br><p>The sorting criteria.</p><br>
     /// - On success, responds with [`GetMlTransformsOutput`](crate::operation::get_ml_transforms::GetMlTransformsOutput) with field(s):
-    ///   - [`transforms(Vec<MlTransform>)`](crate::operation::get_ml_transforms::GetMlTransformsOutput::transforms): <p>A list of machine learning transforms.</p>
+    ///   - [`transforms(Vec::<MlTransform>)`](crate::operation::get_ml_transforms::GetMlTransformsOutput::transforms): <p>A list of machine learning transforms.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_ml_transforms::GetMlTransformsOutput::next_token): <p>A pagination token, if more results are available.</p>
     /// - On failure, responds with [`SdkError<GetMLTransformsError>`](crate::operation::get_ml_transforms::GetMLTransformsError)
     pub fn get_ml_transforms(&self) -> crate::operation::get_ml_transforms::builders::GetMLTransformsFluentBuilder {

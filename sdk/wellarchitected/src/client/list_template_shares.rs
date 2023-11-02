@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`status(ShareStatus)`](crate::operation::list_template_shares::builders::ListTemplateSharesFluentBuilder::status) / [`set_status(Option<ShareStatus>)`](crate::operation::list_template_shares::builders::ListTemplateSharesFluentBuilder::set_status):<br>required: **false**<br><p>The status of the share request.</p><br>
     /// - On success, responds with [`ListTemplateSharesOutput`](crate::operation::list_template_shares::ListTemplateSharesOutput) with field(s):
     ///   - [`template_arn(Option<String>)`](crate::operation::list_template_shares::ListTemplateSharesOutput::template_arn): <p>The review template ARN.</p>
-    ///   - [`template_share_summaries(Option<Vec<TemplateShareSummary>>)`](crate::operation::list_template_shares::ListTemplateSharesOutput::template_share_summaries): <p>A review template share summary return object.</p>
+    ///   - [`template_share_summaries(Option<Vec::<TemplateShareSummary>>)`](crate::operation::list_template_shares::ListTemplateSharesOutput::template_share_summaries): <p>A review template share summary return object.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_template_shares::ListTemplateSharesOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListTemplateSharesError>`](crate::operation::list_template_shares::ListTemplateSharesError)
     pub fn list_template_shares(&self) -> crate::operation::list_template_shares::builders::ListTemplateSharesFluentBuilder {

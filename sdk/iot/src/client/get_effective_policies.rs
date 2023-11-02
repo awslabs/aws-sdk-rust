@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`cognito_identity_pool_id(impl Into<String>)`](crate::operation::get_effective_policies::builders::GetEffectivePoliciesFluentBuilder::cognito_identity_pool_id) / [`set_cognito_identity_pool_id(Option<String>)`](crate::operation::get_effective_policies::builders::GetEffectivePoliciesFluentBuilder::set_cognito_identity_pool_id):<br>required: **false**<br><p>The Cognito identity pool ID.</p><br>
     ///   - [`thing_name(impl Into<String>)`](crate::operation::get_effective_policies::builders::GetEffectivePoliciesFluentBuilder::thing_name) / [`set_thing_name(Option<String>)`](crate::operation::get_effective_policies::builders::GetEffectivePoliciesFluentBuilder::set_thing_name):<br>required: **false**<br><p>The thing name.</p><br>
     /// - On success, responds with [`GetEffectivePoliciesOutput`](crate::operation::get_effective_policies::GetEffectivePoliciesOutput) with field(s):
-    ///   - [`effective_policies(Option<Vec<EffectivePolicy>>)`](crate::operation::get_effective_policies::GetEffectivePoliciesOutput::effective_policies): <p>The effective policies.</p>
+    ///   - [`effective_policies(Option<Vec::<EffectivePolicy>>)`](crate::operation::get_effective_policies::GetEffectivePoliciesOutput::effective_policies): <p>The effective policies.</p>
     /// - On failure, responds with [`SdkError<GetEffectivePoliciesError>`](crate::operation::get_effective_policies::GetEffectivePoliciesError)
     pub fn get_effective_policies(&self) -> crate::operation::get_effective_policies::builders::GetEffectivePoliciesFluentBuilder {
         crate::operation::get_effective_policies::builders::GetEffectivePoliciesFluentBuilder::new(self.handle.clone())

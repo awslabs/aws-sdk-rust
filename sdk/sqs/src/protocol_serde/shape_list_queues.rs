@@ -72,7 +72,7 @@ pub fn de_list_queues(
             s if s.matches("QueueUrl") /* QueueUrls com.amazonaws.sqs.synthetic#ListQueuesOutput$QueueUrls */ =>  {
                 let var_2 =
                     Some(
-                        Result::<::std::vec::Vec<::std::string::String>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<::std::string::String>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_3 = builder.queue_urls.take().unwrap_or_default();
                             list_3.push(
                                 Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(

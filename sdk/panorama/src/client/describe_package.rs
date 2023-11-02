@@ -9,10 +9,10 @@ impl super::Client {
     ///   - [`package_name(String)`](crate::operation::describe_package::DescribePackageOutput::package_name): <p>The package's name.</p>
     ///   - [`arn(String)`](crate::operation::describe_package::DescribePackageOutput::arn): <p>The package's ARN.</p>
     ///   - [`storage_location(Option<StorageLocation>)`](crate::operation::describe_package::DescribePackageOutput::storage_location): <p>The package's storage location.</p>
-    ///   - [`read_access_principal_arns(Option<Vec<String>>)`](crate::operation::describe_package::DescribePackageOutput::read_access_principal_arns): <p>ARNs of accounts that have read access to the package.</p>
-    ///   - [`write_access_principal_arns(Option<Vec<String>>)`](crate::operation::describe_package::DescribePackageOutput::write_access_principal_arns): <p>ARNs of accounts that have write access to the package.</p>
+    ///   - [`read_access_principal_arns(Option<Vec::<String>>)`](crate::operation::describe_package::DescribePackageOutput::read_access_principal_arns): <p>ARNs of accounts that have read access to the package.</p>
+    ///   - [`write_access_principal_arns(Option<Vec::<String>>)`](crate::operation::describe_package::DescribePackageOutput::write_access_principal_arns): <p>ARNs of accounts that have write access to the package.</p>
     ///   - [`created_time(DateTime)`](crate::operation::describe_package::DescribePackageOutput::created_time): <p>When the package was created.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::operation::describe_package::DescribePackageOutput::tags): <p>The package's tags.</p>
+    ///   - [`tags(HashMap::<String, String>)`](crate::operation::describe_package::DescribePackageOutput::tags): <p>The package's tags.</p>
     /// - On failure, responds with [`SdkError<DescribePackageError>`](crate::operation::describe_package::DescribePackageError)
     pub fn describe_package(&self) -> crate::operation::describe_package::builders::DescribePackageFluentBuilder {
         crate::operation::describe_package::builders::DescribePackageFluentBuilder::new(self.handle.clone())

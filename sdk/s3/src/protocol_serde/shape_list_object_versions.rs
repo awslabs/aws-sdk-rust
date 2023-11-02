@@ -114,7 +114,7 @@ pub fn de_list_object_versions(
             s if s.matches("CommonPrefixes") /* CommonPrefixes com.amazonaws.s3.synthetic#ListObjectVersionsOutput$CommonPrefixes */ =>  {
                 let var_8 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::CommonPrefix>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::CommonPrefix>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_9 = builder.common_prefixes.take().unwrap_or_default();
                             list_9.push(
                                 crate::protocol_serde::shape_common_prefix::de_common_prefix(&mut tag)
@@ -238,7 +238,7 @@ pub fn de_list_object_versions(
             s if s.matches("Version") /* Versions com.amazonaws.s3.synthetic#ListObjectVersionsOutput$Versions */ =>  {
                 let var_18 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::ObjectVersion>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::ObjectVersion>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_19 = builder.versions.take().unwrap_or_default();
                             list_19.push(
                                 crate::protocol_serde::shape_object_version::de_object_version(&mut tag)
@@ -270,7 +270,7 @@ pub fn de_list_object_versions(
             s if s.matches("DeleteMarker") /* DeleteMarkers com.amazonaws.s3.synthetic#ListObjectVersionsOutput$DeleteMarkers */ =>  {
                 let var_21 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::DeleteMarkerEntry>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::DeleteMarkerEntry>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_22 = builder.delete_markers.take().unwrap_or_default();
                             list_22.push(
                                 crate::protocol_serde::shape_delete_marker_entry::de_delete_marker_entry(&mut tag)

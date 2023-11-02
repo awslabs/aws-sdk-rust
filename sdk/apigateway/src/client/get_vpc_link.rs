@@ -8,10 +8,10 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::get_vpc_link::GetVpcLinkOutput::id): <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_vpc_link::GetVpcLinkOutput::name): <p>The name used to label and identify the VPC link.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_vpc_link::GetVpcLinkOutput::description): <p>The description of the VPC link.</p>
-    ///   - [`target_arns(Option<Vec<String>>)`](crate::operation::get_vpc_link::GetVpcLinkOutput::target_arns): <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same Amazon Web Services account of the API owner.</p>
+    ///   - [`target_arns(Option<Vec::<String>>)`](crate::operation::get_vpc_link::GetVpcLinkOutput::target_arns): <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same Amazon Web Services account of the API owner.</p>
     ///   - [`status(Option<VpcLinkStatus>)`](crate::operation::get_vpc_link::GetVpcLinkOutput::status): <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>, <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying an API will wait if the status is <code>PENDING</code> and will fail if the status is <code>DELETING</code>. </p>
     ///   - [`status_message(Option<String>)`](crate::operation::get_vpc_link::GetVpcLinkOutput::status_message): <p>A description about the VPC link status.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_vpc_link::GetVpcLinkOutput::tags): <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_vpc_link::GetVpcLinkOutput::tags): <p>The collection of tags. Each tag element is associated with a given resource.</p>
     /// - On failure, responds with [`SdkError<GetVpcLinkError>`](crate::operation::get_vpc_link::GetVpcLinkError)
     pub fn get_vpc_link(&self) -> crate::operation::get_vpc_link::builders::GetVpcLinkFluentBuilder {
         crate::operation::get_vpc_link::builders::GetVpcLinkFluentBuilder::new(self.handle.clone())

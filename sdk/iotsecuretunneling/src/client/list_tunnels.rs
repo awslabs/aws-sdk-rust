@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_tunnels::builders::ListTunnelsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_tunnels::builders::ListTunnelsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return at once.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_tunnels::builders::ListTunnelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_tunnels::builders::ListTunnelsFluentBuilder::set_next_token):<br>required: **false**<br><p>To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the first set of results.</p><br>
     /// - On success, responds with [`ListTunnelsOutput`](crate::operation::list_tunnels::ListTunnelsOutput) with field(s):
-    ///   - [`tunnel_summaries(Option<Vec<TunnelSummary>>)`](crate::operation::list_tunnels::ListTunnelsOutput::tunnel_summaries): <p>A short description of the tunnels in an Amazon Web Services account.</p>
+    ///   - [`tunnel_summaries(Option<Vec::<TunnelSummary>>)`](crate::operation::list_tunnels::ListTunnelsOutput::tunnel_summaries): <p>A short description of the tunnels in an Amazon Web Services account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_tunnels::ListTunnelsOutput::next_token): <p>The token to use to get the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListTunnelsError>`](crate::operation::list_tunnels::ListTunnelsError)
     pub fn list_tunnels(&self) -> crate::operation::list_tunnels::builders::ListTunnelsFluentBuilder {

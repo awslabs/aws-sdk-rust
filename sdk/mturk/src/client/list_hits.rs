@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`ListHiTsOutput`](crate::operation::list_hits::ListHiTsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_hits::ListHiTsOutput::next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     ///   - [`num_results(Option<i32>)`](crate::operation::list_hits::ListHiTsOutput::num_results): <p>The number of HITs on this page in the filtered results list, equivalent to the number of HITs being returned by this call.</p>
-    ///   - [`hits(Option<Vec<Hit>>)`](crate::operation::list_hits::ListHiTsOutput::hits): <p> The list of HIT elements returned by the query.</p>
+    ///   - [`hits(Option<Vec::<Hit>>)`](crate::operation::list_hits::ListHiTsOutput::hits): <p> The list of HIT elements returned by the query.</p>
     /// - On failure, responds with [`SdkError<ListHITsError>`](crate::operation::list_hits::ListHITsError)
     pub fn list_hits(&self) -> crate::operation::list_hits::builders::ListHITsFluentBuilder {
         crate::operation::list_hits::builders::ListHITsFluentBuilder::new(self.handle.clone())

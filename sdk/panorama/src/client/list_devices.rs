@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`name_filter(impl Into<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::name_filter) / [`set_name_filter(Option<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::set_name_filter):<br>required: **false**<br><p>Filter based on device's name. Prefixes supported.</p><br>
     ///   - [`device_aggregated_status_filter(DeviceAggregatedStatus)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::device_aggregated_status_filter) / [`set_device_aggregated_status_filter(Option<DeviceAggregatedStatus>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::set_device_aggregated_status_filter):<br>required: **false**<br><p>Filter based on a device's status.</p><br>
     /// - On success, responds with [`ListDevicesOutput`](crate::operation::list_devices::ListDevicesOutput) with field(s):
-    ///   - [`devices(Vec<Device>)`](crate::operation::list_devices::ListDevicesOutput::devices): <p>A list of devices.</p>
+    ///   - [`devices(Vec::<Device>)`](crate::operation::list_devices::ListDevicesOutput::devices): <p>A list of devices.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_devices::ListDevicesOutput::next_token): <p>A pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListDevicesError>`](crate::operation::list_devices::ListDevicesError)
     pub fn list_devices(&self) -> crate::operation::list_devices::builders::ListDevicesFluentBuilder {

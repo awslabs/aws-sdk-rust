@@ -12,9 +12,9 @@
 //! 1-credential-per row (as opposed to a direct profile file representation which can combine
 //! multiple actions into the same profile).
 
-use crate::credential_process::CommandWithSensitiveArgs;
 use crate::profile::credentials::ProfileFileError;
 use crate::profile::{Profile, ProfileSet};
+use crate::sensitive_command::CommandWithSensitiveArgs;
 use aws_credential_types::Credentials;
 
 /// Chain of Profile Providers
@@ -408,9 +408,9 @@ fn credential_process_from_profile(
 
 #[cfg(test)]
 mod tests {
-    use crate::credential_process::CommandWithSensitiveArgs;
     use crate::profile::credentials::repr::{resolve_chain, BaseProvider, ProfileChain};
     use crate::profile::ProfileSet;
+    use crate::sensitive_command::CommandWithSensitiveArgs;
     use serde::Deserialize;
     use std::collections::HashMap;
     use std::error::Error;

@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_contexts::builders::ListContextsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_contexts::builders::ListContextsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous call to <code>ListContexts</code> didn't return the full set of contexts, the call returns a token for getting the next set of contexts.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_contexts::builders::ListContextsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_contexts::builders::ListContextsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of contexts to return in the response. The default value is 10.</p><br>
     /// - On success, responds with [`ListContextsOutput`](crate::operation::list_contexts::ListContextsOutput) with field(s):
-    ///   - [`context_summaries(Option<Vec<ContextSummary>>)`](crate::operation::list_contexts::ListContextsOutput::context_summaries): <p>A list of contexts and their properties.</p>
+    ///   - [`context_summaries(Option<Vec::<ContextSummary>>)`](crate::operation::list_contexts::ListContextsOutput::context_summaries): <p>A list of contexts and their properties.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_contexts::ListContextsOutput::next_token): <p>A token for getting the next set of contexts, if there are any.</p>
     /// - On failure, responds with [`SdkError<ListContextsError>`](crate::operation::list_contexts::ListContextsError)
     pub fn list_contexts(&self) -> crate::operation::list_contexts::builders::ListContextsFluentBuilder {

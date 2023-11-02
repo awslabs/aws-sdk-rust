@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`schema_name_prefix(impl Into<String>)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::schema_name_prefix) / [`set_schema_name_prefix(Option<String>)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::set_schema_name_prefix):<br>required: **false**<br><p>Specifying this limits the results to only those schema names that start with the specified prefix.</p><br>
     /// - On success, responds with [`ListSchemasOutput`](crate::operation::list_schemas::ListSchemasOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_schemas::ListSchemasOutput::next_token): <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
-    ///   - [`schemas(Option<Vec<SchemaSummary>>)`](crate::operation::list_schemas::ListSchemasOutput::schemas): <p>An array of schema summaries.</p>
+    ///   - [`schemas(Option<Vec::<SchemaSummary>>)`](crate::operation::list_schemas::ListSchemasOutput::schemas): <p>An array of schema summaries.</p>
     /// - On failure, responds with [`SdkError<ListSchemasError>`](crate::operation::list_schemas::ListSchemasError)
     pub fn list_schemas(&self) -> crate::operation::list_schemas::builders::ListSchemasFluentBuilder {
         crate::operation::list_schemas::builders::ListSchemasFluentBuilder::new(self.handle.clone())

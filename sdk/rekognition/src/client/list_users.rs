@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_users::builders::ListUsersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of UsersID to return. </p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::set_next_token):<br>required: **false**<br><p>Pagingation token to receive the next set of UsersID.</p><br>
     /// - On success, responds with [`ListUsersOutput`](crate::operation::list_users::ListUsersOutput) with field(s):
-    ///   - [`users(Option<Vec<User>>)`](crate::operation::list_users::ListUsersOutput::users): <p>List of UsersID associated with the specified collection.</p>
+    ///   - [`users(Option<Vec::<User>>)`](crate::operation::list_users::ListUsersOutput::users): <p>List of UsersID associated with the specified collection.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_users::ListUsersOutput::next_token): <p>A pagination token to be used with the subsequent request if the response is truncated.</p>
     /// - On failure, responds with [`SdkError<ListUsersError>`](crate::operation::list_users::ListUsersError)
     pub fn list_users(&self) -> crate::operation::list_users::builders::ListUsersFluentBuilder {

@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`filters(CampaignFilters)`](crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder::filters) / [`set_filters(Option<CampaignFilters>)`](crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder::set_filters):<br>required: **false**<br>Filter model by type<br>
     /// - On success, responds with [`ListCampaignsOutput`](crate::operation::list_campaigns::ListCampaignsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_campaigns::ListCampaignsOutput::next_token): The token for the next set of results.
-    ///   - [`campaign_summary_list(Option<Vec<CampaignSummary>>)`](crate::operation::list_campaigns::ListCampaignsOutput::campaign_summary_list): A list of Amazon Connect campaigns.
+    ///   - [`campaign_summary_list(Option<Vec::<CampaignSummary>>)`](crate::operation::list_campaigns::ListCampaignsOutput::campaign_summary_list): A list of Amazon Connect campaigns.
     /// - On failure, responds with [`SdkError<ListCampaignsError>`](crate::operation::list_campaigns::ListCampaignsError)
     pub fn list_campaigns(&self) -> crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder {
         crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder::new(self.handle.clone())

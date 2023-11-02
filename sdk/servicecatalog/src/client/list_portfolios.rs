@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`page_token(impl Into<String>)`](crate::operation::list_portfolios::builders::ListPortfoliosFluentBuilder::page_token) / [`set_page_token(Option<String>)`](crate::operation::list_portfolios::builders::ListPortfoliosFluentBuilder::set_page_token):<br>required: **false**<br><p>The page token for the next set of results. To retrieve the first set of results, use null.</p><br>
     ///   - [`page_size(i32)`](crate::operation::list_portfolios::builders::ListPortfoliosFluentBuilder::page_size) / [`set_page_size(Option<i32>)`](crate::operation::list_portfolios::builders::ListPortfoliosFluentBuilder::set_page_size):<br>required: **false**<br><p>The maximum number of items to return with this call.</p><br>
     /// - On success, responds with [`ListPortfoliosOutput`](crate::operation::list_portfolios::ListPortfoliosOutput) with field(s):
-    ///   - [`portfolio_details(Option<Vec<PortfolioDetail>>)`](crate::operation::list_portfolios::ListPortfoliosOutput::portfolio_details): <p>Information about the portfolios.</p>
+    ///   - [`portfolio_details(Option<Vec::<PortfolioDetail>>)`](crate::operation::list_portfolios::ListPortfoliosOutput::portfolio_details): <p>Information about the portfolios.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::list_portfolios::ListPortfoliosOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListPortfoliosError>`](crate::operation::list_portfolios::ListPortfoliosError)
     pub fn list_portfolios(&self) -> crate::operation::list_portfolios::builders::ListPortfoliosFluentBuilder {

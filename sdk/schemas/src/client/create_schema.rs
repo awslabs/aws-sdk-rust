@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`description(impl Into<String>)`](crate::operation::create_schema::builders::CreateSchemaFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::create_schema::builders::CreateSchemaFluentBuilder::set_description):<br>required: **false**<br><p>A description of the schema.</p><br>
     ///   - [`registry_name(impl Into<String>)`](crate::operation::create_schema::builders::CreateSchemaFluentBuilder::registry_name) / [`set_registry_name(Option<String>)`](crate::operation::create_schema::builders::CreateSchemaFluentBuilder::set_registry_name):<br>required: **true**<br><p>The name of the registry.</p><br>
     ///   - [`schema_name(impl Into<String>)`](crate::operation::create_schema::builders::CreateSchemaFluentBuilder::schema_name) / [`set_schema_name(Option<String>)`](crate::operation::create_schema::builders::CreateSchemaFluentBuilder::set_schema_name):<br>required: **true**<br><p>The name of the schema.</p><br>
-    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::create_schema::builders::CreateSchemaFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::create_schema::builders::CreateSchemaFluentBuilder::set_tags):<br>required: **false**<br><p>Tags associated with the schema.</p><br>
+    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::create_schema::builders::CreateSchemaFluentBuilder::tags) / [`set_tags(Option<HashMap::<String, String>>)`](crate::operation::create_schema::builders::CreateSchemaFluentBuilder::set_tags):<br>required: **false**<br><p>Tags associated with the schema.</p><br>
     ///   - [`r#type(Type)`](crate::operation::create_schema::builders::CreateSchemaFluentBuilder::type) / [`set_type(Option<Type>)`](crate::operation::create_schema::builders::CreateSchemaFluentBuilder::set_type):<br>required: **true**<br><p>The type of schema.</p><br>
     /// - On success, responds with [`CreateSchemaOutput`](crate::operation::create_schema::CreateSchemaOutput) with field(s):
     ///   - [`description(Option<String>)`](crate::operation::create_schema::CreateSchemaOutput::description): <p>The description of the schema.</p>
@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`schema_arn(Option<String>)`](crate::operation::create_schema::CreateSchemaOutput::schema_arn): <p>The ARN of the schema.</p>
     ///   - [`schema_name(Option<String>)`](crate::operation::create_schema::CreateSchemaOutput::schema_name): <p>The name of the schema.</p>
     ///   - [`schema_version(Option<String>)`](crate::operation::create_schema::CreateSchemaOutput::schema_version): <p>The version number of the schema</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_schema::CreateSchemaOutput::tags): <p>Key-value pairs associated with a resource.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::create_schema::CreateSchemaOutput::tags): <p>Key-value pairs associated with a resource.</p>
     ///   - [`r#type(Option<String>)`](crate::operation::create_schema::CreateSchemaOutput::type): <p>The type of the schema.</p>
     ///   - [`version_created_date(Option<DateTime>)`](crate::operation::create_schema::CreateSchemaOutput::version_created_date): <p>The date the schema version was created.</p>
     /// - On failure, responds with [`SdkError<CreateSchemaError>`](crate::operation::create_schema::CreateSchemaError)

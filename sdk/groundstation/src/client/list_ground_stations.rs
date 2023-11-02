@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_ground_stations::builders::ListGroundStationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_ground_stations::builders::ListGroundStationsFluentBuilder::set_next_token):<br>required: **false**<br><p>Next token that can be supplied in the next call to get the next page of ground stations.</p><br>
     /// - On success, responds with [`ListGroundStationsOutput`](crate::operation::list_ground_stations::ListGroundStationsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_ground_stations::ListGroundStationsOutput::next_token): <p>Next token that can be supplied in the next call to get the next page of ground stations.</p>
-    ///   - [`ground_station_list(Option<Vec<GroundStationData>>)`](crate::operation::list_ground_stations::ListGroundStationsOutput::ground_station_list): <p>List of ground stations.</p>
+    ///   - [`ground_station_list(Option<Vec::<GroundStationData>>)`](crate::operation::list_ground_stations::ListGroundStationsOutput::ground_station_list): <p>List of ground stations.</p>
     /// - On failure, responds with [`SdkError<ListGroundStationsError>`](crate::operation::list_ground_stations::ListGroundStationsError)
     pub fn list_ground_stations(&self) -> crate::operation::list_ground_stations::builders::ListGroundStationsFluentBuilder {
         crate::operation::list_ground_stations::builders::ListGroundStationsFluentBuilder::new(self.handle.clone())

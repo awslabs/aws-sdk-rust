@@ -88,7 +88,7 @@ fn record_body(
     event_bus: Arc<Mutex<Vec<Event>>>,
 ) -> JoinHandle<()> {
     let (sender, output_body) = hyper::Body::channel();
-    let real_body = std::mem::replace(body, SdkBody::from(output_body));
+    let real_body = std::mem::replace(body, SdkBody::from_body_0_4(output_body));
     tokio::spawn(async move {
         let mut real_body = real_body;
         let mut sender = sender;

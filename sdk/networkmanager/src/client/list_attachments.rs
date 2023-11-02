@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_attachments::builders::ListAttachmentsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_attachments::builders::ListAttachmentsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_attachments::builders::ListAttachmentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_attachments::builders::ListAttachmentsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
     /// - On success, responds with [`ListAttachmentsOutput`](crate::operation::list_attachments::ListAttachmentsOutput) with field(s):
-    ///   - [`attachments(Option<Vec<Attachment>>)`](crate::operation::list_attachments::ListAttachmentsOutput::attachments): <p>Describes the list of attachments.</p>
+    ///   - [`attachments(Option<Vec::<Attachment>>)`](crate::operation::list_attachments::ListAttachmentsOutput::attachments): <p>Describes the list of attachments.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_attachments::ListAttachmentsOutput::next_token): <p>The token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListAttachmentsError>`](crate::operation::list_attachments::ListAttachmentsError)
     pub fn list_attachments(&self) -> crate::operation::list_attachments::builders::ListAttachmentsFluentBuilder {

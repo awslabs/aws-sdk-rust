@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyOutput::id): <p>The retention policy ID.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyOutput::name): <p>The retention policy name.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyOutput::description): <p>The retention policy description.</p>
-    ///   - [`folder_configurations(Option<Vec<FolderConfiguration>>)`](crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyOutput::folder_configurations): <p>The retention policy folder configurations.</p>
+    ///   - [`folder_configurations(Option<Vec::<FolderConfiguration>>)`](crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyOutput::folder_configurations): <p>The retention policy folder configurations.</p>
     /// - On failure, responds with [`SdkError<GetDefaultRetentionPolicyError>`](crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyError)
     pub fn get_default_retention_policy(&self) -> crate::operation::get_default_retention_policy::builders::GetDefaultRetentionPolicyFluentBuilder {
         crate::operation::get_default_retention_policy::builders::GetDefaultRetentionPolicyFluentBuilder::new(self.handle.clone())

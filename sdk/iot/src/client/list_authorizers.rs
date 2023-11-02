@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`ascending_order(bool)`](crate::operation::list_authorizers::builders::ListAuthorizersFluentBuilder::ascending_order) / [`set_ascending_order(Option<bool>)`](crate::operation::list_authorizers::builders::ListAuthorizersFluentBuilder::set_ascending_order):<br>required: **false**<br><p>Return the list of authorizers in ascending alphabetical order.</p><br>
     ///   - [`status(AuthorizerStatus)`](crate::operation::list_authorizers::builders::ListAuthorizersFluentBuilder::status) / [`set_status(Option<AuthorizerStatus>)`](crate::operation::list_authorizers::builders::ListAuthorizersFluentBuilder::set_status):<br>required: **false**<br><p>The status of the list authorizers request.</p><br>
     /// - On success, responds with [`ListAuthorizersOutput`](crate::operation::list_authorizers::ListAuthorizersOutput) with field(s):
-    ///   - [`authorizers(Option<Vec<AuthorizerSummary>>)`](crate::operation::list_authorizers::ListAuthorizersOutput::authorizers): <p>The authorizers.</p>
+    ///   - [`authorizers(Option<Vec::<AuthorizerSummary>>)`](crate::operation::list_authorizers::ListAuthorizersOutput::authorizers): <p>The authorizers.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::list_authorizers::ListAuthorizersOutput::next_marker): <p>A marker used to get the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListAuthorizersError>`](crate::operation::list_authorizers::ListAuthorizersError)
     pub fn list_authorizers(&self) -> crate::operation::list_authorizers::builders::ListAuthorizersFluentBuilder {

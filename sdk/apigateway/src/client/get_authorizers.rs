@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`position(impl Into<String>)`](crate::operation::get_authorizers::builders::GetAuthorizersFluentBuilder::position) / [`set_position(Option<String>)`](crate::operation::get_authorizers::builders::GetAuthorizersFluentBuilder::set_position):<br>required: **false**<br><p>The current pagination position in the paged result set.</p><br>
     ///   - [`limit(i32)`](crate::operation::get_authorizers::builders::GetAuthorizersFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::get_authorizers::builders::GetAuthorizersFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p><br>
     /// - On success, responds with [`GetAuthorizersOutput`](crate::operation::get_authorizers::GetAuthorizersOutput) with field(s):
-    ///   - [`items(Option<Vec<Authorizer>>)`](crate::operation::get_authorizers::GetAuthorizersOutput::items): <p>The current page of elements from this collection.</p>
+    ///   - [`items(Option<Vec::<Authorizer>>)`](crate::operation::get_authorizers::GetAuthorizersOutput::items): <p>The current page of elements from this collection.</p>
     ///   - [`position(Option<String>)`](crate::operation::get_authorizers::GetAuthorizersOutput::position): <p>The current pagination position in the paged result set.</p>
     /// - On failure, responds with [`SdkError<GetAuthorizersError>`](crate::operation::get_authorizers::GetAuthorizersError)
     pub fn get_authorizers(&self) -> crate::operation::get_authorizers::builders::GetAuthorizersFluentBuilder {

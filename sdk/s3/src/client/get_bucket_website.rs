@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`redirect_all_requests_to(Option<RedirectAllRequestsTo>)`](crate::operation::get_bucket_website::GetBucketWebsiteOutput::redirect_all_requests_to): <p>Specifies the redirect behavior of all requests to a website endpoint of an Amazon S3 bucket.</p>
     ///   - [`index_document(Option<IndexDocument>)`](crate::operation::get_bucket_website::GetBucketWebsiteOutput::index_document): <p>The name of the index document for the website (for example <code>index.html</code>).</p>
     ///   - [`error_document(Option<ErrorDocument>)`](crate::operation::get_bucket_website::GetBucketWebsiteOutput::error_document): <p>The object key name of the website error document to use for 4XX class errors.</p>
-    ///   - [`routing_rules(Option<Vec<RoutingRule>>)`](crate::operation::get_bucket_website::GetBucketWebsiteOutput::routing_rules): <p>Rules that define when a redirect is applied and the redirect behavior.</p>
+    ///   - [`routing_rules(Option<Vec::<RoutingRule>>)`](crate::operation::get_bucket_website::GetBucketWebsiteOutput::routing_rules): <p>Rules that define when a redirect is applied and the redirect behavior.</p>
     /// - On failure, responds with [`SdkError<GetBucketWebsiteError>`](crate::operation::get_bucket_website::GetBucketWebsiteError)
     pub fn get_bucket_website(&self) -> crate::operation::get_bucket_website::builders::GetBucketWebsiteFluentBuilder {
         crate::operation::get_bucket_website::builders::GetBucketWebsiteFluentBuilder::new(self.handle.clone())

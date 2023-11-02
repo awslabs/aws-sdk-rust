@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`limit(i32)`](crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::set_limit):<br>required: **false**<br><p>The number of items that should show up on one page</p><br>
     /// - On success, responds with [`ListCertificatesOutput`](crate::operation::list_certificates::ListCertificatesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_certificates::ListCertificatesOutput::next_token): <p>Indicates whether another page of certificates is available when the number of available certificates exceeds the page limit.</p>
-    ///   - [`certificates_info(Option<Vec<CertificateInfo>>)`](crate::operation::list_certificates::ListCertificatesOutput::certificates_info): <p>A list of certificates with basic details including certificate ID, certificate common name, certificate state.</p>
+    ///   - [`certificates_info(Option<Vec::<CertificateInfo>>)`](crate::operation::list_certificates::ListCertificatesOutput::certificates_info): <p>A list of certificates with basic details including certificate ID, certificate common name, certificate state.</p>
     /// - On failure, responds with [`SdkError<ListCertificatesError>`](crate::operation::list_certificates::ListCertificatesError)
     pub fn list_certificates(&self) -> crate::operation::list_certificates::builders::ListCertificatesFluentBuilder {
         crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::new(self.handle.clone())

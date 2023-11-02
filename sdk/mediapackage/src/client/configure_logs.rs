@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`hls_ingest(Option<HlsIngest>)`](crate::operation::configure_logs::ConfigureLogsOutput::hls_ingest): An HTTP Live Streaming (HLS) ingest resource configuration.
     ///   - [`id(Option<String>)`](crate::operation::configure_logs::ConfigureLogsOutput::id): The ID of the Channel.
     ///   - [`ingress_access_logs(Option<IngressAccessLogs>)`](crate::operation::configure_logs::ConfigureLogsOutput::ingress_access_logs): Configure ingress access logging.
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::configure_logs::ConfigureLogsOutput::tags): A collection of tags associated with a resource
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::configure_logs::ConfigureLogsOutput::tags): A collection of tags associated with a resource
     /// - On failure, responds with [`SdkError<ConfigureLogsError>`](crate::operation::configure_logs::ConfigureLogsError)
     pub fn configure_logs(&self) -> crate::operation::configure_logs::builders::ConfigureLogsFluentBuilder {
         crate::operation::configure_logs::builders::ConfigureLogsFluentBuilder::new(self.handle.clone())

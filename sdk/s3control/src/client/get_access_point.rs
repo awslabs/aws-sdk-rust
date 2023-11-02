@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`creation_date(Option<DateTime>)`](crate::operation::get_access_point::GetAccessPointOutput::creation_date): <p>The date and time when the specified access point was created.</p>
     ///   - [`alias(Option<String>)`](crate::operation::get_access_point::GetAccessPointOutput::alias): <p>The name or alias of the access point.</p>
     ///   - [`access_point_arn(Option<String>)`](crate::operation::get_access_point::GetAccessPointOutput::access_point_arn): <p>The ARN of the access point.</p>
-    ///   - [`endpoints(Option<HashMap<String, String>>)`](crate::operation::get_access_point::GetAccessPointOutput::endpoints): <p>The VPC endpoint for the access point.</p>
+    ///   - [`endpoints(Option<HashMap::<String, String>>)`](crate::operation::get_access_point::GetAccessPointOutput::endpoints): <p>The VPC endpoint for the access point.</p>
     ///   - [`bucket_account_id(Option<String>)`](crate::operation::get_access_point::GetAccessPointOutput::bucket_account_id): <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
     /// - On failure, responds with [`SdkError<GetAccessPointError>`](crate::operation::get_access_point::GetAccessPointError)
     pub fn get_access_point(&self) -> crate::operation::get_access_point::builders::GetAccessPointFluentBuilder {

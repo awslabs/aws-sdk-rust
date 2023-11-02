@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`knowledge_base_id(impl Into<String>)`](crate::operation::search_content::builders::SearchContentFluentBuilder::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::operation::search_content::builders::SearchContentFluentBuilder::set_knowledge_base_id):<br>required: **true**<br><p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p><br>
     ///   - [`search_expression(SearchExpression)`](crate::operation::search_content::builders::SearchContentFluentBuilder::search_expression) / [`set_search_expression(Option<SearchExpression>)`](crate::operation::search_content::builders::SearchContentFluentBuilder::set_search_expression):<br>required: **true**<br><p>The search expression to filter results.</p><br>
     /// - On success, responds with [`SearchContentOutput`](crate::operation::search_content::SearchContentOutput) with field(s):
-    ///   - [`content_summaries(Vec<ContentSummary>)`](crate::operation::search_content::SearchContentOutput::content_summaries): <p>Summary information about the content.</p>
+    ///   - [`content_summaries(Vec::<ContentSummary>)`](crate::operation::search_content::SearchContentOutput::content_summaries): <p>Summary information about the content.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_content::SearchContentOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<SearchContentError>`](crate::operation::search_content::SearchContentError)
     pub fn search_content(&self) -> crate::operation::search_content::builders::SearchContentFluentBuilder {

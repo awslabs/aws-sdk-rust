@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetIdentityDkimAttributes`](crate::operation::get_identity_dkim_attributes::builders::GetIdentityDkimAttributesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identities(impl Into<String>)`](crate::operation::get_identity_dkim_attributes::builders::GetIdentityDkimAttributesFluentBuilder::identities) / [`set_identities(Option<Vec<String>>)`](crate::operation::get_identity_dkim_attributes::builders::GetIdentityDkimAttributesFluentBuilder::set_identities):<br>required: **true**<br><p>A list of one or more verified identities - email addresses, domains, or both.</p><br>
+    ///   - [`identities(impl Into<String>)`](crate::operation::get_identity_dkim_attributes::builders::GetIdentityDkimAttributesFluentBuilder::identities) / [`set_identities(Option<Vec::<String>>)`](crate::operation::get_identity_dkim_attributes::builders::GetIdentityDkimAttributesFluentBuilder::set_identities):<br>required: **true**<br><p>A list of one or more verified identities - email addresses, domains, or both.</p><br>
     /// - On success, responds with [`GetIdentityDkimAttributesOutput`](crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesOutput) with field(s):
-    ///   - [`dkim_attributes(HashMap<String, IdentityDkimAttributes>)`](crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesOutput::dkim_attributes): <p>The DKIM attributes for an email address or a domain.</p>
+    ///   - [`dkim_attributes(HashMap::<String, IdentityDkimAttributes>)`](crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesOutput::dkim_attributes): <p>The DKIM attributes for an email address or a domain.</p>
     /// - On failure, responds with [`SdkError<GetIdentityDkimAttributesError>`](crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesError)
     pub fn get_identity_dkim_attributes(&self) -> crate::operation::get_identity_dkim_attributes::builders::GetIdentityDkimAttributesFluentBuilder {
         crate::operation::get_identity_dkim_attributes::builders::GetIdentityDkimAttributesFluentBuilder::new(self.handle.clone())

@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_streams::builders::ListStreamsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_streams::builders::ListStreamsFluentBuilder::set_next_token):<br>required: **false**<br><p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_streams::builders::ListStreamsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_streams::builders::ListStreamsFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of streams to return. Default: 100.</p><br>
     /// - On success, responds with [`ListStreamsOutput`](crate::operation::list_streams::ListStreamsOutput) with field(s):
-    ///   - [`streams(Vec<StreamSummary>)`](crate::operation::list_streams::ListStreamsOutput::streams): <p>List of streams.</p>
+    ///   - [`streams(Vec::<StreamSummary>)`](crate::operation::list_streams::ListStreamsOutput::streams): <p>List of streams.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_streams::ListStreamsOutput::next_token): <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     /// - On failure, responds with [`SdkError<ListStreamsError>`](crate::operation::list_streams::ListStreamsError)
     pub fn list_streams(&self) -> crate::operation::list_streams::builders::ListStreamsFluentBuilder {

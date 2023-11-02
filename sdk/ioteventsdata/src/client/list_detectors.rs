@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_detectors::builders::ListDetectorsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_detectors::builders::ListDetectorsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token that you can use to return the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_detectors::builders::ListDetectorsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_detectors::builders::ListDetectorsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be returned per request.</p><br>
     /// - On success, responds with [`ListDetectorsOutput`](crate::operation::list_detectors::ListDetectorsOutput) with field(s):
-    ///   - [`detector_summaries(Option<Vec<DetectorSummary>>)`](crate::operation::list_detectors::ListDetectorsOutput::detector_summaries): <p>A list of summary information about the detectors (instances).</p>
+    ///   - [`detector_summaries(Option<Vec::<DetectorSummary>>)`](crate::operation::list_detectors::ListDetectorsOutput::detector_summaries): <p>A list of summary information about the detectors (instances).</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_detectors::ListDetectorsOutput::next_token): <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListDetectorsError>`](crate::operation::list_detectors::ListDetectorsError)
     pub fn list_detectors(&self) -> crate::operation::list_detectors::builders::ListDetectorsFluentBuilder {

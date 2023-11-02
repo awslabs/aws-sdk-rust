@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::get_impersonation_role::GetImpersonationRoleOutput::name): <p>The impersonation role name.</p>
     ///   - [`r#type(Option<ImpersonationRoleType>)`](crate::operation::get_impersonation_role::GetImpersonationRoleOutput::type): <p>The impersonation role type.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_impersonation_role::GetImpersonationRoleOutput::description): <p>The impersonation role description.</p>
-    ///   - [`rules(Option<Vec<ImpersonationRule>>)`](crate::operation::get_impersonation_role::GetImpersonationRoleOutput::rules): <p>The list of rules for the given impersonation role.</p>
+    ///   - [`rules(Option<Vec::<ImpersonationRule>>)`](crate::operation::get_impersonation_role::GetImpersonationRoleOutput::rules): <p>The list of rules for the given impersonation role.</p>
     ///   - [`date_created(Option<DateTime>)`](crate::operation::get_impersonation_role::GetImpersonationRoleOutput::date_created): <p>The date when the impersonation role was created.</p>
     ///   - [`date_modified(Option<DateTime>)`](crate::operation::get_impersonation_role::GetImpersonationRoleOutput::date_modified): <p>The date when the impersonation role was last modified.</p>
     /// - On failure, responds with [`SdkError<GetImpersonationRoleError>`](crate::operation::get_impersonation_role::GetImpersonationRoleError)

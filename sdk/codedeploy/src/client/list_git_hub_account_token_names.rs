@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_git_hub_account_token_names::builders::ListGitHubAccountTokenNamesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_git_hub_account_token_names::builders::ListGitHubAccountTokenNamesFluentBuilder::set_next_token):<br>required: **false**<br><p>An identifier returned from the previous <code>ListGitHubAccountTokenNames</code> call. It can be used to return the next set of names in the list. </p><br>
     /// - On success, responds with [`ListGitHubAccountTokenNamesOutput`](crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesOutput) with field(s):
-    ///   - [`token_name_list(Option<Vec<String>>)`](crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesOutput::token_name_list): <p>A list of names of connections to GitHub accounts.</p>
+    ///   - [`token_name_list(Option<Vec::<String>>)`](crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesOutput::token_name_list): <p>A list of names of connections to GitHub accounts.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesOutput::next_token): <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to return the next set of names in the list. </p>
     /// - On failure, responds with [`SdkError<ListGitHubAccountTokenNamesError>`](crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesError)
     pub fn list_git_hub_account_token_names(

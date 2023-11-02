@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`status(Option<ChangeStatus>)`](crate::operation::describe_change_set::DescribeChangeSetOutput::status): <p>The status of the change request.</p>
     ///   - [`failure_code(Option<FailureCode>)`](crate::operation::describe_change_set::DescribeChangeSetOutput::failure_code): <p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>
     ///   - [`failure_description(Option<String>)`](crate::operation::describe_change_set::DescribeChangeSetOutput::failure_description): <p>Returned if there is a failure on the change set, but that failure is not related to any of the changes in the request.</p>
-    ///   - [`change_set(Option<Vec<ChangeSummary>>)`](crate::operation::describe_change_set::DescribeChangeSetOutput::change_set): <p>An array of <code>ChangeSummary</code> objects.</p>
+    ///   - [`change_set(Option<Vec::<ChangeSummary>>)`](crate::operation::describe_change_set::DescribeChangeSetOutput::change_set): <p>An array of <code>ChangeSummary</code> objects.</p>
     /// - On failure, responds with [`SdkError<DescribeChangeSetError>`](crate::operation::describe_change_set::DescribeChangeSetError)
     pub fn describe_change_set(&self) -> crate::operation::describe_change_set::builders::DescribeChangeSetFluentBuilder {
         crate::operation::describe_change_set::builders::DescribeChangeSetFluentBuilder::new(self.handle.clone())

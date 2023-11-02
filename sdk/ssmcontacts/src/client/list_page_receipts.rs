@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_page_receipts::builders::ListPageReceiptsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_page_receipts::builders::ListPageReceiptsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of acknowledgements per page of results.</p><br>
     /// - On success, responds with [`ListPageReceiptsOutput`](crate::operation::list_page_receipts::ListPageReceiptsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_page_receipts::ListPageReceiptsOutput::next_token): <p>The pagination token to continue to the next page of results.</p>
-    ///   - [`receipts(Option<Vec<Receipt>>)`](crate::operation::list_page_receipts::ListPageReceiptsOutput::receipts): <p>A list of each acknowledgement.</p>
+    ///   - [`receipts(Option<Vec::<Receipt>>)`](crate::operation::list_page_receipts::ListPageReceiptsOutput::receipts): <p>A list of each acknowledgement.</p>
     /// - On failure, responds with [`SdkError<ListPageReceiptsError>`](crate::operation::list_page_receipts::ListPageReceiptsError)
     pub fn list_page_receipts(&self) -> crate::operation::list_page_receipts::builders::ListPageReceiptsFluentBuilder {
         crate::operation::list_page_receipts::builders::ListPageReceiptsFluentBuilder::new(self.handle.clone())

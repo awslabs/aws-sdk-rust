@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_core_definition_versions::builders::ListCoreDefinitionVersionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_core_definition_versions::builders::ListCoreDefinitionVersionsFluentBuilder::set_next_token):<br>required: **false**<br>The token for the next set of results, or ''null'' if there are no additional results.<br>
     /// - On success, responds with [`ListCoreDefinitionVersionsOutput`](crate::operation::list_core_definition_versions::ListCoreDefinitionVersionsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_core_definition_versions::ListCoreDefinitionVersionsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
-    ///   - [`versions(Option<Vec<VersionInformation>>)`](crate::operation::list_core_definition_versions::ListCoreDefinitionVersionsOutput::versions): Information about a version.
+    ///   - [`versions(Option<Vec::<VersionInformation>>)`](crate::operation::list_core_definition_versions::ListCoreDefinitionVersionsOutput::versions): Information about a version.
     /// - On failure, responds with [`SdkError<ListCoreDefinitionVersionsError>`](crate::operation::list_core_definition_versions::ListCoreDefinitionVersionsError)
     pub fn list_core_definition_versions(
         &self,

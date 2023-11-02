@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`app_id(Option<String>)`](crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationOutput::app_id): <p>The ID of the application.</p>
     ///   - [`role_name(Option<String>)`](crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationOutput::role_name): <p>The name of the service role in the customer's account that CloudFormation uses to launch the application.</p>
     ///   - [`auto_launch(Option<bool>)`](crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationOutput::auto_launch): <p>Indicates whether the application is configured to launch automatically after replication is complete.</p>
-    ///   - [`server_group_launch_configurations(Option<Vec<ServerGroupLaunchConfiguration>>)`](crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationOutput::server_group_launch_configurations): <p>The launch configurations for server groups in this application.</p>
+    ///   - [`server_group_launch_configurations(Option<Vec::<ServerGroupLaunchConfiguration>>)`](crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationOutput::server_group_launch_configurations): <p>The launch configurations for server groups in this application.</p>
     /// - On failure, responds with [`SdkError<GetAppLaunchConfigurationError>`](crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError)
     pub fn get_app_launch_configuration(&self) -> crate::operation::get_app_launch_configuration::builders::GetAppLaunchConfigurationFluentBuilder {
         crate::operation::get_app_launch_configuration::builders::GetAppLaunchConfigurationFluentBuilder::new(self.handle.clone())

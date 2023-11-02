@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_profiles::builders::ListProfilesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_profiles::builders::ListProfilesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_profiles::builders::ListProfilesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_profiles::builders::ListProfilesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return for this request.</p><br>
     /// - On success, responds with [`ListProfilesOutput`](crate::operation::list_profiles::ListProfilesOutput) with field(s):
-    ///   - [`profile_summaries(Option<Vec<ProfileSummary>>)`](crate::operation::list_profiles::ListProfilesOutput::profile_summaries): <p>Profile summaries.</p>
+    ///   - [`profile_summaries(Option<Vec::<ProfileSummary>>)`](crate::operation::list_profiles::ListProfilesOutput::profile_summaries): <p>Profile summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_profiles::ListProfilesOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListProfilesError>`](crate::operation::list_profiles::ListProfilesError)
     pub fn list_profiles(&self) -> crate::operation::list_profiles::builders::ListProfilesFluentBuilder {

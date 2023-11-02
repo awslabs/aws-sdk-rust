@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_dashboards::builders::ListDashboardsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_dashboards::builders::ListDashboardsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to be used for the next set of paginated results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_dashboards::builders::ListDashboardsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_dashboards::builders::ListDashboardsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return for each paginated request.</p>  <p>Default: 50</p><br>
     /// - On success, responds with [`ListDashboardsOutput`](crate::operation::list_dashboards::ListDashboardsOutput) with field(s):
-    ///   - [`dashboard_summaries(Vec<DashboardSummary>)`](crate::operation::list_dashboards::ListDashboardsOutput::dashboard_summaries): <p>A list that summarizes each dashboard in the project.</p>
+    ///   - [`dashboard_summaries(Vec::<DashboardSummary>)`](crate::operation::list_dashboards::ListDashboardsOutput::dashboard_summaries): <p>A list that summarizes each dashboard in the project.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_dashboards::ListDashboardsOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListDashboardsError>`](crate::operation::list_dashboards::ListDashboardsError)
     pub fn list_dashboards(&self) -> crate::operation::list_dashboards::builders::ListDashboardsFluentBuilder {

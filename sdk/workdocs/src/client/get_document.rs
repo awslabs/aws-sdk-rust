@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`include_custom_metadata(bool)`](crate::operation::get_document::builders::GetDocumentFluentBuilder::include_custom_metadata) / [`set_include_custom_metadata(Option<bool>)`](crate::operation::get_document::builders::GetDocumentFluentBuilder::set_include_custom_metadata):<br>required: **false**<br><p>Set this to <code>TRUE</code> to include custom metadata in the response.</p><br>
     /// - On success, responds with [`GetDocumentOutput`](crate::operation::get_document::GetDocumentOutput) with field(s):
     ///   - [`metadata(Option<DocumentMetadata>)`](crate::operation::get_document::GetDocumentOutput::metadata): <p>The metadata details of the document.</p>
-    ///   - [`custom_metadata(Option<HashMap<String, String>>)`](crate::operation::get_document::GetDocumentOutput::custom_metadata): <p>The custom metadata on the document.</p>
+    ///   - [`custom_metadata(Option<HashMap::<String, String>>)`](crate::operation::get_document::GetDocumentOutput::custom_metadata): <p>The custom metadata on the document.</p>
     /// - On failure, responds with [`SdkError<GetDocumentError>`](crate::operation::get_document::GetDocumentError)
     pub fn get_document(&self) -> crate::operation::get_document::builders::GetDocumentFluentBuilder {
         crate::operation::get_document::builders::GetDocumentFluentBuilder::new(self.handle.clone())

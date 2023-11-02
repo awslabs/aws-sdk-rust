@@ -82,7 +82,7 @@ pub fn de_get_bucket_lifecycle_configuration(
             s if s.matches("Rule") /* Rules com.amazonaws.s3.synthetic#GetBucketLifecycleConfigurationOutput$Rules */ =>  {
                 let var_3 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::LifecycleRule>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::LifecycleRule>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_4 = builder.rules.take().unwrap_or_default();
                             list_4.push(
                                 crate::protocol_serde::shape_lifecycle_rule::de_lifecycle_rule(&mut tag)

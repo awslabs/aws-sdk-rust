@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`document_metadata(Option<DocumentMetadata>)`](crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryOutput::document_metadata): <p>Information about the input document.</p>
     ///   - [`job_status(Option<JobStatus>)`](crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryOutput::job_status): <p> The current status of the lending analysis job. </p>
     ///   - [`summary(Option<LendingSummary>)`](crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryOutput::summary): <p> Contains summary information for documents grouped by type.</p>
-    ///   - [`warnings(Option<Vec<Warning>>)`](crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryOutput::warnings): <p>A list of warnings that occurred during the lending analysis operation.</p>
+    ///   - [`warnings(Option<Vec::<Warning>>)`](crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryOutput::warnings): <p>A list of warnings that occurred during the lending analysis operation.</p>
     ///   - [`status_message(Option<String>)`](crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryOutput::status_message): <p>Returns if the lending analysis could not be completed. Contains explanation for what error occurred.</p>
     ///   - [`analyze_lending_model_version(Option<String>)`](crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryOutput::analyze_lending_model_version): <p>The current model version of the Analyze Lending API.</p>
     /// - On failure, responds with [`SdkError<GetLendingAnalysisSummaryError>`](crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryError)

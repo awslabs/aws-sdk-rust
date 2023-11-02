@@ -17,9 +17,9 @@ impl super::Client {
     ///   - [`modified_at(DateTime)`](crate::operation::get_origin_endpoint::GetOriginEndpointOutput::modified_at): <p>The date and time the origin endpoint was modified.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_origin_endpoint::GetOriginEndpointOutput::description): <p>The description for your origin endpoint.</p>
     ///   - [`startover_window_seconds(Option<i32>)`](crate::operation::get_origin_endpoint::GetOriginEndpointOutput::startover_window_seconds): <p>The size of the window (in seconds) to create a window of the live stream that's available for on-demand viewing. Viewers can start-over or catch-up on content that falls within the window.</p>
-    ///   - [`hls_manifests(Option<Vec<GetHlsManifestConfiguration>>)`](crate::operation::get_origin_endpoint::GetOriginEndpointOutput::hls_manifests): <p>An HTTP live streaming (HLS) manifest configuration.</p>
-    ///   - [`low_latency_hls_manifests(Option<Vec<GetLowLatencyHlsManifestConfiguration>>)`](crate::operation::get_origin_endpoint::GetOriginEndpointOutput::low_latency_hls_manifests): <p>A low-latency HLS manifest configuration.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_origin_endpoint::GetOriginEndpointOutput::tags): <p>The comma-separated list of tag key:value pairs assigned to the origin endpoint.</p>
+    ///   - [`hls_manifests(Option<Vec::<GetHlsManifestConfiguration>>)`](crate::operation::get_origin_endpoint::GetOriginEndpointOutput::hls_manifests): <p>An HTTP live streaming (HLS) manifest configuration.</p>
+    ///   - [`low_latency_hls_manifests(Option<Vec::<GetLowLatencyHlsManifestConfiguration>>)`](crate::operation::get_origin_endpoint::GetOriginEndpointOutput::low_latency_hls_manifests): <p>A low-latency HLS manifest configuration.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_origin_endpoint::GetOriginEndpointOutput::tags): <p>The comma-separated list of tag key:value pairs assigned to the origin endpoint.</p>
     /// - On failure, responds with [`SdkError<GetOriginEndpointError>`](crate::operation::get_origin_endpoint::GetOriginEndpointError)
     pub fn get_origin_endpoint(&self) -> crate::operation::get_origin_endpoint::builders::GetOriginEndpointFluentBuilder {
         crate::operation::get_origin_endpoint::builders::GetOriginEndpointFluentBuilder::new(self.handle.clone())

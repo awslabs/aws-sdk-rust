@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`resource_name(impl Into<String>)`](crate::operation::start_gui_session::builders::StartGUISessionFluentBuilder::resource_name) / [`set_resource_name(Option<String>)`](crate::operation::start_gui_session::builders::StartGUISessionFluentBuilder::set_resource_name):<br>required: **true**<br><p>The resource name.</p><br>
     /// - On success, responds with [`StartGuiSessionOutput`](crate::operation::start_gui_session::StartGuiSessionOutput) with field(s):
-    ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::start_gui_session::StartGuiSessionOutput::operations): <p>The available API operations.</p>
+    ///   - [`operations(Option<Vec::<Operation>>)`](crate::operation::start_gui_session::StartGuiSessionOutput::operations): <p>The available API operations.</p>
     /// - On failure, responds with [`SdkError<StartGUISessionError>`](crate::operation::start_gui_session::StartGUISessionError)
     pub fn start_gui_session(&self) -> crate::operation::start_gui_session::builders::StartGUISessionFluentBuilder {
         crate::operation::start_gui_session::builders::StartGUISessionFluentBuilder::new(self.handle.clone())

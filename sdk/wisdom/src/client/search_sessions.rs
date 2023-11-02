@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`assistant_id(impl Into<String>)`](crate::operation::search_sessions::builders::SearchSessionsFluentBuilder::assistant_id) / [`set_assistant_id(Option<String>)`](crate::operation::search_sessions::builders::SearchSessionsFluentBuilder::set_assistant_id):<br>required: **true**<br><p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p><br>
     ///   - [`search_expression(SearchExpression)`](crate::operation::search_sessions::builders::SearchSessionsFluentBuilder::search_expression) / [`set_search_expression(Option<SearchExpression>)`](crate::operation::search_sessions::builders::SearchSessionsFluentBuilder::set_search_expression):<br>required: **true**<br><p>The search expression to filter results.</p><br>
     /// - On success, responds with [`SearchSessionsOutput`](crate::operation::search_sessions::SearchSessionsOutput) with field(s):
-    ///   - [`session_summaries(Vec<SessionSummary>)`](crate::operation::search_sessions::SearchSessionsOutput::session_summaries): <p>Summary information about the sessions.</p>
+    ///   - [`session_summaries(Vec::<SessionSummary>)`](crate::operation::search_sessions::SearchSessionsOutput::session_summaries): <p>Summary information about the sessions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_sessions::SearchSessionsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<SearchSessionsError>`](crate::operation::search_sessions::SearchSessionsError)
     pub fn search_sessions(&self) -> crate::operation::search_sessions::builders::SearchSessionsFluentBuilder {

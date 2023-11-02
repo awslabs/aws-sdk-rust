@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_event_buses::builders::ListEventBusesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_event_buses::builders::ListEventBusesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token returned by a previous call to retrieve the next set of results.</p><br>
     ///   - [`limit(i32)`](crate::operation::list_event_buses::builders::ListEventBusesFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::list_event_buses::builders::ListEventBusesFluentBuilder::set_limit):<br>required: **false**<br><p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p><br>
     /// - On success, responds with [`ListEventBusesOutput`](crate::operation::list_event_buses::ListEventBusesOutput) with field(s):
-    ///   - [`event_buses(Option<Vec<EventBus>>)`](crate::operation::list_event_buses::ListEventBusesOutput::event_buses): <p>This list of event buses.</p>
+    ///   - [`event_buses(Option<Vec::<EventBus>>)`](crate::operation::list_event_buses::ListEventBusesOutput::event_buses): <p>This list of event buses.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_event_buses::ListEventBusesOutput::next_token): <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListEventBusesError>`](crate::operation::list_event_buses::ListEventBusesError)
     pub fn list_event_buses(&self) -> crate::operation::list_event_buses::builders::ListEventBusesFluentBuilder {

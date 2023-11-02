@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`keyspace_name(impl Into<String>)`](crate::operation::list_tables::builders::ListTablesFluentBuilder::keyspace_name) / [`set_keyspace_name(Option<String>)`](crate::operation::list_tables::builders::ListTablesFluentBuilder::set_keyspace_name):<br>required: **true**<br><p>The name of the keyspace.</p><br>
     /// - On success, responds with [`ListTablesOutput`](crate::operation::list_tables::ListTablesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_tables::ListTablesOutput::next_token): <p>A token to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response.</p>
-    ///   - [`tables(Option<Vec<TableSummary>>)`](crate::operation::list_tables::ListTablesOutput::tables): <p>A list of tables.</p>
+    ///   - [`tables(Option<Vec::<TableSummary>>)`](crate::operation::list_tables::ListTablesOutput::tables): <p>A list of tables.</p>
     /// - On failure, responds with [`SdkError<ListTablesError>`](crate::operation::list_tables::ListTablesError)
     pub fn list_tables(&self) -> crate::operation::list_tables::builders::ListTablesFluentBuilder {
         crate::operation::list_tables::builders::ListTablesFluentBuilder::new(self.handle.clone())

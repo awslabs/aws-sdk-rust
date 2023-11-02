@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`filter(ReferenceFilter)`](crate::operation::list_references::builders::ListReferencesFluentBuilder::filter) / [`set_filter(Option<ReferenceFilter>)`](crate::operation::list_references::builders::ListReferencesFluentBuilder::set_filter):<br>required: **false**<br><p>A filter to apply to the list.</p><br>
     /// - On success, responds with [`ListReferencesOutput`](crate::operation::list_references::ListReferencesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_references::ListReferencesOutput::next_token): <p>A pagination token that's included if more results are available.</p>
-    ///   - [`references(Vec<ReferenceListItem>)`](crate::operation::list_references::ListReferencesOutput::references): <p>A list of references.</p>
+    ///   - [`references(Vec::<ReferenceListItem>)`](crate::operation::list_references::ListReferencesOutput::references): <p>A list of references.</p>
     /// - On failure, responds with [`SdkError<ListReferencesError>`](crate::operation::list_references::ListReferencesError)
     pub fn list_references(&self) -> crate::operation::list_references::builders::ListReferencesFluentBuilder {
         crate::operation::list_references::builders::ListReferencesFluentBuilder::new(self.handle.clone())

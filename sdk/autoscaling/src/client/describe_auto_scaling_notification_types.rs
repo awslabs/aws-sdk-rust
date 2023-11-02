@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::describe_auto_scaling_notification_types::builders::DescribeAutoScalingNotificationTypesFluentBuilder::send) it.
     /// - On success, responds with [`DescribeAutoScalingNotificationTypesOutput`](crate::operation::describe_auto_scaling_notification_types::DescribeAutoScalingNotificationTypesOutput) with field(s):
-    ///   - [`auto_scaling_notification_types(Option<Vec<String>>)`](crate::operation::describe_auto_scaling_notification_types::DescribeAutoScalingNotificationTypesOutput::auto_scaling_notification_types): <p>The notification types.</p>
+    ///   - [`auto_scaling_notification_types(Option<Vec::<String>>)`](crate::operation::describe_auto_scaling_notification_types::DescribeAutoScalingNotificationTypesOutput::auto_scaling_notification_types): <p>The notification types.</p>
     /// - On failure, responds with [`SdkError<DescribeAutoScalingNotificationTypesError>`](crate::operation::describe_auto_scaling_notification_types::DescribeAutoScalingNotificationTypesError)
     pub fn describe_auto_scaling_notification_types(
         &self,

@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_collaboration_analysis_templates::builders::ListCollaborationAnalysisTemplatesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_collaboration_analysis_templates::builders::ListCollaborationAnalysisTemplatesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum size of the results that is returned per call.</p><br>
     /// - On success, responds with [`ListCollaborationAnalysisTemplatesOutput`](crate::operation::list_collaboration_analysis_templates::ListCollaborationAnalysisTemplatesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_collaboration_analysis_templates::ListCollaborationAnalysisTemplatesOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
-    ///   - [`collaboration_analysis_template_summaries(Vec<CollaborationAnalysisTemplateSummary>)`](crate::operation::list_collaboration_analysis_templates::ListCollaborationAnalysisTemplatesOutput::collaboration_analysis_template_summaries): <p>The metadata of the analysis template within a collaboration.</p>
+    ///   - [`collaboration_analysis_template_summaries(Vec::<CollaborationAnalysisTemplateSummary>)`](crate::operation::list_collaboration_analysis_templates::ListCollaborationAnalysisTemplatesOutput::collaboration_analysis_template_summaries): <p>The metadata of the analysis template within a collaboration.</p>
     /// - On failure, responds with [`SdkError<ListCollaborationAnalysisTemplatesError>`](crate::operation::list_collaboration_analysis_templates::ListCollaborationAnalysisTemplatesError)
     pub fn list_collaboration_analysis_templates(
         &self,

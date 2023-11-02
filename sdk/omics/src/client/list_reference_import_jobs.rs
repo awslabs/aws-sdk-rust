@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`filter(ImportReferenceFilter)`](crate::operation::list_reference_import_jobs::builders::ListReferenceImportJobsFluentBuilder::filter) / [`set_filter(Option<ImportReferenceFilter>)`](crate::operation::list_reference_import_jobs::builders::ListReferenceImportJobsFluentBuilder::set_filter):<br>required: **false**<br><p>A filter to apply to the list.</p><br>
     /// - On success, responds with [`ListReferenceImportJobsOutput`](crate::operation::list_reference_import_jobs::ListReferenceImportJobsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_reference_import_jobs::ListReferenceImportJobsOutput::next_token): <p>A pagination token that's included if more results are available.</p>
-    ///   - [`import_jobs(Option<Vec<ImportReferenceJobItem>>)`](crate::operation::list_reference_import_jobs::ListReferenceImportJobsOutput::import_jobs): <p>A lis of jobs.</p>
+    ///   - [`import_jobs(Option<Vec::<ImportReferenceJobItem>>)`](crate::operation::list_reference_import_jobs::ListReferenceImportJobsOutput::import_jobs): <p>A lis of jobs.</p>
     /// - On failure, responds with [`SdkError<ListReferenceImportJobsError>`](crate::operation::list_reference_import_jobs::ListReferenceImportJobsError)
     pub fn list_reference_import_jobs(&self) -> crate::operation::list_reference_import_jobs::builders::ListReferenceImportJobsFluentBuilder {
         crate::operation::list_reference_import_jobs::builders::ListReferenceImportJobsFluentBuilder::new(self.handle.clone())

@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::set_next_token):<br>required: **false**<br><p>The token value retrieved from a previous call to access the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum size of the results that is returned per call.</p><br>
     /// - On success, responds with [`ListSchemasOutput`](crate::operation::list_schemas::ListSchemasOutput) with field(s):
-    ///   - [`schema_summaries(Vec<SchemaSummary>)`](crate::operation::list_schemas::ListSchemasOutput::schema_summaries): <p>The retrieved list of schemas.</p>
+    ///   - [`schema_summaries(Vec::<SchemaSummary>)`](crate::operation::list_schemas::ListSchemasOutput::schema_summaries): <p>The retrieved list of schemas.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_schemas::ListSchemasOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListSchemasError>`](crate::operation::list_schemas::ListSchemasError)
     pub fn list_schemas(&self) -> crate::operation::list_schemas::builders::ListSchemasFluentBuilder {

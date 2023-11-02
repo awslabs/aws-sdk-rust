@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`pipeline_id(impl Into<String>)`](crate::operation::describe_thumbnails::builders::DescribeThumbnailsFluentBuilder::pipeline_id) / [`set_pipeline_id(Option<String>)`](crate::operation::describe_thumbnails::builders::DescribeThumbnailsFluentBuilder::set_pipeline_id):<br>required: **true**<br>Pipeline ID ("0" or "1")<br>
     ///   - [`thumbnail_type(impl Into<String>)`](crate::operation::describe_thumbnails::builders::DescribeThumbnailsFluentBuilder::thumbnail_type) / [`set_thumbnail_type(Option<String>)`](crate::operation::describe_thumbnails::builders::DescribeThumbnailsFluentBuilder::set_thumbnail_type):<br>required: **true**<br>thumbnail type<br>
     /// - On success, responds with [`DescribeThumbnailsOutput`](crate::operation::describe_thumbnails::DescribeThumbnailsOutput) with field(s):
-    ///   - [`thumbnail_details(Option<Vec<ThumbnailDetail>>)`](crate::operation::describe_thumbnails::DescribeThumbnailsOutput::thumbnail_details): Placeholder documentation for __listOfThumbnailDetail
+    ///   - [`thumbnail_details(Option<Vec::<ThumbnailDetail>>)`](crate::operation::describe_thumbnails::DescribeThumbnailsOutput::thumbnail_details): Placeholder documentation for __listOfThumbnailDetail
     /// - On failure, responds with [`SdkError<DescribeThumbnailsError>`](crate::operation::describe_thumbnails::DescribeThumbnailsError)
     pub fn describe_thumbnails(&self) -> crate::operation::describe_thumbnails::builders::DescribeThumbnailsFluentBuilder {
         crate::operation::describe_thumbnails::builders::DescribeThumbnailsFluentBuilder::new(self.handle.clone())

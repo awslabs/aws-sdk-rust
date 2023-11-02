@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`definition(SchemaDefinition)`](crate::operation::put_schema::builders::PutSchemaFluentBuilder::definition) / [`set_definition(Option<SchemaDefinition>)`](crate::operation::put_schema::builders::PutSchemaFluentBuilder::set_definition):<br>required: **true**<br><p>Specifies the definition of the schema to be stored. The schema definition must be written in Cedar schema JSON.</p><br>
     /// - On success, responds with [`PutSchemaOutput`](crate::operation::put_schema::PutSchemaOutput) with field(s):
     ///   - [`policy_store_id(String)`](crate::operation::put_schema::PutSchemaOutput::policy_store_id): <p>The unique ID of the policy store that contains the schema.</p>
-    ///   - [`namespaces(Vec<String>)`](crate::operation::put_schema::PutSchemaOutput::namespaces): <p>Identifies the namespaces of the entities referenced by this schema.</p>
+    ///   - [`namespaces(Vec::<String>)`](crate::operation::put_schema::PutSchemaOutput::namespaces): <p>Identifies the namespaces of the entities referenced by this schema.</p>
     ///   - [`created_date(DateTime)`](crate::operation::put_schema::PutSchemaOutput::created_date): <p>The date and time that the schema was originally created.</p>
     ///   - [`last_updated_date(DateTime)`](crate::operation::put_schema::PutSchemaOutput::last_updated_date): <p>The date and time that the schema was last updated.</p>
     /// - On failure, responds with [`SdkError<PutSchemaError>`](crate::operation::put_schema::PutSchemaError)

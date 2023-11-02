@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`application_aggregated_status(Option<ApplicationAggregatedStatus>)`](crate::operation::archive_application::ArchiveApplicationOutput::application_aggregated_status): <p>Application aggregated status.</p>
     ///   - [`creation_date_time(Option<String>)`](crate::operation::archive_application::ArchiveApplicationOutput::creation_date_time): <p>Application creation dateTime.</p>
     ///   - [`last_modified_date_time(Option<String>)`](crate::operation::archive_application::ArchiveApplicationOutput::last_modified_date_time): <p>Application last modified dateTime.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::archive_application::ArchiveApplicationOutput::tags): <p>Application tags.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::archive_application::ArchiveApplicationOutput::tags): <p>Application tags.</p>
     ///   - [`wave_id(Option<String>)`](crate::operation::archive_application::ArchiveApplicationOutput::wave_id): <p>Application wave ID.</p>
     /// - On failure, responds with [`SdkError<ArchiveApplicationError>`](crate::operation::archive_application::ArchiveApplicationError)
     pub fn archive_application(&self) -> crate::operation::archive_application::builders::ArchiveApplicationFluentBuilder {

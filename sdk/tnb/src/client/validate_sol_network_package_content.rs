@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`nsd_id(String)`](crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentOutput::nsd_id): <p>Network service descriptor ID.</p>
     ///   - [`nsd_name(String)`](crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentOutput::nsd_name): <p>Network service descriptor name.</p>
     ///   - [`nsd_version(String)`](crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentOutput::nsd_version): <p>Network service descriptor version.</p>
-    ///   - [`vnf_pkg_ids(Vec<String>)`](crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentOutput::vnf_pkg_ids): <p>Function package IDs.</p>
+    ///   - [`vnf_pkg_ids(Vec::<String>)`](crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentOutput::vnf_pkg_ids): <p>Function package IDs.</p>
     ///   - [`metadata(Option<ValidateSolNetworkPackageContentMetadata>)`](crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentOutput::metadata): <p>Network package metadata.</p>
     /// - On failure, responds with [`SdkError<ValidateSolNetworkPackageContentError>`](crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError)
     pub fn validate_sol_network_package_content(

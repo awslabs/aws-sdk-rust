@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder takes no input, just [`send`](crate::operation::describe_active_receipt_rule_set::builders::DescribeActiveReceiptRuleSetFluentBuilder::send) it.
     /// - On success, responds with [`DescribeActiveReceiptRuleSetOutput`](crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetOutput) with field(s):
     ///   - [`metadata(Option<ReceiptRuleSetMetadata>)`](crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetOutput::metadata): <p>The metadata for the currently active receipt rule set. The metadata consists of the rule set name and a timestamp of when the rule set was created.</p>
-    ///   - [`rules(Option<Vec<ReceiptRule>>)`](crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetOutput::rules): <p>The receipt rules that belong to the active rule set.</p>
+    ///   - [`rules(Option<Vec::<ReceiptRule>>)`](crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetOutput::rules): <p>The receipt rules that belong to the active rule set.</p>
     /// - On failure, responds with [`SdkError<DescribeActiveReceiptRuleSetError>`](crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetError)
     pub fn describe_active_receipt_rule_set(
         &self,

@@ -8,9 +8,9 @@ impl super::Client {
     ///   - [`bulk_deployment_metrics(Option<BulkDeploymentMetrics>)`](crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusOutput::bulk_deployment_metrics): Relevant metrics on input records processed during bulk deployment.
     ///   - [`bulk_deployment_status(Option<BulkDeploymentStatus>)`](crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusOutput::bulk_deployment_status): The status of the bulk deployment.
     ///   - [`created_at(Option<String>)`](crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusOutput::created_at): The time, in ISO format, when the deployment was created.
-    ///   - [`error_details(Option<Vec<ErrorDetail>>)`](crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusOutput::error_details): Error details
+    ///   - [`error_details(Option<Vec::<ErrorDetail>>)`](crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusOutput::error_details): Error details
     ///   - [`error_message(Option<String>)`](crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusOutput::error_message): Error message
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusOutput::tags): Tag(s) attached to the resource arn.
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusOutput::tags): Tag(s) attached to the resource arn.
     /// - On failure, responds with [`SdkError<GetBulkDeploymentStatusError>`](crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusError)
     pub fn get_bulk_deployment_status(&self) -> crate::operation::get_bulk_deployment_status::builders::GetBulkDeploymentStatusFluentBuilder {
         crate::operation::get_bulk_deployment_status::builders::GetBulkDeploymentStatusFluentBuilder::new(self.handle.clone())

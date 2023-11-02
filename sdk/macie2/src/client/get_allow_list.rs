@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::get_allow_list::GetAllowListOutput::id): <p>The unique identifier for the allow list.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_allow_list::GetAllowListOutput::name): <p>The custom name of the allow list.</p>
     ///   - [`status(Option<AllowListStatus>)`](crate::operation::get_allow_list::GetAllowListOutput::status): <p>The current status of the allow list, which indicates whether Amazon Macie can access and use the list's criteria.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_allow_list::GetAllowListOutput::tags): <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the allow list.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_allow_list::GetAllowListOutput::tags): <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the allow list.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_allow_list::GetAllowListOutput::updated_at): <p>The date and time, in UTC and extended ISO 8601 format, when the allow list's settings were most recently changed in Amazon Macie.</p>
     /// - On failure, responds with [`SdkError<GetAllowListError>`](crate::operation::get_allow_list::GetAllowListError)
     pub fn get_allow_list(&self) -> crate::operation::get_allow_list::builders::GetAllowListFluentBuilder {

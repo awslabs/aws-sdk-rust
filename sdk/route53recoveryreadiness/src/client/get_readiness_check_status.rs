@@ -8,10 +8,10 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_readiness_check_status::builders::GetReadinessCheckStatusFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_readiness_check_status::builders::GetReadinessCheckStatusFluentBuilder::set_next_token):<br>required: **false**<br><p>The token that identifies which batch of results you want to see.</p><br>
     ///   - [`readiness_check_name(impl Into<String>)`](crate::operation::get_readiness_check_status::builders::GetReadinessCheckStatusFluentBuilder::readiness_check_name) / [`set_readiness_check_name(Option<String>)`](crate::operation::get_readiness_check_status::builders::GetReadinessCheckStatusFluentBuilder::set_readiness_check_name):<br>required: **true**<br><p>Name of a readiness check.</p><br>
     /// - On success, responds with [`GetReadinessCheckStatusOutput`](crate::operation::get_readiness_check_status::GetReadinessCheckStatusOutput) with field(s):
-    ///   - [`messages(Option<Vec<Message>>)`](crate::operation::get_readiness_check_status::GetReadinessCheckStatusOutput::messages): <p>Top level messages for readiness check status</p>
+    ///   - [`messages(Option<Vec::<Message>>)`](crate::operation::get_readiness_check_status::GetReadinessCheckStatusOutput::messages): <p>Top level messages for readiness check status</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_readiness_check_status::GetReadinessCheckStatusOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
     ///   - [`readiness(Option<Readiness>)`](crate::operation::get_readiness_check_status::GetReadinessCheckStatusOutput::readiness): <p>The readiness at rule level.</p>
-    ///   - [`resources(Option<Vec<ResourceResult>>)`](crate::operation::get_readiness_check_status::GetReadinessCheckStatusOutput::resources): <p>Summary of the readiness of resources.</p>
+    ///   - [`resources(Option<Vec::<ResourceResult>>)`](crate::operation::get_readiness_check_status::GetReadinessCheckStatusOutput::resources): <p>Summary of the readiness of resources.</p>
     /// - On failure, responds with [`SdkError<GetReadinessCheckStatusError>`](crate::operation::get_readiness_check_status::GetReadinessCheckStatusError)
     pub fn get_readiness_check_status(&self) -> crate::operation::get_readiness_check_status::builders::GetReadinessCheckStatusFluentBuilder {
         crate::operation::get_readiness_check_status::builders::GetReadinessCheckStatusFluentBuilder::new(self.handle.clone())

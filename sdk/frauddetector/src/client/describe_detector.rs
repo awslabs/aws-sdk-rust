@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::describe_detector::builders::DescribeDetectorFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_detector::builders::DescribeDetectorFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return for the request.</p><br>
     /// - On success, responds with [`DescribeDetectorOutput`](crate::operation::describe_detector::DescribeDetectorOutput) with field(s):
     ///   - [`detector_id(Option<String>)`](crate::operation::describe_detector::DescribeDetectorOutput::detector_id): <p>The detector ID.</p>
-    ///   - [`detector_version_summaries(Option<Vec<DetectorVersionSummary>>)`](crate::operation::describe_detector::DescribeDetectorOutput::detector_version_summaries): <p>The status and description for each detector version.</p>
+    ///   - [`detector_version_summaries(Option<Vec::<DetectorVersionSummary>>)`](crate::operation::describe_detector::DescribeDetectorOutput::detector_version_summaries): <p>The status and description for each detector version.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_detector::DescribeDetectorOutput::next_token): <p>The next token to be used for subsequent requests.</p>
     ///   - [`arn(Option<String>)`](crate::operation::describe_detector::DescribeDetectorOutput::arn): <p>The detector ARN.</p>
     /// - On failure, responds with [`SdkError<DescribeDetectorError>`](crate::operation::describe_detector::DescribeDetectorError)

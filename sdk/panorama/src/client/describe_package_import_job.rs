@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`last_updated_time(DateTime)`](crate::operation::describe_package_import_job::DescribePackageImportJobOutput::last_updated_time): <p>When the job was updated.</p>
     ///   - [`status(PackageImportJobStatus)`](crate::operation::describe_package_import_job::DescribePackageImportJobOutput::status): <p>The job's status.</p>
     ///   - [`status_message(String)`](crate::operation::describe_package_import_job::DescribePackageImportJobOutput::status_message): <p>The job's status message.</p>
-    ///   - [`job_tags(Option<Vec<JobResourceTags>>)`](crate::operation::describe_package_import_job::DescribePackageImportJobOutput::job_tags): <p>The job's tags.</p>
+    ///   - [`job_tags(Option<Vec::<JobResourceTags>>)`](crate::operation::describe_package_import_job::DescribePackageImportJobOutput::job_tags): <p>The job's tags.</p>
     /// - On failure, responds with [`SdkError<DescribePackageImportJobError>`](crate::operation::describe_package_import_job::DescribePackageImportJobError)
     pub fn describe_package_import_job(&self) -> crate::operation::describe_package_import_job::builders::DescribePackageImportJobFluentBuilder {
         crate::operation::describe_package_import_job::builders::DescribePackageImportJobFluentBuilder::new(self.handle.clone())

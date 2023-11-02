@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`order(Order)`](crate::operation::list_queues::builders::ListQueuesFluentBuilder::order) / [`set_order(Option<Order>)`](crate::operation::list_queues::builders::ListQueuesFluentBuilder::set_order):<br>required: **false**<br>Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.<br>
     /// - On success, responds with [`ListQueuesOutput`](crate::operation::list_queues::ListQueuesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_queues::ListQueuesOutput::next_token): Use this string to request the next batch of queues.
-    ///   - [`queues(Option<Vec<Queue>>)`](crate::operation::list_queues::ListQueuesOutput::queues): List of queues.
+    ///   - [`queues(Option<Vec::<Queue>>)`](crate::operation::list_queues::ListQueuesOutput::queues): List of queues.
     /// - On failure, responds with [`SdkError<ListQueuesError>`](crate::operation::list_queues::ListQueuesError)
     pub fn list_queues(&self) -> crate::operation::list_queues::builders::ListQueuesFluentBuilder {
         crate::operation::list_queues::builders::ListQueuesFluentBuilder::new(self.handle.clone())

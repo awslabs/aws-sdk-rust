@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder::set_max_results):<br>required: **false**<br><p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p><br>
     /// - On success, responds with [`ListNamespacesOutput`](crate::operation::list_namespaces::ListNamespacesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_namespaces::ListNamespacesOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    ///   - [`namespaces(Vec<Namespace>)`](crate::operation::list_namespaces::ListNamespacesOutput::namespaces): <p>The list of returned namespaces.</p>
+    ///   - [`namespaces(Vec::<Namespace>)`](crate::operation::list_namespaces::ListNamespacesOutput::namespaces): <p>The list of returned namespaces.</p>
     /// - On failure, responds with [`SdkError<ListNamespacesError>`](crate::operation::list_namespaces::ListNamespacesError)
     pub fn list_namespaces(&self) -> crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder {
         crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder::new(self.handle.clone())

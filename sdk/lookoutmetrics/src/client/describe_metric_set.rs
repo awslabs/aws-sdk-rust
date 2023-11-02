@@ -12,13 +12,13 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_metric_set::DescribeMetricSetOutput::creation_time): <p>The time at which the dataset was created.</p>
     ///   - [`last_modification_time(Option<DateTime>)`](crate::operation::describe_metric_set::DescribeMetricSetOutput::last_modification_time): <p>The time at which the dataset was last modified.</p>
     ///   - [`offset(Option<i32>)`](crate::operation::describe_metric_set::DescribeMetricSetOutput::offset): <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
-    ///   - [`metric_list(Option<Vec<Metric>>)`](crate::operation::describe_metric_set::DescribeMetricSetOutput::metric_list): <p>A list of the metrics defined by the dataset.</p>
+    ///   - [`metric_list(Option<Vec::<Metric>>)`](crate::operation::describe_metric_set::DescribeMetricSetOutput::metric_list): <p>A list of the metrics defined by the dataset.</p>
     ///   - [`timestamp_column(Option<TimestampColumn>)`](crate::operation::describe_metric_set::DescribeMetricSetOutput::timestamp_column): <p>Contains information about the column used for tracking time in your source data.</p>
-    ///   - [`dimension_list(Option<Vec<String>>)`](crate::operation::describe_metric_set::DescribeMetricSetOutput::dimension_list): <p>A list of the dimensions chosen for analysis.</p>
+    ///   - [`dimension_list(Option<Vec::<String>>)`](crate::operation::describe_metric_set::DescribeMetricSetOutput::dimension_list): <p>A list of the dimensions chosen for analysis.</p>
     ///   - [`metric_set_frequency(Option<Frequency>)`](crate::operation::describe_metric_set::DescribeMetricSetOutput::metric_set_frequency): <p>The interval at which the data will be analyzed for anomalies.</p>
     ///   - [`timezone(Option<String>)`](crate::operation::describe_metric_set::DescribeMetricSetOutput::timezone): <p>The time zone in which the dataset's data was recorded.</p>
     ///   - [`metric_source(Option<MetricSource>)`](crate::operation::describe_metric_set::DescribeMetricSetOutput::metric_source): <p>Contains information about the dataset's source data.</p>
-    ///   - [`dimension_filter_list(Option<Vec<MetricSetDimensionFilter>>)`](crate::operation::describe_metric_set::DescribeMetricSetOutput::dimension_filter_list): <p>The dimensions and their values that were used to filter the dataset.</p>
+    ///   - [`dimension_filter_list(Option<Vec::<MetricSetDimensionFilter>>)`](crate::operation::describe_metric_set::DescribeMetricSetOutput::dimension_filter_list): <p>The dimensions and their values that were used to filter the dataset.</p>
     /// - On failure, responds with [`SdkError<DescribeMetricSetError>`](crate::operation::describe_metric_set::DescribeMetricSetError)
     pub fn describe_metric_set(&self) -> crate::operation::describe_metric_set::builders::DescribeMetricSetFluentBuilder {
         crate::operation::describe_metric_set::builders::DescribeMetricSetFluentBuilder::new(self.handle.clone())

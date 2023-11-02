@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`device_user_agent(impl Into<String>)`](crate::operation::get_mobile_device_access_effect::builders::GetMobileDeviceAccessEffectFluentBuilder::device_user_agent) / [`set_device_user_agent(Option<String>)`](crate::operation::get_mobile_device_access_effect::builders::GetMobileDeviceAccessEffectFluentBuilder::set_device_user_agent):<br>required: **false**<br><p>Device user agent the simulated user will report.</p><br>
     /// - On success, responds with [`GetMobileDeviceAccessEffectOutput`](crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectOutput) with field(s):
     ///   - [`effect(Option<MobileDeviceAccessRuleEffect>)`](crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectOutput::effect): <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after evaluating mobile device access rules in the WorkMail organization for the simulated user parameters.</p>
-    ///   - [`matched_rules(Option<Vec<MobileDeviceAccessMatchedRule>>)`](crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectOutput::matched_rules): <p>A list of the rules which matched the simulated user input and produced the effect.</p>
+    ///   - [`matched_rules(Option<Vec::<MobileDeviceAccessMatchedRule>>)`](crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectOutput::matched_rules): <p>A list of the rules which matched the simulated user input and produced the effect.</p>
     /// - On failure, responds with [`SdkError<GetMobileDeviceAccessEffectError>`](crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectError)
     pub fn get_mobile_device_access_effect(
         &self,

@@ -17,7 +17,7 @@ impl super::Client {
     ///   - [`statistic(Option<Statistic>)`](crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionOutput::statistic): <p>The aggregation operation to perform for the calculated attribute.</p>
     ///   - [`conditions(Option<Conditions>)`](crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionOutput::conditions): <p>The conditions including range, object count, and threshold for the calculated attribute.</p>
     ///   - [`attribute_details(Option<AttributeDetails>)`](crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionOutput::attribute_details): <p>The mathematical expression and a list of attribute items specified in that expression.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionOutput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionOutput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
     /// - On failure, responds with [`SdkError<UpdateCalculatedAttributeDefinitionError>`](crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionError)
     pub fn update_calculated_attribute_definition(
         &self,

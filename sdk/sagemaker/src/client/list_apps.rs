@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`user_profile_name_equals(impl Into<String>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::user_profile_name_equals) / [`set_user_profile_name_equals(Option<String>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::set_user_profile_name_equals):<br>required: **false**<br><p>A parameter to search by user profile name. If <code>SpaceNameEquals</code> is set, then this value cannot be set.</p><br>
     ///   - [`space_name_equals(impl Into<String>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::space_name_equals) / [`set_space_name_equals(Option<String>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::set_space_name_equals):<br>required: **false**<br><p>A parameter to search by space name. If <code>UserProfileNameEquals</code> is set, then this value cannot be set.</p><br>
     /// - On success, responds with [`ListAppsOutput`](crate::operation::list_apps::ListAppsOutput) with field(s):
-    ///   - [`apps(Option<Vec<AppDetails>>)`](crate::operation::list_apps::ListAppsOutput::apps): <p>The list of apps.</p>
+    ///   - [`apps(Option<Vec::<AppDetails>>)`](crate::operation::list_apps::ListAppsOutput::apps): <p>The list of apps.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_apps::ListAppsOutput::next_token): <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListAppsError>`](crate::operation::list_apps::ListAppsError)
     pub fn list_apps(&self) -> crate::operation::list_apps::builders::ListAppsFluentBuilder {

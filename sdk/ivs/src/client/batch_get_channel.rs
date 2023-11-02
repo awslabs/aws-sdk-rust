@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchGetChannel`](crate::operation::batch_get_channel::builders::BatchGetChannelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arns(impl Into<String>)`](crate::operation::batch_get_channel::builders::BatchGetChannelFluentBuilder::arns) / [`set_arns(Option<Vec<String>>)`](crate::operation::batch_get_channel::builders::BatchGetChannelFluentBuilder::set_arns):<br>required: **true**<br><p>Array of ARNs, one per channel.</p><br>
+    ///   - [`arns(impl Into<String>)`](crate::operation::batch_get_channel::builders::BatchGetChannelFluentBuilder::arns) / [`set_arns(Option<Vec::<String>>)`](crate::operation::batch_get_channel::builders::BatchGetChannelFluentBuilder::set_arns):<br>required: **true**<br><p>Array of ARNs, one per channel.</p><br>
     /// - On success, responds with [`BatchGetChannelOutput`](crate::operation::batch_get_channel::BatchGetChannelOutput) with field(s):
-    ///   - [`channels(Option<Vec<Channel>>)`](crate::operation::batch_get_channel::BatchGetChannelOutput::channels): <p></p>
-    ///   - [`errors(Option<Vec<BatchError>>)`](crate::operation::batch_get_channel::BatchGetChannelOutput::errors): <p>Each error object is related to a specific ARN in the request.</p>
+    ///   - [`channels(Option<Vec::<Channel>>)`](crate::operation::batch_get_channel::BatchGetChannelOutput::channels): <p></p>
+    ///   - [`errors(Option<Vec::<BatchError>>)`](crate::operation::batch_get_channel::BatchGetChannelOutput::errors): <p>Each error object is related to a specific ARN in the request.</p>
     /// - On failure, responds with [`SdkError<BatchGetChannelError>`](crate::operation::batch_get_channel::BatchGetChannelError)
     pub fn batch_get_channel(&self) -> crate::operation::batch_get_channel::builders::BatchGetChannelFluentBuilder {
         crate::operation::batch_get_channel::builders::BatchGetChannelFluentBuilder::new(self.handle.clone())

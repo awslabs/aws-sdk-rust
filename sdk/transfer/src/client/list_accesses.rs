@@ -10,7 +10,7 @@ impl super::Client {
     /// - On success, responds with [`ListAccessesOutput`](crate::operation::list_accesses::ListAccessesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_accesses::ListAccessesOutput::next_token): <p>When you can get additional results from the <code>ListAccesses</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional accesses.</p>
     ///   - [`server_id(String)`](crate::operation::list_accesses::ListAccessesOutput::server_id): <p>A system-assigned unique identifier for a server that has users assigned to it.</p>
-    ///   - [`accesses(Vec<ListedAccess>)`](crate::operation::list_accesses::ListAccessesOutput::accesses): <p>Returns the accesses and their properties for the <code>ServerId</code> value that you specify.</p>
+    ///   - [`accesses(Vec::<ListedAccess>)`](crate::operation::list_accesses::ListAccessesOutput::accesses): <p>Returns the accesses and their properties for the <code>ServerId</code> value that you specify.</p>
     /// - On failure, responds with [`SdkError<ListAccessesError>`](crate::operation::list_accesses::ListAccessesError)
     pub fn list_accesses(&self) -> crate::operation::list_accesses::builders::ListAccessesFluentBuilder {
         crate::operation::list_accesses::builders::ListAccessesFluentBuilder::new(self.handle.clone())

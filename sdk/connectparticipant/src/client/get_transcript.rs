@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`connection_token(impl Into<String>)`](crate::operation::get_transcript::builders::GetTranscriptFluentBuilder::connection_token) / [`set_connection_token(Option<String>)`](crate::operation::get_transcript::builders::GetTranscriptFluentBuilder::set_connection_token):<br>required: **true**<br><p>The authentication token associated with the participant's connection.</p><br>
     /// - On success, responds with [`GetTranscriptOutput`](crate::operation::get_transcript::GetTranscriptOutput) with field(s):
     ///   - [`initial_contact_id(Option<String>)`](crate::operation::get_transcript::GetTranscriptOutput::initial_contact_id): <p>The initial contact ID for the contact. </p>
-    ///   - [`transcript(Option<Vec<Item>>)`](crate::operation::get_transcript::GetTranscriptOutput::transcript): <p>The list of messages in the session.</p>
+    ///   - [`transcript(Option<Vec::<Item>>)`](crate::operation::get_transcript::GetTranscriptOutput::transcript): <p>The list of messages in the session.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_transcript::GetTranscriptOutput::next_token): <p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<GetTranscriptError>`](crate::operation::get_transcript::GetTranscriptError)
     pub fn get_transcript(&self) -> crate::operation::get_transcript::builders::GetTranscriptFluentBuilder {

@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`status(i32)`](crate::operation::describe_folder_resolved_permissions::DescribeFolderResolvedPermissionsOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`folder_id(Option<String>)`](crate::operation::describe_folder_resolved_permissions::DescribeFolderResolvedPermissionsOutput::folder_id): <p>The ID of the folder.</p>
     ///   - [`arn(Option<String>)`](crate::operation::describe_folder_resolved_permissions::DescribeFolderResolvedPermissionsOutput::arn): <p>The Amazon Resource Name (ARN) of the folder.</p>
-    ///   - [`permissions(Option<Vec<ResourcePermission>>)`](crate::operation::describe_folder_resolved_permissions::DescribeFolderResolvedPermissionsOutput::permissions): <p>Information about the permissions for the folder.</p>
+    ///   - [`permissions(Option<Vec::<ResourcePermission>>)`](crate::operation::describe_folder_resolved_permissions::DescribeFolderResolvedPermissionsOutput::permissions): <p>Information about the permissions for the folder.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::describe_folder_resolved_permissions::DescribeFolderResolvedPermissionsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_folder_resolved_permissions::DescribeFolderResolvedPermissionsOutput::next_token): <p>A pagination token for the next set of results, or null if there are no more results.</p>
     /// - On failure, responds with [`SdkError<DescribeFolderResolvedPermissionsError>`](crate::operation::describe_folder_resolved_permissions::DescribeFolderResolvedPermissionsError)

@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_lens_shares::builders::ListLensSharesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_lens_shares::builders::ListLensSharesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return for this request.</p><br>
     ///   - [`status(ShareStatus)`](crate::operation::list_lens_shares::builders::ListLensSharesFluentBuilder::status) / [`set_status(Option<ShareStatus>)`](crate::operation::list_lens_shares::builders::ListLensSharesFluentBuilder::set_status):<br>required: **false**<br><p>The status of the share request.</p><br>
     /// - On success, responds with [`ListLensSharesOutput`](crate::operation::list_lens_shares::ListLensSharesOutput) with field(s):
-    ///   - [`lens_share_summaries(Option<Vec<LensShareSummary>>)`](crate::operation::list_lens_shares::ListLensSharesOutput::lens_share_summaries): <p>A list of lens share summaries.</p>
+    ///   - [`lens_share_summaries(Option<Vec::<LensShareSummary>>)`](crate::operation::list_lens_shares::ListLensSharesOutput::lens_share_summaries): <p>A list of lens share summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_lens_shares::ListLensSharesOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListLensSharesError>`](crate::operation::list_lens_shares::ListLensSharesError)
     pub fn list_lens_shares(&self) -> crate::operation::list_lens_shares::builders::ListLensSharesFluentBuilder {

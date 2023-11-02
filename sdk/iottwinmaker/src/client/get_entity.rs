@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`status(Option<Status>)`](crate::operation::get_entity::GetEntityOutput::status): <p>The current status of the entity.</p>
     ///   - [`workspace_id(String)`](crate::operation::get_entity::GetEntityOutput::workspace_id): <p>The ID of the workspace.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_entity::GetEntityOutput::description): <p>The description of the entity.</p>
-    ///   - [`components(Option<HashMap<String, ComponentResponse>>)`](crate::operation::get_entity::GetEntityOutput::components): <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
+    ///   - [`components(Option<HashMap::<String, ComponentResponse>>)`](crate::operation::get_entity::GetEntityOutput::components): <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
     ///   - [`parent_entity_id(String)`](crate::operation::get_entity::GetEntityOutput::parent_entity_id): <p>The ID of the parent entity for this entity.</p>
     ///   - [`has_child_entities(bool)`](crate::operation::get_entity::GetEntityOutput::has_child_entities): <p>A Boolean value that specifies whether the entity has associated child entities.</p>
     ///   - [`creation_date_time(DateTime)`](crate::operation::get_entity::GetEntityOutput::creation_date_time): <p>The date and time when the entity was created.</p>

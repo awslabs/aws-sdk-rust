@@ -6,13 +6,13 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`case_id(impl Into<String>)`](crate::operation::get_case::builders::GetCaseFluentBuilder::case_id) / [`set_case_id(Option<String>)`](crate::operation::get_case::builders::GetCaseFluentBuilder::set_case_id):<br>required: **true**<br><p>A unique identifier of the case.</p><br>
     ///   - [`domain_id(impl Into<String>)`](crate::operation::get_case::builders::GetCaseFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::get_case::builders::GetCaseFluentBuilder::set_domain_id):<br>required: **true**<br><p>The unique identifier of the Cases domain. </p><br>
-    ///   - [`fields(FieldIdentifier)`](crate::operation::get_case::builders::GetCaseFluentBuilder::fields) / [`set_fields(Option<Vec<FieldIdentifier>>)`](crate::operation::get_case::builders::GetCaseFluentBuilder::set_fields):<br>required: **true**<br><p>A list of unique field identifiers. </p><br>
+    ///   - [`fields(FieldIdentifier)`](crate::operation::get_case::builders::GetCaseFluentBuilder::fields) / [`set_fields(Option<Vec::<FieldIdentifier>>)`](crate::operation::get_case::builders::GetCaseFluentBuilder::set_fields):<br>required: **true**<br><p>A list of unique field identifiers. </p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_case::builders::GetCaseFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_case::builders::GetCaseFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
     /// - On success, responds with [`GetCaseOutput`](crate::operation::get_case::GetCaseOutput) with field(s):
-    ///   - [`fields(Vec<FieldValue>)`](crate::operation::get_case::GetCaseOutput::fields): <p>A list of detailed field information. </p>
+    ///   - [`fields(Vec::<FieldValue>)`](crate::operation::get_case::GetCaseOutput::fields): <p>A list of detailed field information. </p>
     ///   - [`template_id(String)`](crate::operation::get_case::GetCaseOutput::template_id): <p>A unique identifier of a template.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_case::GetCaseOutput::next_token): <p>The token for the next set of results. This is null if there are no more results to return.</p>
-    ///   - [`tags(Option<HashMap<String, Option<String>>>)`](crate::operation::get_case::GetCaseOutput::tags): <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
+    ///   - [`tags(Option<HashMap::<String, Option<String>>>)`](crate::operation::get_case::GetCaseOutput::tags): <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     /// - On failure, responds with [`SdkError<GetCaseError>`](crate::operation::get_case::GetCaseError)
     pub fn get_case(&self) -> crate::operation::get_case::builders::GetCaseFluentBuilder {
         crate::operation::get_case::builders::GetCaseFluentBuilder::new(self.handle.clone())

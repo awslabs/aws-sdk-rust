@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`source_server_id(Option<String>)`](crate::operation::mark_as_archived::MarkAsArchivedOutput::source_server_id): <p>Source server ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::mark_as_archived::MarkAsArchivedOutput::arn): <p>Source server ARN.</p>
     ///   - [`is_archived(Option<bool>)`](crate::operation::mark_as_archived::MarkAsArchivedOutput::is_archived): <p>Source server archived status.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::mark_as_archived::MarkAsArchivedOutput::tags): <p>Source server Tags.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::mark_as_archived::MarkAsArchivedOutput::tags): <p>Source server Tags.</p>
     ///   - [`launched_instance(Option<LaunchedInstance>)`](crate::operation::mark_as_archived::MarkAsArchivedOutput::launched_instance): <p>Source server launched instance.</p>
     ///   - [`data_replication_info(Option<DataReplicationInfo>)`](crate::operation::mark_as_archived::MarkAsArchivedOutput::data_replication_info): <p>Source server data replication info.</p>
     ///   - [`life_cycle(Option<LifeCycle>)`](crate::operation::mark_as_archived::MarkAsArchivedOutput::life_cycle): <p>Source server lifecycle state.</p>

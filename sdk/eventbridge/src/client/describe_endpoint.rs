@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::describe_endpoint::DescribeEndpointOutput::arn): <p>The ARN of the endpoint you asked for information about.</p>
     ///   - [`routing_config(Option<RoutingConfig>)`](crate::operation::describe_endpoint::DescribeEndpointOutput::routing_config): <p>The routing configuration of the endpoint you asked for information about.</p>
     ///   - [`replication_config(Option<ReplicationConfig>)`](crate::operation::describe_endpoint::DescribeEndpointOutput::replication_config): <p>Whether replication is enabled or disabled for the endpoint you asked for information about.</p>
-    ///   - [`event_buses(Option<Vec<EndpointEventBus>>)`](crate::operation::describe_endpoint::DescribeEndpointOutput::event_buses): <p>The event buses being used by the endpoint you asked for information about.</p>
+    ///   - [`event_buses(Option<Vec::<EndpointEventBus>>)`](crate::operation::describe_endpoint::DescribeEndpointOutput::event_buses): <p>The event buses being used by the endpoint you asked for information about.</p>
     ///   - [`role_arn(Option<String>)`](crate::operation::describe_endpoint::DescribeEndpointOutput::role_arn): <p>The ARN of the role used by the endpoint you asked for information about.</p>
     ///   - [`endpoint_id(Option<String>)`](crate::operation::describe_endpoint::DescribeEndpointOutput::endpoint_id): <p>The ID of the endpoint you asked for information about.</p>
     ///   - [`endpoint_url(Option<String>)`](crate::operation::describe_endpoint::DescribeEndpointOutput::endpoint_url): <p>The URL of the endpoint you asked for information about.</p>

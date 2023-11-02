@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_origination_numbers::builders::ListOriginationNumbersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_origination_numbers::builders::ListOriginationNumbersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of origination numbers to return.</p><br>
     /// - On success, responds with [`ListOriginationNumbersOutput`](crate::operation::list_origination_numbers::ListOriginationNumbersOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_origination_numbers::ListOriginationNumbersOutput::next_token): <p>A <code>NextToken</code> string is returned when you call the <code>ListOriginationNumbers</code> operation if additional pages of records are available.</p>
-    ///   - [`phone_numbers(Option<Vec<PhoneNumberInformation>>)`](crate::operation::list_origination_numbers::ListOriginationNumbersOutput::phone_numbers): <p>A list of the calling account's verified and pending origination numbers.</p>
+    ///   - [`phone_numbers(Option<Vec::<PhoneNumberInformation>>)`](crate::operation::list_origination_numbers::ListOriginationNumbersOutput::phone_numbers): <p>A list of the calling account's verified and pending origination numbers.</p>
     /// - On failure, responds with [`SdkError<ListOriginationNumbersError>`](crate::operation::list_origination_numbers::ListOriginationNumbersError)
     pub fn list_origination_numbers(&self) -> crate::operation::list_origination_numbers::builders::ListOriginationNumbersFluentBuilder {
         crate::operation::list_origination_numbers::builders::ListOriginationNumbersFluentBuilder::new(self.handle.clone())

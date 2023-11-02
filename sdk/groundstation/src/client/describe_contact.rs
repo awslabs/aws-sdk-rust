@@ -16,9 +16,9 @@ impl super::Client {
     ///   - [`contact_status(Option<ContactStatus>)`](crate::operation::describe_contact::DescribeContactOutput::contact_status): <p>Status of a contact.</p>
     ///   - [`error_message(Option<String>)`](crate::operation::describe_contact::DescribeContactOutput::error_message): <p>Error message for a contact.</p>
     ///   - [`maximum_elevation(Option<Elevation>)`](crate::operation::describe_contact::DescribeContactOutput::maximum_elevation): <p>Maximum elevation angle of a contact.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_contact::DescribeContactOutput::tags): <p>Tags assigned to a contact.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_contact::DescribeContactOutput::tags): <p>Tags assigned to a contact.</p>
     ///   - [`region(Option<String>)`](crate::operation::describe_contact::DescribeContactOutput::region): <p>Region of a contact.</p>
-    ///   - [`dataflow_list(Option<Vec<DataflowDetail>>)`](crate::operation::describe_contact::DescribeContactOutput::dataflow_list): <p>List describing source and destination details for each dataflow edge.</p>
+    ///   - [`dataflow_list(Option<Vec::<DataflowDetail>>)`](crate::operation::describe_contact::DescribeContactOutput::dataflow_list): <p>List describing source and destination details for each dataflow edge.</p>
     /// - On failure, responds with [`SdkError<DescribeContactError>`](crate::operation::describe_contact::DescribeContactError)
     pub fn describe_contact(&self) -> crate::operation::describe_contact::builders::DescribeContactFluentBuilder {
         crate::operation::describe_contact::builders::DescribeContactFluentBuilder::new(self.handle.clone())

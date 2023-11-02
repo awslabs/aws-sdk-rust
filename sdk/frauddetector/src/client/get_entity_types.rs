@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_entity_types::builders::GetEntityTypesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_entity_types::builders::GetEntityTypesFluentBuilder::set_next_token):<br>required: **false**<br><p>The next token for the subsequent request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_entity_types::builders::GetEntityTypesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_entity_types::builders::GetEntityTypesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of objects to return for the request.</p><br>
     /// - On success, responds with [`GetEntityTypesOutput`](crate::operation::get_entity_types::GetEntityTypesOutput) with field(s):
-    ///   - [`entity_types(Option<Vec<EntityType>>)`](crate::operation::get_entity_types::GetEntityTypesOutput::entity_types): <p>An array of entity types.</p>
+    ///   - [`entity_types(Option<Vec::<EntityType>>)`](crate::operation::get_entity_types::GetEntityTypesOutput::entity_types): <p>An array of entity types.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_entity_types::GetEntityTypesOutput::next_token): <p>The next page token.</p>
     /// - On failure, responds with [`SdkError<GetEntityTypesError>`](crate::operation::get_entity_types::GetEntityTypesError)
     pub fn get_entity_types(&self) -> crate::operation::get_entity_types::builders::GetEntityTypesFluentBuilder {

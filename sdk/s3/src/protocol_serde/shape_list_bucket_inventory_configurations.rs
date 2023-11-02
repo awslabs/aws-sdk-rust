@@ -123,7 +123,7 @@ pub fn de_list_bucket_inventory_configurations(
             s if s.matches("InventoryConfiguration") /* InventoryConfigurationList com.amazonaws.s3.synthetic#ListBucketInventoryConfigurationsOutput$InventoryConfigurationList */ =>  {
                 let var_6 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::InventoryConfiguration>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::InventoryConfiguration>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_7 = builder.inventory_configuration_list.take().unwrap_or_default();
                             list_7.push(
                                 crate::protocol_serde::shape_inventory_configuration::de_inventory_configuration(&mut tag)

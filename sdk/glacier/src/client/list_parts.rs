@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`archive_description(Option<String>)`](crate::operation::list_parts::ListPartsOutput::archive_description): <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
     ///   - [`part_size_in_bytes(i64)`](crate::operation::list_parts::ListPartsOutput::part_size_in_bytes): <p>The part size in bytes. This is the same value that you specified in the Initiate Multipart Upload request.</p>
     ///   - [`creation_date(Option<String>)`](crate::operation::list_parts::ListPartsOutput::creation_date): <p>The UTC time at which the multipart upload was initiated.</p>
-    ///   - [`parts(Option<Vec<PartListElement>>)`](crate::operation::list_parts::ListPartsOutput::parts): <p>A list of the part sizes of the multipart upload. Each object in the array contains a <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value pair.</p>
+    ///   - [`parts(Option<Vec::<PartListElement>>)`](crate::operation::list_parts::ListPartsOutput::parts): <p>A list of the part sizes of the multipart upload. Each object in the array contains a <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value pair.</p>
     ///   - [`marker(Option<String>)`](crate::operation::list_parts::ListPartsOutput::marker): <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Parts request to obtain more jobs in the list. If there are no more parts, this value is <code>null</code>.</p>
     /// - On failure, responds with [`SdkError<ListPartsError>`](crate::operation::list_parts::ListPartsError)
     pub fn list_parts(&self) -> crate::operation::list_parts::builders::ListPartsFluentBuilder {

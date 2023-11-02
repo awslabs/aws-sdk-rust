@@ -10,7 +10,7 @@ impl super::Client {
     /// - On success, responds with [`SignPayloadOutput`](crate::operation::sign_payload::SignPayloadOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::sign_payload::SignPayloadOutput::job_id): <p>Unique identifier of the signing job.</p>
     ///   - [`job_owner(Option<String>)`](crate::operation::sign_payload::SignPayloadOutput::job_owner): <p>The AWS account ID of the job owner.</p>
-    ///   - [`metadata(Option<HashMap<String, String>>)`](crate::operation::sign_payload::SignPayloadOutput::metadata): <p>Information including the signing profile ARN and the signing job ID. Clients use metadata to signature records, for example, as annotations added to the signature manifest inside an OCI registry.</p>
+    ///   - [`metadata(Option<HashMap::<String, String>>)`](crate::operation::sign_payload::SignPayloadOutput::metadata): <p>Information including the signing profile ARN and the signing job ID. Clients use metadata to signature records, for example, as annotations added to the signature manifest inside an OCI registry.</p>
     ///   - [`signature(Option<Blob>)`](crate::operation::sign_payload::SignPayloadOutput::signature): <p>A cryptographic signature.</p>
     /// - On failure, responds with [`SdkError<SignPayloadError>`](crate::operation::sign_payload::SignPayloadError)
     pub fn sign_payload(&self) -> crate::operation::sign_payload::builders::SignPayloadFluentBuilder {

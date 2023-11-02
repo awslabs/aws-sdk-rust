@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_app_instance_admins::builders::ListAppInstanceAdminsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_app_instance_admins::builders::ListAppInstanceAdminsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token returned from previous API requests until the number of administrators is reached.</p><br>
     /// - On success, responds with [`ListAppInstanceAdminsOutput`](crate::operation::list_app_instance_admins::ListAppInstanceAdminsOutput) with field(s):
     ///   - [`app_instance_arn(Option<String>)`](crate::operation::list_app_instance_admins::ListAppInstanceAdminsOutput::app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
-    ///   - [`app_instance_admins(Option<Vec<AppInstanceAdminSummary>>)`](crate::operation::list_app_instance_admins::ListAppInstanceAdminsOutput::app_instance_admins): <p>The information for each administrator.</p>
+    ///   - [`app_instance_admins(Option<Vec::<AppInstanceAdminSummary>>)`](crate::operation::list_app_instance_admins::ListAppInstanceAdminsOutput::app_instance_admins): <p>The information for each administrator.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_app_instance_admins::ListAppInstanceAdminsOutput::next_token): <p>The token returned from previous API requests until the number of administrators is reached.</p>
     /// - On failure, responds with [`SdkError<ListAppInstanceAdminsError>`](crate::operation::list_app_instance_admins::ListAppInstanceAdminsError)
     #[deprecated(note = "Replaced by ListAppInstanceAdmins in the Amazon Chime SDK Identity Namespace")]

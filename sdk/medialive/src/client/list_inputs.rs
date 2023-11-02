@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_inputs::builders::ListInputsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_inputs::builders::ListInputsFluentBuilder::set_max_results):<br>required: **false**<br>Placeholder documentation for MaxResults<br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_inputs::builders::ListInputsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_inputs::builders::ListInputsFluentBuilder::set_next_token):<br>required: **false**<br>Placeholder documentation for __string<br>
     /// - On success, responds with [`ListInputsOutput`](crate::operation::list_inputs::ListInputsOutput) with field(s):
-    ///   - [`inputs(Option<Vec<Input>>)`](crate::operation::list_inputs::ListInputsOutput::inputs): Placeholder documentation for __listOfInput
+    ///   - [`inputs(Option<Vec::<Input>>)`](crate::operation::list_inputs::ListInputsOutput::inputs): Placeholder documentation for __listOfInput
     ///   - [`next_token(Option<String>)`](crate::operation::list_inputs::ListInputsOutput::next_token): Placeholder documentation for __string
     /// - On failure, responds with [`SdkError<ListInputsError>`](crate::operation::list_inputs::ListInputsError)
     pub fn list_inputs(&self) -> crate::operation::list_inputs::builders::ListInputsFluentBuilder {

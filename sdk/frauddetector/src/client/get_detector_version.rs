@@ -9,9 +9,9 @@ impl super::Client {
     ///   - [`detector_id(Option<String>)`](crate::operation::get_detector_version::GetDetectorVersionOutput::detector_id): <p>The detector ID.</p>
     ///   - [`detector_version_id(Option<String>)`](crate::operation::get_detector_version::GetDetectorVersionOutput::detector_version_id): <p>The detector version ID.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_detector_version::GetDetectorVersionOutput::description): <p>The detector version description.</p>
-    ///   - [`external_model_endpoints(Option<Vec<String>>)`](crate::operation::get_detector_version::GetDetectorVersionOutput::external_model_endpoints): <p>The Amazon SageMaker model endpoints included in the detector version.</p>
-    ///   - [`model_versions(Option<Vec<ModelVersion>>)`](crate::operation::get_detector_version::GetDetectorVersionOutput::model_versions): <p>The model versions included in the detector version. </p>
-    ///   - [`rules(Option<Vec<Rule>>)`](crate::operation::get_detector_version::GetDetectorVersionOutput::rules): <p>The rules included in the detector version.</p>
+    ///   - [`external_model_endpoints(Option<Vec::<String>>)`](crate::operation::get_detector_version::GetDetectorVersionOutput::external_model_endpoints): <p>The Amazon SageMaker model endpoints included in the detector version.</p>
+    ///   - [`model_versions(Option<Vec::<ModelVersion>>)`](crate::operation::get_detector_version::GetDetectorVersionOutput::model_versions): <p>The model versions included in the detector version. </p>
+    ///   - [`rules(Option<Vec::<Rule>>)`](crate::operation::get_detector_version::GetDetectorVersionOutput::rules): <p>The rules included in the detector version.</p>
     ///   - [`status(Option<DetectorVersionStatus>)`](crate::operation::get_detector_version::GetDetectorVersionOutput::status): <p>The status of the detector version.</p>
     ///   - [`last_updated_time(Option<String>)`](crate::operation::get_detector_version::GetDetectorVersionOutput::last_updated_time): <p>The timestamp when the detector version was last updated. </p>
     ///   - [`created_time(Option<String>)`](crate::operation::get_detector_version::GetDetectorVersionOutput::created_time): <p>The timestamp when the detector version was created. </p>

@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`api_key(impl Into<String>)`](crate::operation::update_api_key::builders::UpdateApiKeyFluentBuilder::api_key) / [`set_api_key(Option<String>)`](crate::operation::update_api_key::builders::UpdateApiKeyFluentBuilder::set_api_key):<br>required: **true**<br><p>The identifier of the ApiKey resource to be updated.</p><br>
-    ///   - [`patch_operations(PatchOperation)`](crate::operation::update_api_key::builders::UpdateApiKeyFluentBuilder::patch_operations) / [`set_patch_operations(Option<Vec<PatchOperation>>)`](crate::operation::update_api_key::builders::UpdateApiKeyFluentBuilder::set_patch_operations):<br>required: **false**<br><p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p><br>
+    ///   - [`patch_operations(PatchOperation)`](crate::operation::update_api_key::builders::UpdateApiKeyFluentBuilder::patch_operations) / [`set_patch_operations(Option<Vec::<PatchOperation>>)`](crate::operation::update_api_key::builders::UpdateApiKeyFluentBuilder::set_patch_operations):<br>required: **false**<br><p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p><br>
     /// - On success, responds with [`UpdateApiKeyOutput`](crate::operation::update_api_key::UpdateApiKeyOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::update_api_key::UpdateApiKeyOutput::id): <p>The identifier of the API Key.</p>
     ///   - [`value(Option<String>)`](crate::operation::update_api_key::UpdateApiKeyOutput::value): <p>The value of the API Key.</p>
@@ -14,8 +14,8 @@ impl super::Client {
     ///   - [`enabled(bool)`](crate::operation::update_api_key::UpdateApiKeyOutput::enabled): <p>Specifies whether the API Key can be used by callers.</p>
     ///   - [`created_date(Option<DateTime>)`](crate::operation::update_api_key::UpdateApiKeyOutput::created_date): <p>The timestamp when the API Key was created.</p>
     ///   - [`last_updated_date(Option<DateTime>)`](crate::operation::update_api_key::UpdateApiKeyOutput::last_updated_date): <p>The timestamp when the API Key was last updated.</p>
-    ///   - [`stage_keys(Option<Vec<String>>)`](crate::operation::update_api_key::UpdateApiKeyOutput::stage_keys): <p>A list of Stage resources that are associated with the ApiKey resource.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::update_api_key::UpdateApiKeyOutput::tags): <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    ///   - [`stage_keys(Option<Vec::<String>>)`](crate::operation::update_api_key::UpdateApiKeyOutput::stage_keys): <p>A list of Stage resources that are associated with the ApiKey resource.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::update_api_key::UpdateApiKeyOutput::tags): <p>The collection of tags. Each tag element is associated with a given resource.</p>
     /// - On failure, responds with [`SdkError<UpdateApiKeyError>`](crate::operation::update_api_key::UpdateApiKeyError)
     pub fn update_api_key(&self) -> crate::operation::update_api_key::builders::UpdateApiKeyFluentBuilder {
         crate::operation::update_api_key::builders::UpdateApiKeyFluentBuilder::new(self.handle.clone())

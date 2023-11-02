@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::describe_users::builders::DescribeUsersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_users::builders::DescribeUsersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum size of each page of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_users::builders::DescribeUsersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_users::builders::DescribeUsersFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p><br>
     /// - On success, responds with [`DescribeUsersOutput`](crate::operation::describe_users::DescribeUsersOutput) with field(s):
-    ///   - [`users(Option<Vec<User>>)`](crate::operation::describe_users::DescribeUsersOutput::users): <p>Information about users in the user pool.</p>
+    ///   - [`users(Option<Vec::<User>>)`](crate::operation::describe_users::DescribeUsersOutput::users): <p>Information about users in the user pool.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_users::DescribeUsersOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     /// - On failure, responds with [`SdkError<DescribeUsersError>`](crate::operation::describe_users::DescribeUsersError)
     pub fn describe_users(&self) -> crate::operation::describe_users::builders::DescribeUsersFluentBuilder {

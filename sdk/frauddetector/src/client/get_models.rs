@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::get_models::builders::GetModelsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of objects to return for the request. </p><br>
     /// - On success, responds with [`GetModelsOutput`](crate::operation::get_models::GetModelsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::get_models::GetModelsOutput::next_token): <p>The next page token to be used in subsequent requests.</p>
-    ///   - [`models(Option<Vec<Model>>)`](crate::operation::get_models::GetModelsOutput::models): <p>The array of models.</p>
+    ///   - [`models(Option<Vec::<Model>>)`](crate::operation::get_models::GetModelsOutput::models): <p>The array of models.</p>
     /// - On failure, responds with [`SdkError<GetModelsError>`](crate::operation::get_models::GetModelsError)
     pub fn get_models(&self) -> crate::operation::get_models::builders::GetModelsFluentBuilder {
         crate::operation::get_models::builders::GetModelsFluentBuilder::new(self.handle.clone())

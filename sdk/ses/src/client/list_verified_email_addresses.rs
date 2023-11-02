@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::list_verified_email_addresses::builders::ListVerifiedEmailAddressesFluentBuilder::send) it.
     /// - On success, responds with [`ListVerifiedEmailAddressesOutput`](crate::operation::list_verified_email_addresses::ListVerifiedEmailAddressesOutput) with field(s):
-    ///   - [`verified_email_addresses(Option<Vec<String>>)`](crate::operation::list_verified_email_addresses::ListVerifiedEmailAddressesOutput::verified_email_addresses): <p>A list of email addresses that have been verified.</p>
+    ///   - [`verified_email_addresses(Option<Vec::<String>>)`](crate::operation::list_verified_email_addresses::ListVerifiedEmailAddressesOutput::verified_email_addresses): <p>A list of email addresses that have been verified.</p>
     /// - On failure, responds with [`SdkError<ListVerifiedEmailAddressesError>`](crate::operation::list_verified_email_addresses::ListVerifiedEmailAddressesError)
     pub fn list_verified_email_addresses(
         &self,

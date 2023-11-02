@@ -10,9 +10,9 @@ impl super::Client {
     ///   - [`r#type(DataCollectionType)`](crate::operation::get_raster_data_collection::GetRasterDataCollectionOutput::type): <p>The raster data collection type.</p>
     ///   - [`description(String)`](crate::operation::get_raster_data_collection::GetRasterDataCollectionOutput::description): <p>A description of the raster data collection.</p>
     ///   - [`description_page_url(String)`](crate::operation::get_raster_data_collection::GetRasterDataCollectionOutput::description_page_url): <p>The URL of the description page.</p>
-    ///   - [`supported_filters(Vec<Filter>)`](crate::operation::get_raster_data_collection::GetRasterDataCollectionOutput::supported_filters): <p>The filters supported by the raster data collection.</p>
-    ///   - [`image_source_bands(Vec<String>)`](crate::operation::get_raster_data_collection::GetRasterDataCollectionOutput::image_source_bands): <p>The list of image source bands in the raster data collection.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_raster_data_collection::GetRasterDataCollectionOutput::tags): <p>Each tag consists of a key and a value.</p>
+    ///   - [`supported_filters(Vec::<Filter>)`](crate::operation::get_raster_data_collection::GetRasterDataCollectionOutput::supported_filters): <p>The filters supported by the raster data collection.</p>
+    ///   - [`image_source_bands(Vec::<String>)`](crate::operation::get_raster_data_collection::GetRasterDataCollectionOutput::image_source_bands): <p>The list of image source bands in the raster data collection.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_raster_data_collection::GetRasterDataCollectionOutput::tags): <p>Each tag consists of a key and a value.</p>
     /// - On failure, responds with [`SdkError<GetRasterDataCollectionError>`](crate::operation::get_raster_data_collection::GetRasterDataCollectionError)
     pub fn get_raster_data_collection(&self) -> crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionFluentBuilder {
         crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionFluentBuilder::new(self.handle.clone())

@@ -259,7 +259,7 @@ pub fn de_list_parts(
             s if s.matches("Part") /* Parts com.amazonaws.s3.synthetic#ListPartsOutput$Parts */ =>  {
                 let var_20 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::Part>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::Part>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_21 = builder.parts.take().unwrap_or_default();
                             list_21.push(
                                 crate::protocol_serde::shape_part::de_part(&mut tag)

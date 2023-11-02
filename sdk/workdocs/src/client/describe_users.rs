@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`limit(i32)`](crate::operation::describe_users::builders::DescribeUsersFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::describe_users::builders::DescribeUsersFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of items to return.</p><br>
     ///   - [`fields(impl Into<String>)`](crate::operation::describe_users::builders::DescribeUsersFluentBuilder::fields) / [`set_fields(Option<String>)`](crate::operation::describe_users::builders::DescribeUsersFluentBuilder::set_fields):<br>required: **false**<br><p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user storage quota and utilization information.</p><br>
     /// - On success, responds with [`DescribeUsersOutput`](crate::operation::describe_users::DescribeUsersOutput) with field(s):
-    ///   - [`users(Option<Vec<User>>)`](crate::operation::describe_users::DescribeUsersOutput::users): <p>The users.</p>
+    ///   - [`users(Option<Vec::<User>>)`](crate::operation::describe_users::DescribeUsersOutput::users): <p>The users.</p>
     ///   - [`total_number_of_users(Option<i64>)`](crate::operation::describe_users::DescribeUsersOutput::total_number_of_users): <p>The total number of users included in the results.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_users::DescribeUsersOutput::marker): <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     /// - On failure, responds with [`SdkError<DescribeUsersError>`](crate::operation::describe_users::DescribeUsersError)

@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_users::builders::ListUsersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return from this request.</p><br>
     ///   - [`namespace(impl Into<String>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::namespace) / [`set_namespace(Option<String>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::set_namespace):<br>required: **true**<br><p>The namespace. Currently, you should set this to <code>default</code>.</p><br>
     /// - On success, responds with [`ListUsersOutput`](crate::operation::list_users::ListUsersOutput) with field(s):
-    ///   - [`user_list(Option<Vec<User>>)`](crate::operation::list_users::ListUsersOutput::user_list): <p>The list of users.</p>
+    ///   - [`user_list(Option<Vec::<User>>)`](crate::operation::list_users::ListUsersOutput::user_list): <p>The list of users.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_users::ListUsersOutput::next_token): <p>A pagination token that can be used in a subsequent request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::list_users::ListUsersOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::list_users::ListUsersOutput::status): <p>The HTTP status of the request.</p>

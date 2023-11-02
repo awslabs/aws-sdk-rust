@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`fleet_id(impl Into<String>)`](crate::operation::describe_vpc_peering_connections::builders::DescribeVpcPeeringConnectionsFluentBuilder::fleet_id) / [`set_fleet_id(Option<String>)`](crate::operation::describe_vpc_peering_connections::builders::DescribeVpcPeeringConnectionsFluentBuilder::set_fleet_id):<br>required: **false**<br><p>A unique identifier for the fleet. You can use either the fleet ID or ARN value.</p><br>
     /// - On success, responds with [`DescribeVpcPeeringConnectionsOutput`](crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsOutput) with field(s):
-    ///   - [`vpc_peering_connections(Option<Vec<VpcPeeringConnection>>)`](crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsOutput::vpc_peering_connections): <p>A collection of VPC peering connection records that match the request.</p>
+    ///   - [`vpc_peering_connections(Option<Vec::<VpcPeeringConnection>>)`](crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsOutput::vpc_peering_connections): <p>A collection of VPC peering connection records that match the request.</p>
     /// - On failure, responds with [`SdkError<DescribeVpcPeeringConnectionsError>`](crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsError)
     pub fn describe_vpc_peering_connections(
         &self,

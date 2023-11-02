@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`task_start_time(Option<DateTime>)`](crate::operation::describe_audit_task::DescribeAuditTaskOutput::task_start_time): <p>The time the audit started.</p>
     ///   - [`task_statistics(Option<TaskStatistics>)`](crate::operation::describe_audit_task::DescribeAuditTaskOutput::task_statistics): <p>Statistical information about the audit.</p>
     ///   - [`scheduled_audit_name(Option<String>)`](crate::operation::describe_audit_task::DescribeAuditTaskOutput::scheduled_audit_name): <p>The name of the scheduled audit (only if the audit was a scheduled audit).</p>
-    ///   - [`audit_details(Option<HashMap<String, AuditCheckDetails>>)`](crate::operation::describe_audit_task::DescribeAuditTaskOutput::audit_details): <p>Detailed information about each check performed during this audit.</p>
+    ///   - [`audit_details(Option<HashMap::<String, AuditCheckDetails>>)`](crate::operation::describe_audit_task::DescribeAuditTaskOutput::audit_details): <p>Detailed information about each check performed during this audit.</p>
     /// - On failure, responds with [`SdkError<DescribeAuditTaskError>`](crate::operation::describe_audit_task::DescribeAuditTaskError)
     pub fn describe_audit_task(&self) -> crate::operation::describe_audit_task::builders::DescribeAuditTaskFluentBuilder {
         crate::operation::describe_audit_task::builders::DescribeAuditTaskFluentBuilder::new(self.handle.clone())

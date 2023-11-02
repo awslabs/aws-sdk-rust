@@ -165,7 +165,7 @@ impl SynthesizeSpeechFluentBuilder {
             })
         })?;
         let request = context.take_request().expect("request set before transmit");
-        Ok(crate::presigning::PresignedRequest::new(request))
+        crate::presigning::PresignedRequest::new(request).map_err(::aws_smithy_http::result::SdkError::construction_failure)
     }
     /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available in standard-only, NTTS-only, and both standard and NTTS formats, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available Voices</a>.</p>
     /// <p> <b>NTTS-only voices</b> </p>

@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_gateway_groups::builders::ListGatewayGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_gateway_groups::builders::ListGatewayGroupsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token used to paginate though multiple pages of gateway group summaries.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_gateway_groups::builders::ListGatewayGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_gateway_groups::builders::ListGatewayGroupsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of gateway group summaries to return. The default is 50.</p><br>
     /// - On success, responds with [`ListGatewayGroupsOutput`](crate::operation::list_gateway_groups::ListGatewayGroupsOutput) with field(s):
-    ///   - [`gateway_groups(Option<Vec<GatewayGroupSummary>>)`](crate::operation::list_gateway_groups::ListGatewayGroupsOutput::gateway_groups): <p>The gateway groups in the list.</p>
+    ///   - [`gateway_groups(Option<Vec::<GatewayGroupSummary>>)`](crate::operation::list_gateway_groups::ListGatewayGroupsOutput::gateway_groups): <p>The gateway groups in the list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_gateway_groups::ListGatewayGroupsOutput::next_token): <p>The token used to paginate though multiple pages of gateway group summaries.</p>
     /// - On failure, responds with [`SdkError<ListGatewayGroupsError>`](crate::operation::list_gateway_groups::ListGatewayGroupsError)
     #[deprecated(note = "Alexa For Business is no longer supported")]

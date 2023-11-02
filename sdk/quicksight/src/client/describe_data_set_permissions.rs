@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeDataSetPermissionsOutput`](crate::operation::describe_data_set_permissions::DescribeDataSetPermissionsOutput) with field(s):
     ///   - [`data_set_arn(Option<String>)`](crate::operation::describe_data_set_permissions::DescribeDataSetPermissionsOutput::data_set_arn): <p>The Amazon Resource Name (ARN) of the dataset.</p>
     ///   - [`data_set_id(Option<String>)`](crate::operation::describe_data_set_permissions::DescribeDataSetPermissionsOutput::data_set_id): <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    ///   - [`permissions(Option<Vec<ResourcePermission>>)`](crate::operation::describe_data_set_permissions::DescribeDataSetPermissionsOutput::permissions): <p>A list of resource permissions on the dataset.</p>
+    ///   - [`permissions(Option<Vec::<ResourcePermission>>)`](crate::operation::describe_data_set_permissions::DescribeDataSetPermissionsOutput::permissions): <p>A list of resource permissions on the dataset.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::describe_data_set_permissions::DescribeDataSetPermissionsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::describe_data_set_permissions::DescribeDataSetPermissionsOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<DescribeDataSetPermissionsError>`](crate::operation::describe_data_set_permissions::DescribeDataSetPermissionsError)

@@ -14,8 +14,8 @@ impl super::Client {
     ///   - [`template(Option<String>)`](crate::operation::describe_world_generation_job::DescribeWorldGenerationJobOutput::template): <p>The Amazon Resource Name (arn) of the world template.</p>
     ///   - [`world_count(Option<WorldCount>)`](crate::operation::describe_world_generation_job::DescribeWorldGenerationJobOutput::world_count): <p>Information about the world count.</p>
     ///   - [`finished_worlds_summary(Option<FinishedWorldsSummary>)`](crate::operation::describe_world_generation_job::DescribeWorldGenerationJobOutput::finished_worlds_summary): <p>Summary information about finished worlds.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_world_generation_job::DescribeWorldGenerationJobOutput::tags): <p>A map that contains tag keys and tag values that are attached to the world generation job.</p>
-    ///   - [`world_tags(Option<HashMap<String, String>>)`](crate::operation::describe_world_generation_job::DescribeWorldGenerationJobOutput::world_tags): <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_world_generation_job::DescribeWorldGenerationJobOutput::tags): <p>A map that contains tag keys and tag values that are attached to the world generation job.</p>
+    ///   - [`world_tags(Option<HashMap::<String, String>>)`](crate::operation::describe_world_generation_job::DescribeWorldGenerationJobOutput::world_tags): <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
     /// - On failure, responds with [`SdkError<DescribeWorldGenerationJobError>`](crate::operation::describe_world_generation_job::DescribeWorldGenerationJobError)
     pub fn describe_world_generation_job(
         &self,

@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`marker(impl Into<String>)`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::set_marker):<br>required: **false**<br><p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p><br>
     /// - On success, responds with [`DescribeEventsOutput`](crate::operation::describe_events::DescribeEventsOutput) with field(s):
     ///   - [`marker(Option<String>)`](crate::operation::describe_events::DescribeEventsOutput::marker): <p>Provides an identifier to allow retrieval of paginated results.</p>
-    ///   - [`events(Option<Vec<Event>>)`](crate::operation::describe_events::DescribeEventsOutput::events): <p>A list of events. Each element in the list contains detailed information about one event.</p>
+    ///   - [`events(Option<Vec::<Event>>)`](crate::operation::describe_events::DescribeEventsOutput::events): <p>A list of events. Each element in the list contains detailed information about one event.</p>
     /// - On failure, responds with [`SdkError<DescribeEventsError>`](crate::operation::describe_events::DescribeEventsError)
     pub fn describe_events(&self) -> crate::operation::describe_events::builders::DescribeEventsFluentBuilder {
         crate::operation::describe_events::builders::DescribeEventsFluentBuilder::new(self.handle.clone())

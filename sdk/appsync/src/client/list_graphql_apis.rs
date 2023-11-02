@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`api_type(GraphQlApiType)`](crate::operation::list_graphql_apis::builders::ListGraphqlApisFluentBuilder::api_type) / [`set_api_type(Option<GraphQlApiType>)`](crate::operation::list_graphql_apis::builders::ListGraphqlApisFluentBuilder::set_api_type):<br>required: **false**<br><p>The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p><br>
     ///   - [`owner(Ownership)`](crate::operation::list_graphql_apis::builders::ListGraphqlApisFluentBuilder::owner) / [`set_owner(Option<Ownership>)`](crate::operation::list_graphql_apis::builders::ListGraphqlApisFluentBuilder::set_owner):<br>required: **false**<br><p>The account owner of the GraphQL API.</p><br>
     /// - On success, responds with [`ListGraphqlApisOutput`](crate::operation::list_graphql_apis::ListGraphqlApisOutput) with field(s):
-    ///   - [`graphql_apis(Option<Vec<GraphqlApi>>)`](crate::operation::list_graphql_apis::ListGraphqlApisOutput::graphql_apis): <p>The <code>GraphqlApi</code> objects.</p>
+    ///   - [`graphql_apis(Option<Vec::<GraphqlApi>>)`](crate::operation::list_graphql_apis::ListGraphqlApisOutput::graphql_apis): <p>The <code>GraphqlApi</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_graphql_apis::ListGraphqlApisOutput::next_token): <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
     /// - On failure, responds with [`SdkError<ListGraphqlApisError>`](crate::operation::list_graphql_apis::ListGraphqlApisError)
     pub fn list_graphql_apis(&self) -> crate::operation::list_graphql_apis::builders::ListGraphqlApisFluentBuilder {

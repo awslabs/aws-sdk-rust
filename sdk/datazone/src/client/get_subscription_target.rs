@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`identifier(impl Into<String>)`](crate::operation::get_subscription_target::builders::GetSubscriptionTargetFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_subscription_target::builders::GetSubscriptionTargetFluentBuilder::set_identifier):<br>required: **true**<br><p>The ID of the subscription target.</p><br>
     /// - On success, responds with [`GetSubscriptionTargetOutput`](crate::operation::get_subscription_target::GetSubscriptionTargetOutput) with field(s):
     ///   - [`id(String)`](crate::operation::get_subscription_target::GetSubscriptionTargetOutput::id): <p>The ID of the subscription target.</p>
-    ///   - [`authorized_principals(Vec<String>)`](crate::operation::get_subscription_target::GetSubscriptionTargetOutput::authorized_principals): <p>The authorized principals of the subscription target.</p>
+    ///   - [`authorized_principals(Vec::<String>)`](crate::operation::get_subscription_target::GetSubscriptionTargetOutput::authorized_principals): <p>The authorized principals of the subscription target.</p>
     ///   - [`domain_id(String)`](crate::operation::get_subscription_target::GetSubscriptionTargetOutput::domain_id): <p>The ID of the Amazon DataZone domain in which the subscription target exists.</p>
     ///   - [`project_id(String)`](crate::operation::get_subscription_target::GetSubscriptionTargetOutput::project_id): <p>The ID of the project associated with the subscription target.</p>
     ///   - [`environment_id(String)`](crate::operation::get_subscription_target::GetSubscriptionTargetOutput::environment_id): <p>The ID of the environment associated with the subscription target.</p>
@@ -19,8 +19,8 @@ impl super::Client {
     ///   - [`created_at(DateTime)`](crate::operation::get_subscription_target::GetSubscriptionTargetOutput::created_at): <p>The timestamp of when the subscription target was created.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_subscription_target::GetSubscriptionTargetOutput::updated_at): <p>The timestamp of when the subscription target was updated.</p>
     ///   - [`manage_access_role(String)`](crate::operation::get_subscription_target::GetSubscriptionTargetOutput::manage_access_role): <p>The manage access role with which the subscription target was created.</p>
-    ///   - [`applicable_asset_types(Vec<String>)`](crate::operation::get_subscription_target::GetSubscriptionTargetOutput::applicable_asset_types): <p>The asset types associated with the subscription target.</p>
-    ///   - [`subscription_target_config(Vec<SubscriptionTargetForm>)`](crate::operation::get_subscription_target::GetSubscriptionTargetOutput::subscription_target_config): <p>The configuration of teh subscription target.</p>
+    ///   - [`applicable_asset_types(Vec::<String>)`](crate::operation::get_subscription_target::GetSubscriptionTargetOutput::applicable_asset_types): <p>The asset types associated with the subscription target.</p>
+    ///   - [`subscription_target_config(Vec::<SubscriptionTargetForm>)`](crate::operation::get_subscription_target::GetSubscriptionTargetOutput::subscription_target_config): <p>The configuration of teh subscription target.</p>
     ///   - [`provider(String)`](crate::operation::get_subscription_target::GetSubscriptionTargetOutput::provider): <p>The provider of the subscription target.</p>
     /// - On failure, responds with [`SdkError<GetSubscriptionTargetError>`](crate::operation::get_subscription_target::GetSubscriptionTargetError)
     pub fn get_subscription_target(&self) -> crate::operation::get_subscription_target::builders::GetSubscriptionTargetFluentBuilder {

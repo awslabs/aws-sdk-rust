@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_actions::builders::ListActionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_actions::builders::ListActionsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous call to <code>ListActions</code> didn't return the full set of actions, the call returns a token for getting the next set of actions.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_actions::builders::ListActionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_actions::builders::ListActionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of actions to return in the response. The default value is 10.</p><br>
     /// - On success, responds with [`ListActionsOutput`](crate::operation::list_actions::ListActionsOutput) with field(s):
-    ///   - [`action_summaries(Option<Vec<ActionSummary>>)`](crate::operation::list_actions::ListActionsOutput::action_summaries): <p>A list of actions and their properties.</p>
+    ///   - [`action_summaries(Option<Vec::<ActionSummary>>)`](crate::operation::list_actions::ListActionsOutput::action_summaries): <p>A list of actions and their properties.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_actions::ListActionsOutput::next_token): <p>A token for getting the next set of actions, if there are any.</p>
     /// - On failure, responds with [`SdkError<ListActionsError>`](crate::operation::list_actions::ListActionsError)
     pub fn list_actions(&self) -> crate::operation::list_actions::builders::ListActionsFluentBuilder {

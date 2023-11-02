@@ -127,6 +127,7 @@ pub mod meta;
 pub mod profile;
 pub mod provider_config;
 pub mod retry;
+mod sensitive_command;
 #[cfg(feature = "sso")]
 pub mod sso;
 pub(crate) mod standard_property;

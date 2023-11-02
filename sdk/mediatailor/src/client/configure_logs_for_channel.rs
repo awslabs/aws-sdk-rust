@@ -4,10 +4,10 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`channel_name(impl Into<String>)`](crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelFluentBuilder::channel_name) / [`set_channel_name(Option<String>)`](crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelFluentBuilder::set_channel_name):<br>required: **true**<br><p>The name of the channel.</p><br>
-    ///   - [`log_types(LogType)`](crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelFluentBuilder::log_types) / [`set_log_types(Option<Vec<LogType>>)`](crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelFluentBuilder::set_log_types):<br>required: **true**<br><p>The types of logs to collect.</p><br>
+    ///   - [`log_types(LogType)`](crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelFluentBuilder::log_types) / [`set_log_types(Option<Vec::<LogType>>)`](crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelFluentBuilder::set_log_types):<br>required: **true**<br><p>The types of logs to collect.</p><br>
     /// - On success, responds with [`ConfigureLogsForChannelOutput`](crate::operation::configure_logs_for_channel::ConfigureLogsForChannelOutput) with field(s):
     ///   - [`channel_name(Option<String>)`](crate::operation::configure_logs_for_channel::ConfigureLogsForChannelOutput::channel_name): <p>The name of the channel.</p>
-    ///   - [`log_types(Option<Vec<LogType>>)`](crate::operation::configure_logs_for_channel::ConfigureLogsForChannelOutput::log_types): <p>The types of logs collected.</p>
+    ///   - [`log_types(Option<Vec::<LogType>>)`](crate::operation::configure_logs_for_channel::ConfigureLogsForChannelOutput::log_types): <p>The types of logs collected.</p>
     /// - On failure, responds with [`SdkError<ConfigureLogsForChannelError>`](crate::operation::configure_logs_for_channel::ConfigureLogsForChannelError)
     pub fn configure_logs_for_channel(&self) -> crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelFluentBuilder {
         crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelFluentBuilder::new(self.handle.clone())

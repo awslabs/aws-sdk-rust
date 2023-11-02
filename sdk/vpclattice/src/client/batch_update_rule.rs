@@ -5,10 +5,10 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`service_identifier(impl Into<String>)`](crate::operation::batch_update_rule::builders::BatchUpdateRuleFluentBuilder::service_identifier) / [`set_service_identifier(Option<String>)`](crate::operation::batch_update_rule::builders::BatchUpdateRuleFluentBuilder::set_service_identifier):<br>required: **true**<br><p>The ID or Amazon Resource Name (ARN) of the service.</p><br>
     ///   - [`listener_identifier(impl Into<String>)`](crate::operation::batch_update_rule::builders::BatchUpdateRuleFluentBuilder::listener_identifier) / [`set_listener_identifier(Option<String>)`](crate::operation::batch_update_rule::builders::BatchUpdateRuleFluentBuilder::set_listener_identifier):<br>required: **true**<br><p>The ID or Amazon Resource Name (ARN) of the listener.</p><br>
-    ///   - [`rules(RuleUpdate)`](crate::operation::batch_update_rule::builders::BatchUpdateRuleFluentBuilder::rules) / [`set_rules(Option<Vec<RuleUpdate>>)`](crate::operation::batch_update_rule::builders::BatchUpdateRuleFluentBuilder::set_rules):<br>required: **true**<br><p>The rules for the specified listener.</p><br>
+    ///   - [`rules(RuleUpdate)`](crate::operation::batch_update_rule::builders::BatchUpdateRuleFluentBuilder::rules) / [`set_rules(Option<Vec::<RuleUpdate>>)`](crate::operation::batch_update_rule::builders::BatchUpdateRuleFluentBuilder::set_rules):<br>required: **true**<br><p>The rules for the specified listener.</p><br>
     /// - On success, responds with [`BatchUpdateRuleOutput`](crate::operation::batch_update_rule::BatchUpdateRuleOutput) with field(s):
-    ///   - [`successful(Option<Vec<RuleUpdateSuccess>>)`](crate::operation::batch_update_rule::BatchUpdateRuleOutput::successful): <p>The rules that were successfully updated.</p>
-    ///   - [`unsuccessful(Option<Vec<RuleUpdateFailure>>)`](crate::operation::batch_update_rule::BatchUpdateRuleOutput::unsuccessful): <p>The rules that the operation couldn't update.</p>
+    ///   - [`successful(Option<Vec::<RuleUpdateSuccess>>)`](crate::operation::batch_update_rule::BatchUpdateRuleOutput::successful): <p>The rules that were successfully updated.</p>
+    ///   - [`unsuccessful(Option<Vec::<RuleUpdateFailure>>)`](crate::operation::batch_update_rule::BatchUpdateRuleOutput::unsuccessful): <p>The rules that the operation couldn't update.</p>
     /// - On failure, responds with [`SdkError<BatchUpdateRuleError>`](crate::operation::batch_update_rule::BatchUpdateRuleError)
     pub fn batch_update_rule(&self) -> crate::operation::batch_update_rule::builders::BatchUpdateRuleFluentBuilder {
         crate::operation::batch_update_rule::builders::BatchUpdateRuleFluentBuilder::new(self.handle.clone())

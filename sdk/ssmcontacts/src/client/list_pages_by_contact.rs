@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_pages_by_contact::builders::ListPagesByContactFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_pages_by_contact::builders::ListPagesByContactFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of engagements to contact channels to list per page of results. </p><br>
     /// - On success, responds with [`ListPagesByContactOutput`](crate::operation::list_pages_by_contact::ListPagesByContactOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_pages_by_contact::ListPagesByContactOutput::next_token): <p>The pagination token to continue to the next page of results.</p>
-    ///   - [`pages(Vec<Page>)`](crate::operation::list_pages_by_contact::ListPagesByContactOutput::pages): <p>The list of engagements to a contact's contact channel.</p>
+    ///   - [`pages(Vec::<Page>)`](crate::operation::list_pages_by_contact::ListPagesByContactOutput::pages): <p>The list of engagements to a contact's contact channel.</p>
     /// - On failure, responds with [`SdkError<ListPagesByContactError>`](crate::operation::list_pages_by_contact::ListPagesByContactError)
     pub fn list_pages_by_contact(&self) -> crate::operation::list_pages_by_contact::builders::ListPagesByContactFluentBuilder {
         crate::operation::list_pages_by_contact::builders::ListPagesByContactFluentBuilder::new(self.handle.clone())

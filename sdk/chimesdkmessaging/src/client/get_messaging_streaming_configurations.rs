@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`app_instance_arn(impl Into<String>)`](crate::operation::get_messaging_streaming_configurations::builders::GetMessagingStreamingConfigurationsFluentBuilder::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::operation::get_messaging_streaming_configurations::builders::GetMessagingStreamingConfigurationsFluentBuilder::set_app_instance_arn):<br>required: **true**<br><p>The ARN of the streaming configurations.</p><br>
     /// - On success, responds with [`GetMessagingStreamingConfigurationsOutput`](crate::operation::get_messaging_streaming_configurations::GetMessagingStreamingConfigurationsOutput) with field(s):
-    ///   - [`streaming_configurations(Option<Vec<StreamingConfiguration>>)`](crate::operation::get_messaging_streaming_configurations::GetMessagingStreamingConfigurationsOutput::streaming_configurations): <p>The streaming settings.</p>
+    ///   - [`streaming_configurations(Option<Vec::<StreamingConfiguration>>)`](crate::operation::get_messaging_streaming_configurations::GetMessagingStreamingConfigurationsOutput::streaming_configurations): <p>The streaming settings.</p>
     /// - On failure, responds with [`SdkError<GetMessagingStreamingConfigurationsError>`](crate::operation::get_messaging_streaming_configurations::GetMessagingStreamingConfigurationsError)
     pub fn get_messaging_streaming_configurations(
         &self,

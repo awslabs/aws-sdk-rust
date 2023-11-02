@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the response.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token from the GET list request. Use the token to fetch the next page of results.</p><br>
     /// - On success, responds with [`ListChannelsOutput`](crate::operation::list_channels::ListChannelsOutput) with field(s):
-    ///   - [`items(Option<Vec<ChannelListConfiguration>>)`](crate::operation::list_channels::ListChannelsOutput::items): <p>The objects being returned.</p>
+    ///   - [`items(Option<Vec::<ChannelListConfiguration>>)`](crate::operation::list_channels::ListChannelsOutput::items): <p>The objects being returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_channels::ListChannelsOutput::next_token): <p>The pagination token from the GET list request.</p>
     /// - On failure, responds with [`SdkError<ListChannelsError>`](crate::operation::list_channels::ListChannelsError)
     pub fn list_channels(&self) -> crate::operation::list_channels::builders::ListChannelsFluentBuilder {

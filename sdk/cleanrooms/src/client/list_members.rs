@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_members::builders::ListMembersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_members::builders::ListMembersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum size of the results that is returned per call.</p><br>
     /// - On success, responds with [`ListMembersOutput`](crate::operation::list_members::ListMembersOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_members::ListMembersOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
-    ///   - [`member_summaries(Vec<MemberSummary>)`](crate::operation::list_members::ListMembersOutput::member_summaries): <p>The list of members returned by the ListMembers operation.</p>
+    ///   - [`member_summaries(Vec::<MemberSummary>)`](crate::operation::list_members::ListMembersOutput::member_summaries): <p>The list of members returned by the ListMembers operation.</p>
     /// - On failure, responds with [`SdkError<ListMembersError>`](crate::operation::list_members::ListMembersError)
     pub fn list_members(&self) -> crate::operation::list_members::builders::ListMembersFluentBuilder {
         crate::operation::list_members::builders::ListMembersFluentBuilder::new(self.handle.clone())

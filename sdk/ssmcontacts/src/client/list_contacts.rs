@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`r#type(ContactType)`](crate::operation::list_contacts::builders::ListContactsFluentBuilder::type) / [`set_type(Option<ContactType>)`](crate::operation::list_contacts::builders::ListContactsFluentBuilder::set_type):<br>required: **false**<br><p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p><br>
     /// - On success, responds with [`ListContactsOutput`](crate::operation::list_contacts::ListContactsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_contacts::ListContactsOutput::next_token): <p>The pagination token to continue to the next page of results.</p>
-    ///   - [`contacts(Option<Vec<Contact>>)`](crate::operation::list_contacts::ListContactsOutput::contacts): <p>A list of the contacts and escalation plans in your Incident Manager account.</p>
+    ///   - [`contacts(Option<Vec::<Contact>>)`](crate::operation::list_contacts::ListContactsOutput::contacts): <p>A list of the contacts and escalation plans in your Incident Manager account.</p>
     /// - On failure, responds with [`SdkError<ListContactsError>`](crate::operation::list_contacts::ListContactsError)
     pub fn list_contacts(&self) -> crate::operation::list_contacts::builders::ListContactsFluentBuilder {
         crate::operation::list_contacts::builders::ListContactsFluentBuilder::new(self.handle.clone())

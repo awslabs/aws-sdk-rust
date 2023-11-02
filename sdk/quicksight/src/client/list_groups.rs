@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`namespace(impl Into<String>)`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::namespace) / [`set_namespace(Option<String>)`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::set_namespace):<br>required: **true**<br><p>The namespace that you want a list of groups from.</p><br>
     /// - On success, responds with [`ListGroupsOutput`](crate::operation::list_groups::ListGroupsOutput) with field(s):
-    ///   - [`group_list(Option<Vec<Group>>)`](crate::operation::list_groups::ListGroupsOutput::group_list): <p>The list of the groups.</p>
+    ///   - [`group_list(Option<Vec::<Group>>)`](crate::operation::list_groups::ListGroupsOutput::group_list): <p>The list of the groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_groups::ListGroupsOutput::next_token): <p>A pagination token that can be used in a subsequent request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::list_groups::ListGroupsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::list_groups::ListGroupsOutput::status): <p>The HTTP status of the request.</p>

@@ -4,9 +4,9 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`id(impl Into<String>)`](crate::operation::tag_project::builders::TagProjectFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::tag_project::builders::TagProjectFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the project you want to add a tag to.</p><br>
-    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::tag_project::builders::TagProjectFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::tag_project::builders::TagProjectFluentBuilder::set_tags):<br>required: **true**<br><p>The tags you want to add to the project.</p><br>
+    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::tag_project::builders::TagProjectFluentBuilder::tags) / [`set_tags(Option<HashMap::<String, String>>)`](crate::operation::tag_project::builders::TagProjectFluentBuilder::set_tags):<br>required: **true**<br><p>The tags you want to add to the project.</p><br>
     /// - On success, responds with [`TagProjectOutput`](crate::operation::tag_project::TagProjectOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::tag_project::TagProjectOutput::tags): <p>The tags for the project.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::tag_project::TagProjectOutput::tags): <p>The tags for the project.</p>
     /// - On failure, responds with [`SdkError<TagProjectError>`](crate::operation::tag_project::TagProjectError)
     pub fn tag_project(&self) -> crate::operation::tag_project::builders::TagProjectFluentBuilder {
         crate::operation::tag_project::builders::TagProjectFluentBuilder::new(self.handle.clone())

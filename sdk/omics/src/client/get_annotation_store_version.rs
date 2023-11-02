@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`description(String)`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput::description): <p> The description for an annotation store version. </p>
     ///   - [`creation_time(DateTime)`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput::creation_time): <p> The time stamp for when an annotation store version was created. </p>
     ///   - [`update_time(DateTime)`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput::update_time): <p> The time stamp for when an annotation store version was updated. </p>
-    ///   - [`tags(HashMap<String, String>)`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput::tags): <p> Any tags associated with an annotation store version. </p>
+    ///   - [`tags(HashMap::<String, String>)`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput::tags): <p> Any tags associated with an annotation store version. </p>
     ///   - [`version_options(Option<VersionOptions>)`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput::version_options): <p> The options for an annotation store version. </p>
     ///   - [`status_message(String)`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput::status_message): <p> The status of an annotation store version. </p>
     ///   - [`version_size_bytes(i64)`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput::version_size_bytes): <p> The size of the annotation store version in Bytes. </p>

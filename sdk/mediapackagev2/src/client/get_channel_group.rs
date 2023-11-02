@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`created_at(DateTime)`](crate::operation::get_channel_group::GetChannelGroupOutput::created_at): <p>The date and time the channel group was created.</p>
     ///   - [`modified_at(DateTime)`](crate::operation::get_channel_group::GetChannelGroupOutput::modified_at): <p>The date and time the channel group was modified.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_channel_group::GetChannelGroupOutput::description): <p>The description for your channel group.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_channel_group::GetChannelGroupOutput::tags): <p>The comma-separated list of tag key:value pairs assigned to the channel group.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_channel_group::GetChannelGroupOutput::tags): <p>The comma-separated list of tag key:value pairs assigned to the channel group.</p>
     /// - On failure, responds with [`SdkError<GetChannelGroupError>`](crate::operation::get_channel_group::GetChannelGroupError)
     pub fn get_channel_group(&self) -> crate::operation::get_channel_group::builders::GetChannelGroupFluentBuilder {
         crate::operation::get_channel_group::builders::GetChannelGroupFluentBuilder::new(self.handle.clone())

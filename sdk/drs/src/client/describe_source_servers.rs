@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::describe_source_servers::builders::DescribeSourceServersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_source_servers::builders::DescribeSourceServersFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of Source Servers to retrieve.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_source_servers::builders::DescribeSourceServersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_source_servers::builders::DescribeSourceServersFluentBuilder::set_next_token):<br>required: **false**<br><p>The token of the next Source Server to retrieve.</p><br>
     /// - On success, responds with [`DescribeSourceServersOutput`](crate::operation::describe_source_servers::DescribeSourceServersOutput) with field(s):
-    ///   - [`items(Option<Vec<SourceServer>>)`](crate::operation::describe_source_servers::DescribeSourceServersOutput::items): <p>An array of Source Servers.</p>
+    ///   - [`items(Option<Vec::<SourceServer>>)`](crate::operation::describe_source_servers::DescribeSourceServersOutput::items): <p>An array of Source Servers.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_source_servers::DescribeSourceServersOutput::next_token): <p>The token of the next Source Server to retrieve.</p>
     /// - On failure, responds with [`SdkError<DescribeSourceServersError>`](crate::operation::describe_source_servers::DescribeSourceServersError)
     pub fn describe_source_servers(&self) -> crate::operation::describe_source_servers::builders::DescribeSourceServersFluentBuilder {

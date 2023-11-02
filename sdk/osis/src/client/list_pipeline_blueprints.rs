@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::list_pipeline_blueprints::builders::ListPipelineBlueprintsFluentBuilder::send) it.
     /// - On success, responds with [`ListPipelineBlueprintsOutput`](crate::operation::list_pipeline_blueprints::ListPipelineBlueprintsOutput) with field(s):
-    ///   - [`blueprints(Option<Vec<PipelineBlueprintSummary>>)`](crate::operation::list_pipeline_blueprints::ListPipelineBlueprintsOutput::blueprints): <p>A list of available blueprints for Data Prepper.</p>
+    ///   - [`blueprints(Option<Vec::<PipelineBlueprintSummary>>)`](crate::operation::list_pipeline_blueprints::ListPipelineBlueprintsOutput::blueprints): <p>A list of available blueprints for Data Prepper.</p>
     /// - On failure, responds with [`SdkError<ListPipelineBlueprintsError>`](crate::operation::list_pipeline_blueprints::ListPipelineBlueprintsError)
     pub fn list_pipeline_blueprints(&self) -> crate::operation::list_pipeline_blueprints::builders::ListPipelineBlueprintsFluentBuilder {
         crate::operation::list_pipeline_blueprints::builders::ListPipelineBlueprintsFluentBuilder::new(self.handle.clone())

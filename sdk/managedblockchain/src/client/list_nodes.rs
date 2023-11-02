@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_nodes::builders::ListNodesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_nodes::builders::ListNodesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of nodes to list.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_nodes::builders::ListNodesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_nodes::builders::ListNodesFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token that indicates the next set of results to retrieve.</p><br>
     /// - On success, responds with [`ListNodesOutput`](crate::operation::list_nodes::ListNodesOutput) with field(s):
-    ///   - [`nodes(Option<Vec<NodeSummary>>)`](crate::operation::list_nodes::ListNodesOutput::nodes): <p>An array of <code>NodeSummary</code> objects that contain configuration properties for each node.</p>
+    ///   - [`nodes(Option<Vec::<NodeSummary>>)`](crate::operation::list_nodes::ListNodesOutput::nodes): <p>An array of <code>NodeSummary</code> objects that contain configuration properties for each node.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_nodes::ListNodesOutput::next_token): <p>The pagination token that indicates the next set of results to retrieve.</p>
     /// - On failure, responds with [`SdkError<ListNodesError>`](crate::operation::list_nodes::ListNodesError)
     pub fn list_nodes(&self) -> crate::operation::list_nodes::builders::ListNodesFluentBuilder {

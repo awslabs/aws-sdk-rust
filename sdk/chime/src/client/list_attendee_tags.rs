@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`meeting_id(impl Into<String>)`](crate::operation::list_attendee_tags::builders::ListAttendeeTagsFluentBuilder::meeting_id) / [`set_meeting_id(Option<String>)`](crate::operation::list_attendee_tags::builders::ListAttendeeTagsFluentBuilder::set_meeting_id):<br>required: **true**<br><p>The Amazon Chime SDK meeting ID.</p><br>
     ///   - [`attendee_id(impl Into<String>)`](crate::operation::list_attendee_tags::builders::ListAttendeeTagsFluentBuilder::attendee_id) / [`set_attendee_id(Option<String>)`](crate::operation::list_attendee_tags::builders::ListAttendeeTagsFluentBuilder::set_attendee_id):<br>required: **true**<br><p>The Amazon Chime SDK attendee ID.</p><br>
     /// - On success, responds with [`ListAttendeeTagsOutput`](crate::operation::list_attendee_tags::ListAttendeeTagsOutput) with field(s):
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::list_attendee_tags::ListAttendeeTagsOutput::tags): <p>A list of tag key-value pairs.</p>
+    ///   - [`tags(Option<Vec::<Tag>>)`](crate::operation::list_attendee_tags::ListAttendeeTagsOutput::tags): <p>A list of tag key-value pairs.</p>
     /// - On failure, responds with [`SdkError<ListAttendeeTagsError>`](crate::operation::list_attendee_tags::ListAttendeeTagsError)
     #[deprecated(
         note = "Attendee Tags are not supported in the Amazon Chime SDK Meetings Namespace. Update your application to remove calls to this API."

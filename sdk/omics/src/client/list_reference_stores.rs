@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`filter(ReferenceStoreFilter)`](crate::operation::list_reference_stores::builders::ListReferenceStoresFluentBuilder::filter) / [`set_filter(Option<ReferenceStoreFilter>)`](crate::operation::list_reference_stores::builders::ListReferenceStoresFluentBuilder::set_filter):<br>required: **false**<br><p>A filter to apply to the list.</p><br>
     /// - On success, responds with [`ListReferenceStoresOutput`](crate::operation::list_reference_stores::ListReferenceStoresOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_reference_stores::ListReferenceStoresOutput::next_token): <p>A pagination token that's included if more results are available.</p>
-    ///   - [`reference_stores(Vec<ReferenceStoreDetail>)`](crate::operation::list_reference_stores::ListReferenceStoresOutput::reference_stores): <p>A list of reference stores.</p>
+    ///   - [`reference_stores(Vec::<ReferenceStoreDetail>)`](crate::operation::list_reference_stores::ListReferenceStoresOutput::reference_stores): <p>A list of reference stores.</p>
     /// - On failure, responds with [`SdkError<ListReferenceStoresError>`](crate::operation::list_reference_stores::ListReferenceStoresError)
     pub fn list_reference_stores(&self) -> crate::operation::list_reference_stores::builders::ListReferenceStoresFluentBuilder {
         crate::operation::list_reference_stores::builders::ListReferenceStoresFluentBuilder::new(self.handle.clone())

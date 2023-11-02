@@ -12,7 +12,7 @@ impl super::Client {
     /// - On success, responds with [`ListQualificationTypesOutput`](crate::operation::list_qualification_types::ListQualificationTypesOutput) with field(s):
     ///   - [`num_results(Option<i32>)`](crate::operation::list_qualification_types::ListQualificationTypesOutput::num_results): <p> The number of Qualification types on this page in the filtered results list, equivalent to the number of types this operation returns. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_qualification_types::ListQualificationTypesOutput::next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
-    ///   - [`qualification_types(Option<Vec<QualificationType>>)`](crate::operation::list_qualification_types::ListQualificationTypesOutput::qualification_types): <p> The list of QualificationType elements returned by the query. </p>
+    ///   - [`qualification_types(Option<Vec::<QualificationType>>)`](crate::operation::list_qualification_types::ListQualificationTypesOutput::qualification_types): <p> The list of QualificationType elements returned by the query. </p>
     /// - On failure, responds with [`SdkError<ListQualificationTypesError>`](crate::operation::list_qualification_types::ListQualificationTypesError)
     pub fn list_qualification_types(&self) -> crate::operation::list_qualification_types::builders::ListQualificationTypesFluentBuilder {
         crate::operation::list_qualification_types::builders::ListQualificationTypesFluentBuilder::new(self.handle.clone())

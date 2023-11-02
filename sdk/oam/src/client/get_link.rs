@@ -9,9 +9,9 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::get_link::GetLinkOutput::id): <p>The random ID string that Amazon Web Services generated as part of the link ARN.</p>
     ///   - [`label(Option<String>)`](crate::operation::get_link::GetLinkOutput::label): <p>The label that you assigned to this link, with the variables resolved to their actual values.</p>
     ///   - [`label_template(Option<String>)`](crate::operation::get_link::GetLinkOutput::label_template): <p>The exact label template that was specified when the link was created, with the template variables not resolved.</p>
-    ///   - [`resource_types(Option<Vec<String>>)`](crate::operation::get_link::GetLinkOutput::resource_types): <p>The resource types supported by this link.</p>
+    ///   - [`resource_types(Option<Vec::<String>>)`](crate::operation::get_link::GetLinkOutput::resource_types): <p>The resource types supported by this link.</p>
     ///   - [`sink_arn(Option<String>)`](crate::operation::get_link::GetLinkOutput::sink_arn): <p>The ARN of the sink that is used for this link.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_link::GetLinkOutput::tags): <p>The tags assigned to the link.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_link::GetLinkOutput::tags): <p>The tags assigned to the link.</p>
     /// - On failure, responds with [`SdkError<GetLinkError>`](crate::operation::get_link::GetLinkError)
     pub fn get_link(&self) -> crate::operation::get_link::builders::GetLinkFluentBuilder {
         crate::operation::get_link::builders::GetLinkFluentBuilder::new(self.handle.clone())

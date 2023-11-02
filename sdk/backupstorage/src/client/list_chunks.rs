@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_chunks::builders::ListChunksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_chunks::builders::ListChunksFluentBuilder::set_max_results):<br>required: **false**<br>Maximum number of chunks<br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_chunks::builders::ListChunksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_chunks::builders::ListChunksFluentBuilder::set_next_token):<br>required: **false**<br>Pagination token<br>
     /// - On success, responds with [`ListChunksOutput`](crate::operation::list_chunks::ListChunksOutput) with field(s):
-    ///   - [`chunk_list(Vec<Chunk>)`](crate::operation::list_chunks::ListChunksOutput::chunk_list): List of chunks
+    ///   - [`chunk_list(Vec::<Chunk>)`](crate::operation::list_chunks::ListChunksOutput::chunk_list): List of chunks
     ///   - [`next_token(Option<String>)`](crate::operation::list_chunks::ListChunksOutput::next_token): Pagination token
     /// - On failure, responds with [`SdkError<ListChunksError>`](crate::operation::list_chunks::ListChunksError)
     pub fn list_chunks(&self) -> crate::operation::list_chunks::builders::ListChunksFluentBuilder {

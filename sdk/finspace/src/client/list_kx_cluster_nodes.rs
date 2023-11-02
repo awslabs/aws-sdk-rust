@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_kx_cluster_nodes::builders::ListKxClusterNodesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_kx_cluster_nodes::builders::ListKxClusterNodesFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates where a results page should begin.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_kx_cluster_nodes::builders::ListKxClusterNodesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_kx_cluster_nodes::builders::ListKxClusterNodesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in this request.</p><br>
     /// - On success, responds with [`ListKxClusterNodesOutput`](crate::operation::list_kx_cluster_nodes::ListKxClusterNodesOutput) with field(s):
-    ///   - [`nodes(Option<Vec<KxNode>>)`](crate::operation::list_kx_cluster_nodes::ListKxClusterNodesOutput::nodes): <p>A list of nodes associated with the cluster.</p>
+    ///   - [`nodes(Option<Vec::<KxNode>>)`](crate::operation::list_kx_cluster_nodes::ListKxClusterNodesOutput::nodes): <p>A list of nodes associated with the cluster.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_kx_cluster_nodes::ListKxClusterNodesOutput::next_token): <p>A token that indicates where a results page should begin.</p>
     /// - On failure, responds with [`SdkError<ListKxClusterNodesError>`](crate::operation::list_kx_cluster_nodes::ListKxClusterNodesError)
     pub fn list_kx_cluster_nodes(&self) -> crate::operation::list_kx_cluster_nodes::builders::ListKxClusterNodesFluentBuilder {

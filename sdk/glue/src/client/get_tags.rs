@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`resource_arn(impl Into<String>)`](crate::operation::get_tags::builders::GetTagsFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::get_tags::builders::GetTagsFluentBuilder::set_resource_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the resource for which to retrieve tags.</p><br>
     /// - On success, responds with [`GetTagsOutput`](crate::operation::get_tags::GetTagsOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_tags::GetTagsOutput::tags): <p>The requested tags.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_tags::GetTagsOutput::tags): <p>The requested tags.</p>
     /// - On failure, responds with [`SdkError<GetTagsError>`](crate::operation::get_tags::GetTagsError)
     pub fn get_tags(&self) -> crate::operation::get_tags::builders::GetTagsFluentBuilder {
         crate::operation::get_tags::builders::GetTagsFluentBuilder::new(self.handle.clone())

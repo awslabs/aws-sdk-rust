@@ -6,8 +6,8 @@ impl super::Client {
     ///   - [`app_id(impl Into<String>)`](crate::operation::get_app::builders::GetAppFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::get_app::builders::GetAppFluentBuilder::set_app_id):<br>required: **false**<br><p>The ID of the application.</p><br>
     /// - On success, responds with [`GetAppOutput`](crate::operation::get_app::GetAppOutput) with field(s):
     ///   - [`app_summary(Option<AppSummary>)`](crate::operation::get_app::GetAppOutput::app_summary): <p>Information about the application.</p>
-    ///   - [`server_groups(Option<Vec<ServerGroup>>)`](crate::operation::get_app::GetAppOutput::server_groups): <p>The server groups that belong to the application.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::get_app::GetAppOutput::tags): <p>The tags associated with the application.</p>
+    ///   - [`server_groups(Option<Vec::<ServerGroup>>)`](crate::operation::get_app::GetAppOutput::server_groups): <p>The server groups that belong to the application.</p>
+    ///   - [`tags(Option<Vec::<Tag>>)`](crate::operation::get_app::GetAppOutput::tags): <p>The tags associated with the application.</p>
     /// - On failure, responds with [`SdkError<GetAppError>`](crate::operation::get_app::GetAppError)
     pub fn get_app(&self) -> crate::operation::get_app::builders::GetAppFluentBuilder {
         crate::operation::get_app::builders::GetAppFluentBuilder::new(self.handle.clone())

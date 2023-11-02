@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_launch_actions::builders::ListLaunchActionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_launch_actions::builders::ListLaunchActionsFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum amount of items to return when listing resource launch actions.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_launch_actions::builders::ListLaunchActionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_launch_actions::builders::ListLaunchActionsFluentBuilder::set_next_token):<br>required: **false**<br><p>Next token to use when listing resource launch actions.</p><br>
     /// - On success, responds with [`ListLaunchActionsOutput`](crate::operation::list_launch_actions::ListLaunchActionsOutput) with field(s):
-    ///   - [`items(Option<Vec<LaunchAction>>)`](crate::operation::list_launch_actions::ListLaunchActionsOutput::items): <p>List of resource launch actions.</p>
+    ///   - [`items(Option<Vec::<LaunchAction>>)`](crate::operation::list_launch_actions::ListLaunchActionsOutput::items): <p>List of resource launch actions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_launch_actions::ListLaunchActionsOutput::next_token): <p>Next token returned when listing resource launch actions.</p>
     /// - On failure, responds with [`SdkError<ListLaunchActionsError>`](crate::operation::list_launch_actions::ListLaunchActionsError)
     pub fn list_launch_actions(&self) -> crate::operation::list_launch_actions::builders::ListLaunchActionsFluentBuilder {

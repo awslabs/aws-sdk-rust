@@ -81,7 +81,7 @@ pub fn de_get_object_attributes_parts(
             s if s.matches("Part") /* Parts com.amazonaws.s3#GetObjectAttributesParts$Parts */ =>  {
                 let var_6 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::ObjectPart>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::ObjectPart>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_7 = builder.parts.take().unwrap_or_default();
                             list_7.push(
                                 crate::protocol_serde::shape_object_part::de_object_part(&mut tag)

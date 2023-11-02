@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_peerings::builders::ListPeeringsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_peerings::builders::ListPeeringsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_peerings::builders::ListPeeringsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_peerings::builders::ListPeeringsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
     /// - On success, responds with [`ListPeeringsOutput`](crate::operation::list_peerings::ListPeeringsOutput) with field(s):
-    ///   - [`peerings(Option<Vec<Peering>>)`](crate::operation::list_peerings::ListPeeringsOutput::peerings): <p>Lists the transit gateway peerings for the <code>ListPeerings</code> request.</p>
+    ///   - [`peerings(Option<Vec::<Peering>>)`](crate::operation::list_peerings::ListPeeringsOutput::peerings): <p>Lists the transit gateway peerings for the <code>ListPeerings</code> request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_peerings::ListPeeringsOutput::next_token): <p>The token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListPeeringsError>`](crate::operation::list_peerings::ListPeeringsError)
     pub fn list_peerings(&self) -> crate::operation::list_peerings::builders::ListPeeringsFluentBuilder {

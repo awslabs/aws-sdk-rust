@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`start_time(DateTime)`](crate::operation::sample_channel_data::builders::SampleChannelDataFluentBuilder::start_time) / [`set_start_time(Option<DateTime>)`](crate::operation::sample_channel_data::builders::SampleChannelDataFluentBuilder::set_start_time):<br>required: **false**<br><p>The start of the time window from which sample messages are retrieved.</p><br>
     ///   - [`end_time(DateTime)`](crate::operation::sample_channel_data::builders::SampleChannelDataFluentBuilder::end_time) / [`set_end_time(Option<DateTime>)`](crate::operation::sample_channel_data::builders::SampleChannelDataFluentBuilder::set_end_time):<br>required: **false**<br><p>The end of the time window from which sample messages are retrieved.</p><br>
     /// - On success, responds with [`SampleChannelDataOutput`](crate::operation::sample_channel_data::SampleChannelDataOutput) with field(s):
-    ///   - [`payloads(Option<Vec<Blob>>)`](crate::operation::sample_channel_data::SampleChannelDataOutput::payloads): <p>The list of message samples. Each sample message is returned as a base64-encoded string.</p>
+    ///   - [`payloads(Option<Vec::<Blob>>)`](crate::operation::sample_channel_data::SampleChannelDataOutput::payloads): <p>The list of message samples. Each sample message is returned as a base64-encoded string.</p>
     /// - On failure, responds with [`SdkError<SampleChannelDataError>`](crate::operation::sample_channel_data::SampleChannelDataError)
     pub fn sample_channel_data(&self) -> crate::operation::sample_channel_data::builders::SampleChannelDataFluentBuilder {
         crate::operation::sample_channel_data::builders::SampleChannelDataFluentBuilder::new(self.handle.clone())

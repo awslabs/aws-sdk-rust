@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`filter(ReadSetUploadPartListFilter)`](crate::operation::list_read_set_upload_parts::builders::ListReadSetUploadPartsFluentBuilder::filter) / [`set_filter(Option<ReadSetUploadPartListFilter>)`](crate::operation::list_read_set_upload_parts::builders::ListReadSetUploadPartsFluentBuilder::set_filter):<br>required: **false**<br><p> Attributes used to filter for a specific subset of read set part uploads. </p><br>
     /// - On success, responds with [`ListReadSetUploadPartsOutput`](crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsOutput::next_token): <p> Next token returned in the response of a previous ListReadSetUploadParts call. Used to get the next page of results. </p>
-    ///   - [`parts(Option<Vec<ReadSetUploadPartListItem>>)`](crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsOutput::parts): <p> An array of upload parts. </p>
+    ///   - [`parts(Option<Vec::<ReadSetUploadPartListItem>>)`](crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsOutput::parts): <p> An array of upload parts. </p>
     /// - On failure, responds with [`SdkError<ListReadSetUploadPartsError>`](crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsError)
     pub fn list_read_set_upload_parts(&self) -> crate::operation::list_read_set_upload_parts::builders::ListReadSetUploadPartsFluentBuilder {
         crate::operation::list_read_set_upload_parts::builders::ListReadSetUploadPartsFluentBuilder::new(self.handle.clone())

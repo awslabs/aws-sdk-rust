@@ -10,7 +10,7 @@ impl super::Client {
     /// - On success, responds with [`GetServerDetailsOutput`](crate::operation::get_server_details::GetServerDetailsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::get_server_details::GetServerDetailsOutput::next_token): <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
     ///   - [`server_detail(Option<ServerDetail>)`](crate::operation::get_server_details::GetServerDetailsOutput::server_detail): <p> Detailed information about the server. </p>
-    ///   - [`associated_applications(Option<Vec<AssociatedApplication>>)`](crate::operation::get_server_details::GetServerDetailsOutput::associated_applications): <p> The associated application group the server belongs to, as defined in AWS Application Discovery Service. </p>
+    ///   - [`associated_applications(Option<Vec::<AssociatedApplication>>)`](crate::operation::get_server_details::GetServerDetailsOutput::associated_applications): <p> The associated application group the server belongs to, as defined in AWS Application Discovery Service. </p>
     /// - On failure, responds with [`SdkError<GetServerDetailsError>`](crate::operation::get_server_details::GetServerDetailsError)
     pub fn get_server_details(&self) -> crate::operation::get_server_details::builders::GetServerDetailsFluentBuilder {
         crate::operation::get_server_details::builders::GetServerDetailsFluentBuilder::new(self.handle.clone())

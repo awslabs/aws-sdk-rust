@@ -3,12 +3,12 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateProgram`](crate::operation::update_program::builders::UpdateProgramFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`ad_breaks(AdBreak)`](crate::operation::update_program::builders::UpdateProgramFluentBuilder::ad_breaks) / [`set_ad_breaks(Option<Vec<AdBreak>>)`](crate::operation::update_program::builders::UpdateProgramFluentBuilder::set_ad_breaks):<br>required: **false**<br><p>The ad break configuration settings.</p><br>
+    ///   - [`ad_breaks(AdBreak)`](crate::operation::update_program::builders::UpdateProgramFluentBuilder::ad_breaks) / [`set_ad_breaks(Option<Vec::<AdBreak>>)`](crate::operation::update_program::builders::UpdateProgramFluentBuilder::set_ad_breaks):<br>required: **false**<br><p>The ad break configuration settings.</p><br>
     ///   - [`channel_name(impl Into<String>)`](crate::operation::update_program::builders::UpdateProgramFluentBuilder::channel_name) / [`set_channel_name(Option<String>)`](crate::operation::update_program::builders::UpdateProgramFluentBuilder::set_channel_name):<br>required: **true**<br><p>The name of the channel for this Program.</p><br>
     ///   - [`program_name(impl Into<String>)`](crate::operation::update_program::builders::UpdateProgramFluentBuilder::program_name) / [`set_program_name(Option<String>)`](crate::operation::update_program::builders::UpdateProgramFluentBuilder::set_program_name):<br>required: **true**<br><p>The name of the Program.</p><br>
     ///   - [`schedule_configuration(UpdateProgramScheduleConfiguration)`](crate::operation::update_program::builders::UpdateProgramFluentBuilder::schedule_configuration) / [`set_schedule_configuration(Option<UpdateProgramScheduleConfiguration>)`](crate::operation::update_program::builders::UpdateProgramFluentBuilder::set_schedule_configuration):<br>required: **true**<br><p>The schedule configuration settings.</p><br>
     /// - On success, responds with [`UpdateProgramOutput`](crate::operation::update_program::UpdateProgramOutput) with field(s):
-    ///   - [`ad_breaks(Option<Vec<AdBreak>>)`](crate::operation::update_program::UpdateProgramOutput::ad_breaks): <p>The ad break configuration settings.</p>
+    ///   - [`ad_breaks(Option<Vec::<AdBreak>>)`](crate::operation::update_program::UpdateProgramOutput::ad_breaks): <p>The ad break configuration settings.</p>
     ///   - [`arn(Option<String>)`](crate::operation::update_program::UpdateProgramOutput::arn): <p>The ARN to assign to the program.</p>
     ///   - [`channel_name(Option<String>)`](crate::operation::update_program::UpdateProgramOutput::channel_name): <p>The name to assign to the channel for this program.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::update_program::UpdateProgramOutput::creation_time): <p>The time the program was created.</p>

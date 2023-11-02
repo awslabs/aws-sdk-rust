@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeNetworkInterfaceAttributeOutput`](crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeOutput) with field(s):
     ///   - [`attachment(Option<NetworkInterfaceAttachment>)`](crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeOutput::attachment): <p>The attachment (if any) of the network interface.</p>
     ///   - [`description(Option<AttributeValue>)`](crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeOutput::description): <p>The description of the network interface.</p>
-    ///   - [`groups(Option<Vec<GroupIdentifier>>)`](crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeOutput::groups): <p>The security groups associated with the network interface.</p>
+    ///   - [`groups(Option<Vec::<GroupIdentifier>>)`](crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeOutput::groups): <p>The security groups associated with the network interface.</p>
     ///   - [`network_interface_id(Option<String>)`](crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeOutput::network_interface_id): <p>The ID of the network interface.</p>
     ///   - [`source_dest_check(Option<AttributeBooleanValue>)`](crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeOutput::source_dest_check): <p>Indicates whether source/destination checking is enabled.</p>
     /// - On failure, responds with [`SdkError<DescribeNetworkInterfaceAttributeError>`](crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeError)

@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`profile_id(impl Into<String>)`](crate::operation::update_profile::builders::UpdateProfileFluentBuilder::profile_id) / [`set_profile_id(Option<String>)`](crate::operation::update_profile::builders::UpdateProfileFluentBuilder::set_profile_id):<br>required: **true**<br><p>The identifier of the profile object that you are updating.</p><br>
-    ///   - [`certificate_ids(impl Into<String>)`](crate::operation::update_profile::builders::UpdateProfileFluentBuilder::certificate_ids) / [`set_certificate_ids(Option<Vec<String>>)`](crate::operation::update_profile::builders::UpdateProfileFluentBuilder::set_certificate_ids):<br>required: **false**<br><p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p><br>
+    ///   - [`certificate_ids(impl Into<String>)`](crate::operation::update_profile::builders::UpdateProfileFluentBuilder::certificate_ids) / [`set_certificate_ids(Option<Vec::<String>>)`](crate::operation::update_profile::builders::UpdateProfileFluentBuilder::set_certificate_ids):<br>required: **false**<br><p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p><br>
     /// - On success, responds with [`UpdateProfileOutput`](crate::operation::update_profile::UpdateProfileOutput) with field(s):
     ///   - [`profile_id(String)`](crate::operation::update_profile::UpdateProfileOutput::profile_id): <p>Returns the identifier for the profile that's being updated.</p>
     /// - On failure, responds with [`SdkError<UpdateProfileError>`](crate::operation::update_profile::UpdateProfileError)

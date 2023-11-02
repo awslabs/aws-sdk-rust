@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::get_link_associations::builders::GetLinkAssociationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_link_associations::builders::GetLinkAssociationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_link_associations::builders::GetLinkAssociationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_link_associations::builders::GetLinkAssociationsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
     /// - On success, responds with [`GetLinkAssociationsOutput`](crate::operation::get_link_associations::GetLinkAssociationsOutput) with field(s):
-    ///   - [`link_associations(Option<Vec<LinkAssociation>>)`](crate::operation::get_link_associations::GetLinkAssociationsOutput::link_associations): <p>The link associations.</p>
+    ///   - [`link_associations(Option<Vec::<LinkAssociation>>)`](crate::operation::get_link_associations::GetLinkAssociationsOutput::link_associations): <p>The link associations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_link_associations::GetLinkAssociationsOutput::next_token): <p>The token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<GetLinkAssociationsError>`](crate::operation::get_link_associations::GetLinkAssociationsError)
     pub fn get_link_associations(&self) -> crate::operation::get_link_associations::builders::GetLinkAssociationsFluentBuilder {

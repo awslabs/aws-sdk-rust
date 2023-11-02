@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_group_members::builders::ListGroupMembersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_group_members::builders::ListGroupMembersFluentBuilder::set_next_token):<br>required: **false**<br><p> The token to use to retrieve the next page of results. The first call does not contain any tokens.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_group_members::builders::ListGroupMembersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_group_members::builders::ListGroupMembersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call.</p><br>
     /// - On success, responds with [`ListGroupMembersOutput`](crate::operation::list_group_members::ListGroupMembersOutput) with field(s):
-    ///   - [`members(Option<Vec<Member>>)`](crate::operation::list_group_members::ListGroupMembersOutput::members): <p>The members associated to the group.</p>
+    ///   - [`members(Option<Vec::<Member>>)`](crate::operation::list_group_members::ListGroupMembersOutput::members): <p>The members associated to the group.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_group_members::ListGroupMembersOutput::next_token): <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     /// - On failure, responds with [`SdkError<ListGroupMembersError>`](crate::operation::list_group_members::ListGroupMembersError)
     pub fn list_group_members(&self) -> crate::operation::list_group_members::builders::ListGroupMembersFluentBuilder {

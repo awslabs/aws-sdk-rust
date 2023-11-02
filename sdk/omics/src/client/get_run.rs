@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`id(impl Into<String>)`](crate::operation::get_run::builders::GetRunFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_run::builders::GetRunFluentBuilder::set_id):<br>required: **true**<br><p>The run's ID.</p><br>
-    ///   - [`export(RunExport)`](crate::operation::get_run::builders::GetRunFluentBuilder::export) / [`set_export(Option<Vec<RunExport>>)`](crate::operation::get_run::builders::GetRunFluentBuilder::set_export):<br>required: **false**<br><p>The run's export format.</p><br>
+    ///   - [`export(RunExport)`](crate::operation::get_run::builders::GetRunFluentBuilder::export) / [`set_export(Option<Vec::<RunExport>>)`](crate::operation::get_run::builders::GetRunFluentBuilder::set_export):<br>required: **false**<br><p>The run's export format.</p><br>
     /// - On success, responds with [`GetRunOutput`](crate::operation::get_run::GetRunOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_run::GetRunOutput::arn): <p>The run's ARN.</p>
     ///   - [`id(Option<String>)`](crate::operation::get_run::GetRunOutput::id): <p>The run's ID.</p>
@@ -22,13 +22,13 @@ impl super::Client {
     ///   - [`storage_capacity(Option<i32>)`](crate::operation::get_run::GetRunOutput::storage_capacity): <p>The run's storage capacity in gigabytes.</p>
     ///   - [`output_uri(Option<String>)`](crate::operation::get_run::GetRunOutput::output_uri): <p>The run's output URI.</p>
     ///   - [`log_level(Option<RunLogLevel>)`](crate::operation::get_run::GetRunOutput::log_level): <p>The run's log level.</p>
-    ///   - [`resource_digests(Option<HashMap<String, String>>)`](crate::operation::get_run::GetRunOutput::resource_digests): <p>The run's resource digests.</p>
+    ///   - [`resource_digests(Option<HashMap::<String, String>>)`](crate::operation::get_run::GetRunOutput::resource_digests): <p>The run's resource digests.</p>
     ///   - [`started_by(Option<String>)`](crate::operation::get_run::GetRunOutput::started_by): <p>Who started the run.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_run::GetRunOutput::creation_time): <p>When the run was created.</p>
     ///   - [`start_time(Option<DateTime>)`](crate::operation::get_run::GetRunOutput::start_time): <p>When the run started.</p>
     ///   - [`stop_time(Option<DateTime>)`](crate::operation::get_run::GetRunOutput::stop_time): <p>The run's stop time.</p>
     ///   - [`status_message(Option<String>)`](crate::operation::get_run::GetRunOutput::status_message): <p>The run's status message.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_run::GetRunOutput::tags): <p>The run's tags.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_run::GetRunOutput::tags): <p>The run's tags.</p>
     ///   - [`accelerators(Option<Accelerators>)`](crate::operation::get_run::GetRunOutput::accelerators): <p> The computational accelerator used to run the workflow. </p>
     ///   - [`retention_mode(Option<RunRetentionMode>)`](crate::operation::get_run::GetRunOutput::retention_mode): <p>The run's retention mode.</p>
     ///   - [`failure_reason(Option<String>)`](crate::operation::get_run::GetRunOutput::failure_reason): <p> The reason a run has failed. </p>

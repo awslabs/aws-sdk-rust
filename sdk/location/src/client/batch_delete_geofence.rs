@@ -4,9 +4,9 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`collection_name(impl Into<String>)`](crate::operation::batch_delete_geofence::builders::BatchDeleteGeofenceFluentBuilder::collection_name) / [`set_collection_name(Option<String>)`](crate::operation::batch_delete_geofence::builders::BatchDeleteGeofenceFluentBuilder::set_collection_name):<br>required: **true**<br><p>The geofence collection storing the geofences to be deleted.</p><br>
-    ///   - [`geofence_ids(impl Into<String>)`](crate::operation::batch_delete_geofence::builders::BatchDeleteGeofenceFluentBuilder::geofence_ids) / [`set_geofence_ids(Option<Vec<String>>)`](crate::operation::batch_delete_geofence::builders::BatchDeleteGeofenceFluentBuilder::set_geofence_ids):<br>required: **true**<br><p>The batch of geofences to be deleted.</p><br>
+    ///   - [`geofence_ids(impl Into<String>)`](crate::operation::batch_delete_geofence::builders::BatchDeleteGeofenceFluentBuilder::geofence_ids) / [`set_geofence_ids(Option<Vec::<String>>)`](crate::operation::batch_delete_geofence::builders::BatchDeleteGeofenceFluentBuilder::set_geofence_ids):<br>required: **true**<br><p>The batch of geofences to be deleted.</p><br>
     /// - On success, responds with [`BatchDeleteGeofenceOutput`](crate::operation::batch_delete_geofence::BatchDeleteGeofenceOutput) with field(s):
-    ///   - [`errors(Vec<BatchDeleteGeofenceError>)`](crate::operation::batch_delete_geofence::BatchDeleteGeofenceOutput::errors): <p>Contains error details for each geofence that failed to delete.</p>
+    ///   - [`errors(Vec::<BatchDeleteGeofenceError>)`](crate::operation::batch_delete_geofence::BatchDeleteGeofenceOutput::errors): <p>Contains error details for each geofence that failed to delete.</p>
     /// - On failure, responds with [`SdkError<BatchDeleteGeofenceError>`](crate::operation::batch_delete_geofence::BatchDeleteGeofenceError)
     pub fn batch_delete_geofence(&self) -> crate::operation::batch_delete_geofence::builders::BatchDeleteGeofenceFluentBuilder {
         crate::operation::batch_delete_geofence::builders::BatchDeleteGeofenceFluentBuilder::new(self.handle.clone())

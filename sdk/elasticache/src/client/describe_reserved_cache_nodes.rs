@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`marker(impl Into<String>)`](crate::operation::describe_reserved_cache_nodes::builders::DescribeReservedCacheNodesFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_reserved_cache_nodes::builders::DescribeReservedCacheNodesFluentBuilder::set_marker):<br>required: **false**<br><p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p><br>
     /// - On success, responds with [`DescribeReservedCacheNodesOutput`](crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesOutput) with field(s):
     ///   - [`marker(Option<String>)`](crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesOutput::marker): <p>Provides an identifier to allow retrieval of paginated results.</p>
-    ///   - [`reserved_cache_nodes(Option<Vec<ReservedCacheNode>>)`](crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesOutput::reserved_cache_nodes): <p>A list of reserved cache nodes. Each element in the list contains detailed information about one node.</p>
+    ///   - [`reserved_cache_nodes(Option<Vec::<ReservedCacheNode>>)`](crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesOutput::reserved_cache_nodes): <p>A list of reserved cache nodes. Each element in the list contains detailed information about one node.</p>
     /// - On failure, responds with [`SdkError<DescribeReservedCacheNodesError>`](crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesError)
     pub fn describe_reserved_cache_nodes(
         &self,

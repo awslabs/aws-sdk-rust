@@ -15,8 +15,8 @@ impl super::Client {
     ///   - [`created_at(DateTime)`](crate::operation::update_subscription_request::UpdateSubscriptionRequestOutput::created_at): <p>The timestamp of when the subscription request was created.</p>
     ///   - [`updated_at(DateTime)`](crate::operation::update_subscription_request::UpdateSubscriptionRequestOutput::updated_at): <p>The timestamp of when the subscription request was updated.</p>
     ///   - [`request_reason(String)`](crate::operation::update_subscription_request::UpdateSubscriptionRequestOutput::request_reason): <p>The reason for the <code>UpdateSubscriptionRequest</code> action.</p>
-    ///   - [`subscribed_principals(Vec<SubscribedPrincipal>)`](crate::operation::update_subscription_request::UpdateSubscriptionRequestOutput::subscribed_principals): <p>The subscribed principals of the subscription request.</p>
-    ///   - [`subscribed_listings(Vec<SubscribedListing>)`](crate::operation::update_subscription_request::UpdateSubscriptionRequestOutput::subscribed_listings): <p>The subscribed listings of the subscription request.</p>
+    ///   - [`subscribed_principals(Vec::<SubscribedPrincipal>)`](crate::operation::update_subscription_request::UpdateSubscriptionRequestOutput::subscribed_principals): <p>The subscribed principals of the subscription request.</p>
+    ///   - [`subscribed_listings(Vec::<SubscribedListing>)`](crate::operation::update_subscription_request::UpdateSubscriptionRequestOutput::subscribed_listings): <p>The subscribed listings of the subscription request.</p>
     ///   - [`reviewer_id(Option<String>)`](crate::operation::update_subscription_request::UpdateSubscriptionRequestOutput::reviewer_id): <p>The identifier of the Amazon DataZone user who reviews the subscription request.</p>
     ///   - [`decision_comment(Option<String>)`](crate::operation::update_subscription_request::UpdateSubscriptionRequestOutput::decision_comment): <p>The decision comment of the <code>UpdateSubscriptionRequest</code> action.</p>
     /// - On failure, responds with [`SdkError<UpdateSubscriptionRequestError>`](crate::operation::update_subscription_request::UpdateSubscriptionRequestError)

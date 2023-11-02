@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`pipeline_id(impl Into<String>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::pipeline_id) / [`set_pipeline_id(Option<String>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::set_pipeline_id):<br>required: **true**<br><p>The ID of the pipeline.</p><br>
-    ///   - [`tags(Tag)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::set_tags):<br>required: **true**<br><p>The tags to add, as key/value pairs.</p><br>
+    ///   - [`tags(Tag)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::tags) / [`set_tags(Option<Vec::<Tag>>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::set_tags):<br>required: **true**<br><p>The tags to add, as key/value pairs.</p><br>
     /// - On success, responds with [`AddTagsOutput`](crate::operation::add_tags::AddTagsOutput)
     /// - On failure, responds with [`SdkError<AddTagsError>`](crate::operation::add_tags::AddTagsError)
     pub fn add_tags(&self) -> crate::operation::add_tags::builders::AddTagsFluentBuilder {

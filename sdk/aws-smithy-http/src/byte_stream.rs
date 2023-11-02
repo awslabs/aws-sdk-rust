@@ -22,3 +22,13 @@ pub mod error {
     #[deprecated(note = "Moved to `aws_smithy_types::byte_stream::error::Error`.")]
     pub type Error = aws_smithy_types::byte_stream::error::Error;
 }
+
+/// Builder for creating [`ByteStreams`](aws_smithy_types::byte_stream::ByteStream) from a file/path, with full control over advanced options.
+#[cfg(feature = "rt-tokio")]
+#[deprecated(note = "Moved to `aws_smithy_types::byte_stream::FsBuilder`.")]
+pub type FsBuilder = aws_smithy_types::byte_stream::FsBuilder;
+
+/// The length (in bytes) to read. Determines whether or not a short read counts as an error.
+#[cfg(feature = "rt-tokio")]
+#[deprecated(note = "Moved to `aws_smithy_types::byte_stream::Length`.")]
+pub type Length = aws_smithy_types::byte_stream::Length;

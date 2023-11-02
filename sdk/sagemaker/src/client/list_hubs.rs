@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_hubs::builders::ListHubsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_hubs::builders::ListHubsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of hubs to list.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_hubs::builders::ListHubsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_hubs::builders::ListHubsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the response to a previous <code>ListHubs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of hubs, use the token in the next request.</p><br>
     /// - On success, responds with [`ListHubsOutput`](crate::operation::list_hubs::ListHubsOutput) with field(s):
-    ///   - [`hub_summaries(Option<Vec<HubInfo>>)`](crate::operation::list_hubs::ListHubsOutput::hub_summaries): <p>The summaries of the listed hubs.</p>
+    ///   - [`hub_summaries(Option<Vec::<HubInfo>>)`](crate::operation::list_hubs::ListHubsOutput::hub_summaries): <p>The summaries of the listed hubs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_hubs::ListHubsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of hubs, use it in the subsequent request.</p>
     /// - On failure, responds with [`SdkError<ListHubsError>`](crate::operation::list_hubs::ListHubsError)
     pub fn list_hubs(&self) -> crate::operation::list_hubs::builders::ListHubsFluentBuilder {

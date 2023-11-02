@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::describe_configuration::DescribeConfigurationOutput::arn): <p>The Amazon Resource Name (ARN) of the configuration.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_configuration::DescribeConfigurationOutput::creation_time): <p>The time when the configuration was created.</p>
     ///   - [`description(Option<String>)`](crate::operation::describe_configuration::DescribeConfigurationOutput::description): <p>The description of the configuration.</p>
-    ///   - [`kafka_versions(Option<Vec<String>>)`](crate::operation::describe_configuration::DescribeConfigurationOutput::kafka_versions): <p>The versions of Apache Kafka with which you can use this MSK configuration.</p>
+    ///   - [`kafka_versions(Option<Vec::<String>>)`](crate::operation::describe_configuration::DescribeConfigurationOutput::kafka_versions): <p>The versions of Apache Kafka with which you can use this MSK configuration.</p>
     ///   - [`latest_revision(Option<ConfigurationRevision>)`](crate::operation::describe_configuration::DescribeConfigurationOutput::latest_revision): <p>Latest revision of the configuration.</p>
     ///   - [`name(Option<String>)`](crate::operation::describe_configuration::DescribeConfigurationOutput::name): <p>The name of the configuration.</p>
     ///   - [`state(Option<ConfigurationState>)`](crate::operation::describe_configuration::DescribeConfigurationOutput::state): <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>

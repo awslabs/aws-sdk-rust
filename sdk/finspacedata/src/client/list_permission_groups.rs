@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_permission_groups::builders::ListPermissionGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_permission_groups::builders::ListPermissionGroupsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates where a results page should begin.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_permission_groups::builders::ListPermissionGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_permission_groups::builders::ListPermissionGroupsFluentBuilder::set_max_results):<br>required: **true**<br><p>The maximum number of results per page.</p><br>
     /// - On success, responds with [`ListPermissionGroupsOutput`](crate::operation::list_permission_groups::ListPermissionGroupsOutput) with field(s):
-    ///   - [`permission_groups(Option<Vec<PermissionGroup>>)`](crate::operation::list_permission_groups::ListPermissionGroupsOutput::permission_groups): <p>A list of all the permission groups.</p>
+    ///   - [`permission_groups(Option<Vec::<PermissionGroup>>)`](crate::operation::list_permission_groups::ListPermissionGroupsOutput::permission_groups): <p>A list of all the permission groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_permission_groups::ListPermissionGroupsOutput::next_token): <p>A token that indicates where a results page should begin.</p>
     /// - On failure, responds with [`SdkError<ListPermissionGroupsError>`](crate::operation::list_permission_groups::ListPermissionGroupsError)
     pub fn list_permission_groups(&self) -> crate::operation::list_permission_groups::builders::ListPermissionGroupsFluentBuilder {

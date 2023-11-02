@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`show_shard_details(bool)`](crate::operation::describe_clusters::builders::DescribeClustersFluentBuilder::show_shard_details) / [`set_show_shard_details(Option<bool>)`](crate::operation::describe_clusters::builders::DescribeClustersFluentBuilder::set_show_shard_details):<br>required: **false**<br><p>An optional flag that can be included in the request to retrieve information about the individual shard(s).</p><br>
     /// - On success, responds with [`DescribeClustersOutput`](crate::operation::describe_clusters::DescribeClustersOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::describe_clusters::DescribeClustersOutput::next_token): <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-    ///   - [`clusters(Option<Vec<Cluster>>)`](crate::operation::describe_clusters::DescribeClustersOutput::clusters): <p>A list of clusters</p>
+    ///   - [`clusters(Option<Vec::<Cluster>>)`](crate::operation::describe_clusters::DescribeClustersOutput::clusters): <p>A list of clusters</p>
     /// - On failure, responds with [`SdkError<DescribeClustersError>`](crate::operation::describe_clusters::DescribeClustersError)
     pub fn describe_clusters(&self) -> crate::operation::describe_clusters::builders::DescribeClustersFluentBuilder {
         crate::operation::describe_clusters::builders::DescribeClustersFluentBuilder::new(self.handle.clone())

@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`latest_version(Option<String>)`](crate::operation::get_resource_definition::GetResourceDefinitionOutput::latest_version): The ID of the latest version associated with the definition.
     ///   - [`latest_version_arn(Option<String>)`](crate::operation::get_resource_definition::GetResourceDefinitionOutput::latest_version_arn): The ARN of the latest version associated with the definition.
     ///   - [`name(Option<String>)`](crate::operation::get_resource_definition::GetResourceDefinitionOutput::name): The name of the definition.
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_resource_definition::GetResourceDefinitionOutput::tags): Tag(s) attached to the resource arn.
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_resource_definition::GetResourceDefinitionOutput::tags): Tag(s) attached to the resource arn.
     /// - On failure, responds with [`SdkError<GetResourceDefinitionError>`](crate::operation::get_resource_definition::GetResourceDefinitionError)
     pub fn get_resource_definition(&self) -> crate::operation::get_resource_definition::builders::GetResourceDefinitionFluentBuilder {
         crate::operation::get_resource_definition::builders::GetResourceDefinitionFluentBuilder::new(self.handle.clone())

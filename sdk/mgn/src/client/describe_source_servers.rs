@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_source_servers::builders::DescribeSourceServersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_source_servers::builders::DescribeSourceServersFluentBuilder::set_next_token):<br>required: **false**<br><p>Request to filter Source Servers list by next token.</p><br>
     ///   - [`account_id(impl Into<String>)`](crate::operation::describe_source_servers::builders::DescribeSourceServersFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::describe_source_servers::builders::DescribeSourceServersFluentBuilder::set_account_id):<br>required: **false**<br><p>Request to filter Source Servers list by Accoun ID.</p><br>
     /// - On success, responds with [`DescribeSourceServersOutput`](crate::operation::describe_source_servers::DescribeSourceServersOutput) with field(s):
-    ///   - [`items(Option<Vec<SourceServer>>)`](crate::operation::describe_source_servers::DescribeSourceServersOutput::items): <p>Request to filter Source Servers list by item.</p>
+    ///   - [`items(Option<Vec::<SourceServer>>)`](crate::operation::describe_source_servers::DescribeSourceServersOutput::items): <p>Request to filter Source Servers list by item.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_source_servers::DescribeSourceServersOutput::next_token): <p>Request to filter Source Servers next token.</p>
     /// - On failure, responds with [`SdkError<DescribeSourceServersError>`](crate::operation::describe_source_servers::DescribeSourceServersError)
     pub fn describe_source_servers(&self) -> crate::operation::describe_source_servers::builders::DescribeSourceServersFluentBuilder {

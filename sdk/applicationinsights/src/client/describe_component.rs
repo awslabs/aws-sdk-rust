@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`account_id(impl Into<String>)`](crate::operation::describe_component::builders::DescribeComponentFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::describe_component::builders::DescribeComponentFluentBuilder::set_account_id):<br>required: **false**<br><p>The AWS account ID for the resource group owner.</p><br>
     /// - On success, responds with [`DescribeComponentOutput`](crate::operation::describe_component::DescribeComponentOutput) with field(s):
     ///   - [`application_component(Option<ApplicationComponent>)`](crate::operation::describe_component::DescribeComponentOutput::application_component): <p>Describes a standalone resource or similarly grouped resources that the application is made up of.</p>
-    ///   - [`resource_list(Option<Vec<String>>)`](crate::operation::describe_component::DescribeComponentOutput::resource_list): <p>The list of resource ARNs that belong to the component.</p>
+    ///   - [`resource_list(Option<Vec::<String>>)`](crate::operation::describe_component::DescribeComponentOutput::resource_list): <p>The list of resource ARNs that belong to the component.</p>
     /// - On failure, responds with [`SdkError<DescribeComponentError>`](crate::operation::describe_component::DescribeComponentError)
     pub fn describe_component(&self) -> crate::operation::describe_component::builders::DescribeComponentFluentBuilder {
         crate::operation::describe_component::builders::DescribeComponentFluentBuilder::new(self.handle.clone())

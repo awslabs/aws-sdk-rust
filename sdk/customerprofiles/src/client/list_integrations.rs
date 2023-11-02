@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_integrations::builders::ListIntegrationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_integrations::builders::ListIntegrationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of objects returned per page.</p><br>
     ///   - [`include_hidden(bool)`](crate::operation::list_integrations::builders::ListIntegrationsFluentBuilder::include_hidden) / [`set_include_hidden(Option<bool>)`](crate::operation::list_integrations::builders::ListIntegrationsFluentBuilder::set_include_hidden):<br>required: **false**<br><p>Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.</p><br>
     /// - On success, responds with [`ListIntegrationsOutput`](crate::operation::list_integrations::ListIntegrationsOutput) with field(s):
-    ///   - [`items(Option<Vec<ListIntegrationItem>>)`](crate::operation::list_integrations::ListIntegrationsOutput::items): <p>The list of ListIntegrations instances.</p>
+    ///   - [`items(Option<Vec::<ListIntegrationItem>>)`](crate::operation::list_integrations::ListIntegrationsOutput::items): <p>The list of ListIntegrations instances.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_integrations::ListIntegrationsOutput::next_token): <p>The pagination token from the previous ListIntegrations API call.</p>
     /// - On failure, responds with [`SdkError<ListIntegrationsError>`](crate::operation::list_integrations::ListIntegrationsError)
     pub fn list_integrations(&self) -> crate::operation::list_integrations::builders::ListIntegrationsFluentBuilder {

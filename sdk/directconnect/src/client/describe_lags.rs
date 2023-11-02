@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`lag_id(impl Into<String>)`](crate::operation::describe_lags::builders::DescribeLagsFluentBuilder::lag_id) / [`set_lag_id(Option<String>)`](crate::operation::describe_lags::builders::DescribeLagsFluentBuilder::set_lag_id):<br>required: **false**<br><p>The ID of the LAG.</p><br>
     /// - On success, responds with [`DescribeLagsOutput`](crate::operation::describe_lags::DescribeLagsOutput) with field(s):
-    ///   - [`lags(Option<Vec<Lag>>)`](crate::operation::describe_lags::DescribeLagsOutput::lags): <p>The LAGs.</p>
+    ///   - [`lags(Option<Vec::<Lag>>)`](crate::operation::describe_lags::DescribeLagsOutput::lags): <p>The LAGs.</p>
     /// - On failure, responds with [`SdkError<DescribeLagsError>`](crate::operation::describe_lags::DescribeLagsError)
     pub fn describe_lags(&self) -> crate::operation::describe_lags::builders::DescribeLagsFluentBuilder {
         crate::operation::describe_lags::builders::DescribeLagsFluentBuilder::new(self.handle.clone())

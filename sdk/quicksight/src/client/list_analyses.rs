@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_analyses::builders::ListAnalysesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_analyses::builders::ListAnalysesFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token that can be used in a subsequent request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_analyses::builders::ListAnalysesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_analyses::builders::ListAnalysesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     /// - On success, responds with [`ListAnalysesOutput`](crate::operation::list_analyses::ListAnalysesOutput) with field(s):
-    ///   - [`analysis_summary_list(Option<Vec<AnalysisSummary>>)`](crate::operation::list_analyses::ListAnalysesOutput::analysis_summary_list): <p>Metadata describing each of the analyses that are listed.</p>
+    ///   - [`analysis_summary_list(Option<Vec::<AnalysisSummary>>)`](crate::operation::list_analyses::ListAnalysesOutput::analysis_summary_list): <p>Metadata describing each of the analyses that are listed.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_analyses::ListAnalysesOutput::next_token): <p>A pagination token that can be used in a subsequent request.</p>
     ///   - [`status(i32)`](crate::operation::list_analyses::ListAnalysesOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::list_analyses::ListAnalysesOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>

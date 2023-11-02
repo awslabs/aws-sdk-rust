@@ -5,12 +5,12 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`alias(impl Into<String>)`](crate::operation::create_workspace::builders::CreateWorkspaceFluentBuilder::alias) / [`set_alias(Option<String>)`](crate::operation::create_workspace::builders::CreateWorkspaceFluentBuilder::set_alias):<br>required: **false**<br>An optional user-assigned alias for this workspace. This alias is for user reference and does not need to be unique.<br>
     ///   - [`client_token(impl Into<String>)`](crate::operation::create_workspace::builders::CreateWorkspaceFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::create_workspace::builders::CreateWorkspaceFluentBuilder::set_client_token):<br>required: **false**<br>Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.<br>
-    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::create_workspace::builders::CreateWorkspaceFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::create_workspace::builders::CreateWorkspaceFluentBuilder::set_tags):<br>required: **false**<br>Optional, user-provided tags for this workspace.<br>
+    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::create_workspace::builders::CreateWorkspaceFluentBuilder::tags) / [`set_tags(Option<HashMap::<String, String>>)`](crate::operation::create_workspace::builders::CreateWorkspaceFluentBuilder::set_tags):<br>required: **false**<br>Optional, user-provided tags for this workspace.<br>
     /// - On success, responds with [`CreateWorkspaceOutput`](crate::operation::create_workspace::CreateWorkspaceOutput) with field(s):
     ///   - [`workspace_id(String)`](crate::operation::create_workspace::CreateWorkspaceOutput::workspace_id): The generated ID of the workspace that was just created.
     ///   - [`arn(String)`](crate::operation::create_workspace::CreateWorkspaceOutput::arn): The ARN of the workspace that was just created.
     ///   - [`status(Option<WorkspaceStatus>)`](crate::operation::create_workspace::CreateWorkspaceOutput::status): The status of the workspace that was just created (usually CREATING).
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_workspace::CreateWorkspaceOutput::tags): The tags of this workspace.
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::create_workspace::CreateWorkspaceOutput::tags): The tags of this workspace.
     /// - On failure, responds with [`SdkError<CreateWorkspaceError>`](crate::operation::create_workspace::CreateWorkspaceError)
     pub fn create_workspace(&self) -> crate::operation::create_workspace::builders::CreateWorkspaceFluentBuilder {
         crate::operation::create_workspace::builders::CreateWorkspaceFluentBuilder::new(self.handle.clone())

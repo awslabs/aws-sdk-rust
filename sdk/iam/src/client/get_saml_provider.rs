@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`saml_metadata_document(Option<String>)`](crate::operation::get_saml_provider::GetSamlProviderOutput::saml_metadata_document): <p>The XML metadata document that includes information about an identity provider.</p>
     ///   - [`create_date(Option<DateTime>)`](crate::operation::get_saml_provider::GetSamlProviderOutput::create_date): <p>The date and time when the SAML provider was created.</p>
     ///   - [`valid_until(Option<DateTime>)`](crate::operation::get_saml_provider::GetSamlProviderOutput::valid_until): <p>The expiration date and time for the SAML provider.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::get_saml_provider::GetSamlProviderOutput::tags): <p>A list of tags that are attached to the specified IAM SAML provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
+    ///   - [`tags(Option<Vec::<Tag>>)`](crate::operation::get_saml_provider::GetSamlProviderOutput::tags): <p>A list of tags that are attached to the specified IAM SAML provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
     /// - On failure, responds with [`SdkError<GetSAMLProviderError>`](crate::operation::get_saml_provider::GetSAMLProviderError)
     pub fn get_saml_provider(&self) -> crate::operation::get_saml_provider::builders::GetSAMLProviderFluentBuilder {
         crate::operation::get_saml_provider::builders::GetSAMLProviderFluentBuilder::new(self.handle.clone())

@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_suite_runs::builders::ListSuiteRunsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_suite_runs::builders::ListSuiteRunsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return at once.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_suite_runs::builders::ListSuiteRunsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_suite_runs::builders::ListSuiteRunsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to retrieve the next set of results.</p><br>
     /// - On success, responds with [`ListSuiteRunsOutput`](crate::operation::list_suite_runs::ListSuiteRunsOutput) with field(s):
-    ///   - [`suite_runs_list(Option<Vec<SuiteRunInformation>>)`](crate::operation::list_suite_runs::ListSuiteRunsOutput::suite_runs_list): <p>An array of objects that provide summaries of information about the suite runs in the list.</p>
+    ///   - [`suite_runs_list(Option<Vec::<SuiteRunInformation>>)`](crate::operation::list_suite_runs::ListSuiteRunsOutput::suite_runs_list): <p>An array of objects that provide summaries of information about the suite runs in the list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_suite_runs::ListSuiteRunsOutput::next_token): <p>A token to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListSuiteRunsError>`](crate::operation::list_suite_runs::ListSuiteRunsError)
     pub fn list_suite_runs(&self) -> crate::operation::list_suite_runs::builders::ListSuiteRunsFluentBuilder {

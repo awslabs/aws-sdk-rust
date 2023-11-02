@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`device_fleet_name(impl Into<String>)`](crate::operation::update_devices::builders::UpdateDevicesFluentBuilder::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::operation::update_devices::builders::UpdateDevicesFluentBuilder::set_device_fleet_name):<br>required: **true**<br><p>The name of the fleet the devices belong to.</p><br>
-    ///   - [`devices(Device)`](crate::operation::update_devices::builders::UpdateDevicesFluentBuilder::devices) / [`set_devices(Option<Vec<Device>>)`](crate::operation::update_devices::builders::UpdateDevicesFluentBuilder::set_devices):<br>required: **true**<br><p>List of devices to register with Edge Manager agent.</p><br>
+    ///   - [`devices(Device)`](crate::operation::update_devices::builders::UpdateDevicesFluentBuilder::devices) / [`set_devices(Option<Vec::<Device>>)`](crate::operation::update_devices::builders::UpdateDevicesFluentBuilder::set_devices):<br>required: **true**<br><p>List of devices to register with Edge Manager agent.</p><br>
     /// - On success, responds with [`UpdateDevicesOutput`](crate::operation::update_devices::UpdateDevicesOutput)
     /// - On failure, responds with [`SdkError<UpdateDevicesError>`](crate::operation::update_devices::UpdateDevicesError)
     pub fn update_devices(&self) -> crate::operation::update_devices::builders::UpdateDevicesFluentBuilder {

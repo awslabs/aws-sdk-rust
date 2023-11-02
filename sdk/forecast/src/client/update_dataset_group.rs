@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`dataset_group_arn(impl Into<String>)`](crate::operation::update_dataset_group::builders::UpdateDatasetGroupFluentBuilder::dataset_group_arn) / [`set_dataset_group_arn(Option<String>)`](crate::operation::update_dataset_group::builders::UpdateDatasetGroupFluentBuilder::set_dataset_group_arn):<br>required: **true**<br><p>The ARN of the dataset group.</p><br>
-    ///   - [`dataset_arns(impl Into<String>)`](crate::operation::update_dataset_group::builders::UpdateDatasetGroupFluentBuilder::dataset_arns) / [`set_dataset_arns(Option<Vec<String>>)`](crate::operation::update_dataset_group::builders::UpdateDatasetGroupFluentBuilder::set_dataset_arns):<br>required: **true**<br><p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the dataset group.</p><br>
+    ///   - [`dataset_arns(impl Into<String>)`](crate::operation::update_dataset_group::builders::UpdateDatasetGroupFluentBuilder::dataset_arns) / [`set_dataset_arns(Option<Vec::<String>>)`](crate::operation::update_dataset_group::builders::UpdateDatasetGroupFluentBuilder::set_dataset_arns):<br>required: **true**<br><p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the dataset group.</p><br>
     /// - On success, responds with [`UpdateDatasetGroupOutput`](crate::operation::update_dataset_group::UpdateDatasetGroupOutput)
     /// - On failure, responds with [`SdkError<UpdateDatasetGroupError>`](crate::operation::update_dataset_group::UpdateDatasetGroupError)
     pub fn update_dataset_group(&self) -> crate::operation::update_dataset_group::builders::UpdateDatasetGroupFluentBuilder {

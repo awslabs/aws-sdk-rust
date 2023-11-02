@@ -10,7 +10,7 @@ impl super::Client {
     /// - On success, responds with [`TerminateClientVpnConnectionsOutput`](crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsOutput) with field(s):
     ///   - [`client_vpn_endpoint_id(Option<String>)`](crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsOutput::client_vpn_endpoint_id): <p>The ID of the Client VPN endpoint.</p>
     ///   - [`username(Option<String>)`](crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsOutput::username): <p>The user who established the terminated client connections.</p>
-    ///   - [`connection_statuses(Option<Vec<TerminateConnectionStatus>>)`](crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsOutput::connection_statuses): <p>The current state of the client connections.</p>
+    ///   - [`connection_statuses(Option<Vec::<TerminateConnectionStatus>>)`](crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsOutput::connection_statuses): <p>The current state of the client connections.</p>
     /// - On failure, responds with [`SdkError<TerminateClientVpnConnectionsError>`](crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsError)
     pub fn terminate_client_vpn_connections(
         &self,

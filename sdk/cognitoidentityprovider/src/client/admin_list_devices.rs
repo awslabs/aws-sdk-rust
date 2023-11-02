@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`limit(i32)`](crate::operation::admin_list_devices::builders::AdminListDevicesFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::admin_list_devices::builders::AdminListDevicesFluentBuilder::set_limit):<br>required: **false**<br><p>The limit of the devices request.</p><br>
     ///   - [`pagination_token(impl Into<String>)`](crate::operation::admin_list_devices::builders::AdminListDevicesFluentBuilder::pagination_token) / [`set_pagination_token(Option<String>)`](crate::operation::admin_list_devices::builders::AdminListDevicesFluentBuilder::set_pagination_token):<br>required: **false**<br><p>The pagination token.</p><br>
     /// - On success, responds with [`AdminListDevicesOutput`](crate::operation::admin_list_devices::AdminListDevicesOutput) with field(s):
-    ///   - [`devices(Option<Vec<DeviceType>>)`](crate::operation::admin_list_devices::AdminListDevicesOutput::devices): <p>The devices in the list of devices response.</p>
+    ///   - [`devices(Option<Vec::<DeviceType>>)`](crate::operation::admin_list_devices::AdminListDevicesOutput::devices): <p>The devices in the list of devices response.</p>
     ///   - [`pagination_token(Option<String>)`](crate::operation::admin_list_devices::AdminListDevicesOutput::pagination_token): <p>The pagination token.</p>
     /// - On failure, responds with [`SdkError<AdminListDevicesError>`](crate::operation::admin_list_devices::AdminListDevicesError)
     pub fn admin_list_devices(&self) -> crate::operation::admin_list_devices::builders::AdminListDevicesFluentBuilder {

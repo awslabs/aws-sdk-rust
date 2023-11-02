@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`AddApplicationReferenceDataSourceOutput`](crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceOutput) with field(s):
     ///   - [`application_arn(Option<String>)`](crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceOutput::application_arn): <p>The application Amazon Resource Name (ARN).</p>
     ///   - [`application_version_id(Option<i64>)`](crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceOutput::application_version_id): <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.</p>
-    ///   - [`reference_data_source_descriptions(Option<Vec<ReferenceDataSourceDescription>>)`](crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceOutput::reference_data_source_descriptions): <p>Describes reference data sources configured for the application. </p>
+    ///   - [`reference_data_source_descriptions(Option<Vec::<ReferenceDataSourceDescription>>)`](crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceOutput::reference_data_source_descriptions): <p>Describes reference data sources configured for the application. </p>
     /// - On failure, responds with [`SdkError<AddApplicationReferenceDataSourceError>`](crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceError)
     pub fn add_application_reference_data_source(
         &self,

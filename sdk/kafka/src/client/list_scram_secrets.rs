@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_scram_secrets::builders::ListScramSecretsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_scram_secrets::builders::ListScramSecretsFluentBuilder::set_next_token):<br>required: **false**<br><p>The nextToken of the query.</p><br>
     /// - On success, responds with [`ListScramSecretsOutput`](crate::operation::list_scram_secrets::ListScramSecretsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_scram_secrets::ListScramSecretsOutput::next_token): <p>Paginated results marker.</p>
-    ///   - [`secret_arn_list(Option<Vec<String>>)`](crate::operation::list_scram_secrets::ListScramSecretsOutput::secret_arn_list): <p>The list of scram secrets associated with the cluster.</p>
+    ///   - [`secret_arn_list(Option<Vec::<String>>)`](crate::operation::list_scram_secrets::ListScramSecretsOutput::secret_arn_list): <p>The list of scram secrets associated with the cluster.</p>
     /// - On failure, responds with [`SdkError<ListScramSecretsError>`](crate::operation::list_scram_secrets::ListScramSecretsError)
     pub fn list_scram_secrets(&self) -> crate::operation::list_scram_secrets::builders::ListScramSecretsFluentBuilder {
         crate::operation::list_scram_secrets::builders::ListScramSecretsFluentBuilder::new(self.handle.clone())

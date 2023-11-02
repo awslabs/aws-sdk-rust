@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`fleet(impl Into<String>)`](crate::operation::list_workers::builders::ListWorkersFluentBuilder::fleet) / [`set_fleet(Option<String>)`](crate::operation::list_workers::builders::ListWorkersFluentBuilder::set_fleet):<br>required: **false**<br>Full ARN of the worker fleet.<br>
     /// - On success, responds with [`ListWorkersOutput`](crate::operation::list_workers::ListWorkersOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_workers::ListWorkersOutput::next_token): Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
-    ///   - [`workers(Option<Vec<Worker>>)`](crate::operation::list_workers::ListWorkersOutput::workers): List of workers.
+    ///   - [`workers(Option<Vec::<Worker>>)`](crate::operation::list_workers::ListWorkersOutput::workers): List of workers.
     /// - On failure, responds with [`SdkError<ListWorkersError>`](crate::operation::list_workers::ListWorkersError)
     pub fn list_workers(&self) -> crate::operation::list_workers::builders::ListWorkersFluentBuilder {
         crate::operation::list_workers::builders::ListWorkersFluentBuilder::new(self.handle.clone())

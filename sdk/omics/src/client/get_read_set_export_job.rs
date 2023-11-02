@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`status_message(Option<String>)`](crate::operation::get_read_set_export_job::GetReadSetExportJobOutput::status_message): <p>The job's status message.</p>
     ///   - [`creation_time(DateTime)`](crate::operation::get_read_set_export_job::GetReadSetExportJobOutput::creation_time): <p>When the job was created.</p>
     ///   - [`completion_time(Option<DateTime>)`](crate::operation::get_read_set_export_job::GetReadSetExportJobOutput::completion_time): <p>When the job completed.</p>
-    ///   - [`read_sets(Option<Vec<ExportReadSetDetail>>)`](crate::operation::get_read_set_export_job::GetReadSetExportJobOutput::read_sets): <p>The job's read sets.</p>
+    ///   - [`read_sets(Option<Vec::<ExportReadSetDetail>>)`](crate::operation::get_read_set_export_job::GetReadSetExportJobOutput::read_sets): <p>The job's read sets.</p>
     /// - On failure, responds with [`SdkError<GetReadSetExportJobError>`](crate::operation::get_read_set_export_job::GetReadSetExportJobError)
     pub fn get_read_set_export_job(&self) -> crate::operation::get_read_set_export_job::builders::GetReadSetExportJobFluentBuilder {
         crate::operation::get_read_set_export_job::builders::GetReadSetExportJobFluentBuilder::new(self.handle.clone())

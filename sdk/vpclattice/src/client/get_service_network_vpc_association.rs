@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`service_network_name(Option<String>)`](crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationOutput::service_network_name): <p>The name of the service network.</p>
     ///   - [`service_network_arn(Option<String>)`](crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationOutput::service_network_arn): <p>The Amazon Resource Name (ARN) of the service network.</p>
     ///   - [`vpc_id(Option<String>)`](crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationOutput::vpc_id): <p>The ID of the VPC.</p>
-    ///   - [`security_group_ids(Option<Vec<String>>)`](crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationOutput::security_group_ids): <p>The IDs of the security groups.</p>
+    ///   - [`security_group_ids(Option<Vec::<String>>)`](crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationOutput::security_group_ids): <p>The IDs of the security groups.</p>
     ///   - [`failure_message(Option<String>)`](crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationOutput::failure_message): <p>The failure message.</p>
     ///   - [`failure_code(Option<String>)`](crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationOutput::failure_code): <p>The failure code.</p>
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationOutput::last_updated_at): <p>The date and time that the association was last updated, specified in ISO-8601 format.</p>

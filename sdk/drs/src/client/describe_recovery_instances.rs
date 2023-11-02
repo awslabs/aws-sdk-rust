@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_recovery_instances::builders::DescribeRecoveryInstancesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_recovery_instances::builders::DescribeRecoveryInstancesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token of the next Recovery Instance to retrieve.</p><br>
     /// - On success, responds with [`DescribeRecoveryInstancesOutput`](crate::operation::describe_recovery_instances::DescribeRecoveryInstancesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::describe_recovery_instances::DescribeRecoveryInstancesOutput::next_token): <p>The token of the next Recovery Instance to retrieve.</p>
-    ///   - [`items(Option<Vec<RecoveryInstance>>)`](crate::operation::describe_recovery_instances::DescribeRecoveryInstancesOutput::items): <p>An array of Recovery Instances.</p>
+    ///   - [`items(Option<Vec::<RecoveryInstance>>)`](crate::operation::describe_recovery_instances::DescribeRecoveryInstancesOutput::items): <p>An array of Recovery Instances.</p>
     /// - On failure, responds with [`SdkError<DescribeRecoveryInstancesError>`](crate::operation::describe_recovery_instances::DescribeRecoveryInstancesError)
     pub fn describe_recovery_instances(&self) -> crate::operation::describe_recovery_instances::builders::DescribeRecoveryInstancesFluentBuilder {
         crate::operation::describe_recovery_instances::builders::DescribeRecoveryInstancesFluentBuilder::new(self.handle.clone())

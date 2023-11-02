@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_types::builders::ListTypesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_types::builders::ListTypesFluentBuilder::set_next_token):<br>required: **false**<br><p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_types::builders::ListTypesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_types::builders::ListTypesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results that you want the request to return.</p><br>
     /// - On success, responds with [`ListTypesOutput`](crate::operation::list_types::ListTypesOutput) with field(s):
-    ///   - [`types(Option<Vec<Type>>)`](crate::operation::list_types::ListTypesOutput::types): <p>The <code>Type</code> objects.</p>
+    ///   - [`types(Option<Vec::<Type>>)`](crate::operation::list_types::ListTypesOutput::types): <p>The <code>Type</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_types::ListTypesOutput::next_token): <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
     /// - On failure, responds with [`SdkError<ListTypesError>`](crate::operation::list_types::ListTypesError)
     pub fn list_types(&self) -> crate::operation::list_types::builders::ListTypesFluentBuilder {

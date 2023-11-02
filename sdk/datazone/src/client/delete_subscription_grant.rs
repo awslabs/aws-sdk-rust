@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`subscription_target_id(String)`](crate::operation::delete_subscription_grant::DeleteSubscriptionGrantOutput::subscription_target_id): <p>The ID of the subscription target associated with the subscription grant that is deleted.</p>
     ///   - [`granted_entity(Option<GrantedEntity>)`](crate::operation::delete_subscription_grant::DeleteSubscriptionGrantOutput::granted_entity): <p>The entity to which the subscription is deleted.</p>
     ///   - [`status(SubscriptionGrantOverallStatus)`](crate::operation::delete_subscription_grant::DeleteSubscriptionGrantOutput::status): <p>The status of the subscription grant that is deleted.</p>
-    ///   - [`assets(Option<Vec<SubscribedAsset>>)`](crate::operation::delete_subscription_grant::DeleteSubscriptionGrantOutput::assets): <p>The assets for which the subsctiption grant that is deleted gave access.</p>
+    ///   - [`assets(Option<Vec::<SubscribedAsset>>)`](crate::operation::delete_subscription_grant::DeleteSubscriptionGrantOutput::assets): <p>The assets for which the subsctiption grant that is deleted gave access.</p>
     ///   - [`subscription_id(Option<String>)`](crate::operation::delete_subscription_grant::DeleteSubscriptionGrantOutput::subscription_id): <p>The identifier of the subsctiption whose subscription grant is to be deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteSubscriptionGrantError>`](crate::operation::delete_subscription_grant::DeleteSubscriptionGrantError)
     pub fn delete_subscription_grant(&self) -> crate::operation::delete_subscription_grant::builders::DeleteSubscriptionGrantFluentBuilder {

@@ -11,8 +11,8 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::get_snapshots::builders::GetSnapshotsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_snapshots::builders::GetSnapshotsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of returned data for the metric.</p><br>
     /// - On success, responds with [`GetSnapshotsOutput`](crate::operation::get_snapshots::GetSnapshotsOutput) with field(s):
     ///   - [`snap_shot_time_filter(Option<TimeRange>)`](crate::operation::get_snapshots::GetSnapshotsOutput::snap_shot_time_filter): <p>The Unix timestamp for the beginning and end of the time window for the search metrics data.</p>
-    ///   - [`snapshots_data_header(Option<Vec<String>>)`](crate::operation::get_snapshots::GetSnapshotsOutput::snapshots_data_header): <p>The column headers for the search metrics data.</p>
-    ///   - [`snapshots_data(Option<Vec<Vec<String>>>)`](crate::operation::get_snapshots::GetSnapshotsOutput::snapshots_data): <p>The search metrics data. The data returned depends on the metric type you requested.</p>
+    ///   - [`snapshots_data_header(Option<Vec::<String>>)`](crate::operation::get_snapshots::GetSnapshotsOutput::snapshots_data_header): <p>The column headers for the search metrics data.</p>
+    ///   - [`snapshots_data(Option<Vec::<Vec::<String>>>)`](crate::operation::get_snapshots::GetSnapshotsOutput::snapshots_data): <p>The search metrics data. The data returned depends on the metric type you requested.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_snapshots::GetSnapshotsOutput::next_token): <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of search metrics data.</p>
     /// - On failure, responds with [`SdkError<GetSnapshotsError>`](crate::operation::get_snapshots::GetSnapshotsError)
     pub fn get_snapshots(&self) -> crate::operation::get_snapshots::builders::GetSnapshotsFluentBuilder {

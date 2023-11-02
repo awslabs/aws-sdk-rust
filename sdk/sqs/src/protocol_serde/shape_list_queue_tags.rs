@@ -59,7 +59,7 @@ pub fn de_list_queue_tags(
             s if s.matches("Tag") /* Tags com.amazonaws.sqs.synthetic#ListQueueTagsOutput$Tags */ =>  {
                 let var_1 =
                     Some(
-                        Result::<::std::collections::HashMap<::std::string::String, ::std::string::String>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::collections::HashMap::<::std::string::String, ::std::string::String>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut map_2 = builder.tags.take().unwrap_or_default();
                                             crate::protocol_serde::shape_tag_map::de_tag_map_entry(&mut tag, &mut map_2)?;
                                             map_2

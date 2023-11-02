@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_log_streams::builders::DescribeLogStreamsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_log_streams::builders::DescribeLogStreamsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of items to return. (You received this token from a previous call.)</p><br>
     ///   - [`limit(i32)`](crate::operation::describe_log_streams::builders::DescribeLogStreamsFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::describe_log_streams::builders::DescribeLogStreamsFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p><br>
     /// - On success, responds with [`DescribeLogStreamsOutput`](crate::operation::describe_log_streams::DescribeLogStreamsOutput) with field(s):
-    ///   - [`log_streams(Option<Vec<LogStream>>)`](crate::operation::describe_log_streams::DescribeLogStreamsOutput::log_streams): <p>The log streams.</p>
+    ///   - [`log_streams(Option<Vec::<LogStream>>)`](crate::operation::describe_log_streams::DescribeLogStreamsOutput::log_streams): <p>The log streams.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_log_streams::DescribeLogStreamsOutput::next_token): <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     /// - On failure, responds with [`SdkError<DescribeLogStreamsError>`](crate::operation::describe_log_streams::DescribeLogStreamsError)
     pub fn describe_log_streams(&self) -> crate::operation::describe_log_streams::builders::DescribeLogStreamsFluentBuilder {

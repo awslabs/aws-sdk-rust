@@ -11,7 +11,7 @@ impl super::Client {
     /// - On success, responds with [`GetQueryResultsOutput`](crate::operation::get_query_results::GetQueryResultsOutput) with field(s):
     ///   - [`query_status(Option<QueryStatus>)`](crate::operation::get_query_results::GetQueryResultsOutput::query_status): <p>The status of the query. Values include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code>.</p>
     ///   - [`query_statistics(Option<QueryStatistics>)`](crate::operation::get_query_results::GetQueryResultsOutput::query_statistics): <p>Shows the count of query results.</p>
-    ///   - [`query_result_rows(Option<Vec<Vec<HashMap<String, String>>>>)`](crate::operation::get_query_results::GetQueryResultsOutput::query_result_rows): <p>Contains the individual event results of the query.</p>
+    ///   - [`query_result_rows(Option<Vec::<Vec::<HashMap::<String, String>>>>)`](crate::operation::get_query_results::GetQueryResultsOutput::query_result_rows): <p>Contains the individual event results of the query.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_query_results::GetQueryResultsOutput::next_token): <p>A token you can use to get the next page of query results.</p>
     ///   - [`error_message(Option<String>)`](crate::operation::get_query_results::GetQueryResultsOutput::error_message): <p>The error message returned if a query failed.</p>
     /// - On failure, responds with [`SdkError<GetQueryResultsError>`](crate::operation::get_query_results::GetQueryResultsError)

@@ -8,9 +8,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateVpcLinkOutput`](crate::operation::update_vpc_link::UpdateVpcLinkOutput) with field(s):
     ///   - [`created_date(Option<DateTime>)`](crate::operation::update_vpc_link::UpdateVpcLinkOutput::created_date): <p>The timestamp when the VPC link was created.</p>
     ///   - [`name(Option<String>)`](crate::operation::update_vpc_link::UpdateVpcLinkOutput::name): <p>The name of the VPC link.</p>
-    ///   - [`security_group_ids(Option<Vec<String>>)`](crate::operation::update_vpc_link::UpdateVpcLinkOutput::security_group_ids): <p>A list of security group IDs for the VPC link.</p>
-    ///   - [`subnet_ids(Option<Vec<String>>)`](crate::operation::update_vpc_link::UpdateVpcLinkOutput::subnet_ids): <p>A list of subnet IDs to include in the VPC link.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::update_vpc_link::UpdateVpcLinkOutput::tags): <p>Tags for the VPC link.</p>
+    ///   - [`security_group_ids(Option<Vec::<String>>)`](crate::operation::update_vpc_link::UpdateVpcLinkOutput::security_group_ids): <p>A list of security group IDs for the VPC link.</p>
+    ///   - [`subnet_ids(Option<Vec::<String>>)`](crate::operation::update_vpc_link::UpdateVpcLinkOutput::subnet_ids): <p>A list of subnet IDs to include in the VPC link.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::update_vpc_link::UpdateVpcLinkOutput::tags): <p>Tags for the VPC link.</p>
     ///   - [`vpc_link_id(Option<String>)`](crate::operation::update_vpc_link::UpdateVpcLinkOutput::vpc_link_id): <p>The ID of the VPC link.</p>
     ///   - [`vpc_link_status(Option<VpcLinkStatus>)`](crate::operation::update_vpc_link::UpdateVpcLinkOutput::vpc_link_status): <p>The status of the VPC link.</p>
     ///   - [`vpc_link_status_message(Option<String>)`](crate::operation::update_vpc_link::UpdateVpcLinkOutput::vpc_link_status_message): <p>A message summarizing the cause of the status of the VPC link.</p>

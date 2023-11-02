@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`rule_based_matching(Option<RuleBasedMatchingResponse>)`](crate::operation::get_domain::GetDomainOutput::rule_based_matching): <p>The process of matching duplicate profiles using the Rule-Based matching. If <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will start to match and merge your profiles according to your configuration in the <code>RuleBasedMatchingRequest</code>. You can use the <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to return and review the results. Also, if you have configured <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you can download the results from S3.</p>
     ///   - [`created_at(DateTime)`](crate::operation::get_domain::GetDomainOutput::created_at): <p>The timestamp of when the domain was created.</p>
     ///   - [`last_updated_at(DateTime)`](crate::operation::get_domain::GetDomainOutput::last_updated_at): <p>The timestamp of when the domain was most recently edited.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_domain::GetDomainOutput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_domain::GetDomainOutput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
     /// - On failure, responds with [`SdkError<GetDomainError>`](crate::operation::get_domain::GetDomainError)
     pub fn get_domain(&self) -> crate::operation::get_domain::builders::GetDomainFluentBuilder {
         crate::operation::get_domain::builders::GetDomainFluentBuilder::new(self.handle.clone())

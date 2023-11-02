@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_assistants::builders::ListAssistantsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_assistants::builders::ListAssistantsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_assistants::builders::ListAssistantsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_assistants::builders::ListAssistantsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page.</p><br>
     /// - On success, responds with [`ListAssistantsOutput`](crate::operation::list_assistants::ListAssistantsOutput) with field(s):
-    ///   - [`assistant_summaries(Vec<AssistantSummary>)`](crate::operation::list_assistants::ListAssistantsOutput::assistant_summaries): <p>Information about the assistants.</p>
+    ///   - [`assistant_summaries(Vec::<AssistantSummary>)`](crate::operation::list_assistants::ListAssistantsOutput::assistant_summaries): <p>Information about the assistants.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_assistants::ListAssistantsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListAssistantsError>`](crate::operation::list_assistants::ListAssistantsError)
     pub fn list_assistants(&self) -> crate::operation::list_assistants::builders::ListAssistantsFluentBuilder {

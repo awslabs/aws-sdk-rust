@@ -177,7 +177,7 @@ async fn test_checksum_on_streaming_request<'a>(
     use std::io::Write;
     file.write_all(body).unwrap();
 
-    let body = aws_sdk_s3::primitives::ByteStream::read_from()
+    let body = aws_sdk_s3::primitives::ByteStream::read_with_body_0_4_from()
         .path(file.path())
         .buffer_size(1024)
         .build()

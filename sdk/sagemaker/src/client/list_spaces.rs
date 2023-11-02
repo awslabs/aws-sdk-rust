@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`domain_id_equals(impl Into<String>)`](crate::operation::list_spaces::builders::ListSpacesFluentBuilder::domain_id_equals) / [`set_domain_id_equals(Option<String>)`](crate::operation::list_spaces::builders::ListSpacesFluentBuilder::set_domain_id_equals):<br>required: **false**<br><p>A parameter to search for the Domain ID.</p><br>
     ///   - [`space_name_contains(impl Into<String>)`](crate::operation::list_spaces::builders::ListSpacesFluentBuilder::space_name_contains) / [`set_space_name_contains(Option<String>)`](crate::operation::list_spaces::builders::ListSpacesFluentBuilder::set_space_name_contains):<br>required: **false**<br><p>A parameter by which to filter the results.</p><br>
     /// - On success, responds with [`ListSpacesOutput`](crate::operation::list_spaces::ListSpacesOutput) with field(s):
-    ///   - [`spaces(Option<Vec<SpaceDetails>>)`](crate::operation::list_spaces::ListSpacesOutput::spaces): <p>The list of spaces.</p>
+    ///   - [`spaces(Option<Vec::<SpaceDetails>>)`](crate::operation::list_spaces::ListSpacesOutput::spaces): <p>The list of spaces.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_spaces::ListSpacesOutput::next_token): <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListSpacesError>`](crate::operation::list_spaces::ListSpacesError)
     pub fn list_spaces(&self) -> crate::operation::list_spaces::builders::ListSpacesFluentBuilder {

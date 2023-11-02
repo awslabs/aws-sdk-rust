@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_dataflow_endpoint_groups::builders::ListDataflowEndpointGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_dataflow_endpoint_groups::builders::ListDataflowEndpointGroupsFluentBuilder::set_next_token):<br>required: **false**<br><p>Next token returned in the request of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.</p><br>
     /// - On success, responds with [`ListDataflowEndpointGroupsOutput`](crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsOutput::next_token): <p>Next token returned in the response of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.</p>
-    ///   - [`dataflow_endpoint_group_list(Option<Vec<DataflowEndpointListItem>>)`](crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsOutput::dataflow_endpoint_group_list): <p>A list of dataflow endpoint groups.</p>
+    ///   - [`dataflow_endpoint_group_list(Option<Vec::<DataflowEndpointListItem>>)`](crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsOutput::dataflow_endpoint_group_list): <p>A list of dataflow endpoint groups.</p>
     /// - On failure, responds with [`SdkError<ListDataflowEndpointGroupsError>`](crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsError)
     pub fn list_dataflow_endpoint_groups(
         &self,

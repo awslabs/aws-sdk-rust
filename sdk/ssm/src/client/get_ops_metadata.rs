@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_ops_metadata::builders::GetOpsMetadataFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_ops_metadata::builders::GetOpsMetadataFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to start the list. Use this token to get the next set of results.</p><br>
     /// - On success, responds with [`GetOpsMetadataOutput`](crate::operation::get_ops_metadata::GetOpsMetadataOutput) with field(s):
     ///   - [`resource_id(Option<String>)`](crate::operation::get_ops_metadata::GetOpsMetadataOutput::resource_id): <p>The resource ID of the Application Manager application.</p>
-    ///   - [`metadata(Option<HashMap<String, MetadataValue>>)`](crate::operation::get_ops_metadata::GetOpsMetadataOutput::metadata): <p>OpsMetadata for an Application Manager application.</p>
+    ///   - [`metadata(Option<HashMap::<String, MetadataValue>>)`](crate::operation::get_ops_metadata::GetOpsMetadataOutput::metadata): <p>OpsMetadata for an Application Manager application.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_ops_metadata::GetOpsMetadataOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     /// - On failure, responds with [`SdkError<GetOpsMetadataError>`](crate::operation::get_ops_metadata::GetOpsMetadataError)
     pub fn get_ops_metadata(&self) -> crate::operation::get_ops_metadata::builders::GetOpsMetadataFluentBuilder {

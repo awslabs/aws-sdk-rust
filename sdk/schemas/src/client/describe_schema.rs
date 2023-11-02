@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`schema_arn(Option<String>)`](crate::operation::describe_schema::DescribeSchemaOutput::schema_arn): <p>The ARN of the schema.</p>
     ///   - [`schema_name(Option<String>)`](crate::operation::describe_schema::DescribeSchemaOutput::schema_name): <p>The name of the schema.</p>
     ///   - [`schema_version(Option<String>)`](crate::operation::describe_schema::DescribeSchemaOutput::schema_version): <p>The version number of the schema</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_schema::DescribeSchemaOutput::tags): <p>Tags associated with the resource.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_schema::DescribeSchemaOutput::tags): <p>Tags associated with the resource.</p>
     ///   - [`r#type(Option<String>)`](crate::operation::describe_schema::DescribeSchemaOutput::type): <p>The type of the schema.</p>
     ///   - [`version_created_date(Option<DateTime>)`](crate::operation::describe_schema::DescribeSchemaOutput::version_created_date): <p>The date the schema version was created.</p>
     /// - On failure, responds with [`SdkError<DescribeSchemaError>`](crate::operation::describe_schema::DescribeSchemaError)

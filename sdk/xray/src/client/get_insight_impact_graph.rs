@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`end_time(Option<DateTime>)`](crate::operation::get_insight_impact_graph::GetInsightImpactGraphOutput::end_time): <p>The provided end time. </p>
     ///   - [`service_graph_start_time(Option<DateTime>)`](crate::operation::get_insight_impact_graph::GetInsightImpactGraphOutput::service_graph_start_time): <p>The time, in Unix seconds, at which the service graph started.</p>
     ///   - [`service_graph_end_time(Option<DateTime>)`](crate::operation::get_insight_impact_graph::GetInsightImpactGraphOutput::service_graph_end_time): <p>The time, in Unix seconds, at which the service graph ended.</p>
-    ///   - [`services(Option<Vec<InsightImpactGraphService>>)`](crate::operation::get_insight_impact_graph::GetInsightImpactGraphOutput::services): <p>The Amazon Web Services instrumented services related to the insight.</p>
+    ///   - [`services(Option<Vec::<InsightImpactGraphService>>)`](crate::operation::get_insight_impact_graph::GetInsightImpactGraphOutput::services): <p>The Amazon Web Services instrumented services related to the insight.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_insight_impact_graph::GetInsightImpactGraphOutput::next_token): <p>Pagination token.</p>
     /// - On failure, responds with [`SdkError<GetInsightImpactGraphError>`](crate::operation::get_insight_impact_graph::GetInsightImpactGraphError)
     pub fn get_insight_impact_graph(&self) -> crate::operation::get_insight_impact_graph::builders::GetInsightImpactGraphFluentBuilder {

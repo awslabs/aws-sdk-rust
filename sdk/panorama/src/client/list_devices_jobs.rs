@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_devices_jobs::builders::ListDevicesJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_devices_jobs::builders::ListDevicesJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>Specify the pagination token from a previous request to retrieve the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_devices_jobs::builders::ListDevicesJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_devices_jobs::builders::ListDevicesJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of device jobs to return in one page of results.</p><br>
     /// - On success, responds with [`ListDevicesJobsOutput`](crate::operation::list_devices_jobs::ListDevicesJobsOutput) with field(s):
-    ///   - [`device_jobs(Option<Vec<DeviceJob>>)`](crate::operation::list_devices_jobs::ListDevicesJobsOutput::device_jobs): <p>A list of jobs.</p>
+    ///   - [`device_jobs(Option<Vec::<DeviceJob>>)`](crate::operation::list_devices_jobs::ListDevicesJobsOutput::device_jobs): <p>A list of jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_devices_jobs::ListDevicesJobsOutput::next_token): <p>A pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListDevicesJobsError>`](crate::operation::list_devices_jobs::ListDevicesJobsError)
     pub fn list_devices_jobs(&self) -> crate::operation::list_devices_jobs::builders::ListDevicesJobsFluentBuilder {

@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_studio_members::builders::ListStudioMembersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_studio_members::builders::ListStudioMembersFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results, or null if there are no more results.</p><br>
     ///   - [`studio_id(impl Into<String>)`](crate::operation::list_studio_members::builders::ListStudioMembersFluentBuilder::studio_id) / [`set_studio_id(Option<String>)`](crate::operation::list_studio_members::builders::ListStudioMembersFluentBuilder::set_studio_id):<br>required: **true**<br><p>The studio ID. </p><br>
     /// - On success, responds with [`ListStudioMembersOutput`](crate::operation::list_studio_members::ListStudioMembersOutput) with field(s):
-    ///   - [`members(Option<Vec<StudioMembership>>)`](crate::operation::list_studio_members::ListStudioMembersOutput::members): <p>A list of admin members.</p>
+    ///   - [`members(Option<Vec::<StudioMembership>>)`](crate::operation::list_studio_members::ListStudioMembersOutput::members): <p>A list of admin members.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_studio_members::ListStudioMembersOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListStudioMembersError>`](crate::operation::list_studio_members::ListStudioMembersError)
     pub fn list_studio_members(&self) -> crate::operation::list_studio_members::builders::ListStudioMembersFluentBuilder {

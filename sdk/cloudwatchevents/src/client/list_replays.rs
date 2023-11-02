@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_replays::builders::ListReplaysFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_replays::builders::ListReplaysFluentBuilder::set_next_token):<br>required: **false**<br><p>The token returned by a previous call to retrieve the next set of results.</p><br>
     ///   - [`limit(i32)`](crate::operation::list_replays::builders::ListReplaysFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::list_replays::builders::ListReplaysFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of replays to retrieve.</p><br>
     /// - On success, responds with [`ListReplaysOutput`](crate::operation::list_replays::ListReplaysOutput) with field(s):
-    ///   - [`replays(Option<Vec<Replay>>)`](crate::operation::list_replays::ListReplaysOutput::replays): <p>An array of <code>Replay</code> objects that contain information about the replay.</p>
+    ///   - [`replays(Option<Vec::<Replay>>)`](crate::operation::list_replays::ListReplaysOutput::replays): <p>An array of <code>Replay</code> objects that contain information about the replay.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_replays::ListReplaysOutput::next_token): <p>The token returned by a previous call to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListReplaysError>`](crate::operation::list_replays::ListReplaysError)
     pub fn list_replays(&self) -> crate::operation::list_replays::builders::ListReplaysFluentBuilder {

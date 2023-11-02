@@ -4,10 +4,10 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`arn(impl Into<String>)`](crate::operation::tag::builders::TagFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::tag::builders::TagFluentBuilder::set_arn):<br>required: **true**<br><p>The ARN of the resource group to which to add tags.</p><br>
-    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::tag::builders::TagFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::tag::builders::TagFluentBuilder::set_tags):<br>required: **true**<br><p>The tags to add to the specified resource group. A tag is a string-to-string map of key-value pairs.</p><br>
+    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::tag::builders::TagFluentBuilder::tags) / [`set_tags(Option<HashMap::<String, String>>)`](crate::operation::tag::builders::TagFluentBuilder::set_tags):<br>required: **true**<br><p>The tags to add to the specified resource group. A tag is a string-to-string map of key-value pairs.</p><br>
     /// - On success, responds with [`TagOutput`](crate::operation::tag::TagOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::tag::TagOutput::arn): <p>The ARN of the tagged resource.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::tag::TagOutput::tags): <p>The tags that have been added to the specified resource group.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::tag::TagOutput::tags): <p>The tags that have been added to the specified resource group.</p>
     /// - On failure, responds with [`SdkError<TagError>`](crate::operation::tag::TagError)
     pub fn tag(&self) -> crate::operation::tag::builders::TagFluentBuilder {
         crate::operation::tag::builders::TagFluentBuilder::new(self.handle.clone())

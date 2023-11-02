@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`origin(Option<Origin>)`](crate::operation::get_data_set::GetDataSetOutput::origin): <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
     ///   - [`origin_details(Option<OriginDetails>)`](crate::operation::get_data_set::GetDataSetOutput::origin_details): <p>If the origin of this data set is ENTITLED, includes the details for the product on AWS Marketplace.</p>
     ///   - [`source_id(Option<String>)`](crate::operation::get_data_set::GetDataSetOutput::source_id): <p>The data set ID of the owned data set corresponding to the entitled data set being viewed. This parameter is returned when a data set owner is viewing the entitled copy of its owned data set.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_data_set::GetDataSetOutput::tags): <p>The tags for the data set.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_data_set::GetDataSetOutput::tags): <p>The tags for the data set.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_data_set::GetDataSetOutput::updated_at): <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
     /// - On failure, responds with [`SdkError<GetDataSetError>`](crate::operation::get_data_set::GetDataSetError)
     pub fn get_data_set(&self) -> crate::operation::get_data_set::builders::GetDataSetFluentBuilder {

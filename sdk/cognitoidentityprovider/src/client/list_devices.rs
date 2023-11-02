@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`limit(i32)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::set_limit):<br>required: **false**<br><p>The limit of the device request.</p><br>
     ///   - [`pagination_token(impl Into<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::pagination_token) / [`set_pagination_token(Option<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::set_pagination_token):<br>required: **false**<br><p>The pagination token for the list request.</p><br>
     /// - On success, responds with [`ListDevicesOutput`](crate::operation::list_devices::ListDevicesOutput) with field(s):
-    ///   - [`devices(Option<Vec<DeviceType>>)`](crate::operation::list_devices::ListDevicesOutput::devices): <p>The devices returned in the list devices response.</p>
+    ///   - [`devices(Option<Vec::<DeviceType>>)`](crate::operation::list_devices::ListDevicesOutput::devices): <p>The devices returned in the list devices response.</p>
     ///   - [`pagination_token(Option<String>)`](crate::operation::list_devices::ListDevicesOutput::pagination_token): <p>The pagination token for the list device response.</p>
     /// - On failure, responds with [`SdkError<ListDevicesError>`](crate::operation::list_devices::ListDevicesError)
     pub fn list_devices(&self) -> crate::operation::list_devices::builders::ListDevicesFluentBuilder {

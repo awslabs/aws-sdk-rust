@@ -8,14 +8,14 @@ impl super::Client {
     /// - On success, responds with [`DescribeUserOutput`](crate::operation::describe_user::DescribeUserOutput) with field(s):
     ///   - [`user_name(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::user_name): <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
     ///   - [`user_id(String)`](crate::operation::describe_user::DescribeUserOutput::user_id): <p>The identifier for a user in the identity store.</p>
-    ///   - [`external_ids(Option<Vec<ExternalId>>)`](crate::operation::describe_user::DescribeUserOutput::external_ids): <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
+    ///   - [`external_ids(Option<Vec::<ExternalId>>)`](crate::operation::describe_user::DescribeUserOutput::external_ids): <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
     ///   - [`name(Option<Name>)`](crate::operation::describe_user::DescribeUserOutput::name): <p>The name of the user.</p>
     ///   - [`display_name(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::display_name): <p>The display name of the user.</p>
     ///   - [`nick_name(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::nick_name): <p>An alternative descriptive name for the user.</p>
     ///   - [`profile_url(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::profile_url): <p>A URL link for the user's profile.</p>
-    ///   - [`emails(Option<Vec<Email>>)`](crate::operation::describe_user::DescribeUserOutput::emails): <p>The email address of the user.</p>
-    ///   - [`addresses(Option<Vec<Address>>)`](crate::operation::describe_user::DescribeUserOutput::addresses): <p>The physical address of the user.</p>
-    ///   - [`phone_numbers(Option<Vec<PhoneNumber>>)`](crate::operation::describe_user::DescribeUserOutput::phone_numbers): <p>A list of <code>PhoneNumber</code> objects associated with a user.</p>
+    ///   - [`emails(Option<Vec::<Email>>)`](crate::operation::describe_user::DescribeUserOutput::emails): <p>The email address of the user.</p>
+    ///   - [`addresses(Option<Vec::<Address>>)`](crate::operation::describe_user::DescribeUserOutput::addresses): <p>The physical address of the user.</p>
+    ///   - [`phone_numbers(Option<Vec::<PhoneNumber>>)`](crate::operation::describe_user::DescribeUserOutput::phone_numbers): <p>A list of <code>PhoneNumber</code> objects associated with a user.</p>
     ///   - [`user_type(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::user_type): <p>A string indicating the type of user.</p>
     ///   - [`title(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::title): <p>A string containing the title of the user.</p>
     ///   - [`preferred_language(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::preferred_language): <p>The preferred language of the user.</p>

@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`hide_disabled(bool)`](crate::operation::list_identities::builders::ListIdentitiesFluentBuilder::hide_disabled) / [`set_hide_disabled(Option<bool>)`](crate::operation::list_identities::builders::ListIdentitiesFluentBuilder::set_hide_disabled):<br>required: **false**<br><p>An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.</p><br>
     /// - On success, responds with [`ListIdentitiesOutput`](crate::operation::list_identities::ListIdentitiesOutput) with field(s):
     ///   - [`identity_pool_id(Option<String>)`](crate::operation::list_identities::ListIdentitiesOutput::identity_pool_id): <p>An identity pool ID in the format REGION:GUID.</p>
-    ///   - [`identities(Option<Vec<IdentityDescription>>)`](crate::operation::list_identities::ListIdentitiesOutput::identities): <p>An object containing a set of identities and associated mappings.</p>
+    ///   - [`identities(Option<Vec::<IdentityDescription>>)`](crate::operation::list_identities::ListIdentitiesOutput::identities): <p>An object containing a set of identities and associated mappings.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_identities::ListIdentitiesOutput::next_token): <p>A pagination token.</p>
     /// - On failure, responds with [`SdkError<ListIdentitiesError>`](crate::operation::list_identities::ListIdentitiesError)
     pub fn list_identities(&self) -> crate::operation::list_identities::builders::ListIdentitiesFluentBuilder {

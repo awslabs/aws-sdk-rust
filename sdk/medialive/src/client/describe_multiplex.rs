@@ -6,15 +6,15 @@ impl super::Client {
     ///   - [`multiplex_id(impl Into<String>)`](crate::operation::describe_multiplex::builders::DescribeMultiplexFluentBuilder::multiplex_id) / [`set_multiplex_id(Option<String>)`](crate::operation::describe_multiplex::builders::DescribeMultiplexFluentBuilder::set_multiplex_id):<br>required: **true**<br>The ID of the multiplex.<br>
     /// - On success, responds with [`DescribeMultiplexOutput`](crate::operation::describe_multiplex::DescribeMultiplexOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_multiplex::DescribeMultiplexOutput::arn): The unique arn of the multiplex.
-    ///   - [`availability_zones(Option<Vec<String>>)`](crate::operation::describe_multiplex::DescribeMultiplexOutput::availability_zones): A list of availability zones for the multiplex.
-    ///   - [`destinations(Option<Vec<MultiplexOutputDestination>>)`](crate::operation::describe_multiplex::DescribeMultiplexOutput::destinations): A list of the multiplex output destinations.
+    ///   - [`availability_zones(Option<Vec::<String>>)`](crate::operation::describe_multiplex::DescribeMultiplexOutput::availability_zones): A list of availability zones for the multiplex.
+    ///   - [`destinations(Option<Vec::<MultiplexOutputDestination>>)`](crate::operation::describe_multiplex::DescribeMultiplexOutput::destinations): A list of the multiplex output destinations.
     ///   - [`id(Option<String>)`](crate::operation::describe_multiplex::DescribeMultiplexOutput::id): The unique id of the multiplex.
     ///   - [`multiplex_settings(Option<MultiplexSettings>)`](crate::operation::describe_multiplex::DescribeMultiplexOutput::multiplex_settings): Configuration for a multiplex event.
     ///   - [`name(Option<String>)`](crate::operation::describe_multiplex::DescribeMultiplexOutput::name): The name of the multiplex.
     ///   - [`pipelines_running_count(Option<i32>)`](crate::operation::describe_multiplex::DescribeMultiplexOutput::pipelines_running_count): The number of currently healthy pipelines.
     ///   - [`program_count(Option<i32>)`](crate::operation::describe_multiplex::DescribeMultiplexOutput::program_count): The number of programs in the multiplex.
     ///   - [`state(Option<MultiplexState>)`](crate::operation::describe_multiplex::DescribeMultiplexOutput::state): The current state of the multiplex.
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_multiplex::DescribeMultiplexOutput::tags): A collection of key-value pairs.
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_multiplex::DescribeMultiplexOutput::tags): A collection of key-value pairs.
     /// - On failure, responds with [`SdkError<DescribeMultiplexError>`](crate::operation::describe_multiplex::DescribeMultiplexError)
     pub fn describe_multiplex(&self) -> crate::operation::describe_multiplex::builders::DescribeMultiplexFluentBuilder {
         crate::operation::describe_multiplex::builders::DescribeMultiplexFluentBuilder::new(self.handle.clone())

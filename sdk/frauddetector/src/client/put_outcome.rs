@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::operation::put_outcome::builders::PutOutcomeFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::put_outcome::builders::PutOutcomeFluentBuilder::set_name):<br>required: **true**<br><p>The name of the outcome.</p><br>
     ///   - [`description(impl Into<String>)`](crate::operation::put_outcome::builders::PutOutcomeFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::put_outcome::builders::PutOutcomeFluentBuilder::set_description):<br>required: **false**<br><p>The outcome description.</p><br>
-    ///   - [`tags(Tag)`](crate::operation::put_outcome::builders::PutOutcomeFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::put_outcome::builders::PutOutcomeFluentBuilder::set_tags):<br>required: **false**<br><p>A collection of key and value pairs.</p><br>
+    ///   - [`tags(Tag)`](crate::operation::put_outcome::builders::PutOutcomeFluentBuilder::tags) / [`set_tags(Option<Vec::<Tag>>)`](crate::operation::put_outcome::builders::PutOutcomeFluentBuilder::set_tags):<br>required: **false**<br><p>A collection of key and value pairs.</p><br>
     /// - On success, responds with [`PutOutcomeOutput`](crate::operation::put_outcome::PutOutcomeOutput)
     /// - On failure, responds with [`SdkError<PutOutcomeError>`](crate::operation::put_outcome::PutOutcomeError)
     pub fn put_outcome(&self) -> crate::operation::put_outcome::builders::PutOutcomeFluentBuilder {

@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_filters::builders::ListFiltersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_filters::builders::ListFiltersFluentBuilder::set_next_token):<br>required: **false**<br><p>A token returned from the previous call to <code>ListFilters</code> for getting the next set of filters (if they exist).</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_filters::builders::ListFiltersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_filters::builders::ListFiltersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of filters to return.</p><br>
     /// - On success, responds with [`ListFiltersOutput`](crate::operation::list_filters::ListFiltersOutput) with field(s):
-    ///   - [`filters(Option<Vec<FilterSummary>>)`](crate::operation::list_filters::ListFiltersOutput::filters): <p>A list of returned filters.</p>
+    ///   - [`filters(Option<Vec::<FilterSummary>>)`](crate::operation::list_filters::ListFiltersOutput::filters): <p>A list of returned filters.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_filters::ListFiltersOutput::next_token): <p>A token for getting the next set of filters (if they exist).</p>
     /// - On failure, responds with [`SdkError<ListFiltersError>`](crate::operation::list_filters::ListFiltersError)
     pub fn list_filters(&self) -> crate::operation::list_filters::builders::ListFiltersFluentBuilder {

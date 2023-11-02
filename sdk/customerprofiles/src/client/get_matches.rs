@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::get_matches::GetMatchesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     ///   - [`match_generation_date(Option<DateTime>)`](crate::operation::get_matches::GetMatchesOutput::match_generation_date): <p>The timestamp this version of Match Result generated.</p>
     ///   - [`potential_matches(Option<i32>)`](crate::operation::get_matches::GetMatchesOutput::potential_matches): <p>The number of potential matches found.</p>
-    ///   - [`matches(Option<Vec<MatchItem>>)`](crate::operation::get_matches::GetMatchesOutput::matches): <p>The list of matched profiles for this instance.</p>
+    ///   - [`matches(Option<Vec::<MatchItem>>)`](crate::operation::get_matches::GetMatchesOutput::matches): <p>The list of matched profiles for this instance.</p>
     /// - On failure, responds with [`SdkError<GetMatchesError>`](crate::operation::get_matches::GetMatchesError)
     pub fn get_matches(&self) -> crate::operation::get_matches::builders::GetMatchesFluentBuilder {
         crate::operation::get_matches::builders::GetMatchesFluentBuilder::new(self.handle.clone())

@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`volume_arn(impl Into<String>)`](crate::operation::list_volume_initiators::builders::ListVolumeInitiatorsFluentBuilder::volume_arn) / [`set_volume_arn(Option<String>)`](crate::operation::list_volume_initiators::builders::ListVolumeInitiatorsFluentBuilder::set_volume_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes for the gateway.</p><br>
     /// - On success, responds with [`ListVolumeInitiatorsOutput`](crate::operation::list_volume_initiators::ListVolumeInitiatorsOutput) with field(s):
-    ///   - [`initiators(Option<Vec<String>>)`](crate::operation::list_volume_initiators::ListVolumeInitiatorsOutput::initiators): <p>The host names and port numbers of all iSCSI initiators that are connected to the gateway.</p>
+    ///   - [`initiators(Option<Vec::<String>>)`](crate::operation::list_volume_initiators::ListVolumeInitiatorsOutput::initiators): <p>The host names and port numbers of all iSCSI initiators that are connected to the gateway.</p>
     /// - On failure, responds with [`SdkError<ListVolumeInitiatorsError>`](crate::operation::list_volume_initiators::ListVolumeInitiatorsError)
     pub fn list_volume_initiators(&self) -> crate::operation::list_volume_initiators::builders::ListVolumeInitiatorsFluentBuilder {
         crate::operation::list_volume_initiators::builders::ListVolumeInitiatorsFluentBuilder::new(self.handle.clone())

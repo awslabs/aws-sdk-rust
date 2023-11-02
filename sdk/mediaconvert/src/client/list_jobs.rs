@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`queue(impl Into<String>)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::queue) / [`set_queue(Option<String>)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::set_queue):<br>required: **false**<br>Optional. Provide a queue name to get back only jobs from that queue.<br>
     ///   - [`status(JobStatus)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::status) / [`set_status(Option<JobStatus>)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::set_status):<br>required: **false**<br>Optional. A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.<br>
     /// - On success, responds with [`ListJobsOutput`](crate::operation::list_jobs::ListJobsOutput) with field(s):
-    ///   - [`jobs(Option<Vec<Job>>)`](crate::operation::list_jobs::ListJobsOutput::jobs): List of jobs
+    ///   - [`jobs(Option<Vec::<Job>>)`](crate::operation::list_jobs::ListJobsOutput::jobs): List of jobs
     ///   - [`next_token(Option<String>)`](crate::operation::list_jobs::ListJobsOutput::next_token): Use this string to request the next batch of jobs.
     /// - On failure, responds with [`SdkError<ListJobsError>`](crate::operation::list_jobs::ListJobsError)
     pub fn list_jobs(&self) -> crate::operation::list_jobs::builders::ListJobsFluentBuilder {

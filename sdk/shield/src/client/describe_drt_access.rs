@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder takes no input, just [`send`](crate::operation::describe_drt_access::builders::DescribeDRTAccessFluentBuilder::send) it.
     /// - On success, responds with [`DescribeDrtAccessOutput`](crate::operation::describe_drt_access::DescribeDrtAccessOutput) with field(s):
     ///   - [`role_arn(Option<String>)`](crate::operation::describe_drt_access::DescribeDrtAccessOutput::role_arn): <p>The Amazon Resource Name (ARN) of the role the SRT used to access your Amazon Web Services account.</p>
-    ///   - [`log_bucket_list(Option<Vec<String>>)`](crate::operation::describe_drt_access::DescribeDrtAccessOutput::log_bucket_list): <p>The list of Amazon S3 buckets accessed by the SRT.</p>
+    ///   - [`log_bucket_list(Option<Vec::<String>>)`](crate::operation::describe_drt_access::DescribeDrtAccessOutput::log_bucket_list): <p>The list of Amazon S3 buckets accessed by the SRT.</p>
     /// - On failure, responds with [`SdkError<DescribeDRTAccessError>`](crate::operation::describe_drt_access::DescribeDRTAccessError)
     pub fn describe_drt_access(&self) -> crate::operation::describe_drt_access::builders::DescribeDRTAccessFluentBuilder {
         crate::operation::describe_drt_access::builders::DescribeDRTAccessFluentBuilder::new(self.handle.clone())

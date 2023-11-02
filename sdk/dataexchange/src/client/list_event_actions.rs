@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_event_actions::builders::ListEventActionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_event_actions::builders::ListEventActionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results returned by a single call.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_event_actions::builders::ListEventActionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_event_actions::builders::ListEventActionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token value retrieved from a previous call to access the next page of results.</p><br>
     /// - On success, responds with [`ListEventActionsOutput`](crate::operation::list_event_actions::ListEventActionsOutput) with field(s):
-    ///   - [`event_actions(Option<Vec<EventActionEntry>>)`](crate::operation::list_event_actions::ListEventActionsOutput::event_actions): <p>The event action objects listed by the request.</p>
+    ///   - [`event_actions(Option<Vec::<EventActionEntry>>)`](crate::operation::list_event_actions::ListEventActionsOutput::event_actions): <p>The event action objects listed by the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_event_actions::ListEventActionsOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListEventActionsError>`](crate::operation::list_event_actions::ListEventActionsError)
     pub fn list_event_actions(&self) -> crate::operation::list_event_actions::builders::ListEventActionsFluentBuilder {

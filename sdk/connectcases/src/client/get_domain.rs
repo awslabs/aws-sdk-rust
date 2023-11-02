@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`name(String)`](crate::operation::get_domain::GetDomainOutput::name): <p>The name of the Cases domain.</p>
     ///   - [`created_time(DateTime)`](crate::operation::get_domain::GetDomainOutput::created_time): <p>The timestamp when the Cases domain was created.</p>
     ///   - [`domain_status(DomainStatus)`](crate::operation::get_domain::GetDomainOutput::domain_status): <p>The status of the Cases domain.</p>
-    ///   - [`tags(Option<HashMap<String, Option<String>>>)`](crate::operation::get_domain::GetDomainOutput::tags): <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
+    ///   - [`tags(Option<HashMap::<String, Option<String>>>)`](crate::operation::get_domain::GetDomainOutput::tags): <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     /// - On failure, responds with [`SdkError<GetDomainError>`](crate::operation::get_domain::GetDomainError)
     pub fn get_domain(&self) -> crate::operation::get_domain::builders::GetDomainFluentBuilder {
         crate::operation::get_domain::builders::GetDomainFluentBuilder::new(self.handle.clone())

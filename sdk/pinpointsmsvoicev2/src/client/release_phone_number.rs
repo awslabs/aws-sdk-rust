@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`status(Option<NumberStatus>)`](crate::operation::release_phone_number::ReleasePhoneNumberOutput::status): <p>The current status of the request.</p>
     ///   - [`iso_country_code(Option<String>)`](crate::operation::release_phone_number::ReleasePhoneNumberOutput::iso_country_code): <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     ///   - [`message_type(Option<MessageType>)`](crate::operation::release_phone_number::ReleasePhoneNumberOutput::message_type): <p>The message type that was associated with the phone number.</p>
-    ///   - [`number_capabilities(Option<Vec<NumberCapability>>)`](crate::operation::release_phone_number::ReleasePhoneNumberOutput::number_capabilities): <p>Specifies if the number could be used for text messages, voice, or both.</p>
+    ///   - [`number_capabilities(Option<Vec::<NumberCapability>>)`](crate::operation::release_phone_number::ReleasePhoneNumberOutput::number_capabilities): <p>Specifies if the number could be used for text messages, voice, or both.</p>
     ///   - [`number_type(Option<NumberType>)`](crate::operation::release_phone_number::ReleasePhoneNumberOutput::number_type): <p>The type of number that was released.</p>
     ///   - [`monthly_leasing_price(Option<String>)`](crate::operation::release_phone_number::ReleasePhoneNumberOutput::monthly_leasing_price): <p>The monthly price of the phone number, in US dollars.</p>
     ///   - [`two_way_enabled(bool)`](crate::operation::release_phone_number::ReleasePhoneNumberOutput::two_way_enabled): <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>

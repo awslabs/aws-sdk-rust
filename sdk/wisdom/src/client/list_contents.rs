@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_contents::builders::ListContentsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_contents::builders::ListContentsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page.</p><br>
     ///   - [`knowledge_base_id(impl Into<String>)`](crate::operation::list_contents::builders::ListContentsFluentBuilder::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::operation::list_contents::builders::ListContentsFluentBuilder::set_knowledge_base_id):<br>required: **true**<br><p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p><br>
     /// - On success, responds with [`ListContentsOutput`](crate::operation::list_contents::ListContentsOutput) with field(s):
-    ///   - [`content_summaries(Vec<ContentSummary>)`](crate::operation::list_contents::ListContentsOutput::content_summaries): <p>Information about the content.</p>
+    ///   - [`content_summaries(Vec::<ContentSummary>)`](crate::operation::list_contents::ListContentsOutput::content_summaries): <p>Information about the content.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_contents::ListContentsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListContentsError>`](crate::operation::list_contents::ListContentsError)
     pub fn list_contents(&self) -> crate::operation::list_contents::builders::ListContentsFluentBuilder {

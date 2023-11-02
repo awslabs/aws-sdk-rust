@@ -10,7 +10,7 @@ impl super::Client {
     /// - On success, responds with [`ListFileSystemAssociationsOutput`](crate::operation::list_file_system_associations::ListFileSystemAssociationsOutput) with field(s):
     ///   - [`marker(Option<String>)`](crate::operation::list_file_system_associations::ListFileSystemAssociationsOutput::marker): <p>If the request includes <code>Marker</code>, the response returns that value in this field.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::list_file_system_associations::ListFileSystemAssociationsOutput::next_marker): <p>If a value is present, there are more file system associations to return. In a subsequent request, use <code>NextMarker</code> as the value for <code>Marker</code> to retrieve the next set of file system associations.</p>
-    ///   - [`file_system_association_summary_list(Option<Vec<FileSystemAssociationSummary>>)`](crate::operation::list_file_system_associations::ListFileSystemAssociationsOutput::file_system_association_summary_list): <p>An array of information about the Amazon FSx gateway's file system associations.</p>
+    ///   - [`file_system_association_summary_list(Option<Vec::<FileSystemAssociationSummary>>)`](crate::operation::list_file_system_associations::ListFileSystemAssociationsOutput::file_system_association_summary_list): <p>An array of information about the Amazon FSx gateway's file system associations.</p>
     /// - On failure, responds with [`SdkError<ListFileSystemAssociationsError>`](crate::operation::list_file_system_associations::ListFileSystemAssociationsError)
     pub fn list_file_system_associations(
         &self,

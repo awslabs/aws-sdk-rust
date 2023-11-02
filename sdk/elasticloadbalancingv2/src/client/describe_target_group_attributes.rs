@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`target_group_arn(impl Into<String>)`](crate::operation::describe_target_group_attributes::builders::DescribeTargetGroupAttributesFluentBuilder::target_group_arn) / [`set_target_group_arn(Option<String>)`](crate::operation::describe_target_group_attributes::builders::DescribeTargetGroupAttributesFluentBuilder::set_target_group_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the target group.</p><br>
     /// - On success, responds with [`DescribeTargetGroupAttributesOutput`](crate::operation::describe_target_group_attributes::DescribeTargetGroupAttributesOutput) with field(s):
-    ///   - [`attributes(Option<Vec<TargetGroupAttribute>>)`](crate::operation::describe_target_group_attributes::DescribeTargetGroupAttributesOutput::attributes): <p>Information about the target group attributes</p>
+    ///   - [`attributes(Option<Vec::<TargetGroupAttribute>>)`](crate::operation::describe_target_group_attributes::DescribeTargetGroupAttributesOutput::attributes): <p>Information about the target group attributes</p>
     /// - On failure, responds with [`SdkError<DescribeTargetGroupAttributesError>`](crate::operation::describe_target_group_attributes::DescribeTargetGroupAttributesError)
     pub fn describe_target_group_attributes(
         &self,

@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::describe_job_log_items::builders::DescribeJobLogItemsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_job_log_items::builders::DescribeJobLogItemsFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of Job log items to retrieve.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_job_log_items::builders::DescribeJobLogItemsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_job_log_items::builders::DescribeJobLogItemsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token of the next Job log items to retrieve.</p><br>
     /// - On success, responds with [`DescribeJobLogItemsOutput`](crate::operation::describe_job_log_items::DescribeJobLogItemsOutput) with field(s):
-    ///   - [`items(Option<Vec<JobLog>>)`](crate::operation::describe_job_log_items::DescribeJobLogItemsOutput::items): <p>An array of Job log items.</p>
+    ///   - [`items(Option<Vec::<JobLog>>)`](crate::operation::describe_job_log_items::DescribeJobLogItemsOutput::items): <p>An array of Job log items.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_job_log_items::DescribeJobLogItemsOutput::next_token): <p>The token of the next Job log items to retrieve.</p>
     /// - On failure, responds with [`SdkError<DescribeJobLogItemsError>`](crate::operation::describe_job_log_items::DescribeJobLogItemsError)
     pub fn describe_job_log_items(&self) -> crate::operation::describe_job_log_items::builders::DescribeJobLogItemsFluentBuilder {

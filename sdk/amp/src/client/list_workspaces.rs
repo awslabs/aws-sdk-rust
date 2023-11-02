@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`alias(impl Into<String>)`](crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder::alias) / [`set_alias(Option<String>)`](crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder::set_alias):<br>required: **false**<br>Optional filter for workspace alias. Only the workspaces with aliases that begin with this value will be returned.<br>
     ///   - [`max_results(i32)`](crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder::set_max_results):<br>required: **false**<br>Maximum results to return in response (default=100, maximum=1000).<br>
     /// - On success, responds with [`ListWorkspacesOutput`](crate::operation::list_workspaces::ListWorkspacesOutput) with field(s):
-    ///   - [`workspaces(Vec<WorkspaceSummary>)`](crate::operation::list_workspaces::ListWorkspacesOutput::workspaces): The list of existing workspaces, including those undergoing creation or deletion.
+    ///   - [`workspaces(Vec::<WorkspaceSummary>)`](crate::operation::list_workspaces::ListWorkspacesOutput::workspaces): The list of existing workspaces, including those undergoing creation or deletion.
     ///   - [`next_token(Option<String>)`](crate::operation::list_workspaces::ListWorkspacesOutput::next_token): Pagination token to use when requesting the next page in this list.
     /// - On failure, responds with [`SdkError<ListWorkspacesError>`](crate::operation::list_workspaces::ListWorkspacesError)
     pub fn list_workspaces(&self) -> crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder {

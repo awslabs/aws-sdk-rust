@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_user_groups::builders::ListUserGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_user_groups::builders::ListUserGroupsFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token that can be used in a subsequent request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_user_groups::builders::ListUserGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_user_groups::builders::ListUserGroupsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return from this request.</p><br>
     /// - On success, responds with [`ListUserGroupsOutput`](crate::operation::list_user_groups::ListUserGroupsOutput) with field(s):
-    ///   - [`group_list(Option<Vec<Group>>)`](crate::operation::list_user_groups::ListUserGroupsOutput::group_list): <p>The list of groups the user is a member of.</p>
+    ///   - [`group_list(Option<Vec::<Group>>)`](crate::operation::list_user_groups::ListUserGroupsOutput::group_list): <p>The list of groups the user is a member of.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_user_groups::ListUserGroupsOutput::next_token): <p>A pagination token that can be used in a subsequent request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::list_user_groups::ListUserGroupsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::list_user_groups::ListUserGroupsOutput::status): <p>The HTTP status of the request.</p>

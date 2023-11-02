@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_name(impl Into<String>)`](crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceFluentBuilder::resource_name) / [`set_resource_name(Option<String>)`](crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceFluentBuilder::set_resource_name):<br>required: **true**<br><p>The Amazon DocumentDB resource that the tags are removed from. This value is an Amazon Resource Name (ARN).</p><br>
-    ///   - [`tag_keys(impl Into<String>)`](crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceFluentBuilder::set_tag_keys):<br>required: **true**<br><p>The tag key (name) of the tag to be removed.</p><br>
+    ///   - [`tag_keys(impl Into<String>)`](crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec::<String>>)`](crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceFluentBuilder::set_tag_keys):<br>required: **true**<br><p>The tag key (name) of the tag to be removed.</p><br>
     /// - On success, responds with [`RemoveTagsFromResourceOutput`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceOutput)
     /// - On failure, responds with [`SdkError<RemoveTagsFromResourceError>`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError)
     pub fn remove_tags_from_resource(&self) -> crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceFluentBuilder {

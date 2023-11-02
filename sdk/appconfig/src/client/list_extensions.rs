@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_extensions::builders::ListExtensionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_extensions::builders::ListExtensionsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to start the list. Use this token to get the next set of results. </p><br>
     ///   - [`name(impl Into<String>)`](crate::operation::list_extensions::builders::ListExtensionsFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::list_extensions::builders::ListExtensionsFluentBuilder::set_name):<br>required: **false**<br><p>The extension name.</p><br>
     /// - On success, responds with [`ListExtensionsOutput`](crate::operation::list_extensions::ListExtensionsOutput) with field(s):
-    ///   - [`items(Option<Vec<ExtensionSummary>>)`](crate::operation::list_extensions::ListExtensionsOutput::items): <p>The list of available extensions. The list includes Amazon Web Services authored and user-created extensions.</p>
+    ///   - [`items(Option<Vec::<ExtensionSummary>>)`](crate::operation::list_extensions::ListExtensionsOutput::items): <p>The list of available extensions. The list includes Amazon Web Services authored and user-created extensions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_extensions::ListExtensionsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListExtensionsError>`](crate::operation::list_extensions::ListExtensionsError)
     pub fn list_extensions(&self) -> crate::operation::list_extensions::builders::ListExtensionsFluentBuilder {

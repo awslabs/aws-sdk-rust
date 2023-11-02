@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_adapters::builders::ListAdaptersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_adapters::builders::ListAdaptersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return when listing adapters.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_adapters::builders::ListAdaptersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_adapters::builders::ListAdaptersFluentBuilder::set_next_token):<br>required: **false**<br><p>Identifies the next page of results to return when listing adapters.</p><br>
     /// - On success, responds with [`ListAdaptersOutput`](crate::operation::list_adapters::ListAdaptersOutput) with field(s):
-    ///   - [`adapters(Option<Vec<AdapterOverview>>)`](crate::operation::list_adapters::ListAdaptersOutput::adapters): <p>A list of adapters that matches the filtering criteria specified when calling ListAdapters.</p>
+    ///   - [`adapters(Option<Vec::<AdapterOverview>>)`](crate::operation::list_adapters::ListAdaptersOutput::adapters): <p>A list of adapters that matches the filtering criteria specified when calling ListAdapters.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_adapters::ListAdaptersOutput::next_token): <p>Identifies the next page of results to return when listing adapters.</p>
     /// - On failure, responds with [`SdkError<ListAdaptersError>`](crate::operation::list_adapters::ListAdaptersError)
     pub fn list_adapters(&self) -> crate::operation::list_adapters::builders::ListAdaptersFluentBuilder {

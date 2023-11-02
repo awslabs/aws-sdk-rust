@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`latest_version(Option<String>)`](crate::operation::get_function_definition::GetFunctionDefinitionOutput::latest_version): The ID of the latest version associated with the definition.
     ///   - [`latest_version_arn(Option<String>)`](crate::operation::get_function_definition::GetFunctionDefinitionOutput::latest_version_arn): The ARN of the latest version associated with the definition.
     ///   - [`name(Option<String>)`](crate::operation::get_function_definition::GetFunctionDefinitionOutput::name): The name of the definition.
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_function_definition::GetFunctionDefinitionOutput::tags): Tag(s) attached to the resource arn.
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_function_definition::GetFunctionDefinitionOutput::tags): Tag(s) attached to the resource arn.
     /// - On failure, responds with [`SdkError<GetFunctionDefinitionError>`](crate::operation::get_function_definition::GetFunctionDefinitionError)
     pub fn get_function_definition(&self) -> crate::operation::get_function_definition::builders::GetFunctionDefinitionFluentBuilder {
         crate::operation::get_function_definition::builders::GetFunctionDefinitionFluentBuilder::new(self.handle.clone())

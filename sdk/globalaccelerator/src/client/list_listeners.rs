@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_listeners::builders::ListListenersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_listeners::builders::ListListenersFluentBuilder::set_max_results):<br>required: **false**<br><p>The number of listener objects that you want to return with this call. The default value is 10.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_listeners::builders::ListListenersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_listeners::builders::ListListenersFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. You receive this token from a previous call.</p><br>
     /// - On success, responds with [`ListListenersOutput`](crate::operation::list_listeners::ListListenersOutput) with field(s):
-    ///   - [`listeners(Option<Vec<Listener>>)`](crate::operation::list_listeners::ListListenersOutput::listeners): <p>The list of listeners for an accelerator.</p>
+    ///   - [`listeners(Option<Vec::<Listener>>)`](crate::operation::list_listeners::ListListenersOutput::listeners): <p>The list of listeners for an accelerator.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_listeners::ListListenersOutput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
     /// - On failure, responds with [`SdkError<ListListenersError>`](crate::operation::list_listeners::ListListenersError)
     pub fn list_listeners(&self) -> crate::operation::list_listeners::builders::ListListenersFluentBuilder {

@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous call to <code>ListArtifacts</code> didn't return the full set of artifacts, the call returns a token for getting the next set of artifacts.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of artifacts to return in the response. The default value is 10.</p><br>
     /// - On success, responds with [`ListArtifactsOutput`](crate::operation::list_artifacts::ListArtifactsOutput) with field(s):
-    ///   - [`artifact_summaries(Option<Vec<ArtifactSummary>>)`](crate::operation::list_artifacts::ListArtifactsOutput::artifact_summaries): <p>A list of artifacts and their properties.</p>
+    ///   - [`artifact_summaries(Option<Vec::<ArtifactSummary>>)`](crate::operation::list_artifacts::ListArtifactsOutput::artifact_summaries): <p>A list of artifacts and their properties.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_artifacts::ListArtifactsOutput::next_token): <p>A token for getting the next set of artifacts, if there are any.</p>
     /// - On failure, responds with [`SdkError<ListArtifactsError>`](crate::operation::list_artifacts::ListArtifactsError)
     pub fn list_artifacts(&self) -> crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder {

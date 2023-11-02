@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::set_next_token):<br>required: **false**<br><p>Identifies the next page of results to return.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results to return in a response. The default is 100.</p><br>
     /// - On success, responds with [`ListDatasetsOutput`](crate::operation::list_datasets::ListDatasetsOutput) with field(s):
-    ///   - [`dataset_properties_list(Option<Vec<DatasetProperties>>)`](crate::operation::list_datasets::ListDatasetsOutput::dataset_properties_list): <p>The dataset properties list.</p>
+    ///   - [`dataset_properties_list(Option<Vec::<DatasetProperties>>)`](crate::operation::list_datasets::ListDatasetsOutput::dataset_properties_list): <p>The dataset properties list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_datasets::ListDatasetsOutput::next_token): <p>Identifies the next page of results to return.</p>
     /// - On failure, responds with [`SdkError<ListDatasetsError>`](crate::operation::list_datasets::ListDatasetsError)
     pub fn list_datasets(&self) -> crate::operation::list_datasets::builders::ListDatasetsFluentBuilder {

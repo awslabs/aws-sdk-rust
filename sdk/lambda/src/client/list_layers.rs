@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`compatible_architecture(Architecture)`](crate::operation::list_layers::builders::ListLayersFluentBuilder::compatible_architecture) / [`set_compatible_architecture(Option<Architecture>)`](crate::operation::list_layers::builders::ListLayersFluentBuilder::set_compatible_architecture):<br>required: **false**<br><p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p><br>
     /// - On success, responds with [`ListLayersOutput`](crate::operation::list_layers::ListLayersOutput) with field(s):
     ///   - [`next_marker(Option<String>)`](crate::operation::list_layers::ListLayersOutput::next_marker): <p>A pagination token returned when the response doesn't contain all layers.</p>
-    ///   - [`layers(Option<Vec<LayersListItem>>)`](crate::operation::list_layers::ListLayersOutput::layers): <p>A list of function layers.</p>
+    ///   - [`layers(Option<Vec::<LayersListItem>>)`](crate::operation::list_layers::ListLayersOutput::layers): <p>A list of function layers.</p>
     /// - On failure, responds with [`SdkError<ListLayersError>`](crate::operation::list_layers::ListLayersError)
     pub fn list_layers(&self) -> crate::operation::list_layers::builders::ListLayersFluentBuilder {
         crate::operation::list_layers::builders::ListLayersFluentBuilder::new(self.handle.clone())

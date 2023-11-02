@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`operation(impl Into<String>)`](crate::operation::list_backend_jobs::builders::ListBackendJobsFluentBuilder::operation) / [`set_operation(Option<String>)`](crate::operation::list_backend_jobs::builders::ListBackendJobsFluentBuilder::set_operation):<br>required: **false**<br><p>Filters the list of response objects to include only those with the specified operation name.</p><br>
     ///   - [`status(impl Into<String>)`](crate::operation::list_backend_jobs::builders::ListBackendJobsFluentBuilder::status) / [`set_status(Option<String>)`](crate::operation::list_backend_jobs::builders::ListBackendJobsFluentBuilder::set_status):<br>required: **false**<br><p>Filters the list of response objects to include only those with the specified status.</p><br>
     /// - On success, responds with [`ListBackendJobsOutput`](crate::operation::list_backend_jobs::ListBackendJobsOutput) with field(s):
-    ///   - [`jobs(Option<Vec<BackendJobRespObj>>)`](crate::operation::list_backend_jobs::ListBackendJobsOutput::jobs): <p>An array of jobs and their properties.</p>
+    ///   - [`jobs(Option<Vec::<BackendJobRespObj>>)`](crate::operation::list_backend_jobs::ListBackendJobsOutput::jobs): <p>An array of jobs and their properties.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_backend_jobs::ListBackendJobsOutput::next_token): <p>The token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListBackendJobsError>`](crate::operation::list_backend_jobs::ListBackendJobsError)
     pub fn list_backend_jobs(&self) -> crate::operation::list_backend_jobs::builders::ListBackendJobsFluentBuilder {

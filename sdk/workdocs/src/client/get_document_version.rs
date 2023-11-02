@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`include_custom_metadata(bool)`](crate::operation::get_document_version::builders::GetDocumentVersionFluentBuilder::include_custom_metadata) / [`set_include_custom_metadata(Option<bool>)`](crate::operation::get_document_version::builders::GetDocumentVersionFluentBuilder::set_include_custom_metadata):<br>required: **false**<br><p>Set this to TRUE to include custom metadata in the response.</p><br>
     /// - On success, responds with [`GetDocumentVersionOutput`](crate::operation::get_document_version::GetDocumentVersionOutput) with field(s):
     ///   - [`metadata(Option<DocumentVersionMetadata>)`](crate::operation::get_document_version::GetDocumentVersionOutput::metadata): <p>The version metadata.</p>
-    ///   - [`custom_metadata(Option<HashMap<String, String>>)`](crate::operation::get_document_version::GetDocumentVersionOutput::custom_metadata): <p>The custom metadata on the document version.</p>
+    ///   - [`custom_metadata(Option<HashMap::<String, String>>)`](crate::operation::get_document_version::GetDocumentVersionOutput::custom_metadata): <p>The custom metadata on the document version.</p>
     /// - On failure, responds with [`SdkError<GetDocumentVersionError>`](crate::operation::get_document_version::GetDocumentVersionError)
     pub fn get_document_version(&self) -> crate::operation::get_document_version::builders::GetDocumentVersionFluentBuilder {
         crate::operation::get_document_version::builders::GetDocumentVersionFluentBuilder::new(self.handle.clone())

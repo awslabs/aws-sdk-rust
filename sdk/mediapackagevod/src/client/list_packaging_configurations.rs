@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`packaging_group_id(impl Into<String>)`](crate::operation::list_packaging_configurations::builders::ListPackagingConfigurationsFluentBuilder::packaging_group_id) / [`set_packaging_group_id(Option<String>)`](crate::operation::list_packaging_configurations::builders::ListPackagingConfigurationsFluentBuilder::set_packaging_group_id):<br>required: **false**<br>Returns MediaPackage VOD PackagingConfigurations associated with the specified PackagingGroup.<br>
     /// - On success, responds with [`ListPackagingConfigurationsOutput`](crate::operation::list_packaging_configurations::ListPackagingConfigurationsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_packaging_configurations::ListPackagingConfigurationsOutput::next_token): A token that can be used to resume pagination from the end of the collection.
-    ///   - [`packaging_configurations(Option<Vec<PackagingConfiguration>>)`](crate::operation::list_packaging_configurations::ListPackagingConfigurationsOutput::packaging_configurations): A list of MediaPackage VOD PackagingConfiguration resources.
+    ///   - [`packaging_configurations(Option<Vec::<PackagingConfiguration>>)`](crate::operation::list_packaging_configurations::ListPackagingConfigurationsOutput::packaging_configurations): A list of MediaPackage VOD PackagingConfiguration resources.
     /// - On failure, responds with [`SdkError<ListPackagingConfigurationsError>`](crate::operation::list_packaging_configurations::ListPackagingConfigurationsError)
     pub fn list_packaging_configurations(
         &self,

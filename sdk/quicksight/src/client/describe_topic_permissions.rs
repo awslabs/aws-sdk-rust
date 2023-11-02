@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeTopicPermissionsOutput`](crate::operation::describe_topic_permissions::DescribeTopicPermissionsOutput) with field(s):
     ///   - [`topic_id(Option<String>)`](crate::operation::describe_topic_permissions::DescribeTopicPermissionsOutput::topic_id): <p>The ID of the topic that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     ///   - [`topic_arn(Option<String>)`](crate::operation::describe_topic_permissions::DescribeTopicPermissionsOutput::topic_arn): <p>The Amazon Resource Name (ARN) of the topic.</p>
-    ///   - [`permissions(Option<Vec<ResourcePermission>>)`](crate::operation::describe_topic_permissions::DescribeTopicPermissionsOutput::permissions): <p>A list of resource permissions that are configured to the topic.</p>
+    ///   - [`permissions(Option<Vec::<ResourcePermission>>)`](crate::operation::describe_topic_permissions::DescribeTopicPermissionsOutput::permissions): <p>A list of resource permissions that are configured to the topic.</p>
     ///   - [`status(i32)`](crate::operation::describe_topic_permissions::DescribeTopicPermissionsOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::describe_topic_permissions::DescribeTopicPermissionsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<DescribeTopicPermissionsError>`](crate::operation::describe_topic_permissions::DescribeTopicPermissionsError)

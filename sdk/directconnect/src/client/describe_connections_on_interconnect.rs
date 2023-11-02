@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`interconnect_id(impl Into<String>)`](crate::operation::describe_connections_on_interconnect::builders::DescribeConnectionsOnInterconnectFluentBuilder::interconnect_id) / [`set_interconnect_id(Option<String>)`](crate::operation::describe_connections_on_interconnect::builders::DescribeConnectionsOnInterconnectFluentBuilder::set_interconnect_id):<br>required: **true**<br><p>The ID of the interconnect.</p><br>
     /// - On success, responds with [`DescribeConnectionsOnInterconnectOutput`](crate::operation::describe_connections_on_interconnect::DescribeConnectionsOnInterconnectOutput) with field(s):
-    ///   - [`connections(Option<Vec<Connection>>)`](crate::operation::describe_connections_on_interconnect::DescribeConnectionsOnInterconnectOutput::connections): <p>The connections.</p>
+    ///   - [`connections(Option<Vec::<Connection>>)`](crate::operation::describe_connections_on_interconnect::DescribeConnectionsOnInterconnectOutput::connections): <p>The connections.</p>
     /// - On failure, responds with [`SdkError<DescribeConnectionsOnInterconnectError>`](crate::operation::describe_connections_on_interconnect::DescribeConnectionsOnInterconnectError)
     #[deprecated]
     pub fn describe_connections_on_interconnect(

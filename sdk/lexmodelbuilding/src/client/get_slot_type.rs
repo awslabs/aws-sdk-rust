@@ -8,14 +8,14 @@ impl super::Client {
     /// - On success, responds with [`GetSlotTypeOutput`](crate::operation::get_slot_type::GetSlotTypeOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::get_slot_type::GetSlotTypeOutput::name): <p>The name of the slot type.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_slot_type::GetSlotTypeOutput::description): <p>A description of the slot type.</p>
-    ///   - [`enumeration_values(Option<Vec<EnumerationValue>>)`](crate::operation::get_slot_type::GetSlotTypeOutput::enumeration_values): <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take.</p>
+    ///   - [`enumeration_values(Option<Vec::<EnumerationValue>>)`](crate::operation::get_slot_type::GetSlotTypeOutput::enumeration_values): <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take.</p>
     ///   - [`last_updated_date(Option<DateTime>)`](crate::operation::get_slot_type::GetSlotTypeOutput::last_updated_date): <p>The date that the slot type was updated. When you create a resource, the creation date and last update date are the same.</p>
     ///   - [`created_date(Option<DateTime>)`](crate::operation::get_slot_type::GetSlotTypeOutput::created_date): <p>The date that the slot type was created.</p>
     ///   - [`version(Option<String>)`](crate::operation::get_slot_type::GetSlotTypeOutput::version): <p>The version of the slot type.</p>
     ///   - [`checksum(Option<String>)`](crate::operation::get_slot_type::GetSlotTypeOutput::checksum): <p>Checksum of the <code>$LATEST</code> version of the slot type.</p>
     ///   - [`value_selection_strategy(Option<SlotValueSelectionStrategy>)`](crate::operation::get_slot_type::GetSlotTypeOutput::value_selection_strategy): <p>The strategy that Amazon Lex uses to determine the value of the slot. For more information, see <code>PutSlotType</code>.</p>
     ///   - [`parent_slot_type_signature(Option<String>)`](crate::operation::get_slot_type::GetSlotTypeOutput::parent_slot_type_signature): <p>The built-in slot type used as a parent for the slot type.</p>
-    ///   - [`slot_type_configurations(Option<Vec<SlotTypeConfiguration>>)`](crate::operation::get_slot_type::GetSlotTypeOutput::slot_type_configurations): <p>Configuration information that extends the parent built-in slot type.</p>
+    ///   - [`slot_type_configurations(Option<Vec::<SlotTypeConfiguration>>)`](crate::operation::get_slot_type::GetSlotTypeOutput::slot_type_configurations): <p>Configuration information that extends the parent built-in slot type.</p>
     /// - On failure, responds with [`SdkError<GetSlotTypeError>`](crate::operation::get_slot_type::GetSlotTypeError)
     pub fn get_slot_type(&self) -> crate::operation::get_slot_type::builders::GetSlotTypeFluentBuilder {
         crate::operation::get_slot_type::builders::GetSlotTypeFluentBuilder::new(self.handle.clone())

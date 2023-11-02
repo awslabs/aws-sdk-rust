@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`queue_url(impl Into<String>)`](crate::operation::list_queue_tags::builders::ListQueueTagsFluentBuilder::queue_url) / [`set_queue_url(Option<String>)`](crate::operation::list_queue_tags::builders::ListQueueTagsFluentBuilder::set_queue_url):<br>required: **true**<br><p>The URL of the queue.</p><br>
     /// - On success, responds with [`ListQueueTagsOutput`](crate::operation::list_queue_tags::ListQueueTagsOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::list_queue_tags::ListQueueTagsOutput::tags): <p>The list of all tags added to the specified queue.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::list_queue_tags::ListQueueTagsOutput::tags): <p>The list of all tags added to the specified queue.</p>
     /// - On failure, responds with [`SdkError<ListQueueTagsError>`](crate::operation::list_queue_tags::ListQueueTagsError)
     pub fn list_queue_tags(&self) -> crate::operation::list_queue_tags::builders::ListQueueTagsFluentBuilder {
         crate::operation::list_queue_tags::builders::ListQueueTagsFluentBuilder::new(self.handle.clone())

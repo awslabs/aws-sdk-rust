@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`by_output_modality(ModelModality)`](crate::operation::list_foundation_models::builders::ListFoundationModelsFluentBuilder::by_output_modality) / [`set_by_output_modality(Option<ModelModality>)`](crate::operation::list_foundation_models::builders::ListFoundationModelsFluentBuilder::set_by_output_modality):<br>required: **false**<br><p>List by output modality type.</p><br>
     ///   - [`by_inference_type(InferenceType)`](crate::operation::list_foundation_models::builders::ListFoundationModelsFluentBuilder::by_inference_type) / [`set_by_inference_type(Option<InferenceType>)`](crate::operation::list_foundation_models::builders::ListFoundationModelsFluentBuilder::set_by_inference_type):<br>required: **false**<br><p>List by inference type.</p><br>
     /// - On success, responds with [`ListFoundationModelsOutput`](crate::operation::list_foundation_models::ListFoundationModelsOutput) with field(s):
-    ///   - [`model_summaries(Option<Vec<FoundationModelSummary>>)`](crate::operation::list_foundation_models::ListFoundationModelsOutput::model_summaries): <p>A list of bedrock foundation models.</p>
+    ///   - [`model_summaries(Option<Vec::<FoundationModelSummary>>)`](crate::operation::list_foundation_models::ListFoundationModelsOutput::model_summaries): <p>A list of bedrock foundation models.</p>
     /// - On failure, responds with [`SdkError<ListFoundationModelsError>`](crate::operation::list_foundation_models::ListFoundationModelsError)
     pub fn list_foundation_models(&self) -> crate::operation::list_foundation_models::builders::ListFoundationModelsFluentBuilder {
         crate::operation::list_foundation_models::builders::ListFoundationModelsFluentBuilder::new(self.handle.clone())

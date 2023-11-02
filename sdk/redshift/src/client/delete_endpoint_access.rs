@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`endpoint_create_time(Option<DateTime>)`](crate::operation::delete_endpoint_access::DeleteEndpointAccessOutput::endpoint_create_time): <p>The time (UTC) that the endpoint was created.</p>
     ///   - [`port(Option<i32>)`](crate::operation::delete_endpoint_access::DeleteEndpointAccessOutput::port): <p>The port number on which the cluster accepts incoming connections.</p>
     ///   - [`address(Option<String>)`](crate::operation::delete_endpoint_access::DeleteEndpointAccessOutput::address): <p>The DNS address of the endpoint.</p>
-    ///   - [`vpc_security_groups(Option<Vec<VpcSecurityGroupMembership>>)`](crate::operation::delete_endpoint_access::DeleteEndpointAccessOutput::vpc_security_groups): <p>The security groups associated with the endpoint.</p>
+    ///   - [`vpc_security_groups(Option<Vec::<VpcSecurityGroupMembership>>)`](crate::operation::delete_endpoint_access::DeleteEndpointAccessOutput::vpc_security_groups): <p>The security groups associated with the endpoint.</p>
     ///   - [`vpc_endpoint(Option<VpcEndpoint>)`](crate::operation::delete_endpoint_access::DeleteEndpointAccessOutput::vpc_endpoint): <p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>
     /// - On failure, responds with [`SdkError<DeleteEndpointAccessError>`](crate::operation::delete_endpoint_access::DeleteEndpointAccessError)
     pub fn delete_endpoint_access(&self) -> crate::operation::delete_endpoint_access::builders::DeleteEndpointAccessFluentBuilder {

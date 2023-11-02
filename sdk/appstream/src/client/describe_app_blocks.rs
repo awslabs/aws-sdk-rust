@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAppBlocks`](crate::operation::describe_app_blocks::builders::DescribeAppBlocksFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arns(impl Into<String>)`](crate::operation::describe_app_blocks::builders::DescribeAppBlocksFluentBuilder::arns) / [`set_arns(Option<Vec<String>>)`](crate::operation::describe_app_blocks::builders::DescribeAppBlocksFluentBuilder::set_arns):<br>required: **false**<br><p>The ARNs of the app blocks.</p><br>
+    ///   - [`arns(impl Into<String>)`](crate::operation::describe_app_blocks::builders::DescribeAppBlocksFluentBuilder::arns) / [`set_arns(Option<Vec::<String>>)`](crate::operation::describe_app_blocks::builders::DescribeAppBlocksFluentBuilder::set_arns):<br>required: **false**<br><p>The ARNs of the app blocks.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_app_blocks::builders::DescribeAppBlocksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_app_blocks::builders::DescribeAppBlocksFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token used to retrieve the next page of results for this operation.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_app_blocks::builders::DescribeAppBlocksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_app_blocks::builders::DescribeAppBlocksFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum size of each page of results.</p><br>
     /// - On success, responds with [`DescribeAppBlocksOutput`](crate::operation::describe_app_blocks::DescribeAppBlocksOutput) with field(s):
-    ///   - [`app_blocks(Option<Vec<AppBlock>>)`](crate::operation::describe_app_blocks::DescribeAppBlocksOutput::app_blocks): <p>The app blocks in the list.</p>
+    ///   - [`app_blocks(Option<Vec::<AppBlock>>)`](crate::operation::describe_app_blocks::DescribeAppBlocksOutput::app_blocks): <p>The app blocks in the list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_app_blocks::DescribeAppBlocksOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
     /// - On failure, responds with [`SdkError<DescribeAppBlocksError>`](crate::operation::describe_app_blocks::DescribeAppBlocksError)
     pub fn describe_app_blocks(&self) -> crate::operation::describe_app_blocks::builders::DescribeAppBlocksFluentBuilder {

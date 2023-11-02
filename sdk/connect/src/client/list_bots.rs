@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_bots::builders::ListBotsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_bots::builders::ListBotsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page.</p><br>
     ///   - [`lex_version(LexVersion)`](crate::operation::list_bots::builders::ListBotsFluentBuilder::lex_version) / [`set_lex_version(Option<LexVersion>)`](crate::operation::list_bots::builders::ListBotsFluentBuilder::set_lex_version):<br>required: **true**<br><p>The version of Amazon Lex or Amazon Lex V2.</p><br>
     /// - On success, responds with [`ListBotsOutput`](crate::operation::list_bots::ListBotsOutput) with field(s):
-    ///   - [`lex_bots(Option<Vec<LexBotConfig>>)`](crate::operation::list_bots::ListBotsOutput::lex_bots): <p>The names and Amazon Web Services Regions of the Amazon Lex or Amazon Lex V2 bots associated with the specified instance.</p>
+    ///   - [`lex_bots(Option<Vec::<LexBotConfig>>)`](crate::operation::list_bots::ListBotsOutput::lex_bots): <p>The names and Amazon Web Services Regions of the Amazon Lex or Amazon Lex V2 bots associated with the specified instance.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_bots::ListBotsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListBotsError>`](crate::operation::list_bots::ListBotsError)
     pub fn list_bots(&self) -> crate::operation::list_bots::builders::ListBotsFluentBuilder {

@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_sip_rules::builders::ListSipRulesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_sip_rules::builders::ListSipRulesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call. Defaults to 100.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_sip_rules::builders::ListSipRulesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_sip_rules::builders::ListSipRulesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use to retrieve the next page of results.</p><br>
     /// - On success, responds with [`ListSipRulesOutput`](crate::operation::list_sip_rules::ListSipRulesOutput) with field(s):
-    ///   - [`sip_rules(Option<Vec<SipRule>>)`](crate::operation::list_sip_rules::ListSipRulesOutput::sip_rules): <p>List of SIP rules and rule details.</p>
+    ///   - [`sip_rules(Option<Vec::<SipRule>>)`](crate::operation::list_sip_rules::ListSipRulesOutput::sip_rules): <p>List of SIP rules and rule details.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_sip_rules::ListSipRulesOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListSipRulesError>`](crate::operation::list_sip_rules::ListSipRulesError)
     #[deprecated(note = "Replaced by ListSipRules in the Amazon Chime SDK Voice Namespace")]

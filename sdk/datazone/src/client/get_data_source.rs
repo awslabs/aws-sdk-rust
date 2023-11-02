@@ -18,7 +18,7 @@ impl super::Client {
     ///   - [`recommendation(Option<RecommendationConfiguration>)`](crate::operation::get_data_source::GetDataSourceOutput::recommendation): <p></p>
     ///   - [`enable_setting(Option<EnableSetting>)`](crate::operation::get_data_source::GetDataSourceOutput::enable_setting): <p>Specifies whether this data source is enabled or not.</p>
     ///   - [`publish_on_import(Option<bool>)`](crate::operation::get_data_source::GetDataSourceOutput::publish_on_import): <p>Specifies whether the assets that this data source creates in the inventory are to be also automatically published to the catalog.</p>
-    ///   - [`asset_forms_output(Option<Vec<FormOutput>>)`](crate::operation::get_data_source::GetDataSourceOutput::asset_forms_output): <p>The metadata forms attached to the assets created by this data source.</p>
+    ///   - [`asset_forms_output(Option<Vec::<FormOutput>>)`](crate::operation::get_data_source::GetDataSourceOutput::asset_forms_output): <p>The metadata forms attached to the assets created by this data source.</p>
     ///   - [`schedule(Option<ScheduleConfiguration>)`](crate::operation::get_data_source::GetDataSourceOutput::schedule): <p>The schedule of the data source runs.</p>
     ///   - [`last_run_status(Option<DataSourceRunStatus>)`](crate::operation::get_data_source::GetDataSourceOutput::last_run_status): <p>The status of the last run of the data source.</p>
     ///   - [`last_run_at(Option<DateTime>)`](crate::operation::get_data_source::GetDataSourceOutput::last_run_at): <p>The timestamp of the last run of the data source.</p>

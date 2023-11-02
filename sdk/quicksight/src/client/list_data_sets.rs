@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results, or null if there are no more results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be returned per request.</p><br>
     /// - On success, responds with [`ListDataSetsOutput`](crate::operation::list_data_sets::ListDataSetsOutput) with field(s):
-    ///   - [`data_set_summaries(Option<Vec<DataSetSummary>>)`](crate::operation::list_data_sets::ListDataSetsOutput::data_set_summaries): <p>The list of dataset summaries.</p>
+    ///   - [`data_set_summaries(Option<Vec::<DataSetSummary>>)`](crate::operation::list_data_sets::ListDataSetsOutput::data_set_summaries): <p>The list of dataset summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_sets::ListDataSetsOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::list_data_sets::ListDataSetsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::list_data_sets::ListDataSetsOutput::status): <p>The HTTP status of the request.</p>

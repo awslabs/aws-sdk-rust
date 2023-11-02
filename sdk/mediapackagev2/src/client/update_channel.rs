@@ -13,8 +13,8 @@ impl super::Client {
     ///   - [`created_at(DateTime)`](crate::operation::update_channel::UpdateChannelOutput::created_at): <p>The date and time the channel was created.</p>
     ///   - [`modified_at(DateTime)`](crate::operation::update_channel::UpdateChannelOutput::modified_at): <p>The date and time the channel was modified.</p>
     ///   - [`description(Option<String>)`](crate::operation::update_channel::UpdateChannelOutput::description): <p>The description for your channel.</p>
-    ///   - [`ingest_endpoints(Option<Vec<IngestEndpoint>>)`](crate::operation::update_channel::UpdateChannelOutput::ingest_endpoints): <p>The list of ingest endpoints.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::update_channel::UpdateChannelOutput::tags): <p>The comma-separated list of tag key:value pairs assigned to the channel.</p>
+    ///   - [`ingest_endpoints(Option<Vec::<IngestEndpoint>>)`](crate::operation::update_channel::UpdateChannelOutput::ingest_endpoints): <p>The list of ingest endpoints.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::update_channel::UpdateChannelOutput::tags): <p>The comma-separated list of tag key:value pairs assigned to the channel.</p>
     /// - On failure, responds with [`SdkError<UpdateChannelError>`](crate::operation::update_channel::UpdateChannelError)
     pub fn update_channel(&self) -> crate::operation::update_channel::builders::UpdateChannelFluentBuilder {
         crate::operation::update_channel::builders::UpdateChannelFluentBuilder::new(self.handle.clone())

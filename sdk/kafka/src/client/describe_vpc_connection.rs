@@ -10,10 +10,10 @@ impl super::Client {
     ///   - [`state(Option<VpcConnectionState>)`](crate::operation::describe_vpc_connection::DescribeVpcConnectionOutput::state): <p>The state of VPC connection.</p>
     ///   - [`authentication(Option<String>)`](crate::operation::describe_vpc_connection::DescribeVpcConnectionOutput::authentication): <p>The authentication type of VPC connection.</p>
     ///   - [`vpc_id(Option<String>)`](crate::operation::describe_vpc_connection::DescribeVpcConnectionOutput::vpc_id): <p>The VPC Id for the VPC connection.</p>
-    ///   - [`subnets(Option<Vec<String>>)`](crate::operation::describe_vpc_connection::DescribeVpcConnectionOutput::subnets): <p>The list of subnets for the VPC connection.</p>
-    ///   - [`security_groups(Option<Vec<String>>)`](crate::operation::describe_vpc_connection::DescribeVpcConnectionOutput::security_groups): <p>The list of security groups for the VPC connection.</p>
+    ///   - [`subnets(Option<Vec::<String>>)`](crate::operation::describe_vpc_connection::DescribeVpcConnectionOutput::subnets): <p>The list of subnets for the VPC connection.</p>
+    ///   - [`security_groups(Option<Vec::<String>>)`](crate::operation::describe_vpc_connection::DescribeVpcConnectionOutput::security_groups): <p>The list of security groups for the VPC connection.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_vpc_connection::DescribeVpcConnectionOutput::creation_time): <p>The creation time of the VPC connection.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_vpc_connection::DescribeVpcConnectionOutput::tags): <p>A map of tags for the VPC connection.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_vpc_connection::DescribeVpcConnectionOutput::tags): <p>A map of tags for the VPC connection.</p>
     /// - On failure, responds with [`SdkError<DescribeVpcConnectionError>`](crate::operation::describe_vpc_connection::DescribeVpcConnectionError)
     pub fn describe_vpc_connection(&self) -> crate::operation::describe_vpc_connection::builders::DescribeVpcConnectionFluentBuilder {
         crate::operation::describe_vpc_connection::builders::DescribeVpcConnectionFluentBuilder::new(self.handle.clone())

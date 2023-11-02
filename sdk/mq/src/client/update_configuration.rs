@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::update_configuration::UpdateConfigurationOutput::id): <p>The unique ID that Amazon MQ generates for the configuration.</p>
     ///   - [`latest_revision(Option<ConfigurationRevision>)`](crate::operation::update_configuration::UpdateConfigurationOutput::latest_revision): <p>The latest revision of the configuration.</p>
     ///   - [`name(Option<String>)`](crate::operation::update_configuration::UpdateConfigurationOutput::name): <p>The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
-    ///   - [`warnings(Option<Vec<SanitizationWarning>>)`](crate::operation::update_configuration::UpdateConfigurationOutput::warnings): <p>The list of the first 20 warnings about the configuration elements or attributes that were sanitized.</p>
+    ///   - [`warnings(Option<Vec::<SanitizationWarning>>)`](crate::operation::update_configuration::UpdateConfigurationOutput::warnings): <p>The list of the first 20 warnings about the configuration elements or attributes that were sanitized.</p>
     /// - On failure, responds with [`SdkError<UpdateConfigurationError>`](crate::operation::update_configuration::UpdateConfigurationError)
     pub fn update_configuration(&self) -> crate::operation::update_configuration::builders::UpdateConfigurationFluentBuilder {
         crate::operation::update_configuration::builders::UpdateConfigurationFluentBuilder::new(self.handle.clone())

@@ -8,8 +8,8 @@ impl super::Client {
     ///   - [`route_response_id(impl Into<String>)`](crate::operation::get_route_response::builders::GetRouteResponseFluentBuilder::route_response_id) / [`set_route_response_id(Option<String>)`](crate::operation::get_route_response::builders::GetRouteResponseFluentBuilder::set_route_response_id):<br>required: **true**<br><p>The route response ID.</p><br>
     /// - On success, responds with [`GetRouteResponseOutput`](crate::operation::get_route_response::GetRouteResponseOutput) with field(s):
     ///   - [`model_selection_expression(Option<String>)`](crate::operation::get_route_response::GetRouteResponseOutput::model_selection_expression): <p>Represents the model selection expression of a route response. Supported only for WebSocket APIs.</p>
-    ///   - [`response_models(Option<HashMap<String, String>>)`](crate::operation::get_route_response::GetRouteResponseOutput::response_models): <p>Represents the response models of a route response.</p>
-    ///   - [`response_parameters(Option<HashMap<String, ParameterConstraints>>)`](crate::operation::get_route_response::GetRouteResponseOutput::response_parameters): <p>Represents the response parameters of a route response.</p>
+    ///   - [`response_models(Option<HashMap::<String, String>>)`](crate::operation::get_route_response::GetRouteResponseOutput::response_models): <p>Represents the response models of a route response.</p>
+    ///   - [`response_parameters(Option<HashMap::<String, ParameterConstraints>>)`](crate::operation::get_route_response::GetRouteResponseOutput::response_parameters): <p>Represents the response parameters of a route response.</p>
     ///   - [`route_response_id(Option<String>)`](crate::operation::get_route_response::GetRouteResponseOutput::route_response_id): <p>Represents the identifier of a route response.</p>
     ///   - [`route_response_key(Option<String>)`](crate::operation::get_route_response::GetRouteResponseOutput::route_response_key): <p>Represents the route response key of a route response.</p>
     /// - On failure, responds with [`SdkError<GetRouteResponseError>`](crate::operation::get_route_response::GetRouteResponseError)

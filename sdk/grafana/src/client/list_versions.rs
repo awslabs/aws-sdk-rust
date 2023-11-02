@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`workspace_id(impl Into<String>)`](crate::operation::list_versions::builders::ListVersionsFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::list_versions::builders::ListVersionsFluentBuilder::set_workspace_id):<br>required: **false**<br><p>The ID of the workspace to list the available upgrade versions. If not included, lists all versions of Grafana that are supported for <code>CreateWorkspace</code>.</p><br>
     /// - On success, responds with [`ListVersionsOutput`](crate::operation::list_versions::ListVersionsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_versions::ListVersionsOutput::next_token): <p>The token to use in a subsequent <code>ListVersions</code> operation to return the next set of results.</p>
-    ///   - [`grafana_versions(Option<Vec<String>>)`](crate::operation::list_versions::ListVersionsOutput::grafana_versions): <p>The Grafana versions available to create. If a workspace ID is included in the request, the Grafana versions to which this workspace can be upgraded.</p>
+    ///   - [`grafana_versions(Option<Vec::<String>>)`](crate::operation::list_versions::ListVersionsOutput::grafana_versions): <p>The Grafana versions available to create. If a workspace ID is included in the request, the Grafana versions to which this workspace can be upgraded.</p>
     /// - On failure, responds with [`SdkError<ListVersionsError>`](crate::operation::list_versions::ListVersionsError)
     pub fn list_versions(&self) -> crate::operation::list_versions::builders::ListVersionsFluentBuilder {
         crate::operation::list_versions::builders::ListVersionsFluentBuilder::new(self.handle.clone())

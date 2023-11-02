@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_target_group::GetTargetGroupOutput::created_at): <p>The date and time that the target group was created, specified in ISO-8601 format.</p>
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_target_group::GetTargetGroupOutput::last_updated_at): <p>The date and time that the target group was last updated, specified in ISO-8601 format.</p>
     ///   - [`status(Option<TargetGroupStatus>)`](crate::operation::get_target_group::GetTargetGroupOutput::status): <p>The status.</p>
-    ///   - [`service_arns(Option<Vec<String>>)`](crate::operation::get_target_group::GetTargetGroupOutput::service_arns): <p>The Amazon Resource Names (ARNs) of the service.</p>
+    ///   - [`service_arns(Option<Vec::<String>>)`](crate::operation::get_target_group::GetTargetGroupOutput::service_arns): <p>The Amazon Resource Names (ARNs) of the service.</p>
     ///   - [`failure_message(Option<String>)`](crate::operation::get_target_group::GetTargetGroupOutput::failure_message): <p>The failure message.</p>
     ///   - [`failure_code(Option<String>)`](crate::operation::get_target_group::GetTargetGroupOutput::failure_code): <p>The failure code.</p>
     /// - On failure, responds with [`SdkError<GetTargetGroupError>`](crate::operation::get_target_group::GetTargetGroupError)

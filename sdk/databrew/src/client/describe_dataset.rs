@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`last_modified_by(Option<String>)`](crate::operation::describe_dataset::DescribeDatasetOutput::last_modified_by): <p>The identifier (user name) of the user who last modified the dataset.</p>
     ///   - [`source(Option<Source>)`](crate::operation::describe_dataset::DescribeDatasetOutput::source): <p>The location of the data for this dataset, Amazon S3 or the Glue Data Catalog.</p>
     ///   - [`path_options(Option<PathOptions>)`](crate::operation::describe_dataset::DescribeDatasetOutput::path_options): <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_dataset::DescribeDatasetOutput::tags): <p>Metadata tags associated with this dataset.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_dataset::DescribeDatasetOutput::tags): <p>Metadata tags associated with this dataset.</p>
     ///   - [`resource_arn(Option<String>)`](crate::operation::describe_dataset::DescribeDatasetOutput::resource_arn): <p>The Amazon Resource Name (ARN) of the dataset.</p>
     /// - On failure, responds with [`SdkError<DescribeDatasetError>`](crate::operation::describe_dataset::DescribeDatasetError)
     pub fn describe_dataset(&self) -> crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder {

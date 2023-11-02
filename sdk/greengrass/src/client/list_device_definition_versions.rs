@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_device_definition_versions::builders::ListDeviceDefinitionVersionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_device_definition_versions::builders::ListDeviceDefinitionVersionsFluentBuilder::set_next_token):<br>required: **false**<br>The token for the next set of results, or ''null'' if there are no additional results.<br>
     /// - On success, responds with [`ListDeviceDefinitionVersionsOutput`](crate::operation::list_device_definition_versions::ListDeviceDefinitionVersionsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_device_definition_versions::ListDeviceDefinitionVersionsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
-    ///   - [`versions(Option<Vec<VersionInformation>>)`](crate::operation::list_device_definition_versions::ListDeviceDefinitionVersionsOutput::versions): Information about a version.
+    ///   - [`versions(Option<Vec::<VersionInformation>>)`](crate::operation::list_device_definition_versions::ListDeviceDefinitionVersionsOutput::versions): Information about a version.
     /// - On failure, responds with [`SdkError<ListDeviceDefinitionVersionsError>`](crate::operation::list_device_definition_versions::ListDeviceDefinitionVersionsError)
     pub fn list_device_definition_versions(
         &self,

@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`source_arn(Option<String>)`](crate::operation::describe_discoverer::DescribeDiscovererOutput::source_arn): <p>The ARN of the event bus.</p>
     ///   - [`state(Option<DiscovererState>)`](crate::operation::describe_discoverer::DescribeDiscovererOutput::state): <p>The state of the discoverer.</p>
     ///   - [`cross_account(Option<bool>)`](crate::operation::describe_discoverer::DescribeDiscovererOutput::cross_account): <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_discoverer::DescribeDiscovererOutput::tags): <p>Tags associated with the resource.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_discoverer::DescribeDiscovererOutput::tags): <p>Tags associated with the resource.</p>
     /// - On failure, responds with [`SdkError<DescribeDiscovererError>`](crate::operation::describe_discoverer::DescribeDiscovererError)
     pub fn describe_discoverer(&self) -> crate::operation::describe_discoverer::builders::DescribeDiscovererFluentBuilder {
         crate::operation::describe_discoverer::builders::DescribeDiscovererFluentBuilder::new(self.handle.clone())

@@ -15,7 +15,7 @@ use aws_smithy_runtime_api::client::interceptors::context::{
 };
 use aws_smithy_runtime_api::client::interceptors::Intercept;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
-use aws_smithy_types::body::{BoxBody, SdkBody};
+use aws_smithy_types::body::SdkBody;
 use aws_smithy_types::config_bag::{ConfigBag, Layer, Storable, StoreReplace};
 use http::HeaderValue;
 use std::{fmt, mem};
@@ -110,11 +110,11 @@ pub(crate) fn wrap_body_with_checksum_validator(
     use aws_smithy_checksums::body::validate;
 
     body.map(move |body| {
-        SdkBody::from_dyn(BoxBody::new(validate::ChecksumBody::new(
+        SdkBody::from_body_0_4(validate::ChecksumBody::new(
             body,
             checksum_algorithm.into_impl(),
             precalculated_checksum.clone(),
-        )))
+        ))
     })
 }
 

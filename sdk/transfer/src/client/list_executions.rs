@@ -10,7 +10,7 @@ impl super::Client {
     /// - On success, responds with [`ListExecutionsOutput`](crate::operation::list_executions::ListExecutionsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_executions::ListExecutionsOutput::next_token): <p> <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional executions.</p>
     ///   - [`workflow_id(String)`](crate::operation::list_executions::ListExecutionsOutput::workflow_id): <p>A unique identifier for the workflow.</p>
-    ///   - [`executions(Vec<ListedExecution>)`](crate::operation::list_executions::ListExecutionsOutput::executions): <p>Returns the details for each execution, in a <code>ListedExecution</code> array.</p>
+    ///   - [`executions(Vec::<ListedExecution>)`](crate::operation::list_executions::ListExecutionsOutput::executions): <p>Returns the details for each execution, in a <code>ListedExecution</code> array.</p>
     /// - On failure, responds with [`SdkError<ListExecutionsError>`](crate::operation::list_executions::ListExecutionsError)
     pub fn list_executions(&self) -> crate::operation::list_executions::builders::ListExecutionsFluentBuilder {
         crate::operation::list_executions::builders::ListExecutionsFluentBuilder::new(self.handle.clone())

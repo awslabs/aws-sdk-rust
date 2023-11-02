@@ -23,7 +23,7 @@ pub fn de_cors_rule(
             s if s.matches("AllowedHeader") /* AllowedHeaders com.amazonaws.s3#CORSRule$AllowedHeaders */ =>  {
                 let var_2 =
                     Some(
-                        Result::<::std::vec::Vec<::std::string::String>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<::std::string::String>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_3 = builder.allowed_headers.take().unwrap_or_default();
                             list_3.push(
                                 Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -43,7 +43,7 @@ pub fn de_cors_rule(
             s if s.matches("AllowedMethod") /* AllowedMethods com.amazonaws.s3#CORSRule$AllowedMethods */ =>  {
                 let var_4 =
                     Some(
-                        Result::<::std::vec::Vec<::std::string::String>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<::std::string::String>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_5 = builder.allowed_methods.take().unwrap_or_default();
                             list_5.push(
                                 Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -63,7 +63,7 @@ pub fn de_cors_rule(
             s if s.matches("AllowedOrigin") /* AllowedOrigins com.amazonaws.s3#CORSRule$AllowedOrigins */ =>  {
                 let var_6 =
                     Some(
-                        Result::<::std::vec::Vec<::std::string::String>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<::std::string::String>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_7 = builder.allowed_origins.take().unwrap_or_default();
                             list_7.push(
                                 Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -83,7 +83,7 @@ pub fn de_cors_rule(
             s if s.matches("ExposeHeader") /* ExposeHeaders com.amazonaws.s3#CORSRule$ExposeHeaders */ =>  {
                 let var_8 =
                     Some(
-                        Result::<::std::vec::Vec<::std::string::String>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<::std::string::String>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_9 = builder.expose_headers.take().unwrap_or_default();
                             list_9.push(
                                 Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(

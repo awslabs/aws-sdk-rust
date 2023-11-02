@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`domain_name(Option<String>)`](crate::operation::configure_logs::ConfigureLogsOutput::domain_name): The fully qualified domain name for Assets in the PackagingGroup.
     ///   - [`egress_access_logs(Option<EgressAccessLogs>)`](crate::operation::configure_logs::ConfigureLogsOutput::egress_access_logs): Configure egress access logging.
     ///   - [`id(Option<String>)`](crate::operation::configure_logs::ConfigureLogsOutput::id): The ID of the PackagingGroup.
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::configure_logs::ConfigureLogsOutput::tags): A collection of tags associated with a resource
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::configure_logs::ConfigureLogsOutput::tags): A collection of tags associated with a resource
     /// - On failure, responds with [`SdkError<ConfigureLogsError>`](crate::operation::configure_logs::ConfigureLogsError)
     pub fn configure_logs(&self) -> crate::operation::configure_logs::builders::ConfigureLogsFluentBuilder {
         crate::operation::configure_logs::builders::ConfigureLogsFluentBuilder::new(self.handle.clone())

@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
     /// - On success, responds with [`SearchAvailablePhoneNumbersOutput`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
-    ///   - [`available_numbers_list(Option<Vec<AvailableNumberSummary>>)`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput::available_numbers_list): <p>A list of available phone numbers that you can claim to your Amazon Connect instance or traffic distribution group.</p>
+    ///   - [`available_numbers_list(Option<Vec::<AvailableNumberSummary>>)`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput::available_numbers_list): <p>A list of available phone numbers that you can claim to your Amazon Connect instance or traffic distribution group.</p>
     /// - On failure, responds with [`SdkError<SearchAvailablePhoneNumbersError>`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersError)
     pub fn search_available_phone_numbers(
         &self,

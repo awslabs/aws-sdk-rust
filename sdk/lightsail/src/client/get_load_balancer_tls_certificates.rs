@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`load_balancer_name(impl Into<String>)`](crate::operation::get_load_balancer_tls_certificates::builders::GetLoadBalancerTlsCertificatesFluentBuilder::load_balancer_name) / [`set_load_balancer_name(Option<String>)`](crate::operation::get_load_balancer_tls_certificates::builders::GetLoadBalancerTlsCertificatesFluentBuilder::set_load_balancer_name):<br>required: **true**<br><p>The name of the load balancer you associated with your SSL/TLS certificate.</p><br>
     /// - On success, responds with [`GetLoadBalancerTlsCertificatesOutput`](crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesOutput) with field(s):
-    ///   - [`tls_certificates(Option<Vec<LoadBalancerTlsCertificate>>)`](crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesOutput::tls_certificates): <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS certificates.</p>
+    ///   - [`tls_certificates(Option<Vec::<LoadBalancerTlsCertificate>>)`](crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesOutput::tls_certificates): <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS certificates.</p>
     /// - On failure, responds with [`SdkError<GetLoadBalancerTlsCertificatesError>`](crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesError)
     pub fn get_load_balancer_tls_certificates(
         &self,

@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_assets::builders::ListAssetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_assets::builders::ListAssetsFluentBuilder::set_next_token):<br>required: **false**<br>A token used to resume pagination from the end of a previous request.<br>
     ///   - [`packaging_group_id(impl Into<String>)`](crate::operation::list_assets::builders::ListAssetsFluentBuilder::packaging_group_id) / [`set_packaging_group_id(Option<String>)`](crate::operation::list_assets::builders::ListAssetsFluentBuilder::set_packaging_group_id):<br>required: **false**<br>Returns Assets associated with the specified PackagingGroup.<br>
     /// - On success, responds with [`ListAssetsOutput`](crate::operation::list_assets::ListAssetsOutput) with field(s):
-    ///   - [`assets(Option<Vec<AssetShallow>>)`](crate::operation::list_assets::ListAssetsOutput::assets): A list of MediaPackage VOD Asset resources.
+    ///   - [`assets(Option<Vec::<AssetShallow>>)`](crate::operation::list_assets::ListAssetsOutput::assets): A list of MediaPackage VOD Asset resources.
     ///   - [`next_token(Option<String>)`](crate::operation::list_assets::ListAssetsOutput::next_token): A token that can be used to resume pagination from the end of the collection.
     /// - On failure, responds with [`SdkError<ListAssetsError>`](crate::operation::list_assets::ListAssetsError)
     pub fn list_assets(&self) -> crate::operation::list_assets::builders::ListAssetsFluentBuilder {

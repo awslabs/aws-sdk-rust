@@ -6,7 +6,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_managed_data_identifiers::builders::ListManagedDataIdentifiersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_managed_data_identifiers::builders::ListManagedDataIdentifiersFluentBuilder::set_next_token):<br>required: **false**<br><p>The nextToken string that specifies which page of results to return in a paginated response.</p><br>
     /// - On success, responds with [`ListManagedDataIdentifiersOutput`](crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersOutput) with field(s):
-    ///   - [`items(Option<Vec<ManagedDataIdentifierSummary>>)`](crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersOutput::items): <p>An array of objects, one for each managed data identifier.</p>
+    ///   - [`items(Option<Vec::<ManagedDataIdentifierSummary>>)`](crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersOutput::items): <p>An array of objects, one for each managed data identifier.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     /// - On failure, responds with [`SdkError<ListManagedDataIdentifiersError>`](crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersError)
     pub fn list_managed_data_identifiers(

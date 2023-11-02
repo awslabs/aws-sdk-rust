@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`global_table_name(impl Into<String>)`](crate::operation::update_global_table::builders::UpdateGlobalTableFluentBuilder::global_table_name) / [`set_global_table_name(Option<String>)`](crate::operation::update_global_table::builders::UpdateGlobalTableFluentBuilder::set_global_table_name):<br>required: **true**<br><p>The global table name.</p><br>
-    ///   - [`replica_updates(ReplicaUpdate)`](crate::operation::update_global_table::builders::UpdateGlobalTableFluentBuilder::replica_updates) / [`set_replica_updates(Option<Vec<ReplicaUpdate>>)`](crate::operation::update_global_table::builders::UpdateGlobalTableFluentBuilder::set_replica_updates):<br>required: **true**<br><p>A list of Regions that should be added or removed from the global table.</p><br>
+    ///   - [`replica_updates(ReplicaUpdate)`](crate::operation::update_global_table::builders::UpdateGlobalTableFluentBuilder::replica_updates) / [`set_replica_updates(Option<Vec::<ReplicaUpdate>>)`](crate::operation::update_global_table::builders::UpdateGlobalTableFluentBuilder::set_replica_updates):<br>required: **true**<br><p>A list of Regions that should be added or removed from the global table.</p><br>
     /// - On success, responds with [`UpdateGlobalTableOutput`](crate::operation::update_global_table::UpdateGlobalTableOutput) with field(s):
     ///   - [`global_table_description(Option<GlobalTableDescription>)`](crate::operation::update_global_table::UpdateGlobalTableOutput::global_table_description): <p>Contains the details of the global table.</p>
     /// - On failure, responds with [`SdkError<UpdateGlobalTableError>`](crate::operation::update_global_table::UpdateGlobalTableError)

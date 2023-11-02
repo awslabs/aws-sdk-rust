@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_inputs::builders::ListInputsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_inputs::builders::ListInputsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token that you can use to return the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_inputs::builders::ListInputsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_inputs::builders::ListInputsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be returned per request.</p><br>
     /// - On success, responds with [`ListInputsOutput`](crate::operation::list_inputs::ListInputsOutput) with field(s):
-    ///   - [`input_summaries(Option<Vec<InputSummary>>)`](crate::operation::list_inputs::ListInputsOutput::input_summaries): <p>Summary information about the inputs.</p>
+    ///   - [`input_summaries(Option<Vec::<InputSummary>>)`](crate::operation::list_inputs::ListInputsOutput::input_summaries): <p>Summary information about the inputs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_inputs::ListInputsOutput::next_token): <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListInputsError>`](crate::operation::list_inputs::ListInputsError)
     pub fn list_inputs(&self) -> crate::operation::list_inputs::builders::ListInputsFluentBuilder {

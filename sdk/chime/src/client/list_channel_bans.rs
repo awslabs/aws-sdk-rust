@@ -11,7 +11,7 @@ impl super::Client {
     /// - On success, responds with [`ListChannelBansOutput`](crate::operation::list_channel_bans::ListChannelBansOutput) with field(s):
     ///   - [`channel_arn(Option<String>)`](crate::operation::list_channel_bans::ListChannelBansOutput::channel_arn): <p>The ARN of the channel.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_channel_bans::ListChannelBansOutput::next_token): <p>The token passed by previous API calls until all requested bans are returned.</p>
-    ///   - [`channel_bans(Option<Vec<ChannelBanSummary>>)`](crate::operation::list_channel_bans::ListChannelBansOutput::channel_bans): <p>The information for each requested ban.</p>
+    ///   - [`channel_bans(Option<Vec::<ChannelBanSummary>>)`](crate::operation::list_channel_bans::ListChannelBansOutput::channel_bans): <p>The information for each requested ban.</p>
     /// - On failure, responds with [`SdkError<ListChannelBansError>`](crate::operation::list_channel_bans::ListChannelBansError)
     #[deprecated(note = "Replaced by ListChannelBans in the Amazon Chime SDK Messaging Namespace")]
     pub fn list_channel_bans(&self) -> crate::operation::list_channel_bans::builders::ListChannelBansFluentBuilder {

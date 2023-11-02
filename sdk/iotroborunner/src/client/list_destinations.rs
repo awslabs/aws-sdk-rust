@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`state(DestinationState)`](crate::operation::list_destinations::builders::ListDestinationsFluentBuilder::state) / [`set_state(Option<DestinationState>)`](crate::operation::list_destinations::builders::ListDestinationsFluentBuilder::set_state):<br>required: **false**<br>State of the destination.<br>
     /// - On success, responds with [`ListDestinationsOutput`](crate::operation::list_destinations::ListDestinationsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_destinations::ListDestinationsOutput::next_token): Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
-    ///   - [`destinations(Option<Vec<Destination>>)`](crate::operation::list_destinations::ListDestinationsOutput::destinations): List of destinations.
+    ///   - [`destinations(Option<Vec::<Destination>>)`](crate::operation::list_destinations::ListDestinationsOutput::destinations): List of destinations.
     /// - On failure, responds with [`SdkError<ListDestinationsError>`](crate::operation::list_destinations::ListDestinationsError)
     pub fn list_destinations(&self) -> crate::operation::list_destinations::builders::ListDestinationsFluentBuilder {
         crate::operation::list_destinations::builders::ListDestinationsFluentBuilder::new(self.handle.clone())

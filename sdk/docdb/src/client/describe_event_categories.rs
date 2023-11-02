@@ -4,9 +4,9 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`source_type(impl Into<String>)`](crate::operation::describe_event_categories::builders::DescribeEventCategoriesFluentBuilder::source_type) / [`set_source_type(Option<String>)`](crate::operation::describe_event_categories::builders::DescribeEventCategoriesFluentBuilder::set_source_type):<br>required: **false**<br><p>The type of source that is generating the events.</p>  <p>Valid values: <code>db-instance</code>, <code>db-parameter-group</code>, <code>db-security-group</code> </p><br>
-    ///   - [`filters(Filter)`](crate::operation::describe_event_categories::builders::DescribeEventCategoriesFluentBuilder::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::operation::describe_event_categories::builders::DescribeEventCategoriesFluentBuilder::set_filters):<br>required: **false**<br><p>This parameter is not currently supported.</p><br>
+    ///   - [`filters(Filter)`](crate::operation::describe_event_categories::builders::DescribeEventCategoriesFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::describe_event_categories::builders::DescribeEventCategoriesFluentBuilder::set_filters):<br>required: **false**<br><p>This parameter is not currently supported.</p><br>
     /// - On success, responds with [`DescribeEventCategoriesOutput`](crate::operation::describe_event_categories::DescribeEventCategoriesOutput) with field(s):
-    ///   - [`event_categories_map_list(Option<Vec<EventCategoriesMap>>)`](crate::operation::describe_event_categories::DescribeEventCategoriesOutput::event_categories_map_list): <p>A list of event category maps.</p>
+    ///   - [`event_categories_map_list(Option<Vec::<EventCategoriesMap>>)`](crate::operation::describe_event_categories::DescribeEventCategoriesOutput::event_categories_map_list): <p>A list of event category maps.</p>
     /// - On failure, responds with [`SdkError<DescribeEventCategoriesError>`](crate::operation::describe_event_categories::DescribeEventCategoriesError)
     pub fn describe_event_categories(&self) -> crate::operation::describe_event_categories::builders::DescribeEventCategoriesFluentBuilder {
         crate::operation::describe_event_categories::builders::DescribeEventCategoriesFluentBuilder::new(self.handle.clone())

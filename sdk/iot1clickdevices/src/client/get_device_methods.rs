@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`device_id(impl Into<String>)`](crate::operation::get_device_methods::builders::GetDeviceMethodsFluentBuilder::device_id) / [`set_device_id(Option<String>)`](crate::operation::get_device_methods::builders::GetDeviceMethodsFluentBuilder::set_device_id):<br>required: **true**<br><p>The unique identifier of the device.</p><br>
     /// - On success, responds with [`GetDeviceMethodsOutput`](crate::operation::get_device_methods::GetDeviceMethodsOutput) with field(s):
-    ///   - [`device_methods(Option<Vec<DeviceMethod>>)`](crate::operation::get_device_methods::GetDeviceMethodsOutput::device_methods): <p>List of available device APIs.</p>
+    ///   - [`device_methods(Option<Vec::<DeviceMethod>>)`](crate::operation::get_device_methods::GetDeviceMethodsOutput::device_methods): <p>List of available device APIs.</p>
     /// - On failure, responds with [`SdkError<GetDeviceMethodsError>`](crate::operation::get_device_methods::GetDeviceMethodsError)
     pub fn get_device_methods(&self) -> crate::operation::get_device_methods::builders::GetDeviceMethodsFluentBuilder {
         crate::operation::get_device_methods::builders::GetDeviceMethodsFluentBuilder::new(self.handle.clone())

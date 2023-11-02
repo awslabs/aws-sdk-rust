@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`identity_pool_id(impl Into<String>)`](crate::operation::set_cognito_events::builders::SetCognitoEventsFluentBuilder::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::operation::set_cognito_events::builders::SetCognitoEventsFluentBuilder::set_identity_pool_id):<br>required: **true**<br><p>The Cognito Identity Pool to use when configuring Cognito Events</p><br>
-    ///   - [`events(impl Into<String>, impl Into<String>)`](crate::operation::set_cognito_events::builders::SetCognitoEventsFluentBuilder::events) / [`set_events(Option<HashMap<String, String>>)`](crate::operation::set_cognito_events::builders::SetCognitoEventsFluentBuilder::set_events):<br>required: **true**<br><p>The events to configure</p><br>
+    ///   - [`events(impl Into<String>, impl Into<String>)`](crate::operation::set_cognito_events::builders::SetCognitoEventsFluentBuilder::events) / [`set_events(Option<HashMap::<String, String>>)`](crate::operation::set_cognito_events::builders::SetCognitoEventsFluentBuilder::set_events):<br>required: **true**<br><p>The events to configure</p><br>
     /// - On success, responds with [`SetCognitoEventsOutput`](crate::operation::set_cognito_events::SetCognitoEventsOutput)
     /// - On failure, responds with [`SdkError<SetCognitoEventsError>`](crate::operation::set_cognito_events::SetCognitoEventsError)
     pub fn set_cognito_events(&self) -> crate::operation::set_cognito_events::builders::SetCognitoEventsFluentBuilder {

@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`vpc_identifier(impl Into<String>)`](crate::operation::list_target_groups::builders::ListTargetGroupsFluentBuilder::vpc_identifier) / [`set_vpc_identifier(Option<String>)`](crate::operation::list_target_groups::builders::ListTargetGroupsFluentBuilder::set_vpc_identifier):<br>required: **false**<br><p>The ID or Amazon Resource Name (ARN) of the service.</p><br>
     ///   - [`target_group_type(TargetGroupType)`](crate::operation::list_target_groups::builders::ListTargetGroupsFluentBuilder::target_group_type) / [`set_target_group_type(Option<TargetGroupType>)`](crate::operation::list_target_groups::builders::ListTargetGroupsFluentBuilder::set_target_group_type):<br>required: **false**<br><p>The target group type.</p><br>
     /// - On success, responds with [`ListTargetGroupsOutput`](crate::operation::list_target_groups::ListTargetGroupsOutput) with field(s):
-    ///   - [`items(Option<Vec<TargetGroupSummary>>)`](crate::operation::list_target_groups::ListTargetGroupsOutput::items): <p>Information about the target groups.</p>
+    ///   - [`items(Option<Vec::<TargetGroupSummary>>)`](crate::operation::list_target_groups::ListTargetGroupsOutput::items): <p>Information about the target groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_target_groups::ListTargetGroupsOutput::next_token): <p>If there are additional results, a pagination token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListTargetGroupsError>`](crate::operation::list_target_groups::ListTargetGroupsError)
     pub fn list_target_groups(&self) -> crate::operation::list_target_groups::builders::ListTargetGroupsFluentBuilder {

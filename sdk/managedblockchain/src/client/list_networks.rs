@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_networks::builders::ListNetworksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_networks::builders::ListNetworksFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of networks to list.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_networks::builders::ListNetworksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_networks::builders::ListNetworksFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token that indicates the next set of results to retrieve.</p><br>
     /// - On success, responds with [`ListNetworksOutput`](crate::operation::list_networks::ListNetworksOutput) with field(s):
-    ///   - [`networks(Option<Vec<NetworkSummary>>)`](crate::operation::list_networks::ListNetworksOutput::networks): <p>An array of <code>NetworkSummary</code> objects that contain configuration properties for each network.</p>
+    ///   - [`networks(Option<Vec::<NetworkSummary>>)`](crate::operation::list_networks::ListNetworksOutput::networks): <p>An array of <code>NetworkSummary</code> objects that contain configuration properties for each network.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_networks::ListNetworksOutput::next_token): <p>The pagination token that indicates the next set of results to retrieve.</p>
     /// - On failure, responds with [`SdkError<ListNetworksError>`](crate::operation::list_networks::ListNetworksError)
     pub fn list_networks(&self) -> crate::operation::list_networks::builders::ListNetworksFluentBuilder {

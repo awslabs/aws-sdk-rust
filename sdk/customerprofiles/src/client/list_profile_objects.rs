@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`profile_id(impl Into<String>)`](crate::operation::list_profile_objects::builders::ListProfileObjectsFluentBuilder::profile_id) / [`set_profile_id(Option<String>)`](crate::operation::list_profile_objects::builders::ListProfileObjectsFluentBuilder::set_profile_id):<br>required: **true**<br><p>The unique identifier of a customer profile.</p><br>
     ///   - [`object_filter(ObjectFilter)`](crate::operation::list_profile_objects::builders::ListProfileObjectsFluentBuilder::object_filter) / [`set_object_filter(Option<ObjectFilter>)`](crate::operation::list_profile_objects::builders::ListProfileObjectsFluentBuilder::set_object_filter):<br>required: **false**<br><p>Applies a filter to the response to include profile objects with the specified index values.</p><br>
     /// - On success, responds with [`ListProfileObjectsOutput`](crate::operation::list_profile_objects::ListProfileObjectsOutput) with field(s):
-    ///   - [`items(Option<Vec<ListProfileObjectsItem>>)`](crate::operation::list_profile_objects::ListProfileObjectsOutput::items): <p>The list of ListProfileObject instances.</p>
+    ///   - [`items(Option<Vec::<ListProfileObjectsItem>>)`](crate::operation::list_profile_objects::ListProfileObjectsOutput::items): <p>The list of ListProfileObject instances.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_profile_objects::ListProfileObjectsOutput::next_token): <p>The pagination token from the previous call to ListProfileObjects.</p>
     /// - On failure, responds with [`SdkError<ListProfileObjectsError>`](crate::operation::list_profile_objects::ListProfileObjectsError)
     pub fn list_profile_objects(&self) -> crate::operation::list_profile_objects::builders::ListProfileObjectsFluentBuilder {

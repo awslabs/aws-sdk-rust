@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_sites::builders::ListSitesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_sites::builders::ListSitesFluentBuilder::set_next_token):<br>required: **false**<br>Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.<br>
     /// - On success, responds with [`ListSitesOutput`](crate::operation::list_sites::ListSitesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_sites::ListSitesOutput::next_token): Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
-    ///   - [`sites(Option<Vec<Site>>)`](crate::operation::list_sites::ListSitesOutput::sites): List of facilities.
+    ///   - [`sites(Option<Vec::<Site>>)`](crate::operation::list_sites::ListSitesOutput::sites): List of facilities.
     /// - On failure, responds with [`SdkError<ListSitesError>`](crate::operation::list_sites::ListSitesError)
     pub fn list_sites(&self) -> crate::operation::list_sites::builders::ListSitesFluentBuilder {
         crate::operation::list_sites::builders::ListSitesFluentBuilder::new(self.handle.clone())

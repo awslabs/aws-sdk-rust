@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`amplify_meta_config(Option<String>)`](crate::operation::get_backend::GetBackendOutput::amplify_meta_config): <p>A stringified version of the current configs for your Amplify project.</p>
     ///   - [`app_id(Option<String>)`](crate::operation::get_backend::GetBackendOutput::app_id): <p>The app ID.</p>
     ///   - [`app_name(Option<String>)`](crate::operation::get_backend::GetBackendOutput::app_name): <p>The name of the app.</p>
-    ///   - [`backend_environment_list(Option<Vec<String>>)`](crate::operation::get_backend::GetBackendOutput::backend_environment_list): <p>A list of backend environments in an array.</p>
+    ///   - [`backend_environment_list(Option<Vec::<String>>)`](crate::operation::get_backend::GetBackendOutput::backend_environment_list): <p>A list of backend environments in an array.</p>
     ///   - [`backend_environment_name(Option<String>)`](crate::operation::get_backend::GetBackendOutput::backend_environment_name): <p>The name of the backend environment.</p>
     ///   - [`error(Option<String>)`](crate::operation::get_backend::GetBackendOutput::error): <p>If the request failed, this is the returned error.</p>
     /// - On failure, responds with [`SdkError<GetBackendError>`](crate::operation::get_backend::GetBackendError)

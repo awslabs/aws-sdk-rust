@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetArchitectureRecommendationsOutput`](crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsOutput) with field(s):
     ///   - [`last_audit_timestamp(Option<DateTime>)`](crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsOutput::last_audit_timestamp): <p>The time that a recovery group was last assessed for recommendations, in UTC ISO-8601 format.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
-    ///   - [`recommendations(Option<Vec<Recommendation>>)`](crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsOutput::recommendations): <p>A list of the recommendations for the customer's application.</p>
+    ///   - [`recommendations(Option<Vec::<Recommendation>>)`](crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsOutput::recommendations): <p>A list of the recommendations for the customer's application.</p>
     /// - On failure, responds with [`SdkError<GetArchitectureRecommendationsError>`](crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsError)
     pub fn get_architecture_recommendations(
         &self,

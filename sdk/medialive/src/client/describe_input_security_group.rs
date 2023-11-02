@@ -7,10 +7,10 @@ impl super::Client {
     /// - On success, responds with [`DescribeInputSecurityGroupOutput`](crate::operation::describe_input_security_group::DescribeInputSecurityGroupOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_input_security_group::DescribeInputSecurityGroupOutput::arn): Unique ARN of Input Security Group
     ///   - [`id(Option<String>)`](crate::operation::describe_input_security_group::DescribeInputSecurityGroupOutput::id): The Id of the Input Security Group
-    ///   - [`inputs(Option<Vec<String>>)`](crate::operation::describe_input_security_group::DescribeInputSecurityGroupOutput::inputs): The list of inputs currently using this Input Security Group.
+    ///   - [`inputs(Option<Vec::<String>>)`](crate::operation::describe_input_security_group::DescribeInputSecurityGroupOutput::inputs): The list of inputs currently using this Input Security Group.
     ///   - [`state(Option<InputSecurityGroupState>)`](crate::operation::describe_input_security_group::DescribeInputSecurityGroupOutput::state): The current state of the Input Security Group.
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_input_security_group::DescribeInputSecurityGroupOutput::tags): A collection of key-value pairs.
-    ///   - [`whitelist_rules(Option<Vec<InputWhitelistRule>>)`](crate::operation::describe_input_security_group::DescribeInputSecurityGroupOutput::whitelist_rules): Whitelist rules and their sync status
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_input_security_group::DescribeInputSecurityGroupOutput::tags): A collection of key-value pairs.
+    ///   - [`whitelist_rules(Option<Vec::<InputWhitelistRule>>)`](crate::operation::describe_input_security_group::DescribeInputSecurityGroupOutput::whitelist_rules): Whitelist rules and their sync status
     /// - On failure, responds with [`SdkError<DescribeInputSecurityGroupError>`](crate::operation::describe_input_security_group::DescribeInputSecurityGroupError)
     pub fn describe_input_security_group(
         &self,

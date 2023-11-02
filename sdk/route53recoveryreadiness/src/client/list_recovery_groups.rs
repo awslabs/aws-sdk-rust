@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_recovery_groups::builders::ListRecoveryGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_recovery_groups::builders::ListRecoveryGroupsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token that identifies which batch of results you want to see.</p><br>
     /// - On success, responds with [`ListRecoveryGroupsOutput`](crate::operation::list_recovery_groups::ListRecoveryGroupsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_recovery_groups::ListRecoveryGroupsOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
-    ///   - [`recovery_groups(Option<Vec<RecoveryGroupOutput>>)`](crate::operation::list_recovery_groups::ListRecoveryGroupsOutput::recovery_groups): <p>A list of recovery groups.</p>
+    ///   - [`recovery_groups(Option<Vec::<RecoveryGroupOutput>>)`](crate::operation::list_recovery_groups::ListRecoveryGroupsOutput::recovery_groups): <p>A list of recovery groups.</p>
     /// - On failure, responds with [`SdkError<ListRecoveryGroupsError>`](crate::operation::list_recovery_groups::ListRecoveryGroupsError)
     pub fn list_recovery_groups(&self) -> crate::operation::list_recovery_groups::builders::ListRecoveryGroupsFluentBuilder {
         crate::operation::list_recovery_groups::builders::ListRecoveryGroupsFluentBuilder::new(self.handle.clone())

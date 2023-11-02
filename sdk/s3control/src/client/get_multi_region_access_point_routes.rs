@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`mrap(impl Into<String>)`](crate::operation::get_multi_region_access_point_routes::builders::GetMultiRegionAccessPointRoutesFluentBuilder::mrap) / [`set_mrap(Option<String>)`](crate::operation::get_multi_region_access_point_routes::builders::GetMultiRegionAccessPointRoutesFluentBuilder::set_mrap):<br>required: **true**<br><p>The Multi-Region Access Point ARN.</p><br>
     /// - On success, responds with [`GetMultiRegionAccessPointRoutesOutput`](crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutesOutput) with field(s):
     ///   - [`mrap(Option<String>)`](crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutesOutput::mrap): <p>The Multi-Region Access Point ARN.</p>
-    ///   - [`routes(Option<Vec<MultiRegionAccessPointRoute>>)`](crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutesOutput::routes): <p>The different routes that make up the route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
+    ///   - [`routes(Option<Vec::<MultiRegionAccessPointRoute>>)`](crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutesOutput::routes): <p>The different routes that make up the route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
     /// - On failure, responds with [`SdkError<GetMultiRegionAccessPointRoutesError>`](crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutesError)
     pub fn get_multi_region_access_point_routes(
         &self,

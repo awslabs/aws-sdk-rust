@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`arn(impl Into<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN)</p><br>
-    ///   - [`tags(impl Into<String>, Option<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::tags) / [`set_tags(Option<HashMap<String, Option<String>>>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_tags):<br>required: **true**<br><p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p><br>
+    ///   - [`tags(impl Into<String>, Option<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::tags) / [`set_tags(Option<HashMap::<String, Option<String>>>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_tags):<br>required: **true**<br><p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p><br>
     /// - On success, responds with [`TagResourceOutput`](crate::operation::tag_resource::TagResourceOutput)
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::operation::tag_resource::TagResourceError)
     pub fn tag_resource(&self) -> crate::operation::tag_resource::builders::TagResourceFluentBuilder {

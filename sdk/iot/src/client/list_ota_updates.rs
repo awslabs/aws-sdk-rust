@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_ota_updates::builders::ListOTAUpdatesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_ota_updates::builders::ListOTAUpdatesFluentBuilder::set_next_token):<br>required: **false**<br><p>A token used to retrieve the next set of results.</p><br>
     ///   - [`ota_update_status(OtaUpdateStatus)`](crate::operation::list_ota_updates::builders::ListOTAUpdatesFluentBuilder::ota_update_status) / [`set_ota_update_status(Option<OtaUpdateStatus>)`](crate::operation::list_ota_updates::builders::ListOTAUpdatesFluentBuilder::set_ota_update_status):<br>required: **false**<br><p>The OTA update job status.</p><br>
     /// - On success, responds with [`ListOtaUpdatesOutput`](crate::operation::list_ota_updates::ListOtaUpdatesOutput) with field(s):
-    ///   - [`ota_updates(Option<Vec<OtaUpdateSummary>>)`](crate::operation::list_ota_updates::ListOtaUpdatesOutput::ota_updates): <p>A list of OTA update jobs.</p>
+    ///   - [`ota_updates(Option<Vec::<OtaUpdateSummary>>)`](crate::operation::list_ota_updates::ListOtaUpdatesOutput::ota_updates): <p>A list of OTA update jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_ota_updates::ListOtaUpdatesOutput::next_token): <p>A token to use to get the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListOTAUpdatesError>`](crate::operation::list_ota_updates::ListOTAUpdatesError)
     pub fn list_ota_updates(&self) -> crate::operation::list_ota_updates::builders::ListOTAUpdatesFluentBuilder {

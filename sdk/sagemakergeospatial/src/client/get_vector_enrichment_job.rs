@@ -18,7 +18,7 @@ impl super::Client {
     ///   - [`error_details(Option<VectorEnrichmentJobErrorDetails>)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::error_details): <p>Details about the errors generated during the Vector Enrichment job.</p>
     ///   - [`export_status(Option<VectorEnrichmentJobExportStatus>)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::export_status): <p>The export status of the Vector Enrichment job being initiated.</p>
     ///   - [`export_error_details(Option<VectorEnrichmentJobExportErrorDetails>)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::export_error_details): <p>Details about the errors generated during the ExportVectorEnrichmentJob.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::tags): <p>Each tag consists of a key and a value.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::tags): <p>Each tag consists of a key and a value.</p>
     /// - On failure, responds with [`SdkError<GetVectorEnrichmentJobError>`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobError)
     pub fn get_vector_enrichment_job(&self) -> crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobFluentBuilder {
         crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobFluentBuilder::new(self.handle.clone())

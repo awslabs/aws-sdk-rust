@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`workspace_id(impl Into<String>)`](crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::set_workspace_id):<br>required: **true**<br><p>The ID of the workspace to list permissions for. This parameter is required.</p><br>
     /// - On success, responds with [`ListPermissionsOutput`](crate::operation::list_permissions::ListPermissionsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_permissions::ListPermissionsOutput::next_token): <p>The token to use in a subsequent <code>ListPermissions</code> operation to return the next set of results.</p>
-    ///   - [`permissions(Vec<PermissionEntry>)`](crate::operation::list_permissions::ListPermissionsOutput::permissions): <p>The permissions returned by the operation.</p>
+    ///   - [`permissions(Vec::<PermissionEntry>)`](crate::operation::list_permissions::ListPermissionsOutput::permissions): <p>The permissions returned by the operation.</p>
     /// - On failure, responds with [`SdkError<ListPermissionsError>`](crate::operation::list_permissions::ListPermissionsError)
     pub fn list_permissions(&self) -> crate::operation::list_permissions::builders::ListPermissionsFluentBuilder {
         crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::new(self.handle.clone())

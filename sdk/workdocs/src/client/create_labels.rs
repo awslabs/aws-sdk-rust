@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_id(impl Into<String>)`](crate::operation::create_labels::builders::CreateLabelsFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::create_labels::builders::CreateLabelsFluentBuilder::set_resource_id):<br>required: **true**<br><p>The ID of the resource.</p><br>
-    ///   - [`labels(impl Into<String>)`](crate::operation::create_labels::builders::CreateLabelsFluentBuilder::labels) / [`set_labels(Option<Vec<String>>)`](crate::operation::create_labels::builders::CreateLabelsFluentBuilder::set_labels):<br>required: **true**<br><p>List of labels to add to the resource.</p><br>
+    ///   - [`labels(impl Into<String>)`](crate::operation::create_labels::builders::CreateLabelsFluentBuilder::labels) / [`set_labels(Option<Vec::<String>>)`](crate::operation::create_labels::builders::CreateLabelsFluentBuilder::set_labels):<br>required: **true**<br><p>List of labels to add to the resource.</p><br>
     ///   - [`authentication_token(impl Into<String>)`](crate::operation::create_labels::builders::CreateLabelsFluentBuilder::authentication_token) / [`set_authentication_token(Option<String>)`](crate::operation::create_labels::builders::CreateLabelsFluentBuilder::set_authentication_token):<br>required: **false**<br><p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p><br>
     /// - On success, responds with [`CreateLabelsOutput`](crate::operation::create_labels::CreateLabelsOutput)
     /// - On failure, responds with [`SdkError<CreateLabelsError>`](crate::operation::create_labels::CreateLabelsError)

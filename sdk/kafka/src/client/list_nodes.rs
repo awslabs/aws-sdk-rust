@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_nodes::builders::ListNodesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_nodes::builders::ListNodesFluentBuilder::set_next_token):<br>required: **false**<br><p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p><br>
     /// - On success, responds with [`ListNodesOutput`](crate::operation::list_nodes::ListNodesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_nodes::ListNodesOutput::next_token): <p>The paginated results marker. When the result of a ListNodes operation is truncated, the call returns NextToken in the response. To get another batch of nodes, provide this token in your next request.</p>
-    ///   - [`node_info_list(Option<Vec<NodeInfo>>)`](crate::operation::list_nodes::ListNodesOutput::node_info_list): <p>List containing a NodeInfo object.</p>
+    ///   - [`node_info_list(Option<Vec::<NodeInfo>>)`](crate::operation::list_nodes::ListNodesOutput::node_info_list): <p>List containing a NodeInfo object.</p>
     /// - On failure, responds with [`SdkError<ListNodesError>`](crate::operation::list_nodes::ListNodesError)
     pub fn list_nodes(&self) -> crate::operation::list_nodes::builders::ListNodesFluentBuilder {
         crate::operation::list_nodes::builders::ListNodesFluentBuilder::new(self.handle.clone())

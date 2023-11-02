@@ -18,7 +18,7 @@ impl super::Client {
     ///   - [`video_quality(impl Into<String>)`](crate::operation::list_offerings::builders::ListOfferingsFluentBuilder::video_quality) / [`set_video_quality(Option<String>)`](crate::operation::list_offerings::builders::ListOfferingsFluentBuilder::set_video_quality):<br>required: **false**<br>Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'<br>
     /// - On success, responds with [`ListOfferingsOutput`](crate::operation::list_offerings::ListOfferingsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_offerings::ListOfferingsOutput::next_token): Token to retrieve the next page of results
-    ///   - [`offerings(Option<Vec<Offering>>)`](crate::operation::list_offerings::ListOfferingsOutput::offerings): List of offerings
+    ///   - [`offerings(Option<Vec::<Offering>>)`](crate::operation::list_offerings::ListOfferingsOutput::offerings): List of offerings
     /// - On failure, responds with [`SdkError<ListOfferingsError>`](crate::operation::list_offerings::ListOfferingsError)
     pub fn list_offerings(&self) -> crate::operation::list_offerings::builders::ListOfferingsFluentBuilder {
         crate::operation::list_offerings::builders::ListOfferingsFluentBuilder::new(self.handle.clone())

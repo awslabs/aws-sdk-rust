@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::get_current_user_data::builders::GetCurrentUserDataFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_current_user_data::builders::GetCurrentUserDataFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page.</p><br>
     /// - On success, responds with [`GetCurrentUserDataOutput`](crate::operation::get_current_user_data::GetCurrentUserDataOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::get_current_user_data::GetCurrentUserDataOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
-    ///   - [`user_data_list(Option<Vec<UserData>>)`](crate::operation::get_current_user_data::GetCurrentUserDataOutput::user_data_list): <p>A list of the user data that is returned.</p>
+    ///   - [`user_data_list(Option<Vec::<UserData>>)`](crate::operation::get_current_user_data::GetCurrentUserDataOutput::user_data_list): <p>A list of the user data that is returned.</p>
     ///   - [`approximate_total_count(Option<i64>)`](crate::operation::get_current_user_data::GetCurrentUserDataOutput::approximate_total_count): <p>The total count of the result, regardless of the current page size.</p>
     /// - On failure, responds with [`SdkError<GetCurrentUserDataError>`](crate::operation::get_current_user_data::GetCurrentUserDataError)
     pub fn get_current_user_data(&self) -> crate::operation::get_current_user_data::builders::GetCurrentUserDataFluentBuilder {

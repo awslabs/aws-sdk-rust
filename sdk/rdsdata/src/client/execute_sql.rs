@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`database(impl Into<String>)`](crate::operation::execute_sql::builders::ExecuteSqlFluentBuilder::database) / [`set_database(Option<String>)`](crate::operation::execute_sql::builders::ExecuteSqlFluentBuilder::set_database):<br>required: **false**<br><p>The name of the database.</p><br>
     ///   - [`schema(impl Into<String>)`](crate::operation::execute_sql::builders::ExecuteSqlFluentBuilder::schema) / [`set_schema(Option<String>)`](crate::operation::execute_sql::builders::ExecuteSqlFluentBuilder::set_schema):<br>required: **false**<br><p>The name of the database schema.</p><br>
     /// - On success, responds with [`ExecuteSqlOutput`](crate::operation::execute_sql::ExecuteSqlOutput) with field(s):
-    ///   - [`sql_statement_results(Option<Vec<SqlStatementResult>>)`](crate::operation::execute_sql::ExecuteSqlOutput::sql_statement_results): <p>The results of the SQL statement or statements.</p>
+    ///   - [`sql_statement_results(Option<Vec::<SqlStatementResult>>)`](crate::operation::execute_sql::ExecuteSqlOutput::sql_statement_results): <p>The results of the SQL statement or statements.</p>
     /// - On failure, responds with [`SdkError<ExecuteSqlError>`](crate::operation::execute_sql::ExecuteSqlError)
     #[deprecated(note = "The ExecuteSql API is deprecated, please use the ExecuteStatement API.", since = "2019-03-21")]
     pub fn execute_sql(&self) -> crate::operation::execute_sql::builders::ExecuteSqlFluentBuilder {

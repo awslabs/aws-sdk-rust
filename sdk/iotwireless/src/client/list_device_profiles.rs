@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`device_profile_type(DeviceProfileType)`](crate::operation::list_device_profiles::builders::ListDeviceProfilesFluentBuilder::device_profile_type) / [`set_device_profile_type(Option<DeviceProfileType>)`](crate::operation::list_device_profiles::builders::ListDeviceProfilesFluentBuilder::set_device_profile_type):<br>required: **false**<br><p>A filter to list only device profiles that use this type, which can be <code>LoRaWAN</code> or <code>Sidewalk</code>.</p><br>
     /// - On success, responds with [`ListDeviceProfilesOutput`](crate::operation::list_device_profiles::ListDeviceProfilesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_device_profiles::ListDeviceProfilesOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    ///   - [`device_profile_list(Option<Vec<DeviceProfile>>)`](crate::operation::list_device_profiles::ListDeviceProfilesOutput::device_profile_list): <p>The list of device profiles.</p>
+    ///   - [`device_profile_list(Option<Vec::<DeviceProfile>>)`](crate::operation::list_device_profiles::ListDeviceProfilesOutput::device_profile_list): <p>The list of device profiles.</p>
     /// - On failure, responds with [`SdkError<ListDeviceProfilesError>`](crate::operation::list_device_profiles::ListDeviceProfilesError)
     pub fn list_device_profiles(&self) -> crate::operation::list_device_profiles::builders::ListDeviceProfilesFluentBuilder {
         crate::operation::list_device_profiles::builders::ListDeviceProfilesFluentBuilder::new(self.handle.clone())

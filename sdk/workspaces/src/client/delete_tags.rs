@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_id(impl Into<String>)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::set_resource_id):<br>required: **true**<br><p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p><br>
-    ///   - [`tag_keys(impl Into<String>)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::set_tag_keys):<br>required: **true**<br><p>The tag keys.</p><br>
+    ///   - [`tag_keys(impl Into<String>)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec::<String>>)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::set_tag_keys):<br>required: **true**<br><p>The tag keys.</p><br>
     /// - On success, responds with [`DeleteTagsOutput`](crate::operation::delete_tags::DeleteTagsOutput)
     /// - On failure, responds with [`SdkError<DeleteTagsError>`](crate::operation::delete_tags::DeleteTagsError)
     pub fn delete_tags(&self) -> crate::operation::delete_tags::builders::DeleteTagsFluentBuilder {

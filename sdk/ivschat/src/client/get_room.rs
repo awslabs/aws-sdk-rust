@@ -13,8 +13,8 @@ impl super::Client {
     ///   - [`maximum_message_rate_per_second(i32)`](crate::operation::get_room::GetRoomOutput::maximum_message_rate_per_second): <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.</p>
     ///   - [`maximum_message_length(i32)`](crate::operation::get_room::GetRoomOutput::maximum_message_length): <p>Maximum number of characters in a single message. Messages are expected to be UTF-8 encoded and this limit applies specifically to rune/code-point count, not number of bytes. Default: 500.</p>
     ///   - [`message_review_handler(Option<MessageReviewHandler>)`](crate::operation::get_room::GetRoomOutput::message_review_handler): <p>Configuration information for optional review of messages.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_room::GetRoomOutput::tags): <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.</p>
-    ///   - [`logging_configuration_identifiers(Option<Vec<String>>)`](crate::operation::get_room::GetRoomOutput::logging_configuration_identifiers): <p>Array of logging configurations attached to the room.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_room::GetRoomOutput::tags): <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.</p>
+    ///   - [`logging_configuration_identifiers(Option<Vec::<String>>)`](crate::operation::get_room::GetRoomOutput::logging_configuration_identifiers): <p>Array of logging configurations attached to the room.</p>
     /// - On failure, responds with [`SdkError<GetRoomError>`](crate::operation::get_room::GetRoomError)
     pub fn get_room(&self) -> crate::operation::get_room::builders::GetRoomFluentBuilder {
         crate::operation::get_room::builders::GetRoomFluentBuilder::new(self.handle.clone())

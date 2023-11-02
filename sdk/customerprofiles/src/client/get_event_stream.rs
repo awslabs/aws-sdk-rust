@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`state(EventStreamState)`](crate::operation::get_event_stream::GetEventStreamOutput::state): <p>The operational state of destination stream for export.</p>
     ///   - [`stopped_since(Option<DateTime>)`](crate::operation::get_event_stream::GetEventStreamOutput::stopped_since): <p>The timestamp when the <code>State</code> changed to <code>STOPPED</code>.</p>
     ///   - [`destination_details(Option<EventStreamDestinationDetails>)`](crate::operation::get_event_stream::GetEventStreamOutput::destination_details): <p>Details regarding the Kinesis stream.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_event_stream::GetEventStreamOutput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_event_stream::GetEventStreamOutput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
     /// - On failure, responds with [`SdkError<GetEventStreamError>`](crate::operation::get_event_stream::GetEventStreamError)
     pub fn get_event_stream(&self) -> crate::operation::get_event_stream::builders::GetEventStreamFluentBuilder {
         crate::operation::get_event_stream::builders::GetEventStreamFluentBuilder::new(self.handle.clone())

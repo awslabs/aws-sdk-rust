@@ -20,8 +20,8 @@ impl super::Client {
     /// - On success, responds with [`SearchOutput`](crate::operation::search::SearchOutput) with field(s):
     ///   - [`status(Option<SearchStatus>)`](crate::operation::search::SearchOutput::status): <p>The status information returned for the search request.</p>
     ///   - [`hits(Option<Hits>)`](crate::operation::search::SearchOutput::hits): <p>The documents that match the search criteria.</p>
-    ///   - [`facets(Option<HashMap<String, BucketInfo>>)`](crate::operation::search::SearchOutput::facets): <p>The requested facet information.</p>
-    ///   - [`stats(Option<HashMap<String, FieldStats>>)`](crate::operation::search::SearchOutput::stats): <p>The requested field statistics information.</p>
+    ///   - [`facets(Option<HashMap::<String, BucketInfo>>)`](crate::operation::search::SearchOutput::facets): <p>The requested facet information.</p>
+    ///   - [`stats(Option<HashMap::<String, FieldStats>>)`](crate::operation::search::SearchOutput::stats): <p>The requested field statistics information.</p>
     /// - On failure, responds with [`SdkError<SearchError>`](crate::operation::search::SearchError)
     pub fn search(&self) -> crate::operation::search::builders::SearchFluentBuilder {
         crate::operation::search::builders::SearchFluentBuilder::new(self.handle.clone())

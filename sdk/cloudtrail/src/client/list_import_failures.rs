@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_import_failures::builders::ListImportFailuresFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_import_failures::builders::ListImportFailuresFluentBuilder::set_max_results):<br>required: **false**<br><p> The maximum number of failures to display on a single page. </p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_import_failures::builders::ListImportFailuresFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_import_failures::builders::ListImportFailuresFluentBuilder::set_next_token):<br>required: **false**<br><p> A token you can use to get the next page of import failures. </p><br>
     /// - On success, responds with [`ListImportFailuresOutput`](crate::operation::list_import_failures::ListImportFailuresOutput) with field(s):
-    ///   - [`failures(Option<Vec<ImportFailureListItem>>)`](crate::operation::list_import_failures::ListImportFailuresOutput::failures): <p> Contains information about the import failures. </p>
+    ///   - [`failures(Option<Vec::<ImportFailureListItem>>)`](crate::operation::list_import_failures::ListImportFailuresOutput::failures): <p> Contains information about the import failures. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_import_failures::ListImportFailuresOutput::next_token): <p> A token you can use to get the next page of results. </p>
     /// - On failure, responds with [`SdkError<ListImportFailuresError>`](crate::operation::list_import_failures::ListImportFailuresError)
     pub fn list_import_failures(&self) -> crate::operation::list_import_failures::builders::ListImportFailuresFluentBuilder {

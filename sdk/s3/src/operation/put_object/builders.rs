@@ -169,7 +169,7 @@ impl PutObjectFluentBuilder {
             })
         })?;
         let request = context.take_request().expect("request set before transmit");
-        Ok(crate::presigning::PresignedRequest::new(request))
+        crate::presigning::PresignedRequest::new(request).map_err(::aws_smithy_http::result::SdkError::construction_failure)
     }
     /// <p>The canned ACL to apply to the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned ACL</a>.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>

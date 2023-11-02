@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`hls_ingest(Option<HlsIngest>)`](crate::operation::rotate_channel_credentials::RotateChannelCredentialsOutput::hls_ingest): An HTTP Live Streaming (HLS) ingest resource configuration.
     ///   - [`id(Option<String>)`](crate::operation::rotate_channel_credentials::RotateChannelCredentialsOutput::id): The ID of the Channel.
     ///   - [`ingress_access_logs(Option<IngressAccessLogs>)`](crate::operation::rotate_channel_credentials::RotateChannelCredentialsOutput::ingress_access_logs): Configure ingress access logging.
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::rotate_channel_credentials::RotateChannelCredentialsOutput::tags): A collection of tags associated with a resource
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::rotate_channel_credentials::RotateChannelCredentialsOutput::tags): A collection of tags associated with a resource
     /// - On failure, responds with [`SdkError<RotateChannelCredentialsError>`](crate::operation::rotate_channel_credentials::RotateChannelCredentialsError)
     #[deprecated(note = "This API is deprecated. Please use RotateIngestEndpointCredentials instead")]
     pub fn rotate_channel_credentials(&self) -> crate::operation::rotate_channel_credentials::builders::RotateChannelCredentialsFluentBuilder {

@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`studio_id(impl Into<String>)`](crate::operation::list_streaming_session_backups::builders::ListStreamingSessionBackupsFluentBuilder::studio_id) / [`set_studio_id(Option<String>)`](crate::operation::list_streaming_session_backups::builders::ListStreamingSessionBackupsFluentBuilder::set_studio_id):<br>required: **true**<br><p>The studio ID. </p><br>
     /// - On success, responds with [`ListStreamingSessionBackupsOutput`](crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    ///   - [`streaming_session_backups(Option<Vec<StreamingSessionBackup>>)`](crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsOutput::streaming_session_backups): <p>Information about the streaming session backups.</p>
+    ///   - [`streaming_session_backups(Option<Vec::<StreamingSessionBackup>>)`](crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsOutput::streaming_session_backups): <p>Information about the streaming session backups.</p>
     /// - On failure, responds with [`SdkError<ListStreamingSessionBackupsError>`](crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsError)
     pub fn list_streaming_session_backups(
         &self,

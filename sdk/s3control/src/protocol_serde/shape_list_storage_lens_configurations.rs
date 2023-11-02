@@ -80,7 +80,7 @@ pub fn de_list_storage_lens_configurations(
             s if s.matches("StorageLensConfigurationList") /* StorageLensConfigurationList com.amazonaws.s3control.synthetic#ListStorageLensConfigurationsOutput$StorageLensConfigurationList */ =>  {
                 let var_3 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::ListStorageLensConfigurationEntry>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::ListStorageLensConfigurationEntry>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_4 = builder.storage_lens_configuration_list.take().unwrap_or_default();
                             list_4.push(
                                 crate::protocol_serde::shape_list_storage_lens_configuration_entry::de_list_storage_lens_configuration_entry(&mut tag)

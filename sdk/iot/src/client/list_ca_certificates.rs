@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`ascending_order(bool)`](crate::operation::list_ca_certificates::builders::ListCACertificatesFluentBuilder::ascending_order) / [`set_ascending_order(Option<bool>)`](crate::operation::list_ca_certificates::builders::ListCACertificatesFluentBuilder::set_ascending_order):<br>required: **false**<br><p>Determines the order of the results.</p><br>
     ///   - [`template_name(impl Into<String>)`](crate::operation::list_ca_certificates::builders::ListCACertificatesFluentBuilder::template_name) / [`set_template_name(Option<String>)`](crate::operation::list_ca_certificates::builders::ListCACertificatesFluentBuilder::set_template_name):<br>required: **false**<br><p>The name of the provisioning template.</p><br>
     /// - On success, responds with [`ListCaCertificatesOutput`](crate::operation::list_ca_certificates::ListCaCertificatesOutput) with field(s):
-    ///   - [`certificates(Option<Vec<CaCertificate>>)`](crate::operation::list_ca_certificates::ListCaCertificatesOutput::certificates): <p>The CA certificates registered in your Amazon Web Services account.</p>
+    ///   - [`certificates(Option<Vec::<CaCertificate>>)`](crate::operation::list_ca_certificates::ListCaCertificatesOutput::certificates): <p>The CA certificates registered in your Amazon Web Services account.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::list_ca_certificates::ListCaCertificatesOutput::next_marker): <p>The current position within the list of CA certificates.</p>
     /// - On failure, responds with [`SdkError<ListCACertificatesError>`](crate::operation::list_ca_certificates::ListCACertificatesError)
     pub fn list_ca_certificates(&self) -> crate::operation::list_ca_certificates::builders::ListCACertificatesFluentBuilder {

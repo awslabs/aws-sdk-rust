@@ -4,10 +4,10 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`client_token(impl Into<String>)`](crate::operation::accept_eulas::builders::AcceptEulasFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::accept_eulas::builders::AcceptEulasFluentBuilder::set_client_token):<br>required: **false**<br><p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p><br>
-    ///   - [`eula_ids(impl Into<String>)`](crate::operation::accept_eulas::builders::AcceptEulasFluentBuilder::eula_ids) / [`set_eula_ids(Option<Vec<String>>)`](crate::operation::accept_eulas::builders::AcceptEulasFluentBuilder::set_eula_ids):<br>required: **false**<br><p>The EULA ID.</p><br>
+    ///   - [`eula_ids(impl Into<String>)`](crate::operation::accept_eulas::builders::AcceptEulasFluentBuilder::eula_ids) / [`set_eula_ids(Option<Vec::<String>>)`](crate::operation::accept_eulas::builders::AcceptEulasFluentBuilder::set_eula_ids):<br>required: **false**<br><p>The EULA ID.</p><br>
     ///   - [`studio_id(impl Into<String>)`](crate::operation::accept_eulas::builders::AcceptEulasFluentBuilder::studio_id) / [`set_studio_id(Option<String>)`](crate::operation::accept_eulas::builders::AcceptEulasFluentBuilder::set_studio_id):<br>required: **true**<br><p>The studio ID.</p><br>
     /// - On success, responds with [`AcceptEulasOutput`](crate::operation::accept_eulas::AcceptEulasOutput) with field(s):
-    ///   - [`eula_acceptances(Option<Vec<EulaAcceptance>>)`](crate::operation::accept_eulas::AcceptEulasOutput::eula_acceptances): <p>A collection of EULA acceptances.</p>
+    ///   - [`eula_acceptances(Option<Vec::<EulaAcceptance>>)`](crate::operation::accept_eulas::AcceptEulasOutput::eula_acceptances): <p>A collection of EULA acceptances.</p>
     /// - On failure, responds with [`SdkError<AcceptEulasError>`](crate::operation::accept_eulas::AcceptEulasError)
     pub fn accept_eulas(&self) -> crate::operation::accept_eulas::builders::AcceptEulasFluentBuilder {
         crate::operation::accept_eulas::builders::AcceptEulasFluentBuilder::new(self.handle.clone())

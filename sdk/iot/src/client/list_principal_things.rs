@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_principal_things::builders::ListPrincipalThingsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_principal_things::builders::ListPrincipalThingsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in this operation.</p><br>
     ///   - [`principal(impl Into<String>)`](crate::operation::list_principal_things::builders::ListPrincipalThingsFluentBuilder::principal) / [`set_principal(Option<String>)`](crate::operation::list_principal_things::builders::ListPrincipalThingsFluentBuilder::set_principal):<br>required: **true**<br><p>The principal.</p><br>
     /// - On success, responds with [`ListPrincipalThingsOutput`](crate::operation::list_principal_things::ListPrincipalThingsOutput) with field(s):
-    ///   - [`things(Option<Vec<String>>)`](crate::operation::list_principal_things::ListPrincipalThingsOutput::things): <p>The things.</p>
+    ///   - [`things(Option<Vec::<String>>)`](crate::operation::list_principal_things::ListPrincipalThingsOutput::things): <p>The things.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_principal_things::ListPrincipalThingsOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListPrincipalThingsError>`](crate::operation::list_principal_things::ListPrincipalThingsError)
     pub fn list_principal_things(&self) -> crate::operation::list_principal_things::builders::ListPrincipalThingsFluentBuilder {

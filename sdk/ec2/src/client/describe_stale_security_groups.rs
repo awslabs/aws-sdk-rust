@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`vpc_id(impl Into<String>)`](crate::operation::describe_stale_security_groups::builders::DescribeStaleSecurityGroupsFluentBuilder::vpc_id) / [`set_vpc_id(Option<String>)`](crate::operation::describe_stale_security_groups::builders::DescribeStaleSecurityGroupsFluentBuilder::set_vpc_id):<br>required: **true**<br><p>The ID of the VPC.</p><br>
     /// - On success, responds with [`DescribeStaleSecurityGroupsOutput`](crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsOutput::next_token): <p>The token to include in another request to get the next page of items. If there are no additional items to return, the string is empty.</p>
-    ///   - [`stale_security_group_set(Option<Vec<StaleSecurityGroup>>)`](crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsOutput::stale_security_group_set): <p>Information about the stale security groups.</p>
+    ///   - [`stale_security_group_set(Option<Vec::<StaleSecurityGroup>>)`](crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsOutput::stale_security_group_set): <p>Information about the stale security groups.</p>
     /// - On failure, responds with [`SdkError<DescribeStaleSecurityGroupsError>`](crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsError)
     pub fn describe_stale_security_groups(
         &self,

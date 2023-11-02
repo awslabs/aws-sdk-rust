@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`latest_version(Option<String>)`](crate::operation::get_logger_definition::GetLoggerDefinitionOutput::latest_version): The ID of the latest version associated with the definition.
     ///   - [`latest_version_arn(Option<String>)`](crate::operation::get_logger_definition::GetLoggerDefinitionOutput::latest_version_arn): The ARN of the latest version associated with the definition.
     ///   - [`name(Option<String>)`](crate::operation::get_logger_definition::GetLoggerDefinitionOutput::name): The name of the definition.
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_logger_definition::GetLoggerDefinitionOutput::tags): Tag(s) attached to the resource arn.
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_logger_definition::GetLoggerDefinitionOutput::tags): Tag(s) attached to the resource arn.
     /// - On failure, responds with [`SdkError<GetLoggerDefinitionError>`](crate::operation::get_logger_definition::GetLoggerDefinitionError)
     pub fn get_logger_definition(&self) -> crate::operation::get_logger_definition::builders::GetLoggerDefinitionFluentBuilder {
         crate::operation::get_logger_definition::builders::GetLoggerDefinitionFluentBuilder::new(self.handle.clone())

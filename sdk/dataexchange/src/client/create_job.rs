@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::create_job::CreateJobOutput::arn): <p>The ARN for the job.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::create_job::CreateJobOutput::created_at): <p>The date and time that the job was created, in ISO 8601 format.</p>
     ///   - [`details(Option<ResponseDetails>)`](crate::operation::create_job::CreateJobOutput::details): <p>Details about the job.</p>
-    ///   - [`errors(Option<Vec<JobError>>)`](crate::operation::create_job::CreateJobOutput::errors): <p>The errors associated with jobs.</p>
+    ///   - [`errors(Option<Vec::<JobError>>)`](crate::operation::create_job::CreateJobOutput::errors): <p>The errors associated with jobs.</p>
     ///   - [`id(Option<String>)`](crate::operation::create_job::CreateJobOutput::id): <p>The unique identifier for the job.</p>
     ///   - [`state(Option<State>)`](crate::operation::create_job::CreateJobOutput::state): <p>The state of the job.</p>
     ///   - [`r#type(Option<Type>)`](crate::operation::create_job::CreateJobOutput::type): <p>The job type.</p>

@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::describe_world_template::DescribeWorldTemplateOutput::name): <p>The name of the world template.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::describe_world_template::DescribeWorldTemplateOutput::created_at): <p>The time, in milliseconds since the epoch, when the world template was created.</p>
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::describe_world_template::DescribeWorldTemplateOutput::last_updated_at): <p>The time, in milliseconds since the epoch, when the world template was last updated.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_world_template::DescribeWorldTemplateOutput::tags): <p>A map that contains tag keys and tag values that are attached to the world template.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_world_template::DescribeWorldTemplateOutput::tags): <p>A map that contains tag keys and tag values that are attached to the world template.</p>
     ///   - [`version(Option<String>)`](crate::operation::describe_world_template::DescribeWorldTemplateOutput::version): <p>The version of the world template that you're using.</p>
     /// - On failure, responds with [`SdkError<DescribeWorldTemplateError>`](crate::operation::describe_world_template::DescribeWorldTemplateError)
     pub fn describe_world_template(&self) -> crate::operation::describe_world_template::builders::DescribeWorldTemplateFluentBuilder {

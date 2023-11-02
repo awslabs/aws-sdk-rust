@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetAssessmentOutput`](crate::operation::get_assessment::GetAssessmentOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_assessment::GetAssessmentOutput::id): <p> The ID for the specific assessment task. </p>
     ///   - [`data_collection_details(Option<DataCollectionDetails>)`](crate::operation::get_assessment::GetAssessmentOutput::data_collection_details): <p> Detailed information about the assessment. </p>
-    ///   - [`assessment_targets(Option<Vec<AssessmentTarget>>)`](crate::operation::get_assessment::GetAssessmentOutput::assessment_targets): <p>List of criteria for assessment.</p>
+    ///   - [`assessment_targets(Option<Vec::<AssessmentTarget>>)`](crate::operation::get_assessment::GetAssessmentOutput::assessment_targets): <p>List of criteria for assessment.</p>
     /// - On failure, responds with [`SdkError<GetAssessmentError>`](crate::operation::get_assessment::GetAssessmentError)
     pub fn get_assessment(&self) -> crate::operation::get_assessment::builders::GetAssessmentFluentBuilder {
         crate::operation::get_assessment::builders::GetAssessmentFluentBuilder::new(self.handle.clone())

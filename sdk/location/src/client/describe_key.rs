@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`expire_time(DateTime)`](crate::operation::describe_key::DescribeKeyOutput::expire_time): <p>The timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     ///   - [`update_time(DateTime)`](crate::operation::describe_key::DescribeKeyOutput::update_time): <p>The timestamp for when the API key resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     ///   - [`description(Option<String>)`](crate::operation::describe_key::DescribeKeyOutput::description): <p>The optional description for the API key resource.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_key::DescribeKeyOutput::tags): <p>Tags associated with the API key resource.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_key::DescribeKeyOutput::tags): <p>Tags associated with the API key resource.</p>
     /// - On failure, responds with [`SdkError<DescribeKeyError>`](crate::operation::describe_key::DescribeKeyError)
     pub fn describe_key(&self) -> crate::operation::describe_key::builders::DescribeKeyFluentBuilder {
         crate::operation::describe_key::builders::DescribeKeyFluentBuilder::new(self.handle.clone())

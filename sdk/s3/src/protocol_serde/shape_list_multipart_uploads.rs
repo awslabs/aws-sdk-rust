@@ -99,7 +99,7 @@ pub fn de_list_multipart_uploads(
             s if s.matches("CommonPrefixes") /* CommonPrefixes com.amazonaws.s3.synthetic#ListMultipartUploadsOutput$CommonPrefixes */ =>  {
                 let var_5 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::CommonPrefix>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::CommonPrefix>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_6 = builder.common_prefixes.take().unwrap_or_default();
                             list_6.push(
                                 crate::protocol_serde::shape_common_prefix::de_common_prefix(&mut tag)
@@ -155,7 +155,7 @@ pub fn de_list_multipart_uploads(
             s if s.matches("Upload") /* Uploads com.amazonaws.s3.synthetic#ListMultipartUploadsOutput$Uploads */ =>  {
                 let var_10 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::MultipartUpload>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::MultipartUpload>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_11 = builder.uploads.take().unwrap_or_default();
                             list_11.push(
                                 crate::protocol_serde::shape_multipart_upload::de_multipart_upload(&mut tag)

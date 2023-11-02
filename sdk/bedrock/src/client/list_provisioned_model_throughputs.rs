@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`sort_order(SortOrder)`](crate::operation::list_provisioned_model_throughputs::builders::ListProvisionedModelThroughputsFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_provisioned_model_throughputs::builders::ListProvisionedModelThroughputsFluentBuilder::set_sort_order):<br>required: **false**<br><p>The sort order of the results.</p><br>
     /// - On success, responds with [`ListProvisionedModelThroughputsOutput`](crate::operation::list_provisioned_model_throughputs::ListProvisionedModelThroughputsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_provisioned_model_throughputs::ListProvisionedModelThroughputsOutput::next_token): <p>Continuation token for the next request to list the next set of results.</p>
-    ///   - [`provisioned_model_summaries(Option<Vec<ProvisionedModelSummary>>)`](crate::operation::list_provisioned_model_throughputs::ListProvisionedModelThroughputsOutput::provisioned_model_summaries): <p>List of summaries, one for each provisioned throughput in the response.</p>
+    ///   - [`provisioned_model_summaries(Option<Vec::<ProvisionedModelSummary>>)`](crate::operation::list_provisioned_model_throughputs::ListProvisionedModelThroughputsOutput::provisioned_model_summaries): <p>List of summaries, one for each provisioned throughput in the response.</p>
     /// - On failure, responds with [`SdkError<ListProvisionedModelThroughputsError>`](crate::operation::list_provisioned_model_throughputs::ListProvisionedModelThroughputsError)
     pub fn list_provisioned_model_throughputs(
         &self,

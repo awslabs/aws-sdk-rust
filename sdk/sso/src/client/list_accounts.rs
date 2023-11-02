@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`access_token(impl Into<String>)`](crate::operation::list_accounts::builders::ListAccountsFluentBuilder::access_token) / [`set_access_token(Option<String>)`](crate::operation::list_accounts::builders::ListAccountsFluentBuilder::set_access_token):<br>required: **true**<br><p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>IAM Identity Center OIDC API Reference Guide</i>.</p><br>
     /// - On success, responds with [`ListAccountsOutput`](crate::operation::list_accounts::ListAccountsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_accounts::ListAccountsOutput::next_token): <p>The page token client that is used to retrieve the list of accounts.</p>
-    ///   - [`account_list(Option<Vec<AccountInfo>>)`](crate::operation::list_accounts::ListAccountsOutput::account_list): <p>A paginated response with the list of account information and the next token if more results are available.</p>
+    ///   - [`account_list(Option<Vec::<AccountInfo>>)`](crate::operation::list_accounts::ListAccountsOutput::account_list): <p>A paginated response with the list of account information and the next token if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListAccountsError>`](crate::operation::list_accounts::ListAccountsError)
     pub fn list_accounts(&self) -> crate::operation::list_accounts::builders::ListAccountsFluentBuilder {
         crate::operation::list_accounts::builders::ListAccountsFluentBuilder::new(self.handle.clone())

@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`impersonation_role_id(impl Into<String>)`](crate::operation::get_access_control_effect::builders::GetAccessControlEffectFluentBuilder::impersonation_role_id) / [`set_impersonation_role_id(Option<String>)`](crate::operation::get_access_control_effect::builders::GetAccessControlEffectFluentBuilder::set_impersonation_role_id):<br>required: **false**<br><p>The impersonation role ID.</p><br>
     /// - On success, responds with [`GetAccessControlEffectOutput`](crate::operation::get_access_control_effect::GetAccessControlEffectOutput) with field(s):
     ///   - [`effect(Option<AccessControlRuleEffect>)`](crate::operation::get_access_control_effect::GetAccessControlEffectOutput::effect): <p>The rule effect.</p>
-    ///   - [`matched_rules(Option<Vec<String>>)`](crate::operation::get_access_control_effect::GetAccessControlEffectOutput::matched_rules): <p>The rules that match the given parameters, resulting in an effect.</p>
+    ///   - [`matched_rules(Option<Vec::<String>>)`](crate::operation::get_access_control_effect::GetAccessControlEffectOutput::matched_rules): <p>The rules that match the given parameters, resulting in an effect.</p>
     /// - On failure, responds with [`SdkError<GetAccessControlEffectError>`](crate::operation::get_access_control_effect::GetAccessControlEffectError)
     pub fn get_access_control_effect(&self) -> crate::operation::get_access_control_effect::builders::GetAccessControlEffectFluentBuilder {
         crate::operation::get_access_control_effect::builders::GetAccessControlEffectFluentBuilder::new(self.handle.clone())

@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::set_next_token):<br>required: **false**<br><p>Identifies the next page of results to return.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in each page. The default is 100.</p><br>
     /// - On success, responds with [`ListEndpointsOutput`](crate::operation::list_endpoints::ListEndpointsOutput) with field(s):
-    ///   - [`endpoint_properties_list(Option<Vec<EndpointProperties>>)`](crate::operation::list_endpoints::ListEndpointsOutput::endpoint_properties_list): <p>Displays a list of endpoint properties being retrieved by the service in response to the request.</p>
+    ///   - [`endpoint_properties_list(Option<Vec::<EndpointProperties>>)`](crate::operation::list_endpoints::ListEndpointsOutput::endpoint_properties_list): <p>Displays a list of endpoint properties being retrieved by the service in response to the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_endpoints::ListEndpointsOutput::next_token): <p>Identifies the next page of results to return.</p>
     /// - On failure, responds with [`SdkError<ListEndpointsError>`](crate::operation::list_endpoints::ListEndpointsError)
     pub fn list_endpoints(&self) -> crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder {

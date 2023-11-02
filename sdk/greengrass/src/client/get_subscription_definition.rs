@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`latest_version(Option<String>)`](crate::operation::get_subscription_definition::GetSubscriptionDefinitionOutput::latest_version): The ID of the latest version associated with the definition.
     ///   - [`latest_version_arn(Option<String>)`](crate::operation::get_subscription_definition::GetSubscriptionDefinitionOutput::latest_version_arn): The ARN of the latest version associated with the definition.
     ///   - [`name(Option<String>)`](crate::operation::get_subscription_definition::GetSubscriptionDefinitionOutput::name): The name of the definition.
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_subscription_definition::GetSubscriptionDefinitionOutput::tags): Tag(s) attached to the resource arn.
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_subscription_definition::GetSubscriptionDefinitionOutput::tags): Tag(s) attached to the resource arn.
     /// - On failure, responds with [`SdkError<GetSubscriptionDefinitionError>`](crate::operation::get_subscription_definition::GetSubscriptionDefinitionError)
     pub fn get_subscription_definition(&self) -> crate::operation::get_subscription_definition::builders::GetSubscriptionDefinitionFluentBuilder {
         crate::operation::get_subscription_definition::builders::GetSubscriptionDefinitionFluentBuilder::new(self.handle.clone())

@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetLfTagOutput`](crate::operation::get_lf_tag::GetLfTagOutput) with field(s):
     ///   - [`catalog_id(Option<String>)`](crate::operation::get_lf_tag::GetLfTagOutput::catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     ///   - [`tag_key(Option<String>)`](crate::operation::get_lf_tag::GetLfTagOutput::tag_key): <p>The key-name for the LF-tag.</p>
-    ///   - [`tag_values(Option<Vec<String>>)`](crate::operation::get_lf_tag::GetLfTagOutput::tag_values): <p>A list of possible values an attribute can take.</p>
+    ///   - [`tag_values(Option<Vec::<String>>)`](crate::operation::get_lf_tag::GetLfTagOutput::tag_values): <p>A list of possible values an attribute can take.</p>
     /// - On failure, responds with [`SdkError<GetLFTagError>`](crate::operation::get_lf_tag::GetLFTagError)
     pub fn get_lf_tag(&self) -> crate::operation::get_lf_tag::builders::GetLFTagFluentBuilder {
         crate::operation::get_lf_tag::builders::GetLFTagFluentBuilder::new(self.handle.clone())

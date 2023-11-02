@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`data_source(String)`](crate::operation::describe_map::DescribeMapOutput::data_source): <p>Specifies the data provider for the associated map tiles.</p>
     ///   - [`configuration(Option<MapConfiguration>)`](crate::operation::describe_map::DescribeMapOutput::configuration): <p>Specifies the map tile style selected from a partner data provider.</p>
     ///   - [`description(String)`](crate::operation::describe_map::DescribeMapOutput::description): <p>The optional description for the map resource.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_map::DescribeMapOutput::tags): <p>Tags associated with the map resource.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_map::DescribeMapOutput::tags): <p>Tags associated with the map resource.</p>
     ///   - [`create_time(DateTime)`](crate::operation::describe_map::DescribeMapOutput::create_time): <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     ///   - [`update_time(DateTime)`](crate::operation::describe_map::DescribeMapOutput::update_time): <p>The timestamp for when the map resource was last update in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeMapError>`](crate::operation::describe_map::DescribeMapError)

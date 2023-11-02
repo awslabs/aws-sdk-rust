@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`source_server_id(Option<String>)`](crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateOutput::source_server_id): <p>Source server ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateOutput::arn): <p>Source server ARN.</p>
     ///   - [`is_archived(Option<bool>)`](crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateOutput::is_archived): <p>Source server archived status.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateOutput::tags): <p>Source server Tags.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateOutput::tags): <p>Source server Tags.</p>
     ///   - [`launched_instance(Option<LaunchedInstance>)`](crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateOutput::launched_instance): <p>Source server launched instance.</p>
     ///   - [`data_replication_info(Option<DataReplicationInfo>)`](crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateOutput::data_replication_info): <p>Source server data replication info.</p>
     ///   - [`life_cycle(Option<LifeCycle>)`](crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateOutput::life_cycle): <p>Source server lifecycle state.</p>

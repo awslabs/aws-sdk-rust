@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_connectors::builders::ListConnectorsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_connectors::builders::ListConnectorsFluentBuilder::set_next_token):<br>required: **false**<br><p>When you can get additional results from the <code>ListConnectors</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional connectors.</p><br>
     /// - On success, responds with [`ListConnectorsOutput`](crate::operation::list_connectors::ListConnectorsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_connectors::ListConnectorsOutput::next_token): <p>Returns a token that you can use to call <code>ListConnectors</code> again and receive additional results, if there are any.</p>
-    ///   - [`connectors(Vec<ListedConnector>)`](crate::operation::list_connectors::ListConnectorsOutput::connectors): <p>Returns an array, where each item contains the details of a connector.</p>
+    ///   - [`connectors(Vec::<ListedConnector>)`](crate::operation::list_connectors::ListConnectorsOutput::connectors): <p>Returns an array, where each item contains the details of a connector.</p>
     /// - On failure, responds with [`SdkError<ListConnectorsError>`](crate::operation::list_connectors::ListConnectorsError)
     pub fn list_connectors(&self) -> crate::operation::list_connectors::builders::ListConnectorsFluentBuilder {
         crate::operation::list_connectors::builders::ListConnectorsFluentBuilder::new(self.handle.clone())

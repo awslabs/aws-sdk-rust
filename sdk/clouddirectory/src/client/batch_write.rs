@@ -4,9 +4,9 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`directory_arn(impl Into<String>)`](crate::operation::batch_write::builders::BatchWriteFluentBuilder::directory_arn) / [`set_directory_arn(Option<String>)`](crate::operation::batch_write::builders::BatchWriteFluentBuilder::set_directory_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p><br>
-    ///   - [`operations(BatchWriteOperation)`](crate::operation::batch_write::builders::BatchWriteFluentBuilder::operations) / [`set_operations(Option<Vec<BatchWriteOperation>>)`](crate::operation::batch_write::builders::BatchWriteFluentBuilder::set_operations):<br>required: **true**<br><p>A list of operations that are part of the batch.</p><br>
+    ///   - [`operations(BatchWriteOperation)`](crate::operation::batch_write::builders::BatchWriteFluentBuilder::operations) / [`set_operations(Option<Vec::<BatchWriteOperation>>)`](crate::operation::batch_write::builders::BatchWriteFluentBuilder::set_operations):<br>required: **true**<br><p>A list of operations that are part of the batch.</p><br>
     /// - On success, responds with [`BatchWriteOutput`](crate::operation::batch_write::BatchWriteOutput) with field(s):
-    ///   - [`responses(Option<Vec<BatchWriteOperationResponse>>)`](crate::operation::batch_write::BatchWriteOutput::responses): <p>A list of all the responses for each batch write.</p>
+    ///   - [`responses(Option<Vec::<BatchWriteOperationResponse>>)`](crate::operation::batch_write::BatchWriteOutput::responses): <p>A list of all the responses for each batch write.</p>
     /// - On failure, responds with [`SdkError<BatchWriteError>`](crate::operation::batch_write::BatchWriteError)
     pub fn batch_write(&self) -> crate::operation::batch_write::builders::BatchWriteFluentBuilder {
         crate::operation::batch_write::builders::BatchWriteFluentBuilder::new(self.handle.clone())

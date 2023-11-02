@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_event_trackers::builders::ListEventTrackersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_event_trackers::builders::ListEventTrackersFluentBuilder::set_next_token):<br>required: **false**<br><p>A token returned from the previous call to <code>ListEventTrackers</code> for getting the next set of event trackers (if they exist).</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_event_trackers::builders::ListEventTrackersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_event_trackers::builders::ListEventTrackersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of event trackers to return.</p><br>
     /// - On success, responds with [`ListEventTrackersOutput`](crate::operation::list_event_trackers::ListEventTrackersOutput) with field(s):
-    ///   - [`event_trackers(Option<Vec<EventTrackerSummary>>)`](crate::operation::list_event_trackers::ListEventTrackersOutput::event_trackers): <p>A list of event trackers.</p>
+    ///   - [`event_trackers(Option<Vec::<EventTrackerSummary>>)`](crate::operation::list_event_trackers::ListEventTrackersOutput::event_trackers): <p>A list of event trackers.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_event_trackers::ListEventTrackersOutput::next_token): <p>A token for getting the next set of event trackers (if they exist).</p>
     /// - On failure, responds with [`SdkError<ListEventTrackersError>`](crate::operation::list_event_trackers::ListEventTrackersError)
     pub fn list_event_trackers(&self) -> crate::operation::list_event_trackers::builders::ListEventTrackersFluentBuilder {

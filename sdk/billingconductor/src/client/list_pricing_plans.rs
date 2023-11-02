@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_pricing_plans::builders::ListPricingPlansFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_pricing_plans::builders::ListPricingPlansFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token that's used on subsequent call to get pricing plans. </p><br>
     /// - On success, responds with [`ListPricingPlansOutput`](crate::operation::list_pricing_plans::ListPricingPlansOutput) with field(s):
     ///   - [`billing_period(Option<String>)`](crate::operation::list_pricing_plans::ListPricingPlansOutput::billing_period): <p> The billing period for which the described pricing plans are applicable. </p>
-    ///   - [`pricing_plans(Option<Vec<PricingPlanListElement>>)`](crate::operation::list_pricing_plans::ListPricingPlansOutput::pricing_plans): <p>A list of <code>PricingPlanListElement</code> retrieved. </p>
+    ///   - [`pricing_plans(Option<Vec::<PricingPlanListElement>>)`](crate::operation::list_pricing_plans::ListPricingPlansOutput::pricing_plans): <p>A list of <code>PricingPlanListElement</code> retrieved. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_pricing_plans::ListPricingPlansOutput::next_token): <p>The pagination token that's used on subsequent calls to get pricing plans. </p>
     /// - On failure, responds with [`SdkError<ListPricingPlansError>`](crate::operation::list_pricing_plans::ListPricingPlansError)
     pub fn list_pricing_plans(&self) -> crate::operation::list_pricing_plans::builders::ListPricingPlansFluentBuilder {

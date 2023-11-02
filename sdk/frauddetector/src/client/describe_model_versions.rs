@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_model_versions::builders::DescribeModelVersionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_model_versions::builders::DescribeModelVersionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The next token from the previous results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_model_versions::builders::DescribeModelVersionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_model_versions::builders::DescribeModelVersionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     /// - On success, responds with [`DescribeModelVersionsOutput`](crate::operation::describe_model_versions::DescribeModelVersionsOutput) with field(s):
-    ///   - [`model_version_details(Option<Vec<ModelVersionDetail>>)`](crate::operation::describe_model_versions::DescribeModelVersionsOutput::model_version_details): <p>The model version details.</p>
+    ///   - [`model_version_details(Option<Vec::<ModelVersionDetail>>)`](crate::operation::describe_model_versions::DescribeModelVersionsOutput::model_version_details): <p>The model version details.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_model_versions::DescribeModelVersionsOutput::next_token): <p>The next token.</p>
     /// - On failure, responds with [`SdkError<DescribeModelVersionsError>`](crate::operation::describe_model_versions::DescribeModelVersionsError)
     pub fn describe_model_versions(&self) -> crate::operation::describe_model_versions::builders::DescribeModelVersionsFluentBuilder {

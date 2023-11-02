@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder::set_next_token):<br>required: **false**<br>Use this string, provided with the response to a previous request, to request the next batch of job templates.<br>
     ///   - [`order(Order)`](crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder::order) / [`set_order(Option<Order>)`](crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder::set_order):<br>required: **false**<br>Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.<br>
     /// - On success, responds with [`ListJobTemplatesOutput`](crate::operation::list_job_templates::ListJobTemplatesOutput) with field(s):
-    ///   - [`job_templates(Option<Vec<JobTemplate>>)`](crate::operation::list_job_templates::ListJobTemplatesOutput::job_templates): List of Job templates.
+    ///   - [`job_templates(Option<Vec::<JobTemplate>>)`](crate::operation::list_job_templates::ListJobTemplatesOutput::job_templates): List of Job templates.
     ///   - [`next_token(Option<String>)`](crate::operation::list_job_templates::ListJobTemplatesOutput::next_token): Use this string to request the next batch of job templates.
     /// - On failure, responds with [`SdkError<ListJobTemplatesError>`](crate::operation::list_job_templates::ListJobTemplatesError)
     pub fn list_job_templates(&self) -> crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder {

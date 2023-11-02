@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to start the list. Use this token to get the next set of results.</p><br>
     /// - On success, responds with [`ListEnvironmentsOutput`](crate::operation::list_environments::ListEnvironmentsOutput) with field(s):
-    ///   - [`items(Option<Vec<Environment>>)`](crate::operation::list_environments::ListEnvironmentsOutput::items): <p>The elements from this collection.</p>
+    ///   - [`items(Option<Vec::<Environment>>)`](crate::operation::list_environments::ListEnvironmentsOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_environments::ListEnvironmentsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListEnvironmentsError>`](crate::operation::list_environments::ListEnvironmentsError)
     pub fn list_environments(&self) -> crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder {

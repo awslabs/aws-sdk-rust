@@ -12,9 +12,9 @@ impl super::Client {
     /// - On success, responds with [`ListAnomalyGroupTimeSeriesOutput`](crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesOutput) with field(s):
     ///   - [`anomaly_group_id(Option<String>)`](crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesOutput::anomaly_group_id): <p>The ID of the anomaly group.</p>
     ///   - [`metric_name(Option<String>)`](crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesOutput::metric_name): <p>The name of the measure field.</p>
-    ///   - [`timestamp_list(Option<Vec<String>>)`](crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesOutput::timestamp_list): <p>Timestamps for the anomalous metrics.</p>
+    ///   - [`timestamp_list(Option<Vec::<String>>)`](crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesOutput::timestamp_list): <p>Timestamps for the anomalous metrics.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesOutput::next_token): <p>The pagination token that's included if more results are available.</p>
-    ///   - [`time_series_list(Option<Vec<TimeSeries>>)`](crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesOutput::time_series_list): <p>A list of anomalous metrics.</p>
+    ///   - [`time_series_list(Option<Vec::<TimeSeries>>)`](crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesOutput::time_series_list): <p>A list of anomalous metrics.</p>
     /// - On failure, responds with [`SdkError<ListAnomalyGroupTimeSeriesError>`](crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesError)
     pub fn list_anomaly_group_time_series(
         &self,

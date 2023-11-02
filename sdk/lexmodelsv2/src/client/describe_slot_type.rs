@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`slot_type_id(Option<String>)`](crate::operation::describe_slot_type::DescribeSlotTypeOutput::slot_type_id): <p>The unique identifier for the slot type.</p>
     ///   - [`slot_type_name(Option<String>)`](crate::operation::describe_slot_type::DescribeSlotTypeOutput::slot_type_name): <p>The name specified for the slot type.</p>
     ///   - [`description(Option<String>)`](crate::operation::describe_slot_type::DescribeSlotTypeOutput::description): <p>The description specified for the slot type.</p>
-    ///   - [`slot_type_values(Option<Vec<SlotTypeValue>>)`](crate::operation::describe_slot_type::DescribeSlotTypeOutput::slot_type_values): <p>The values that the slot type can take. Includes any synonyms for the slot type values.</p>
+    ///   - [`slot_type_values(Option<Vec::<SlotTypeValue>>)`](crate::operation::describe_slot_type::DescribeSlotTypeOutput::slot_type_values): <p>The values that the slot type can take. Includes any synonyms for the slot type values.</p>
     ///   - [`value_selection_setting(Option<SlotValueSelectionSetting>)`](crate::operation::describe_slot_type::DescribeSlotTypeOutput::value_selection_setting): <p>The strategy that Amazon Lex uses to choose a value from a list of possible values.</p>
     ///   - [`parent_slot_type_signature(Option<String>)`](crate::operation::describe_slot_type::DescribeSlotTypeOutput::parent_slot_type_signature): <p>The built in slot type used as a parent to this slot type.</p>
     ///   - [`bot_id(Option<String>)`](crate::operation::describe_slot_type::DescribeSlotTypeOutput::bot_id): <p>The identifier of the bot associated with the slot type.</p>

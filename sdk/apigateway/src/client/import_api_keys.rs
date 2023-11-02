@@ -7,8 +7,8 @@ impl super::Client {
     ///   - [`format(ApiKeysFormat)`](crate::operation::import_api_keys::builders::ImportApiKeysFluentBuilder::format) / [`set_format(Option<ApiKeysFormat>)`](crate::operation::import_api_keys::builders::ImportApiKeysFluentBuilder::set_format):<br>required: **true**<br><p>A query parameter to specify the input format to imported API keys. Currently, only the <code>csv</code> format is supported.</p><br>
     ///   - [`fail_on_warnings(bool)`](crate::operation::import_api_keys::builders::ImportApiKeysFluentBuilder::fail_on_warnings) / [`set_fail_on_warnings(Option<bool>)`](crate::operation::import_api_keys::builders::ImportApiKeysFluentBuilder::set_fail_on_warnings):<br>required: **false**<br><p>A query parameter to indicate whether to rollback ApiKey importation (<code>true</code>) or not (<code>false</code>) when error is encountered.</p><br>
     /// - On success, responds with [`ImportApiKeysOutput`](crate::operation::import_api_keys::ImportApiKeysOutput) with field(s):
-    ///   - [`ids(Option<Vec<String>>)`](crate::operation::import_api_keys::ImportApiKeysOutput::ids): <p>A list of all the ApiKey identifiers.</p>
-    ///   - [`warnings(Option<Vec<String>>)`](crate::operation::import_api_keys::ImportApiKeysOutput::warnings): <p>A list of warning messages.</p>
+    ///   - [`ids(Option<Vec::<String>>)`](crate::operation::import_api_keys::ImportApiKeysOutput::ids): <p>A list of all the ApiKey identifiers.</p>
+    ///   - [`warnings(Option<Vec::<String>>)`](crate::operation::import_api_keys::ImportApiKeysOutput::warnings): <p>A list of warning messages.</p>
     /// - On failure, responds with [`SdkError<ImportApiKeysError>`](crate::operation::import_api_keys::ImportApiKeysError)
     pub fn import_api_keys(&self) -> crate::operation::import_api_keys::builders::ImportApiKeysFluentBuilder {
         crate::operation::import_api_keys::builders::ImportApiKeysFluentBuilder::new(self.handle.clone())

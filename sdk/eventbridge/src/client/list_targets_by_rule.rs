@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_targets_by_rule::builders::ListTargetsByRuleFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_targets_by_rule::builders::ListTargetsByRuleFluentBuilder::set_next_token):<br>required: **false**<br><p>The token returned by a previous call to retrieve the next set of results.</p><br>
     ///   - [`limit(i32)`](crate::operation::list_targets_by_rule::builders::ListTargetsByRuleFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::list_targets_by_rule::builders::ListTargetsByRuleFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     /// - On success, responds with [`ListTargetsByRuleOutput`](crate::operation::list_targets_by_rule::ListTargetsByRuleOutput) with field(s):
-    ///   - [`targets(Option<Vec<Target>>)`](crate::operation::list_targets_by_rule::ListTargetsByRuleOutput::targets): <p>The targets assigned to the rule.</p>
+    ///   - [`targets(Option<Vec::<Target>>)`](crate::operation::list_targets_by_rule::ListTargetsByRuleOutput::targets): <p>The targets assigned to the rule.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_targets_by_rule::ListTargetsByRuleOutput::next_token): <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
     /// - On failure, responds with [`SdkError<ListTargetsByRuleError>`](crate::operation::list_targets_by_rule::ListTargetsByRuleError)
     pub fn list_targets_by_rule(&self) -> crate::operation::list_targets_by_rule::builders::ListTargetsByRuleFluentBuilder {

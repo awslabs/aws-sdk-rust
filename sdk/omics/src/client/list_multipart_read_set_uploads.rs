@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_multipart_read_set_uploads::builders::ListMultipartReadSetUploadsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_multipart_read_set_uploads::builders::ListMultipartReadSetUploadsFluentBuilder::set_next_token):<br>required: **false**<br><p> Next token returned in the response of a previous ListMultipartReadSetUploads call. Used to get the next page of results. </p><br>
     /// - On success, responds with [`ListMultipartReadSetUploadsOutput`](crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsOutput::next_token): <p> Next token returned in the response of a previous ListMultipartReadSetUploads call. Used to get the next page of results. </p>
-    ///   - [`uploads(Option<Vec<MultipartReadSetUploadListItem>>)`](crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsOutput::uploads): <p> An array of multipart uploads. </p>
+    ///   - [`uploads(Option<Vec::<MultipartReadSetUploadListItem>>)`](crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsOutput::uploads): <p> An array of multipart uploads. </p>
     /// - On failure, responds with [`SdkError<ListMultipartReadSetUploadsError>`](crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError)
     pub fn list_multipart_read_set_uploads(
         &self,

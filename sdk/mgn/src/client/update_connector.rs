@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::update_connector::UpdateConnectorOutput::name): <p>Connector name.</p>
     ///   - [`ssm_instance_id(Option<String>)`](crate::operation::update_connector::UpdateConnectorOutput::ssm_instance_id): <p>Connector SSM instance ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::update_connector::UpdateConnectorOutput::arn): <p>Connector arn.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::update_connector::UpdateConnectorOutput::tags): <p>Connector tags.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::update_connector::UpdateConnectorOutput::tags): <p>Connector tags.</p>
     ///   - [`ssm_command_config(Option<ConnectorSsmCommandConfig>)`](crate::operation::update_connector::UpdateConnectorOutput::ssm_command_config): <p>Connector SSM command config.</p>
     /// - On failure, responds with [`SdkError<UpdateConnectorError>`](crate::operation::update_connector::UpdateConnectorError)
     pub fn update_connector(&self) -> crate::operation::update_connector::builders::UpdateConnectorFluentBuilder {

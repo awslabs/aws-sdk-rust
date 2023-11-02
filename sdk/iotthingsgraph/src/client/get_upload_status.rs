@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`namespace_arn(Option<String>)`](crate::operation::get_upload_status::GetUploadStatusOutput::namespace_arn): <p>The ARN of the upload.</p>
     ///   - [`namespace_name(Option<String>)`](crate::operation::get_upload_status::GetUploadStatusOutput::namespace_name): <p>The name of the upload's namespace.</p>
     ///   - [`namespace_version(Option<i64>)`](crate::operation::get_upload_status::GetUploadStatusOutput::namespace_version): <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
-    ///   - [`failure_reason(Option<Vec<String>>)`](crate::operation::get_upload_status::GetUploadStatusOutput::failure_reason): <p>The reason for an upload failure.</p>
+    ///   - [`failure_reason(Option<Vec::<String>>)`](crate::operation::get_upload_status::GetUploadStatusOutput::failure_reason): <p>The reason for an upload failure.</p>
     ///   - [`created_date(DateTime)`](crate::operation::get_upload_status::GetUploadStatusOutput::created_date): <p>The date at which the upload was created.</p>
     /// - On failure, responds with [`SdkError<GetUploadStatusError>`](crate::operation::get_upload_status::GetUploadStatusError)
     #[deprecated(note = "since: 2022-08-30")]

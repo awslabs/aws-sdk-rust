@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_kx_clusters::builders::ListKxClustersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_kx_clusters::builders::ListKxClustersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in this request.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_kx_clusters::builders::ListKxClustersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_kx_clusters::builders::ListKxClustersFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates where a results page should begin.</p><br>
     /// - On success, responds with [`ListKxClustersOutput`](crate::operation::list_kx_clusters::ListKxClustersOutput) with field(s):
-    ///   - [`kx_cluster_summaries(Option<Vec<KxCluster>>)`](crate::operation::list_kx_clusters::ListKxClustersOutput::kx_cluster_summaries): <p>Lists the cluster details.</p>
+    ///   - [`kx_cluster_summaries(Option<Vec::<KxCluster>>)`](crate::operation::list_kx_clusters::ListKxClustersOutput::kx_cluster_summaries): <p>Lists the cluster details.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_kx_clusters::ListKxClustersOutput::next_token): <p>A token that indicates where a results page should begin.</p>
     /// - On failure, responds with [`SdkError<ListKxClustersError>`](crate::operation::list_kx_clusters::ListKxClustersError)
     pub fn list_kx_clusters(&self) -> crate::operation::list_kx_clusters::builders::ListKxClustersFluentBuilder {

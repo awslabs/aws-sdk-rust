@@ -16,7 +16,7 @@ impl super::Client {
     ///   - [`proxy_type(Option<ProxyType>)`](crate::operation::get_application::GetApplicationOutput::proxy_type): <p>The proxy type of the proxy created within the application. </p>
     ///   - [`api_gateway_proxy(Option<ApiGatewayProxyConfig>)`](crate::operation::get_application::GetApplicationOutput::api_gateway_proxy): <p>The endpoint URL of the API Gateway proxy. </p>
     ///   - [`state(Option<ApplicationState>)`](crate::operation::get_application::GetApplicationOutput::state): <p>The current state of the application. </p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_application::GetApplicationOutput::tags): <p>The tags assigned to the application. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_application::GetApplicationOutput::tags): <p>The tags assigned to the application. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
     ///   - [`error(Option<ErrorResponse>)`](crate::operation::get_application::GetApplicationOutput::error): <p>Any error associated with the application resource. </p>
     ///   - [`last_updated_time(Option<DateTime>)`](crate::operation::get_application::GetApplicationOutput::last_updated_time): <p>A timestamp that indicates when the application was last updated. </p>
     ///   - [`created_time(Option<DateTime>)`](crate::operation::get_application::GetApplicationOutput::created_time): <p>A timestamp that indicates when the application is created. </p>

@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_managed_accounts::builders::ListManagedAccountsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_managed_accounts::builders::ListManagedAccountsFluentBuilder::set_max_results):<br>required: **false**<br><p>List managed accounts request max results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_managed_accounts::builders::ListManagedAccountsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_managed_accounts::builders::ListManagedAccountsFluentBuilder::set_next_token):<br>required: **false**<br><p>List managed accounts request next token.</p><br>
     /// - On success, responds with [`ListManagedAccountsOutput`](crate::operation::list_managed_accounts::ListManagedAccountsOutput) with field(s):
-    ///   - [`items(Vec<ManagedAccount>)`](crate::operation::list_managed_accounts::ListManagedAccountsOutput::items): <p>List managed accounts response items.</p>
+    ///   - [`items(Vec::<ManagedAccount>)`](crate::operation::list_managed_accounts::ListManagedAccountsOutput::items): <p>List managed accounts response items.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_managed_accounts::ListManagedAccountsOutput::next_token): <p>List managed accounts response next token.</p>
     /// - On failure, responds with [`SdkError<ListManagedAccountsError>`](crate::operation::list_managed_accounts::ListManagedAccountsError)
     pub fn list_managed_accounts(&self) -> crate::operation::list_managed_accounts::builders::ListManagedAccountsFluentBuilder {

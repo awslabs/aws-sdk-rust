@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_feature_metadata::DescribeFeatureMetadataOutput::creation_time): <p>A timestamp indicating when the feature was created.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_feature_metadata::DescribeFeatureMetadataOutput::last_modified_time): <p>A timestamp indicating when the metadata for the feature group was modified. For example, if you add a parameter describing the feature, the timestamp changes to reflect the last time you </p>
     ///   - [`description(Option<String>)`](crate::operation::describe_feature_metadata::DescribeFeatureMetadataOutput::description): <p>The description you added to describe the feature.</p>
-    ///   - [`parameters(Option<Vec<FeatureParameter>>)`](crate::operation::describe_feature_metadata::DescribeFeatureMetadataOutput::parameters): <p>The key-value pairs that you added to describe the feature.</p>
+    ///   - [`parameters(Option<Vec::<FeatureParameter>>)`](crate::operation::describe_feature_metadata::DescribeFeatureMetadataOutput::parameters): <p>The key-value pairs that you added to describe the feature.</p>
     /// - On failure, responds with [`SdkError<DescribeFeatureMetadataError>`](crate::operation::describe_feature_metadata::DescribeFeatureMetadataError)
     pub fn describe_feature_metadata(&self) -> crate::operation::describe_feature_metadata::builders::DescribeFeatureMetadataFluentBuilder {
         crate::operation::describe_feature_metadata::builders::DescribeFeatureMetadataFluentBuilder::new(self.handle.clone())

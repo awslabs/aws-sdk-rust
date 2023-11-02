@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to be returned.</p><br>
     /// - On success, responds with [`ListTagsOutput`](crate::operation::list_tags::ListTagsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_tags::ListTagsOutput::next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::list_tags::ListTagsOutput::tags): <p>To help organize your resources, you can assign your own metadata to the resources you create. Each tag is a key-value pair.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::list_tags::ListTagsOutput::tags): <p>To help organize your resources, you can assign your own metadata to the resources you create. Each tag is a key-value pair.</p>
     /// - On failure, responds with [`SdkError<ListTagsError>`](crate::operation::list_tags::ListTagsError)
     pub fn list_tags(&self) -> crate::operation::list_tags::builders::ListTagsFluentBuilder {
         crate::operation::list_tags::builders::ListTagsFluentBuilder::new(self.handle.clone())

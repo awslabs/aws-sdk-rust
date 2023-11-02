@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_proxy_sessions::builders::ListProxySessionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_proxy_sessions::builders::ListProxySessionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use to retrieve the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_proxy_sessions::builders::ListProxySessionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_proxy_sessions::builders::ListProxySessionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call.</p><br>
     /// - On success, responds with [`ListProxySessionsOutput`](crate::operation::list_proxy_sessions::ListProxySessionsOutput) with field(s):
-    ///   - [`proxy_sessions(Option<Vec<ProxySession>>)`](crate::operation::list_proxy_sessions::ListProxySessionsOutput::proxy_sessions): <p>The proxy session details.</p>
+    ///   - [`proxy_sessions(Option<Vec::<ProxySession>>)`](crate::operation::list_proxy_sessions::ListProxySessionsOutput::proxy_sessions): <p>The proxy session details.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_proxy_sessions::ListProxySessionsOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListProxySessionsError>`](crate::operation::list_proxy_sessions::ListProxySessionsError)
     #[deprecated(note = "Replaced by ListProxySessions in the Amazon Chime SDK Voice Namespace")]

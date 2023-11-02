@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`position(impl Into<String>)`](crate::operation::get_sdk_types::builders::GetSdkTypesFluentBuilder::position) / [`set_position(Option<String>)`](crate::operation::get_sdk_types::builders::GetSdkTypesFluentBuilder::set_position):<br>required: **false**<br><p>The current pagination position in the paged result set.</p><br>
     ///   - [`limit(i32)`](crate::operation::get_sdk_types::builders::GetSdkTypesFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::get_sdk_types::builders::GetSdkTypesFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p><br>
     /// - On success, responds with [`GetSdkTypesOutput`](crate::operation::get_sdk_types::GetSdkTypesOutput) with field(s):
-    ///   - [`items(Option<Vec<SdkType>>)`](crate::operation::get_sdk_types::GetSdkTypesOutput::items): <p>The current page of elements from this collection.</p>
+    ///   - [`items(Option<Vec::<SdkType>>)`](crate::operation::get_sdk_types::GetSdkTypesOutput::items): <p>The current page of elements from this collection.</p>
     /// - On failure, responds with [`SdkError<GetSdkTypesError>`](crate::operation::get_sdk_types::GetSdkTypesError)
     pub fn get_sdk_types(&self) -> crate::operation::get_sdk_types::builders::GetSdkTypesFluentBuilder {
         crate::operation::get_sdk_types::builders::GetSdkTypesFluentBuilder::new(self.handle.clone())

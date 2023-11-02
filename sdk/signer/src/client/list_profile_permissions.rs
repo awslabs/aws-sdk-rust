@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`ListProfilePermissionsOutput`](crate::operation::list_profile_permissions::ListProfilePermissionsOutput) with field(s):
     ///   - [`revision_id(Option<String>)`](crate::operation::list_profile_permissions::ListProfilePermissionsOutput::revision_id): <p>The identifier for the current revision of profile permissions.</p>
     ///   - [`policy_size_bytes(i32)`](crate::operation::list_profile_permissions::ListProfilePermissionsOutput::policy_size_bytes): <p>Total size of the policy associated with the Signing Profile in bytes.</p>
-    ///   - [`permissions(Option<Vec<Permission>>)`](crate::operation::list_profile_permissions::ListProfilePermissionsOutput::permissions): <p>List of permissions associated with the Signing Profile.</p>
+    ///   - [`permissions(Option<Vec::<Permission>>)`](crate::operation::list_profile_permissions::ListProfilePermissionsOutput::permissions): <p>List of permissions associated with the Signing Profile.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_profile_permissions::ListProfilePermissionsOutput::next_token): <p>String for specifying the next set of paginated results.</p>
     /// - On failure, responds with [`SdkError<ListProfilePermissionsError>`](crate::operation::list_profile_permissions::ListProfilePermissionsError)
     pub fn list_profile_permissions(&self) -> crate::operation::list_profile_permissions::builders::ListProfilePermissionsFluentBuilder {

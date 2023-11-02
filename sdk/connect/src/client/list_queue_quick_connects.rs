@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_queue_quick_connects::builders::ListQueueQuickConnectsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_queue_quick_connects::builders::ListQueueQuickConnectsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page. The default MaxResult size is 100.</p><br>
     /// - On success, responds with [`ListQueueQuickConnectsOutput`](crate::operation::list_queue_quick_connects::ListQueueQuickConnectsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_queue_quick_connects::ListQueueQuickConnectsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
-    ///   - [`quick_connect_summary_list(Option<Vec<QuickConnectSummary>>)`](crate::operation::list_queue_quick_connects::ListQueueQuickConnectsOutput::quick_connect_summary_list): <p>Information about the quick connects.</p>
+    ///   - [`quick_connect_summary_list(Option<Vec::<QuickConnectSummary>>)`](crate::operation::list_queue_quick_connects::ListQueueQuickConnectsOutput::quick_connect_summary_list): <p>Information about the quick connects.</p>
     /// - On failure, responds with [`SdkError<ListQueueQuickConnectsError>`](crate::operation::list_queue_quick_connects::ListQueueQuickConnectsError)
     pub fn list_queue_quick_connects(&self) -> crate::operation::list_queue_quick_connects::builders::ListQueueQuickConnectsFluentBuilder {
         crate::operation::list_queue_quick_connects::builders::ListQueueQuickConnectsFluentBuilder::new(self.handle.clone())

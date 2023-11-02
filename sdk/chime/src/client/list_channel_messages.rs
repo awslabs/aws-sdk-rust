@@ -14,7 +14,7 @@ impl super::Client {
     /// - On success, responds with [`ListChannelMessagesOutput`](crate::operation::list_channel_messages::ListChannelMessagesOutput) with field(s):
     ///   - [`channel_arn(Option<String>)`](crate::operation::list_channel_messages::ListChannelMessagesOutput::channel_arn): <p>The ARN of the channel containing the requested messages.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_channel_messages::ListChannelMessagesOutput::next_token): <p>The token passed by previous API calls until all requested messages are returned.</p>
-    ///   - [`channel_messages(Option<Vec<ChannelMessageSummary>>)`](crate::operation::list_channel_messages::ListChannelMessagesOutput::channel_messages): <p>The information about, and content of, each requested message.</p>
+    ///   - [`channel_messages(Option<Vec::<ChannelMessageSummary>>)`](crate::operation::list_channel_messages::ListChannelMessagesOutput::channel_messages): <p>The information about, and content of, each requested message.</p>
     /// - On failure, responds with [`SdkError<ListChannelMessagesError>`](crate::operation::list_channel_messages::ListChannelMessagesError)
     #[deprecated(note = "Replaced by ListChannelMessages in the Amazon Chime SDK Messaging Namespace")]
     pub fn list_channel_messages(&self) -> crate::operation::list_channel_messages::builders::ListChannelMessagesFluentBuilder {

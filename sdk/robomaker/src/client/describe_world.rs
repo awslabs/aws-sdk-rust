@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`generation_job(Option<String>)`](crate::operation::describe_world::DescribeWorldOutput::generation_job): <p>The Amazon Resource Name (arn) of the world generation job that generated the world.</p>
     ///   - [`template(Option<String>)`](crate::operation::describe_world::DescribeWorldOutput::template): <p>The world template.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::describe_world::DescribeWorldOutput::created_at): <p>The time, in milliseconds since the epoch, when the world was created.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_world::DescribeWorldOutput::tags): <p>A map that contains tag keys and tag values that are attached to the world.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_world::DescribeWorldOutput::tags): <p>A map that contains tag keys and tag values that are attached to the world.</p>
     ///   - [`world_description_body(Option<String>)`](crate::operation::describe_world::DescribeWorldOutput::world_description_body): <p>Returns the JSON formatted string that describes the contents of your world.</p>
     /// - On failure, responds with [`SdkError<DescribeWorldError>`](crate::operation::describe_world::DescribeWorldError)
     pub fn describe_world(&self) -> crate::operation::describe_world::builders::DescribeWorldFluentBuilder {

@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::get_batch_import_jobs::builders::GetBatchImportJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_batch_import_jobs::builders::GetBatchImportJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of objects to return for request.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_batch_import_jobs::builders::GetBatchImportJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_batch_import_jobs::builders::GetBatchImportJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>The next token from the previous request.</p><br>
     /// - On success, responds with [`GetBatchImportJobsOutput`](crate::operation::get_batch_import_jobs::GetBatchImportJobsOutput) with field(s):
-    ///   - [`batch_imports(Option<Vec<BatchImport>>)`](crate::operation::get_batch_import_jobs::GetBatchImportJobsOutput::batch_imports): <p>An array containing the details of each batch import job.</p>
+    ///   - [`batch_imports(Option<Vec::<BatchImport>>)`](crate::operation::get_batch_import_jobs::GetBatchImportJobsOutput::batch_imports): <p>An array containing the details of each batch import job.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_batch_import_jobs::GetBatchImportJobsOutput::next_token): <p>The next token for the subsequent resquest.</p>
     /// - On failure, responds with [`SdkError<GetBatchImportJobsError>`](crate::operation::get_batch_import_jobs::GetBatchImportJobsError)
     pub fn get_batch_import_jobs(&self) -> crate::operation::get_batch_import_jobs::builders::GetBatchImportJobsFluentBuilder {

@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`filter(TaskRunFilterCriteria)`](crate::operation::get_ml_task_runs::builders::GetMLTaskRunsFluentBuilder::filter) / [`set_filter(Option<TaskRunFilterCriteria>)`](crate::operation::get_ml_task_runs::builders::GetMLTaskRunsFluentBuilder::set_filter):<br>required: **false**<br><p>The filter criteria, in the <code>TaskRunFilterCriteria</code> structure, for the task run.</p><br>
     ///   - [`sort(TaskRunSortCriteria)`](crate::operation::get_ml_task_runs::builders::GetMLTaskRunsFluentBuilder::sort) / [`set_sort(Option<TaskRunSortCriteria>)`](crate::operation::get_ml_task_runs::builders::GetMLTaskRunsFluentBuilder::set_sort):<br>required: **false**<br><p>The sorting criteria, in the <code>TaskRunSortCriteria</code> structure, for the task run.</p><br>
     /// - On success, responds with [`GetMlTaskRunsOutput`](crate::operation::get_ml_task_runs::GetMlTaskRunsOutput) with field(s):
-    ///   - [`task_runs(Option<Vec<TaskRun>>)`](crate::operation::get_ml_task_runs::GetMlTaskRunsOutput::task_runs): <p>A list of task runs that are associated with the transform.</p>
+    ///   - [`task_runs(Option<Vec::<TaskRun>>)`](crate::operation::get_ml_task_runs::GetMlTaskRunsOutput::task_runs): <p>A list of task runs that are associated with the transform.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_ml_task_runs::GetMlTaskRunsOutput::next_token): <p>A pagination token, if more results are available.</p>
     /// - On failure, responds with [`SdkError<GetMLTaskRunsError>`](crate::operation::get_ml_task_runs::GetMLTaskRunsError)
     pub fn get_ml_task_runs(&self) -> crate::operation::get_ml_task_runs::builders::GetMLTaskRunsFluentBuilder {

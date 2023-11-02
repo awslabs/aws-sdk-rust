@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`name(impl Into<String>)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::set_name):<br>required: **false**<br><p>The name of the template.</p><br>
     /// - On success, responds with [`ListTemplatesOutput`](crate::operation::list_templates::ListTemplatesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_templates::ListTemplatesOutput::next_token): <p>The pagination token.</p>
-    ///   - [`template_summary(Vec<TemplateSummary>)`](crate::operation::list_templates::ListTemplatesOutput::template_summary): <p>The summary of the template.</p>
+    ///   - [`template_summary(Vec::<TemplateSummary>)`](crate::operation::list_templates::ListTemplatesOutput::template_summary): <p>The summary of the template.</p>
     /// - On failure, responds with [`SdkError<ListTemplatesError>`](crate::operation::list_templates::ListTemplatesError)
     pub fn list_templates(&self) -> crate::operation::list_templates::builders::ListTemplatesFluentBuilder {
         crate::operation::list_templates::builders::ListTemplatesFluentBuilder::new(self.handle.clone())

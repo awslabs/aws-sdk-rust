@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`position(impl Into<String>)`](crate::operation::get_tags::builders::GetTagsFluentBuilder::position) / [`set_position(Option<String>)`](crate::operation::get_tags::builders::GetTagsFluentBuilder::set_position):<br>required: **false**<br><p>(Not currently supported) The current pagination position in the paged result set.</p><br>
     ///   - [`limit(i32)`](crate::operation::get_tags::builders::GetTagsFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::get_tags::builders::GetTagsFluentBuilder::set_limit):<br>required: **false**<br><p>(Not currently supported) The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p><br>
     /// - On success, responds with [`GetTagsOutput`](crate::operation::get_tags::GetTagsOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_tags::GetTagsOutput::tags): <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_tags::GetTagsOutput::tags): <p>The collection of tags. Each tag element is associated with a given resource.</p>
     /// - On failure, responds with [`SdkError<GetTagsError>`](crate::operation::get_tags::GetTagsError)
     pub fn get_tags(&self) -> crate::operation::get_tags::builders::GetTagsFluentBuilder {
         crate::operation::get_tags::builders::GetTagsFluentBuilder::new(self.handle.clone())

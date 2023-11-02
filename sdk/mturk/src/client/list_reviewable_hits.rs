@@ -11,7 +11,7 @@ impl super::Client {
     /// - On success, responds with [`ListReviewableHiTsOutput`](crate::operation::list_reviewable_hits::ListReviewableHiTsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_reviewable_hits::ListReviewableHiTsOutput::next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     ///   - [`num_results(Option<i32>)`](crate::operation::list_reviewable_hits::ListReviewableHiTsOutput::num_results): <p> The number of HITs on this page in the filtered results list, equivalent to the number of HITs being returned by this call. </p>
-    ///   - [`hits(Option<Vec<Hit>>)`](crate::operation::list_reviewable_hits::ListReviewableHiTsOutput::hits): <p> The list of HIT elements returned by the query.</p>
+    ///   - [`hits(Option<Vec::<Hit>>)`](crate::operation::list_reviewable_hits::ListReviewableHiTsOutput::hits): <p> The list of HIT elements returned by the query.</p>
     /// - On failure, responds with [`SdkError<ListReviewableHITsError>`](crate::operation::list_reviewable_hits::ListReviewableHITsError)
     pub fn list_reviewable_hits(&self) -> crate::operation::list_reviewable_hits::builders::ListReviewableHITsFluentBuilder {
         crate::operation::list_reviewable_hits::builders::ListReviewableHITsFluentBuilder::new(self.handle.clone())

@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`step_group_id(impl Into<String>)`](crate::operation::list_workflow_steps::builders::ListWorkflowStepsFluentBuilder::step_group_id) / [`set_step_group_id(Option<String>)`](crate::operation::list_workflow_steps::builders::ListWorkflowStepsFluentBuilder::set_step_group_id):<br>required: **true**<br><p>The ID of the step group.</p><br>
     /// - On success, responds with [`ListWorkflowStepsOutput`](crate::operation::list_workflow_steps::ListWorkflowStepsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_workflow_steps::ListWorkflowStepsOutput::next_token): <p>The pagination token.</p>
-    ///   - [`workflow_steps_summary(Vec<WorkflowStepSummary>)`](crate::operation::list_workflow_steps::ListWorkflowStepsOutput::workflow_steps_summary): <p>The summary of steps in a migration workflow.</p>
+    ///   - [`workflow_steps_summary(Vec::<WorkflowStepSummary>)`](crate::operation::list_workflow_steps::ListWorkflowStepsOutput::workflow_steps_summary): <p>The summary of steps in a migration workflow.</p>
     /// - On failure, responds with [`SdkError<ListWorkflowStepsError>`](crate::operation::list_workflow_steps::ListWorkflowStepsError)
     pub fn list_workflow_steps(&self) -> crate::operation::list_workflow_steps::builders::ListWorkflowStepsFluentBuilder {
         crate::operation::list_workflow_steps::builders::ListWorkflowStepsFluentBuilder::new(self.handle.clone())

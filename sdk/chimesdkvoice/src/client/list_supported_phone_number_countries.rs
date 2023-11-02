@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`product_type(PhoneNumberProductType)`](crate::operation::list_supported_phone_number_countries::builders::ListSupportedPhoneNumberCountriesFluentBuilder::product_type) / [`set_product_type(Option<PhoneNumberProductType>)`](crate::operation::list_supported_phone_number_countries::builders::ListSupportedPhoneNumberCountriesFluentBuilder::set_product_type):<br>required: **true**<br><p>The phone number product type.</p><br>
     /// - On success, responds with [`ListSupportedPhoneNumberCountriesOutput`](crate::operation::list_supported_phone_number_countries::ListSupportedPhoneNumberCountriesOutput) with field(s):
-    ///   - [`phone_number_countries(Option<Vec<PhoneNumberCountry>>)`](crate::operation::list_supported_phone_number_countries::ListSupportedPhoneNumberCountriesOutput::phone_number_countries): <p>The supported phone number countries.</p>
+    ///   - [`phone_number_countries(Option<Vec::<PhoneNumberCountry>>)`](crate::operation::list_supported_phone_number_countries::ListSupportedPhoneNumberCountriesOutput::phone_number_countries): <p>The supported phone number countries.</p>
     /// - On failure, responds with [`SdkError<ListSupportedPhoneNumberCountriesError>`](crate::operation::list_supported_phone_number_countries::ListSupportedPhoneNumberCountriesError)
     pub fn list_supported_phone_number_countries(
         &self,

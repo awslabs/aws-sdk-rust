@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::get_vehicle::GetVehicleOutput::arn): <p> The Amazon Resource Name (ARN) of the vehicle to retrieve information about. </p>
     ///   - [`model_manifest_arn(Option<String>)`](crate::operation::get_vehicle::GetVehicleOutput::model_manifest_arn): <p> The ARN of a vehicle model (model manifest) associated with the vehicle. </p>
     ///   - [`decoder_manifest_arn(Option<String>)`](crate::operation::get_vehicle::GetVehicleOutput::decoder_manifest_arn): <p> The ARN of a decoder manifest associated with the vehicle. </p>
-    ///   - [`attributes(Option<HashMap<String, String>>)`](crate::operation::get_vehicle::GetVehicleOutput::attributes): <p>Static information about a vehicle in a key-value pair. For example:</p>  <p> <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
+    ///   - [`attributes(Option<HashMap::<String, String>>)`](crate::operation::get_vehicle::GetVehicleOutput::attributes): <p>Static information about a vehicle in a key-value pair. For example:</p>  <p> <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_vehicle::GetVehicleOutput::creation_time): <p> The time the vehicle was created in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     ///   - [`last_modification_time(Option<DateTime>)`](crate::operation::get_vehicle::GetVehicleOutput::last_modification_time): <p> The time the vehicle was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     /// - On failure, responds with [`SdkError<GetVehicleError>`](crate::operation::get_vehicle::GetVehicleError)

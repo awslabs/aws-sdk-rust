@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`dataset_name_begins_with(impl Into<String>)`](crate::operation::list_models::builders::ListModelsFluentBuilder::dataset_name_begins_with) / [`set_dataset_name_begins_with(Option<String>)`](crate::operation::list_models::builders::ListModelsFluentBuilder::set_dataset_name_begins_with):<br>required: **false**<br><p>The beginning of the name of the dataset of the machine learning models to be listed. </p><br>
     /// - On success, responds with [`ListModelsOutput`](crate::operation::list_models::ListModelsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_models::ListModelsOutput::next_token): <p> An opaque pagination token indicating where to continue the listing of machine learning models. </p>
-    ///   - [`model_summaries(Option<Vec<ModelSummary>>)`](crate::operation::list_models::ListModelsOutput::model_summaries): <p>Provides information on the specified model, including created time, model and dataset ARNs, and status. </p>
+    ///   - [`model_summaries(Option<Vec::<ModelSummary>>)`](crate::operation::list_models::ListModelsOutput::model_summaries): <p>Provides information on the specified model, including created time, model and dataset ARNs, and status. </p>
     /// - On failure, responds with [`SdkError<ListModelsError>`](crate::operation::list_models::ListModelsError)
     pub fn list_models(&self) -> crate::operation::list_models::builders::ListModelsFluentBuilder {
         crate::operation::list_models::builders::ListModelsFluentBuilder::new(self.handle.clone())

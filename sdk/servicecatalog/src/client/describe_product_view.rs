@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`id(impl Into<String>)`](crate::operation::describe_product_view::builders::DescribeProductViewFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_product_view::builders::DescribeProductViewFluentBuilder::set_id):<br>required: **true**<br><p>The product view identifier.</p><br>
     /// - On success, responds with [`DescribeProductViewOutput`](crate::operation::describe_product_view::DescribeProductViewOutput) with field(s):
     ///   - [`product_view_summary(Option<ProductViewSummary>)`](crate::operation::describe_product_view::DescribeProductViewOutput::product_view_summary): <p>Summary information about the product.</p>
-    ///   - [`provisioning_artifacts(Option<Vec<ProvisioningArtifact>>)`](crate::operation::describe_product_view::DescribeProductViewOutput::provisioning_artifacts): <p>Information about the provisioning artifacts for the product.</p>
+    ///   - [`provisioning_artifacts(Option<Vec::<ProvisioningArtifact>>)`](crate::operation::describe_product_view::DescribeProductViewOutput::provisioning_artifacts): <p>Information about the provisioning artifacts for the product.</p>
     /// - On failure, responds with [`SdkError<DescribeProductViewError>`](crate::operation::describe_product_view::DescribeProductViewError)
     pub fn describe_product_view(&self) -> crate::operation::describe_product_view::builders::DescribeProductViewFluentBuilder {
         crate::operation::describe_product_view::builders::DescribeProductViewFluentBuilder::new(self.handle.clone())

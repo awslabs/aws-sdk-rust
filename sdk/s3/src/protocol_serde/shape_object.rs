@@ -48,7 +48,7 @@ pub fn de_object(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resul
             s if s.matches("ChecksumAlgorithm") /* ChecksumAlgorithm com.amazonaws.s3#Object$ChecksumAlgorithm */ =>  {
                 let var_4 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::ChecksumAlgorithm>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::ChecksumAlgorithm>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_5 = builder.checksum_algorithm.take().unwrap_or_default();
                             list_5.push(
                                 Result::<crate::types::ChecksumAlgorithm, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(

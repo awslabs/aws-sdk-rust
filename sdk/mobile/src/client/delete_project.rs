@@ -5,8 +5,8 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`project_id(impl Into<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::project_id) / [`set_project_id(Option<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::set_project_id):<br>required: **true**<br><p> Unique project identifier. </p><br>
     /// - On success, responds with [`DeleteProjectOutput`](crate::operation::delete_project::DeleteProjectOutput) with field(s):
-    ///   - [`deleted_resources(Option<Vec<Resource>>)`](crate::operation::delete_project::DeleteProjectOutput::deleted_resources): <p> Resources which were deleted. </p>
-    ///   - [`orphaned_resources(Option<Vec<Resource>>)`](crate::operation::delete_project::DeleteProjectOutput::orphaned_resources): <p> Resources which were not deleted, due to a risk of losing potentially important data or files. </p>
+    ///   - [`deleted_resources(Option<Vec::<Resource>>)`](crate::operation::delete_project::DeleteProjectOutput::deleted_resources): <p> Resources which were deleted. </p>
+    ///   - [`orphaned_resources(Option<Vec::<Resource>>)`](crate::operation::delete_project::DeleteProjectOutput::orphaned_resources): <p> Resources which were not deleted, due to a risk of losing potentially important data or files. </p>
     /// - On failure, responds with [`SdkError<DeleteProjectError>`](crate::operation::delete_project::DeleteProjectError)
     pub fn delete_project(&self) -> crate::operation::delete_project::builders::DeleteProjectFluentBuilder {
         crate::operation::delete_project::builders::DeleteProjectFluentBuilder::new(self.handle.clone())

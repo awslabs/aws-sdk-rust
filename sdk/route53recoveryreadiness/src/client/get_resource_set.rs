@@ -8,8 +8,8 @@ impl super::Client {
     ///   - [`resource_set_arn(Option<String>)`](crate::operation::get_resource_set::GetResourceSetOutput::resource_set_arn): <p>The Amazon Resource Name (ARN) for the resource set.</p>
     ///   - [`resource_set_name(Option<String>)`](crate::operation::get_resource_set::GetResourceSetOutput::resource_set_name): <p>The name of the resource set.</p>
     ///   - [`resource_set_type(Option<String>)`](crate::operation::get_resource_set::GetResourceSetOutput::resource_set_type): <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>  <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
-    ///   - [`resources(Option<Vec<Resource>>)`](crate::operation::get_resource_set::GetResourceSetOutput::resources): <p>A list of resource objects.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_resource_set::GetResourceSetOutput::tags): <p>A collection of tags associated with a resource.</p>
+    ///   - [`resources(Option<Vec::<Resource>>)`](crate::operation::get_resource_set::GetResourceSetOutput::resources): <p>A list of resource objects.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_resource_set::GetResourceSetOutput::tags): <p>A collection of tags associated with a resource.</p>
     /// - On failure, responds with [`SdkError<GetResourceSetError>`](crate::operation::get_resource_set::GetResourceSetError)
     pub fn get_resource_set(&self) -> crate::operation::get_resource_set::builders::GetResourceSetFluentBuilder {
         crate::operation::get_resource_set::builders::GetResourceSetFluentBuilder::new(self.handle.clone())

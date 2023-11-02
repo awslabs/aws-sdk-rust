@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::search_things::builders::SearchThingsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::search_things::builders::SearchThingsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the response.</p><br>
     ///   - [`namespace_version(i64)`](crate::operation::search_things::builders::SearchThingsFluentBuilder::namespace_version) / [`set_namespace_version(Option<i64>)`](crate::operation::search_things::builders::SearchThingsFluentBuilder::set_namespace_version):<br>required: **false**<br><p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p><br>
     /// - On success, responds with [`SearchThingsOutput`](crate::operation::search_things::SearchThingsOutput) with field(s):
-    ///   - [`things(Option<Vec<Thing>>)`](crate::operation::search_things::SearchThingsOutput::things): <p>An array of things in the result set.</p>
+    ///   - [`things(Option<Vec::<Thing>>)`](crate::operation::search_things::SearchThingsOutput::things): <p>An array of things in the result set.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_things::SearchThingsOutput::next_token): <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
     /// - On failure, responds with [`SdkError<SearchThingsError>`](crate::operation::search_things::SearchThingsError)
     #[deprecated(note = "since: 2022-08-30")]

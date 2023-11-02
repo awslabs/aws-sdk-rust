@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use to get the next page of results after a previous API call. </p><br>
     ///   - [`max_results(i32)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p><br>
     /// - On success, responds with [`ListApplicationsOutput`](crate::operation::list_applications::ListApplicationsOutput) with field(s):
-    ///   - [`applications(Option<Vec<ApplicationSummary>>)`](crate::operation::list_applications::ListApplicationsOutput::applications): <p>This list of applications.</p>
+    ///   - [`applications(Option<Vec::<ApplicationSummary>>)`](crate::operation::list_applications::ListApplicationsOutput::applications): <p>This list of applications.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_applications::ListApplicationsOutput::next_token): <p>The token to use to get the next page of results after a previous API call. </p>
     /// - On failure, responds with [`SdkError<ListApplicationsError>`](crate::operation::list_applications::ListApplicationsError)
     pub fn list_applications(&self) -> crate::operation::list_applications::builders::ListApplicationsFluentBuilder {

@@ -14,8 +14,8 @@ impl super::Client {
     ///   - [`enabled(bool)`](crate::operation::get_api_key::GetApiKeyOutput::enabled): <p>Specifies whether the API Key can be used by callers.</p>
     ///   - [`created_date(Option<DateTime>)`](crate::operation::get_api_key::GetApiKeyOutput::created_date): <p>The timestamp when the API Key was created.</p>
     ///   - [`last_updated_date(Option<DateTime>)`](crate::operation::get_api_key::GetApiKeyOutput::last_updated_date): <p>The timestamp when the API Key was last updated.</p>
-    ///   - [`stage_keys(Option<Vec<String>>)`](crate::operation::get_api_key::GetApiKeyOutput::stage_keys): <p>A list of Stage resources that are associated with the ApiKey resource.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_api_key::GetApiKeyOutput::tags): <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    ///   - [`stage_keys(Option<Vec::<String>>)`](crate::operation::get_api_key::GetApiKeyOutput::stage_keys): <p>A list of Stage resources that are associated with the ApiKey resource.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_api_key::GetApiKeyOutput::tags): <p>The collection of tags. Each tag element is associated with a given resource.</p>
     /// - On failure, responds with [`SdkError<GetApiKeyError>`](crate::operation::get_api_key::GetApiKeyError)
     pub fn get_api_key(&self) -> crate::operation::get_api_key::builders::GetApiKeyFluentBuilder {
         crate::operation::get_api_key::builders::GetApiKeyFluentBuilder::new(self.handle.clone())

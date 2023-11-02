@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeLoadBasedAutoScaling`](crate::operation::describe_load_based_auto_scaling::builders::DescribeLoadBasedAutoScalingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`layer_ids(impl Into<String>)`](crate::operation::describe_load_based_auto_scaling::builders::DescribeLoadBasedAutoScalingFluentBuilder::layer_ids) / [`set_layer_ids(Option<Vec<String>>)`](crate::operation::describe_load_based_auto_scaling::builders::DescribeLoadBasedAutoScalingFluentBuilder::set_layer_ids):<br>required: **true**<br><p>An array of layer IDs.</p><br>
+    ///   - [`layer_ids(impl Into<String>)`](crate::operation::describe_load_based_auto_scaling::builders::DescribeLoadBasedAutoScalingFluentBuilder::layer_ids) / [`set_layer_ids(Option<Vec::<String>>)`](crate::operation::describe_load_based_auto_scaling::builders::DescribeLoadBasedAutoScalingFluentBuilder::set_layer_ids):<br>required: **true**<br><p>An array of layer IDs.</p><br>
     /// - On success, responds with [`DescribeLoadBasedAutoScalingOutput`](crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScalingOutput) with field(s):
-    ///   - [`load_based_auto_scaling_configurations(Option<Vec<LoadBasedAutoScalingConfiguration>>)`](crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScalingOutput::load_based_auto_scaling_configurations): <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that describe each layer's configuration.</p>
+    ///   - [`load_based_auto_scaling_configurations(Option<Vec::<LoadBasedAutoScalingConfiguration>>)`](crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScalingOutput::load_based_auto_scaling_configurations): <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that describe each layer's configuration.</p>
     /// - On failure, responds with [`SdkError<DescribeLoadBasedAutoScalingError>`](crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScalingError)
     pub fn describe_load_based_auto_scaling(
         &self,

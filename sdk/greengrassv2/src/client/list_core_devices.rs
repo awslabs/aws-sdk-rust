@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_core_devices::builders::ListCoreDevicesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_core_devices::builders::ListCoreDevicesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be returned per paginated request.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_core_devices::builders::ListCoreDevicesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_core_devices::builders::ListCoreDevicesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to be used for the next set of paginated results.</p><br>
     /// - On success, responds with [`ListCoreDevicesOutput`](crate::operation::list_core_devices::ListCoreDevicesOutput) with field(s):
-    ///   - [`core_devices(Option<Vec<CoreDevice>>)`](crate::operation::list_core_devices::ListCoreDevicesOutput::core_devices): <p>A list that summarizes each core device.</p>
+    ///   - [`core_devices(Option<Vec::<CoreDevice>>)`](crate::operation::list_core_devices::ListCoreDevicesOutput::core_devices): <p>A list that summarizes each core device.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_core_devices::ListCoreDevicesOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListCoreDevicesError>`](crate::operation::list_core_devices::ListCoreDevicesError)
     pub fn list_core_devices(&self) -> crate::operation::list_core_devices::builders::ListCoreDevicesFluentBuilder {

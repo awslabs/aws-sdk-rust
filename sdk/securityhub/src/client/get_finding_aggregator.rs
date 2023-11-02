@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`finding_aggregator_arn(Option<String>)`](crate::operation::get_finding_aggregator::GetFindingAggregatorOutput::finding_aggregator_arn): <p>The ARN of the finding aggregator.</p>
     ///   - [`finding_aggregation_region(Option<String>)`](crate::operation::get_finding_aggregator::GetFindingAggregatorOutput::finding_aggregation_region): <p>The aggregation Region.</p>
     ///   - [`region_linking_mode(Option<String>)`](crate::operation::get_finding_aggregator::GetFindingAggregatorOutput::region_linking_mode): <p>Indicates whether to link all Regions, all Regions except for a list of excluded Regions, or a list of included Regions.</p>
-    ///   - [`regions(Option<Vec<String>>)`](crate::operation::get_finding_aggregator::GetFindingAggregatorOutput::regions): <p>The list of excluded Regions or included Regions.</p>
+    ///   - [`regions(Option<Vec::<String>>)`](crate::operation::get_finding_aggregator::GetFindingAggregatorOutput::regions): <p>The list of excluded Regions or included Regions.</p>
     /// - On failure, responds with [`SdkError<GetFindingAggregatorError>`](crate::operation::get_finding_aggregator::GetFindingAggregatorError)
     pub fn get_finding_aggregator(&self) -> crate::operation::get_finding_aggregator::builders::GetFindingAggregatorFluentBuilder {
         crate::operation::get_finding_aggregator::builders::GetFindingAggregatorFluentBuilder::new(self.handle.clone())

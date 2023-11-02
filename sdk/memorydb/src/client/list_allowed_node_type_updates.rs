@@ -5,8 +5,8 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`cluster_name(impl Into<String>)`](crate::operation::list_allowed_node_type_updates::builders::ListAllowedNodeTypeUpdatesFluentBuilder::cluster_name) / [`set_cluster_name(Option<String>)`](crate::operation::list_allowed_node_type_updates::builders::ListAllowedNodeTypeUpdatesFluentBuilder::set_cluster_name):<br>required: **true**<br><p>The name of the cluster you want to scale. MemoryDB uses the cluster name to identify the current node type being used by this cluster, and from that to create a list of node types you can scale up to.</p><br>
     /// - On success, responds with [`ListAllowedNodeTypeUpdatesOutput`](crate::operation::list_allowed_node_type_updates::ListAllowedNodeTypeUpdatesOutput) with field(s):
-    ///   - [`scale_up_node_types(Option<Vec<String>>)`](crate::operation::list_allowed_node_type_updates::ListAllowedNodeTypeUpdatesOutput::scale_up_node_types): <p>A list node types which you can use to scale up your cluster.</p>
-    ///   - [`scale_down_node_types(Option<Vec<String>>)`](crate::operation::list_allowed_node_type_updates::ListAllowedNodeTypeUpdatesOutput::scale_down_node_types): <p>A list node types which you can use to scale down your cluster.</p>
+    ///   - [`scale_up_node_types(Option<Vec::<String>>)`](crate::operation::list_allowed_node_type_updates::ListAllowedNodeTypeUpdatesOutput::scale_up_node_types): <p>A list node types which you can use to scale up your cluster.</p>
+    ///   - [`scale_down_node_types(Option<Vec::<String>>)`](crate::operation::list_allowed_node_type_updates::ListAllowedNodeTypeUpdatesOutput::scale_down_node_types): <p>A list node types which you can use to scale down your cluster.</p>
     /// - On failure, responds with [`SdkError<ListAllowedNodeTypeUpdatesError>`](crate::operation::list_allowed_node_type_updates::ListAllowedNodeTypeUpdatesError)
     pub fn list_allowed_node_type_updates(
         &self,

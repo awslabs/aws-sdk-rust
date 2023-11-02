@@ -16,13 +16,13 @@ impl super::Client {
     ///   - [`created_by(Option<UserContext>)`](crate::operation::describe_trial_component::DescribeTrialComponentOutput::created_by): <p>Who created the trial component.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_trial_component::DescribeTrialComponentOutput::last_modified_time): <p>When the component was last modified.</p>
     ///   - [`last_modified_by(Option<UserContext>)`](crate::operation::describe_trial_component::DescribeTrialComponentOutput::last_modified_by): <p>Who last modified the component.</p>
-    ///   - [`parameters(Option<HashMap<String, TrialComponentParameterValue>>)`](crate::operation::describe_trial_component::DescribeTrialComponentOutput::parameters): <p>The hyperparameters of the component.</p>
-    ///   - [`input_artifacts(Option<HashMap<String, TrialComponentArtifact>>)`](crate::operation::describe_trial_component::DescribeTrialComponentOutput::input_artifacts): <p>The input artifacts of the component.</p>
-    ///   - [`output_artifacts(Option<HashMap<String, TrialComponentArtifact>>)`](crate::operation::describe_trial_component::DescribeTrialComponentOutput::output_artifacts): <p>The output artifacts of the component.</p>
+    ///   - [`parameters(Option<HashMap::<String, TrialComponentParameterValue>>)`](crate::operation::describe_trial_component::DescribeTrialComponentOutput::parameters): <p>The hyperparameters of the component.</p>
+    ///   - [`input_artifacts(Option<HashMap::<String, TrialComponentArtifact>>)`](crate::operation::describe_trial_component::DescribeTrialComponentOutput::input_artifacts): <p>The input artifacts of the component.</p>
+    ///   - [`output_artifacts(Option<HashMap::<String, TrialComponentArtifact>>)`](crate::operation::describe_trial_component::DescribeTrialComponentOutput::output_artifacts): <p>The output artifacts of the component.</p>
     ///   - [`metadata_properties(Option<MetadataProperties>)`](crate::operation::describe_trial_component::DescribeTrialComponentOutput::metadata_properties): <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    ///   - [`metrics(Option<Vec<TrialComponentMetricSummary>>)`](crate::operation::describe_trial_component::DescribeTrialComponentOutput::metrics): <p>The metrics for the component.</p>
+    ///   - [`metrics(Option<Vec::<TrialComponentMetricSummary>>)`](crate::operation::describe_trial_component::DescribeTrialComponentOutput::metrics): <p>The metrics for the component.</p>
     ///   - [`lineage_group_arn(Option<String>)`](crate::operation::describe_trial_component::DescribeTrialComponentOutput::lineage_group_arn): <p>The Amazon Resource Name (ARN) of the lineage group.</p>
-    ///   - [`sources(Option<Vec<TrialComponentSource>>)`](crate::operation::describe_trial_component::DescribeTrialComponentOutput::sources): <p>A list of ARNs and, if applicable, job types for multiple sources of an experiment run.</p>
+    ///   - [`sources(Option<Vec::<TrialComponentSource>>)`](crate::operation::describe_trial_component::DescribeTrialComponentOutput::sources): <p>A list of ARNs and, if applicable, job types for multiple sources of an experiment run.</p>
     /// - On failure, responds with [`SdkError<DescribeTrialComponentError>`](crate::operation::describe_trial_component::DescribeTrialComponentError)
     pub fn describe_trial_component(&self) -> crate::operation::describe_trial_component::builders::DescribeTrialComponentFluentBuilder {
         crate::operation::describe_trial_component::builders::DescribeTrialComponentFluentBuilder::new(self.handle.clone())

@@ -17,13 +17,13 @@ impl super::Client {
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::last_modified_time): <p>Time that the resource was last modified.</p>
     ///   - [`end_time(Option<DateTime>)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::end_time): <p>Time that the resource transitioned to terminal state.</p>
     ///   - [`base_model_arn(String)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::base_model_arn): <p>ARN of the base model.</p>
-    ///   - [`hyper_parameters(HashMap<String, String>)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::hyper_parameters): <p>The hyperparameter values for the job.</p>
+    ///   - [`hyper_parameters(HashMap::<String, String>)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::hyper_parameters): <p>The hyperparameter values for the job.</p>
     ///   - [`training_data_config(Option<TrainingDataConfig>)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::training_data_config): <p>S3 Location of the training data.</p>
     ///   - [`validation_data_config(Option<ValidationDataConfig>)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::validation_data_config): <p>Array of up to 10 validators.</p>
     ///   - [`output_data_config(Option<OutputDataConfig>)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::output_data_config): <p>Output data configuration </p>
     ///   - [`output_model_kms_key_arn(Option<String>)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::output_model_kms_key_arn): <p>The custom model is encrypted at rest using this key.</p>
     ///   - [`training_metrics(Option<TrainingMetrics>)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::training_metrics): <p>Metrics associated with the custom job.</p>
-    ///   - [`validation_metrics(Option<Vec<ValidatorMetric>>)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::validation_metrics): <p>The loss metric for each validator that you provided in the createjob request.</p>
+    ///   - [`validation_metrics(Option<Vec::<ValidatorMetric>>)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::validation_metrics): <p>The loss metric for each validator that you provided in the createjob request.</p>
     ///   - [`vpc_config(Option<VpcConfig>)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::vpc_config): <p>VPC configuration for the custom model job.</p>
     /// - On failure, responds with [`SdkError<GetModelCustomizationJobError>`](crate::operation::get_model_customization_job::GetModelCustomizationJobError)
     pub fn get_model_customization_job(&self) -> crate::operation::get_model_customization_job::builders::GetModelCustomizationJobFluentBuilder {

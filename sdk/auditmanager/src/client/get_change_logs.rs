@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_change_logs::builders::GetChangeLogsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_change_logs::builders::GetChangeLogsFluentBuilder::set_next_token):<br>required: **false**<br><p> The pagination token that's used to fetch the next set of results. </p><br>
     ///   - [`max_results(i32)`](crate::operation::get_change_logs::builders::GetChangeLogsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_change_logs::builders::GetChangeLogsFluentBuilder::set_max_results):<br>required: **false**<br><p>Represents the maximum number of results on a page or for an API request call. </p><br>
     /// - On success, responds with [`GetChangeLogsOutput`](crate::operation::get_change_logs::GetChangeLogsOutput) with field(s):
-    ///   - [`change_logs(Option<Vec<ChangeLog>>)`](crate::operation::get_change_logs::GetChangeLogsOutput::change_logs): <p>The list of user activity for the control. </p>
+    ///   - [`change_logs(Option<Vec::<ChangeLog>>)`](crate::operation::get_change_logs::GetChangeLogsOutput::change_logs): <p>The list of user activity for the control. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_change_logs::GetChangeLogsOutput::next_token): <p>The pagination token that's used to fetch the next set of results. </p>
     /// - On failure, responds with [`SdkError<GetChangeLogsError>`](crate::operation::get_change_logs::GetChangeLogsError)
     pub fn get_change_logs(&self) -> crate::operation::get_change_logs::builders::GetChangeLogsFluentBuilder {

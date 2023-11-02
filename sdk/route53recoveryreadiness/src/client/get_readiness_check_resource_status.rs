@@ -11,7 +11,7 @@ impl super::Client {
     /// - On success, responds with [`GetReadinessCheckResourceStatusOutput`](crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
     ///   - [`readiness(Option<Readiness>)`](crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusOutput::readiness): <p>The readiness at a rule level.</p>
-    ///   - [`rules(Option<Vec<RuleResult>>)`](crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusOutput::rules): <p>Details of the rule's results.</p>
+    ///   - [`rules(Option<Vec::<RuleResult>>)`](crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusOutput::rules): <p>Details of the rule's results.</p>
     /// - On failure, responds with [`SdkError<GetReadinessCheckResourceStatusError>`](crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusError)
     pub fn get_readiness_check_resource_status(
         &self,

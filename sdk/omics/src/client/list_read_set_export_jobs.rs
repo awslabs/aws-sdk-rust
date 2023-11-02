@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`filter(ExportReadSetFilter)`](crate::operation::list_read_set_export_jobs::builders::ListReadSetExportJobsFluentBuilder::filter) / [`set_filter(Option<ExportReadSetFilter>)`](crate::operation::list_read_set_export_jobs::builders::ListReadSetExportJobsFluentBuilder::set_filter):<br>required: **false**<br><p>A filter to apply to the list.</p><br>
     /// - On success, responds with [`ListReadSetExportJobsOutput`](crate::operation::list_read_set_export_jobs::ListReadSetExportJobsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_read_set_export_jobs::ListReadSetExportJobsOutput::next_token): <p>A pagination token that's included if more results are available.</p>
-    ///   - [`export_jobs(Option<Vec<ExportReadSetJobDetail>>)`](crate::operation::list_read_set_export_jobs::ListReadSetExportJobsOutput::export_jobs): <p>A list of jobs.</p>
+    ///   - [`export_jobs(Option<Vec::<ExportReadSetJobDetail>>)`](crate::operation::list_read_set_export_jobs::ListReadSetExportJobsOutput::export_jobs): <p>A list of jobs.</p>
     /// - On failure, responds with [`SdkError<ListReadSetExportJobsError>`](crate::operation::list_read_set_export_jobs::ListReadSetExportJobsError)
     pub fn list_read_set_export_jobs(&self) -> crate::operation::list_read_set_export_jobs::builders::ListReadSetExportJobsFluentBuilder {
         crate::operation::list_read_set_export_jobs::builders::ListReadSetExportJobsFluentBuilder::new(self.handle.clone())

@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`marker(impl Into<String>)`](crate::operation::list_attached_policies::builders::ListAttachedPoliciesFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::list_attached_policies::builders::ListAttachedPoliciesFluentBuilder::set_marker):<br>required: **false**<br><p>The token to retrieve the next set of results.</p><br>
     ///   - [`page_size(i32)`](crate::operation::list_attached_policies::builders::ListAttachedPoliciesFluentBuilder::page_size) / [`set_page_size(Option<i32>)`](crate::operation::list_attached_policies::builders::ListAttachedPoliciesFluentBuilder::set_page_size):<br>required: **false**<br><p>The maximum number of results to be returned per request.</p><br>
     /// - On success, responds with [`ListAttachedPoliciesOutput`](crate::operation::list_attached_policies::ListAttachedPoliciesOutput) with field(s):
-    ///   - [`policies(Option<Vec<Policy>>)`](crate::operation::list_attached_policies::ListAttachedPoliciesOutput::policies): <p>The policies.</p>
+    ///   - [`policies(Option<Vec::<Policy>>)`](crate::operation::list_attached_policies::ListAttachedPoliciesOutput::policies): <p>The policies.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::list_attached_policies::ListAttachedPoliciesOutput::next_marker): <p>The token to retrieve the next set of results, or ``null`` if there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListAttachedPoliciesError>`](crate::operation::list_attached_policies::ListAttachedPoliciesError)
     pub fn list_attached_policies(&self) -> crate::operation::list_attached_policies::builders::ListAttachedPoliciesFluentBuilder {

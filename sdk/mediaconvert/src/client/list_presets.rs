@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`order(Order)`](crate::operation::list_presets::builders::ListPresetsFluentBuilder::order) / [`set_order(Option<Order>)`](crate::operation::list_presets::builders::ListPresetsFluentBuilder::set_order):<br>required: **false**<br>Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.<br>
     /// - On success, responds with [`ListPresetsOutput`](crate::operation::list_presets::ListPresetsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_presets::ListPresetsOutput::next_token): Use this string to request the next batch of presets.
-    ///   - [`presets(Option<Vec<Preset>>)`](crate::operation::list_presets::ListPresetsOutput::presets): List of presets
+    ///   - [`presets(Option<Vec::<Preset>>)`](crate::operation::list_presets::ListPresetsOutput::presets): List of presets
     /// - On failure, responds with [`SdkError<ListPresetsError>`](crate::operation::list_presets::ListPresetsError)
     pub fn list_presets(&self) -> crate::operation::list_presets::builders::ListPresetsFluentBuilder {
         crate::operation::list_presets::builders::ListPresetsFluentBuilder::new(self.handle.clone())

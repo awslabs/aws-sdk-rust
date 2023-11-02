@@ -8,8 +8,8 @@ impl super::Client {
     /// - On success, responds with [`GetIntentOutput`](crate::operation::get_intent::GetIntentOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::get_intent::GetIntentOutput::name): <p>The name of the intent.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_intent::GetIntentOutput::description): <p>A description of the intent.</p>
-    ///   - [`slots(Option<Vec<Slot>>)`](crate::operation::get_intent::GetIntentOutput::slots): <p>An array of intent slots configured for the intent.</p>
-    ///   - [`sample_utterances(Option<Vec<String>>)`](crate::operation::get_intent::GetIntentOutput::sample_utterances): <p>An array of sample utterances configured for the intent.</p>
+    ///   - [`slots(Option<Vec::<Slot>>)`](crate::operation::get_intent::GetIntentOutput::slots): <p>An array of intent slots configured for the intent.</p>
+    ///   - [`sample_utterances(Option<Vec::<String>>)`](crate::operation::get_intent::GetIntentOutput::sample_utterances): <p>An array of sample utterances configured for the intent.</p>
     ///   - [`confirmation_prompt(Option<Prompt>)`](crate::operation::get_intent::GetIntentOutput::confirmation_prompt): <p>If defined in the bot, Amazon Lex uses prompt to confirm the intent before fulfilling the user's request. For more information, see <code>PutIntent</code>. </p>
     ///   - [`rejection_statement(Option<Statement>)`](crate::operation::get_intent::GetIntentOutput::rejection_statement): <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p>
     ///   - [`follow_up_prompt(Option<FollowUpPrompt>)`](crate::operation::get_intent::GetIntentOutput::follow_up_prompt): <p>If defined in the bot, Amazon Lex uses this prompt to solicit additional user activity after the intent is fulfilled. For more information, see <code>PutIntent</code>.</p>
@@ -22,8 +22,8 @@ impl super::Client {
     ///   - [`version(Option<String>)`](crate::operation::get_intent::GetIntentOutput::version): <p>The version of the intent.</p>
     ///   - [`checksum(Option<String>)`](crate::operation::get_intent::GetIntentOutput::checksum): <p>Checksum of the intent.</p>
     ///   - [`kendra_configuration(Option<KendraConfiguration>)`](crate::operation::get_intent::GetIntentOutput::kendra_configuration): <p>Configuration information, if any, to connect to an Amazon Kendra index with the <code>AMAZON.KendraSearchIntent</code> intent.</p>
-    ///   - [`input_contexts(Option<Vec<InputContext>>)`](crate::operation::get_intent::GetIntentOutput::input_contexts): <p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>
-    ///   - [`output_contexts(Option<Vec<OutputContext>>)`](crate::operation::get_intent::GetIntentOutput::output_contexts): <p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>
+    ///   - [`input_contexts(Option<Vec::<InputContext>>)`](crate::operation::get_intent::GetIntentOutput::input_contexts): <p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>
+    ///   - [`output_contexts(Option<Vec::<OutputContext>>)`](crate::operation::get_intent::GetIntentOutput::output_contexts): <p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>
     /// - On failure, responds with [`SdkError<GetIntentError>`](crate::operation::get_intent::GetIntentError)
     pub fn get_intent(&self) -> crate::operation::get_intent::builders::GetIntentFluentBuilder {
         crate::operation::get_intent::builders::GetIntentFluentBuilder::new(self.handle.clone())

@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`filter(SequenceStoreFilter)`](crate::operation::list_sequence_stores::builders::ListSequenceStoresFluentBuilder::filter) / [`set_filter(Option<SequenceStoreFilter>)`](crate::operation::list_sequence_stores::builders::ListSequenceStoresFluentBuilder::set_filter):<br>required: **false**<br><p>A filter to apply to the list.</p><br>
     /// - On success, responds with [`ListSequenceStoresOutput`](crate::operation::list_sequence_stores::ListSequenceStoresOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_sequence_stores::ListSequenceStoresOutput::next_token): <p>A pagination token that's included if more results are available.</p>
-    ///   - [`sequence_stores(Vec<SequenceStoreDetail>)`](crate::operation::list_sequence_stores::ListSequenceStoresOutput::sequence_stores): <p>A list of sequence stores.</p>
+    ///   - [`sequence_stores(Vec::<SequenceStoreDetail>)`](crate::operation::list_sequence_stores::ListSequenceStoresOutput::sequence_stores): <p>A list of sequence stores.</p>
     /// - On failure, responds with [`SdkError<ListSequenceStoresError>`](crate::operation::list_sequence_stores::ListSequenceStoresError)
     pub fn list_sequence_stores(&self) -> crate::operation::list_sequence_stores::builders::ListSequenceStoresFluentBuilder {
         crate::operation::list_sequence_stores::builders::ListSequenceStoresFluentBuilder::new(self.handle.clone())

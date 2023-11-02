@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`signature_expires_after(DateTime)`](crate::operation::list_signing_jobs::builders::ListSigningJobsFluentBuilder::signature_expires_after) / [`set_signature_expires_after(Option<DateTime>)`](crate::operation::list_signing_jobs::builders::ListSigningJobsFluentBuilder::set_signature_expires_after):<br>required: **false**<br><p>Filters results to return only signing jobs with signatures expiring after a specified timestamp.</p><br>
     ///   - [`job_invoker(impl Into<String>)`](crate::operation::list_signing_jobs::builders::ListSigningJobsFluentBuilder::job_invoker) / [`set_job_invoker(Option<String>)`](crate::operation::list_signing_jobs::builders::ListSigningJobsFluentBuilder::set_job_invoker):<br>required: **false**<br><p>Filters results to return only signing jobs initiated by a specified IAM entity.</p><br>
     /// - On success, responds with [`ListSigningJobsOutput`](crate::operation::list_signing_jobs::ListSigningJobsOutput) with field(s):
-    ///   - [`jobs(Option<Vec<SigningJob>>)`](crate::operation::list_signing_jobs::ListSigningJobsOutput::jobs): <p>A list of your signing jobs.</p>
+    ///   - [`jobs(Option<Vec::<SigningJob>>)`](crate::operation::list_signing_jobs::ListSigningJobsOutput::jobs): <p>A list of your signing jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_signing_jobs::ListSigningJobsOutput::next_token): <p>String for specifying the next set of paginated results.</p>
     /// - On failure, responds with [`SdkError<ListSigningJobsError>`](crate::operation::list_signing_jobs::ListSigningJobsError)
     pub fn list_signing_jobs(&self) -> crate::operation::list_signing_jobs::builders::ListSigningJobsFluentBuilder {

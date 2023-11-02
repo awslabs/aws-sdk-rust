@@ -6,7 +6,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder::set_next_token):<br>required: **false**<br><p>A string that identifies the next page of limits that you want to retrieve.</p><br>
     /// - On success, responds with [`DescribeAccountLimitsOutput`](crate::operation::describe_account_limits::DescribeAccountLimitsOutput) with field(s):
-    ///   - [`account_limits(Option<Vec<AccountLimit>>)`](crate::operation::describe_account_limits::DescribeAccountLimitsOutput::account_limits): <p>An account limit structure that contain a list of CloudFormation account limits and their values.</p>
+    ///   - [`account_limits(Option<Vec::<AccountLimit>>)`](crate::operation::describe_account_limits::DescribeAccountLimitsOutput::account_limits): <p>An account limit structure that contain a list of CloudFormation account limits and their values.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_account_limits::DescribeAccountLimitsOutput::next_token): <p>If the output exceeds 1 MB in size, a string that identifies the next page of limits. If no additional page exists, this value is null.</p>
     /// - On failure, responds with [`SdkError<DescribeAccountLimitsError>`](crate::operation::describe_account_limits::DescribeAccountLimitsError)
     pub fn describe_account_limits(&self) -> crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder {

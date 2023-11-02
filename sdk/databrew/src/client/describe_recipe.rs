@@ -15,8 +15,8 @@ impl super::Client {
     ///   - [`published_date(Option<DateTime>)`](crate::operation::describe_recipe::DescribeRecipeOutput::published_date): <p>The date and time when the recipe was last published.</p>
     ///   - [`description(Option<String>)`](crate::operation::describe_recipe::DescribeRecipeOutput::description): <p>The description of the recipe.</p>
     ///   - [`name(String)`](crate::operation::describe_recipe::DescribeRecipeOutput::name): <p>The name of the recipe.</p>
-    ///   - [`steps(Option<Vec<RecipeStep>>)`](crate::operation::describe_recipe::DescribeRecipeOutput::steps): <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_recipe::DescribeRecipeOutput::tags): <p>Metadata tags associated with this project.</p>
+    ///   - [`steps(Option<Vec::<RecipeStep>>)`](crate::operation::describe_recipe::DescribeRecipeOutput::steps): <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_recipe::DescribeRecipeOutput::tags): <p>Metadata tags associated with this project.</p>
     ///   - [`resource_arn(Option<String>)`](crate::operation::describe_recipe::DescribeRecipeOutput::resource_arn): <p>The ARN of the recipe.</p>
     ///   - [`recipe_version(Option<String>)`](crate::operation::describe_recipe::DescribeRecipeOutput::recipe_version): <p>The recipe version identifier.</p>
     /// - On failure, responds with [`SdkError<DescribeRecipeError>`](crate::operation::describe_recipe::DescribeRecipeError)

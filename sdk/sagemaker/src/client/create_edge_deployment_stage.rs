@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`edge_deployment_plan_name(impl Into<String>)`](crate::operation::create_edge_deployment_stage::builders::CreateEdgeDeploymentStageFluentBuilder::edge_deployment_plan_name) / [`set_edge_deployment_plan_name(Option<String>)`](crate::operation::create_edge_deployment_stage::builders::CreateEdgeDeploymentStageFluentBuilder::set_edge_deployment_plan_name):<br>required: **true**<br><p>The name of the edge deployment plan.</p><br>
-    ///   - [`stages(DeploymentStage)`](crate::operation::create_edge_deployment_stage::builders::CreateEdgeDeploymentStageFluentBuilder::stages) / [`set_stages(Option<Vec<DeploymentStage>>)`](crate::operation::create_edge_deployment_stage::builders::CreateEdgeDeploymentStageFluentBuilder::set_stages):<br>required: **true**<br><p>List of stages to be added to the edge deployment plan.</p><br>
+    ///   - [`stages(DeploymentStage)`](crate::operation::create_edge_deployment_stage::builders::CreateEdgeDeploymentStageFluentBuilder::stages) / [`set_stages(Option<Vec::<DeploymentStage>>)`](crate::operation::create_edge_deployment_stage::builders::CreateEdgeDeploymentStageFluentBuilder::set_stages):<br>required: **true**<br><p>List of stages to be added to the edge deployment plan.</p><br>
     /// - On success, responds with [`CreateEdgeDeploymentStageOutput`](crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStageOutput)
     /// - On failure, responds with [`SdkError<CreateEdgeDeploymentStageError>`](crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStageError)
     pub fn create_edge_deployment_stage(&self) -> crate::operation::create_edge_deployment_stage::builders::CreateEdgeDeploymentStageFluentBuilder {

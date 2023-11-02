@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`ListHostKeysOutput`](crate::operation::list_host_keys::ListHostKeysOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_host_keys::ListHostKeysOutput::next_token): <p>Returns a token that you can use to call <code>ListHostKeys</code> again and receive additional results, if there are any.</p>
     ///   - [`server_id(String)`](crate::operation::list_host_keys::ListHostKeysOutput::server_id): <p>Returns the server identifier that contains the listed host keys.</p>
-    ///   - [`host_keys(Vec<ListedHostKey>)`](crate::operation::list_host_keys::ListHostKeysOutput::host_keys): <p>Returns an array, where each item contains the details of a host key.</p>
+    ///   - [`host_keys(Vec::<ListedHostKey>)`](crate::operation::list_host_keys::ListHostKeysOutput::host_keys): <p>Returns an array, where each item contains the details of a host key.</p>
     /// - On failure, responds with [`SdkError<ListHostKeysError>`](crate::operation::list_host_keys::ListHostKeysError)
     pub fn list_host_keys(&self) -> crate::operation::list_host_keys::builders::ListHostKeysFluentBuilder {
         crate::operation::list_host_keys::builders::ListHostKeysFluentBuilder::new(self.handle.clone())

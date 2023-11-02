@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_items(i32)`](crate::operation::list_versions_by_function::builders::ListVersionsByFunctionFluentBuilder::max_items) / [`set_max_items(Option<i32>)`](crate::operation::list_versions_by_function::builders::ListVersionsByFunctionFluentBuilder::set_max_items):<br>required: **false**<br><p>The maximum number of versions to return. Note that <code>ListVersionsByFunction</code> returns a maximum of 50 items in each response, even if you set the number higher.</p><br>
     /// - On success, responds with [`ListVersionsByFunctionOutput`](crate::operation::list_versions_by_function::ListVersionsByFunctionOutput) with field(s):
     ///   - [`next_marker(Option<String>)`](crate::operation::list_versions_by_function::ListVersionsByFunctionOutput::next_marker): <p>The pagination token that's included if more results are available.</p>
-    ///   - [`versions(Option<Vec<FunctionConfiguration>>)`](crate::operation::list_versions_by_function::ListVersionsByFunctionOutput::versions): <p>A list of Lambda function versions.</p>
+    ///   - [`versions(Option<Vec::<FunctionConfiguration>>)`](crate::operation::list_versions_by_function::ListVersionsByFunctionOutput::versions): <p>A list of Lambda function versions.</p>
     /// - On failure, responds with [`SdkError<ListVersionsByFunctionError>`](crate::operation::list_versions_by_function::ListVersionsByFunctionError)
     pub fn list_versions_by_function(&self) -> crate::operation::list_versions_by_function::builders::ListVersionsByFunctionFluentBuilder {
         crate::operation::list_versions_by_function::builders::ListVersionsByFunctionFluentBuilder::new(self.handle.clone())

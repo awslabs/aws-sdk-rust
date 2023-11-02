@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`app_id(impl Into<String>)`](crate::operation::get_app_validation_output::builders::GetAppValidationOutputFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::get_app_validation_output::builders::GetAppValidationOutputFluentBuilder::set_app_id):<br>required: **true**<br><p>The ID of the application.</p><br>
     /// - On success, responds with [`GetAppValidationOutputOutput`](crate::operation::get_app_validation_output::GetAppValidationOutputOutput) with field(s):
-    ///   - [`validation_output_list(Option<Vec<ValidationOutput>>)`](crate::operation::get_app_validation_output::GetAppValidationOutputOutput::validation_output_list): <p>The validation output.</p>
+    ///   - [`validation_output_list(Option<Vec::<ValidationOutput>>)`](crate::operation::get_app_validation_output::GetAppValidationOutputOutput::validation_output_list): <p>The validation output.</p>
     /// - On failure, responds with [`SdkError<GetAppValidationOutputError>`](crate::operation::get_app_validation_output::GetAppValidationOutputError)
     pub fn get_app_validation_output(&self) -> crate::operation::get_app_validation_output::builders::GetAppValidationOutputFluentBuilder {
         crate::operation::get_app_validation_output::builders::GetAppValidationOutputFluentBuilder::new(self.handle.clone())

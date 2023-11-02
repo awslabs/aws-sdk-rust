@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeIpGroups`](crate::operation::describe_ip_groups::builders::DescribeIpGroupsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`group_ids(impl Into<String>)`](crate::operation::describe_ip_groups::builders::DescribeIpGroupsFluentBuilder::group_ids) / [`set_group_ids(Option<Vec<String>>)`](crate::operation::describe_ip_groups::builders::DescribeIpGroupsFluentBuilder::set_group_ids):<br>required: **false**<br><p>The identifiers of one or more IP access control groups.</p><br>
+    ///   - [`group_ids(impl Into<String>)`](crate::operation::describe_ip_groups::builders::DescribeIpGroupsFluentBuilder::group_ids) / [`set_group_ids(Option<Vec::<String>>)`](crate::operation::describe_ip_groups::builders::DescribeIpGroupsFluentBuilder::set_group_ids):<br>required: **false**<br><p>The identifiers of one or more IP access control groups.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_ip_groups::builders::DescribeIpGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_ip_groups::builders::DescribeIpGroupsFluentBuilder::set_next_token):<br>required: **false**<br><p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_ip_groups::builders::DescribeIpGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_ip_groups::builders::DescribeIpGroupsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return.</p><br>
     /// - On success, responds with [`DescribeIpGroupsOutput`](crate::operation::describe_ip_groups::DescribeIpGroupsOutput) with field(s):
-    ///   - [`result(Option<Vec<WorkspacesIpGroup>>)`](crate::operation::describe_ip_groups::DescribeIpGroupsOutput::result): <p>Information about the IP access control groups.</p>
+    ///   - [`result(Option<Vec::<WorkspacesIpGroup>>)`](crate::operation::describe_ip_groups::DescribeIpGroupsOutput::result): <p>Information about the IP access control groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_ip_groups::DescribeIpGroupsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     /// - On failure, responds with [`SdkError<DescribeIpGroupsError>`](crate::operation::describe_ip_groups::DescribeIpGroupsError)
     pub fn describe_ip_groups(&self) -> crate::operation::describe_ip_groups::builders::DescribeIpGroupsFluentBuilder {

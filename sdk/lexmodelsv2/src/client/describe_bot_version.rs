@@ -14,11 +14,11 @@ impl super::Client {
     ///   - [`data_privacy(Option<DataPrivacy>)`](crate::operation::describe_bot_version::DescribeBotVersionOutput::data_privacy): <p>Data privacy settings for the bot version.</p>
     ///   - [`idle_session_ttl_in_seconds(Option<i32>)`](crate::operation::describe_bot_version::DescribeBotVersionOutput::idle_session_ttl_in_seconds): <p>The number of seconds that a session with the bot remains active before it is discarded by Amazon Lex.</p>
     ///   - [`bot_status(Option<BotStatus>)`](crate::operation::describe_bot_version::DescribeBotVersionOutput::bot_status): <p>The current status of the bot. When the status is <code>Available</code>, the bot version is ready for use.</p>
-    ///   - [`failure_reasons(Option<Vec<String>>)`](crate::operation::describe_bot_version::DescribeBotVersionOutput::failure_reasons): <p>If the <code>botStatus</code> is <code>Failed</code>, this contains a list of reasons that the version couldn't be built.</p>
+    ///   - [`failure_reasons(Option<Vec::<String>>)`](crate::operation::describe_bot_version::DescribeBotVersionOutput::failure_reasons): <p>If the <code>botStatus</code> is <code>Failed</code>, this contains a list of reasons that the version couldn't be built.</p>
     ///   - [`creation_date_time(Option<DateTime>)`](crate::operation::describe_bot_version::DescribeBotVersionOutput::creation_date_time): <p>A timestamp of the date and time that the bot version was created.</p>
-    ///   - [`parent_bot_networks(Option<Vec<ParentBotNetwork>>)`](crate::operation::describe_bot_version::DescribeBotVersionOutput::parent_bot_networks): <p>A list of the networks to which the bot version you described belongs.</p>
+    ///   - [`parent_bot_networks(Option<Vec::<ParentBotNetwork>>)`](crate::operation::describe_bot_version::DescribeBotVersionOutput::parent_bot_networks): <p>A list of the networks to which the bot version you described belongs.</p>
     ///   - [`bot_type(Option<BotType>)`](crate::operation::describe_bot_version::DescribeBotVersionOutput::bot_type): <p>The type of the bot in the version that was described.</p>
-    ///   - [`bot_members(Option<Vec<BotMember>>)`](crate::operation::describe_bot_version::DescribeBotVersionOutput::bot_members): <p>The members of bot network in the version that was described.</p>
+    ///   - [`bot_members(Option<Vec::<BotMember>>)`](crate::operation::describe_bot_version::DescribeBotVersionOutput::bot_members): <p>The members of bot network in the version that was described.</p>
     /// - On failure, responds with [`SdkError<DescribeBotVersionError>`](crate::operation::describe_bot_version::DescribeBotVersionError)
     pub fn describe_bot_version(&self) -> crate::operation::describe_bot_version::builders::DescribeBotVersionFluentBuilder {
         crate::operation::describe_bot_version::builders::DescribeBotVersionFluentBuilder::new(self.handle.clone())

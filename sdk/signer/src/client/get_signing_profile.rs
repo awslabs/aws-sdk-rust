@@ -15,11 +15,11 @@ impl super::Client {
     ///   - [`platform_display_name(Option<String>)`](crate::operation::get_signing_profile::GetSigningProfileOutput::platform_display_name): <p>A human-readable name for the signing platform associated with the signing profile.</p>
     ///   - [`signature_validity_period(Option<SignatureValidityPeriod>)`](crate::operation::get_signing_profile::GetSigningProfileOutput::signature_validity_period): <p>The validity period for a signing job.</p>
     ///   - [`overrides(Option<SigningPlatformOverrides>)`](crate::operation::get_signing_profile::GetSigningProfileOutput::overrides): <p>A list of overrides applied by the target signing profile for signing operations.</p>
-    ///   - [`signing_parameters(Option<HashMap<String, String>>)`](crate::operation::get_signing_profile::GetSigningProfileOutput::signing_parameters): <p>A map of key-value pairs for signing operations that is attached to the target signing profile.</p>
+    ///   - [`signing_parameters(Option<HashMap::<String, String>>)`](crate::operation::get_signing_profile::GetSigningProfileOutput::signing_parameters): <p>A map of key-value pairs for signing operations that is attached to the target signing profile.</p>
     ///   - [`status(Option<SigningProfileStatus>)`](crate::operation::get_signing_profile::GetSigningProfileOutput::status): <p>The status of the target signing profile.</p>
     ///   - [`status_reason(Option<String>)`](crate::operation::get_signing_profile::GetSigningProfileOutput::status_reason): <p>Reason for the status of the target signing profile.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_signing_profile::GetSigningProfileOutput::arn): <p>The Amazon Resource Name (ARN) for the signing profile.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_signing_profile::GetSigningProfileOutput::tags): <p>A list of tags associated with the signing profile.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_signing_profile::GetSigningProfileOutput::tags): <p>A list of tags associated with the signing profile.</p>
     /// - On failure, responds with [`SdkError<GetSigningProfileError>`](crate::operation::get_signing_profile::GetSigningProfileError)
     pub fn get_signing_profile(&self) -> crate::operation::get_signing_profile::builders::GetSigningProfileFluentBuilder {
         crate::operation::get_signing_profile::builders::GetSigningProfileFluentBuilder::new(self.handle.clone())

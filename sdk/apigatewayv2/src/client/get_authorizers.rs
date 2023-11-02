@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`max_results(impl Into<String>)`](crate::operation::get_authorizers::builders::GetAuthorizersFluentBuilder::max_results) / [`set_max_results(Option<String>)`](crate::operation::get_authorizers::builders::GetAuthorizersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of elements to be returned for this resource.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_authorizers::builders::GetAuthorizersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_authorizers::builders::GetAuthorizersFluentBuilder::set_next_token):<br>required: **false**<br><p>The next page of elements from this collection. Not valid for the last element of the collection.</p><br>
     /// - On success, responds with [`GetAuthorizersOutput`](crate::operation::get_authorizers::GetAuthorizersOutput) with field(s):
-    ///   - [`items(Option<Vec<Authorizer>>)`](crate::operation::get_authorizers::GetAuthorizersOutput::items): <p>The elements from this collection.</p>
+    ///   - [`items(Option<Vec::<Authorizer>>)`](crate::operation::get_authorizers::GetAuthorizersOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_authorizers::GetAuthorizersOutput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     /// - On failure, responds with [`SdkError<GetAuthorizersError>`](crate::operation::get_authorizers::GetAuthorizersError)
     pub fn get_authorizers(&self) -> crate::operation::get_authorizers::builders::GetAuthorizersFluentBuilder {

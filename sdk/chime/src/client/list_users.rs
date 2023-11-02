@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_users::builders::ListUsersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call. Defaults to 100.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use to retrieve the next page of results.</p><br>
     /// - On success, responds with [`ListUsersOutput`](crate::operation::list_users::ListUsersOutput) with field(s):
-    ///   - [`users(Option<Vec<User>>)`](crate::operation::list_users::ListUsersOutput::users): <p>List of users and user details.</p>
+    ///   - [`users(Option<Vec::<User>>)`](crate::operation::list_users::ListUsersOutput::users): <p>List of users and user details.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_users::ListUsersOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListUsersError>`](crate::operation::list_users::ListUsersError)
     pub fn list_users(&self) -> crate::operation::list_users::builders::ListUsersFluentBuilder {

@@ -4,10 +4,10 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`meeting_id(impl Into<String>)`](crate::operation::batch_create_attendee::builders::BatchCreateAttendeeFluentBuilder::meeting_id) / [`set_meeting_id(Option<String>)`](crate::operation::batch_create_attendee::builders::BatchCreateAttendeeFluentBuilder::set_meeting_id):<br>required: **true**<br><p>The Amazon Chime SDK meeting ID.</p><br>
-    ///   - [`attendees(CreateAttendeeRequestItem)`](crate::operation::batch_create_attendee::builders::BatchCreateAttendeeFluentBuilder::attendees) / [`set_attendees(Option<Vec<CreateAttendeeRequestItem>>)`](crate::operation::batch_create_attendee::builders::BatchCreateAttendeeFluentBuilder::set_attendees):<br>required: **true**<br><p>The request containing the attendees to create.</p><br>
+    ///   - [`attendees(CreateAttendeeRequestItem)`](crate::operation::batch_create_attendee::builders::BatchCreateAttendeeFluentBuilder::attendees) / [`set_attendees(Option<Vec::<CreateAttendeeRequestItem>>)`](crate::operation::batch_create_attendee::builders::BatchCreateAttendeeFluentBuilder::set_attendees):<br>required: **true**<br><p>The request containing the attendees to create.</p><br>
     /// - On success, responds with [`BatchCreateAttendeeOutput`](crate::operation::batch_create_attendee::BatchCreateAttendeeOutput) with field(s):
-    ///   - [`attendees(Option<Vec<Attendee>>)`](crate::operation::batch_create_attendee::BatchCreateAttendeeOutput::attendees): <p>The attendee information, including attendees IDs and join tokens.</p>
-    ///   - [`errors(Option<Vec<CreateAttendeeError>>)`](crate::operation::batch_create_attendee::BatchCreateAttendeeOutput::errors): <p>If the action fails for one or more of the attendees in the request, a list of the attendees is returned, along with error codes and error messages.</p>
+    ///   - [`attendees(Option<Vec::<Attendee>>)`](crate::operation::batch_create_attendee::BatchCreateAttendeeOutput::attendees): <p>The attendee information, including attendees IDs and join tokens.</p>
+    ///   - [`errors(Option<Vec::<CreateAttendeeError>>)`](crate::operation::batch_create_attendee::BatchCreateAttendeeOutput::errors): <p>If the action fails for one or more of the attendees in the request, a list of the attendees is returned, along with error codes and error messages.</p>
     /// - On failure, responds with [`SdkError<BatchCreateAttendeeError>`](crate::operation::batch_create_attendee::BatchCreateAttendeeError)
     #[deprecated(note = "Replaced by BatchCreateAttendee in the Amazon Chime SDK Meetings Namespace")]
     pub fn batch_create_attendee(&self) -> crate::operation::batch_create_attendee::builders::BatchCreateAttendeeFluentBuilder {

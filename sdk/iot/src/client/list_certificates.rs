@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`marker(impl Into<String>)`](crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::set_marker):<br>required: **false**<br><p>The marker for the next set of results.</p><br>
     ///   - [`ascending_order(bool)`](crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::ascending_order) / [`set_ascending_order(Option<bool>)`](crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::set_ascending_order):<br>required: **false**<br><p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p><br>
     /// - On success, responds with [`ListCertificatesOutput`](crate::operation::list_certificates::ListCertificatesOutput) with field(s):
-    ///   - [`certificates(Option<Vec<Certificate>>)`](crate::operation::list_certificates::ListCertificatesOutput::certificates): <p>The descriptions of the certificates.</p>
+    ///   - [`certificates(Option<Vec::<Certificate>>)`](crate::operation::list_certificates::ListCertificatesOutput::certificates): <p>The descriptions of the certificates.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::list_certificates::ListCertificatesOutput::next_marker): <p>The marker for the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListCertificatesError>`](crate::operation::list_certificates::ListCertificatesError)
     pub fn list_certificates(&self) -> crate::operation::list_certificates::builders::ListCertificatesFluentBuilder {

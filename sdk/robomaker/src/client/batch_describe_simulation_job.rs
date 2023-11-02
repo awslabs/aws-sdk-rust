@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchDescribeSimulationJob`](crate::operation::batch_describe_simulation_job::builders::BatchDescribeSimulationJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`jobs(impl Into<String>)`](crate::operation::batch_describe_simulation_job::builders::BatchDescribeSimulationJobFluentBuilder::jobs) / [`set_jobs(Option<Vec<String>>)`](crate::operation::batch_describe_simulation_job::builders::BatchDescribeSimulationJobFluentBuilder::set_jobs):<br>required: **true**<br><p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p><br>
+    ///   - [`jobs(impl Into<String>)`](crate::operation::batch_describe_simulation_job::builders::BatchDescribeSimulationJobFluentBuilder::jobs) / [`set_jobs(Option<Vec::<String>>)`](crate::operation::batch_describe_simulation_job::builders::BatchDescribeSimulationJobFluentBuilder::set_jobs):<br>required: **true**<br><p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p><br>
     /// - On success, responds with [`BatchDescribeSimulationJobOutput`](crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobOutput) with field(s):
-    ///   - [`jobs(Option<Vec<SimulationJob>>)`](crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobOutput::jobs): <p>A list of simulation jobs.</p>
-    ///   - [`unprocessed_jobs(Option<Vec<String>>)`](crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobOutput::unprocessed_jobs): <p>A list of unprocessed simulation job Amazon Resource Names (ARNs).</p>
+    ///   - [`jobs(Option<Vec::<SimulationJob>>)`](crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobOutput::jobs): <p>A list of simulation jobs.</p>
+    ///   - [`unprocessed_jobs(Option<Vec::<String>>)`](crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobOutput::unprocessed_jobs): <p>A list of unprocessed simulation job Amazon Resource Names (ARNs).</p>
     /// - On failure, responds with [`SdkError<BatchDescribeSimulationJobError>`](crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobError)
     pub fn batch_describe_simulation_job(
         &self,

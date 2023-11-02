@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_metric_streams::builders::ListMetricStreamsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_metric_streams::builders::ListMetricStreamsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in one operation.</p><br>
     /// - On success, responds with [`ListMetricStreamsOutput`](crate::operation::list_metric_streams::ListMetricStreamsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_metric_streams::ListMetricStreamsOutput::next_token): <p>The token that marks the start of the next batch of returned results. You can use this token in a subsequent operation to get the next batch of results.</p>
-    ///   - [`entries(Option<Vec<MetricStreamEntry>>)`](crate::operation::list_metric_streams::ListMetricStreamsOutput::entries): <p>The array of metric stream information.</p>
+    ///   - [`entries(Option<Vec::<MetricStreamEntry>>)`](crate::operation::list_metric_streams::ListMetricStreamsOutput::entries): <p>The array of metric stream information.</p>
     /// - On failure, responds with [`SdkError<ListMetricStreamsError>`](crate::operation::list_metric_streams::ListMetricStreamsError)
     pub fn list_metric_streams(&self) -> crate::operation::list_metric_streams::builders::ListMetricStreamsFluentBuilder {
         crate::operation::list_metric_streams::builders::ListMetricStreamsFluentBuilder::new(self.handle.clone())

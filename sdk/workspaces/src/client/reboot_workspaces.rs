@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RebootWorkspaces`](crate::operation::reboot_workspaces::builders::RebootWorkspacesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`reboot_workspace_requests(RebootRequest)`](crate::operation::reboot_workspaces::builders::RebootWorkspacesFluentBuilder::reboot_workspace_requests) / [`set_reboot_workspace_requests(Option<Vec<RebootRequest>>)`](crate::operation::reboot_workspaces::builders::RebootWorkspacesFluentBuilder::set_reboot_workspace_requests):<br>required: **true**<br><p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p><br>
+    ///   - [`reboot_workspace_requests(RebootRequest)`](crate::operation::reboot_workspaces::builders::RebootWorkspacesFluentBuilder::reboot_workspace_requests) / [`set_reboot_workspace_requests(Option<Vec::<RebootRequest>>)`](crate::operation::reboot_workspaces::builders::RebootWorkspacesFluentBuilder::set_reboot_workspace_requests):<br>required: **true**<br><p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p><br>
     /// - On success, responds with [`RebootWorkspacesOutput`](crate::operation::reboot_workspaces::RebootWorkspacesOutput) with field(s):
-    ///   - [`failed_requests(Option<Vec<FailedWorkspaceChangeRequest>>)`](crate::operation::reboot_workspaces::RebootWorkspacesOutput::failed_requests): <p>Information about the WorkSpaces that could not be rebooted.</p>
+    ///   - [`failed_requests(Option<Vec::<FailedWorkspaceChangeRequest>>)`](crate::operation::reboot_workspaces::RebootWorkspacesOutput::failed_requests): <p>Information about the WorkSpaces that could not be rebooted.</p>
     /// - On failure, responds with [`SdkError<RebootWorkspacesError>`](crate::operation::reboot_workspaces::RebootWorkspacesError)
     pub fn reboot_workspaces(&self) -> crate::operation::reboot_workspaces::builders::RebootWorkspacesFluentBuilder {
         crate::operation::reboot_workspaces::builders::RebootWorkspacesFluentBuilder::new(self.handle.clone())

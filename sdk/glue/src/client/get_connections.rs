@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_connections::builders::GetConnectionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_connections::builders::GetConnectionsFluentBuilder::set_next_token):<br>required: **false**<br><p>A continuation token, if this is a continuation call.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_connections::builders::GetConnectionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_connections::builders::GetConnectionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of connections to return in one response.</p><br>
     /// - On success, responds with [`GetConnectionsOutput`](crate::operation::get_connections::GetConnectionsOutput) with field(s):
-    ///   - [`connection_list(Option<Vec<Connection>>)`](crate::operation::get_connections::GetConnectionsOutput::connection_list): <p>A list of requested connection definitions.</p>
+    ///   - [`connection_list(Option<Vec::<Connection>>)`](crate::operation::get_connections::GetConnectionsOutput::connection_list): <p>A list of requested connection definitions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_connections::GetConnectionsOutput::next_token): <p>A continuation token, if the list of connections returned does not include the last of the filtered connections.</p>
     /// - On failure, responds with [`SdkError<GetConnectionsError>`](crate::operation::get_connections::GetConnectionsError)
     pub fn get_connections(&self) -> crate::operation::get_connections::builders::GetConnectionsFluentBuilder {

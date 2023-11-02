@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_languages::builders::ListLanguagesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_languages::builders::ListLanguagesFluentBuilder::set_next_token):<br>required: **false**<br><p>Include the NextToken value to fetch the next group of supported languages. </p><br>
     ///   - [`max_results(i32)`](crate::operation::list_languages::builders::ListLanguagesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_languages::builders::ListLanguagesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in each response.</p><br>
     /// - On success, responds with [`ListLanguagesOutput`](crate::operation::list_languages::ListLanguagesOutput) with field(s):
-    ///   - [`languages(Option<Vec<Language>>)`](crate::operation::list_languages::ListLanguagesOutput::languages): <p>The list of supported languages.</p>
+    ///   - [`languages(Option<Vec::<Language>>)`](crate::operation::list_languages::ListLanguagesOutput::languages): <p>The list of supported languages.</p>
     ///   - [`display_language_code(Option<DisplayLanguageCode>)`](crate::operation::list_languages::ListLanguagesOutput::display_language_code): <p>The language code passed in with the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_languages::ListLanguagesOutput::next_token): <p> If the response does not include all remaining results, use the NextToken in the next request to fetch the next group of supported languages.</p>
     /// - On failure, responds with [`SdkError<ListLanguagesError>`](crate::operation::list_languages::ListLanguagesError)
