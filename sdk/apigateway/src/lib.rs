@@ -186,6 +186,8 @@ pub mod types;
 ///
 mod apigateway_interceptors;
 
+mod auth_plugin;
+
 pub(crate) mod protocol_serde;
 
 mod serialization_settings;

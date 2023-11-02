@@ -60,14 +60,18 @@ impl AssociateAssets {
         config_override: ::std::option::Option<crate::config::Builder>,
     ) -> ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins {
         let mut runtime_plugins = client_runtime_plugins.with_operation_plugin(Self::new());
-        runtime_plugins = runtime_plugins.with_operation_plugin(crate::client_idempotency_token::IdempotencyTokenRuntimePlugin::new(
-            |token_provider, input| {
-                let input: &mut crate::operation::associate_assets::AssociateAssetsInput = input.downcast_mut().expect("correct type");
-                if input.client_token.is_none() {
-                    input.client_token = ::std::option::Option::Some(token_provider.make_idempotency_token());
-                }
-            },
-        ));
+        runtime_plugins = runtime_plugins
+            .with_operation_plugin(crate::client_idempotency_token::IdempotencyTokenRuntimePlugin::new(
+                |token_provider, input| {
+                    let input: &mut crate::operation::associate_assets::AssociateAssetsInput = input.downcast_mut().expect("correct type");
+                    if input.client_token.is_none() {
+                        input.client_token = ::std::option::Option::Some(token_provider.make_idempotency_token());
+                    }
+                },
+            ))
+            .with_client_plugin(crate::auth_plugin::DefaultAuthOptionsPlugin::new(vec![
+                ::aws_runtime::auth::sigv4::SCHEME_ID,
+            ]));
         if let ::std::option::Option::Some(config_override) = config_override {
             for plugin in config_override.runtime_plugins.iter().cloned() {
                 runtime_plugins = runtime_plugins.with_operation_plugin(plugin);
@@ -117,13 +121,6 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Associa
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         ::std::borrow::Cow::Owned(
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("AssociateAssets")
-                .with_auth_scheme_option_resolver(::std::option::Option::Some(
-                    ::aws_smithy_runtime_api::client::auth::SharedAuthSchemeOptionResolver::new(
-                        ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolver::new(vec![
-                            ::aws_runtime::auth::sigv4::SCHEME_ID,
-                        ]),
-                    ),
-                ))
                 .with_interceptor(AssociateAssetsEndpointParamsInterceptor)
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::associate_assets::AssociateAssetsError,

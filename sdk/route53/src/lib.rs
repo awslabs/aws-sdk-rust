@@ -188,6 +188,8 @@ pub mod primitives;
 /// Data structures used by operation inputs/outputs.
 pub mod types;
 
+mod auth_plugin;
+
 pub(crate) mod protocol_serde;
 
 ///

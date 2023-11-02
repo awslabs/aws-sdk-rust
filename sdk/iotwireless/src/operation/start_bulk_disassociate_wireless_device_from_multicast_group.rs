@@ -56,7 +56,9 @@ impl StartBulkDisassociateWirelessDeviceFromMulticastGroup {
         config_override: ::std::option::Option<crate::config::Builder>,
     ) -> ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins {
         let mut runtime_plugins = client_runtime_plugins.with_operation_plugin(Self::new());
-
+        runtime_plugins = runtime_plugins.with_client_plugin(crate::auth_plugin::DefaultAuthOptionsPlugin::new(vec![
+            ::aws_runtime::auth::sigv4::SCHEME_ID,
+        ]));
         if let ::std::option::Option::Some(config_override) = config_override {
             for plugin in config_override.runtime_plugins.iter().cloned() {
                 runtime_plugins = runtime_plugins.with_operation_plugin(plugin);
@@ -109,11 +111,6 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartBu
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         ::std::borrow::Cow::Owned(
                         ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("StartBulkDisassociateWirelessDeviceFromMulticastGroup")
-                            .with_auth_scheme_option_resolver(::std::option::Option::Some(
-                    ::aws_smithy_runtime_api::client::auth::SharedAuthSchemeOptionResolver::new(
-                        ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolver::new(vec![
-    ::aws_runtime::auth::sigv4::SCHEME_ID,
-]))))
                             .with_interceptor(StartBulkDisassociateWirelessDeviceFromMulticastGroupEndpointParamsInterceptor)
                             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<crate::operation::start_bulk_disassociate_wireless_device_from_multicast_group::StartBulkDisassociateWirelessDeviceFromMulticastGroupError>::new())
 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<crate::operation::start_bulk_disassociate_wireless_device_from_multicast_group::StartBulkDisassociateWirelessDeviceFromMulticastGroupError>::new())

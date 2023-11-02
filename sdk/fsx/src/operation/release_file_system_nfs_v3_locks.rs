@@ -61,15 +61,19 @@ impl ReleaseFileSystemNfsV3Locks {
         config_override: ::std::option::Option<crate::config::Builder>,
     ) -> ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins {
         let mut runtime_plugins = client_runtime_plugins.with_operation_plugin(Self::new());
-        runtime_plugins = runtime_plugins.with_operation_plugin(crate::client_idempotency_token::IdempotencyTokenRuntimePlugin::new(
-            |token_provider, input| {
-                let input: &mut crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksInput =
-                    input.downcast_mut().expect("correct type");
-                if input.client_request_token.is_none() {
-                    input.client_request_token = ::std::option::Option::Some(token_provider.make_idempotency_token());
-                }
-            },
-        ));
+        runtime_plugins = runtime_plugins
+            .with_operation_plugin(crate::client_idempotency_token::IdempotencyTokenRuntimePlugin::new(
+                |token_provider, input| {
+                    let input: &mut crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksInput =
+                        input.downcast_mut().expect("correct type");
+                    if input.client_request_token.is_none() {
+                        input.client_request_token = ::std::option::Option::Some(token_provider.make_idempotency_token());
+                    }
+                },
+            ))
+            .with_client_plugin(crate::auth_plugin::DefaultAuthOptionsPlugin::new(vec![
+                ::aws_runtime::auth::sigv4::SCHEME_ID,
+            ]));
         if let ::std::option::Option::Some(config_override) = config_override {
             for plugin in config_override.runtime_plugins.iter().cloned() {
                 runtime_plugins = runtime_plugins.with_operation_plugin(plugin);
@@ -120,13 +124,6 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Release
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         ::std::borrow::Cow::Owned(
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ReleaseFileSystemNfsV3Locks")
-                .with_auth_scheme_option_resolver(::std::option::Option::Some(
-                    ::aws_smithy_runtime_api::client::auth::SharedAuthSchemeOptionResolver::new(
-                        ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolver::new(vec![
-                            ::aws_runtime::auth::sigv4::SCHEME_ID,
-                        ]),
-                    ),
-                ))
                 .with_interceptor(ReleaseFileSystemNfsV3LocksEndpointParamsInterceptor)
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksError,

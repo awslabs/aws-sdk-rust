@@ -67,7 +67,9 @@ impl StartMLLabelingSetGenerationTaskRun {
         config_override: ::std::option::Option<crate::config::Builder>,
     ) -> ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins {
         let mut runtime_plugins = client_runtime_plugins.with_operation_plugin(Self::new());
-
+        runtime_plugins = runtime_plugins.with_client_plugin(crate::auth_plugin::DefaultAuthOptionsPlugin::new(vec![
+            ::aws_runtime::auth::sigv4::SCHEME_ID,
+        ]));
         if let ::std::option::Option::Some(config_override) = config_override {
             for plugin in config_override.runtime_plugins.iter().cloned() {
                 runtime_plugins = runtime_plugins.with_operation_plugin(plugin);
@@ -117,13 +119,6 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartML
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         ::std::borrow::Cow::Owned(
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("StartMLLabelingSetGenerationTaskRun")
-                .with_auth_scheme_option_resolver(::std::option::Option::Some(
-                    ::aws_smithy_runtime_api::client::auth::SharedAuthSchemeOptionResolver::new(
-                        ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolver::new(vec![
-                            ::aws_runtime::auth::sigv4::SCHEME_ID,
-                        ]),
-                    ),
-                ))
                 .with_interceptor(StartMLLabelingSetGenerationTaskRunEndpointParamsInterceptor)
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::start_ml_labeling_set_generation_task_run::StartMLLabelingSetGenerationTaskRunError,

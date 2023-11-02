@@ -77,7 +77,10 @@ impl CreateMultiRegionAccessPoint {
                     }
                 },
             ))
-            .with_operation_plugin(crate::client_http_checksum_required::HttpChecksumRequiredRuntimePlugin::new());
+            .with_operation_plugin(crate::client_http_checksum_required::HttpChecksumRequiredRuntimePlugin::new())
+            .with_client_plugin(crate::auth_plugin::DefaultAuthOptionsPlugin::new(vec![
+                ::aws_runtime::auth::sigv4::SCHEME_ID,
+            ]));
         if let ::std::option::Option::Some(config_override) = config_override {
             for plugin in config_override.runtime_plugins.iter().cloned() {
                 runtime_plugins = runtime_plugins.with_operation_plugin(plugin);
@@ -127,13 +130,6 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateM
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         ::std::borrow::Cow::Owned(
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateMultiRegionAccessPoint")
-                .with_auth_scheme_option_resolver(::std::option::Option::Some(
-                    ::aws_smithy_runtime_api::client::auth::SharedAuthSchemeOptionResolver::new(
-                        ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolver::new(vec![
-                            ::aws_runtime::auth::sigv4::SCHEME_ID,
-                        ]),
-                    ),
-                ))
                 .with_interceptor(CreateMultiRegionAccessPointEndpointParamsInterceptor)
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::create_multi_region_access_point::CreateMultiRegionAccessPointError,

@@ -193,6 +193,8 @@ pub mod primitives;
 /// Data structures used by operation inputs/outputs.
 pub mod types;
 
+mod auth_plugin;
+
 ///
 mod glacier_interceptors;
 

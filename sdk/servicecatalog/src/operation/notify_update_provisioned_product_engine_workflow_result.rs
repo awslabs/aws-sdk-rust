@@ -68,7 +68,8 @@ impl NotifyUpdateProvisionedProductEngineWorkflowResult {
                                 if input.idempotency_token.is_none() {
                                     input.idempotency_token = ::std::option::Option::Some(token_provider.make_idempotency_token());
                                 }
-                            }));
+                            }))
+    .with_client_plugin(crate::auth_plugin::DefaultAuthOptionsPlugin::new(vec![::aws_runtime::auth::sigv4::SCHEME_ID]));
         if let ::std::option::Option::Some(config_override) = config_override {
             for plugin in config_override.runtime_plugins.iter().cloned() {
                 runtime_plugins = runtime_plugins.with_operation_plugin(plugin);
@@ -121,11 +122,6 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for NotifyU
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         ::std::borrow::Cow::Owned(
                         ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("NotifyUpdateProvisionedProductEngineWorkflowResult")
-                            .with_auth_scheme_option_resolver(::std::option::Option::Some(
-                    ::aws_smithy_runtime_api::client::auth::SharedAuthSchemeOptionResolver::new(
-                        ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolver::new(vec![
-    ::aws_runtime::auth::sigv4::SCHEME_ID,
-]))))
                             .with_interceptor(NotifyUpdateProvisionedProductEngineWorkflowResultEndpointParamsInterceptor)
                             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<crate::operation::notify_update_provisioned_product_engine_workflow_result::NotifyUpdateProvisionedProductEngineWorkflowResultError>::new())
 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<crate::operation::notify_update_provisioned_product_engine_workflow_result::NotifyUpdateProvisionedProductEngineWorkflowResultError>::new())

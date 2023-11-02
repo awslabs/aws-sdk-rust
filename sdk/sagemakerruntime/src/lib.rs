@@ -180,6 +180,8 @@ pub mod operation;
 /// Primitives such as `Blob` or `DateTime` used by other types.
 pub mod primitives;
 
+mod auth_plugin;
+
 pub(crate) mod protocol_serde;
 
 mod serialization_settings;
