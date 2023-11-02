@@ -524,11 +524,10 @@ struct ImdsEndpointResolver {
 }
 
 impl EndpointResolver for ImdsEndpointResolver {
-    fn resolve_endpoint(&self, _: &EndpointResolverParams) -> EndpointFuture {
-        let this = self.clone();
+    fn resolve_endpoint<'a>(&'a self, _: &'a EndpointResolverParams) -> EndpointFuture<'a> {
         EndpointFuture::new(async move {
-            this.endpoint_source
-                .endpoint(this.mode_override)
+            self.endpoint_source
+                .endpoint(self.mode_override.clone())
                 .await
                 .map(|uri| Endpoint::builder().url(uri.to_string()).build())
                 .map_err(|err| err.into())

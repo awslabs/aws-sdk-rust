@@ -333,7 +333,7 @@ pub struct LoggingDnsResolver {
 impl Service<Name> for LoggingDnsResolver {
     type Response = Once<SocketAddr>;
     type Error = Infallible;
-    type Future = BoxFuture<Self::Response, Self::Error>;
+    type Future = BoxFuture<'static, Self::Response, Self::Error>;
 
     fn poll_ready(&mut self, _cx: &mut Context<'_>) -> Poll<Result<(), Self::Error>> {
         Poll::Ready(Ok(()))

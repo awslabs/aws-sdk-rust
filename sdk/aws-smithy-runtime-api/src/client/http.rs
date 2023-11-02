@@ -62,8 +62,8 @@ use std::sync::Arc;
 use std::time::Duration;
 
 new_type_future! {
-    doc = "Future for [`HttpConnector::call`].",
-    pub struct HttpConnectorFuture<HttpResponse, ConnectorError>,
+    #[doc = "Future for [`HttpConnector::call`]."]
+    pub struct HttpConnectorFuture<'static, HttpResponse, ConnectorError>;
 }
 
 /// Trait with a `call` function that asynchronously converts a request into a response.

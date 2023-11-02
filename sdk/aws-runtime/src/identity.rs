@@ -23,7 +23,7 @@ pub mod credentials {
     }
 
     impl IdentityResolver for CredentialsIdentityResolver {
-        fn resolve_identity(&self, _config_bag: &ConfigBag) -> IdentityFuture {
+        fn resolve_identity<'a>(&'a self, _config_bag: &'a ConfigBag) -> IdentityFuture<'a> {
             let cache = self.credentials_cache.clone();
             IdentityFuture::new(async move {
                 let credentials = cache.as_ref().provide_cached_credentials().await?;

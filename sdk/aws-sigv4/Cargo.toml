@@ -88,7 +88,7 @@ optional = true
 
 [dev-dependencies]
 bytes = "1"
-criterion = "0.4"
+criterion = "0.5"
 hex-literal = "0.4.1"
 httparse = "1.8"
 libfuzzer-sys = "0.4.6"

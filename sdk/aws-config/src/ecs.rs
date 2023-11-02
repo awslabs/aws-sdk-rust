@@ -50,7 +50,7 @@ use crate::http_credential_provider::HttpCredentialProvider;
 use crate::provider_config::ProviderConfig;
 use aws_credential_types::provider::{self, error::CredentialsError, future, ProvideCredentials};
 use aws_smithy_http::endpoint::apply_endpoint;
-use aws_smithy_runtime_api::client::dns::{DnsResolver, ResolveDnsError, SharedDnsResolver};
+use aws_smithy_runtime_api::client::dns::{ResolveDns, ResolveDnsError, SharedDnsResolver};
 use aws_smithy_runtime_api::client::http::HttpConnectorSettings;
 use aws_smithy_runtime_api::shared::IntoShared;
 use aws_smithy_types::error::display::DisplayErrorContext;
@@ -272,9 +272,9 @@ impl Builder {
 
     /// Override the DNS resolver used to validate URIs
     ///
-    /// URIs must refer to loopback addresses. The [`DnsResolver`](aws_smithy_runtime_api::client::dns::DnsResolver)
-    /// is used to retrieve IP addresses for a given domain.
-    pub fn dns(mut self, dns: impl DnsResolver + 'static) -> Self {
+    /// URIs must refer to loopback addresses. The [`ResolveDns`](aws_smithy_runtime_api::client::dns::ResolveDns)
+    /// implementation is used to retrieve IP addresses for a given domain.
+    pub fn dns(mut self, dns: impl ResolveDns + 'static) -> Self {
         self.dns = Some(dns.into_shared());
         self
     }
@@ -399,7 +399,7 @@ async fn validate_full_uri(
         Ok(addr) => addr.is_loopback(),
         Err(_domain_name) => {
             let dns = dns.ok_or(InvalidFullUriErrorKind::NoDnsResolver)?;
-            dns.resolve_dns(host.to_owned())
+            dns.resolve_dns(host)
                 .await
                 .map_err(|err| InvalidFullUriErrorKind::DnsLookupFailed(ResolveDnsError::new(err)))?
                 .iter()
@@ -751,16 +751,16 @@ mod test {
         }
     }
 
-    impl DnsResolver for TestDns {
-        fn resolve_dns(&self, name: String) -> DnsFuture {
-            DnsFuture::ready(Ok(self.addrs.get(&name).unwrap_or(&self.fallback).clone()))
+    impl ResolveDns for TestDns {
+        fn resolve_dns<'a>(&'a self, name: &'a str) -> DnsFuture<'a> {
+            DnsFuture::ready(Ok(self.addrs.get(name).unwrap_or(&self.fallback).clone()))
         }
     }
 
     #[derive(Debug)]
     struct NeverDns;
-    impl DnsResolver for NeverDns {
-        fn resolve_dns(&self, _name: String) -> DnsFuture {
+    impl ResolveDns for NeverDns {
+        fn resolve_dns<'a>(&'a self, _name: &'a str) -> DnsFuture<'a> {
             DnsFuture::new(async {
                 Never::new().await;
                 unreachable!()

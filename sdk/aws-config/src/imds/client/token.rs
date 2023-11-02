@@ -192,23 +192,19 @@ fn parse_token_response(response: &HttpResponse, now: SystemTime) -> Result<Toke
 }
 
 impl IdentityResolver for TokenResolver {
-    fn resolve_identity(&self, _config_bag: &ConfigBag) -> IdentityFuture {
-        let this = self.clone();
-        IdentityFuture::new(async move {
-            let preloaded_token = this
+    fn resolve_identity<'a>(&'a self, _config_bag: &'a ConfigBag) -> IdentityFuture<'a> {
+        IdentityFuture::new(async {
+            let preloaded_token = self
                 .inner
                 .cache
-                .yield_or_clear_if_expired(this.inner.time_source.now())
+                .yield_or_clear_if_expired(self.inner.time_source.now())
                 .await;
             let token = match preloaded_token {
                 Some(token) => Ok(token),
                 None => {
-                    this.inner
+                    self.inner
                         .cache
-                        .get_or_load(|| {
-                            let this = this.clone();
-                            async move { this.get_token().await }
-                        })
+                        .get_or_load(|| async { self.get_token().await })
                         .await
                 }
             }?;

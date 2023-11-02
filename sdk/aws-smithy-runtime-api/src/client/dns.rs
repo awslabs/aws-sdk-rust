@@ -7,14 +7,10 @@
 
 use crate::box_error::BoxError;
 use crate::impl_shared_conversions;
-use aws_smithy_async::future::now_or_later::NowOrLater;
 use std::error::Error as StdError;
 use std::fmt;
-use std::future::Future;
 use std::net::IpAddr;
-use std::pin::Pin;
 use std::sync::Arc;
-use std::task::{Context, Poll};
 
 /// Error that occurs when failing to perform a DNS lookup.
 #[derive(Debug)]
@@ -43,57 +39,35 @@ impl StdError for ResolveDnsError {
     }
 }
 
-type BoxFuture<T> = aws_smithy_async::future::BoxFuture<T, ResolveDnsError>;
-
-/// New-type for the future returned by the [`DnsResolver`] trait.
-pub struct DnsFuture(NowOrLater<Result<Vec<IpAddr>, ResolveDnsError>, BoxFuture<Vec<IpAddr>>>);
-impl DnsFuture {
-    /// Create a new `DnsFuture`
-    pub fn new(
-        future: impl Future<Output = Result<Vec<IpAddr>, ResolveDnsError>> + Send + 'static,
-    ) -> Self {
-        Self(NowOrLater::new(Box::pin(future)))
-    }
-
-    /// Create a `DnsFuture` that is immediately ready
-    pub fn ready(result: Result<Vec<IpAddr>, ResolveDnsError>) -> Self {
-        Self(NowOrLater::ready(result))
-    }
-}
-impl Future for DnsFuture {
-    type Output = Result<Vec<IpAddr>, ResolveDnsError>;
-
-    fn poll(mut self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Self::Output> {
-        let mut this = self.as_mut();
-        let inner = Pin::new(&mut this.0);
-        Future::poll(inner, cx)
-    }
+new_type_future! {
+    #[doc = "New-type for the future returned by the [`ResolveDns`] trait."]
+    pub struct DnsFuture<'a, Vec<IpAddr>, ResolveDnsError>;
 }
 
 /// Trait for resolving domain names
-pub trait DnsResolver: fmt::Debug + Send + Sync {
+pub trait ResolveDns: fmt::Debug + Send + Sync {
     /// Asynchronously resolve the given domain name
-    fn resolve_dns(&self, name: String) -> DnsFuture;
+    fn resolve_dns<'a>(&'a self, name: &'a str) -> DnsFuture<'a>;
 }
 
-/// Shared DNS resolver
+/// Shared instance of [`ResolveDns`].
 #[derive(Clone, Debug)]
-pub struct SharedDnsResolver(Arc<dyn DnsResolver>);
+pub struct SharedDnsResolver(Arc<dyn ResolveDns>);
 
 impl SharedDnsResolver {
     /// Create a new `SharedDnsResolver`.
-    pub fn new(resolver: impl DnsResolver + 'static) -> Self {
+    pub fn new(resolver: impl ResolveDns + 'static) -> Self {
         Self(Arc::new(resolver))
     }
 }
 
-impl DnsResolver for SharedDnsResolver {
-    fn resolve_dns(&self, name: String) -> DnsFuture {
+impl ResolveDns for SharedDnsResolver {
+    fn resolve_dns<'a>(&'a self, name: &'a str) -> DnsFuture<'a> {
         self.0.resolve_dns(name)
     }
 }
 
-impl_shared_conversions!(convert SharedDnsResolver from DnsResolver using SharedDnsResolver::new);
+impl_shared_conversions!(convert SharedDnsResolver from ResolveDns using SharedDnsResolver::new);
 
 #[cfg(test)]
 mod tests {
@@ -102,6 +76,6 @@ mod tests {
     #[test]
     fn check_send() {
         fn is_send<T: Send>() {}
-        is_send::<DnsFuture>();
+        is_send::<DnsFuture<'_>>();
     }
 }

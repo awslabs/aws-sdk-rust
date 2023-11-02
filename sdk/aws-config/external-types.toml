@@ -16,7 +16,7 @@ allowed_external_types = [
    "aws_smithy_http::endpoint",
    "aws_smithy_http::endpoint::error::InvalidEndpointError",
    "aws_smithy_http::result::SdkError",
-   "aws_smithy_runtime_api::client::dns::DnsResolver",
+   "aws_smithy_runtime_api::client::dns::ResolveDns",
    "aws_smithy_runtime_api::client::dns::SharedDnsResolver",
    "aws_smithy_runtime_api::client::http::HttpClient",
    "aws_smithy_runtime_api::client::http::SharedHttpClient",

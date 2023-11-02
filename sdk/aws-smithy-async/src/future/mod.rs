@@ -15,4 +15,4 @@ pub mod rendezvous;
 pub mod timeout;
 
 /// A boxed future that outputs a `Result<T, E>`.
-pub type BoxFuture<T, E> = Pin<Box<dyn Future<Output = Result<T, E>> + Send>>;
+pub type BoxFuture<'a, T, E> = Pin<Box<dyn Future<Output = Result<T, E>> + Send + 'a>>;

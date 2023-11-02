@@ -3,28 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+/// Declares a new-type for a future that is returned from an async trait (prior to stable async trait).
+///
+/// To declare a future with a static lifetime:
+/// ```ignore
+/// new_type_future! {
+///     doc = "some rustdoc for the future's struct",
+///     pub struct NameOfFuture<'static, OutputType, ErrorType>;
+/// }
+/// ```
+///
+/// To declare a future with a non-static lifetime:
+/// ```ignore
+/// new_type_future! {
+///     doc = "some rustdoc for the future's struct",
+///     pub struct NameOfFuture<'a, OutputType, ErrorType>;
+/// }
+/// ```
 macro_rules! new_type_future {
     (
-        doc = $type_docs:literal,
-        pub struct $future_name:ident<$output:ty, $err:ty>,
+        #[doc = $type_docs:literal]
+        pub struct $future_name:ident<'static, $output:ty, $err:ty>;
     ) => {
+        new_type_future!(@internal, $type_docs, $future_name, $output, $err, 'static,);
+    };
+    (
+        #[doc = $type_docs:literal]
+        pub struct $future_name:ident<$lifetime:lifetime, $output:ty, $err:ty>;
+    ) => {
+        new_type_future!(@internal, $type_docs, $future_name, $output, $err, $lifetime, <$lifetime>);
+    };
+    (@internal, $type_docs:literal, $future_name:ident, $output:ty, $err:ty, $lifetime:lifetime, $($decl_lifetime:tt)*) => {
         pin_project_lite::pin_project! {
             #[allow(clippy::type_complexity)]
             #[doc = $type_docs]
-            pub struct $future_name {
+            pub struct $future_name$($decl_lifetime)* {
                 #[pin]
                 inner: aws_smithy_async::future::now_or_later::NowOrLater<
                     Result<$output, $err>,
-                    aws_smithy_async::future::BoxFuture<$output, $err>
+                    aws_smithy_async::future::BoxFuture<$lifetime, $output, $err>
                 >,
             }
         }
 
-        impl $future_name {
+        impl$($decl_lifetime)* $future_name$($decl_lifetime)* {
             #[doc = concat!("Create a new `", stringify!($future_name), "` with the given future.")]
             pub fn new<F>(future: F) -> Self
             where
-                F: std::future::Future<Output = Result<$output, $err>> + Send + 'static,
+                F: std::future::Future<Output = Result<$output, $err>> + Send + $lifetime,
             {
                 Self {
                     inner: aws_smithy_async::future::now_or_later::NowOrLater::new(Box::pin(future)),
@@ -38,7 +64,7 @@ macro_rules! new_type_future {
             ")]
             pub fn new_boxed(
                 future: std::pin::Pin<
-                    Box<dyn std::future::Future<Output = Result<$output, $err>> + Send>,
+                    Box<dyn std::future::Future<Output = Result<$output, $err>> + Send + $lifetime>,
                 >,
             ) -> Self {
                 Self {
@@ -54,7 +80,7 @@ macro_rules! new_type_future {
             }
         }
 
-        impl std::future::Future for $future_name {
+        impl$($decl_lifetime)* std::future::Future for $future_name$($decl_lifetime)* {
             type Output = Result<$output, $err>;
 
             fn poll(self: std::pin::Pin<&mut Self>, cx: &mut std::task::Context<'_>) -> std::task::Poll<Self::Output> {

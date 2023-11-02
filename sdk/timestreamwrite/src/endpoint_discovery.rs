@@ -21,7 +21,7 @@ use tokio::sync::oneshot::{Receiver, Sender};
 /// Endpoint reloader
 #[must_use]
 pub struct ReloadEndpoint {
-    loader: Box<dyn Fn() -> BoxFuture<(Endpoint, SystemTime), ResolveEndpointError> + Send + Sync>,
+    loader: Box<dyn Fn() -> BoxFuture<'static, (Endpoint, SystemTime), ResolveEndpointError> + Send + Sync>,
     endpoint: Arc<Mutex<Option<ExpiringEndpoint>>>,
     error: Arc<Mutex<Option<ResolveEndpointError>>>,
     rx: Receiver<()>,
